@@ -1,0 +1,24 @@
+module Base
+{
+    craftRecipe CodexDAMNRepairVanillaTire
+    {
+        timedAction = Making,
+        time = 100,
+        Tags = InHandCraft,
+        category = Repair,
+        xpAward = Mechanics:1,
+        SkillRequired = Mechanics:1,
+        OnCreate = DAMN.OnCreate.RepairTireOne,
+
+        inputs
+        {
+            item 1 [damnCraft.TireRepairRubberSolution],
+            item 1 [Base.OldTire1;Base.NormalTire1;Base.ModernTire1;Base.OldTire2;Base.NormalTire2;Base.ModernTire2;Base.OldTire3;Base.NormalTire3;Base.ModernTire3] mode:keep flags[IsDamaged],
+            item 1 [damnCraft.TireRepairStrips],
+            item 1 [damnCraft.TireRepairTools] mode:keep,
+        }
+        outputs
+        {
+        }
+    }
+}

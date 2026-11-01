@@ -1,0 +1,8 @@
+name=Pinyin Search Safe Sources B42.21 (Local)
+id=PinyinSearch_SafeSources_4221_LocalFix
+description=Local compatibility layer for Pinyin Search 1.3: preserves crafting sources, inventory name+category filters and inventory pinyin highlights.
+modversion=1.1
+require=yxjs_PinYinSearch
+loadModAfter=yxjs_PinYinSearch,CleanUI,Neat_Crafting,Neat_Building
+versionMin=42.21
+versionMax=42.21

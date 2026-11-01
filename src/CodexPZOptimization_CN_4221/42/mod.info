@@ -1,0 +1,7 @@
+name=PZ Optimization 设置汉化 [B42.21]
+id=CodexPZOptimization_CN_4221
+author=Local Chinese UI patch
+description=Simplified Chinese settings UI for PZ Optimization d1bbdcf. 500 labels, navigation, controls and selected descriptions. UI only. Disable before updating or removing the engine patch.
+versionMin=42.21
+versionMax=42.21
+modversion=1.0.0

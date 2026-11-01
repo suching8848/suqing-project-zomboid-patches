@@ -1,0 +1,18 @@
+{
+  "Sandbox_XFDynamic": "XFACTION 动态特质",
+  "Sandbox_XFDynamic_Dynamic": "动态获得特质",
+  "Sandbox_XFDynamic_Recovery": "克服负面特质",
+  "Sandbox_XFDynamic_Effects": "自定义状态效果",
+  "Sandbox_XFDynamic_Movement": "移动技能解锁",
+  "Sandbox_XFDynamic_Combat": "战斗技能解锁",
+  "Sandbox_XFDynamic_Craft": "制作技能解锁",
+  "Sandbox_XFDynamic_Survival": "生存技能解锁",
+  "Sandbox_XFDynamic_Adaptation": "适应类特质解锁",
+  "Sandbox_XFDynamic_Notifications": "特质变化提示",
+  "Sandbox_XFDynamic_RequirementScale": "时间、距离与击杀条件倍率",
+  "Sandbox_XFDynamic_RequirementScale_tooltip": "1为默认；2表示需要积累两倍进度。技能等级要求保持不变。",
+  "Sandbox_XFDynamic_Reading": "通过阅读获得阅读神速",
+  "Sandbox_XFDynamic_Reading_tooltip": "统计新阅读书页并解锁原版“阅读神速”；还须开启“动态获得特质”。关闭此项会暂停阅读训练和获取，但不会移除已经持有的阅读神速。",
+  "Sandbox_XFDynamic_FastReaderPages": "阅读神速所需新书页数",
+  "Sandbox_XFDynamic_FastReaderPages_tooltip": "默认1000页。只统计带页数书籍中新阅读的书页；同一书名或副本不会重复计数。无页数的杂志、照片和技能笔记不训练此进度。计数从接入模组后开始，不追溯此前已读书页；已读过的页数会作为基准。此要求独立于时间、距离与击杀条件倍率。“阅读缓慢”和“文盲”会阻止获取。获得后，原版阅读耗时减少百分之30，包括技能笔记。"
+}

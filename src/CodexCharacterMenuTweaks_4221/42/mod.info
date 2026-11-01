@@ -1,0 +1,9 @@
+name=[B42.21] Character Menu Tweaks
+id=CodexCharacterMenuTweaks_4221
+author=Local UI compatibility
+modversion=1.0.0
+versionMin=42.21
+versionMax=42.21
+require=XFACTION_DynamicTraits,CodexXFACTION_CN_4221
+loadModAfter=XFACTION_DynamicTraits,CodexXFACTION_CN_4221,Fashionoid42,RaccoonCityB42,BuildingCraftRaccoonCity
+description=Moves the existing XFACTION progress entry into character information. Presentation-only, no progression or item changes.

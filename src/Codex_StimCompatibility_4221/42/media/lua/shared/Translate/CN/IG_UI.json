@@ -1,0 +1,14 @@
+{
+  "IGUI_CodexStim_Inject": "注射肾上腺素",
+  "IGUI_CodexStim_BadIdea": "这么做不太明智……",
+  "IGUI_CodexStim_CannotHandle": "我的身体撑不住再来一针了……",
+  "IGUI_CodexStim_Wait1": "好……等药效发作。",
+  "IGUI_CodexStim_Wait2": "快点……快起效啊。",
+  "IGUI_CodexStim_Wait3": "豁出去了……",
+  "IGUI_CodexStim_End1": "我感觉有点疲惫……",
+  "IGUI_CodexStim_End2": "药效正在消退……",
+  "IGUI_CodexStim_End3": "再坚持一下……",
+  "IGUI_CodexStim_Start1": "来了……",
+  "IGUI_CodexStim_Start2": "我能感觉到药效了。",
+  "IGUI_CodexStim_Start3": "好……开始吧。"
+}

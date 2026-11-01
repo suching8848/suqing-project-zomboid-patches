@@ -1,0 +1,23 @@
+--- a/3799632784/mods/oldcat/42/media/clothing/clothingItems/SST02_Clothes.xml
++++ b/42/media/clothing/clothingItems/CodexCBRT_SST02_Clothes.xml
+@@ -1,12 +1,10 @@
+-<?xml version="1.0" encoding="utf-8"?>
++<?xml version='1.0' encoding='utf-8'?>
+ <clothingItem>
+-	<m_MaleModel>SST02_Clothes</m_MaleModel>
+-	<m_FemaleModel>SST02_Clothes_F</m_FemaleModel>
+-	<m_GUID>SST02_Clothes</m_GUID>
+-	<m_Static>false</m_Static>
+-	<m_AllowRandomTint>false</m_AllowRandomTint>
+-	<m_AttachBone></m_AttachBone>
+-	<textureChoices>SST02_Clothes</textureChoices>
+-
+-
++    <m_MaleModel>CodexCBRT_SST02_Clothes</m_MaleModel>
++    <m_FemaleModel>CodexCBRT_SST02_Clothes_F</m_FemaleModel>
++    <m_GUID>3a85eaba-c0fd-5d2a-8776-0e76007201d6</m_GUID>
++    <m_Static>false</m_Static>
++    <m_AllowRandomTint>false</m_AllowRandomTint>
++    <m_AttachBone />
++    <textureChoices>CodexCBRT_SST02_Clothes</textureChoices>
+ </clothingItem>

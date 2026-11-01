@@ -1,0 +1,18 @@
+--- a/3670064951/mods/KI5campers/42.20/media/scripts/vehicles/Trailer87Scamp16.txt
++++ b/42.21/media/scripts/vehicles/Trailer87Scamp16.txt
+@@ -297,6 +297,15 @@
+             itemType = Base.GloveBox,
+             mechanicRequireKey = true,
+ 
++            container
++            {
++                test = Vehicles.ContainerAccess.GloveBox,
++                soundMap = ContainerClose VehicleGloveboxClose,
++                soundMap = ContainerOpen VehicleGloveboxOpen,
++                soundMap = ContainerPut VehicleGloveboxTransferItem,
++                soundMap = ContainerTake VehicleGloveboxTransferItem,
++            }
++
+             model interior
+             {
+                 file = TrailerKI5camperScamp16Interior,

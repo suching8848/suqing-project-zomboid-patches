@@ -1,0 +1,47 @@
+module CodexNekomataEXUpgrade
+{
+    craftRecipe MaoMaoEXUpgrade
+    {
+        Icon = Item_ExSuQingSuperUpgrade,
+        timedAction = SewingCloth,
+        Time = 180,
+        NeedToBeLearn = False,
+        AllowBatchCraft = False,
+        Tags = InHandCraft,
+        category = ExSuQing,
+        SkillRequired = Tailoring:5,
+        OnTest = CodexNekomataEXUpgrade_4221.TestUpgrade,
+        OnCreate = ExSuQingBackpackSuperUpgrade.CreateUpgrade,
+        inputs
+        {
+            item 1 [Base.MaoMaoBackpack] mode:keep flags[IsNotWorn;AllowFavorite;ItemCount],
+            item 1 tags[base:sewingneedle] mode:keep,
+            item 40 [Base.RippedSheets] mode:destroy,
+            item 20 [Base.LeatherStrips] mode:destroy,
+            item 20 [Base.Thread],
+            item 4 [Base.PremiumFishingLine],
+        }
+        outputs
+        {
+        }
+    }
+    craftRecipe MaoMaoEXRestore
+    {
+        Icon = Item_ExSuQingRestore,
+        timedAction = SewingCloth,
+        Time = 40,
+        NeedToBeLearn = False,
+        AllowBatchCraft = False,
+        Tags = InHandCraft,
+        category = ExSuQing,
+        OnTest = CodexNekomataEXUpgrade_4221.TestRestore,
+        OnCreate = ExSuQingBackpackSuperUpgrade.CreateRestore,
+        inputs
+        {
+            item 1 [Base.MaoMaoBackpack] mode:keep flags[IsNotWorn;AllowFavorite;ItemCount],
+        }
+        outputs
+        {
+        }
+    }
+}

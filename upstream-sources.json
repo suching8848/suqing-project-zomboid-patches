@@ -1,0 +1,382 @@
+{
+  "schema": 1,
+  "note": "No upstream originals included; hashes pin the locally audited input versions.",
+  "files": [
+    {
+      "mod_id": "Codex_Campers_Glovebox_4221",
+      "target": "42.21/media/scripts/vehicles/Trailer54FlyingCloud22.txt",
+      "mode": "patch",
+      "root": "workshop",
+      "path": "3670064951/mods/KI5campers/42.20/media/scripts/vehicles/Trailer54FlyingCloud22.txt",
+      "sha256": "677713560947f7db0c892f29f43d94ec2e3855ef5a9fe0cd97939d845918c3ba"
+    },
+    {
+      "mod_id": "Codex_Campers_Glovebox_4221",
+      "target": "42.21/media/scripts/vehicles/Trailer61Airflyte.txt",
+      "mode": "patch",
+      "root": "workshop",
+      "path": "3670064951/mods/KI5campers/42.20/media/scripts/vehicles/Trailer61Airflyte.txt",
+      "sha256": "525f123a23126fa0ad6dc5b24c787e2281bdb565851b214778f041e77101a74d"
+    },
+    {
+      "mod_id": "Codex_Campers_Glovebox_4221",
+      "target": "42.21/media/scripts/vehicles/Trailer61Astrodome.txt",
+      "mode": "patch",
+      "root": "workshop",
+      "path": "3670064951/mods/KI5campers/42.20/media/scripts/vehicles/Trailer61Astrodome.txt",
+      "sha256": "85a1b7b297eea7aa07f658e300741ebfc92c9b7f0b916326807a2f88cd903bf0"
+    },
+    {
+      "mod_id": "Codex_Campers_Glovebox_4221",
+      "target": "42.21/media/scripts/vehicles/Trailer61Bambi16.txt",
+      "mode": "patch",
+      "root": "workshop",
+      "path": "3670064951/mods/KI5campers/42.20/media/scripts/vehicles/Trailer61Bambi16.txt",
+      "sha256": "5f2af4b4a709a648961516a1ffc124db5992202549fab282e7ab2eb5a6e941cf"
+    },
+    {
+      "mod_id": "Codex_Campers_Glovebox_4221",
+      "target": "42.21/media/scripts/vehicles/Trailer87Scamp13.txt",
+      "mode": "patch",
+      "root": "workshop",
+      "path": "3670064951/mods/KI5campers/42.20/media/scripts/vehicles/Trailer87Scamp13.txt",
+      "sha256": "59bb0809ff757532c4a0ba187abba6217400f0e99e36ab2af36df7470cf51c0a"
+    },
+    {
+      "mod_id": "Codex_Campers_Glovebox_4221",
+      "target": "42.21/media/scripts/vehicles/Trailer87Scamp16.txt",
+      "mode": "patch",
+      "root": "workshop",
+      "path": "3670064951/mods/KI5campers/42.20/media/scripts/vehicles/Trailer87Scamp16.txt",
+      "sha256": "733566b75b4e611fd28a5e5e6335cd8591398c5156da291306af3d1e1a9ec924"
+    },
+    {
+      "mod_id": "Codex_StimCompatibility_4221",
+      "target": "42/reference/AdrenalineEffect.txt",
+      "mode": "copy",
+      "root": "workshop",
+      "path": "3791221767/mods/AdrenalineShot/42/media/lua/shared/AdrenalineEffect.lua",
+      "sha256": "3ef72ee54aa581225fe1e5a7ea46fe512bce05ac051354c0b53707840ad05353"
+    },
+    {
+      "mod_id": "Codex_StimCompatibility_4221",
+      "target": "42/reference/AdrenalineInject.txt",
+      "mode": "copy",
+      "root": "workshop",
+      "path": "3791221767/mods/AdrenalineShot/42/media/lua/client/AdrenalineInject.lua",
+      "sha256": "d22b4c5ebbe465eea1386e87cd5d269d12a92c27416f6a000bb1aa7b2b7f5ffe"
+    },
+    {
+      "mod_id": "Codex_StimCompatibility_4221",
+      "target": "42/reference/AdrenalineMoodleUI.txt",
+      "mode": "copy",
+      "root": "workshop",
+      "path": "3791221767/mods/AdrenalineShot/42/media/lua/client/AdrenalineMoodleUI.lua",
+      "sha256": "cee66478f5bd5097891539f530a20c9bfb24782d1af607282d05d21ad691fa0b"
+    },
+    {
+      "mod_id": "Codex_StimCompatibility_4221",
+      "target": "42/reference/Stims_Containers.txt",
+      "mode": "copy",
+      "root": "workshop",
+      "path": "3815980431/mods/TarkovCombatStims/42/media/lua/shared/Stims/Stims_Containers.lua",
+      "sha256": "8977d4102817000bef04c9c34cb5bccb0ec94274d727a151daafb3332db213da"
+    },
+    {
+      "mod_id": "Codex_StimCompatibility_4221",
+      "target": "42/reference/Stims_QuickInject.txt",
+      "mode": "patch",
+      "root": "workshop",
+      "path": "3815980431/mods/TarkovCombatStims/42/media/lua/client/Stims/Stims_QuickInject.lua",
+      "sha256": "e3f4d9acc237d71dea19daaa0a1c1ba6971c4ef265ac79d5f161c0a1ccb15c7f"
+    },
+    {
+      "mod_id": "CodexCBRTIndependent_4221",
+      "target": "42/icon.png",
+      "mode": "copy",
+      "root": "workshop",
+      "path": "3799632784/mods/oldcat/42/logo.png",
+      "sha256": "2c0e8e5d06f7396e765db427cb1aaa663f49497721361bb6bd1d597b88eb16c5"
+    },
+    {
+      "mod_id": "CodexCBRTIndependent_4221",
+      "target": "42/media/clothing/clothingItems/CodexCBRT_SST02_Boots.xml",
+      "mode": "patch",
+      "root": "workshop",
+      "path": "3799632784/mods/oldcat/42/media/clothing/clothingItems/SST02_Boots.xml",
+      "sha256": "0ca22b37394994facf3de5c9c588dc3279657c5b1c69586b53df008bf62fffd6"
+    },
+    {
+      "mod_id": "CodexCBRTIndependent_4221",
+      "target": "42/media/clothing/clothingItems/CodexCBRT_SST02_ChestRig.xml",
+      "mode": "patch",
+      "root": "workshop",
+      "path": "3799632784/mods/oldcat/42/media/clothing/clothingItems/SST02_ChestRig.xml",
+      "sha256": "07d679aa1dc10841af98b371f68a87304924810d5e186ebce277178c6eb97fd4"
+    },
+    {
+      "mod_id": "CodexCBRTIndependent_4221",
+      "target": "42/media/clothing/clothingItems/CodexCBRT_SST02_Clothes.xml",
+      "mode": "patch",
+      "root": "workshop",
+      "path": "3799632784/mods/oldcat/42/media/clothing/clothingItems/SST02_Clothes.xml",
+      "sha256": "71b9d46d44e4e916c1b11c8f5ac6a0e42d80e178489b30bbedbff14a70e226bf"
+    },
+    {
+      "mod_id": "CodexCBRTIndependent_4221",
+      "target": "42/media/clothing/clothingItems/CodexCBRT_SST02_Gloves.xml",
+      "mode": "patch",
+      "root": "workshop",
+      "path": "3799632784/mods/oldcat/42/media/clothing/clothingItems/SST02_Gloves.xml",
+      "sha256": "f9adde5fe40b510640f5edb12fd0315cf24266b0507c0d340ce08a736e1288c3"
+    },
+    {
+      "mod_id": "CodexCBRTIndependent_4221",
+      "target": "42/media/clothing/clothingItems/CodexCBRT_SST02_Helmet.xml",
+      "mode": "patch",
+      "root": "workshop",
+      "path": "3799632784/mods/oldcat/42/media/clothing/clothingItems/SST02_Helmet.xml",
+      "sha256": "59ec4e91f007c370873e0a7cb072914b748c407821a8f066c5421fa05bc0baa2"
+    },
+    {
+      "mod_id": "CodexCBRTIndependent_4221",
+      "target": "42/media/clothing/clothingItems/CodexCBRT_SST02_Mask.xml",
+      "mode": "patch",
+      "root": "workshop",
+      "path": "3799632784/mods/oldcat/42/media/clothing/clothingItems/SST02_Mask.xml",
+      "sha256": "be938b28997fe882d262607898caf9374a502a33ee6d13d67f1017d32be85910"
+    },
+    {
+      "mod_id": "CodexCBRTIndependent_4221",
+      "target": "42/media/clothing/clothingItems/CodexCBRT_SST02_Pants.xml",
+      "mode": "patch",
+      "root": "workshop",
+      "path": "3799632784/mods/oldcat/42/media/clothing/clothingItems/SST02_Pants.xml",
+      "sha256": "a85f3fe44269b6c5f2058d5cd29971b2847c5a53a81290d92c98153baecc38fd"
+    },
+    {
+      "mod_id": "CodexCBRTIndependent_4221",
+      "target": "42/media/models_X/CodexCBRT_SST02_Boots1.fbx",
+      "mode": "copy",
+      "root": "workshop",
+      "path": "3799632784/mods/oldcat/42/media/models_X/SST02_Boots1.fbx",
+      "sha256": "371e20a43fc45fd2761aae99a272692d5ab4eb38f60a8aa88b7cea06a5dbf3de"
+    },
+    {
+      "mod_id": "CodexCBRTIndependent_4221",
+      "target": "42/media/models_X/CodexCBRT_SST02_Boots_F.fbx",
+      "mode": "copy",
+      "root": "workshop",
+      "path": "3799632784/mods/oldcat/42/media/models_X/SST02_Boots_F.fbx",
+      "sha256": "4d8b97649303589c6a1b2186052f55d0e409747ac778eb6fb82378572801f501"
+    },
+    {
+      "mod_id": "CodexCBRTIndependent_4221",
+      "target": "42/media/models_X/CodexCBRT_SST02_ChestRig.fbx",
+      "mode": "copy",
+      "root": "workshop",
+      "path": "3799632784/mods/oldcat/42/media/models_X/SST02_ChestRig.fbx",
+      "sha256": "645644036f26020bf952992987f7098965791a41695d426a2474c45463aae22a"
+    },
+    {
+      "mod_id": "CodexCBRTIndependent_4221",
+      "target": "42/media/models_X/CodexCBRT_SST02_Clothes.fbx",
+      "mode": "copy",
+      "root": "workshop",
+      "path": "3799632784/mods/oldcat/42/media/models_X/SST02_Clothes.fbx",
+      "sha256": "06507108c8a4dfe04e815812b033047850a046a6348c74efcb1af4351933ba91"
+    },
+    {
+      "mod_id": "CodexCBRTIndependent_4221",
+      "target": "42/media/models_X/CodexCBRT_SST02_Clothes_F.fbx",
+      "mode": "copy",
+      "root": "workshop",
+      "path": "3799632784/mods/oldcat/42/media/models_X/SST02_Clothes_F.fbx",
+      "sha256": "4ddd649af6e403b096919215c33643d2845dacc99a55b56435d15f9cdac9a4fb"
+    },
+    {
+      "mod_id": "CodexCBRTIndependent_4221",
+      "target": "42/media/models_X/CodexCBRT_SST02_Helmet.fbx",
+      "mode": "copy",
+      "root": "workshop",
+      "path": "3799632784/mods/oldcat/42/media/models_X/SST02_Helmet.fbx",
+      "sha256": "9a03674dd157b869e5de69ec11059234d41f44de2b95ae643441e5a8e662c262"
+    },
+    {
+      "mod_id": "CodexCBRTIndependent_4221",
+      "target": "42/media/models_X/CodexCBRT_SST02_Mask.fbx",
+      "mode": "copy",
+      "root": "workshop",
+      "path": "3799632784/mods/oldcat/42/media/models_X/SST02_Mask.fbx",
+      "sha256": "5dd60e306d36cdbd38dcf5748fc7b935b12c3cf8b909725593f46e75b0dc99cc"
+    },
+    {
+      "mod_id": "CodexCBRTIndependent_4221",
+      "target": "42/media/models_X/CodexCBRT_SST02_Pants.fbx",
+      "mode": "copy",
+      "root": "workshop",
+      "path": "3799632784/mods/oldcat/42/media/models_X/SST02_Pants.fbx",
+      "sha256": "f504956373ed0df9b2d0eed221cf7b80663e6a070324641f62bcd92442c8fc09"
+    },
+    {
+      "mod_id": "CodexCBRTIndependent_4221",
+      "target": "42/media/models_X/CodexCBRT_SST02_Pants_F.fbx",
+      "mode": "copy",
+      "root": "workshop",
+      "path": "3799632784/mods/oldcat/42/media/models_X/SST02_Pants_F.fbx",
+      "sha256": "45e8fad04f3fbd633f023597dc9f56558ef14294b323f2facee4a71e72c21445"
+    },
+    {
+      "mod_id": "CodexCBRTIndependent_4221",
+      "target": "42/media/scripts/CodexCBRT_Items.txt",
+      "mode": "patch",
+      "root": "workshop",
+      "path": "3799632784/mods/oldcat/42/media/scripts/Tactical02Set.txt",
+      "sha256": "678673020e7ed6deaf6ace76046dbf76df32b536d1c23fec3ea398c184a20eb0"
+    },
+    {
+      "mod_id": "CodexCBRTIndependent_4221",
+      "target": "42/media/textures/CodexCBRT_SST02_ChestRig.png",
+      "mode": "copy",
+      "root": "workshop",
+      "path": "3799632784/mods/oldcat/42/media/textures/SST02_ChestRig.png",
+      "sha256": "c2e59ca431e59f05090f32bb1ae36b423b861799f203f2c3f8b6e0e1f62d6086"
+    },
+    {
+      "mod_id": "CodexCBRTIndependent_4221",
+      "target": "42/media/textures/CodexCBRT_SST02_Clothes.png",
+      "mode": "copy",
+      "root": "workshop",
+      "path": "3799632784/mods/oldcat/42/media/textures/SST02_Clothes.png",
+      "sha256": "dc625acd26336e55a79e9cd548b2d46c6006112fbcc892d116b732ec69d29f03"
+    },
+    {
+      "mod_id": "CodexCBRTIndependent_4221",
+      "target": "42/media/textures/CodexCBRT_SST02_Gloves.png",
+      "mode": "copy",
+      "root": "workshop",
+      "path": "3799632784/mods/oldcat/42/media/textures/SST02_Gloves.png",
+      "sha256": "69e4d733f9f595aff745504d112c7829652c6ec7e02ed8961a55efe690b2fcc1"
+    },
+    {
+      "mod_id": "CodexCBRTIndependent_4221",
+      "target": "42/media/textures/CodexCBRT_SST02_Helmet.png",
+      "mode": "copy",
+      "root": "workshop",
+      "path": "3799632784/mods/oldcat/42/media/textures/SST02_Helmet.png",
+      "sha256": "5bc36cd26f51b13004a91b03f7408584d94d571d5b9ba77dfde7eda666c2b040"
+    },
+    {
+      "mod_id": "CodexCBRTIndependent_4221",
+      "target": "42/media/textures/CodexCBRT_SST02_Mask.png",
+      "mode": "copy",
+      "root": "workshop",
+      "path": "3799632784/mods/oldcat/42/media/textures/SST02_Mask.png",
+      "sha256": "b9404541cab90dc4940ee750a8acc51a5e88ac5a3f71602a3220539987a98e56"
+    },
+    {
+      "mod_id": "CodexCBRTIndependent_4221",
+      "target": "42/media/textures/CodexCBRT_SST02_Pants.png",
+      "mode": "copy",
+      "root": "workshop",
+      "path": "3799632784/mods/oldcat/42/media/textures/SST02_Pants.png",
+      "sha256": "c30c7f3ca436dab44a4c75cde2fa78667b2ae96918919ef86530780f471be122"
+    },
+    {
+      "mod_id": "CodexCBRTIndependent_4221",
+      "target": "42/media/textures/Item_CodexCBRT_SST02_Boots.png",
+      "mode": "copy",
+      "root": "workshop",
+      "path": "3799632784/mods/oldcat/42/media/textures/item_SST02_Boots.png",
+      "sha256": "190bcbf1d78b8b7ff0ffe2839f0bd2c9cf4c6bd06a5a7d276f99478863fc1b9b"
+    },
+    {
+      "mod_id": "CodexCBRTIndependent_4221",
+      "target": "42/media/textures/Item_CodexCBRT_SST02_ChestRig.png",
+      "mode": "copy",
+      "root": "workshop",
+      "path": "3799632784/mods/oldcat/42/media/textures/item_SST02_ChestRig.png",
+      "sha256": "3f768be6ae51dac9ee5e50e781c24d5ebf6cab9581f58625cd15a05e38b5d07e"
+    },
+    {
+      "mod_id": "CodexCBRTIndependent_4221",
+      "target": "42/media/textures/Item_CodexCBRT_SST02_Clothes.png",
+      "mode": "copy",
+      "root": "workshop",
+      "path": "3799632784/mods/oldcat/42/media/textures/item_SST02_Clothes.png",
+      "sha256": "02532607cda801fd45c48c6d6b235ee144399f858b7d751e57f27cc0c3e2f871"
+    },
+    {
+      "mod_id": "CodexCBRTIndependent_4221",
+      "target": "42/media/textures/Item_CodexCBRT_SST02_Gloves.png",
+      "mode": "copy",
+      "root": "workshop",
+      "path": "3799632784/mods/oldcat/42/media/textures/item_SST02_Gloves.png",
+      "sha256": "89cc7f74b3cdda877b10dbf6f23cf992d87072d15589a06cef97e84e3d48a215"
+    },
+    {
+      "mod_id": "CodexCBRTIndependent_4221",
+      "target": "42/media/textures/Item_CodexCBRT_SST02_Helmet.png",
+      "mode": "copy",
+      "root": "workshop",
+      "path": "3799632784/mods/oldcat/42/media/textures/item_SST_Helmet2.png",
+      "sha256": "d4174ccf39084c5582aae4a8baddc78b7e2c2b9d6b604f3ff0c7499718ffb0ca"
+    },
+    {
+      "mod_id": "CodexCBRTIndependent_4221",
+      "target": "42/media/textures/Item_CodexCBRT_SST02_Mask.png",
+      "mode": "copy",
+      "root": "workshop",
+      "path": "3799632784/mods/oldcat/42/media/textures/item_SST02_Mask.png",
+      "sha256": "dc96dbf2f1077fb84bf4e44f7cfd1c1bbbe65b3ed09242bae7b0d979a68ee0f9"
+    },
+    {
+      "mod_id": "CodexCBRTIndependent_4221",
+      "target": "42/media/textures/Item_CodexCBRT_SST02_Pants.png",
+      "mode": "copy",
+      "root": "workshop",
+      "path": "3799632784/mods/oldcat/42/media/textures/item_SST02_Pants.png",
+      "sha256": "1b4a8f4b5ce221e926e78cbf5ad1195f97d9f4b3b9b85dbc710ffa4a8ab5abeb"
+    },
+    {
+      "mod_id": "CodexCBRTIndependent_4221",
+      "target": "42/poster.png",
+      "mode": "copy",
+      "root": "workshop",
+      "path": "3799632784/mods/oldcat/42/poster.png",
+      "sha256": "c185602ca32b7ecbc14e8962b7b67847662fa3fcb8812d393ad0cb28e842b3a6"
+    },
+    {
+      "mod_id": "CodexCBRTIndependent_4221",
+      "target": "icon.png",
+      "mode": "copy",
+      "root": "workshop",
+      "path": "3799632784/mods/oldcat/42/logo.png",
+      "sha256": "2c0e8e5d06f7396e765db427cb1aaa663f49497721361bb6bd1d597b88eb16c5"
+    },
+    {
+      "mod_id": "CodexCBRTIndependent_4221",
+      "target": "poster.png",
+      "mode": "copy",
+      "root": "workshop",
+      "path": "3799632784/mods/oldcat/42/poster.png",
+      "sha256": "c185602ca32b7ecbc14e8962b7b67847662fa3fcb8812d393ad0cb28e842b3a6"
+    },
+    {
+      "mod_id": "CodexPZOptimization_CN_4221",
+      "target": "42/media/lua/client/pzopt/pzopt_mainscreen_menu.lua",
+      "mode": "patch",
+      "root": "game",
+      "path": "media/lua/client/pzopt/pzopt_mainscreen_menu.lua",
+      "sha256": "874f797249523303f64e1797952ba857f11cdad859709002aec10fe1eba8143a"
+    },
+    {
+      "mod_id": "Codex_PrimitiveTooltip_4221",
+      "target": "42/media/lua/client/PE_Shield.lua",
+      "mode": "patch",
+      "root": "workshop",
+      "path": "3619229745/mods/SuPrimitiveEquipment/common/media/lua/client/PE_Shield.lua",
+      "sha256": "39bab6064f82909d98fd5065fd6d52ea9f792eeef2504aee89fd1537f7d38b55"
+    }
+  ]
+}

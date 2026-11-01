@@ -1,0 +1,8 @@
+name=[B42.21] Attached Item Grouping and Wear Menu Fix (Local)
+id=Codex_AttachedGrouping_4221
+description=Refreshes inventory grouping after hotbar changes and limits Wear actions to wearable items. Preserves attachment slots, item properties, inventory selection and the normal equipped-items section.
+require=CleanUI
+loadModAfter=CleanUI,CleanHotBar,REORDER_THE_HOTBAR,noirrslingMutiple,noirrsling4-42.13patch,NeatUI_Equipment
+versionMin=42.21
+versionMax=42.21
+modversion=1.0.0

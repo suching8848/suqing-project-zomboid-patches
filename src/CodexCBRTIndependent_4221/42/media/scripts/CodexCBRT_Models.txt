@@ -1,0 +1,9 @@
+module CodexCBRT
+{
+    model ChestRigWorld
+    {
+        mesh = CodexCBRT_SST02_ChestRig,
+        texture = CodexCBRT_SST02_ChestRig,
+        scale = 1.0,
+    }
+}

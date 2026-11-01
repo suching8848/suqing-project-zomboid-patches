@@ -1,0 +1,9 @@
+name=[B42.21 SP] Primitive Equipment Fluid Tooltip Fix (Local)
+id=Codex_PrimitiveTooltip_4221
+require=SuPrimitiveEquipment
+loadModAfter=SuPrimitiveEquipment
+versionMin=42.21
+versionMax=42.21
+modversion=1.0.0
+author=Local compatibility fix
+description=Prevents the Primitive Equipment shield tooltip from calling InventoryItem methods on fluid containers. Preserves original shield durability and delegated tooltip rendering. This local PE_Shield.lua overlay is based on the installed SuPrimitiveEquipment 1.0 script; review it after author updates.

@@ -1,0 +1,9 @@
+name=[B42.21 SP] XFACTION Progress Record Guard (Local)
+id=Codex_XFDynamicRecordGuard_4221
+require=XFACTION_DynamicTraits
+loadModAfter=XFACTION_DynamicTraits
+versionMin=42.21
+versionMax=42.21
+modversion=1.0.0
+author=Local compatibility fix
+description=Preserves a bound single-player XFACTION progress record during transient survival-time drops, while separating confirmed deaths and new character identities.

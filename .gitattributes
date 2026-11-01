@@ -1,0 +1,5 @@
+# Preserve audited payload and patch bytes; do not normalize runtime files.
+* -text whitespace=cr-at-eol
+# Existing runtime whitespace and literal diff context must remain byte-identical.
+src/** whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab,cr-at-eol
+patches/** whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab,cr-at-eol

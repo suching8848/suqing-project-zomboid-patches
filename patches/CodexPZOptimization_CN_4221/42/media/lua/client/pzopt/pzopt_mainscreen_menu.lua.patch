@@ -1,0 +1,1129 @@
+--- a/media/lua/client/pzopt/pzopt_mainscreen_menu.lua
++++ b/42/media/lua/client/pzopt/pzopt_mainscreen_menu.lua
+@@ -1,3 +1,6 @@
++-- Local Chinese display override; original engine file is unchanged. Target: d1bbdcf.
++require "pzopt/CodexPZOptCN"
++
+ -- pzopt: the main menu's "PZ OPTIMIZATION" item and the PZ Optimization screen (2026-10-18), the only home of the pzopt
+ -- settings (the game's Options screen had a PZ Optimization tab until 2026-10-18; its data and actions are
+ -- pzopt_optimizations_options.lua's PzoptSettings).
+@@ -30,7 +33,7 @@
+ --  This file also packs the main-menu column into short windows (fitMenuColumn) and starts the once-per-boot update check.
+ -- Installed by scripts/pzopt.sh into <game dir>/media/lua/client/pzopt/ (loose game-dir Lua, no mod to enable).
+ 
+-local ITEM_TEXT = "PZ OPTIMIZATION"   -- the stock items are capitals (UI_mainscreen_* translations)
++local ITEM_TEXT = CodexPZOptCN.strings["s149"]   -- the stock items are capitals (UI_mainscreen_* translations)
+ local FONT_SMALL = getTextManager():getFontHeight(UIFont.Small)
+ local FONT_MEDIUM = getTextManager():getFontHeight(UIFont.Medium)
+ local FONT_LARGE = getTextManager():getFontHeight(UIFont.Large)
+@@ -49,27 +52,7 @@
+ 
+ -- s in lines no wider than maxW; a word wider than maxW is broken between characters
+ local function wrap(s, font, maxW)
+-    local lines, cur = {}, ""
+-    for word in string.gmatch(tostring(s or ""), "%S+") do
+-        local try = cur == "" and word or (cur .. " " .. word)
+-        if textW(font, try) <= maxW then
+-            cur = try
+-        else
+-            if cur ~= "" then table.insert(lines, cur) end
+-            while textW(font, word) > maxW and #word > 1 do
+-                local cut = 1
+-                for i = 1, #word - 1 do
+-                    if textW(font, string.sub(word, 1, i)) > maxW then break end
+-                    cut = i
+-                end
+-                table.insert(lines, string.sub(word, 1, cut))
+-                word = string.sub(word, cut + 1)
+-            end
+-            cur = word
+-        end
+-    end
+-    if cur ~= "" then table.insert(lines, cur) end
+-    return lines
++    return CodexPZOptCN.wrap(s, font, maxW)
+ end
+ 
+ -- ------------------------------------------------------------------ the updater's state, as text
+@@ -114,7 +97,7 @@
+ 
+ -- the main-menu item: "PZ OPTIMIZATION - UPDATE AVAILABLE" while a newer build is offered (pzopt.Updater's state, the
+ -- same the UPDATE page reads), else "PZ OPTIMIZATION"
+-local ITEM_UPDATE_TEXT = ITEM_TEXT .. " - UPDATE AVAILABLE"
++local ITEM_UPDATE_TEXT = ITEM_TEXT .. CodexPZOptCN.strings["s188"]
+ 
+ local function itemText()
+     return updState() == "available" and ITEM_UPDATE_TEXT or ITEM_TEXT
+@@ -123,56 +106,56 @@
+ -- the main-menu item's small line: the installed build, or the updater's news (bright)
+ local function itemNote()
+     local s = updState()
+-    if s == "available" then return "Version " .. installedCommit() .. " -> " .. offeredCommit(), true end
+-    if s == "downloading" then return "Updating... " .. updProgress() .. " %", true end
+-    if s == "installing" then return "Updating... installing", true end
+-    if s == "installed" then return "Restart to finish the update", true end
+-    if s == "error" and updTag() ~= "" then return "Update failed", true end
+-    return "Version " .. installedCommit(), false
+-end
+-
+-local UPDATE_TITLES = { "UPDATE", "UPDATE AVAILABLE", "UPDATING... 100 %", "UPDATING... INSTALLING", "RESTART TO FINISH THE UPDATE", "UPDATE FAILED" }
++    if s == "available" then return CodexPZOptCN.strings["s183"] .. installedCommit() .. " -> " .. offeredCommit(), true end
++    if s == "downloading" then return CodexPZOptCN.strings["s169"] .. updProgress() .. " %", true end
++    if s == "installing" then return CodexPZOptCN.strings["s168"], true end
++    if s == "installed" then return CodexPZOptCN.strings["s2"], true end
++    if s == "error" and updTag() ~= "" then return CodexPZOptCN.strings["s167"], true end
++    return CodexPZOptCN.strings["s183"] .. installedCommit(), false
++end
++
++local UPDATE_TITLES = { CodexPZOptCN.strings["s147"], CodexPZOptCN.strings["s187"], "UPDATING... 100 %", CodexPZOptCN.strings["s168"], CodexPZOptCN.strings["s2"], CodexPZOptCN.strings["s167"] }
+ 
+ local function updateTitle()
+     local s = updState()
+-    if s == "available" then return "UPDATE AVAILABLE" end
+-    if s == "downloading" then return "UPDATING... " .. updProgress() .. " %" end
+-    if s == "installing" then return "UPDATING... INSTALLING" end
+-    if s == "installed" then return "RESTART TO FINISH THE UPDATE" end
+-    if s == "error" and updTag() ~= "" then return "UPDATE FAILED" end
+-    return "UPDATE"
++    if s == "available" then return CodexPZOptCN.strings["s187"] end
++    if s == "downloading" then return CodexPZOptCN.strings["s169"] .. updProgress() .. " %" end
++    if s == "installing" then return CodexPZOptCN.strings["s168"] end
++    if s == "installed" then return CodexPZOptCN.strings["s2"] end
++    if s == "error" and updTag() ~= "" then return CodexPZOptCN.strings["s167"] end
++    return CodexPZOptCN.strings["s147"]
+ end
+ 
+ local function updateStateLine()
+     local s = updState()
+-    local v = "Version " .. installedCommit()
++    local v = CodexPZOptCN.strings["s183"] .. installedCommit()
+     if s == "available" then
+-        return v .. " -> " .. offeredCommit() .. (fromWorkshop() and " (the Steam Workshop copy on this computer)" or "")
++        return v .. " -> " .. offeredCommit() .. (fromWorkshop() and CodexPZOptCN.strings["s184"] or "")
+     elseif s == "downloading" or s == "installing" then
+         return v .. " -> " .. offeredCommit()
+     elseif s == "installed" then
+-        return "Version " .. offeredCommit() .. " installed: it loads when the game restarts"
++        return CodexPZOptCN.strings["s183"] .. offeredCommit() .. CodexPZOptCN.strings["s182"]
+     elseif s == "error" then
+-        return v .. (updTag() ~= "" and (" -> " .. offeredCommit() .. ": the update failed") or ": the update check failed")
++        return v .. (updTag() ~= "" and (" -> " .. offeredCommit() .. CodexPZOptCN.strings["s181"]) or CodexPZOptCN.strings["s186"])
+     elseif s == "up-to-date" then
+-        return v .. ": up to date"
++        return v .. CodexPZOptCN.strings["s185"]
+     elseif s == "checking" then
+-        return v .. ": checking for a newer build..."
+-    end
+-    return v .. ": no update check at this launch"
++        return v .. CodexPZOptCN.strings["s180"]
++    end
++    return v .. CodexPZOptCN.strings["s179"]
+ end
+ 
+ -- the longest the state line gets, for a layout that does not move when the state changes
+ local function updateStateVariants()
+-    local v = "Version " .. installedCommit()
++    local v = CodexPZOptCN.strings["s183"] .. installedCommit()
+     local o = "0123abc"
+-    return { v .. " -> " .. o .. " (the Steam Workshop copy on this computer)", "Version " .. o .. " installed: it loads when the game restarts",
+-        v .. " -> " .. o .. ": the update failed", v .. ": checking for a newer build...", v .. ": no update check at this launch" }
++    return { v .. " -> " .. o .. CodexPZOptCN.strings["s184"], CodexPZOptCN.strings["s183"] .. o .. CodexPZOptCN.strings["s182"],
++        v .. " -> " .. o .. CodexPZOptCN.strings["s181"], v .. CodexPZOptCN.strings["s180"], v .. CodexPZOptCN.strings["s179"] }
+ end
+ 
+ local function updateDesc()
+     if updateOffered(updState()) then
+-        return "Opens the release notes and Update now. Nothing is installed until you press it; saves and settings stay as they are."
++        return CodexPZOptCN.strings["s178"]
+     end
+     return "Once per boot the game asks whether a newer build exists for this game revision (GitHub releases, the Steam "
+         .. "Workshop copy). This card and the main-menu item light up when one does."
+@@ -206,10 +189,7 @@
+ local function rgb(t) return { r = t[1], g = t[2], b = t[3] } end
+ 
+ local function clipText(font, s, w)
+-    s = tostring(s or "")
+-    if textW(font, s) <= w then return s end
+-    while #s > 1 and textW(font, s .. "...") > w do s = string.sub(s, 1, #s - 1) end
+-    return s .. "..."
++    return CodexPZOptCN.clip(s, font, w)
+ end
+ 
+ -- the lines of a text at a width; a height is the most any variant of its texts needs
+@@ -223,9 +203,9 @@
+ 
+ -- the options tab's groups (pzopt_optimizations_layout.lua) and their master switches
+ local GROUPS = {
+-    perf = { name = "Optimizations", master = "enabled", live = false },
+-    vis = { name = "Enhancements", master = "enhancementsEnabled", live = true },
+-    tools = { name = "Profiler", master = "profilerEnabled", live = true },
++    perf = { name = CodexPZOptCN.strings["s159"], master = "enabled", live = false },
++    vis = { name = CodexPZOptCN.strings["s158"], master = "enhancementsEnabled", live = true },
++    tools = { name = CodexPZOptCN.strings["s157"], master = "profilerEnabled", live = true },
+ }
+ 
+ local function opt(fn, key)
+@@ -310,7 +290,7 @@
+             end
+             if cat then
+                 if not cat.more then
+-                    cat.more = { title = "More", cat = cat, keys = {} }
++                    cat.more = { title = CodexPZOptCN.strings["s177"], cat = cat, keys = {} }
+                     table.insert(cat.subs, cat.more)
+                 end
+                 table.insert(cat.more.keys, key)
+@@ -335,11 +315,11 @@
+ -- 1 the features and main switches, 2 how something is done, 3 the tuning numbers); the master switches always show,
+ -- search and Fix a problem show every match. Kept for the session, Simple first, like the tab.
+ local VIEW = { level = 1 }
+-local VIEW_NAMES = { "Simple", "Advanced", "Everything" }
++local VIEW_NAMES = { CodexPZOptCN.strings["s176"], CodexPZOptCN.strings["s175"], CodexPZOptCN.strings["s174"] }
+ local VIEW_TIPS = {
+-    "The settings worth knowing about: the features and the main switches.",
+-    "Also the settings that change how something is done; the defaults are what was measured best.",
+-    "Also the tuning numbers (budgets, thread counts, intervals). Change them to experiment.",
++    CodexPZOptCN.strings["s173"],
++    CodexPZOptCN.strings["s172"],
++    CodexPZOptCN.strings["s171"],
+ }
+ 
+ local function tierOf(key)
+@@ -391,11 +371,11 @@
+ -- every master switch: key -> { live, label } (the groups', the categories' from the layout)
+ local function masterInfo(key)
+     for _, g in pairs(GROUPS) do
+-        if g.master == key then return { live = g.live, label = g.name .. " enabled" } end
++        if g.master == key then return { live = g.live, label = g.name .. CodexPZOptCN.strings["s108"] } end
+     end
+     for _, G in ipairs(settingsTree().groups) do
+         for _, c in ipairs(G.cats) do
+-            if c.master == key then return { live = G.page ~= 1, label = c.title .. " enabled", cat = c } end
++            if c.master == key then return { live = G.page ~= 1, label = c.title .. CodexPZOptCN.strings["s108"], cat = c } end
+         end
+     end
+     return nil
+@@ -403,7 +383,7 @@
+ 
+ local function valueText(key, e)
+     local v = opt("getPzoptOption", key)
+-    local t = v == "true" and "On" or (v == "false" and "Off" or (v == "" and "-" or v))
++    local t = v == "true" and CodexPZOptCN.strings["s40"] or (v == "false" and CodexPZOptCN.strings["s38"] or (v == "" and "-" or v))
+     if e and e.note and e.note[v] then t = t .. " (" .. e.note[v] .. ")" end
+     return t
+ end
+@@ -411,22 +391,22 @@
+ -- the update entry's short state
+ local function updateShort()
+     local s = updState()
+-    if s == "available" then return "Update available: " .. offeredCommit(), true end
+-    if s == "downloading" then return "Updating... " .. updProgress() .. " %", true end
+-    if s == "installing" then return "Updating... installing", true end
+-    if s == "installed" then return "Restart to finish the update", true end
+-    if s == "error" then return updTag() ~= "" and "The update failed" or "The check failed", updTag() ~= "" end
+-    if s == "up-to-date" then return "Up to date", false end
+-    if s == "checking" then return "Checking for updates", false end
+-    return "Not checked at this launch", false
++    if s == "available" then return CodexPZOptCN.strings["s170"] .. offeredCommit(), true end
++    if s == "downloading" then return CodexPZOptCN.strings["s169"] .. updProgress() .. " %", true end
++    if s == "installing" then return CodexPZOptCN.strings["s168"], true end
++    if s == "installed" then return CodexPZOptCN.strings["s2"], true end
++    if s == "error" then return updTag() ~= "" and CodexPZOptCN.strings["s167"] or CodexPZOptCN.strings["s166"], updTag() ~= "" end
++    if s == "up-to-date" then return CodexPZOptCN.strings["s165"], false end
++    if s == "checking" then return CodexPZOptCN.strings["s164"], false end
++    return CodexPZOptCN.strings["s163"], false
+ end
+ 
+ -- ------------------------------------------------------------------ settings: the value a row shows and how it changes
+ -- (as the options tab: the value of the next launch is pinned > saved > the one mod compatibility decided > default; a
+ -- change is saved through UserOptions, the default as no line; a live key applies at once, the others at the next launch)
+ 
+-local RESTART_NOTE = "Takes effect on the next launch."
+-local LIVE_NOTE = "Applies at once; no restart needed."
++local RESTART_NOTE = CodexPZOptCN.strings["s162"]
++local LIVE_NOTE = CodexPZOptCN.strings["s161"]
+ 
+ local function settingKind(key, e)
+     if e and e.bezier then return "bezier" end
+@@ -447,7 +427,7 @@
+ end
+ 
+ local function showValue(v, e)
+-    local t = v == "true" and "On" or (v == "false" and "Off" or (v == "" and "-" or v))
++    local t = v == "true" and CodexPZOptCN.strings["s40"] or (v == "false" and CodexPZOptCN.strings["s38"] or (v == "" and "-" or v))
+     if e and e.note and e.note[v] then t = t .. " (" .. e.note[v] .. ")" end
+     return t
+ end
+@@ -526,7 +506,7 @@
+             live = settingLive(k, b.e, b.page)
+             label = (b.e and b.e.label) or k
+         end
+-        if k == COMPAT_KEY then label = "Mod compatibility: " .. tostring(PzoptCompatApi.names[(settingNext(k))] or (settingNext(k))) end
++        if k == COMPAT_KEY then label = CodexPZOptCN.strings["s160"] .. tostring(PzoptCompatApi.names[(settingNext(k))] or (settingNext(k))) end
+         if live then return end
+         local nextV = (b and b.page == 2) and effectiveNext(k) or (settingNext(k))
+         if nextV ~= opt("getPzoptOption", k) then
+@@ -554,19 +534,19 @@
+ local SEARCH = { query = "" } -- what the search page shows (the crumbs name it)
+ 
+ local TOP = {
+-    { id = "perf", label = "OPTIMIZATIONS" },
+-    { id = "vis", label = "ENHANCEMENTS" },
+-    { id = "tools", label = "PROFILER" },
+-    { id = "bench", label = "BENCHMARK", c = { r = 0.85, g = 0.55, b = 0.95 } },
+-    { id = "update", label = "UPDATE", c = C_TEXT },
+-    { id = "compat", label = "MOD COMPATIBILITY CHECK", c = { r = 0.55, g = 0.85, b = 0.85 } },
++    { id = "perf", label = CodexPZOptCN.strings["s159"] },
++    { id = "vis", label = CodexPZOptCN.strings["s158"] },
++    { id = "tools", label = CodexPZOptCN.strings["s157"] },
++    { id = "bench", label = CodexPZOptCN.strings["s148"], c = { r = 0.85, g = 0.55, b = 0.95 } },
++    { id = "update", label = CodexPZOptCN.strings["s147"], c = C_TEXT },
++    { id = "compat", label = CodexPZOptCN.strings["s146"], c = { r = 0.55, g = 0.85, b = 0.85 } },
+ }
+ 
+ local BENCH_PAGES = {
+-    { id = "bench/setup", title = "Setup", blurb = "Scenes, passes, the stock comparison and the options of a run; Start is on this page." },
+-    { id = "bench/history", title = "Past results", blurb = "Every run on this PC with its score, the baseline, the results folder." },
+-    { id = "bench/compare", title = "Compare", blurb = "Two runs side by side (the two newest unless Past results picked them): scores, PZ Optimization settings, game settings, mods, PC." },
+-    { id = "bench/report", title = "Report", blurb = "A run's report (the newest unless Past results opened another): scores per scene, charts, findings, the share code." },
++    { id = "bench/setup", title = CodexPZOptCN.strings["s156"], blurb = CodexPZOptCN.strings["s155"] },
++    { id = "bench/history", title = CodexPZOptCN.strings["s53"], blurb = CodexPZOptCN.strings["s154"] },
++    { id = "bench/compare", title = CodexPZOptCN.strings["s153"], blurb = CodexPZOptCN.strings["s152"] },
++    { id = "bench/report", title = CodexPZOptCN.strings["s151"], blurb = CodexPZOptCN.strings["s150"] },
+ }
+ 
+ local function split3(id)
+@@ -602,7 +582,7 @@
+ end
+ 
+ local function titleOf(id)
+-    if id == "home" then return "PZ Optimization" end
++    if id == "home" then return CodexPZOptCN.strings["s149"] end
+     local t = settingsTree()
+     local a, b = split3(id)
+     if GROUPS[a] then
+@@ -611,17 +591,17 @@
+         return node and node.title or id
+     end
+     if a == "bench" then
+-        if not b then return "Benchmark" end
++        if not b then return CodexPZOptCN.strings["s148"] end
+         for _, p in ipairs(BENCH_PAGES) do if p.id == id then return p.title end end
+     end
+-    if id == "update" then return "Update" end
+-    if id == "compat" then return "Mod compatibility check" end
++    if id == "update" then return CodexPZOptCN.strings["s147"] end
++    if id == "compat" then return CodexPZOptCN.strings["s146"] end
+     if a == "problems" then
+-        if not b then return "Fix a problem" end
++        if not b then return CodexPZOptCN.strings["s127"] end
+         local pr = ((PzoptSettingsLayout or {}).problems or {})[tonumber(b) or 0]
+         return pr and pr.title or id
+     end
+-    if id == "search" then return "Search: " .. SEARCH.query end
++    if id == "search" then return CodexPZOptCN.strings["s145"] .. SEARCH.query end
+     return id
+ end
+ 
+@@ -658,11 +638,11 @@
+ local function homeDesc(id)
+     if id == "perf" or id == "vis" or id == "tools" then
+         local G = settingsTree().byId[id]
+-        return (G and G.note or "") .. " Its master switch, its categories (each with its own switch) and every setting in them, "
+-            .. "changed here and saved at once."
++        return (G and G.note or "") .. CodexPZOptCN.strings["s144"]
++            .. CodexPZOptCN.strings["s143"]
+     elseif id == "bench" then
+-        return "Measures this PC with built-in scenes that play by themselves: walking, driving at 120 km/h, a horde in Louisville. "
+-            .. "Frame times, stutters, a stock comparison, past results and a report to share."
++        return CodexPZOptCN.strings["s142"]
++            .. CodexPZOptCN.strings["s141"]
+     elseif id == "update" then
+         return updateDesc()
+     elseif id == "compat" then
+@@ -700,35 +680,35 @@
+ end
+ 
+ local function clipsAction()
+-    return { label = function() return clipsOn() and "HIDE CLIPS" or "SHOW CLIPS" end, quiet = true, act = function()
++    return { label = function() return clipsOn() and CodexPZOptCN.strings["s140"] or CodexPZOptCN.strings["s139"] end, quiet = true, act = function()
+         if PzoptSettings then PzoptSettings.setClipsOn(not clipsOn()) end
+         PzoptLogInfo("[pzopt] menu: before / after clips " .. (clipsOn() and "on" or "off"))
+     end }
+ end
+ 
+ local function viewRow()
+-    return { id = "view", kind = "setting", label = "Settings shown",
++    return { id = "view", kind = "setting", label = CodexPZOptCN.strings["s138"],
+         value = function() return VIEW_NAMES[VIEW.level] end,
+         desc = function()
+-            return "Which settings the pages list. " .. VIEW_NAMES[1] .. ": " .. VIEW_TIPS[1] .. " " .. VIEW_NAMES[2] .. ": " .. VIEW_TIPS[2] .. " "
+-                .. VIEW_NAMES[3] .. ": " .. VIEW_TIPS[3] .. " <LINE> <LINE> Search and Fix a problem always show every match; the master "
+-                .. "switches show in every view. Kept until the game closes."
++            return CodexPZOptCN.strings["s137"] .. VIEW_NAMES[1] .. ": " .. VIEW_TIPS[1] .. " " .. VIEW_NAMES[2] .. ": " .. VIEW_TIPS[2] .. " "
++                .. VIEW_NAMES[3] .. ": " .. VIEW_TIPS[3] .. CodexPZOptCN.strings["s136"]
++                .. CodexPZOptCN.strings["s135"]
+         end,
+         activate = function() VIEW.level = VIEW.level % 3 + 1 end,
+-        controls = { { type = "chooser", label = "View", get = function() return VIEW_NAMES[VIEW.level] end,
++        controls = { { type = "chooser", label = CodexPZOptCN.strings["s134"], get = function() return VIEW_NAMES[VIEW.level] end,
+             set = function(dir) VIEW.level = ((VIEW.level - 1 + (dir or 1)) % 3) + 1 end } } }
+ end
+ 
+ local function clipsRow()
+-    return { id = "clips", kind = "setting", label = "Before / after clips",
+-        value = function() return clipsOn() and "On" or "Off" end,
++    return { id = "clips", kind = "setting", label = CodexPZOptCN.strings["s133"],
++        value = function() return clipsOn() and CodexPZOptCN.strings["s40"] or CodexPZOptCN.strings["s38"] end,
+         desc = function()
+-            return "Plays a short clip of the stock game and one with the setting on, side by side, at the top of a setting's "
+-                .. "details. Off saves the memory the clips take (up to ~100 MB of video memory while this screen is open; freed "
+-                .. "when it closes). Applies at once and is remembered."
++            return CodexPZOptCN.strings["s132"]
++                .. CodexPZOptCN.strings["s131"]
++                .. CodexPZOptCN.strings["s130"]
+         end,
+         activate = function() clipsAction().act() end,
+-        controls = { { type = "tick", label = "Play the clips", get = clipsOn, set = function() clipsAction().act() end } } }
++        controls = { { type = "tick", label = CodexPZOptCN.strings["s129"], get = clipsOn, set = function() clipsAction().act() end } } }
+ end
+ 
+ PAGES.home = function(self)
+@@ -745,7 +725,7 @@
+         local preset = pr
+         table.insert(p.items, { id = "preset:" .. i, kind = "row", label = preset.title,
+             desc = function() return esc(preset.tip) end,
+-            actions = { { label = "APPLY", key = "y", confirm = "Apply \"" .. preset.title .. "\"? It changes many settings at once (saved now).",
++            actions = { { label = CodexPZOptCN.strings["s128"], key = "y", confirm = "Apply \"" .. preset.title .. "\"? It changes many settings at once (saved now).",
+                 act = function()
+                     TOUCHED.enabled = true
+                     for _, k in ipairs(PzoptSettings.pageKeys(1)) do TOUCHED[k] = true end
+@@ -754,37 +734,37 @@
+                 end } } })
+     end
+     table.insert(p.items, { kind = "section", label = "Help" })
+-    table.insert(p.items, { id = "problems", kind = "node", label = "Fix a problem",
++    table.insert(p.items, { id = "problems", kind = "node", label = CodexPZOptCN.strings["s127"],
+         value = function() return tostring(#((PzoptSettingsLayout or {}).problems or {})) end,
+         desc = function()
+-            return "Stutter while driving, low fps in a horde, slow loading, laggy input... Pick what you notice: why it happens, and "
+-                .. "the settings that help, wherever they live."
++            return CodexPZOptCN.strings["s126"]
++                .. CodexPZOptCN.strings["s125"]
+         end })
+-    table.insert(p.items, { kind = "section", label = "Tools" })
++    table.insert(p.items, { kind = "section", label = CodexPZOptCN.strings["s124"] })
+     table.insert(p.items, viewRow())
+     table.insert(p.items, clipsRow())
+-    table.insert(p.items, { id = "export", kind = "row", label = "Export settings",
++    table.insert(p.items, { id = "export", kind = "row", label = CodexPZOptCN.strings["s123"],
+         desc = function()
+             return "Copies every setting that differs from the build's defaults (Optimizations, Enhancements, Profiler, their master "
+                 .. "and category switches) to the clipboard as key=value text and saves it to Zomboid/pzopt/settings-export.ini. Import "
+                 .. "settings reads it back, here or on another PC."
+         end,
+-        actions = { { label = "EXPORT", key = "y", act = function() showMessage(self, PzoptSettings.exportSettings()) end } } })
+-    table.insert(p.items, { id = "import", kind = "row", label = "Import settings",
++        actions = { { label = CodexPZOptCN.strings["s122"], key = "y", act = function() showMessage(self, PzoptSettings.exportSettings()) end } } })
++    table.insert(p.items, { id = "import", kind = "row", label = CodexPZOptCN.strings["s121"],
+         desc = function()
+             return "Sets every setting from exported text: paste it into the box (it starts with the clipboard, or with "
+                 .. "Zomboid/pzopt/settings-export.ini when the clipboard holds no settings). Settings the text does not list go back "
+                 .. "to the build's defaults; settings pinned by pzopt.properties or -D stay. Saved at once."
+         end,
+-        actions = { { label = "IMPORT...", key = "y", act = function() self:askImport() end } } })
+-    table.insert(p.items, { id = "uninstall", kind = "row", label = "Uninstall PZ Optimization",
++        actions = { { label = CodexPZOptCN.strings["s120"], key = "y", act = function() self:askImport() end } } })
++    table.insert(p.items, { id = "uninstall", kind = "row", label = CodexPZOptCN.strings["s119"],
+         desc = function()
+             local why = PzoptSettings and PzoptSettings.uninstallUnavailable() or ""
+-            return esc(PzoptSettings and PzoptSettings.UNINSTALL_TIP or "") .. (why ~= "" and (" <LINE> <LINE> <RGB:1,0.85,0.45> Not available now: " .. esc(why) .. ".") or "")
++            return esc(PzoptSettings and PzoptSettings.UNINSTALL_TIP or "") .. (why ~= "" and (CodexPZOptCN.strings["s118"] .. esc(why) .. ".") or "")
+         end,
+         actionsFn = function()
+             if not PzoptSettings or PzoptSettings.uninstallUnavailable() ~= "" then return {} end
+-            return { { label = "UNINSTALL", danger = true, key = "y", confirm = PzoptSettings.UNINSTALL_CONFIRM, act = function() self:uninstall() end } }
++            return { { label = CodexPZOptCN.strings["s1"], danger = true, key = "y", confirm = PzoptSettings.UNINSTALL_CONFIRM, act = function() self:uninstall() end } }
+         end })
+     return p
+ end
+@@ -793,11 +773,11 @@
+ local function masterRow(id, key, label, live, tip)
+     return { id = id, kind = "master", master = key,
+         label = label,
+-        value = function() return (masterState(key)) and "On" or "Off" end,
++        value = function() return (masterState(key)) and CodexPZOptCN.strings["s40"] or CodexPZOptCN.strings["s38"] end,
+         desc = function()
+             local on, now, pinned = masterState(key)
+-            local d = esc(tip) .. " " .. (live and LIVE_NOTE or RESTART_NOTE) .. " <LINE> <LINE> <RGB:0.66,0.66,0.70> Key: " .. key
+-            if pinned ~= "" then d = d .. " <LINE> <RGB:1,0.85,0.45> Pinned by " .. esc(pinned) .. ", which wins: change it there."
++            local d = esc(tip) .. " " .. (live and LIVE_NOTE or RESTART_NOTE) .. CodexPZOptCN.strings["s117"] .. key
++            if pinned ~= "" then d = d .. CodexPZOptCN.strings["s43"] .. esc(pinned) .. CodexPZOptCN.strings["s93"]
+             elseif on ~= now and not live then d = d .. " <LINE> <RGB:1,0.85,0.45> Switched " .. (on and "on" or "off") .. ": applies when the game restarts." end
+             return d
+         end,
+@@ -813,16 +793,16 @@
+ 
+ -- "Reset ... to defaults": the keys back to the build's defaults, the switches on (asks first)
+ local function resetRow(self, id, title, keysFn)
+-    return { id = id, kind = "row", label = "Reset " .. title .. " to defaults",
++    return { id = id, kind = "row", label = CodexPZOptCN.strings["s112"] .. title .. CodexPZOptCN.strings["s116"],
+         desc = function()
+-            return "Puts every setting of " .. esc(title) .. " back to the build's default on this machine and its switches on. "
+-                .. "Saved at once."
++            return CodexPZOptCN.strings["s115"] .. esc(title) .. CodexPZOptCN.strings["s114"]
++                .. CodexPZOptCN.strings["s113"]
+         end,
+-        actions = { { label = "RESET", key = "y", confirm = "Reset every setting of " .. title .. " to the build's defaults?", act = function()
++        actions = { { label = CodexPZOptCN.strings["s112"], key = "y", confirm = CodexPZOptCN.strings["s111"] .. title .. CodexPZOptCN.strings["s110"], act = function()
+             local keys = keysFn()
+             for _, k in ipairs(keys) do TOUCHED[k] = true end
+             local n = PzoptSettings.resetKeys(keys)
+-            showMessage(self, title .. ": " .. n .. (n == 1 and " setting" or " settings") .. " back to the default.")
++            showMessage(self, title .. ": " .. n .. (n == 1 and CodexPZOptCN.strings["s24"] or CodexPZOptCN.strings["s24"]) .. CodexPZOptCN.strings["s109"])
+         end } } }
+ end
+ 
+@@ -830,7 +810,7 @@
+     local t = settingsTree()
+     local G, g = t.byId[a], GROUPS[a]
+     local p = { items = {} }
+-    table.insert(p.items, masterRow("master:" .. a, g.master, g.name .. " enabled", g.live, groupMasterTip(a)))
++    table.insert(p.items, masterRow("master:" .. a, g.master, g.name .. CodexPZOptCN.strings["s108"], g.live, groupMasterTip(a)))
+     for _, cat in ipairs(G and G.cats or {}) do
+         table.insert(p.items, { id = a .. "/" .. cat.id, label = cat.title, kind = "node",
+             value = function()
+@@ -859,10 +839,10 @@
+     if cat and cat.master then
+         local live = cat.group.page ~= 1
+         local entry = PzoptSettings and PzoptSettings.CATS.entry({ master = cat.master, title = cat.title }, live)
+-        table.insert(p.items, masterRow("master:" .. id, cat.master, cat.title .. " enabled", live, entry and entry.tip or ""))
++        table.insert(p.items, masterRow("master:" .. id, cat.master, cat.title .. CodexPZOptCN.strings["s108"], live, entry and entry.tip or ""))
+     elseif cat and #cat.group.cats == 1 then -- (the Profiler's one category: its group's switch)
+         local g = GROUPS[a]
+-        table.insert(p.items, masterRow("master:" .. id, g.master, g.name .. " enabled", g.live, groupMasterTip(a)))
++        table.insert(p.items, masterRow("master:" .. id, g.master, g.name .. CodexPZOptCN.strings["s108"], g.live, groupMasterTip(a)))
+     end
+     for i, s in ipairs(cat and cat.subs or {}) do
+         local sub = s
+@@ -875,7 +855,7 @@
+                     local e = t.entry[k] and t.entry[k].e
+                     table.insert(names, esc(e and e.label or k) .. ": " .. esc(showValue((settingNext(k)), e)))
+                 end
+-                if hidden > 0 then table.insert(names, "<RGB:0.66,0.66,0.70> " .. hidden .. " more in the " .. VIEW_NAMES[3] .. " view") end
++                if hidden > 0 then table.insert(names, "<RGB:0.66,0.66,0.70> " .. hidden .. " more in the " .. VIEW_NAMES[3] .. CodexPZOptCN.strings["s107"]) end
+                 return table.concat(names, " <LINE> ")
+             end })
+     end
+@@ -891,7 +871,7 @@
+ end
+ 
+ -- the performance overlay's own toggle (the F9 key's, L3 + R3's), first on PROFILER > Performance overlay > Overlay
+-local OVERLAY_BIND = "Toggle performance overlay" -- pzopt_keybinding.lua
++local OVERLAY_BIND = CodexPZOptCN.strings["s106"] -- pzopt_keybinding.lua
+ 
+ local function overlayKeys()
+     local ok, name = pcall(function()
+@@ -911,19 +891,19 @@
+         local ok, v = pcall(function() return perf():isPzoptOverlaySampling() end)
+         return ok and v
+     end
+-    return { id = "overlay:toggle", kind = "master", label = function() return "Performance overlay (" .. overlayKeys() .. ")" end,
+-        value = function() return shown() and "Shown" or "Hidden" end,
++    return { id = "overlay:toggle", kind = "master", label = function() return CodexPZOptCN.strings["s105"] .. overlayKeys() .. ")" end,
++        value = function() return shown() and CodexPZOptCN.strings["s98"] or CodexPZOptCN.strings["s104"] end,
+         activate = function() pcall(function() perf():togglePzoptOverlay() end) end,
+         desc = function()
+-            local d = "Shows or hides the performance overlay now, like " .. overlayKeys() .. ": frame times, utilization and "
+-                .. "what the game thread does."
++            local d = CodexPZOptCN.strings["s103"] .. overlayKeys() .. CodexPZOptCN.strings["s102"]
++                .. CodexPZOptCN.strings["s101"]
+             if not sampling() then
+-                d = d .. " <LINE> <LINE> <RGB:1,0.85,0.45> The overlay's measuring is off (Profiler enabled / Measure frames for the "
+-                    .. "overlay): showing it switches the measuring on and saves that, as these settings do."
++                d = d .. CodexPZOptCN.strings["s100"]
++                    .. CodexPZOptCN.strings["s99"]
+             end
+             return d
+         end,
+-        controls = { { type = "tick", label = "Shown", get = shown, set = function() pcall(function() perf():togglePzoptOverlay() end) end } } }
++        controls = { { type = "tick", label = CodexPZOptCN.strings["s98"], get = shown, set = function() pcall(function() perf():togglePzoptOverlay() end) end } } }
+ end
+ 
+ -- A setting's detail text: what it does, when it applies, its values, who pins it, the release it came with, the Java
+@@ -934,18 +914,18 @@
+     local def = opt("getPzoptOptionDefault", k)
+     local d = esc(e and e.tip or "") .. " <LINE> <LINE> <RGB:0.66,0.66,0.70> "
+         .. (settingLive(k, e, page) and LIVE_NOTE or RESTART_NOTE) .. " <LINE> "
+-        .. "Next launch: " .. esc(showValue(v, e)) .. "    In use now: " .. esc(showValue(now, e)) .. "    Default: "
+-        .. esc(showValue(def, e)) .. " <LINE> Key: " .. k
+-    if pinned ~= "" then d = d .. " <LINE> <RGB:1,0.85,0.45> Pinned by " .. esc(pinned) .. ", which wins: change it there." end
++        .. CodexPZOptCN.strings["s97"] .. esc(showValue(v, e)) .. CodexPZOptCN.strings["s96"] .. esc(showValue(now, e)) .. CodexPZOptCN.strings["s95"]
++        .. esc(showValue(def, e)) .. CodexPZOptCN.strings["s94"] .. k
++    if pinned ~= "" then d = d .. CodexPZOptCN.strings["s43"] .. esc(pinned) .. CodexPZOptCN.strings["s93"] end
+     local why = opt("getPzoptModCompatReason", k)
+     if why ~= "" and opt("getPzoptOptionSaved", k) == "" then
+-        d = d .. " <LINE> <RGB:1,0.85,0.45> Mod compatibility switched it off: " .. esc(why) .. " (your choice here wins)."
++        d = d .. CodexPZOptCN.strings["s92"] .. esc(why) .. CodexPZOptCN.strings["s91"]
+     end
+     if PzoptSettings then
+         local date = PzoptSettings.date(k)
+         local classes = PzoptSettings.classes(k)
+-        d = d .. " <LINE> <RGB:0.66,0.66,0.70> " .. (date and ("Released " .. date) or "New in this version") .. ".  Java: "
+-            .. esc(#classes > 0 and table.concat(classes, ", ") or "read by pzopt.Config only")
++        d = d .. " <LINE> <RGB:0.66,0.66,0.70> " .. (date and (CodexPZOptCN.strings["s90"] .. date) or CodexPZOptCN.strings["s89"]) .. ".  Java: "
++            .. esc(#classes > 0 and table.concat(classes, ", ") or CodexPZOptCN.strings["s88"])
+     end
+     return d
+ end
+@@ -1012,10 +992,10 @@
+     local kind = settingKind(k, e)
+     local item = { id = k, label = e and e.label or k, kind = "setting", setting = k, sec = b0 and b0.sec,
+         value = function() return showValue((settingNext(k)), nil) end,
+-        desc = function() return settingDesc(k, e, page) .. (where and (" <LINE> <RGB:0.66,0.66,0.70> On the page " .. esc(where)) or "") end }
++        desc = function() return settingDesc(k, e, page) .. (where and (CodexPZOptCN.strings["s87"] .. esc(where)) or "") end }
+     if kind == "bool" or kind == "choice" or kind == "bezier" then
+         item.activate = function() settingStep(k, e, 1) end
+-        item.controls = { { type = kind == "bool" and "tick" or "chooser", label = kind == "bool" and "On" or (kind == "bezier" and "Curve" or "Value"),
++        item.controls = { { type = kind == "bool" and "tick" or "chooser", label = kind == "bool" and CodexPZOptCN.strings["s40"] or (kind == "bezier" and "Curve" or "Value"),
+             get = function() return kind == "bool" and (settingNext(k)) == "true" or showValue((settingNext(k)), nil) end,
+             set = function(dir) settingStep(k, e, dir or 1) end } }
+         if kind == "bezier" then
+@@ -1026,7 +1006,7 @@
+         item.activate = function() pickColour(self, k) end
+         item.controls = { { type = "colour", label = "Colour", get = function() return (settingNext(k)) end, set = function() pickColour(self, k) end } }
+     end
+-    item.actions = { { label = "DEFAULT", key = "x", act = function()
++    item.actions = { { label = CodexPZOptCN.strings["s86"], key = "x", act = function()
+         if opt("getPzoptOptionPinnedBy", k) == "" then settingStore(k, opt("getPzoptOptionDefault", k)) end
+     end }, clipsAction() }
+     return item
+@@ -1055,13 +1035,13 @@
+     local keys, hidden = shownKeys(s and s.keys or {})
+     for _, k in ipairs(keys) do table.insert(p.items, settingItem(self, k)) end
+     if s and s.dlss and PzoptSettings then
+-        table.insert(p.items, { id = "dlss", kind = "row", label = "NVIDIA DLSS files",
++        table.insert(p.items, { id = "dlss", kind = "row", label = CodexPZOptCN.strings["s85"],
+             value = function() return PzoptSettings.deps().state or "" end,
+             desc = function() local d = PzoptSettings.deps() return esc(d.title) .. " <LINE> <LINE> " .. esc(d.tip) end,
+             actionsFn = function()
+                 local d = PzoptSettings.deps()
+                 if not d.enabled then return {} end
+-                return { { label = string.upper(d.title), key = "y", confirm = "Download the DLSS files (NVIDIA's library and the pzopt shim)?",
++                return { { label = string.upper(d.title), key = "y", confirm = CodexPZOptCN.strings["s84"],
+                     act = function() PzoptSettings.depsInstall() end } }
+             end })
+         PzoptSettings.depsCheck()
+@@ -1073,9 +1053,9 @@
+                     .. "switches to " .. VIEW_NAMES[3] .. " (" .. VIEW_TIPS[3] .. ") until the game closes; the view is on the home page."
+             end,
+             activate = function() VIEW.level = 3 end,
+-            actions = { { label = "SHOW ALL", key = "y", act = function() VIEW.level = 3 end } } })
+-    end
+-    if #p.items == 0 then table.insert(p.items, { kind = "note", label = "No settings here." }) end
++            actions = { { label = CodexPZOptCN.strings["s83"], key = "y", act = function() VIEW.level = 3 end } } })
++    end
++    if #p.items == 0 then table.insert(p.items, { kind = "note", label = CodexPZOptCN.strings["s82"] }) end
+     return p
+ end
+ 
+@@ -1135,11 +1115,11 @@
+         local item = settingItem(self, row.key, row.where)
+         item.value = function() return showValue((settingNext(row.key)), nil) end
+         item.searchNode = row.node
+-        table.insert(item.actions, 1, { label = "OPEN ITS PAGE", key = "y", act = function() self:openSetting(row.node, row.key) end })
++        table.insert(item.actions, 1, { label = CodexPZOptCN.strings["s81"], key = "y", act = function() self:openSetting(row.node, row.key) end })
+         table.insert(p.items, item)
+     end
+     if #list == 0 then
+-        table.insert(p.items, { kind = "note", label = q:match("%w") and ("Nothing matches \"" .. q .. "\".") or "Type in the search box (L3 with a controller)." })
++        table.insert(p.items, { kind = "note", label = q:match("%w") and ("Nothing matches \"" .. q .. "\".") or CodexPZOptCN.strings["s80"] })
+     elseif #list > 60 then
+         table.insert(p.items, { kind = "note", label = (#list - 60) .. " more: type more words to narrow it down." })
+     end
+@@ -1170,36 +1150,36 @@
+     local p = { items = {} }
+     local function estimateLine()
+         local ids, passes, ab, total, steps = PzoptBench.estimate(S, B.scenarios)
+-        if #ids == 0 then return "<RGB:1,0.6,0.5> Choose at least one scene." end
++        if #ids == 0 then return CodexPZOptCN.strings["s79"] end
+         return string.format("<RGB:0.9,0.9,0.6> %d passes, about %d min", steps, math.max(1, math.floor(total / 60 + 0.5)))
+     end
+     p.head = function()
+-        return "Our own test routes in a fresh world made for the benchmark; your saves are not touched. The game restarts for "
+-            .. "every pass, so each one starts alike: keep the window in front until the report shows. <LINE> " .. estimateLine()
++        return CodexPZOptCN.strings["s78"]
++            .. CodexPZOptCN.strings["s77"] .. estimateLine()
+             .. (B.error and (" <LINE> <RGB:1,0.6,0.5> " .. esc(B.error)) or "")
+     end
+     local controls = {
+-        { type = "chooser", label = "Passes", get = function() local n = PzoptBench.passes[S.passes] return n == 1 and "1 pass" or (n .. " passes") end,
++        { type = "chooser", label = "Passes", get = function() local n = PzoptBench.passes[S.passes] return n == 1 and CodexPZOptCN.strings["s76"] or (n .. CodexPZOptCN.strings["s75"]) end,
+           set = function(dir) S.passes = ((S.passes - 1 + (dir or 1)) % #PzoptBench.passes) + 1 end },
+-        { type = "chooser", label = "Between passes", get = function() local c = PzoptBench.cooldown[S.cool] return c == 0 and "No cool-down" or (c .. " s cool-down") end,
++        { type = "chooser", label = CodexPZOptCN.strings["s74"], get = function() local c = PzoptBench.cooldown[S.cool] return c == 0 and CodexPZOptCN.strings["s73"] or (c .. CodexPZOptCN.strings["s72"]) end,
+           set = function(dir) S.cool = ((S.cool - 1 + (dir or 1)) % #PzoptBench.cooldown) + 1 end },
+-        { type = "entry", label = "Name (optional)", get = function() return S.label end, set = function(v) S.label = v end },
++        { type = "entry", label = CodexPZOptCN.strings["s71"], get = function() return S.label end, set = function(v) S.label = v end },
+     }
+     local actions = {
+-        { label = "START BENCHMARK", danger = true, key = "y", confirm = function()
++        { label = CodexPZOptCN.strings["s70"], danger = true, key = "y", confirm = function()
+               return (MainScreen.instance and MainScreen.instance.inGame)
+                   and "Start the benchmark? This saves your game and quits the session; the game restarts for every pass and shows the report at the end."
+-                  or "Start the benchmark? The game restarts for every pass and shows the report at the end."
++                  or CodexPZOptCN.strings["s69"]
+           end, act = function()
+             B.error = PzoptBench.start(S, B.scenarios)
+         end },
+-        { label = "PAST RESULTS", key = "x", act = function() self:openPage("bench/history") end },
++        { label = CodexPZOptCN.strings["s53"], key = "x", act = function() self:openPage("bench/history") end },
+     }
+     table.insert(p.items, { kind = "section", label = "Scenes" })
+     for _, sc in ipairs(B.scenarios) do
+         local id = sc.id
+         table.insert(p.items, { id = "scen:" .. id, kind = "tick", label = sc.title,
+-            value = function() return S.scen[id] and "On" or "Off" end,
++            value = function() return S.scen[id] and CodexPZOptCN.strings["s40"] or CodexPZOptCN.strings["s38"] end,
+             activate = function() S.scen[id] = not S.scen[id] end,
+             desc = function() return esc(sc.what) .. " <LINE> <LINE> <RGB:0.6,0.8,1> Tests: " .. esc(sc.stresses) end,
+             controls = controls, actions = actions })
+@@ -1208,7 +1188,7 @@
+     for _, o in ipairs(PzoptBench.options) do
+         local id = o.id
+         table.insert(p.items, { id = "opt:" .. id, kind = "tick", label = o.title,
+-            value = function() return S.opt[id] and "On" or "Off" end,
++            value = function() return S.opt[id] and CodexPZOptCN.strings["s40"] or CodexPZOptCN.strings["s38"] end,
+             activate = function() S.opt[id] = not S.opt[id] end,
+             desc = function() return esc(o.desc) end, controls = controls, actions = actions })
+     end
+@@ -1220,7 +1200,7 @@
+     B.items = PzoptBench.history()
+     local p = { items = {} }
+     if #B.items == 0 then
+-        table.insert(p.items, { kind = "note", label = "No results yet: run the benchmark first (Setup)." })
++        table.insert(p.items, { kind = "note", label = CodexPZOptCN.strings["s68"] })
+     end
+     for i, it in ipairs(B.items) do
+         local run = it[1]
+@@ -1235,8 +1215,8 @@
+             end,
+             activate = function() self:openPage("bench/report", { run }, "bench/history") end,
+             actions = {
+-                { label = "OPEN", key = "y", act = function() self:openPage("bench/report", { run }, "bench/history") end },
+-                { label = "COMPARE", key = "x", act = function()
++                { label = CodexPZOptCN.strings["s36"], key = "y", act = function() self:openPage("bench/report", { run }, "bench/history") end },
++                { label = CodexPZOptCN.strings["s67"], key = "x", act = function()
+                     local base = B.baseline
+                     if not base or base == run then
+                         local older = B.items[i + 1]
+@@ -1249,9 +1229,9 @@
+                     end
+                     self:openPage("bench/compare", { base, run }, "bench/history")
+                 end },
+-                { label = function() return B.baseline == run and "CLEAR BASELINE" or "SET AS BASELINE" end,
++                { label = function() return B.baseline == run and CodexPZOptCN.strings["s66"] or CodexPZOptCN.strings["s65"] end,
+                   act = function() B.baseline = (B.baseline ~= run) and run or nil end },
+-                { label = "SHOW RESULTS FOLDER", confirm = "Open the results folder in your file manager?", act = function() PzoptBench.folder() end },
++                { label = CodexPZOptCN.strings["s64"], confirm = CodexPZOptCN.strings["s63"], act = function() PzoptBench.folder() end },
+             } })
+     end
+     return p
+@@ -1265,7 +1245,7 @@
+     end
+     local p = { items = {} }
+     if not B.cmp then
+-        table.insert(p.items, { kind = "note", label = "Two runs are needed: run the benchmark twice (Setup), then compare them here or in Past results." })
++        table.insert(p.items, { kind = "note", label = CodexPZOptCN.strings["s62"] })
+         return p
+     end
+     local c = B.cmp
+@@ -1274,10 +1254,10 @@
+         return "<RGB:0.66,0.66,0.70> Baseline: <RGB:1,1,1> <SPACE> " .. esc(ha[3]) .. ((ha[4] or "") ~= "" and ("  " .. esc(ha[4])) or "")
+             .. " <LINE> <RGB:0.66,0.66,0.70> This run: <RGB:1,1,1> <SPACE> " .. esc(hb[3]) .. ((hb[4] or "") ~= "" and ("  " .. esc(hb[4])) or "")
+     end
+-    local controls = { { type = "tick", label = "Only what differs", get = function() return B.onlyDiff end,
++    local controls = { { type = "tick", label = CodexPZOptCN.strings["s61"], get = function() return B.onlyDiff end,
+         set = function() self:setOnlyDiff(not B.onlyDiff) end } }
+-    p.x = { label = "Only what differs", act = function() self:setOnlyDiff(not B.onlyDiff) end }
+-    p.y = { label = "Past results", act = function() self:openPage("bench/history") end }
++    p.x = { label = CodexPZOptCN.strings["s61"], act = function() self:setOnlyDiff(not B.onlyDiff) end }
++    p.y = { label = CodexPZOptCN.strings["s53"], act = function() self:openPage("bench/history") end }
+     for _, r in ipairs(PzoptBench.compareRows(c, B.onlyDiff)) do
+         if r.kind == "section" then
+             table.insert(p.items, { kind = "section", label = r.label })
+@@ -1306,24 +1286,24 @@
+     end
+     local p = { items = {} }
+     if not B.rep then
+-        table.insert(p.items, { kind = "note", label = "No run yet: run the benchmark first (Setup)." })
++        table.insert(p.items, { kind = "note", label = CodexPZOptCN.strings["s60"] })
+         return p
+     end
+     local R = B.rep
+     if not R.d or R.d.run ~= R.run then
+         R.d = PzoptBench.report(R.run)
+-        print("[pzopt] benchmark: report of run " .. tostring(R.run) .. " shown")
++        print("[pzopt] benchmark: report of run " .. tostring(R.run) .. CodexPZOptCN.strings["s59"])
+     end
+     local d = R.d
+     local actions = {
+-        { label = "OPEN FULL REPORT", danger = true, key = "y", confirm = "Open the full report in your web browser?", act = function() PzoptBench.open(R.run) end },
+-        { label = function() return R.copied and "COPIED" or "COPY SHARE CODE" end, key = "x", act = function()
++        { label = CodexPZOptCN.strings["s58"], danger = true, key = "y", confirm = CodexPZOptCN.strings["s57"], act = function() PzoptBench.open(R.run) end },
++        { label = function() return R.copied and CodexPZOptCN.strings["s56"] or CodexPZOptCN.strings["s55"] end, key = "x", act = function()
+             R.copied = PzoptBench.share(R.run)
+             PzoptLogInfo("[pzopt] menu: share code copied=" .. tostring(R.copied))
+         end },
+-        { label = "COMPARE A CODE", act = function() self:askShareCode() end },
+-        { label = "PAST RESULTS", act = function() self:openPage("bench/history") end },
+-        { label = "RUN AGAIN", act = function() self:openPage("bench/setup") end },
++        { label = CodexPZOptCN.strings["s54"], act = function() self:askShareCode() end },
++        { label = CodexPZOptCN.strings["s53"], act = function() self:openPage("bench/history") end },
++        { label = CodexPZOptCN.strings["s52"], act = function() self:openPage("bench/setup") end },
+     }
+     p.head = function()
+         local t = ""
+@@ -1369,7 +1349,7 @@
+             desc2 = function() return PzoptBench.recText(d) end,
+             actions = actions })
+     end
+-    if #d.scen == 0 then table.insert(p.items, { kind = "note", label = "This run has no scene result." }) end
++    if #d.scen == 0 then table.insert(p.items, { kind = "note", label = CodexPZOptCN.strings["s51"] }) end
+     return p
+ end
+ 
+@@ -1391,7 +1371,7 @@
+                 local v = PzoptUpdateApi.view()
+                 local t = "<RGB:1,1,1> " .. v.text
+                 if id == "notes" or extra then
+-                    t = t .. " <LINE> <LINE> <RGB:0.8,0.8,0.8> " .. (v.notes ~= "" and v.notes or "No release notes.")
++                    t = t .. " <LINE> <LINE> <RGB:0.8,0.8,0.8> " .. (v.notes ~= "" and v.notes or CodexPZOptCN.strings["s50"])
+                 end
+                 return breakLong(t)
+             end,
+@@ -1402,14 +1382,14 @@
+         table.insert(p.items, it)
+     end
+     row("state", "State", function() return (updateShort()) end, true)
+-    row("installed", "Installed build", function() return installedCommit() end)
++    row("installed", CodexPZOptCN.strings["s49"], function() return installedCommit() end)
+     row("available", "Available", function() local t = updTag() return t ~= "" and offeredCommit() or "-" end)
+     row("source", "From", function()
+         local v = PzoptUpdateApi.view()
+         if v.tag == "" then return "-" end
+-        return v.workshop and "Steam Workshop copy" or "GitHub release"
++        return v.workshop and CodexPZOptCN.strings["s48"] or CodexPZOptCN.strings["s47"]
+     end)
+-    row("notes", "Release notes", function() return updTag() ~= "" and "" or "-" end)
++    row("notes", CodexPZOptCN.strings["s46"], function() return updTag() ~= "" and "" or "-" end)
+     p.progress = function()
+         local v = PzoptUpdateApi.view()
+         return v.progress
+@@ -1441,7 +1421,7 @@
+         -- the screen's own restart (restartNow: the harness rig, the helper, the stock quit that saves a game first); none
+         -- where restartBlocked says why (a multiplayer client, a harness run's bench save)
+         if now ~= nextV and pinned == "" and not self:restartBlocked() then
+-            table.insert(acts, { label = "RESTART GAME", danger = true, key = "y", confirm = "Restart the game now so the choice applies?", act = function() self:restartNow() end })
++            table.insert(acts, { label = CodexPZOptCN.strings["s45"], danger = true, key = "y", confirm = CodexPZOptCN.strings["s44"], act = function() self:restartNow() end })
+         end
+         return acts
+     end
+@@ -1455,11 +1435,11 @@
+                 .. "the code its author tested, and windows mods draw in are redrawn at the game's own rate. A value you pick for either "
+                 .. "setting on the options tab still wins. <LINE> <LINE> <RGB:0.66,0.66,0.70> Next launch: <RGB:1,1,1> <SPACE> " .. esc(names[nextV] or nextV)
+                 .. " <RGB:0.66,0.66,0.70>    Running now: <RGB:1,1,1> <SPACE> " .. esc(names[now] or now)
+-            if pinned ~= "" then t = t .. " <LINE> <RGB:1,0.85,0.45> Pinned by " .. esc(pinned) .. " on this install."
+-            elseif now ~= nextV then t = t .. " <LINE> <RGB:1,0.85,0.45> Applies after a restart." end
++            if pinned ~= "" then t = t .. CodexPZOptCN.strings["s43"] .. esc(pinned) .. " on this install."
++            elseif now ~= nextV then t = t .. CodexPZOptCN.strings["s42"] end
+             return t
+         end, actionsFn = profileRow })
+-    if #d.jars > 0 then table.insert(p.items, { kind = "section", label = "Java files of this launch" }) end
++    if #d.jars > 0 then table.insert(p.items, { kind = "section", label = CodexPZOptCN.strings["s41"] }) end
+     for i, jar in ipairs(d.jars) do
+         table.insert(p.items, { id = "jar" .. i, kind = "row", label = jar.name, value = PzoptCompatApi.verdict(d, i),
+             desc = function() return PzoptCompatApi.jarText(d, i) end })
+@@ -1619,7 +1599,7 @@
+             end
+             local vc = C_GREY
+             local v = L.value
+-            if v == "On" or v == "on" then vc = C_OPT elseif v == "Off" or v == "off" then vc = { r = 1, g = 0.55, b = 0.35 }
++            if v == CodexPZOptCN.strings["s40"] or v == "on" then vc = C_OPT elseif v == CodexPZOptCN.strings["s38"] or v == "off" then vc = { r = 1, g = 0.55, b = 0.35 }
+             elseif v and string.sub(v, 1, 1) == "+" then vc = C_OPT elseif v and string.match(v, "^%-%d") then vc = { r = 1, g = 0.55, b = 0.35 } end
+             if L.inline then
+                 self:drawTextRight(v, self.width - 4 - pad + 4, y + 5, vc.r, vc.g, vc.b, 1, UIFont.Small)
+@@ -1910,10 +1890,10 @@
+         if self.restartBtn then self.restartBtn:setVisible(false) end
+         return nil
+     end
+-    local text = "Restart to apply " .. n .. " setting" .. (n == 1 and "" or "s")
++    local text = CodexPZOptCN.strings["s39"] .. n .. CodexPZOptCN.strings["s24"] .. (n == 1 and "" or "s")
+     if not self.restartBtn then
+-        local bw = math.max(120, textW(UIFont.Small, "RESTART NOW") + 24)
+-        self.restartBtn = ISButton:new(0, 0, bw, self.btnH, "RESTART NOW", self, function() self:askRestart() end)
++        local bw = math.max(120, textW(UIFont.Small, CodexPZOptCN.strings["s20"]) + 24)
++        self.restartBtn = ISButton:new(0, 0, bw, self.btnH, CodexPZOptCN.strings["s20"], self, function() self:askRestart() end)
+         self.restartBtn:initialise()
+         self.restartBtn:instantiate()
+         self.restartBtn:enableAcceptColor()
+@@ -1940,13 +1920,13 @@
+         rows = {}
+         for _, e in ipairs(TOP) do
+             local count = nil
+-            if GROUPS[e.id] and not (masterState(GROUPS[e.id].master)) then count = "off" end
++            if GROUPS[e.id] and not (masterState(GROUPS[e.id].master)) then count = CodexPZOptCN.strings["s38"] end
+             add(e.id, e.label, 0, true, count, e.id == "update" and updateShort or nil)
+             if e.id == top then
+                 if GROUPS[top] then
+                     for _, cat in ipairs(t.byId[top] and t.byId[top].cats or {}) do
+                         local off = cat.master and not (masterState(cat.master))
+-                        add(top .. "/" .. cat.id, cat.title, 1, false, off and "off" or tostring(catCount(cat)))
++                        add(top .. "/" .. cat.id, cat.title, 1, false, off and CodexPZOptCN.strings["s38"] or tostring(catCount(cat)))
+                         if withSubs and b == cat.id then
+                             for i, s in ipairs(cat.subs) do add(top .. "/" .. cat.id .. "/" .. i, s.title, 2, false, tostring(#(shownKeys(s.keys)))) end
+                         end
+@@ -1982,7 +1962,7 @@
+     -- the sidebar: as wide as its widest row (every category and subcategory), within a fifth and 30 % of the window
+     local t = settingsTree()
+     local widest = textW(UIFont.Medium, ITEM_TEXT)
+-    for _, e in ipairs(TOP) do widest = math.max(widest, textW(UIFont.Small, e.label) + textW(UIFont.Small, "off") + 12) end
++    for _, e in ipairs(TOP) do widest = math.max(widest, textW(UIFont.Small, e.label) + textW(UIFont.Small, CodexPZOptCN.strings["s38"]) + 12) end
+     for _, G in ipairs(t.groups) do
+         for _, c in ipairs(G.cats) do
+             widest = math.max(widest, textW(UIFont.Small, c.title) + 14 + textW(UIFont.Small, "000") + 12)
+@@ -2044,6 +2024,13 @@
+     t.clip = true
+     t.autosetheight = false
+     t.marginLeft, t.marginRight, t.marginTop = 12, 12, 10
++    local englishPaginate = t.paginate
++    t.paginate = function(panel, ...)
++        local raw = panel.text
++        panel.text = CodexPZOptCN.richText(raw, panel.maxLineWidth or (panel.width - panel.marginLeft - panel.marginRight), panel.defaultFont)
++        englishPaginate(panel, ...)
++        panel.text = raw
++    end
+     self:addChild(t)
+     t:addScrollBars()
+     return t
+@@ -2058,7 +2045,7 @@
+     function PzoptMenuImpact:prerender()
+         ISPanel.prerender(self)
+         local x, y, w = self.pad, 6, self.width - 2 * self.pad
+-        self:text("Effect on your hardware", x, y, C_TEXT, self.fontM)
++        self:text(CodexPZOptCN.strings["s37"], x, y, C_TEXT, self.fontM)
+         y = y + self.hM + 4
+         if self.key then self:drawBars(x, y, w, PzoptSettings.effects(self.key)) end
+     end
+@@ -2124,7 +2111,7 @@
+         local acts = {}
+         if not row then return acts end
+         if row.kind == "node" then
+-            table.insert(acts, { label = "OPEN", act = function() self:activateItem(self.list.selected) end })
++            table.insert(acts, { label = CodexPZOptCN.strings["s36"], act = function() self:activateItem(self.list.selected) end })
+         end
+         for _, a in ipairs(row.actions or {}) do table.insert(acts, a) end
+         if row.actionsFn then for _, a in ipairs(row.actionsFn()) do table.insert(acts, a) end end
+@@ -2351,7 +2338,7 @@
+     box.render = function(o)
+         ISTextEntryBox.render(o)
+         if o:getText() == "" and not o:isFocused() then
+-            local hint = screen.joyfocus and "Search (L3)" or "Search settings (Ctrl+F)"
++            local hint = screen.joyfocus and CodexPZOptCN.strings["s35"] or CodexPZOptCN.strings["s34"]
+             o:drawText(clipText(UIFont.Small, hint, o.width - 16), 8, math.floor((o.height - fontH(UIFont.Small)) / 2),
+                 C_GREY.r, C_GREY.g, C_GREY.b, 1, UIFont.Small)
+         end
+@@ -2401,10 +2388,10 @@
+ function PzoptMainMenu:runSearch(text)
+     self.query = text
+     SEARCH.query = text
+-    if string.match(text, "%w") then
++    if string.find(text, "%S") then -- Chinese queries are non-space text too
+         if self.selected ~= "search" then self.searchFrom = self.selected end
+         if self.selected == "search" then self:refreshPage() else self:selectNode("search", self.pane == "side" and "master" or nil) end
+-        PzoptLogInfo("[pzopt] menu: search \"" .. text .. "\": " .. tostring(self.page and self.page.count or 0) .. " results")
++        PzoptLogInfo("[pzopt] menu: search \"" .. text .. "\": " .. tostring(self.page and self.page.count or 0) .. CodexPZOptCN.strings["s33"])
+     elseif self.selected == "search" then
+         self:selectNode(self.searchFrom or "home", "master")
+     end
+@@ -2415,7 +2402,7 @@
+     local w = math.min(720, getCore():getScreenWidth() - 40)
+     local h = 2 * (math.max(25, fontH(UIFont.Small) + 6) + 20)
+     local box = ISTextBox:new((getCore():getScreenWidth() - w) / 2, getCore():getScreenHeight() / 2 - 200, w, h,
+-        "Paste exported settings (settings not listed go back to the defaults; saved at once):",
++        CodexPZOptCN.strings["s32"],
+         PzoptSettings and PzoptSettings.importSource() or "", self, function(target, button)
+             if button.internal ~= "OK" then return end
+             local msg = PzoptSettings.importSettings(button.parent.entry:getText() or "")
+@@ -2493,12 +2480,12 @@
+     local w = math.min(self.contentW - 40, math.max(420, hS * 36))
+     local inner = w - 32
+     local blocked = self:restartBlocked()
+-    local intro = blocked and (blocked .. " The settings below take effect when the game starts again; they are saved already:")
+-        or "These settings take effect when the game starts again; they are saved already:"
++    local intro = blocked and (blocked .. CodexPZOptCN.strings["s31"])
++        or CodexPZOptCN.strings["s31"]
+     local lines = wrap(intro, UIFont.Small, inner)
+     local names = {}
+     for i, p in ipairs(pend) do
+-        if i > 8 then table.insert(names, { "... and " .. (#pend - 8) .. " more" }) break end
++        if i > 8 then table.insert(names, { "... and " .. (#pend - 8) .. CodexPZOptCN.strings["s30"] }) break end
+         table.insert(names, wrap("- " .. p.label, UIFont.Small, inner - 12))
+     end
+     local h = 16 + fontH(UIFont.Medium) + 10 + #lines * hS + 8
+@@ -2510,7 +2497,7 @@
+     panel.borderColor = { r = 1, g = 1, b = 1, a = 1 }
+     local screen = self
+     panel.render = function(o)
+-        o:drawText("Restart to apply", 16, 12, 1, 1, 1, 1, UIFont.Medium)
++        o:drawText(CodexPZOptCN.strings["s29"], 16, 12, 1, 1, 1, 1, UIFont.Medium)
+         local y = 16 + fontH(UIFont.Medium) + 6
+         for _, l in ipairs(lines) do o:drawText(l, 16, y, 0.85, 0.85, 0.88, 1, UIFont.Small) y = y + hS end
+         y = y + 8
+@@ -2526,11 +2513,11 @@
+     panel.pzoptReadRoot = true
+     self:addChild(panel)
+     self.promptPanel = panel
+-    local bw = math.max(150, textW(UIFont.Small, "RESTART NOW") + 30)
++    local bw = math.max(150, textW(UIFont.Small, CodexPZOptCN.strings["s20"]) + 30)
+     local bx, by = 16, h - 16 - self.btnH
+     self.promptButtons = {}
+     if not blocked then
+-        local restart = ISButton:new(bx, by, bw, self.btnH, "RESTART NOW", self, function() self:askRestart() end)
++        local restart = ISButton:new(bx, by, bw, self.btnH, CodexPZOptCN.strings["s20"], self, function() self:askRestart() end)
+         restart:initialise()
+         restart:instantiate()
+         restart:enableAcceptColor()
+@@ -2538,14 +2525,14 @@
+         table.insert(self.promptButtons, restart)
+         bx = bx + bw + 10
+     end
+-    local later = ISButton:new(bx, by, bw, self.btnH, "LATER", self, function() self:hideRestartPrompt() end)
++    local later = ISButton:new(bx, by, bw, self.btnH, CodexPZOptCN.strings["s21"], self, function() self:hideRestartPrompt() end)
+     later:initialise()
+     later:instantiate()
+     panel:addChild(later)
+     table.insert(self.promptButtons, later)
+     self.promptIndex = #self.promptButtons
+     self:setPageShown(false)
+-    PzoptLogInfo("[pzopt] menu: restart prompt shown (" .. #pend .. " settings)")
++    PzoptLogInfo("[pzopt] menu: restart prompt shown (" .. #pend .. CodexPZOptCN.strings["s28"])
+     self:traceFocus()
+ end
+ 
+@@ -2574,10 +2561,10 @@
+ function PzoptMainMenu:restartBlocked()
+     local ms = MainScreen.instance
+     if ms and ms.inGame then
+-        if isClient() then return "A multiplayer game cannot be saved from here: quit to the main menu first." end
++        if isClient() then return CodexPZOptCN.strings["s27"] end
+         local ok, world = pcall(function() return getWorld():getWorld() end)
+         if ok and world and string.find(tostring(world), "pzopt%-") and not PzoptMenuRestartRig then
+-            return "This is a test run's world: it restarts when the run asks for it."
++            return CodexPZOptCN.strings["s26"]
+         end
+     end
+     return nil
+@@ -2593,7 +2580,7 @@
+ function PzoptMainMenu:askRestart()
+     if self:restartBlocked() then return end
+     local n = #pendingRestart()
+-    self:confirm("Restart the game now? " .. n .. " setting" .. (n == 1 and " takes" or "s take") .. " effect when it starts again.",
++    self:confirm(CodexPZOptCN.strings["s25"] .. n .. CodexPZOptCN.strings["s24"] .. (n == 1 and " takes" or "s take") .. " effect when it starts again.",
+         function() self:restartNow() end)
+ end
+ 
+@@ -2676,7 +2663,7 @@
+ function PzoptMainMenu:askShareCode()
+     local w, h = math.min(520, getCore():getScreenWidth() - 40), 140
+     local box = ISTextBox:new((getCore():getScreenWidth() - w) / 2, (getCore():getScreenHeight() - h) / 2, w, h,
+-        "Paste a benchmark share code (PZOB1:...)", "", self, function(target, button)
++        CodexPZOptCN.strings["s23"], "", self, function(target, button)
+             if button.internal == "OK" then target:applyShareCode(button.parent.entry:getText() or "") end
+         end)
+     box:initialise()
+@@ -3113,17 +3100,17 @@
+     local out = {}
+     local function add(tex, label) if tex and label then table.insert(out, { tex, label }) end end
+     if self.help then
+-        add(T.BButton, "Close help")
++        add(T.BButton, CodexPZOptCN.strings["s22"])
+         return out
+     end
+     if self.prompt then
+         -- A presses the button under the cursor; Y and the D-pad only while RESTART NOW is offered (restartBlocked: LATER only)
+         local bs = self.promptButtons or {}
+         local b = bs[self.promptIndex or #bs]
+-        add(T.AButton, b and (b.title == "LATER" and "Later" or "Restart now") or nil)
++        add(T.AButton, b and (b.title == CodexPZOptCN.strings["s21"] and "Later" or CodexPZOptCN.strings["s20"]) or nil)
+         add(T.BButton, "Later")
+         if #bs > 1 then
+-            add(T.YButton, "Restart now")
++            add(T.YButton, CodexPZOptCN.strings["s20"])
+             add(BT[Joypad.DPadLeft], "Choose")
+         end
+         return out
+@@ -3136,14 +3123,14 @@
+     elseif self.pane == "master" then
+         local a = "Details"
+         if it and it.kind == "node" then a = "Open"
+-        elseif it and it.activate then a = (it.kind == "setting" and it.controls and it.controls[1].type == "chooser") and "Next value" or "Toggle" end
++        elseif it and it.activate then a = (it.kind == "setting" and it.controls and it.controls[1].type == "chooser") and CodexPZOptCN.strings["s19"] or "Toggle" end
+         add(T.AButton, a)
+         add(T.BButton, parentOf(self.selected) and "Back" or "Close")
+     else
+         local f = self.focusables[self.detailIndex or 1]
+         if f and f.button then add(T.AButton, tostring(f.el.title)) end
+         if f and f.el.spec and (f.el.spec.type == "chooser" or f.el.spec.type == "number") then add(BT[Joypad.DPadLeft], "Change") end
+-        if f and f.el.spec and f.el.spec.type == "colour" then add(T.AButton, "Pick a colour") end
++        if f and f.el.spec and f.el.spec.type == "colour" then add(T.AButton, CodexPZOptCN.strings["s18"]) end
+         if f and f.el.spec and f.el.spec.type == "tick" then add(T.AButton, "Toggle") end
+         add(T.BButton, "List")
+     end
+@@ -3163,18 +3150,18 @@
+ end
+ 
+ local HELP_LINES = {
+-    { "D-pad, left stick", "move (the stick repeats while held)" },
+-    { "A", "open, toggle, press" },
+-    { "B", "back one level: detail, list, sidebar, close" },
+-    { "X", "the row's second action (Default, Compare, Only what differs, Copy share code...)" },
++    { CodexPZOptCN.strings["s17"], CodexPZOptCN.strings["s16"] },
++    { "A", CodexPZOptCN.strings["s15"] },
++    { "B", CodexPZOptCN.strings["s14"] },
++    { "X", CodexPZOptCN.strings["s13"] },
+     { "Y", "the row's main action (Apply a preset, Start benchmark, Open, Update now...), asks first when it restarts, installs or changes many settings" },
+-    { "LB / RB", "previous / next section of the sidebar" },
+-    { "LT / RT", "a page up / down in the list or the text" },
+-    { "Right stick", "scroll the detail's text" },
+-    { "View (Back)", "the focus between the sidebar and the page" },
+-    { "Menu (Start)", "close the menu (every change is saved as you make it)" },
+-    { "L3", "search every setting (the on-screen keyboard)" },
+-    { "R3", "this help" },
++    { "LB / RB", CodexPZOptCN.strings["s12"] },
++    { "LT / RT", CodexPZOptCN.strings["s11"] },
++    { CodexPZOptCN.strings["s10"], CodexPZOptCN.strings["s9"] },
++    { CodexPZOptCN.strings["s8"], CodexPZOptCN.strings["s7"] },
++    { CodexPZOptCN.strings["s6"], CodexPZOptCN.strings["s5"] },
++    { "L3", CodexPZOptCN.strings["s4"] },
++    { "R3", CodexPZOptCN.strings["s3"] },
+ }
+ 
+ function PzoptMainMenu:render()
+@@ -3482,7 +3469,7 @@
+     label:setVisible(self.optionsOption:isVisible())
+     self.bottomPanel:setHeight(self.bottomPanel:getHeight() + labelHgt)
+     self.maxMenuItemWidth = math.max(self.maxMenuItemWidth or 0, textW(UIFont.Large, ITEM_TEXT), textW(UIFont.Large, ITEM_UPDATE_TEXT),
+-        textW(UIFont.Small, "Restart to finish the update"))
++        textW(UIFont.Small, CodexPZOptCN.strings["s2"]))
+     label:setWidth(math.max(self.bottomPanel:getWidth(), self.maxMenuItemWidth))
+     self.bottomPanel:addChild(label)
+     self.pzoptMenuOption = label
+@@ -3626,7 +3613,7 @@
+         for i, it in ipairs(s.list.items) do if it.id == "uninstall" then s.list:setSelected(i) end end
+         s:showDetail()
+         local b = nil
+-        for _, f in ipairs(s.actionButtons or {}) do if f.title == "UNINSTALL" then b = f end end
++        for _, f in ipairs(s.actionButtons or {}) do if f.title == CodexPZOptCN.strings["s1"] then b = f end end
+         if not b then
+             print("[pzopt-e2e] uninstall drive: no UNINSTALL button on the screen's home page (" .. tostring(s.lastDesc) .. ")")
+             d.step = -1

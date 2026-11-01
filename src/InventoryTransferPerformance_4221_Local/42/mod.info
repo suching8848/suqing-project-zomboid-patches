@@ -1,0 +1,8 @@
+name=[B42.21] Inventory Transfer Performance (Local)
+id=Codex_InventoryTransferPerformance_4221
+description=Coalesces automatic inventory UI rebuilds during stationary single-player bulk transfers. Keeps native transfers, interaction, rendering and tooltips. Requires CleanUI. Local reversible performance patch.
+require=CleanUI
+loadModAfter=CleanUI,NeatUI_Equipment,Codex_AttachedGrouping_4221,PinyinSearch_SafeSources_4221_LocalFix,Codex_PetGunWeightKits_4221,ProximityInventory
+versionMin=42.21
+versionMax=42.21
+modversion=1.2.0

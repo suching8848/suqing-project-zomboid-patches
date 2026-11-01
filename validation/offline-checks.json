@@ -1,0 +1,17 @@
+{
+  "checked_at": "2026-11-02T01:19:57.527811+08:00",
+  "mode": "offline byte and directory reconstruction; no deployment",
+  "mod_ids": 30,
+  "runtime_files": 162,
+  "runtime_bytes": 25758876,
+  "runtime_directories": 191,
+  "common_directories_preserved": 10,
+  "all_runtime_files_match_live_sources": true,
+  "all_output_sha256_verified": true,
+  "source_input_hashes_pinned": true,
+  "safety_regression_tests": 4,
+  "upstream_artwork_or_backup_payloads_tracked": false,
+  "modinfo_ids_dependencies_and_bytes_unchanged": true,
+  "gameplay_tested": false,
+  "manifest_sha256": "8215dd6a4b5f1bd6bc3cf1c697c84a633571e6945bbaa92e3302e69cf7c828fe"
+}

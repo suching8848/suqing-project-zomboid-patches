@@ -1,0 +1,9 @@
+name=[B42.21 SP] Mustang Hood Recipe Compatibility (Local)
+id=Codex_MustangRecipeGuard_4221
+require=ATA_Mustang
+loadModAfter=ATA_Mustang
+versionMin=42.21
+versionMax=42.21
+modversion=1.0.0
+author=Local compatibility fix
+description=Restricts the Mustang hood cutting input to its three intended vehicle hood items. Original materials, tools, skills and outputs remain unchanged.

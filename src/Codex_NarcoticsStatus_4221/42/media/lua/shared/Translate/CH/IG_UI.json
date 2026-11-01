@@ -1,0 +1,20 @@
+{
+  "IGUI_CodexNnC_Title": "N&C 藥物狀態",
+  "IGUI_CodexNnC_Benzo": "苯二氮䓬類",
+  "IGUI_CodexNnC_Coke": "古柯鹼類",
+  "IGUI_CodexNnC_Meth": "甲基安非他命類",
+  "IGUI_CodexNnC_Opioid": "鴉片類",
+  "IGUI_CodexNnC_MDMA": "MDMA",
+  "IGUI_CodexNnC_Steroid": "類固醇",
+  "IGUI_CodexNnC_NoData": "暫無資料",
+  "IGUI_CodexNnC_Overdose": "過量",
+  "IGUI_CodexNnC_Warning": "警告",
+  "IGUI_CodexNnC_Normal": "正常",
+  "IGUI_CodexNnC_Note1": "估計為正常速度、不再使用時的現實分鐘。",
+  "IGUI_CodexNnC_Note2": "遊戲暫停或加速會影響現實時間；藥效與成癮另算。",
+  "IGUI_CodexNnC_Open": "查看藥物狀態",
+  "IGUI_CodexNnC_ColumnCategory": "類別",
+  "IGUI_CodexNnC_ColumnAmount": "累計值 / 過量線",
+  "IGUI_CodexNnC_ColumnState": "狀態",
+  "IGUI_CodexNnC_ColumnTime": "清零約(分鐘)"
+}

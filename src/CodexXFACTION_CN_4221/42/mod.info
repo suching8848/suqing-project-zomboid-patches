@@ -1,0 +1,9 @@
+name=[B42.21 CN] XFACTION Dynamic Traits Chinese
+id=CodexXFACTION_CN_4221
+author=Local Chinese translation
+description=Simplified Chinese presentation for XFACTION Dynamic Traits 0.1.3. No progression, stat or trait identifier changes. Requires a restart.
+require=XFACTION_DynamicTraits
+loadModAfter=XFACTION_DynamicTraits,B42ModTrans_CN
+versionMin=42.21
+versionMax=42.21
+modversion=1.0.1

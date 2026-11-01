@@ -1,0 +1,9 @@
+name=[B42.21 SP] DAMN Vanilla Tire Repair (Local)
+id=Codex_DAMN_VanillaTires_4221
+require=damnlib
+loadModAfter=damnlib
+versionMin=42.21
+versionMax=42.21
+modversion=1.0.0
+author=Local compatibility patch
+description=Allows the DAMN tire repair tools, rubber solution and repair strips to repair all nine vanilla tires. Adds a separate crafting recipe and, when Vehicle Repair Overhaul is enabled, an optional repair recipe for its inventory and vehicle menus. Existing items and Workshop files are unchanged. Review compatibility after updates to damnlib, VRO or Project Zomboid.

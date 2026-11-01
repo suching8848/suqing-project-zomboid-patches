@@ -1,0 +1,7 @@
+name=[B42.21 SP] Erika Furniture Fix + Optional DebugMenu Guard
+id=Codex_DebugMenu_Generator_4221
+loadModAfter=QNWDebugMenuB42
+versionMin=42.21
+versionMax=42.21
+modversion=1.2.0
+description=Repairs missing types on known Erika furniture scripts. The item generator guard runs only when DebugMenu is activated; DebugMenu is not a dependency.

@@ -1,0 +1,1909 @@
+{
+  "schema": 1,
+  "target_game": "Project Zomboid Build 42.21",
+  "scope": "Runtime-required files for 30 independent patches; documentation/backups omitted",
+  "mods": [
+    {
+      "id": "Codex_AmmoBox_CN_TextFix_4221",
+      "folder": "AmmoBox_CN_4221_LocalFix",
+      "version": "1.2.0",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/shared",
+        "42/media/lua/shared/Translate",
+        "42/media/lua/shared/Translate/CN"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/shared/Translate/CN/IG_UI.json",
+          "sha256": "c6bdb2538152d0fd33cc0ea08085216a599ec4abb2fc7a0f9765c2eaa7cf2be7",
+          "size": 36,
+          "mode": "own",
+          "repo_path": "src/AmmoBox_CN_4221_LocalFix/42/media/lua/shared/Translate/CN/IG_UI.json"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "b4af3e30328df46ed309486c5f2fb7184fd7fae7383f3832cbe973f42d6fda36",
+          "size": 381,
+          "mode": "own",
+          "repo_path": "src/AmmoBox_CN_4221_LocalFix/42/mod.info"
+        }
+      ]
+    },
+    {
+      "id": "Codex_AttachedGrouping_4221",
+      "folder": "AttachedGrouping_4221_LocalFix",
+      "version": "1.0.0",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/client",
+        "42/media/lua/client/AttachedGroupingFix"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/client/AttachedGroupingFix/HotbarGrouping.lua",
+          "sha256": "2eb64a8bc5633b625db4ea92a08d8b2850a42c7f4829fef0eac5048b7f859eda",
+          "size": 1815,
+          "mode": "own",
+          "repo_path": "src/AttachedGrouping_4221_LocalFix/42/media/lua/client/AttachedGroupingFix/HotbarGrouping.lua"
+        },
+        {
+          "path": "42/media/lua/client/AttachedGroupingFix/WearMenu.lua",
+          "sha256": "e7fe0d4c342a624ad40a5b726aee420e9e98b704893315b38b2fdd1f3bf199d7",
+          "size": 3365,
+          "mode": "own",
+          "repo_path": "src/AttachedGrouping_4221_LocalFix/42/media/lua/client/AttachedGroupingFix/WearMenu.lua"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "3703bb48dc85ea490ae20c072e481bfb2690f633befda4519ef4346993344a43",
+          "size": 480,
+          "mode": "own",
+          "repo_path": "src/AttachedGrouping_4221_LocalFix/42/mod.info"
+        }
+      ]
+    },
+    {
+      "id": "Codex_Campers_Glovebox_4221",
+      "folder": "Campers_Glovebox_4221_LocalFix",
+      "version": "1.0.0",
+      "directories": [
+        "42.21",
+        "42.21/media",
+        "42.21/media/scripts",
+        "42.21/media/scripts/vehicles",
+        "common"
+      ],
+      "files": [
+        {
+          "path": "42.21/media/scripts/vehicles/Trailer54FlyingCloud22.txt",
+          "sha256": "65f5de0a063a789b0a776a1c164463df007d5d51bc2996cfecb66c0ef9883ff3",
+          "size": 10786,
+          "source": {
+            "root": "workshop",
+            "path": "3670064951/mods/KI5campers/42.20/media/scripts/vehicles/Trailer54FlyingCloud22.txt",
+            "sha256": "677713560947f7db0c892f29f43d94ec2e3855ef5a9fe0cd97939d845918c3ba"
+          },
+          "mode": "patch",
+          "patch_path": "patches/Campers_Glovebox_4221_LocalFix/42.21/media/scripts/vehicles/Trailer54FlyingCloud22.txt.patch",
+          "patch_sha256": "792e648a18a90597e0af9cae1dc57d729119028b28a6c16f0ca51b8b39cc3a86",
+          "text_encoding": {
+            "bom": false,
+            "newline": "crlf",
+            "ends_with_newline": true
+          }
+        },
+        {
+          "path": "42.21/media/scripts/vehicles/Trailer61Airflyte.txt",
+          "sha256": "62e7e35b313e139bb782ecfb5133b9f99b65db4be96806ec5b1a08f2d6f7eec0",
+          "size": 10358,
+          "source": {
+            "root": "workshop",
+            "path": "3670064951/mods/KI5campers/42.20/media/scripts/vehicles/Trailer61Airflyte.txt",
+            "sha256": "525f123a23126fa0ad6dc5b24c787e2281bdb565851b214778f041e77101a74d"
+          },
+          "mode": "patch",
+          "patch_path": "patches/Campers_Glovebox_4221_LocalFix/42.21/media/scripts/vehicles/Trailer61Airflyte.txt.patch",
+          "patch_sha256": "f3cd63aca0060bdeb367ea6a1501a7914612337d44229f1a1946d8b97a07a464",
+          "text_encoding": {
+            "bom": false,
+            "newline": "crlf",
+            "ends_with_newline": true
+          }
+        },
+        {
+          "path": "42.21/media/scripts/vehicles/Trailer61Astrodome.txt",
+          "sha256": "01b7aaa93d12cc8b15ab199f3fe561155df8fa1e09e0b14e430b369a102323e0",
+          "size": 10849,
+          "source": {
+            "root": "workshop",
+            "path": "3670064951/mods/KI5campers/42.20/media/scripts/vehicles/Trailer61Astrodome.txt",
+            "sha256": "85a1b7b297eea7aa07f658e300741ebfc92c9b7f0b916326807a2f88cd903bf0"
+          },
+          "mode": "patch",
+          "patch_path": "patches/Campers_Glovebox_4221_LocalFix/42.21/media/scripts/vehicles/Trailer61Astrodome.txt.patch",
+          "patch_sha256": "cdbe1ecbdd9ea9e9ac9b3eaa9c9ef04e95bf695cdc46ea67cefbdbb02e207b38",
+          "text_encoding": {
+            "bom": false,
+            "newline": "crlf",
+            "ends_with_newline": true
+          }
+        },
+        {
+          "path": "42.21/media/scripts/vehicles/Trailer61Bambi16.txt",
+          "sha256": "9b61ae394fa6e71da23464631ce7477270b794c8fd6b6e881762e1cbd9685b24",
+          "size": 9923,
+          "source": {
+            "root": "workshop",
+            "path": "3670064951/mods/KI5campers/42.20/media/scripts/vehicles/Trailer61Bambi16.txt",
+            "sha256": "5f2af4b4a709a648961516a1ffc124db5992202549fab282e7ab2eb5a6e941cf"
+          },
+          "mode": "patch",
+          "patch_path": "patches/Campers_Glovebox_4221_LocalFix/42.21/media/scripts/vehicles/Trailer61Bambi16.txt.patch",
+          "patch_sha256": "c71e949b8c15783c830284d946e87066a1e7a9d0596fe425443a4481dab08463",
+          "text_encoding": {
+            "bom": false,
+            "newline": "crlf",
+            "ends_with_newline": true
+          }
+        },
+        {
+          "path": "42.21/media/scripts/vehicles/Trailer87Scamp13.txt",
+          "sha256": "63839e11d0ff3cda6e5f94090a05ecc2a38c8b041f9bfb563bfe140dc312cc1f",
+          "size": 9771,
+          "source": {
+            "root": "workshop",
+            "path": "3670064951/mods/KI5campers/42.20/media/scripts/vehicles/Trailer87Scamp13.txt",
+            "sha256": "59bb0809ff757532c4a0ba187abba6217400f0e99e36ab2af36df7470cf51c0a"
+          },
+          "mode": "patch",
+          "patch_path": "patches/Campers_Glovebox_4221_LocalFix/42.21/media/scripts/vehicles/Trailer87Scamp13.txt.patch",
+          "patch_sha256": "44f0444c87d4807179b993210dd67b5ab2686827a3073ac9c0fa12337eacb214",
+          "text_encoding": {
+            "bom": false,
+            "newline": "crlf",
+            "ends_with_newline": true
+          }
+        },
+        {
+          "path": "42.21/media/scripts/vehicles/Trailer87Scamp16.txt",
+          "sha256": "3d2f07bab0b3fe031f22cc8d3fce4c4663d8e7d7ce8453149168c1c8200963c6",
+          "size": 10951,
+          "source": {
+            "root": "workshop",
+            "path": "3670064951/mods/KI5campers/42.20/media/scripts/vehicles/Trailer87Scamp16.txt",
+            "sha256": "733566b75b4e611fd28a5e5e6335cd8591398c5156da291306af3d1e1a9ec924"
+          },
+          "mode": "patch",
+          "patch_path": "patches/Campers_Glovebox_4221_LocalFix/42.21/media/scripts/vehicles/Trailer87Scamp16.txt.patch",
+          "patch_sha256": "b15e78963c4981586fca9315c76072827d8d9752dc2c9270d4b0c5c1c85da8ce",
+          "text_encoding": {
+            "bom": false,
+            "newline": "crlf",
+            "ends_with_newline": true
+          }
+        },
+        {
+          "path": "42.21/mod.info",
+          "sha256": "6ce5b8b53adb6f644e9d44d23a4f6574226f472bc8eba667d1f2ba1a6199abce",
+          "size": 379,
+          "mode": "own",
+          "repo_path": "src/Campers_Glovebox_4221_LocalFix/42.21/mod.info"
+        }
+      ]
+    },
+    {
+      "id": "Codex_ChineseCrop_Tooltip_4221",
+      "folder": "ChineseCrop_Tooltip_4221_LocalFix",
+      "version": "1.1",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/client",
+        "42/media/lua/shared",
+        "42/media/lua/shared/Translate",
+        "42/media/lua/shared/Translate/CN"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/client/zz_ChineseCropSeedTooltip_4221.lua",
+          "sha256": "d1420f9e279306ebbbb9b434eba1bd6a4c211090c3346815bf20ec62918468cf",
+          "size": 3430,
+          "mode": "own",
+          "repo_path": "src/ChineseCrop_Tooltip_4221_LocalFix/42/media/lua/client/zz_ChineseCropSeedTooltip_4221.lua"
+        },
+        {
+          "path": "42/media/lua/client/zz_GrowingSeasonLocalizedTab_4221.lua",
+          "sha256": "b948269970ddada898d5d689e61f45aeab81057a12e264eedf0fb472ef8fc6cc",
+          "size": 1846,
+          "mode": "own",
+          "repo_path": "src/ChineseCrop_Tooltip_4221_LocalFix/42/media/lua/client/zz_GrowingSeasonLocalizedTab_4221.lua"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/Recipes.json",
+          "sha256": "e362824d5ddd4e5a478ec7791daf38cb28f05c68fba60ce704ab3110ca6db930",
+          "size": 230,
+          "mode": "own",
+          "repo_path": "src/ChineseCrop_Tooltip_4221_LocalFix/42/media/lua/shared/Translate/CN/Recipes.json"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "d19c22e0eed39301308bb3053d272fe92a64cdc9b561cb8e82fa9c94c825f5c2",
+          "size": 425,
+          "mode": "own",
+          "repo_path": "src/ChineseCrop_Tooltip_4221_LocalFix/42/mod.info"
+        },
+        {
+          "path": "mod.info",
+          "sha256": "5516a40d689f00711bb87c2436cfd93d0bd0eb68a5dfba4ef489a9ec53959815",
+          "size": 237,
+          "mode": "own",
+          "repo_path": "src/ChineseCrop_Tooltip_4221_LocalFix/mod.info"
+        }
+      ]
+    },
+    {
+      "id": "Codex_FashionoidFluidTooltip_4221",
+      "folder": "Codex_FashionoidFluidTooltip_4221",
+      "version": "1.0.0",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/client"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/client/Codex_FashionoidFluidTooltip.lua",
+          "sha256": "ab5dd3997439dcb3eca174ff699333f0aae059d5fa0442650ed1c760e02bac4b",
+          "size": 674,
+          "mode": "own",
+          "repo_path": "src/Codex_FashionoidFluidTooltip_4221/42/media/lua/client/Codex_FashionoidFluidTooltip.lua"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "e30a7b9b37c109fba4eb36a5697813722d79f02d70bbe756858fe4d7995cd963",
+          "size": 421,
+          "mode": "own",
+          "repo_path": "src/Codex_FashionoidFluidTooltip_4221/42/mod.info"
+        }
+      ]
+    },
+    {
+      "id": "Codex_MFSOpticsFix_4221",
+      "folder": "Codex_MFSOpticsFix_4221",
+      "version": "1.0.0",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/client",
+        "42/media/lua/shared"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/shared/Codex_MFSOpticsFix.lua",
+          "sha256": "5131208324ae329093cb3522e69aa2f54e62894e3d0d6280dee35359895738ea",
+          "size": 4504,
+          "mode": "own",
+          "repo_path": "src/Codex_MFSOpticsFix_4221/42/media/lua/shared/Codex_MFSOpticsFix.lua"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "e7151352eb6bb8c9f82a19f5bf95cdf13cf75cd62415fae9cc2b742614432c95",
+          "size": 384,
+          "mode": "own",
+          "repo_path": "src/Codex_MFSOpticsFix_4221/42/mod.info"
+        },
+        {
+          "path": "mod.info",
+          "sha256": "e7151352eb6bb8c9f82a19f5bf95cdf13cf75cd62415fae9cc2b742614432c95",
+          "size": 384,
+          "mode": "own",
+          "repo_path": "src/Codex_MFSOpticsFix_4221/mod.info"
+        }
+      ]
+    },
+    {
+      "id": "Codex_MustangRecipeGuard_4221",
+      "folder": "Codex_MustangRecipeGuard_4221",
+      "version": "1.0.0",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/client"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/client/Codex_MustangRecipeGuard.lua",
+          "sha256": "a86d1169d8bef5c1a6e7f7d1b70c6b9bb38480189bd35f0ab61e2b98e14f0684",
+          "size": 2116,
+          "mode": "own",
+          "repo_path": "src/Codex_MustangRecipeGuard_4221/42/media/lua/client/Codex_MustangRecipeGuard.lua"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "31974d10823b0d340ca0a0623263cc9fab3c8d1971c70c73db27cb26ea91dfd2",
+          "size": 387,
+          "mode": "own",
+          "repo_path": "src/Codex_MustangRecipeGuard_4221/42/mod.info"
+        }
+      ]
+    },
+    {
+      "id": "Codex_NarcoticsStatus_4221",
+      "folder": "Codex_NarcoticsStatus_4221",
+      "version": "1.0.0",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/client",
+        "42/media/lua/shared",
+        "42/media/lua/shared/Translate",
+        "42/media/lua/shared/Translate/CH",
+        "42/media/lua/shared/Translate/CN",
+        "42/media/lua/shared/Translate/EN"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/client/CodexNarcoticsStatus.lua",
+          "sha256": "8665d55c1d1e167013fac5a0a1577c7626bb1f8ed7340e9643a57a2add7ca404",
+          "size": 9810,
+          "mode": "own",
+          "repo_path": "src/Codex_NarcoticsStatus_4221/42/media/lua/client/CodexNarcoticsStatus.lua"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CH/IG_UI.json",
+          "sha256": "32e9cf6d8efcc34814ceabff680037d8b4ae70d6f4f9b87999b201f542276619",
+          "size": 888,
+          "mode": "own",
+          "repo_path": "src/Codex_NarcoticsStatus_4221/42/media/lua/shared/Translate/CH/IG_UI.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/IG_UI.json",
+          "sha256": "83c0cc0ba2dac9f9a82d841d95e7a109dc2269353271b819b95a0ce395290826",
+          "size": 885,
+          "mode": "own",
+          "repo_path": "src/Codex_NarcoticsStatus_4221/42/media/lua/shared/Translate/CN/IG_UI.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/EN/IG_UI.json",
+          "sha256": "add0100ea5fb4781877d58fe6da76dbd219c492ea26ecd271328dcca2d6849f3",
+          "size": 841,
+          "mode": "own",
+          "repo_path": "src/Codex_NarcoticsStatus_4221/42/media/lua/shared/Translate/EN/IG_UI.json"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "f494577eb816a48301877f60f37bc9235159d445013e2197758e3c15682db41c",
+          "size": 308,
+          "mode": "own",
+          "repo_path": "src/Codex_NarcoticsStatus_4221/42/mod.info"
+        }
+      ]
+    },
+    {
+      "id": "Codex_StimCompatibility_4221",
+      "folder": "Codex_StimCompatibility_4221",
+      "version": "1.0.1",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/client",
+        "42/media/lua/client/Stims",
+        "42/media/lua/shared",
+        "42/media/lua/shared/CodexStimCompat",
+        "42/media/lua/shared/Stims",
+        "42/media/lua/shared/Translate",
+        "42/media/lua/shared/Translate/CH",
+        "42/media/lua/shared/Translate/CN",
+        "42/media/lua/shared/Translate/EN",
+        "42/reference"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/client/AdrenalineInject.lua",
+          "sha256": "dd10ec02b3eb2e48048187ff714dbcf962e87d5d9bae63dc3117bfca437ceb17",
+          "size": 412,
+          "mode": "own",
+          "repo_path": "src/Codex_StimCompatibility_4221/42/media/lua/client/AdrenalineInject.lua"
+        },
+        {
+          "path": "42/media/lua/client/AdrenalineMoodleUI.lua",
+          "sha256": "a4406510bc34bb30e88220e965c3c71ca6aa66da1306e02bd5ac307781b9fb24",
+          "size": 436,
+          "mode": "own",
+          "repo_path": "src/Codex_StimCompatibility_4221/42/media/lua/client/AdrenalineMoodleUI.lua"
+        },
+        {
+          "path": "42/media/lua/client/Stims/Stims_QuickInject.lua",
+          "sha256": "10c998043fd1fedd4f2a6ca41761cb6132ef161f37b83313060e2cb3b04c9773",
+          "size": 939,
+          "mode": "own",
+          "repo_path": "src/Codex_StimCompatibility_4221/42/media/lua/client/Stims/Stims_QuickInject.lua"
+        },
+        {
+          "path": "42/media/lua/shared/AdrenalineEffect.lua",
+          "sha256": "658006a810fdf119ee12362c69e83ad365984425c66095532e746d986c23caea",
+          "size": 1216,
+          "mode": "own",
+          "repo_path": "src/Codex_StimCompatibility_4221/42/media/lua/shared/AdrenalineEffect.lua"
+        },
+        {
+          "path": "42/media/lua/shared/CodexStimCompat/Source.lua",
+          "sha256": "8e6842d79f89b98de7f70566046432797f2f6a02e40edd07ea6189dcb7e32a7c",
+          "size": 2362,
+          "mode": "own",
+          "repo_path": "src/Codex_StimCompatibility_4221/42/media/lua/shared/CodexStimCompat/Source.lua"
+        },
+        {
+          "path": "42/media/lua/shared/CodexStimCompat/Weights.lua",
+          "sha256": "d406812378f6db841fdb98fab34fc6dd31968b90e537bcb465d679248063ccff",
+          "size": 1836,
+          "mode": "own",
+          "repo_path": "src/Codex_StimCompatibility_4221/42/media/lua/shared/CodexStimCompat/Weights.lua"
+        },
+        {
+          "path": "42/media/lua/shared/Stims/Stims_Containers.lua",
+          "sha256": "d1d1bc1e61b8e08f45838c7a1ee3b050e16fbfffbee73b9330bc6556ac79bf46",
+          "size": 349,
+          "mode": "own",
+          "repo_path": "src/Codex_StimCompatibility_4221/42/media/lua/shared/Stims/Stims_Containers.lua"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CH/IG_UI.json",
+          "sha256": "662673d72896e28629b950ceb1bcdca13fb0d4f86b94bf7649ab2fe9be51cfc7",
+          "size": 678,
+          "mode": "own",
+          "repo_path": "src/Codex_StimCompatibility_4221/42/media/lua/shared/Translate/CH/IG_UI.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CH/ItemName.json",
+          "sha256": "630dfd5fb4e00af21ecfb6a1f8730894f03663e9e8430db0aee9bfe282689bfa",
+          "size": 84,
+          "mode": "own",
+          "repo_path": "src/Codex_StimCompatibility_4221/42/media/lua/shared/Translate/CH/ItemName.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CH/Tooltip.json",
+          "sha256": "127b16fb947268b9171822eaf4cb28d08bb2855b6407b2a0a391ec5dcdb09188",
+          "size": 241,
+          "mode": "own",
+          "repo_path": "src/Codex_StimCompatibility_4221/42/media/lua/shared/Translate/CH/Tooltip.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/IG_UI.json",
+          "sha256": "662673d72896e28629b950ceb1bcdca13fb0d4f86b94bf7649ab2fe9be51cfc7",
+          "size": 678,
+          "mode": "own",
+          "repo_path": "src/Codex_StimCompatibility_4221/42/media/lua/shared/Translate/CN/IG_UI.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/ItemName.json",
+          "sha256": "630dfd5fb4e00af21ecfb6a1f8730894f03663e9e8430db0aee9bfe282689bfa",
+          "size": 84,
+          "mode": "own",
+          "repo_path": "src/Codex_StimCompatibility_4221/42/media/lua/shared/Translate/CN/ItemName.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/Tooltip.json",
+          "sha256": "127b16fb947268b9171822eaf4cb28d08bb2855b6407b2a0a391ec5dcdb09188",
+          "size": 241,
+          "mode": "own",
+          "repo_path": "src/Codex_StimCompatibility_4221/42/media/lua/shared/Translate/CN/Tooltip.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/EN/IG_UI.json",
+          "sha256": "7ed61132e2bd5f52f780396c79bddf648a8f1a0d45d7a20a93f6ba8d44126f1b",
+          "size": 691,
+          "mode": "own",
+          "repo_path": "src/Codex_StimCompatibility_4221/42/media/lua/shared/Translate/EN/IG_UI.json"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "b63f72418082da3bbbd1725f1f7a4be6248f0e72a42ef36c478d22c11064a8e2",
+          "size": 413,
+          "mode": "own",
+          "repo_path": "src/Codex_StimCompatibility_4221/42/mod.info"
+        },
+        {
+          "path": "42/reference/AdrenalineEffect.txt",
+          "sha256": "3ef72ee54aa581225fe1e5a7ea46fe512bce05ac051354c0b53707840ad05353",
+          "size": 19116,
+          "source": {
+            "root": "workshop",
+            "path": "3791221767/mods/AdrenalineShot/42/media/lua/shared/AdrenalineEffect.lua",
+            "sha256": "3ef72ee54aa581225fe1e5a7ea46fe512bce05ac051354c0b53707840ad05353"
+          },
+          "mode": "copy"
+        },
+        {
+          "path": "42/reference/AdrenalineInject.txt",
+          "sha256": "d22b4c5ebbe465eea1386e87cd5d269d12a92c27416f6a000bb1aa7b2b7f5ffe",
+          "size": 10728,
+          "source": {
+            "root": "workshop",
+            "path": "3791221767/mods/AdrenalineShot/42/media/lua/client/AdrenalineInject.lua",
+            "sha256": "d22b4c5ebbe465eea1386e87cd5d269d12a92c27416f6a000bb1aa7b2b7f5ffe"
+          },
+          "mode": "copy"
+        },
+        {
+          "path": "42/reference/AdrenalineMoodleUI.txt",
+          "sha256": "cee66478f5bd5097891539f530a20c9bfb24782d1af607282d05d21ad691fa0b",
+          "size": 5403,
+          "source": {
+            "root": "workshop",
+            "path": "3791221767/mods/AdrenalineShot/42/media/lua/client/AdrenalineMoodleUI.lua",
+            "sha256": "cee66478f5bd5097891539f530a20c9bfb24782d1af607282d05d21ad691fa0b"
+          },
+          "mode": "copy"
+        },
+        {
+          "path": "42/reference/Stims_Containers.txt",
+          "sha256": "8977d4102817000bef04c9c34cb5bccb0ec94274d727a151daafb3332db213da",
+          "size": 8144,
+          "source": {
+            "root": "workshop",
+            "path": "3815980431/mods/TarkovCombatStims/42/media/lua/shared/Stims/Stims_Containers.lua",
+            "sha256": "8977d4102817000bef04c9c34cb5bccb0ec94274d727a151daafb3332db213da"
+          },
+          "mode": "copy"
+        },
+        {
+          "path": "42/reference/Stims_QuickInject.txt",
+          "sha256": "238abb38035c2ce3548635c99d8754ecaad7d077852af94b25a0c661a3916f1d",
+          "size": 11821,
+          "source": {
+            "root": "workshop",
+            "path": "3815980431/mods/TarkovCombatStims/42/media/lua/client/Stims/Stims_QuickInject.lua",
+            "sha256": "e3f4d9acc237d71dea19daaa0a1c1ba6971c4ef265ac79d5f161c0a1ccb15c7f"
+          },
+          "mode": "patch",
+          "patch_path": "patches/Codex_StimCompatibility_4221/42/reference/Stims_QuickInject.txt.patch",
+          "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "text_encoding": {
+            "bom": false,
+            "newline": "crlf",
+            "ends_with_newline": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "Codex_SuQingWearableCompat_4221",
+      "folder": "Codex_SuQingWearableCompat_4221",
+      "version": "1.0.0",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/client"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/client/Codex_SuQingHavenFallEX.lua",
+          "sha256": "c6714c71d22335e4c419110cfba241231e7d5472c1197e7296ed06929c38ca13",
+          "size": 11235,
+          "mode": "own",
+          "repo_path": "src/Codex_SuQingWearableCompat_4221/42/media/lua/client/Codex_SuQingHavenFallEX.lua"
+        },
+        {
+          "path": "42/media/lua/client/Codex_SuQingWearableCompat.lua",
+          "sha256": "3a17a0e611db59e9f84522f4dc74262d97af4286c3f77a6ecd366fa386be2204",
+          "size": 5160,
+          "mode": "own",
+          "repo_path": "src/Codex_SuQingWearableCompat_4221/42/media/lua/client/Codex_SuQingWearableCompat.lua"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "28dac48d5b0715e3d2f0ff27dad8b8103063166b91bc2b20a97dd9b7cad53cac",
+          "size": 647,
+          "mode": "own",
+          "repo_path": "src/Codex_SuQingWearableCompat_4221/42/mod.info"
+        }
+      ]
+    },
+    {
+      "id": "Codex_XFDynamicRecordGuard_4221",
+      "folder": "Codex_XFDynamicRecordGuard_4221",
+      "version": "1.0.0",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/server"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/server/Codex_XFDynamicRecordGuard.lua",
+          "sha256": "3c636242d2e474dd7aef94d1ea15c1a342bc73d7543bd3517c4408d00954a187",
+          "size": 3815,
+          "mode": "own",
+          "repo_path": "src/Codex_XFDynamicRecordGuard_4221/42/media/lua/server/Codex_XFDynamicRecordGuard.lua"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "4b70b21511dc29e7f676c739197c85fe19222aa922636f70584614961302a12c",
+          "size": 420,
+          "mode": "own",
+          "repo_path": "src/Codex_XFDynamicRecordGuard_4221/42/mod.info"
+        }
+      ]
+    },
+    {
+      "id": "CodexCBRTIndependent_4221",
+      "folder": "CodexCBRTIndependent_4221",
+      "version": "1.0.0-local",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/clothing",
+        "42/media/clothing/clothingItems",
+        "42/media/lua",
+        "42/media/lua/server",
+        "42/media/lua/server/Items",
+        "42/media/lua/shared",
+        "42/media/lua/shared/Translate",
+        "42/media/lua/shared/Translate/CN",
+        "42/media/lua/shared/Translate/EN",
+        "42/media/models_X",
+        "42/media/scripts",
+        "42/media/textures"
+      ],
+      "files": [
+        {
+          "path": "42/icon.png",
+          "sha256": "2c0e8e5d06f7396e765db427cb1aaa663f49497721361bb6bd1d597b88eb16c5",
+          "size": 18864,
+          "source": {
+            "root": "workshop",
+            "path": "3799632784/mods/oldcat/42/logo.png",
+            "sha256": "2c0e8e5d06f7396e765db427cb1aaa663f49497721361bb6bd1d597b88eb16c5"
+          },
+          "mode": "copy"
+        },
+        {
+          "path": "42/media/clothing/clothingItems/CodexCBRT_SST02_Boots.xml",
+          "sha256": "849847be82d5ab1a117f9eec4c56c6651de1878154425d17dc68a01cc97fd6a1",
+          "size": 400,
+          "source": {
+            "root": "workshop",
+            "path": "3799632784/mods/oldcat/42/media/clothing/clothingItems/SST02_Boots.xml",
+            "sha256": "0ca22b37394994facf3de5c9c588dc3279657c5b1c69586b53df008bf62fffd6"
+          },
+          "mode": "patch",
+          "patch_path": "patches/CodexCBRTIndependent_4221/42/media/clothing/clothingItems/CodexCBRT_SST02_Boots.xml.patch",
+          "patch_sha256": "4e148de814f1c2ee638c22ba2d0733049c80d832ea07ab3ae45edc3808f68ea8",
+          "text_encoding": {
+            "bom": false,
+            "newline": "lf",
+            "ends_with_newline": false
+          }
+        },
+        {
+          "path": "42/media/clothing/clothingItems/CodexCBRT_SST02_ChestRig.xml",
+          "sha256": "22ca8bd6aa30679d1b8ceda6fa83207ad9ec369bb8a2986175953ce34f1d3501",
+          "size": 406,
+          "source": {
+            "root": "workshop",
+            "path": "3799632784/mods/oldcat/42/media/clothing/clothingItems/SST02_ChestRig.xml",
+            "sha256": "07d679aa1dc10841af98b371f68a87304924810d5e186ebce277178c6eb97fd4"
+          },
+          "mode": "patch",
+          "patch_path": "patches/CodexCBRTIndependent_4221/42/media/clothing/clothingItems/CodexCBRT_SST02_ChestRig.xml.patch",
+          "patch_sha256": "5f23bfdfb056d3fed8b12bc7fa80241350077278c98573752327e4e089a614d6",
+          "text_encoding": {
+            "bom": false,
+            "newline": "lf",
+            "ends_with_newline": false
+          }
+        },
+        {
+          "path": "42/media/clothing/clothingItems/CodexCBRT_SST02_Clothes.xml",
+          "sha256": "1e721a34b926ddfb055569c01a9c4e345bec2551da9dc278dc60a14e16147931",
+          "size": 405,
+          "source": {
+            "root": "workshop",
+            "path": "3799632784/mods/oldcat/42/media/clothing/clothingItems/SST02_Clothes.xml",
+            "sha256": "71b9d46d44e4e916c1b11c8f5ac6a0e42d80e178489b30bbedbff14a70e226bf"
+          },
+          "mode": "patch",
+          "patch_path": "patches/CodexCBRTIndependent_4221/42/media/clothing/clothingItems/CodexCBRT_SST02_Clothes.xml.patch",
+          "patch_sha256": "57254ee366b4d10eb3702bc87de5eb1de016ebe9214ba26dd72668cd9e0e080e",
+          "text_encoding": {
+            "bom": false,
+            "newline": "lf",
+            "ends_with_newline": false
+          }
+        },
+        {
+          "path": "42/media/clothing/clothingItems/CodexCBRT_SST02_Gloves.xml",
+          "sha256": "b6cd711e0ed9bdee66541b447664a295486f0717edf46232c39c907ef446fd95",
+          "size": 330,
+          "source": {
+            "root": "workshop",
+            "path": "3799632784/mods/oldcat/42/media/clothing/clothingItems/SST02_Gloves.xml",
+            "sha256": "f9adde5fe40b510640f5edb12fd0315cf24266b0507c0d340ce08a736e1288c3"
+          },
+          "mode": "patch",
+          "patch_path": "patches/CodexCBRTIndependent_4221/42/media/clothing/clothingItems/CodexCBRT_SST02_Gloves.xml.patch",
+          "patch_sha256": "faafa9f87e1a2ff79f5643183290fabfb03ff1a9ba13149b54d20a732d5e0334",
+          "text_encoding": {
+            "bom": false,
+            "newline": "lf",
+            "ends_with_newline": false
+          }
+        },
+        {
+          "path": "42/media/clothing/clothingItems/CodexCBRT_SST02_Helmet.xml",
+          "sha256": "13200a4439ad78c2d0d916b69535ffbb91065d2529e7dbdd8556f332826fe4d6",
+          "size": 442,
+          "source": {
+            "root": "workshop",
+            "path": "3799632784/mods/oldcat/42/media/clothing/clothingItems/SST02_Helmet.xml",
+            "sha256": "59ec4e91f007c370873e0a7cb072914b748c407821a8f066c5421fa05bc0baa2"
+          },
+          "mode": "patch",
+          "patch_path": "patches/CodexCBRTIndependent_4221/42/media/clothing/clothingItems/CodexCBRT_SST02_Helmet.xml.patch",
+          "patch_sha256": "75ec0892c59b63d47911787a4b5c9f223bb65ecf769c49844362d98b9e8c9a0a",
+          "text_encoding": {
+            "bom": false,
+            "newline": "lf",
+            "ends_with_newline": false
+          }
+        },
+        {
+          "path": "42/media/clothing/clothingItems/CodexCBRT_SST02_Mask.xml",
+          "sha256": "4f7fbfba98ae4f5eb5e62566978dd309647840447523f5004d21efcff5c3c22b",
+          "size": 394,
+          "source": {
+            "root": "workshop",
+            "path": "3799632784/mods/oldcat/42/media/clothing/clothingItems/SST02_Mask.xml",
+            "sha256": "be938b28997fe882d262607898caf9374a502a33ee6d13d67f1017d32be85910"
+          },
+          "mode": "patch",
+          "patch_path": "patches/CodexCBRTIndependent_4221/42/media/clothing/clothingItems/CodexCBRT_SST02_Mask.xml.patch",
+          "patch_sha256": "3776b9cc2a2d42e2bf89518544b85ff5706346962f13fd13041ff4302cbd0cab",
+          "text_encoding": {
+            "bom": false,
+            "newline": "lf",
+            "ends_with_newline": false
+          }
+        },
+        {
+          "path": "42/media/clothing/clothingItems/CodexCBRT_SST02_Pants.xml",
+          "sha256": "6633cdc659540513f79d496becceb4973e344d6b7d6c883c28b08d908f649a05",
+          "size": 399,
+          "source": {
+            "root": "workshop",
+            "path": "3799632784/mods/oldcat/42/media/clothing/clothingItems/SST02_Pants.xml",
+            "sha256": "a85f3fe44269b6c5f2058d5cd29971b2847c5a53a81290d92c98153baecc38fd"
+          },
+          "mode": "patch",
+          "patch_path": "patches/CodexCBRTIndependent_4221/42/media/clothing/clothingItems/CodexCBRT_SST02_Pants.xml.patch",
+          "patch_sha256": "0d7891da28fe6a92dadac92c35f9e90b882481a74e286552ca2ce515ab80e6b1",
+          "text_encoding": {
+            "bom": false,
+            "newline": "lf",
+            "ends_with_newline": false
+          }
+        },
+        {
+          "path": "42/media/fileGuidTable.xml",
+          "sha256": "558d04559f5da9b3a01862d669c377dcd4c163da9c647b0ef5ce656d39b51bd2",
+          "size": 1190,
+          "mode": "own",
+          "repo_path": "src/CodexCBRTIndependent_4221/42/media/fileGuidTable.xml"
+        },
+        {
+          "path": "42/media/lua/server/Items/CodexCBRT_Distributions.lua",
+          "sha256": "9020df1165e633f0e5b3d34dada2555e793d91c54662121d789151c33078ceaf",
+          "size": 1375,
+          "mode": "own",
+          "repo_path": "src/CodexCBRTIndependent_4221/42/media/lua/server/Items/CodexCBRT_Distributions.lua"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/ItemName.json",
+          "sha256": "4bcb0b1c0cc0d84f4510980c69663d044f655c14bc1730e5ddd83f92bafb5479",
+          "size": 490,
+          "mode": "own",
+          "repo_path": "src/CodexCBRTIndependent_4221/42/media/lua/shared/Translate/CN/ItemName.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/Recipes.json",
+          "sha256": "41e4065c03c26fceb6df0fd7ad2ad544e3e55a4c96755723e6c44b91bca273b6",
+          "size": 61,
+          "mode": "own",
+          "repo_path": "src/CodexCBRTIndependent_4221/42/media/lua/shared/Translate/CN/Recipes.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/EN/ItemName.json",
+          "sha256": "038bfbe90bc784861c441761ac6b5e5ef4d01a002a132759807b19b8b8bc3e2c",
+          "size": 557,
+          "mode": "own",
+          "repo_path": "src/CodexCBRTIndependent_4221/42/media/lua/shared/Translate/EN/ItemName.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/EN/Recipes.json",
+          "sha256": "55af776c12295d8a1019144a926b98dcc0d50a59dde3ecbc5c0a2f34fac8a7d8",
+          "size": 65,
+          "mode": "own",
+          "repo_path": "src/CodexCBRTIndependent_4221/42/media/lua/shared/Translate/EN/Recipes.json"
+        },
+        {
+          "path": "42/media/models_X/CodexCBRT_SST02_Boots1.fbx",
+          "sha256": "371e20a43fc45fd2761aae99a272692d5ab4eb38f60a8aa88b7cea06a5dbf3de",
+          "size": 200124,
+          "source": {
+            "root": "workshop",
+            "path": "3799632784/mods/oldcat/42/media/models_X/SST02_Boots1.fbx",
+            "sha256": "371e20a43fc45fd2761aae99a272692d5ab4eb38f60a8aa88b7cea06a5dbf3de"
+          },
+          "mode": "copy"
+        },
+        {
+          "path": "42/media/models_X/CodexCBRT_SST02_Boots_F.fbx",
+          "sha256": "4d8b97649303589c6a1b2186052f55d0e409747ac778eb6fb82378572801f501",
+          "size": 139788,
+          "source": {
+            "root": "workshop",
+            "path": "3799632784/mods/oldcat/42/media/models_X/SST02_Boots_F.fbx",
+            "sha256": "4d8b97649303589c6a1b2186052f55d0e409747ac778eb6fb82378572801f501"
+          },
+          "mode": "copy"
+        },
+        {
+          "path": "42/media/models_X/CodexCBRT_SST02_ChestRig.fbx",
+          "sha256": "645644036f26020bf952992987f7098965791a41695d426a2474c45463aae22a",
+          "size": 732892,
+          "source": {
+            "root": "workshop",
+            "path": "3799632784/mods/oldcat/42/media/models_X/SST02_ChestRig.fbx",
+            "sha256": "645644036f26020bf952992987f7098965791a41695d426a2474c45463aae22a"
+          },
+          "mode": "copy"
+        },
+        {
+          "path": "42/media/models_X/CodexCBRT_SST02_Clothes.fbx",
+          "sha256": "06507108c8a4dfe04e815812b033047850a046a6348c74efcb1af4351933ba91",
+          "size": 288604,
+          "source": {
+            "root": "workshop",
+            "path": "3799632784/mods/oldcat/42/media/models_X/SST02_Clothes.fbx",
+            "sha256": "06507108c8a4dfe04e815812b033047850a046a6348c74efcb1af4351933ba91"
+          },
+          "mode": "copy"
+        },
+        {
+          "path": "42/media/models_X/CodexCBRT_SST02_Clothes_F.fbx",
+          "sha256": "4ddd649af6e403b096919215c33643d2845dacc99a55b56435d15f9cdac9a4fb",
+          "size": 293788,
+          "source": {
+            "root": "workshop",
+            "path": "3799632784/mods/oldcat/42/media/models_X/SST02_Clothes_F.fbx",
+            "sha256": "4ddd649af6e403b096919215c33643d2845dacc99a55b56435d15f9cdac9a4fb"
+          },
+          "mode": "copy"
+        },
+        {
+          "path": "42/media/models_X/CodexCBRT_SST02_Helmet.fbx",
+          "sha256": "9a03674dd157b869e5de69ec11059234d41f44de2b95ae643441e5a8e662c262",
+          "size": 517820,
+          "source": {
+            "root": "workshop",
+            "path": "3799632784/mods/oldcat/42/media/models_X/SST02_Helmet.fbx",
+            "sha256": "9a03674dd157b869e5de69ec11059234d41f44de2b95ae643441e5a8e662c262"
+          },
+          "mode": "copy"
+        },
+        {
+          "path": "42/media/models_X/CodexCBRT_SST02_Mask.fbx",
+          "sha256": "5dd60e306d36cdbd38dcf5748fc7b935b12c3cf8b909725593f46e75b0dc99cc",
+          "size": 563436,
+          "source": {
+            "root": "workshop",
+            "path": "3799632784/mods/oldcat/42/media/models_X/SST02_Mask.fbx",
+            "sha256": "5dd60e306d36cdbd38dcf5748fc7b935b12c3cf8b909725593f46e75b0dc99cc"
+          },
+          "mode": "copy"
+        },
+        {
+          "path": "42/media/models_X/CodexCBRT_SST02_Pants.fbx",
+          "sha256": "f504956373ed0df9b2d0eed221cf7b80663e6a070324641f62bcd92442c8fc09",
+          "size": 423692,
+          "source": {
+            "root": "workshop",
+            "path": "3799632784/mods/oldcat/42/media/models_X/SST02_Pants.fbx",
+            "sha256": "f504956373ed0df9b2d0eed221cf7b80663e6a070324641f62bcd92442c8fc09"
+          },
+          "mode": "copy"
+        },
+        {
+          "path": "42/media/models_X/CodexCBRT_SST02_Pants_F.fbx",
+          "sha256": "45e8fad04f3fbd633f023597dc9f56558ef14294b323f2facee4a71e72c21445",
+          "size": 360524,
+          "source": {
+            "root": "workshop",
+            "path": "3799632784/mods/oldcat/42/media/models_X/SST02_Pants_F.fbx",
+            "sha256": "45e8fad04f3fbd633f023597dc9f56558ef14294b323f2facee4a71e72c21445"
+          },
+          "mode": "copy"
+        },
+        {
+          "path": "42/media/registries.lua",
+          "sha256": "474262ce4bbd7350dc991213141e3994baf81a26f1341a9b1a2d829c13543d54",
+          "size": 107,
+          "mode": "own",
+          "repo_path": "src/CodexCBRTIndependent_4221/42/media/registries.lua"
+        },
+        {
+          "path": "42/media/scripts/CodexCBRT_Items.txt",
+          "sha256": "7a9a2d570407148b1a44ce69f340cc36aad1a52d2fb73e4a6e286224e5382cf6",
+          "size": 5146,
+          "source": {
+            "root": "workshop",
+            "path": "3799632784/mods/oldcat/42/media/scripts/Tactical02Set.txt",
+            "sha256": "678673020e7ed6deaf6ace76046dbf76df32b536d1c23fec3ea398c184a20eb0"
+          },
+          "mode": "patch",
+          "patch_path": "patches/CodexCBRTIndependent_4221/42/media/scripts/CodexCBRT_Items.txt.patch",
+          "patch_sha256": "535123316f973c967cd6aae340e9c54ab8d78b204a8d54db47aea53543745022",
+          "text_encoding": {
+            "bom": false,
+            "newline": "lf",
+            "ends_with_newline": false
+          }
+        },
+        {
+          "path": "42/media/scripts/CodexCBRT_Models.txt",
+          "sha256": "a73be99535316bb57e7b6e0f41e481551219c3671367a825254fcaee255b830d",
+          "size": 163,
+          "mode": "own",
+          "repo_path": "src/CodexCBRTIndependent_4221/42/media/scripts/CodexCBRT_Models.txt"
+        },
+        {
+          "path": "42/media/textures/CodexCBRT_SST02_ChestRig.png",
+          "sha256": "c2e59ca431e59f05090f32bb1ae36b423b861799f203f2c3f8b6e0e1f62d6086",
+          "size": 3384844,
+          "source": {
+            "root": "workshop",
+            "path": "3799632784/mods/oldcat/42/media/textures/SST02_ChestRig.png",
+            "sha256": "c2e59ca431e59f05090f32bb1ae36b423b861799f203f2c3f8b6e0e1f62d6086"
+          },
+          "mode": "copy"
+        },
+        {
+          "path": "42/media/textures/CodexCBRT_SST02_Clothes.png",
+          "sha256": "dc625acd26336e55a79e9cd548b2d46c6006112fbcc892d116b732ec69d29f03",
+          "size": 6459063,
+          "source": {
+            "root": "workshop",
+            "path": "3799632784/mods/oldcat/42/media/textures/SST02_Clothes.png",
+            "sha256": "dc625acd26336e55a79e9cd548b2d46c6006112fbcc892d116b732ec69d29f03"
+          },
+          "mode": "copy"
+        },
+        {
+          "path": "42/media/textures/CodexCBRT_SST02_Gloves.png",
+          "sha256": "69e4d733f9f595aff745504d112c7829652c6ec7e02ed8961a55efe690b2fcc1",
+          "size": 141911,
+          "source": {
+            "root": "workshop",
+            "path": "3799632784/mods/oldcat/42/media/textures/SST02_Gloves.png",
+            "sha256": "69e4d733f9f595aff745504d112c7829652c6ec7e02ed8961a55efe690b2fcc1"
+          },
+          "mode": "copy"
+        },
+        {
+          "path": "42/media/textures/CodexCBRT_SST02_Helmet.png",
+          "sha256": "5bc36cd26f51b13004a91b03f7408584d94d571d5b9ba77dfde7eda666c2b040",
+          "size": 2633806,
+          "source": {
+            "root": "workshop",
+            "path": "3799632784/mods/oldcat/42/media/textures/SST02_Helmet.png",
+            "sha256": "5bc36cd26f51b13004a91b03f7408584d94d571d5b9ba77dfde7eda666c2b040"
+          },
+          "mode": "copy"
+        },
+        {
+          "path": "42/media/textures/CodexCBRT_SST02_Mask.png",
+          "sha256": "b9404541cab90dc4940ee750a8acc51a5e88ac5a3f71602a3220539987a98e56",
+          "size": 1594843,
+          "source": {
+            "root": "workshop",
+            "path": "3799632784/mods/oldcat/42/media/textures/SST02_Mask.png",
+            "sha256": "b9404541cab90dc4940ee750a8acc51a5e88ac5a3f71602a3220539987a98e56"
+          },
+          "mode": "copy"
+        },
+        {
+          "path": "42/media/textures/CodexCBRT_SST02_Pants.png",
+          "sha256": "c30c7f3ca436dab44a4c75cde2fa78667b2ae96918919ef86530780f471be122",
+          "size": 6974080,
+          "source": {
+            "root": "workshop",
+            "path": "3799632784/mods/oldcat/42/media/textures/SST02_Pants.png",
+            "sha256": "c30c7f3ca436dab44a4c75cde2fa78667b2ae96918919ef86530780f471be122"
+          },
+          "mode": "copy"
+        },
+        {
+          "path": "42/media/textures/Item_CodexCBRT_SST02_Boots.png",
+          "sha256": "190bcbf1d78b8b7ff0ffe2839f0bd2c9cf4c6bd06a5a7d276f99478863fc1b9b",
+          "size": 2097,
+          "source": {
+            "root": "workshop",
+            "path": "3799632784/mods/oldcat/42/media/textures/item_SST02_Boots.png",
+            "sha256": "190bcbf1d78b8b7ff0ffe2839f0bd2c9cf4c6bd06a5a7d276f99478863fc1b9b"
+          },
+          "mode": "copy"
+        },
+        {
+          "path": "42/media/textures/Item_CodexCBRT_SST02_ChestRig.png",
+          "sha256": "3f768be6ae51dac9ee5e50e781c24d5ebf6cab9581f58625cd15a05e38b5d07e",
+          "size": 1999,
+          "source": {
+            "root": "workshop",
+            "path": "3799632784/mods/oldcat/42/media/textures/item_SST02_ChestRig.png",
+            "sha256": "3f768be6ae51dac9ee5e50e781c24d5ebf6cab9581f58625cd15a05e38b5d07e"
+          },
+          "mode": "copy"
+        },
+        {
+          "path": "42/media/textures/Item_CodexCBRT_SST02_Clothes.png",
+          "sha256": "02532607cda801fd45c48c6d6b235ee144399f858b7d751e57f27cc0c3e2f871",
+          "size": 2123,
+          "source": {
+            "root": "workshop",
+            "path": "3799632784/mods/oldcat/42/media/textures/item_SST02_Clothes.png",
+            "sha256": "02532607cda801fd45c48c6d6b235ee144399f858b7d751e57f27cc0c3e2f871"
+          },
+          "mode": "copy"
+        },
+        {
+          "path": "42/media/textures/Item_CodexCBRT_SST02_Gloves.png",
+          "sha256": "89cc7f74b3cdda877b10dbf6f23cf992d87072d15589a06cef97e84e3d48a215",
+          "size": 1959,
+          "source": {
+            "root": "workshop",
+            "path": "3799632784/mods/oldcat/42/media/textures/item_SST02_Gloves.png",
+            "sha256": "89cc7f74b3cdda877b10dbf6f23cf992d87072d15589a06cef97e84e3d48a215"
+          },
+          "mode": "copy"
+        },
+        {
+          "path": "42/media/textures/Item_CodexCBRT_SST02_Helmet.png",
+          "sha256": "d4174ccf39084c5582aae4a8baddc78b7e2c2b9d6b604f3ff0c7499718ffb0ca",
+          "size": 1894,
+          "source": {
+            "root": "workshop",
+            "path": "3799632784/mods/oldcat/42/media/textures/item_SST_Helmet2.png",
+            "sha256": "d4174ccf39084c5582aae4a8baddc78b7e2c2b9d6b604f3ff0c7499718ffb0ca"
+          },
+          "mode": "copy"
+        },
+        {
+          "path": "42/media/textures/Item_CodexCBRT_SST02_Mask.png",
+          "sha256": "dc96dbf2f1077fb84bf4e44f7cfd1c1bbbe65b3ed09242bae7b0d979a68ee0f9",
+          "size": 2083,
+          "source": {
+            "root": "workshop",
+            "path": "3799632784/mods/oldcat/42/media/textures/item_SST02_Mask.png",
+            "sha256": "dc96dbf2f1077fb84bf4e44f7cfd1c1bbbe65b3ed09242bae7b0d979a68ee0f9"
+          },
+          "mode": "copy"
+        },
+        {
+          "path": "42/media/textures/Item_CodexCBRT_SST02_Pants.png",
+          "sha256": "1b4a8f4b5ce221e926e78cbf5ad1195f97d9f4b3b9b85dbc710ffa4a8ab5abeb",
+          "size": 1696,
+          "source": {
+            "root": "workshop",
+            "path": "3799632784/mods/oldcat/42/media/textures/item_SST02_Pants.png",
+            "sha256": "1b4a8f4b5ce221e926e78cbf5ad1195f97d9f4b3b9b85dbc710ffa4a8ab5abeb"
+          },
+          "mode": "copy"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "eaf1f1960f780f8aebef029dd49514f06d79842ac6c4fe86e53e23c919cace47",
+          "size": 308,
+          "mode": "own",
+          "repo_path": "src/CodexCBRTIndependent_4221/42/mod.info"
+        },
+        {
+          "path": "42/poster.png",
+          "sha256": "c185602ca32b7ecbc14e8962b7b67847662fa3fcb8812d393ad0cb28e842b3a6",
+          "size": 136971,
+          "source": {
+            "root": "workshop",
+            "path": "3799632784/mods/oldcat/42/poster.png",
+            "sha256": "c185602ca32b7ecbc14e8962b7b67847662fa3fcb8812d393ad0cb28e842b3a6"
+          },
+          "mode": "copy"
+        },
+        {
+          "path": "icon.png",
+          "sha256": "2c0e8e5d06f7396e765db427cb1aaa663f49497721361bb6bd1d597b88eb16c5",
+          "size": 18864,
+          "source": {
+            "root": "workshop",
+            "path": "3799632784/mods/oldcat/42/logo.png",
+            "sha256": "2c0e8e5d06f7396e765db427cb1aaa663f49497721361bb6bd1d597b88eb16c5"
+          },
+          "mode": "copy"
+        },
+        {
+          "path": "mod.info",
+          "sha256": "eaf1f1960f780f8aebef029dd49514f06d79842ac6c4fe86e53e23c919cace47",
+          "size": 308,
+          "mode": "own",
+          "repo_path": "src/CodexCBRTIndependent_4221/mod.info"
+        },
+        {
+          "path": "poster.png",
+          "sha256": "c185602ca32b7ecbc14e8962b7b67847662fa3fcb8812d393ad0cb28e842b3a6",
+          "size": 136971,
+          "source": {
+            "root": "workshop",
+            "path": "3799632784/mods/oldcat/42/poster.png",
+            "sha256": "c185602ca32b7ecbc14e8962b7b67847662fa3fcb8812d393ad0cb28e842b3a6"
+          },
+          "mode": "copy"
+        }
+      ]
+    },
+    {
+      "id": "CodexCharacterMenuTweaks_4221",
+      "folder": "CodexCharacterMenuTweaks_4221",
+      "version": "1.0.0",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/client",
+        "42/media/lua/client/CodexCharacterMenuTweaks4221",
+        "42/media/lua/shared",
+        "42/media/lua/shared/Translate",
+        "42/media/lua/shared/Translate/CN",
+        "42/media/lua/shared/Translate/EN",
+        "common"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/client/CodexCharacterMenuTweaks4221/RaccoonMenu.lua",
+          "sha256": "394c52bf9b7ad1a22e885ed92d08fb4342c9755d4b672e8f93446a31d9e42335",
+          "size": 882,
+          "mode": "own",
+          "repo_path": "src/CodexCharacterMenuTweaks_4221/42/media/lua/client/CodexCharacterMenuTweaks4221/RaccoonMenu.lua"
+        },
+        {
+          "path": "42/media/lua/client/CodexCharacterMenuTweaks4221/XFACTIONButton.lua",
+          "sha256": "806210c20e2557cbc1f8173e9d3384b58b7715ec13c7ad4cb56f310e1972b084",
+          "size": 4934,
+          "mode": "own",
+          "repo_path": "src/CodexCharacterMenuTweaks_4221/42/media/lua/client/CodexCharacterMenuTweaks4221/XFACTIONButton.lua"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/UI.json",
+          "sha256": "1c7cd90b34cca58907b094cc65db8765c126d72fca37da8395aa88fcc803de4a",
+          "size": 178,
+          "mode": "own",
+          "repo_path": "src/CodexCharacterMenuTweaks_4221/42/media/lua/shared/Translate/CN/UI.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/EN/UI.json",
+          "sha256": "d7c70c59806d66897635f4e7cdcc77bf73ba25356ad4836960682d6ba630d23c",
+          "size": 166,
+          "mode": "own",
+          "repo_path": "src/CodexCharacterMenuTweaks_4221/42/media/lua/shared/Translate/EN/UI.json"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "a704cf60044f5b31e2938082eeb2b0b0f7cd9d30b08e73035fdb78593b980dcf",
+          "size": 457,
+          "mode": "own",
+          "repo_path": "src/CodexCharacterMenuTweaks_4221/42/mod.info"
+        }
+      ]
+    },
+    {
+      "id": "CodexNarcotics_CN_4221",
+      "folder": "CodexNarcotics_CN_4221",
+      "version": "1.0.0",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/client",
+        "42/media/lua/server",
+        "42/media/lua/shared",
+        "42/media/lua/shared/CodexNarcoticsCN4221",
+        "42/media/lua/shared/Translate",
+        "42/media/lua/shared/Translate/CN",
+        "common"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/client/NnC_ModSync.lua",
+          "sha256": "5f007297e17c10805251cab357045c8f56629c2c6d8f7f662af937d6fa8c60f5",
+          "size": 209,
+          "mode": "own",
+          "repo_path": "src/CodexNarcotics_CN_4221/42/media/lua/client/NnC_ModSync.lua"
+        },
+        {
+          "path": "42/media/lua/server/NnC_OnEat.lua",
+          "sha256": "7a93b287d604b8dda32a2a5a56fcf8a9c80733d8d910d6316a8262d48eb45452",
+          "size": 201,
+          "mode": "own",
+          "repo_path": "src/CodexNarcotics_CN_4221/42/media/lua/server/NnC_OnEat.lua"
+        },
+        {
+          "path": "42/media/lua/shared/CodexNarcoticsCN4221/Bridge.lua",
+          "sha256": "a34ac54d9c5312ec6477d4de3f05043b8d6e896d0b8604257c9b71e60ca9a69c",
+          "size": 3539,
+          "mode": "own",
+          "repo_path": "src/CodexNarcotics_CN_4221/42/media/lua/shared/CodexNarcoticsCN4221/Bridge.lua"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/ContextMenu.json",
+          "sha256": "e63b6d156b8f481359866298b9a6086b63ad84e7381718432ad542bbe579b78c",
+          "size": 222,
+          "mode": "own",
+          "repo_path": "src/CodexNarcotics_CN_4221/42/media/lua/shared/Translate/CN/ContextMenu.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/Farming.json",
+          "sha256": "b25a0456ff487e564a2d0f654f8dda40fd7960a8356cda361e014de67858a12f",
+          "size": 209,
+          "mode": "own",
+          "repo_path": "src/CodexNarcotics_CN_4221/42/media/lua/shared/Translate/CN/Farming.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/IG_UI.json",
+          "sha256": "df00313cc0a39be636699ca579e02c9d6df2a85ec3eb678a0f9a2e0d416eed1d",
+          "size": 92,
+          "mode": "own",
+          "repo_path": "src/CodexNarcotics_CN_4221/42/media/lua/shared/Translate/CN/IG_UI.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/ItemName.json",
+          "sha256": "7c3f9c839d5e12005c734581885099dba8ca18ea0298d13b44f8573158f8fe48",
+          "size": 9863,
+          "mode": "own",
+          "repo_path": "src/CodexNarcotics_CN_4221/42/media/lua/shared/Translate/CN/ItemName.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/Moodles.json",
+          "sha256": "5e68c690206306303ca9d5bd2dfbb7279ecf9e00189e70d85363427ca63a6353",
+          "size": 4152,
+          "mode": "own",
+          "repo_path": "src/CodexNarcotics_CN_4221/42/media/lua/shared/Translate/CN/Moodles.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/Recipes.json",
+          "sha256": "0990dff546f4f60c9fbb3c3f27b5b3499f57c5ed0dfef83da282bc5bb2c4c1b5",
+          "size": 3012,
+          "mode": "own",
+          "repo_path": "src/CodexNarcotics_CN_4221/42/media/lua/shared/Translate/CN/Recipes.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/Sandbox.json",
+          "sha256": "a2dcf3d0952d62cd04396e2d8021d9e1739d1a619e99e2d3a969889b6669dff8",
+          "size": 3162,
+          "mode": "own",
+          "repo_path": "src/CodexNarcotics_CN_4221/42/media/lua/shared/Translate/CN/Sandbox.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/Tooltip.json",
+          "sha256": "b81a7e4b1c0a7f73206e36f97ab8f08cfcc754475648a1ab14a9ec53ee71a1d5",
+          "size": 6759,
+          "mode": "own",
+          "repo_path": "src/CodexNarcotics_CN_4221/42/media/lua/shared/Translate/CN/Tooltip.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/UI.json",
+          "sha256": "13130bf685526e25aacb239a65b198d473bb1f7af2aa57e1cfea42b9fa5d4efb",
+          "size": 3420,
+          "mode": "own",
+          "repo_path": "src/CodexNarcotics_CN_4221/42/media/lua/shared/Translate/CN/UI.json"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "ae92dceced671410d789868dfbdd1f01a15599271f05b5d76774aa684f004a18",
+          "size": 400,
+          "mode": "own",
+          "repo_path": "src/CodexNarcotics_CN_4221/42/mod.info"
+        }
+      ]
+    },
+    {
+      "id": "CodexNekomataEXCompat_4221",
+      "folder": "CodexNekomataEXCompat_4221",
+      "version": "1.0.0",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/shared",
+        "42/media/lua/shared/CodexNekomataEXCompat4221",
+        "common"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/shared/CodexNekomataEXCompat4221/Compat.lua",
+          "sha256": "069337cee61edaa652936d9122c6d8f66bd1c87f8cec90c7f5a7a5f58608ee2c",
+          "size": 7341,
+          "mode": "own",
+          "repo_path": "src/CodexNekomataEXCompat_4221/42/media/lua/shared/CodexNekomataEXCompat4221/Compat.lua"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "9901bd7a21d49bd4b90e7c50f9bbc05e795154389f48ca5764e7388e1b81255f",
+          "size": 570,
+          "mode": "own",
+          "repo_path": "src/CodexNekomataEXCompat_4221/42/mod.info"
+        }
+      ]
+    },
+    {
+      "id": "CodexNekomataEXUpgrade_4221",
+      "folder": "CodexNekomataEXUpgrade_4221",
+      "version": "1.0.0",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/shared",
+        "42/media/lua/shared/CodexNekomataEXUpgrade4221",
+        "42/media/lua/shared/Translate",
+        "42/media/lua/shared/Translate/CN",
+        "42/media/lua/shared/Translate/EN",
+        "42/media/scripts",
+        "common"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/shared/CodexNekomataEXUpgrade4221/Upgrade.lua",
+          "sha256": "a9d0e593146554b16360e44b9b4fa759118ca2a7f6445e607c98adca21651de8",
+          "size": 3616,
+          "mode": "own",
+          "repo_path": "src/CodexNekomataEXUpgrade_4221/42/media/lua/shared/CodexNekomataEXUpgrade4221/Upgrade.lua"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/Recipes.json",
+          "sha256": "e5e642e56b4a9f5bfa790f784c3c12d6d23f907ef0a3e8e5dfe16691e8ff194e",
+          "size": 148,
+          "mode": "own",
+          "repo_path": "src/CodexNekomataEXUpgrade_4221/42/media/lua/shared/Translate/CN/Recipes.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/EN/Recipes.json",
+          "sha256": "b449add5da3f8d6677d8eb61f42ec84f877905bb41515601aa1afcb543bfff6b",
+          "size": 155,
+          "mode": "own",
+          "repo_path": "src/CodexNekomataEXUpgrade_4221/42/media/lua/shared/Translate/EN/Recipes.json"
+        },
+        {
+          "path": "42/media/scripts/CodexNekomataEXUpgrade.txt",
+          "sha256": "b91e062b6a242e3fdca4692ae3440333364ba3aba9d700fcde3197bec7da68f1",
+          "size": 1403,
+          "mode": "own",
+          "repo_path": "src/CodexNekomataEXUpgrade_4221/42/media/scripts/CodexNekomataEXUpgrade.txt"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "f683b746493d19958822468d25fa2a33f190398a834464863468799b74b978b3",
+          "size": 652,
+          "mode": "own",
+          "repo_path": "src/CodexNekomataEXUpgrade_4221/42/mod.info"
+        }
+      ]
+    },
+    {
+      "id": "CodexPZOptimization_CN_4221",
+      "folder": "CodexPZOptimization_CN_4221",
+      "version": "1.0.0",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/client",
+        "42/media/lua/client/pzopt",
+        "common"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/client/pzopt/CodexPZOptCN.lua",
+          "sha256": "3c1382d1aee44ffa92423d8a75c6c46df9fe79f4ff3813fcc0ba720c2e47fcfb",
+          "size": 152017,
+          "mode": "own",
+          "repo_path": "src/CodexPZOptimization_CN_4221/42/media/lua/client/pzopt/CodexPZOptCN.lua"
+        },
+        {
+          "path": "42/media/lua/client/pzopt/pzopt_mainscreen_menu.lua",
+          "sha256": "4bb541923e601acc9a8b4ae516cab5983adbdf4a9560c8d4b1b90d61720d9019",
+          "size": 178144,
+          "source": {
+            "root": "game",
+            "path": "media/lua/client/pzopt/pzopt_mainscreen_menu.lua",
+            "sha256": "874f797249523303f64e1797952ba857f11cdad859709002aec10fe1eba8143a"
+          },
+          "mode": "patch",
+          "patch_path": "patches/CodexPZOptimization_CN_4221/42/media/lua/client/pzopt/pzopt_mainscreen_menu.lua.patch",
+          "patch_sha256": "9be4aa11bedd8ef1234f219e212807b8adb21b6ae0143f50ab6bc53f8ffafc7f",
+          "text_encoding": {
+            "bom": false,
+            "newline": "crlf",
+            "ends_with_newline": true
+          }
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "2063ffb5ddf7af346c6cdbaa3894e81012fe0663e595191e4103a363f4c004fa",
+          "size": 357,
+          "mode": "own",
+          "repo_path": "src/CodexPZOptimization_CN_4221/42/mod.info"
+        }
+      ]
+    },
+    {
+      "id": "CodexTranslatorPercentFix_4221",
+      "folder": "CodexTranslatorPercentFix_4221",
+      "version": "1.0.0",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/client",
+        "common"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/client/CodexTranslatorPercentFix.lua",
+          "sha256": "b856be4e8cd66f7b04f4d5744d36a049c11969ae77b6187c3662c299e9c31a4e",
+          "size": 670,
+          "mode": "own",
+          "repo_path": "src/CodexTranslatorPercentFix_4221/42/media/lua/client/CodexTranslatorPercentFix.lua"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "b57cd5e9bf3a71f6938261c798fc1a83de8d696d4d548677160008639a4cc6f1",
+          "size": 336,
+          "mode": "own",
+          "repo_path": "src/CodexTranslatorPercentFix_4221/42/mod.info"
+        }
+      ]
+    },
+    {
+      "id": "CodexXFACTION_CN_4221",
+      "folder": "CodexXFACTION_CN_4221",
+      "version": "1.0.1",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/client",
+        "42/media/lua/client/CodexXFACTIONCN4221",
+        "42/media/lua/shared",
+        "42/media/lua/shared/Translate",
+        "42/media/lua/shared/Translate/CN"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/client/CodexXFACTIONCN4221/Client.lua",
+          "sha256": "459e633c09eaa4f967ec0d36eeab7580652bcfa180f8ab357a9f4156e280a9ba",
+          "size": 5053,
+          "mode": "own",
+          "repo_path": "src/CodexXFACTION_CN_4221/42/media/lua/client/CodexXFACTIONCN4221/Client.lua"
+        },
+        {
+          "path": "42/media/lua/client/CodexXFACTIONCN4221/Presentation.lua",
+          "sha256": "df521b3174bbb04fefb4a9e31f01a16769c2420c7689f4f88010066af2a06869",
+          "size": 4368,
+          "mode": "own",
+          "repo_path": "src/CodexXFACTION_CN_4221/42/media/lua/client/CodexXFACTIONCN4221/Presentation.lua"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/Sandbox.json",
+          "sha256": "69dd9750bb9b09e37cdc1a0a49d2ae94b14dfea6e2c5d14d3c5f13cf895889a9",
+          "size": 1638,
+          "mode": "own",
+          "repo_path": "src/CodexXFACTION_CN_4221/42/media/lua/shared/Translate/CN/Sandbox.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/UI.json",
+          "sha256": "ec549b8fab2074c17f89b7a6762bf1307f14acc7b2ce5e2bc61676e55c45bcda",
+          "size": 36362,
+          "mode": "own",
+          "repo_path": "src/CodexXFACTION_CN_4221/42/media/lua/shared/Translate/CN/UI.json"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "66c0bd0e01811cc05ca134f7aa139d0445addc71a62a3ef7f4752df161dd6abf",
+          "size": 398,
+          "mode": "own",
+          "repo_path": "src/CodexXFACTION_CN_4221/42/mod.info"
+        }
+      ]
+    },
+    {
+      "id": "Codex_DAMN_VanillaTires_4221",
+      "folder": "DAMN_VanillaTires_4221_LocalCompat",
+      "version": "1.0.0",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/client",
+        "42/media/lua/shared",
+        "42/media/lua/shared/Translate",
+        "42/media/lua/shared/Translate/CH",
+        "42/media/lua/shared/Translate/CN",
+        "42/media/lua/shared/Translate/EN",
+        "42/media/scripts"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/client/CodexDAMNVanillaTireRepair.lua",
+          "sha256": "252cefc90758d0017218c86f9b5deb7292042a518a181e8fed92ad4c22824935",
+          "size": 1902,
+          "mode": "own",
+          "repo_path": "src/DAMN_VanillaTires_4221_LocalCompat/42/media/lua/client/CodexDAMNVanillaTireRepair.lua"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CH/Recipes.json",
+          "sha256": "071d4088ebfc77e089bb88c654c019999f164373a470cf401be0ea35ea81f44d",
+          "size": 69,
+          "mode": "own",
+          "repo_path": "src/DAMN_VanillaTires_4221_LocalCompat/42/media/lua/shared/Translate/CH/Recipes.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/Recipes.json",
+          "sha256": "b0e8ff6bf4d8683d588a65f79e92657d98dfc6ebcfd7df492a9b40c8f9188dd7",
+          "size": 69,
+          "mode": "own",
+          "repo_path": "src/DAMN_VanillaTires_4221_LocalCompat/42/media/lua/shared/Translate/CN/Recipes.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/EN/Recipes.json",
+          "sha256": "6f3c74f62b52e5bd9965cc8eb5156faab8db80b58584f9854380891bc4d39503",
+          "size": 67,
+          "mode": "own",
+          "repo_path": "src/DAMN_VanillaTires_4221_LocalCompat/42/media/lua/shared/Translate/EN/Recipes.json"
+        },
+        {
+          "path": "42/media/scripts/CodexDAMNVanillaTireRepair.txt",
+          "sha256": "d32ca1c7dfda4fc3a109d5d7b9d69e72a55bebe9bd87eb17cb06c81b814078da",
+          "size": 721,
+          "mode": "own",
+          "repo_path": "src/DAMN_VanillaTires_4221_LocalCompat/42/media/scripts/CodexDAMNVanillaTireRepair.txt"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "5d26243a443f15ee95d1b8adbc7985df68eec8570bb3ce2ae10e8313776498d2",
+          "size": 579,
+          "mode": "own",
+          "repo_path": "src/DAMN_VanillaTires_4221_LocalCompat/42/mod.info"
+        }
+      ]
+    },
+    {
+      "id": "Codex_DebugMenu_Generator_4221",
+      "folder": "DebugMenuGenerator_4221_LocalFix",
+      "version": "1.2.0",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/client",
+        "common"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/client/Codex_DebugMenuGeneratorFix.lua",
+          "sha256": "c30f69f69ab166dd16f83b6708f3193b684e938b011ece200dd8fe1531a91f85",
+          "size": 4061,
+          "mode": "own",
+          "repo_path": "src/DebugMenuGenerator_4221_LocalFix/42/media/lua/client/Codex_DebugMenuGeneratorFix.lua"
+        },
+        {
+          "path": "42/media/lua/client/Codex_ErikaFurnitureTypes.lua",
+          "sha256": "8dccc40b6c63a537722ce5ea31d973484e82f4a8cbe6c2c1ffd537530e57aba5",
+          "size": 14831,
+          "mode": "own",
+          "repo_path": "src/DebugMenuGenerator_4221_LocalFix/42/media/lua/client/Codex_ErikaFurnitureTypes.lua"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "9f20379801f6a141eba329ac0e795c1ef69ed0aa049ce060bd37248a4ad5262e",
+          "size": 341,
+          "mode": "own",
+          "repo_path": "src/DebugMenuGenerator_4221_LocalFix/42/mod.info"
+        }
+      ]
+    },
+    {
+      "id": "Codex_InventoryTransferPerformance_4221",
+      "folder": "InventoryTransferPerformance_4221_Local",
+      "version": "1.2.0",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/client"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/client/Codex_InventoryTransferPerformance.lua",
+          "sha256": "8c02f75793a577faa3245d1e03713f3b09a9ddbd2e304fbdd9c49089f18002a6",
+          "size": 24017,
+          "mode": "own",
+          "repo_path": "src/InventoryTransferPerformance_4221_Local/42/media/lua/client/Codex_InventoryTransferPerformance.lua"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "88096955893490bfb540867b677b5db7f59db96036dcfcde807a1b2b3decf4c4",
+          "size": 540,
+          "mode": "own",
+          "repo_path": "src/InventoryTransferPerformance_4221_Local/42/mod.info"
+        }
+      ]
+    },
+    {
+      "id": "Codex_MFS_AmmoVisual_Compat_4221",
+      "folder": "MFS_AmmoVisual_Compat_4221_LocalFix",
+      "version": "1.0.0",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/shared"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/shared/Codex_MFS_AmmoBox_Compat.lua",
+          "sha256": "e6681d4d1fcf5a55a5e1d101a4575c4e84db381ed2150721d4e05b6aa364ebc7",
+          "size": 3976,
+          "mode": "own",
+          "repo_path": "src/MFS_AmmoVisual_Compat_4221_LocalFix/42/media/lua/shared/Codex_MFS_AmmoBox_Compat.lua"
+        },
+        {
+          "path": "42/media/lua/shared/Codex_MFS_MagazineVisual_Compat.lua",
+          "sha256": "1d57ee3bf458b498e6ccf94041280b4df27cbb140b66e8dad688221a16fe409f",
+          "size": 4065,
+          "mode": "own",
+          "repo_path": "src/MFS_AmmoVisual_Compat_4221_LocalFix/42/media/lua/shared/Codex_MFS_MagazineVisual_Compat.lua"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "ab1e33a6350200e77821642bb0b40ee08e272a4625617fe5f9d711c3e7ee44a4",
+          "size": 539,
+          "mode": "own",
+          "repo_path": "src/MFS_AmmoVisual_Compat_4221_LocalFix/42/mod.info"
+        }
+      ]
+    },
+    {
+      "id": "Codex_MFS_AttachedLight_Hotkey_4221",
+      "folder": "MFS_AttachedLight_Hotkey_4221_LocalFix",
+      "version": "1.0.0",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/client"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/client/Codex_MFS_AttachedLight_Hotkey.lua",
+          "sha256": "33b0dce2c5bac67788e9e77a84a5836736253fb91907b6e2148d552547afcd72",
+          "size": 3486,
+          "mode": "own",
+          "repo_path": "src/MFS_AttachedLight_Hotkey_4221_LocalFix/42/media/lua/client/Codex_MFS_AttachedLight_Hotkey.lua"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "94ee87db6fa252cf434eea2652d5e97986d69a7c87d1ccc3297eb52ad4890f56",
+          "size": 524,
+          "mode": "own",
+          "repo_path": "src/MFS_AttachedLight_Hotkey_4221_LocalFix/42/mod.info"
+        }
+      ]
+    },
+    {
+      "id": "Codex_NoirSling_SP_Compat_4221",
+      "folder": "NoirSling_SP_4221_LocalFix",
+      "version": "1.0.0",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/client"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/client/Sling_ISAttachItemHotbar.lua",
+          "sha256": "e18f4694febea7eadc4eb6b5b1dd01d95d10edeb9b5440cc93fd6d4337887f0b",
+          "size": 229,
+          "mode": "own",
+          "repo_path": "src/NoirSling_SP_4221_LocalFix/42/media/lua/client/Sling_ISAttachItemHotbar.lua"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "68d022ddc9605e1cbb714cdf94fb8d6fd13e2d1936cf525638923d5f55b56160",
+          "size": 331,
+          "mode": "own",
+          "repo_path": "src/NoirSling_SP_4221_LocalFix/42/mod.info"
+        }
+      ]
+    },
+    {
+      "id": "PinyinSearch_SafeSources_4221_LocalFix",
+      "folder": "Pinyin_UI_4221_LocalCompat",
+      "version": "1.1",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/client"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/client/PinyinSafeCompat.lua",
+          "sha256": "81962b65e2ac2915b26eb3441f12f029dd8d1c73ae9e74c057709395c56b76c0",
+          "size": 13751,
+          "mode": "own",
+          "repo_path": "src/Pinyin_UI_4221_LocalCompat/42/media/lua/client/PinyinSafeCompat.lua"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "a637aaaecd7537af12c2d4dac832029b2584261f31e4e47e73d7a42fdc979b29",
+          "size": 385,
+          "mode": "own",
+          "repo_path": "src/Pinyin_UI_4221_LocalCompat/42/mod.info"
+        }
+      ]
+    },
+    {
+      "id": "Codex_PrimitiveTooltip_4221",
+      "folder": "PrimitiveTooltip_4221_LocalFix",
+      "version": "1.0.0",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/client"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/client/PE_Shield.lua",
+          "sha256": "726a1c9b6a0b8dfc7fea8a4524415a51514672cd27872b9ed131b409501d416f",
+          "size": 9611,
+          "source": {
+            "root": "workshop",
+            "path": "3619229745/mods/SuPrimitiveEquipment/common/media/lua/client/PE_Shield.lua",
+            "sha256": "39bab6064f82909d98fd5065fd6d52ea9f792eeef2504aee89fd1537f7d38b55"
+          },
+          "mode": "patch",
+          "patch_path": "patches/PrimitiveTooltip_4221_LocalFix/42/media/lua/client/PE_Shield.lua.patch",
+          "patch_sha256": "0f846c2f394161d84d09773815f339ad875490a35b0c09e697d8c61a5e4431e4",
+          "text_encoding": {
+            "bom": false,
+            "newline": "lf",
+            "ends_with_newline": true
+          }
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "733d96360250ce24fd5594550eacc3f268ef1908734a1360c6aa1ac1bdbcf514",
+          "size": 558,
+          "mode": "own",
+          "repo_path": "src/PrimitiveTooltip_4221_LocalFix/42/mod.info"
+        }
+      ]
+    },
+    {
+      "id": "SuQingBatchFarmingMenu_4221",
+      "folder": "SuQingBatchFarmingMenu_4221",
+      "version": "0.1.0",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/client",
+        "common"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/client/SuQingBatchFarmingMenu.lua",
+          "sha256": "af6c4401891dc1543bb949695e7620f15f5312411677fa1516c88acc8a075a37",
+          "size": 1350,
+          "mode": "own",
+          "repo_path": "src/SuQingBatchFarmingMenu_4221/42/media/lua/client/SuQingBatchFarmingMenu.lua"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "b0eb08ecca95f7985f5c74def742abe375649583876947e9321dc6296694727c",
+          "size": 332,
+          "mode": "own",
+          "repo_path": "src/SuQingBatchFarmingMenu_4221/42/mod.info"
+        },
+        {
+          "path": "common/README.txt",
+          "sha256": "64ab2705a90a0213cd572bf47d9aceb88050efbfda4fb26215f618fbdf28ab46",
+          "size": 40,
+          "mode": "own",
+          "repo_path": "src/SuQingBatchFarmingMenu_4221/common/README.txt"
+        }
+      ]
+    },
+    {
+      "id": "Codex_TheyKnew_CN_TextFix_4221",
+      "folder": "TheyKnew_CN_TextFix_4221",
+      "version": "1.0.0",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/shared",
+        "42/media/lua/shared/Translate",
+        "42/media/lua/shared/Translate/CN",
+        "common"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/shared/Translate/CN/Sandbox.json",
+          "sha256": "53ca6abfce5793c3cf33c70b43980a1c9b93d8268443bc983b90a93eb1c8f649",
+          "size": 1966,
+          "mode": "own",
+          "repo_path": "src/TheyKnew_CN_TextFix_4221/42/media/lua/shared/Translate/CN/Sandbox.json"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "f64a75e063fc782cf0239151ef760550c1de03856086bdd04d9c695db5587f02",
+          "size": 305,
+          "mode": "own",
+          "repo_path": "src/TheyKnew_CN_TextFix_4221/42/mod.info"
+        }
+      ]
+    },
+    {
+      "id": "Codex_TrueMusic_Headphones_4221",
+      "folder": "TrueMusicHeadphones_4221_LocalFix",
+      "version": "1.0.0",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/client",
+        "42/media/lua/client/TrueMusicHeadphonesFix"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/client/TrueMusicHeadphonesFix/Headphones.lua",
+          "sha256": "140d36a08bfe69fecdfd547a8cb5a2b06a98499a5c88334a2b3b3bb5efcca33c",
+          "size": 3478,
+          "mode": "own",
+          "repo_path": "src/TrueMusicHeadphones_4221_LocalFix/42/media/lua/client/TrueMusicHeadphonesFix/Headphones.lua"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "fd26bba2689d905c2242ce2ac176c784b39c374f1e9206b9bf608ecbaa70d835",
+          "size": 373,
+          "mode": "own",
+          "repo_path": "src/TrueMusicHeadphones_4221_LocalFix/42/mod.info"
+        }
+      ]
+    }
+  ]
+}

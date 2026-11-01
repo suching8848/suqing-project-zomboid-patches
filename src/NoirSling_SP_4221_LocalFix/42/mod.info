@@ -1,0 +1,9 @@
+name=[B42.21 SP] Noir Sling Local Compatibility Fix
+id=Codex_NoirSling_SP_Compat_4221
+require=\noirrsling4-42.13patch
+incompatible=\noirrsling4-42.13MPpatch
+versionMin=42.21
+versionMax=42.21
+modversion=1.0.0
+description=Completes the SP patch by suppressing the second legacy client action.
+author=Local compatibility fix

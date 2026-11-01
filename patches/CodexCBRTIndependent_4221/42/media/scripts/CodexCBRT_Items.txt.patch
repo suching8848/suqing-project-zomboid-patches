@@ -1,0 +1,179 @@
+--- a/3799632784/mods/oldcat/42/media/scripts/Tactical02Set.txt
++++ b/42/media/scripts/CodexCBRT_Items.txt
+@@ -1,4 +1,4 @@
+-module Base
++module CodexCBRT
+ {
+ 
+ item Box_SST02_00
+@@ -8,10 +8,10 @@
+         ItemType = base:normal,
+         Weight = 0.1,
+         Icon = Suitcase2,
+-        DoubleClickRecipe = OpenBox_SST02_00,
++        DoubleClickRecipe = CodexCBRT.OpenCodexCBRTChemicalKit,
+     }
+ 
+-craftRecipe OpenBox_SST02_00
++craftRecipe OpenCodexCBRTChemicalKit
+ 	{
+         timedAction = SewingCloth,
+         Time = 0,
+@@ -21,17 +21,17 @@
+         category = 可变身形VSGirlBody,
+         inputs
+         {
+-            item 1 [Base.Box_SST02_00],
++            item 1 [CodexCBRT.Box_SST02_00],
+         }
+         outputs
+         {
+-        	item 1 Base.SST02_Clothes,
+-        	item 1 Base.SST02_Gloves,
+-        	item 1 Base.SST02_Boots,
+-        	item 1 Base.SST02_Pants,
+-        	item 1 Base.SST02_ChestRig,
+-        	item 1 Base.SST02_Mask,
+-        	item 1 Base.SST02_Helmet,
++        	item 1 CodexCBRT.SST02_Clothes,
++        	item 1 CodexCBRT.SST02_Gloves,
++        	item 1 CodexCBRT.SST02_Boots,
++        	item 1 CodexCBRT.SST02_Pants,
++        	item 1 CodexCBRT.SST02_ChestRig,
++        	item 1 CodexCBRT.SST02_Mask,
++        	item 1 CodexCBRT.SST02_Helmet,
+         }
+ 	}
+ 		item SST02_Helmet
+@@ -39,10 +39,10 @@
+                                 DisplayCategory = Accessory,
+ 		ItemType = base:Clothing,
+ 		DisplayName = "02 Tactical Military Helmet",
+-		ClothingItem = SST02_Helmet,
++		ClothingItem = CodexCBRT_SST02_Helmet,
+ 		BodyLocation = base:hat,
+         BloodLocation = Neck;Head,
+-		Icon = SST_Helmet2,
++		Icon = CodexCBRT_SST02_Helmet,
+ 		CanHaveHoles = false,
+ 		BiteDefense = 100,
+ 		ScratchDefense = 100,
+@@ -53,8 +53,8 @@
+ 	item SST02_ChestRig
+ 	{
+ 		DisplayName = "02 Tactical Chest Rig",
+-		Icon = SST02_ChestRig,
+-		ClothingItem = SST02_ChestRig,
++		Icon = CodexCBRT_SST02_ChestRig,
++		ClothingItem = CodexCBRT_SST02_ChestRig,
+ 		DisplayCategory = Bag,
+ 		ItemType = base:Container,
+ 		BodyLocation = base:Webbing,
+@@ -64,7 +64,7 @@
+ 		OpenSound = OpenCargoVest,
+ 		PutInSound = StoreItemCargoVest,
+ 		WeightReduction = 90,
+-		WorldStaticModel = SST02_ChestRig,
++		WorldStaticModel = CodexCBRT.ChestRigWorld,
+ 		Tooltip = Tooltip_Webbing,
+ 		ResearchableRecipes = MakeTarpChestRig,
+ 	}
+@@ -72,13 +72,13 @@
+     {
+         DisplayCategory = ProtectiveGear,
+         ItemType = base:clothing,
+-        Icon = SST02_Mask,
++        Icon = CodexCBRT_SST02_Mask,
+         BiteDefense = 100,
+         DisplayName	=	"02 Tactical Gas Mask",
+         BodyLocation = base:maskeyes,
+         CanHaveHoles = false,
+-        ClothingItem = SST02_Mask,
+-        WithoutDrainable = Base.SST02_Mask,
++        ClothingItem = CodexCBRT_SST02_Mask,
++        WithoutDrainable = CodexCBRT.SST02_Mask,
+         Insulation = 0.75,
+         ScratchDefense = 100,
+         CorpseSicknessDefense = 25.0,
+@@ -94,7 +94,7 @@
+ 	item SST02_Clothes
+     {
+         DisplayCategory = Clothing,
+-        Tags = base:NoBloodNoDirt,
++        Tags = CodexCBRT:NoBloodNoDirt,
+         Weight	=	0.2,
+         ItemType = base:clothing,
+         DisplayName	= "02 Tactical Outfit",
+@@ -105,16 +105,16 @@
+         NeckProtectionModifier = 1,
+         WaterResistance = 1,
+         WindResistance = 0.5,
+-        Icon	= SST02_Clothes,
++        Icon	= CodexCBRT_SST02_Clothes,
+         BodyLocation = base:Torso1,
+-        ClothingItem = SST02_Clothes,
++        ClothingItem = CodexCBRT_SST02_Clothes,
+         FabricType = Leather,
+         WorldStaticModel = GunCase_Ground,
+     }
+ 	item SST02_Gloves
+     {
+         DisplayCategory = Clothing,
+-        Tags = base:ripclothingleather;base:noragdoll;base:NoBloodNoDirt,
++        Tags = base:ripclothingleather;base:noragdoll;CodexCBRT:NoBloodNoDirt,
+         Weight	=	0.2,
+         ItemType = base:clothing,
+         DisplayName	= "02 Tactical Gloves",
+@@ -126,8 +126,8 @@
+         BiteDefense = 100,
+         WaterResistance = 0.4,
+         WindResistance = 0.4,
+-        Icon	= SST02_Gloves,
+-        ClothingItem = SST02_Gloves,
++        Icon	= CodexCBRT_SST02_Gloves,
++        ClothingItem = CodexCBRT_SST02_Gloves,
+         FabricType = Leather,
+         WorldStaticModel = GunCase_Ground,
+     }
+@@ -135,7 +135,7 @@
+ 	item SST02_Boots
+     {
+         DisplayCategory = Clothing,
+-        Tags = base:ripclothingleather;base:noragdoll;base:NoBloodNoDirt,
++        Tags = base:ripclothingleather;base:noragdoll;CodexCBRT:NoBloodNoDirt,
+         Weight	=	0.2,
+         ItemType = base:clothing,
+         DisplayName	= "02 Tactical Boots",
+@@ -148,10 +148,10 @@
+         BiteDefense = 100,
+         WindResistance = 1.0,
+         WaterResistance = 0.8,
+-        Icon	= SST02_Boots,
++        Icon	= CodexCBRT_SST02_Boots,
+         BodyLocation = base:Shoes,
+         BloodLocation = Shoes,
+-        ClothingItem = SST02_Boots,
++        ClothingItem = CodexCBRT_SST02_Boots,
+         FabricType = Leather,
+         WorldStaticModel = GunCase_Ground,
+     }
+@@ -159,16 +159,16 @@
+ 	item SST02_Pants
+     {
+         DisplayCategory = Clothing,
+-        Tags = base:ripclothingleather;base:noragdoll;base:NoBloodNoDirt,
++        Tags = base:ripclothingleather;base:noragdoll;CodexCBRT:NoBloodNoDirt,
+         Weight	=	0.2,
+         ItemType = base:clothing,
+         DisplayName	= "02 Tactical Pants",
+-        Icon	= SST02_Pants,
++        Icon	= CodexCBRT_SST02_Pants,
+         ScratchDefense = 100,
+         BiteDefense = 100,
+         BodyLocation = base:pants,
+         BloodLocation = Trousers,
+-        ClothingItem = SST02_Pants,
++        ClothingItem = CodexCBRT_SST02_Pants,
+         FabricType = Leather,
+         WorldStaticModel = GunCase_Ground,
+     }

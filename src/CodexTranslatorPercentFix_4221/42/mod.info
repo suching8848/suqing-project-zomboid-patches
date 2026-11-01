@@ -1,0 +1,7 @@
+name=True 3D Items - Tooltip Percent Fix (42.21)
+id=CodexTranslatorPercentFix_4221
+description=Fixes only True 3D Items zoom/zoomPlus tooltip double translation in the vanilla Mod Options menu. Preserves rendering and saved option values.
+require=\ProjectFullHD
+versionMin=42.21
+modversion=1.0.0
+author=Local compatibility patch

@@ -1,0 +1,6 @@
+.local-build/
+.validation/
+.local-config.json
+__pycache__/
+*.pyc
+*.zip

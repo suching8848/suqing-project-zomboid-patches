@@ -1,0 +1,20 @@
+{
+  "IGUI_CodexNnC_Title": "N&C Drug Status",
+  "IGUI_CodexNnC_Benzo": "Benzodiazepines",
+  "IGUI_CodexNnC_Coke": "Cocaine",
+  "IGUI_CodexNnC_Meth": "Meth",
+  "IGUI_CodexNnC_Opioid": "Opioids",
+  "IGUI_CodexNnC_MDMA": "MDMA",
+  "IGUI_CodexNnC_Steroid": "Steroids",
+  "IGUI_CodexNnC_NoData": "No data",
+  "IGUI_CodexNnC_Overdose": "Overdose",
+  "IGUI_CodexNnC_Warning": "Warning",
+  "IGUI_CodexNnC_Normal": "Normal",
+  "IGUI_CodexNnC_Note1": "Approx. real minutes at normal speed without further use.",
+  "IGUI_CodexNnC_Note2": "Pause or speed changes time; high and addiction are separate.",
+  "IGUI_CodexNnC_Open": "View drug status",
+  "IGUI_CodexNnC_ColumnCategory": "Category",
+  "IGUI_CodexNnC_ColumnAmount": "Amount / OD line",
+  "IGUI_CodexNnC_ColumnState": "Status",
+  "IGUI_CodexNnC_ColumnTime": "Clear (min)"
+}

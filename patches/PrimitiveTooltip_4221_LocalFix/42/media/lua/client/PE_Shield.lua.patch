@@ -1,0 +1,11 @@
+--- a/3619229745/mods/SuPrimitiveEquipment/common/media/lua/client/PE_Shield.lua
++++ b/42/media/lua/client/PE_Shield.lua
+@@ -255,7 +255,7 @@
+ local ShieldTooltipRender = ShieldTooltipRender or ISToolTipInv.render
+ 
+ function ISToolTipInv:render()
+-    if self.item then
++    if self.item and instanceof(self.item, "InventoryItem") then
+         local config = getShieldConfig(self.item:getType())
+         if config then
+             local md = self.item:getModData()

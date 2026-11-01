@@ -1,0 +1,9 @@
+name=猫又岭与蘇清背包超级升级兼容
+id=CodexNekomataEXCompat_4221
+author=SuQing / local compatibility
+modversion=1.0.0
+versionMin=42.21
+versionMax=42.21
+require=\Nekomata Ridge,ExSuQingBackpackSuperUpgrade_4221
+loadModAfter=Nekomata Ridge,ExSuQingBackpackSuperUpgrade_4221
+description=Build42.21单人独立兼容：保留猫又背包原逻辑，为其他容器完整透传hasRoomFor参数；仅识别已核MaoMao包装链恢复蘇清背包超级升级就绪判定。未知外层仍拒绝。不改容量、物品、材料、付款、配方或存档数据。

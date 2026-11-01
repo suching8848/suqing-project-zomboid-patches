@@ -1,0 +1,9 @@
+name=猫猫背包蘇清超级升级扩展
+id=CodexNekomataEXUpgrade_4221
+author=SuQing / local extension
+modversion=1.0.0
+versionMin=42.21
+versionMax=42.21
+require=\CodexNekomataEXCompat_4221,Nekomata Ridge,ExSuQingBackpackSuperUpgrade_4221
+loadModAfter=CodexNekomataEXCompat_4221,Nekomata Ridge,ExSuQingBackpackSuperUpgrade_4221
+description=Build42.21单人：猫猫背包可通过独立制作配方从原生120升级为有效基础容量240，沿用蘇清EX材料、技能、付款与50%还原返料。未升级仍保持作者120；自重、减重、储水与挂点不变。正常退出后禁用扩展会回原容量，记录保留供重新启用。

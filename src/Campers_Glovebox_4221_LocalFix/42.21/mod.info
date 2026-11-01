@@ -1,0 +1,8 @@
+name=[B42.21] Campers Glovebox Container Compatibility
+id=Codex_Campers_Glovebox_4221
+require=\KI5campers
+loadModAfter=KI5campers
+versionMin=42.21
+versionMax=42.21.99
+modversion=1.0.0
+description=Private compatibility patch for Campers. Adds the native GloveBox container to six camper scripts. Load after KI5campers. Original interior models, parts, and callbacks are retained.

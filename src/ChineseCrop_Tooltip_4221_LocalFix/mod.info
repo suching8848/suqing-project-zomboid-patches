@@ -1,0 +1,4 @@
+name=Chinese Crop Season Tooltip B42.21 (Local)
+id=Codex_ChineseCrop_Tooltip_4221
+description=Display compatibility for Chinesecuisine seed packets in More Item Information. Uses existing learned seasons and farming data.
+modversion=1.0

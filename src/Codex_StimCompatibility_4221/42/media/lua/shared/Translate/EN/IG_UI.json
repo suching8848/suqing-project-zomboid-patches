@@ -1,0 +1,14 @@
+{
+  "IGUI_CodexStim_Inject": "Inject Adrenaline",
+  "IGUI_CodexStim_BadIdea": "It's not a good idea...",
+  "IGUI_CodexStim_CannotHandle": "My body won't handle another dose...",
+  "IGUI_CodexStim_Wait1": "Okay... just gotta wait for this to kick in.",
+  "IGUI_CodexStim_Wait2": "Come on... kick in already.",
+  "IGUI_CodexStim_Wait3": "Here goes nothing...",
+  "IGUI_CodexStim_End1": "I'm feeling down...",
+  "IGUI_CodexStim_End2": "It's wearing off...",
+  "IGUI_CodexStim_End3": "Strength enough for one more time...",
+  "IGUI_CodexStim_Start1": "Here we go...",
+  "IGUI_CodexStim_Start2": "I can feel it kicking in.",
+  "IGUI_CodexStim_Start3": "Alright... let's do this."
+}

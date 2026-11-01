@@ -1,0 +1,9 @@
+name=N&C's Narcotics 中文补丁 [B42.21]
+id=CodexNarcotics_CN_4221
+author=Local Chinese translation
+description=Simplified Chinese for N&C's Narcotics: names, recipes, moodles, traits, options and warning speech. Presentation only; no balance changes.
+require=\N&CsNarcotics
+loadModAfter=N&CsNarcotics,B42ModTrans_CN,GardeniaTranslate_CN
+versionMin=42.21
+versionMax=42.21
+modversion=1.0.0

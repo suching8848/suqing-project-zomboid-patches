@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<fileGuidTable>
+    <files>
+        <path>media/clothing/clothingItems/CodexCBRT_SST02_Helmet.xml</path>
+        <guid>bd4c04a0-75f3-583e-9f82-a4b154d78958</guid>
+    </files>
+    <files>
+        <path>media/clothing/clothingItems/CodexCBRT_SST02_ChestRig.xml</path>
+        <guid>5091c8d5-e967-5c6a-9c5c-398d2621cbf8</guid>
+    </files>
+    <files>
+        <path>media/clothing/clothingItems/CodexCBRT_SST02_Mask.xml</path>
+        <guid>8d9a163d-d507-5dc4-bebc-a26db8efae3c</guid>
+    </files>
+    <files>
+        <path>media/clothing/clothingItems/CodexCBRT_SST02_Clothes.xml</path>
+        <guid>3a85eaba-c0fd-5d2a-8776-0e76007201d6</guid>
+    </files>
+    <files>
+        <path>media/clothing/clothingItems/CodexCBRT_SST02_Gloves.xml</path>
+        <guid>7b4ffb2b-3743-5eb7-82cd-328eacfa3216</guid>
+    </files>
+    <files>
+        <path>media/clothing/clothingItems/CodexCBRT_SST02_Boots.xml</path>
+        <guid>24c895d3-b6cc-5b9e-bc12-2998e8ce1c9a</guid>
+    </files>
+    <files>
+        <path>media/clothing/clothingItems/CodexCBRT_SST02_Pants.xml</path>
+        <guid>ba9a003d-a49d-5683-8df5-38649bfa78d6</guid>
+    </files>
+</fileGuidTable>

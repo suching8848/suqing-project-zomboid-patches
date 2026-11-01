@@ -1,0 +1,9 @@
+name=Chemical 独立兼容版 [42.21]
+id=CodexCBRTIndependent_4221
+description=独立生化套装，与 Fantasy 的原战术套装分别保留。保持原版 C.B.R.T. Chemical 关闭。
+poster=poster.png
+icon=icon.png
+author=Local compatibility build
+modversion=1.0.0-local
+versionMin=42.21
+versionMax=42.21

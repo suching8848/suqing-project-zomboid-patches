@@ -1,0 +1,20 @@
+{
+  "IGUI_CodexNnC_Title": "N&C 药物状态",
+  "IGUI_CodexNnC_Benzo": "苯二氮䓬类",
+  "IGUI_CodexNnC_Coke": "可卡因类",
+  "IGUI_CodexNnC_Meth": "甲基苯丙胺类",
+  "IGUI_CodexNnC_Opioid": "阿片类",
+  "IGUI_CodexNnC_MDMA": "MDMA",
+  "IGUI_CodexNnC_Steroid": "类固醇",
+  "IGUI_CodexNnC_NoData": "暂无数据",
+  "IGUI_CodexNnC_Overdose": "过量",
+  "IGUI_CodexNnC_Warning": "警告",
+  "IGUI_CodexNnC_Normal": "正常",
+  "IGUI_CodexNnC_Note1": "估计为正常速度、不再使用时的现实分钟。",
+  "IGUI_CodexNnC_Note2": "游戏暂停或加速会影响现实时间；药效与成瘾另算。",
+  "IGUI_CodexNnC_Open": "查看药物状态",
+  "IGUI_CodexNnC_ColumnCategory": "类别",
+  "IGUI_CodexNnC_ColumnAmount": "累计值 / 过量线",
+  "IGUI_CodexNnC_ColumnState": "状态",
+  "IGUI_CodexNnC_ColumnTime": "清零约(分钟)"
+}

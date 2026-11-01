@@ -1,0 +1,9 @@
+name=蘇清的批量农耕菜单筛选
+id=SuQingBatchFarmingMenu_4221
+require=vac_batch_farming
+loadModAfter=vac_batch_farming
+versionMin=42.21
+versionMax=42.21
+modversion=0.1.0
+author=蘇清
+description=Show Batch Farming only on tillable soil, tilled plots or crops. Keeps the upstream actions unchanged. Local B42.21 menu patch.

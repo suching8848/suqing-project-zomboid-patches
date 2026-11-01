@@ -1,0 +1,9 @@
+name=针剂轻量化与肾上腺素笔兼容 [B42.21]
+id=Codex_StimCompatibility_4221
+author=Local compatibility
+modversion=1.0.1
+versionMin=42.21
+versionMax=42.21
+require=TarkovCombatStims,AdrenalineShot
+loadModAfter=TarkovCombatStims,AdrenalineShot,Codex_SuQingWearableCompat_4221
+description=塔科夫针剂重量调整、肾上腺素笔汉化与针剂盒兼容；肾上腺素药效240游戏分钟。
