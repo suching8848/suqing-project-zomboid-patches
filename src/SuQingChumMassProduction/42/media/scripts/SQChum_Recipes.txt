@@ -1,0 +1,72 @@
+module Base
+{
+    /* Keep the vanilla knowledge ID used by books, professions and sand-ground
+       actions. B42 appends same-ID IO; SQChum/Compatibility.lua removes exactly
+       the known vanilla one-use input/output after native initialization. */
+    craftRecipe MakeChum
+    {
+        timedAction = MakeChum,
+        time = 120,
+        NeedToBeLearn = true,
+        Tags = InHandCraft;Fishing,
+        category = Fishing,
+        AutoLearnAny = Fishing:5,
+        Tooltip = Tooltip_SQChum_Bag,
+        inputs
+        {
+            /* A full vanilla bag has four uses. IsFull rejects partial bags.
+               Native depletion supplies ONE empty bag; do not output another. */
+            item 4 [Base.Sandbag] flags[IsFull],
+            item 1 [*],
+            -fluid 0.1 [Water;TaintedWater] mode:mixture,
+        }
+        outputs
+        {
+            item 5 Base.Chum,
+        }
+    }
+
+    craftRecipe SuQingMakeChumDirt
+    {
+        timedAction = MakeChum,
+        time = 120,
+        NeedToBeLearn = true,
+        Tags = InHandCraft;Fishing,
+        category = Fishing,
+        AutoLearnAny = Fishing:5,
+        MetaRecipe = MakeChum,
+        Tooltip = Tooltip_SQChum_Bag,
+        inputs
+        {
+            item 4 [Base.Dirtbag] flags[IsFull],
+            item 1 [*],
+            -fluid 0.1 [Water;TaintedWater] mode:mixture,
+        }
+        outputs
+        {
+            item 5 Base.Chum,
+        }
+    }
+
+    craftRecipe SuQingMakeChumClay
+    {
+        timedAction = MakeChum,
+        time = 120,
+        NeedToBeLearn = true,
+        Tags = InHandCraft;Fishing,
+        category = Fishing,
+        AutoLearnAny = Fishing:5,
+        MetaRecipe = MakeChum,
+        Tooltip = Tooltip_SQChum_Clay,
+        inputs
+        {
+            item 1 [Base.Clay],
+            item 1 [*],
+            -fluid 0.1 [Water;TaintedWater] mode:mixture,
+        }
+        outputs
+        {
+            item 5 Base.Chum,
+        }
+    }
+}

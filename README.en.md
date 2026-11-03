@@ -2,9 +2,11 @@
 
 [中文](README.md) · [English](README.en.md)
 
-A collection of **30 independent Mod IDs** maintained by SuQing for **Project Zomboid Build 42.21 single-player**: compatibility fixes, Chinese translations, menu and performance improvements, drug-status UI and small extensions. Select individual entries; this is not one combined mod that requires everything to be enabled.
+A collection of **33 independent Mod IDs** maintained by SuQing for **Project Zomboid Build 42.21 single-player**: compatibility fixes, Chinese translations, menu and performance improvements, drug-status UI and small extensions. Select individual entries; this is not one combined mod that requires everything to be enabled.
 
-[All eight repositories and 37 Mod IDs](docs/project-index.md) · [Current 205-ID enabled order](docs/current-single-player-modlist.md) · [Author’s Steam collection](https://steamcommunity.com/sharedfiles/filedetails/?id=3823981387)
+[Ten source repositories and 42 Mod IDs](docs/project-index.md) · [Single-player enabled snapshot from 2026-11-02 01:10 UTC+08:00](docs/current-single-player-modlist.md) · [Author’s Steam collection](https://steamcommunity.com/sharedfiles/filedetails/?id=3823981387)
+
+See [source scope and personal deployment](docs/project-index.md). The user authorized this unified Git/Steam update on 2026-11-03; working personal combinations may retain their existing versions. Music and Chum still await in-game acceptance. Personal Weight Training 0.3.1 was reported normal, while source 0.3.2 artwork awaits visual acceptance. Uploads and source synchronization do not establish gameplay acceptance.
 
 ## Main mods and conditional patches
 
@@ -12,7 +14,7 @@ A collection of **30 independent Mod IDs** maintained by SuQing for **Project Zo
 
 | Main project or scenario | Relationship |
 | --- | --- |
-| [Ordinary Container Upgrades 1.0.1](https://github.com/suching8848/suqing-container-upgrade) | Basic operation does not require this collection. Four injector-case/Chemical-rig/HavenFall waist-pack IDs are already integrated. The legacy ordinary adapter only accepts 1.0.0 and declines on 1.0.1 |
+| [Ordinary Container Upgrades 1.0.1](https://github.com/suching8848/suqing-container-upgrade) | Basic operation does not require this collection. Four injector-case/Chemical-rig/HavenFall waist-pack IDs are integrated; personal 1.0.0 can retain the existing bridge for those IDs without upgrading solely for version parity. Only the legacy ordinary registrar skips 1.0.1. The separate HavenFall EX bridge remains relevant, so do not disable the whole patch |
 | [Backpack EX](https://github.com/suching8848/suqing-backpack-super-upgrade) with Nekomata Ridge | Use `CodexNekomataEXCompat_4221` for the audited capacity-wrapper bridge. Adding Nekomata EX recipes also requires `CodexNekomataEXUpgrade_4221`, which declares the bridge, Nekomata Ridge and EX as prerequisites |
 | EX with HavenFall large backpacks | Requires `Codex_SuQingWearableCompat_4221` for this integration. It declares ordinary upgrades, EX and HavenFall. Its EX bridge is separate from the old ordinary-registration adapter; do not omit dependencies or force it into an automatic-container setup |
 | [Automatic Container Upgrades — Experimental](https://github.com/suching8848/suqing-container-auto-upgrade) | An alternative to ordinary upgrades, not a companion to enable alongside them. Not enabled in the current main save |
@@ -21,7 +23,7 @@ A collection of **30 independent Mod IDs** maintained by SuQing for **Project Zo
 | XFACTION Dynamic Traits | Translation and record protection target the original. Character Menu Tweaks additionally declares the XFACTION translation as a requirement |
 | [Irrigation Care](https://github.com/suching8848/suqing-sprinkler-fertilizer) and Batch Farming | Irrigation Care requires Water Pipes. The collection’s menu filter targets `vac_batch_farming` and is not required by Irrigation Care |
 | [Refrigeration Upgrades](https://github.com/suching8848/suqing-refrigeration-upgrade) | No collection patch is mandatory. Original item providers supply the wearable containers; consult that project for special-conversion validation |
-| PZ Optimization translation | Requires the matching external engine/UI revision d1bbdcf despite having no declared Mod-ID prerequisite. Review and disable the overlay before replacing or removing the engine patch |
+| PZ Optimization translation | Requires the matching external engine/UI revision 154126d0 despite having no declared Mod-ID prerequisite. Review and disable the overlay before replacing or removing the engine patch |
 | Chemical independent compatibility build | Reconstruction needs the audited original resources. Those third-party assets are not redistributed in Git. Keep the original C.B.R.T. Chemical disabled when using the independent build, as its page explains |
 
 Each entry documents its Mod ID, original `require`, load relationships, behavior and validation limits. Preserve unrelated existing order, satisfy the selected entries’ prerequisites and do not enable or reorder the collection wholesale.
@@ -38,7 +40,7 @@ Build one entry that does not need external reconstruction sources:
 python tools/rebuild.py --mod-id Codex_MFSOpticsFix_4221 --output ../suqing-selected-patches
 ```
 
-Check and build all 30 entries. Replace the example Steam-library paths with your own. The output directory must not already exist:
+Check and build all 33 entries. Replace the example Steam-library paths with your own. The output directory must not already exist:
 
 ```powershell
 python tools/rebuild.py --check --workshop-root "D:/SteamLibrary/steamapps/workshop/content/108600" --game-root "D:/SteamLibrary/steamapps/common/ProjectZomboid"
@@ -49,7 +51,7 @@ Repeat `--mod-id` to select several entries. The tool pins every source and outp
 
 After success, each child folder in the output is an independent installable mod. Exit the game normally, copy only the required complete folders to your `Zomboid/mods`, retain version and `common` directories, install original prerequisites and enable selected IDs. Do not install the entire repository, `src` or `patches` as one mod, and do not keep duplicate sources for the same Mod ID.
 
-## Index of 30 patches
+## Index of 33 patches
 
 | 中英名称 / Bilingual name | Mod ID | 声明前置 / Declared requirements |
 | --- | --- | --- |
@@ -83,9 +85,19 @@ After success, each child folder in the output is an independent installable mod
 | [蘇清的批量农耕菜单筛选补丁 / SuQing’s Batch Farming Menu Filter Patch](docs/patches/SuQingBatchFarmingMenu_4221.md) | `SuQingBatchFarmingMenu_4221` | `vac_batch_farming` |
 | [蘇清的They Knew沙盒文本修复补丁 / SuQing’s They Knew Sandbox Text Fix Patch](docs/patches/Codex_TheyKnew_CN_TextFix_4221.md) | `Codex_TheyKnew_CN_TextFix_4221` | `TheyKnewContinued` |
 | [蘇清的True Music耳机单人兼容补丁 / SuQing’s True Music Headphones Single-player Compatibility Patch](docs/patches/Codex_TrueMusic_Headphones_4221.md) | `Codex_TrueMusic_Headphones_4221` | `truemusic` |
+| [Protein Shake Training Boost / 蘇清的蛋白饮料训练强化](docs/patches/SuQingProteinTrainingBoost.md) | `SuQingProteinTrainingBoost` | `VanillaFoodsExpanded` |
+| [蘇清的配方材料输入修复 / Recipe Input Guard](docs/patches/SuQingRecipeInputGuard_4221.md) | `SuQingRecipeInputGuard_4221` | `SapphCooking_B42` |
+| [蘇清的饵托量产补丁 / SuQing's Chum Mass Production Patch](docs/patches/SuQingChumMassProduction.md) | `SuQingChumMassProduction` | 无 / None |
 
 ## Validation and attribution
 
-Exact reconstruction verifies the recorded runtime bytes. It does not establish gameplay acceptance of future upstream versions, every optional combination, multiplayer or dedicated servers. The author previously reported normal play with their full B42.21 single-player setup; the current 205-ID snapshot records enabled state. Consult individual pages for actual verification limits. The automatic-container experiment and They Knew text fix are not enabled in the current main save; the former has its own repository and the latter remains in this collection.
+Exact reconstruction verifies the recorded runtime bytes. It does not establish gameplay acceptance of future upstream versions, every optional combination, multiplayer or dedicated servers. The author previously reported normal play with their full B42.21 single-player setup; the 205-ID enabled snapshot from 2026-11-02 01:10 UTC+08:00 records that earlier state. Consult individual pages for actual verification limits. The automatic-container experiment and They Knew text fix are not enabled in the current main save; the former has its own repository and the latter remains in this collection.
 
 The repository does not claim upstream code/artwork as SuQing’s original work or relicense third-party files under one blanket license. Keep original attribution, source/version constraints and provenance. Personal enabled lists, rollback copies and unrelated `.bak` files are not installable content. Runtime-required stim fallback references are restored from matching installed originals by the builder.
+
+2026-11-03 local addition: [Protein Shake Training Boost](docs/patches/SuQingProteinTrainingBoost.md), `SuQingProteinTrainingBoost`, requires `VanillaFoodsExpanded`. Offline validated; in-game acceptance pending. Included in the current unified source/publication batch; consult the publication receipts for actual submission results.
+
+2026-11-03 local addition: [Recipe Input Guard](docs/patches/SuQingRecipeInputGuard_4221.md) is independent of the unchanged Mustang guard. Full restart required; in-game crafting acceptance pending.
+
+
+2026-11-03 publishing preparation: [Chum Mass Production Patch](docs/patches/SuQingChumMassProduction.md), no external prerequisite. In-game acceptance remains pending under the latest instruction. Included with Protein Training Boost and Recipe Input Guard in this unified source/Workshop update; consult publication receipts for actual submission results.

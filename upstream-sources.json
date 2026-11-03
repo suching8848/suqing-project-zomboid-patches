@@ -368,7 +368,7 @@
       "mode": "patch",
       "root": "game",
       "path": "media/lua/client/pzopt/pzopt_mainscreen_menu.lua",
-      "sha256": "874f797249523303f64e1797952ba857f11cdad859709002aec10fe1eba8143a"
+      "sha256": "e508723e6e1462b5eb0af2463f91c070bc452d130ec8825fbe666f534bca1225"
     },
     {
       "mod_id": "Codex_PrimitiveTooltip_4221",

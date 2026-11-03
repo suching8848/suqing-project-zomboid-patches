@@ -1,0 +1,7 @@
+name=蘇清的饵托量产补丁
+id=SuQingChumMassProduction
+author=蘇清
+modversion=1.0.0
+versionMin=42.21
+versionMax=42.21
+description=每批使用一整袋沙或泥土，或一份黏土，加任意容器的0.1升水，制作5个原版饵托。支持净水、污水及两者混合水；满袋消耗后保留空袋，水容器保留。沿用原版饵托学习和加料机制。独立本地补丁，适用于B42.21。

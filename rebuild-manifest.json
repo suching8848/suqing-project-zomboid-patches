@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target_game": "Project Zomboid Build 42.21",
-  "scope": "Runtime-required files for 30 independent patches; documentation/backups omitted",
+  "scope": "Runtime-required files for 33 independent patches; documentation/backups omitted",
   "mods": [
     {
       "id": "Codex_AmmoBox_CN_TextFix_4221",
@@ -1412,7 +1412,7 @@
     {
       "id": "CodexPZOptimization_CN_4221",
       "folder": "CodexPZOptimization_CN_4221",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "directories": [
         "42",
         "42/media",
@@ -1424,33 +1424,33 @@
       "files": [
         {
           "path": "42/media/lua/client/pzopt/CodexPZOptCN.lua",
-          "sha256": "3c1382d1aee44ffa92423d8a75c6c46df9fe79f4ff3813fcc0ba720c2e47fcfb",
-          "size": 152017,
+          "sha256": "213c033cc84b88adb5772d5877b576c30bfe4946023578fa3a42bc14f4f4fa97",
+          "size": 172158,
           "mode": "own",
           "repo_path": "src/CodexPZOptimization_CN_4221/42/media/lua/client/pzopt/CodexPZOptCN.lua"
         },
         {
           "path": "42/media/lua/client/pzopt/pzopt_mainscreen_menu.lua",
-          "sha256": "4bb541923e601acc9a8b4ae516cab5983adbdf4a9560c8d4b1b90d61720d9019",
-          "size": 178144,
+          "sha256": "b4bfa7e773ac378181045aede043f4f7dfc50f4955d423ba94f0d65df3ba64e6",
+          "size": 396694,
           "source": {
             "root": "game",
             "path": "media/lua/client/pzopt/pzopt_mainscreen_menu.lua",
-            "sha256": "874f797249523303f64e1797952ba857f11cdad859709002aec10fe1eba8143a"
+            "sha256": "e508723e6e1462b5eb0af2463f91c070bc452d130ec8825fbe666f534bca1225"
           },
           "mode": "patch",
           "patch_path": "patches/CodexPZOptimization_CN_4221/42/media/lua/client/pzopt/pzopt_mainscreen_menu.lua.patch",
-          "patch_sha256": "9be4aa11bedd8ef1234f219e212807b8adb21b6ae0143f50ab6bc53f8ffafc7f",
+          "patch_sha256": "ae443c9eba9256a8b1d87ed21fecb117448402d29bbccbd1f1cc0f17a36b7d85",
           "text_encoding": {
             "bom": false,
-            "newline": "crlf",
+            "newline": "lf",
             "ends_with_newline": true
           }
         },
         {
           "path": "42/mod.info",
-          "sha256": "2063ffb5ddf7af346c6cdbaa3894e81012fe0663e595191e4103a363f4c004fa",
-          "size": 357,
+          "sha256": "65e5954fe68ea74b952388533c9f49f02720a980e7c4e8e9f1eddd3905581f53",
+          "size": 351,
           "mode": "own",
           "repo_path": "src/CodexPZOptimization_CN_4221/42/mod.info"
         }
@@ -1635,7 +1635,7 @@
     {
       "id": "Codex_InventoryTransferPerformance_4221",
       "folder": "InventoryTransferPerformance_4221_Local",
-      "version": "1.2.0",
+      "version": "1.2.1",
       "directories": [
         "42",
         "42/media",
@@ -1645,14 +1645,14 @@
       "files": [
         {
           "path": "42/media/lua/client/Codex_InventoryTransferPerformance.lua",
-          "sha256": "8c02f75793a577faa3245d1e03713f3b09a9ddbd2e304fbdd9c49089f18002a6",
-          "size": 24017,
+          "sha256": "4c95d2c96a730720e7c86175b562cd4dba2b1634dd1215a6c0d6946ca0b8a099",
+          "size": 24114,
           "mode": "own",
           "repo_path": "src/InventoryTransferPerformance_4221_Local/42/media/lua/client/Codex_InventoryTransferPerformance.lua"
         },
         {
           "path": "42/mod.info",
-          "sha256": "88096955893490bfb540867b677b5db7f59db96036dcfcde807a1b2b3decf4c4",
+          "sha256": "44c77fbbf27a69026adb3498c9dc79f1f6f4471922bae0eb9581c02bc9129a61",
           "size": 540,
           "mode": "own",
           "repo_path": "src/InventoryTransferPerformance_4221_Local/42/mod.info"
@@ -1902,6 +1902,206 @@
           "size": 373,
           "mode": "own",
           "repo_path": "src/TrueMusicHeadphones_4221_LocalFix/42/mod.info"
+        }
+      ]
+    },
+    {
+      "id": "SuQingProteinTrainingBoost",
+      "folder": "SuQingProteinTrainingBoost",
+      "version": "1.0.0",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/client",
+        "42/media/lua/client/SuQingProteinTrainingBoost",
+        "42/media/lua/shared",
+        "42/media/lua/shared/SuQingProteinTrainingBoost",
+        "42/media/lua/shared/Translate",
+        "42/media/lua/shared/Translate/CN",
+        "42/media/lua/shared/Translate/EN",
+        "common"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/client/SuQingProteinTrainingBoost/Drinking.lua",
+          "sha256": "c17826a5f2b23e023e0333a773f883eabedf94408ffab86ce7fa817b270bf08e",
+          "size": 4011,
+          "mode": "own",
+          "repo_path": "src/SuQingProteinTrainingBoost/42/media/lua/client/SuQingProteinTrainingBoost/Drinking.lua"
+        },
+        {
+          "path": "42/media/lua/client/SuQingProteinTrainingBoost/StatusUI.lua",
+          "sha256": "9b26a61244ac0f0c7f271a23bc840386634e3675217c3b3ee30c79e4896d61c2",
+          "size": 2926,
+          "mode": "own",
+          "repo_path": "src/SuQingProteinTrainingBoost/42/media/lua/client/SuQingProteinTrainingBoost/StatusUI.lua"
+        },
+        {
+          "path": "42/media/lua/client/SuQingProteinTrainingBoost_Bootstrap.lua",
+          "sha256": "51b6b41da2043473f87463c100ca7f433bd16aa8dc2f584c439415cfb4058354",
+          "size": 820,
+          "mode": "own",
+          "repo_path": "src/SuQingProteinTrainingBoost/42/media/lua/client/SuQingProteinTrainingBoost_Bootstrap.lua"
+        },
+        {
+          "path": "42/media/lua/shared/SuQingProteinTrainingBoost/Core.lua",
+          "sha256": "572524dcc3ea967e930b2a835f38c2c19eab39b0ffccd191726f6bd3ac68c7bd",
+          "size": 3024,
+          "mode": "own",
+          "repo_path": "src/SuQingProteinTrainingBoost/42/media/lua/shared/SuQingProteinTrainingBoost/Core.lua"
+        },
+        {
+          "path": "42/media/lua/shared/SuQingProteinTrainingBoost/XP.lua",
+          "sha256": "b946f3b9139be101088078fb7bb22b6f73fd98c1d1394ef57ac6c7d43c8aaa44",
+          "size": 8386,
+          "mode": "own",
+          "repo_path": "src/SuQingProteinTrainingBoost/42/media/lua/shared/SuQingProteinTrainingBoost/XP.lua"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/IG_UI.json",
+          "sha256": "ab12b0f17765c180d07f0a4d0a1f9e8c231fb659e63a05913ad98a5a63ba5b00",
+          "size": 363,
+          "mode": "own",
+          "repo_path": "src/SuQingProteinTrainingBoost/42/media/lua/shared/Translate/CN/IG_UI.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/EN/IG_UI.json",
+          "sha256": "e1512efeb398ba6bb6b68a80f2f440ff3c10e0abb4835c25fda34d25f48f1c31",
+          "size": 352,
+          "mode": "own",
+          "repo_path": "src/SuQingProteinTrainingBoost/42/media/lua/shared/Translate/EN/IG_UI.json"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "2a1c928306dc32296038bb70741b4df97d9f079cef1b30fb8c72132cb054a528",
+          "size": 863,
+          "mode": "own",
+          "repo_path": "src/SuQingProteinTrainingBoost/42/mod.info"
+        }
+      ]
+    },
+    {
+      "id": "SuQingRecipeInputGuard_4221",
+      "folder": "SuQingRecipeInputGuard_4221",
+      "version": "1.0.0",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/client",
+        "common"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/client/SuQingRecipeInputGuard.lua",
+          "sha256": "b7eb5ab669478fe076deb242ccfacd521dbc2a6107e1b0edc0a5d2d9c6195cbd",
+          "size": 3465,
+          "mode": "own",
+          "repo_path": "src/SuQingRecipeInputGuard_4221/42/media/lua/client/SuQingRecipeInputGuard.lua"
+        },
+        {
+          "path": "42/media/registries.lua",
+          "sha256": "ff309acb23bf94d73ca9bc1b6edb12115e1ab40a24503e446c6371773a4ce576",
+          "size": 1242,
+          "mode": "own",
+          "repo_path": "src/SuQingRecipeInputGuard_4221/42/media/registries.lua"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "a1567eed93cb53e78fb13537ac5396a01d09d4cd5b904f43bbf3885c92052176",
+          "size": 751,
+          "mode": "own",
+          "repo_path": "src/SuQingRecipeInputGuard_4221/42/mod.info"
+        }
+      ]
+    },
+    {
+      "id": "SuQingChumMassProduction",
+      "folder": "SuQingChumMassProduction",
+      "version": "1.0.0",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/shared",
+        "42/media/lua/shared/SQChum",
+        "42/media/lua/shared/Translate",
+        "42/media/lua/shared/Translate/CN",
+        "42/media/lua/shared/Translate/EN",
+        "42/media/scripts",
+        "common"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/shared/SQChum/Compatibility.lua",
+          "sha256": "269f7a2db230c22d34718b5d1c2594d21eb035937101996156314b64d47f7ff8",
+          "size": 4423,
+          "mode": "own",
+          "repo_path": "src/SuQingChumMassProduction/42/media/lua/shared/SQChum/Compatibility.lua"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/Recipes.json",
+          "sha256": "5f36155340cbf549b4dab269849606069a3cad0d752cf07f0ee6d2de8285069a",
+          "size": 185,
+          "mode": "own",
+          "repo_path": "src/SuQingChumMassProduction/42/media/lua/shared/Translate/CN/Recipes.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/Tooltip.json",
+          "sha256": "1f3024193ae4b25fe591372c5a035ec7c4c06b3ba2fbabede161f322289cd233",
+          "size": 589,
+          "mode": "own",
+          "repo_path": "src/SuQingChumMassProduction/42/media/lua/shared/Translate/CN/Tooltip.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/UI.json",
+          "sha256": "525fc0caa77826592c6c6a71f2622131e8061217ab678b6c0d4b4676d8ed4806",
+          "size": 84,
+          "mode": "own",
+          "repo_path": "src/SuQingChumMassProduction/42/media/lua/shared/Translate/CN/UI.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/EN/Recipes.json",
+          "sha256": "fa6086cead56535db95023523762b75cb752375df0490f94f8b05c57f21fd0d3",
+          "size": 173,
+          "mode": "own",
+          "repo_path": "src/SuQingChumMassProduction/42/media/lua/shared/Translate/EN/Recipes.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/EN/Tooltip.json",
+          "sha256": "646369916f3ddff34cc2fbf119f8586ecddaaa04141c58dd2159aec355d68f21",
+          "size": 628,
+          "mode": "own",
+          "repo_path": "src/SuQingChumMassProduction/42/media/lua/shared/Translate/EN/Tooltip.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/EN/UI.json",
+          "sha256": "39522743370f5c5d0553908f33a18720a7cb4f62b945fa158a111ba9b9f287d6",
+          "size": 88,
+          "mode": "own",
+          "repo_path": "src/SuQingChumMassProduction/42/media/lua/shared/Translate/EN/UI.json"
+        },
+        {
+          "path": "42/media/scripts/SQChum_Recipes.txt",
+          "sha256": "c99d25b05c3f932f56172159490a380e586ec3b14fc74997e8ba15e00c8941da",
+          "size": 1944,
+          "mode": "own",
+          "repo_path": "src/SuQingChumMassProduction/42/media/scripts/SQChum_Recipes.txt"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "494037039a661ac3c40dbb7fd53614a6464ea3a8551bd508acc09f155ffb449e",
+          "size": 419,
+          "mode": "own",
+          "repo_path": "src/SuQingChumMassProduction/42/mod.info"
+        },
+        {
+          "path": "common/README.txt",
+          "sha256": "686d950950e6bcfc8998465d28ccd73347cdcfbe9a43a4244086b0b887df187c",
+          "size": 76,
+          "mode": "own",
+          "repo_path": "src/SuQingChumMassProduction/common/README.txt"
         }
       ]
     }

@@ -2,9 +2,11 @@
 
 [中文](README.md) · [English](README.en.md)
 
-面向 **Project Zomboid Build 42.21 单人环境**，收录蘇清维护的 **30 个独立 Mod ID**：兼容修复、汉化、菜单与性能优化、药物状态面板及其他小型扩展。每个补丁可单独选择，不是一个要求全部启用的合并模组。
+面向 **Project Zomboid Build 42.21 单人环境**，收录蘇清维护的 **33 个独立 Mod ID**：兼容修复、汉化、菜单与性能优化、药物状态面板及其他小型扩展。每个补丁可单独选择，不是一个要求全部启用的合并模组。
 
-[全部 8 个仓库与 37 个 Mod ID](docs/project-index.md) · [当前单人档 205 项启用顺序](docs/current-single-player-modlist.md) · [作者 Steam 合集](https://steamcommunity.com/sharedfiles/filedetails/?id=3823981387)
+[10 个源码仓库与 42 个 Mod ID](docs/project-index.md) · [2026-11-02 01:10 的单人档启用快照](docs/current-single-player-modlist.md) · [作者 Steam 合集](https://steamcommunity.com/sharedfiles/filedetails/?id=3823981387)
+
+个人安装状态与后续安排见[源码范围与个人安装状态](docs/project-index.md)。2026-11-03用户已授权本轮统一Git与Steam更新；已正常实现所需效果的个人组合可保留原版本。音乐与饵托仍待游戏内验收；负重训练个人0.3.1反馈正常，源码0.3.2新美术待视觉验收。上传与源码同步不代替玩法验收。
 
 ## 主模组与补丁怎样搭配
 
@@ -12,7 +14,7 @@
 
 | 主模组或使用场景 | 应选项目与关系 |
 | --- | --- |
-| [普通容器升级 1.0.1](https://github.com/suching8848/suqing-container-upgrade) | 基础功能不强制依赖合集。1.0.1 已内置针剂盒、Chemical 胸挂、HavenFall 前后腰包四项普通升级适配。旧普通桥接只接受 1.0.0，对 1.0.1 停用 |
+| [普通容器升级 1.0.1](https://github.com/suching8848/suqing-container-upgrade) | 基础功能不强制依赖合集。1.0.1 已内置针剂盒、Chemical 胸挂、HavenFall 前后腰包四项普通升级适配；个人 1.0.0 可由现有桥接提供这四项，不必仅因版本号而升级。旧普通注册器在 1.0.1 下跳过，同包 HavenFall EX 桥接仍独立工作，不能整包停用 |
 | [EX 背包升级](https://github.com/suching8848/suqing-backpack-super-upgrade)＋猫又岭 | 容量包装链兼容用 `CodexNekomataEXCompat_4221`；要增加猫猫背包 EX 配方，还需 `CodexNekomataEXUpgrade_4221`。扩展明确依赖兼容层、猫又岭及 EX |
 | EX＋HavenFall 大背包 | 条件需要 `Codex_SuQingWearableCompat_4221`。它声明依赖普通容器升级、EX 和 HavenFall，EX 桥接独立于旧普通注册适配器。不能因为想用桥接就忽略这些前置，或强行与自动容器实验版组合 |
 | [自动容器实验版](https://github.com/suching8848/suqing-container-auto-upgrade) | 与普通容器版是替代关系，不能同时启用；当前正式档未启用该实验版 |
@@ -21,7 +23,7 @@
 | XFACTION Dynamic Traits | 汉化、进度保护分别针对原作；人物菜单补丁另声明需要 XFACTION 汉化。不能只拷贝菜单补丁而遗漏它的前置 |
 | [灌溉养护](https://github.com/suching8848/suqing-sprinkler-fertilizer)与 Batch Farming | 灌溉养护强制 Water Pipes；本合集的批量农耕菜单筛选只给 `vac_batch_farming` 用，不是灌溉养护的必装项 |
 | [冷藏升级](https://github.com/suching8848/suqing-refrigeration-upgrade) | 没有强制的合集补丁；标准穿戴容器由原游戏或来源模组提供，特殊转换组合按该项目说明验证 |
-| PZ Optimization 汉化 | 依赖匹配的外部引擎/UI 版本 d1bbdcf；元数据没有 `require` 不代表无需安装引擎补丁。更新或移除引擎前先核对并停用此覆盖层 |
+| PZ Optimization 汉化 | 依赖匹配的外部引擎/UI 版本 154126d0；元数据没有 `require` 不代表无需安装引擎补丁。更新或移除引擎前先核对并停用此覆盖层 |
 | Chemical 独立兼容构建 | 构建需要已安装的原始资源；独立版不把来源素材公开复制进 Git。游戏使用独立构建时，按子说明保持原 C.B.R.T. Chemical 关闭 |
 
 每项子说明同时记录 Mod ID、原始 `require`、加载关系、实际功能和验证边界。保留你已有的相对顺序，仅按所选项目满足依赖；不要全选合集或自动重排整份名单。
@@ -38,7 +40,7 @@
 python tools/rebuild.py --mod-id Codex_MFSOpticsFix_4221 --output ../suqing-selected-patches
 ```
 
-重建并校验全部 30 项。将示例 Steam 库路径换成自己的实际安装路径；输出目录必须尚不存在：
+重建并校验全部 33 项。将示例 Steam 库路径换成自己的实际安装路径；输出目录必须尚不存在：
 
 ```powershell
 python tools/rebuild.py --check --workshop-root "D:/SteamLibrary/steamapps/workshop/content/108600" --game-root "D:/SteamLibrary/steamapps/common/ProjectZomboid"
@@ -49,7 +51,7 @@ python tools/rebuild.py --output ../suqing-patches-built --workshop-root "D:/Ste
 
 成功后，输出目录中的各个子文件夹才是可安装的独立模组。正常退出游戏，再将需要的完整子文件夹放入自己的 `Zomboid/mods`，保留版本与 `common` 目录，满足原作前置后按需启用。不要把整个仓库、`src` 或 `patches` 文件夹直接当作一个模组安装；不要保留同 Mod ID 的重复来源。
 
-## 30 项补丁索引
+## 33 项补丁索引
 
 | 中英名称 / Bilingual name | Mod ID | 声明前置 / Declared requirements |
 | --- | --- | --- |
@@ -83,9 +85,19 @@ python tools/rebuild.py --output ../suqing-patches-built --workshop-root "D:/Ste
 | [蘇清的批量农耕菜单筛选补丁 / SuQing’s Batch Farming Menu Filter Patch](docs/patches/SuQingBatchFarmingMenu_4221.md) | `SuQingBatchFarmingMenu_4221` | `vac_batch_farming` |
 | [蘇清的They Knew沙盒文本修复补丁 / SuQing’s They Knew Sandbox Text Fix Patch](docs/patches/Codex_TheyKnew_CN_TextFix_4221.md) | `Codex_TheyKnew_CN_TextFix_4221` | `TheyKnewContinued` |
 | [蘇清的True Music耳机单人兼容补丁 / SuQing’s True Music Headphones Single-player Compatibility Patch](docs/patches/Codex_TrueMusic_Headphones_4221.md) | `Codex_TrueMusic_Headphones_4221` | `truemusic` |
+| [蘇清的蛋白饮料训练强化 / Protein Shake Training Boost](docs/patches/SuQingProteinTrainingBoost.md) | `SuQingProteinTrainingBoost` | `VanillaFoodsExpanded` |
+| [蘇清的配方材料输入修复 / Recipe Input Guard](docs/patches/SuQingRecipeInputGuard_4221.md) | `SuQingRecipeInputGuard_4221` | `SapphCooking_B42` |
+| [蘇清的饵托量产补丁 / SuQing's Chum Mass Production Patch](docs/patches/SuQingChumMassProduction.md) | `SuQingChumMassProduction` | 无 / None |
 
 ## 验证与来源
 
-内容重建检查保证与所记录的运行文件字节一致，不代表上游之后的版本、每个可选组合、多人或专用服务器已通过实际玩法测试。作者此前确认自己的完整 B42.21 单人配置游玩正常；当前 205 项清单记录启用状态，各项目的具体游戏内验证状态见子说明。容器自动实验版和 They Knew 文字补丁当前未在正式档启用；前者在独立仓库，后者仍保留于本合集。
+内容重建检查保证与所记录的运行文件字节一致，不代表上游之后的版本、每个可选组合、多人或专用服务器已通过实际玩法测试。作者此前确认自己的完整 B42.21 单人配置游玩正常；2026-11-02 01:10 的 205 项历史清单记录当时启用状态，各项目的具体游戏内验证状态见子说明。容器自动实验版和 They Knew 文字补丁当前未在正式档启用；前者在独立仓库，后者仍保留于本合集。
 
 本仓库不宣称所有上游代码或美术素材为蘇清原创，也不向第三方文件重新授予统一许可。保留原作归属、版本约束与来源说明。个人配置名单、旧回滚副本和无关 `.bak` 不属于可安装补丁；运行确需的针剂回退参考文件由重建器从匹配的已安装来源恢复。
+
+2026-11-03 本地新增：[蘇清的蛋白饮料训练强化](docs/patches/SuQingProteinTrainingBoost.md)，Mod ID `SuQingProteinTrainingBoost`，依赖 `VanillaFoodsExpanded`。已离线验证，游戏内验收待完成；已纳入本轮统一源码与发布批次，实际提交结果以发布回执为准。
+
+2026-11-03 本地新增：[配方材料输入修复](docs/patches/SuQingRecipeInputGuard_4221.md)，独立于未改动的野马保护补丁；需完全重启，游戏内制作验收待完成。
+
+
+2026-11-03 发布材料新增：[蘇清的饵托量产补丁](docs/patches/SuQingChumMassProduction.md)。无额外前置；按用户最新说明仍待游戏内验收。与蛋白饮料训练强化、配方材料输入修复一起纳入本轮统一源码与工坊更新；实际提交结果以发布回执为准。

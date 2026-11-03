@@ -1,0 +1,6 @@
+{
+  "IGUI_SuQingProteinTrainingBoost_Active": "Protein training: Strength / Fitness XP x10",
+  "IGUI_SuQingProteinTrainingBoost_Remaining": "%1 remaining (game time; draggable)",
+  "IGUI_SuQingProteinTrainingBoost_Expired": "Protein training boost has ended",
+  "IGUI_SuQingProteinTrainingBoost_Failed": "Protein training paused; check the game log"
+}

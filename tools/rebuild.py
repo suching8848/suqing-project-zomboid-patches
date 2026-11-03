@@ -130,7 +130,7 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--workshop-root", type=Path)
     p.add_argument("--game-root", type=Path)
-    p.add_argument("--mod-id", action="append", help="Repeat to select a subset; default: all 30")
+    p.add_argument("--mod-id", action="append", help="Repeat to select a subset; default: all entries")
     mode = p.add_mutually_exclusive_group(required=True)
     mode.add_argument("--check", action="store_true", help="Reconstruct and verify in memory; write no output")
     mode.add_argument("--output", type=Path, help="New isolated output directory; never an installed mod directory")

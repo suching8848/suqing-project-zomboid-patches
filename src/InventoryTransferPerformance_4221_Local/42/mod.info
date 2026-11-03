@@ -5,4 +5,4 @@ require=CleanUI
 loadModAfter=CleanUI,NeatUI_Equipment,Codex_AttachedGrouping_4221,PinyinSearch_SafeSources_4221_LocalFix,Codex_PetGunWeightKits_4221,ProximityInventory
 versionMin=42.21
 versionMax=42.21
-modversion=1.2.0
+modversion=1.2.1

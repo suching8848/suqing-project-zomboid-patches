@@ -6,7 +6,7 @@
 | --- | --- |
 | Mod ID | `CodexPZOptimization_CN_4221` |
 | 文件夹 / Folder | `CodexPZOptimization_CN_4221` |
-| 版本 / Version | `1.0.0` |
+| 版本 / Version | `1.1.0` |
 | 适用 / Target | Project Zomboid Build 42.21; single-player scope |
 | 元数据硬依赖 / Declared prerequisites | 无mod.info硬依赖 / none declared in mod.info |
 | 原样require / Literal require | `(none)` |
@@ -14,9 +14,11 @@
 
 ## 中文说明
 
-对应PZ Optimization d1bbdcf的500项名称和58项重点说明汉化及UTF-8排版。上游菜单整份覆盖不入库，以游戏目录原件SHA和上下文差异重建；更新或卸载引擎补丁前应重新核对。
+对应PZ Optimization 154126d0的577项名称、导航控件、部分说明汉化及UTF-8排版。新增预设按原始标题映射，保留中文查询、新版页面与设置动作。上游菜单整份覆盖不入库，以游戏目录原件精确SHA和上下文差异重建；更新或卸载引擎补丁前应重新核对。
 
-只按需要安装本子补丁，不能把本仓库30项当作所有主模组的共同前置。`loadModAfter`是加载顺序声明，不等于要求安装列出的全部模组。`require`原字节保留，包括历史前缀语法；本仓库不擅自迁移Mod ID或改变依赖。
+源码同步已部署1.1.0的同字节文件。既有隔离Kahlua验证为2370断言，覆盖577标签、7预设动作身份、设置键、section路由及中文查询；真实屏幕布局与点击仍需用户验收，未随本次源码同步部署或启动游戏。
+
+只按需要安装本子补丁，不能把本仓库的全部子项当作所有主模组的共同前置。`loadModAfter`是加载顺序声明，不等于要求安装列出的全部模组。`require`原字节保留，包括历史前缀语法；本仓库不擅自迁移Mod ID或改变依赖。
 
 本补丁运行文件共3份。仓库直接收录2份自制桥接/翻译/元数据，另从本机上游原件复制重建0份、应用上下文差异重建1份。完整路径、输入与输出SHA-256见[重建清单](../../rebuild-manifest.json)。第三方完整美术、原始覆盖文件和针剂reference原件不直接入Git。
 
@@ -24,9 +26,11 @@
 
 ## English notes
 
-Chinese localization/layout for 500 labels and 58 selected descriptions of PZ Optimization d1bbdcf. The full upstream menu overlay is not stored; it is reconstructed from a pinned game-directory source and context diff. Recheck before changing/removing the engine patch.
+Chinese localization/layout for 577 labels, navigation, controls and selected descriptions of PZ Optimization 154126d0. Preset titles map to their original names; Chinese queries, current pages and settings actions are retained. The full upstream menu overlay is not stored; it is reconstructed from the exact newly pinned game-directory source and context diff. Recheck before changing/removing the engine patch.
 
-Install this optional subpatch only for the relevant use case. All 30 are not a universal prerequisite. `loadModAfter` declares ordering, not a requirement to install every named mod. Literal `require` bytes, including historical prefix syntax, remain unchanged. No IDs or dependencies are migrated.
+Sources match the deployed 1.1.0 bytes. The existing isolated Kahlua validation covered 2,370 assertions, including 577 labels, seven preset action identities, setting keys, section routing and Chinese queries. Actual screen layout and clicks remain user acceptance work; this source synchronization does not deploy or launch the game.
+
+Install this optional subpatch only for the relevant use case. The whole collection is not a universal prerequisite. `loadModAfter` declares ordering, not a requirement to install every named mod. Literal `require` bytes, including historical prefix syntax, remain unchanged. No IDs or dependencies are migrated.
 
 There are 3 runtime files: 2 tracked bridge/translation/metadata files, 0 local upstream copies and 1 context-diff reconstructions. The [manifest](../../rebuild-manifest.json) records every input/output SHA-256 and path. Full third-party artwork, overlay originals and stimulant reference originals are not stored in Git.
 

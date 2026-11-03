@@ -1,0 +1,123 @@
+[h1]中文[/h1]
+本工坊包提供25个独立可选子模组：修复、汉化、菜单和小扩展。按对应原作及需求选用，[b]不要全部启用[/b]。适用B42.21单人；每项保留独立Mod ID，原作须另行订阅。
+猫又岭兼容、猫猫背包EX升级和HavenFall背包EX桥接随EX主项目提供，本包不重复包含。下面每行给出用途、Mod ID与必需前置；前置仅针对该子项。
+[h1]English[/h1]
+This item provides 25 independent optional fixes, Chinese translations, menu changes and small extensions. Select for your original mods and needs; [b]do not enable everything[/b]. B42.21 single-player. Each submod has its own Mod ID; original mods must be subscribed separately.
+Nekomata compatibility, Nekomata backpack EX and HavenFall EX bridges are provided with the EX main item, not duplicated here. Each row below gives the purpose, Mod ID and required original mods for that entry.
+[h2]子模组 / Submods[/h2]
+[list]
+[*][b]洗衣皂文字修复 / Washing soap text fix[/b]
+[/list]
+Codex_AmmoBox_CN_TextFix_4221；前置/Requires: B42ModTrans_CN
+[list]
+[*][b]挂点分组/穿戴菜单 / Attachment grouping/Wear menu[/b]
+[/list]
+Codex_AttachedGrouping_4221；前置/Requires: CleanUI
+[list]
+[*][b]中华菜与N&C种子提示 / Chinese cuisine/N&C seed tooltips[/b]
+[/list]
+Codex_ChineseCrop_Tooltip_4221；前置/Requires: Chinesecuisine4213, MoreItemInformation
+[list]
+[*][b]Fashionoid储液提示 / Fashionoid fluid tooltips[/b]
+[/list]
+Codex_FashionoidFluidTooltip_4221；前置/Requires: Fashionoid42
+[list]
+[*][b]MFS瞄具标签 / MFS optics tags[/b]
+[/list]
+Codex_MFSOpticsFix_4221；前置/Requires: ModernFirearmsSystem
+[list]
+[*][b]Mustang引擎盖配方保护 / Mustang hood recipe guard[/b]
+[/list]
+Codex_MustangRecipeGuard_4221；前置/Requires: ATA_Mustang
+[list]
+[*][b]N&C药物状态面板 / N&C drug status panel[/b]
+[/list]
+Codex_NarcoticsStatus_4221；前置/Requires: N&CsNarcotics
+[list]
+[*][b]XFACTION进度记录保护 / XFACTION record guard[/b]
+[/list]
+Codex_XFDynamicRecordGuard_4221；前置/Requires: XFACTION_DynamicTraits
+[list]
+[*][b]人物菜单调整 / Character menu tweaks[/b]
+[/list]
+CodexCharacterMenuTweaks_4221；前置/Requires: XFACTION_DynamicTraits, CodexXFACTION_CN_4221
+[list]
+[*][b]N&C中文汉化 / N&C Chinese translation[/b]
+[/list]
+CodexNarcotics_CN_4221；前置/Requires: N&CsNarcotics
+[list]
+[*][b]True 3D Items百分号提示 / True 3D Items percent tooltip[/b]
+[/list]
+CodexTranslatorPercentFix_4221；前置/Requires: ProjectFullHD
+[list]
+[*][b]XFACTION动态特性汉化 / XFACTION Chinese translation[/b]
+[/list]
+CodexXFACTION_CN_4221；前置/Requires: XFACTION_DynamicTraits
+[list]
+[*][b]DAMN原版轮胎维修 / DAMN vanilla tire repair[/b]
+[/list]
+Codex_DAMN_VanillaTires_4221；前置/Requires: damnlib
+[list]
+[*][b]Erika家具/可选调试生成器 / Erika furniture/optional debug guard[/b]
+[/list]
+Codex_DebugMenu_Generator_4221；前置/Requires: 无硬前置/None; Erika家具/furniture; DebugMenu可选/optional QNWDebugMenuB42
+[list]
+[*][b]批量转移库存刷新优化 / Bulk transfer refresh[/b]
+[/list]
+Codex_InventoryTransferPerformance_4221；前置/Requires: CleanUI
+[list]
+[*][b]MFS弹药盒/弹匣显示 / MFS ammo/magazine visuals[/b]
+[/list]
+Codex_MFS_AmmoVisual_Compat_4221；前置/Requires: ModernFirearmsSystem
+[list]
+[*][b]MFS附加手电快捷键 / MFS flashlight hotkey[/b]
+[/list]
+Codex_MFS_AttachedLight_Hotkey_4221；前置/Requires: ModernFirearmsSystem
+[list]
+[*][b]Noir枪带单人兼容 / Noir sling SP compatibility[/b]
+[/list]
+Codex_NoirSling_SP_Compat_4221；前置/Requires: noirrsling4-42.13patch
+[list]
+[*][b]拼音搜索/界面兼容 / Pinyin search/UI[/b]
+[/list]
+PinyinSearch_SafeSources_4221_LocalFix；前置/Requires: yxjs_PinYinSearch
+[list]
+[*][b]批量农耕菜单筛选 / Batch Farming menu filter[/b]
+[/list]
+SuQingBatchFarmingMenu_4221；前置/Requires: vac_batch_farming
+[list]
+[*][b]They Knew沙盒文字 / They Knew sandbox text[/b]
+[/list]
+Codex_TheyKnew_CN_TextFix_4221；前置/Requires: TheyKnewContinued
+[list]
+[*][b]True Music耳机兼容 / True Music headphones[/b]
+[/list]
+Codex_TrueMusic_Headphones_4221；前置/Requires: truemusic
+[list]
+[*][b]饵托量产 / Chum mass production[/b]
+[/list]
+SuQingChumMassProduction；无硬前置/None。整袋沙/泥或黏土+0.1L水→5饵托 / Full sand/dirt bag or clay + 0.1L water gives 5 chum.
+[list]
+[*][b]蛋白饮料训练强化 / Protein training boost[/b]
+[/list]
+SuQingProteinTrainingBoost；前置/Requires: VanillaFoodsExpanded。饮用后力量/体格经验×10 / Strength/Fitness XP x10 after drinking.
+[list]
+[*][b]配方材料修复 / Recipe input guard[/b]
+[/list]
+SuQingRecipeInputGuard_4221；前置/Requires: SapphCooking_B42。补齐草莓标签，保留原配方 / Registers the missing strawberry tag; original recipes retained.
+[h2]选择与使用[/h2]
+先启用原作，再启对应补丁；保留原相对顺序，不自动重排名单。同Mod ID只保留一份来源，避免工坊与旧本地副本重复。启用、停用或换来源前按需备份并正常退出游戏；移除时看该子项说明，不用覆盖存档代替卸载。
+人物菜单需要本包XFACTION汉化。N&C状态面板只读显示，不是药物本体，不强制汉化。Erika修复适用于已知家具；DebugMenu保护仅在其启用时运行。MFS三项修复不是减重挂件或固定收购的强制前置；批量农耕筛选不是灌溉养护的前置。
+作者此前反馈自己的单人配置正常，仅限当时配置与版本；不代表25项、全部组合或后续原作均已实测。They Knew文字项不在该正式档反馈范围内。先在测试档检查菜单、操作及保存重进，再用于长期存档。库存刷新优化不承诺帧率提升；联机和服务器未验证。原作更新后复核补丁适用版本。
+[h2]Selection and use[/h2]
+Enable originals before their patches and preserve existing relative order. Keep one source per Mod ID; avoid duplicate local/Workshop copies. Back up as needed and exit normally before changing mods. Read each entry's removal notes; overwriting a save is not an uninstall method.
+Character Menu needs this item's XFACTION translation. The read-only N&C status panel is not the drug mod and does not require its translation. Erika fixes apply to known furniture; the DebugMenu guard runs only if DebugMenu is enabled. MFS fixes are not mandatory for Weight Charms/Fixed Buyback; Batch Farming filter is not required by Irrigation Care.
+The author's earlier normal-play report covers their configuration and versions, not all 25 entries, every combination or later originals. The They Knew text entry was outside that report. Check menus, actions and save/reload in a test save first. No FPS gain is promised; multiplayer/servers are unverified. Recheck compatibility after original-mod updates.
+[hr][/hr]
+原作代码、美术与物品归各自作者。Original code, artwork and items belong to their authors.
+[url=https://github.com/suching8848/suqing-project-zomboid-patches]Git源码与逐项说明 / Source and per-patch notes[/url]
+[url=https://github.com/suching8848/suqing-backpack-super-upgrade]EX主模组 / EX main mod[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3823981387]作者单人档合集 / Author's single-player collection[/url]
+
+本轮新增项主要经离线验证，实际操作与保存重进仍按各项说明验收；库存刷新1.2.1支持CleanUI 2.10.3。
+New entries primarily have offline validation; gameplay/save acceptance remains per entry. Inventory refresh 1.2.1 supports CleanUI 2.10.3.

@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target_game": "Project Zomboid Build 42.21",
-  "scope": "30 independent local patches; seven larger feature projects excluded",
+  "scope": "33 independent local patches; seven larger feature projects excluded",
   "mods": [
     {
       "id": "Codex_AmmoBox_CN_TextFix_4221",
@@ -529,8 +529,8 @@
       "folder": "CodexPZOptimization_CN_4221",
       "title_zh": "PZ Optimization设置汉化",
       "title_en": "PZ Optimization Chinese Settings",
-      "version": "1.0.0",
-      "description_original": "Simplified Chinese settings UI for PZ Optimization d1bbdcf. 500 labels, navigation, controls and selected descriptions. UI only. Disable before updating or removing the engine patch.",
+      "version": "1.1.0",
+      "description_original": "Simplified Chinese settings UI for PZ Optimization 154126d0. 577 labels, navigation, controls and selected descriptions. UI only. Disable before updating or removing the engine patch.",
       "requires_raw": "",
       "load_after_raw": "",
       "required_mods": [],
@@ -538,10 +538,10 @@
       "doc": "docs/patches/CodexPZOptimization_CN_4221.md",
       "reconstruction_status": "recipes_ready",
       "source_runtime_info": "42/mod.info",
-      "summary_zh": "对应PZ Optimization d1bbdcf的500项名称和58项重点说明汉化及UTF-8排版。上游菜单整份覆盖不入库，以游戏目录原件SHA和上下文差异重建；更新或卸载引擎补丁前应重新核对。",
-      "summary_en": "Chinese localization/layout for 500 labels and 58 selected descriptions of PZ Optimization d1bbdcf. The full upstream menu overlay is not stored; it is reconstructed from a pinned game-directory source and context diff. Recheck before changing/removing the engine patch.",
+      "summary_zh": "PZ Optimization 154126d0设置汉化：577项名称、导航控件和部分说明，保留中文搜索与UTF-8排版。完整上游菜单不入Git，以新原件精确哈希和上下文差异重建。",
+      "summary_en": "Chinese settings localization for PZ Optimization 154126d0: 577 labels, navigation, controls and selected descriptions, with Chinese search and UTF-8 layout. Reconstructs the menu from a newly pinned upstream source and context diff; no full upstream menu in Git.",
       "runtime_files": 3,
-      "runtime_bytes": 330518,
+      "runtime_bytes": 569203,
       "reconstruction_modes": {
         "own": 2,
         "patch": 1
@@ -675,7 +675,7 @@
       "folder": "InventoryTransferPerformance_4221_Local",
       "title_zh": "批量转移库存刷新优化",
       "title_en": "Bulk Transfer Inventory Refresh Optimization",
-      "version": "1.2.0",
+      "version": "1.2.1",
       "description_original": "Coalesces automatic inventory UI rebuilds during stationary single-player bulk transfers. Keeps native transfers, interaction, rendering and tooltips. Requires CleanUI. Local reversible performance patch.",
       "requires_raw": "CleanUI",
       "load_after_raw": "CleanUI,NeatUI_Equipment,Codex_AttachedGrouping_4221,PinyinSearch_SafeSources_4221_LocalFix,Codex_PetGunWeightKits_4221,ProximityInventory",
@@ -693,10 +693,10 @@
       "doc": "docs/patches/Codex_InventoryTransferPerformance_4221.md",
       "reconstruction_status": "recipes_ready",
       "source_runtime_info": "42/mod.info",
-      "summary_zh": "合并静止单人批量转移时的自动库存刷新，保留原生转移动作、交互、画面和提示；不能从离线重建推断FPS收益。",
-      "summary_en": "Coalesces automatic inventory rebuilds during stationary single-player bulk transfers while retaining native transfers, interaction, rendering and tooltips. Reconstruction checks are not evidence of an FPS gain.",
+      "summary_zh": "合并静止单人批量转移时的自动库存刷新；1.2.1适配已审阅CleanUI 2.10.3并保留未知版本拒绝。原生动作、容量、配方和绘制保持，离线验证不代表FPS收益或游戏验收。",
+      "summary_en": "Coalesces stationary single-player bulk-transfer UI refreshes. Version 1.2.1 supports reviewed CleanUI 2.10.3 and retains unknown-version refusal; native actions, capacity, recipes and rendering remain unchanged. Offline checks are not FPS or gameplay acceptance.",
       "runtime_files": 2,
-      "runtime_bytes": 24557,
+      "runtime_bytes": 24654,
       "reconstruction_modes": {
         "own": 2
       },
@@ -997,6 +997,88 @@
       "runtime_bytes": 3851,
       "reconstruction_modes": {
         "own": 2
+      },
+      "excluded_files": [],
+      "source_roots": []
+    },
+    {
+      "id": "SuQingProteinTrainingBoost",
+      "folder": "SuQingProteinTrainingBoost",
+      "title_zh": "蛋白饮料训练强化",
+      "title_en": "Protein Shake Training Boost",
+      "version": "1.0.0",
+      "description_original": "Final Strength and Fitness XP x10 after drinking Vanilla Foods Expanded protein shakes; 0.5 L provides three game hours, partial doses scale, capped at three hours.",
+      "requires_raw": "VanillaFoodsExpanded",
+      "load_after_raw": "VanillaFoodsExpanded,SkillRecoveryJournal,CleanUI",
+      "required_mods": [
+        "VanillaFoodsExpanded"
+      ],
+      "load_after_mods": [
+        "VanillaFoodsExpanded",
+        "SkillRecoveryJournal",
+        "CleanUI"
+      ],
+      "doc": "docs/patches/SuQingProteinTrainingBoost.md",
+      "reconstruction_status": "recipes_ready",
+      "source_runtime_info": "42/mod.info",
+      "summary_zh": "原蛋白饮料实际摄入后，正常结算的力量与体格经验再乘10；按剂量累积至多3游戏小时，含倒计时与恢复日志保护，单人。",
+      "summary_en": "Multiplies final Strength/Fitness XP by ten after actual protein-shake consumption; dose-scaled duration capped at three game hours, countdown UI and recovery-grant protection; single-player.",
+      "runtime_files": 8,
+      "runtime_bytes": 20745,
+      "reconstruction_modes": {
+        "own": 8
+      },
+      "excluded_files": [],
+      "source_roots": []
+    },
+    {
+      "id": "SuQingRecipeInputGuard_4221",
+      "folder": "SuQingRecipeInputGuard_4221",
+      "title_zh": "配方材料输入修复",
+      "title_en": "Recipe Input Guard",
+      "version": "1.0.0",
+      "description_original": "Early registration of Sapph's missing strawberry tag, with read-only startup validation of resolved ingredient candidates.",
+      "requires_raw": "SapphCooking_B42",
+      "load_after_raw": "SapphCooking_B42",
+      "required_mods": [
+        "SapphCooking_B42"
+      ],
+      "load_after_mods": [
+        "SapphCooking_B42"
+      ],
+      "doc": "docs/patches/SuQingRecipeInputGuard_4221.md",
+      "reconstruction_status": "recipes_ready",
+      "source_runtime_info": "42/mod.info",
+      "summary_zh": "独立补齐Sapph草莓标签，防止衣服等无关物品进入草莓芝士蛋糕候选，保留原配方与牛奶输入；不改野马补丁。",
+      "summary_en": "Standalone missing-strawberry-tag registration for Sapph; preserves quantities/fluids and leaves the Mustang guard unchanged.",
+      "runtime_files": 3,
+      "runtime_bytes": 5458,
+      "reconstruction_modes": {
+        "own": 3
+      },
+      "excluded_files": [],
+      "source_roots": []
+    },
+    {
+      "id": "SuQingChumMassProduction",
+      "folder": "SuQingChumMassProduction",
+      "title_zh": "饵托量产补丁",
+      "title_en": "Chum Mass Production Patch",
+      "version": "1.0.0",
+      "description_original": "Craft five original chum items from one full sand/dirt bag or one clay and 0.1 L water in any fluid container. Retains original recipe knowledge and subsequent bait loading.",
+      "requires_raw": "",
+      "load_after_raw": "",
+      "required_mods": [],
+      "load_after_mods": [],
+      "doc": "docs/patches/SuQingChumMassProduction.md",
+      "reconstruction_status": "recipes_ready",
+      "source_runtime_info": "42/mod.info",
+      "summary_zh": "一整袋沙或泥土，或一份黏土，加任意容器0.1L净水/污水制作5个原版饵托；满袋耗尽返空袋，沿用原版配方知识。",
+      "summary_en": "Five original chum per full sand/dirt bag or clay, using 0.1 L clean/tainted water from any fluid container; empty bags and vanilla recipe knowledge retained.",
+      "runtime_files": 10,
+      "runtime_bytes": 8609,
+      "reconstruction_modes": {
+        "own": 10
       },
       "excluded_files": [],
       "source_roots": []

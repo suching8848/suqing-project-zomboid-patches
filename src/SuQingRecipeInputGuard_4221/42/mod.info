@@ -1,0 +1,11 @@
+name=SuQing's Recipe Input Guard [SP]
+namezh=蘇清的配方材料输入修复 [单人]
+id=SuQingRecipeInputGuard_4221
+author=SuQing
+modversion=1.0.0
+versionMin=42.21
+versionMax=42.21
+require=SapphCooking_B42
+loadModAfter=SapphCooking_B42
+description=Registers Sapph's missing strawberry tag before item and recipe parsing, preventing unrelated items from appearing as strawberry-cheesecake ingredients. Preserves recipe quantities, outputs and milk-fluid inputs. Requires a full restart. Single-player validation scope.
+descriptionzh=在物品和配方解析前补齐Sapph草莓标签，避免衣服等无关物品混入草莓芝士蛋糕材料。保留原材料数量、产物与牛奶流体输入，需完全重启游戏，仅单人验证范围。
