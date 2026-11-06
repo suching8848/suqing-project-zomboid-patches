@@ -9,7 +9,7 @@ CodexInventoryTransferPerformance = CodexInventoryTransferPerformance or {}
 local M = CodexInventoryTransferPerformance
 if M.loaded then return end
 M.loaded = true
-M.version = "1.2.1"
+M.version = "1.2.2"
 M.enabled = true
 M.refreshIntervalMs = 180
 M.stats = { pageRefreshes = 0, pageDeferred = 0, paneRefreshes = 0,
@@ -198,7 +198,7 @@ local function runForced(fn, ...)
     return a, b, c
 end
 
--- CleanUI 2.10.1 through 2.10.3 finish category/search/pin ordering in a private helper,
+-- CleanUI 2.10.1 through 2.10.4 finish category/search/pin ordering in a private helper,
 -- after external refresh wrappers have run. Its public searchContainer method
 -- reaches that helper without drawing. Reuse the already completed refresh
 -- exactly once, then let all of CleanUI's own reconciliation execute normally.
@@ -342,11 +342,11 @@ local function install()
     end
     local info = getModInfoByID("CleanUI") or getModInfoByID("\\CleanUI")
     local cleanVersion = info and info.getModVersion and tostring(info:getModVersion())
-    if cleanVersion ~= "2.9.9" and cleanVersion ~= "2.10.1" and cleanVersion ~= "2.10.2" and cleanVersion ~= "2.10.3" then
-        stopOptimizing("CleanUI 2.9.9, 2.10.1, 2.10.2 or 2.10.3 required; review other versions before enabling")
+    if cleanVersion ~= "2.9.9" and cleanVersion ~= "2.10.1" and cleanVersion ~= "2.10.2" and cleanVersion ~= "2.10.3" and cleanVersion ~= "2.10.4" then
+        stopOptimizing("CleanUI 2.9.9, 2.10.1, 2.10.2, 2.10.3 or 2.10.4 required; review other versions before enabling")
         return
     end
-    if (cleanVersion == "2.10.1" or cleanVersion == "2.10.2" or cleanVersion == "2.10.3") and type(ISInventoryPane.searchContainer) ~= "function" then
+    if (cleanVersion == "2.10.1" or cleanVersion == "2.10.2" or cleanVersion == "2.10.3" or cleanVersion == "2.10.4") and type(ISInventoryPane.searchContainer) ~= "function" then
         stopOptimizing("CleanUI search reconciliation interface unavailable")
         return
     end
@@ -365,7 +365,7 @@ local function install()
         end
     end
     M.cleanUIVersion = cleanVersion
-    M.needsPriorityBarrier = cleanVersion == "2.10.1" or cleanVersion == "2.10.2" or cleanVersion == "2.10.3"
+    M.needsPriorityBarrier = cleanVersion == "2.10.1" or cleanVersion == "2.10.2" or cleanVersion == "2.10.3" or cleanVersion == "2.10.4"
     originals.searchContainer = ISInventoryPane.searchContainer
     M.installed = true
     originals.refreshContainer = ISInventoryPane.refreshContainer

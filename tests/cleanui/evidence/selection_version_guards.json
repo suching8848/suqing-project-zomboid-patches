@@ -1,0 +1,20 @@
+[
+  {
+    "version": "2.10.3",
+    "supported": true,
+    "passed": true,
+    "log": "D:\\steam\\steamapps\\common\\ProjectZomboid\\CodexAssets\\CleanUICompat_20261105_232936\\tests\\selection\\version_2.10.3_result.txt"
+  },
+  {
+    "version": "2.10.4",
+    "supported": true,
+    "passed": true,
+    "log": "D:\\steam\\steamapps\\common\\ProjectZomboid\\CodexAssets\\CleanUICompat_20261105_232936\\tests\\selection\\version_2.10.4_result.txt"
+  },
+  {
+    "version": "2.10.5",
+    "supported": false,
+    "passed": true,
+    "log": "D:\\steam\\steamapps\\common\\ProjectZomboid\\CodexAssets\\CleanUICompat_20261105_232936\\tests\\selection\\version_2.10.5_result.txt"
+  }
+]

@@ -1,0 +1,9 @@
+name=蘇清的造船就地取材补丁 / SuQing's Boat Crafting Nearby Materials Patch
+id=SuQingBoatCraftFromFloor_4221
+modversion=0.1.0
+versionMin=42.21
+versionMax=42.21
+require=BoteBR
+loadModAfter=BoteBR,Neat_Crafting
+description=中文：仅让三条造船配方沿用原版就地取材，避免开工前把所有材料搬入人物背包；材料、技能、工作面、成品重量不变。B42.21单人离线适配，游戏内待验收。上游配方变化时不应用。
+description=EN: Enables the native nearby-materials flag for the three boat recipes. No forced pretransfer of every input into the player inventory. Ingredients, skills, work surface and output weight stay unchanged. B42.21 SP; in-game acceptance pending. Changed upstream recipes are left untouched.

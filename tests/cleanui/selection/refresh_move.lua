@@ -1,0 +1,12 @@
+local V = PerfTest
+V.gameStart()
+V.case("external refresh then mouse move preserves pending relocated anchor", function()
+    local p = V.prox({V.item("Bandage"), V.item("Zinc")})
+    V.click(p, 1)
+    p.inventory.nativeItems[#p.inventory.nativeItems + 1] = V.item("Apple")
+    p:refreshContainer(); p:onMouseMove(0, 0); p:renderdetails(false)
+    V.eq(V.anchorName(p), "Bandage", "mouse move does not consume pending identity")
+    V.eq(p.firstSelect, 2, "pending selection follows insertion after mouse move")
+    V.eq(p.selected[2], p.items[2], "highlight follows relocated row")
+end)
+return V.done()

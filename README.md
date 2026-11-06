@@ -1,12 +1,25 @@
 # 蘇清的僵尸毁灭工程补丁合集 / SuQing’s Project Zomboid Patch Collection
 
+## 2026年11月6日发布状态
+
+当前源码登记40项：32项补丁合集可选子模组已原生上传并公开核验，3项仍随EX提供，5项再分发暂缓。11月3日25项旧清单保存在publishing/history；candidate-20261106.json保留发布前选择快照，当前线上以publishing/workshop.json为准。4个新主模组为私密已上传验证候选；普通容器1.0.3上传失败、线上仍1.0.1，待用户换节点重试。详见[本次发布状态](publishing/release-status-20261106.json)；源码和上传均不代替单项游戏验收。
+
 [中文](README.md) · [English](README.en.md)
 
-面向 **Project Zomboid Build 42.21 单人环境**，收录蘇清维护的 **33 个独立 Mod ID**：兼容修复、汉化、菜单与性能优化、药物状态面板及其他小型扩展。每个补丁可单独选择，不是一个要求全部启用的合并模组。
+面向 **Project Zomboid Build 42.21 单人环境**，2026-11-03 发布快照收录蘇清维护的 **33 个独立 Mod ID**：兼容修复、汉化、菜单与性能优化、药物状态面板及其他小型扩展。每个补丁可单独选择，不是一个要求全部启用的合并模组。
 
-[10 个源码仓库与 42 个 Mod ID](docs/project-index.md) · [2026-11-02 01:10 的单人档启用快照](docs/current-single-player-modlist.md) · [作者 Steam 合集](https://steamcommunity.com/sharedfiles/filedetails/?id=3823981387)
+[14 个源码仓库与 53 个 Mod ID](docs/project-index.md) · [2026-11-02 01:10 的单人档启用快照](docs/current-single-player-modlist.md) · [作者 Steam 合集](https://steamcommunity.com/sharedfiles/filedetails/?id=3823981387)
 
 个人安装状态与后续安排见[源码范围与个人安装状态](docs/project-index.md)。2026-11-03用户已授权本轮统一Git与Steam更新；已正常实现所需效果的个人组合可保留原版本。音乐与饵托仍待游戏内验收；负重训练个人0.3.1反馈正常，源码0.3.2新美术待视觉验收。上传与源码同步不代替玩法验收。
+
+## 2026-11-04 新增来源记录（现已纳入32项公开包）
+
+以下条目已纳入当前源码、重建清单及11月6日32项公开包。下文33项与11月3日记录保留历史快照含义；当前全部53个Mod ID及线上/个人差异以项目索引为准。
+
+| 本地新增 | Mod ID | 验证边界 |
+| --- | --- | --- |
+| [Viewpoint 旧版手柄提示修复](docs/patches/Codex_ViewpointLegacyPromptFix_4221.md) | `Codex_ViewpointLegacyPromptFix_4221` | 依赖 `ProjectViewpointQOLLegacy0.1.6`；原游戏 Kahlua 的 19 项离线行为回归通过，游戏内验收待完成 |
+| [酿酒技能书50倍](docs/patches/Codex_ChinaBrewingBooks50_4221.md) | `Codex_ChinaBrewingBooks50_4221` | 依赖 `Chinesecuisine4213`；v0.1.1：23 情景 / 808 断言离线通过，修正 Script.Item 排他上限校验；先恢复原倍率并保存再停用，游戏内验收待完成 |
 
 ## 主模组与补丁怎样搭配
 
@@ -14,7 +27,7 @@
 
 | 主模组或使用场景 | 应选项目与关系 |
 | --- | --- |
-| [普通容器升级 1.0.1](https://github.com/suching8848/suqing-container-upgrade) | 基础功能不强制依赖合集。1.0.1 已内置针剂盒、Chemical 胸挂、HavenFall 前后腰包四项普通升级适配；个人 1.0.0 可由现有桥接提供这四项，不必仅因版本号而升级。旧普通注册器在 1.0.1 下跳过，同包 HavenFall EX 桥接仍独立工作，不能整包停用 |
+| [普通容器升级](https://github.com/suching8848/suqing-container-upgrade) | 基础功能不强制依赖合集。线上现行为1.0.1；本地源码和个人1.0.3已部署，新增返鲜餐盒普通五档。四项旧普通适配在1.0.1起内置；旧普通注册器按原门禁跳过，同包HavenFall EX桥接仍独立工作，不能整包停用 |
 | [EX 背包升级](https://github.com/suching8848/suqing-backpack-super-upgrade)＋猫又岭 | 容量包装链兼容用 `CodexNekomataEXCompat_4221`；要增加猫猫背包 EX 配方，还需 `CodexNekomataEXUpgrade_4221`。扩展明确依赖兼容层、猫又岭及 EX |
 | EX＋HavenFall 大背包 | 条件需要 `Codex_SuQingWearableCompat_4221`。它声明依赖普通容器升级、EX 和 HavenFall，EX 桥接独立于旧普通注册适配器。不能因为想用桥接就忽略这些前置，或强行与自动容器实验版组合 |
 | [自动容器实验版](https://github.com/suching8848/suqing-container-auto-upgrade) | 与普通容器版是替代关系，不能同时启用；当前正式档未启用该实验版 |
@@ -40,7 +53,7 @@
 python tools/rebuild.py --mod-id Codex_MFSOpticsFix_4221 --output ../suqing-selected-patches
 ```
 
-重建并校验全部 33 项。将示例 Steam 库路径换成自己的实际安装路径；输出目录必须尚不存在：
+重建并校验清单内全部条目（含下文 33 项发布快照及上述本地新增）。将示例 Steam 库路径换成自己的实际安装路径；输出目录必须尚不存在：
 
 ```powershell
 python tools/rebuild.py --check --workshop-root "D:/SteamLibrary/steamapps/workshop/content/108600" --game-root "D:/SteamLibrary/steamapps/common/ProjectZomboid"
@@ -101,3 +114,9 @@ python tools/rebuild.py --output ../suqing-patches-built --workshop-root "D:/Ste
 
 
 2026-11-03 发布材料新增：[蘇清的饵托量产补丁](docs/patches/SuQingChumMassProduction.md)。无额外前置；按用户最新说明仍待游戏内验收。与蛋白饮料训练强化、配方材料输入修复一起纳入本轮统一源码与工坊更新；实际提交结果以发布回执为准。
+
+2026-11-06 本地新增：[蘇清的船舱与房车房间兼容补丁](docs/patches/SuQingBoatRVRoomGuard_4221.md)，Mod ID `SuQingBoatRVRoomGuard_4221`。对船舱与3×6房车统一检查共用房间占用，保留原内饰；stock与当前PZO各350项行为断言、19组真实Reader测试通过；用户已反馈入口正常，保存重进、Viewpoint及完整冲突组合仍待验。当前仅本地源码/个人候选，不属于2026-11-03发布快照，未提交、推送或发布。
+
+2026-11-06 本地新增：[造船就地取材补丁](docs/patches/SuQingBoatCraftFromFloor_4221.md)，保留三条船配方的材料、技能、工作面与重量，仅跳过强制全量搬入背包。54项离线断言通过；游戏内待验，未提交或发布。
+
+2026-11-06 船舱兼容补丁更新至0.1.0-rc.2：修复不同Lua字符实现导致的校验误报；stock/pzopt分别350项断言和19组真实Reader测试通过，用户已反馈入口正常，保存重进/Viewpoint/长期仍待验；本地候选未提交或发布。

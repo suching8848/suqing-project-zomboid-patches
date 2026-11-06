@@ -6,7 +6,7 @@
 | --- | --- |
 | Mod ID | `Codex_InventoryTransferPerformance_4221` |
 | 文件夹 / Folder | `InventoryTransferPerformance_4221_Local` |
-| 版本 / Version | `1.2.1` |
+| 版本 / Version | `1.2.2` |
 | 适用 / Target | Project Zomboid Build 42.21; single-player scope |
 | 元数据硬依赖 / Declared prerequisites | `CleanUI` |
 | 原样require / Literal require | `CleanUI` |
@@ -16,7 +16,7 @@
 
 合并静止单人批量转移时的自动库存刷新，保留原生转移动作、交互、画面和提示；不能从离线重建推断FPS收益。
 
-1.2.1适配已审阅的CleanUI 2.10.3，保留2.9.9、2.10.1、2.10.2适配与未知版本拒绝；2.10.3使用搜索容器和优先屏障保护。源码同步已部署的同字节文件；既有真实上游源码离线回归为127场景、766断言。游戏界面、实际批量转移及FPS仍需单独验收。
+1.2.2适配已审阅的CleanUI 2.10.4，保留2.9.9、2.10.1、2.10.2、2.10.3支持与未知版本拒绝。2.10.4物品面板与2.10.3字节一致，搜索容器和优先屏障保护已用真实上游源码验证。当前离线回归通过153场景、854断言，覆盖新版底部标题栏折叠展开。游戏界面、实际批量转移及FPS待用户验收。
 
 只按需要安装本子补丁，不能把本仓库的全部子项当作所有主模组的共同前置。`loadModAfter`是加载顺序声明，不等于要求安装列出的全部模组。`require`原字节保留，包括历史前缀语法；本仓库不擅自迁移Mod ID或改变依赖。
 
@@ -28,7 +28,7 @@
 
 Coalesces automatic inventory rebuilds during stationary single-player bulk transfers while retaining native transfers, interaction, rendering and tooltips. Reconstruction checks are not evidence of an FPS gain.
 
-Version 1.2.1 supports reviewed CleanUI 2.10.3 while retaining 2.9.9/2.10.1/2.10.2 support and unknown-version rejection. The 2.10.3 adapter requires its search-container and priority-barrier guards. Sources match the deployed bytes; the existing isolated actual-upstream-source regression covered 127 cases and 766 assertions. In-game UI, real bulk transfers and measured FPS remain separate acceptance work.
+Version 1.2.2 supports reviewed CleanUI 2.10.4 while retaining 2.9.9/2.10.1/2.10.2/2.10.3 support and unknown-version rejection. The 2.10.4 inventory pane is byte-identical to 2.10.3. Actual-upstream-source regressions passed 153 cases and 854 assertions, including search-container reconciliation, priority barriers and Bottom collapse/expand geometry. In-game UI, real bulk transfers and measured FPS await user acceptance.
 
 Install this optional subpatch only for the relevant use case. The whole collection is not a universal prerequisite. `loadModAfter` declares ordering, not a requirement to install every named mod. Literal `require` bytes, including historical prefix syntax, remain unchanged. No IDs or dependencies are migrated.
 

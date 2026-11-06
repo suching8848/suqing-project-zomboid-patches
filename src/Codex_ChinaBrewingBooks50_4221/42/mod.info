@@ -1,0 +1,11 @@
+name=蘇清的酿酒技能书50倍 | SuQing's Brewing Books 50x [SP]
+namezh=蘇清的酿酒技能书50倍 [单人]
+id=Codex_ChinaBrewingBooks50_4221
+author=SuQing
+modversion=0.1.1
+versionMin=42.21
+versionMax=42.21
+require=Chinesecuisine4213
+loadModAfter=Chinesecuisine4213
+description=Only Chinese Cuisine's ChinaBrewing skill books reach a 50x book multiplier when fully read. Partial reading keeps the game's 10-percent steps. Existing reading progress is synchronized on load. No XP, skill level, global XP setting or other skill is changed. Single-player only. Restore the original book multipliers and save before disabling; see README.txt.
+descriptionzh=仅将中国菜的酿酒技能书满读倍率设为50，部分阅读保留原版每10%进度一档。载入后按角色实际已读页数同步，不修改已有经验、技能等级、全局经验设置或其他技能。仅限单人。停用前须先恢复原书倍率并保存，详见README.txt。

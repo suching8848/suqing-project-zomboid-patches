@@ -1,0 +1,9 @@
+name=蘇清的野马防护改装修复 / SuQing's Mustang Protection Repair
+id=SuQingMustangProtectionRepair
+versionMin=42.21.0
+versionMax=42.21.99
+modversion=1.0.0
+require=\tsarslib,\ATA_Mustang
+loadModAfter=\AA2NikkeMustang
+description=Repair installed Autotsar Mustang protection through the tuning menu. Each action restores 30 condition up to 100. Welding 2, usable welding mask, one matching metal sheet/heavy chain link and 3 blowtorch fuel units are required. Retains parts and tuning data. Single-player only; see README.txt.
+descriptionzh=通过Autotsar Mustang改装菜单修理已安装防护，每次恢复30耐久、最高100。需要焊接2级、可用焊接面罩、匹配的金属板或重型链节，以及喷灯3单位燃料。保留部件和改装数据。仅单人，详见README.txt。

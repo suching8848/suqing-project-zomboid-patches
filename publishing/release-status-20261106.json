@@ -1,0 +1,49 @@
+{
+  "recorded_at_bjt": "2026-11-06T22:23:43.588058+08:00",
+  "patch_item_id": "3832223928",
+  "patch_online_version": "2026.11.06-32-candidate",
+  "published_patch_count": 32,
+  "status": "verified_public",
+  "EX_companion_count": 3,
+  "held_count": 5,
+  "new_main_candidates": [
+    {
+      "mod_id": "SuQingSearchEnhancement",
+      "item": "3834692575",
+      "visibility": 2,
+      "uploaded_verified_private": true,
+      "public": false
+    },
+    {
+      "mod_id": "SuQingFreshnessFridge",
+      "item": "3834692923",
+      "visibility": 2,
+      "uploaded_verified_private": true,
+      "public": false
+    },
+    {
+      "mod_id": "SuQingFreshnessLunchbox",
+      "item": "3834693433",
+      "visibility": 2,
+      "uploaded_verified_private": true,
+      "public": false
+    },
+    {
+      "mod_id": "SuQingPortals",
+      "item": "3834693880",
+      "visibility": 2,
+      "uploaded_verified_private": true,
+      "public": false
+    }
+  ],
+  "ordinary_container": {
+    "item": "3823988025",
+    "source_version": "1.0.3",
+    "online_version": "1.0.1",
+    "status": "update_failed_pending_node_switch"
+  },
+  "summary_zh": "补丁合集32项已原生上传并公开核验；4个新主模组为私密已上传验证候选。普通容器线上仍1.0.1，等待用户换节点后重试1.0.3。5项上游完整输出继续暂缓工坊分发。",
+  "summary_en": "The 32-entry patch item was submitted and verified public. Four new main mods are verified private uploaded candidates. Ordinary Containers remains 1.0.1 online, pending the user node switch before retrying 1.0.3. Five upstream-payload cases remain withheld from Workshop distribution.",
+  "personal_environment_changed": false,
+  "validation_boundary": "Native success/metadata verification does not establish complete gameplay acceptance or a remote per-file download."
+}

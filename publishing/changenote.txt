@@ -1,2 +1,2 @@
-新增饵托量产、蛋白饮料训练强化、配方材料修复；库存转移更新至1.2.1适配CleanUI 2.10.3。保持25项独立可选子模组。
-Added Chum Mass Production, Protein Training Boost and Recipe Input Guard. Inventory refresh 1.2.1 supports CleanUI 2.10.3. All 25 entries remain optional.
+本地32项候选：新增7项可选补丁；库存转移1.2.2支持CleanUI2.10.4。整理三项散落源码、双语说明与离线工具，保留候选/验收边界。未上传。
+Local 32-entry candidate: seven optional additions; Inventory Refresh1.2.2 supports CleanUI2.10.4. Imports three source projects, bilingual guides and offline tools. Candidate/acceptance limits remain. Not uploaded.

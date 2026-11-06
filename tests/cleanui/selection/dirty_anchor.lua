@@ -1,0 +1,12 @@
+local V = PerfTest
+V.gameStart()
+V.case("real CleanUI dirty render preserves Shift anchor", function()
+    local p = V.prox({V.item("Apple"), V.item("Bandage"), V.item("Zinc")})
+    V.click(p, 1)
+    p.inventory:setDrawDirty(true)
+    p:renderdetails(false)
+    V.eq(V.anchorName(p), "Apple", "dirty rebuild must retain initial click")
+    V.click(p, 3, true)
+    V.eq(V.selectedCount(p), 3, "Shift selects the original contiguous range")
+end)
+return V.done()

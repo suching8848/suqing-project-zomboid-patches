@@ -1,12 +1,25 @@
 # SuQing’s Project Zomboid Patch Collection / 蘇清的僵尸毁灭工程补丁合集
 
+## November 6 publication status
+
+The source catalog has 40 entries: 32 optional collection submods were submitted and verified public, with 3 separate EX companions and 5 redistribution holds. The old 25-entry manifest is preserved in publishing/history; candidate-20261106.json remains pre-upload selection evidence, while publishing/workshop.json records the verified online item. Four new main mods are verified private uploaded candidates. Ordinary Containers 1.0.3 failed to upload and remains 1.0.1 online, pending the user node switch. See [publication status](publishing/release-status-20261106.json); source/upload status does not establish gameplay acceptance.
+
 [中文](README.md) · [English](README.en.md)
 
-A collection of **33 independent Mod IDs** maintained by SuQing for **Project Zomboid Build 42.21 single-player**: compatibility fixes, Chinese translations, menu and performance improvements, drug-status UI and small extensions. Select individual entries; this is not one combined mod that requires everything to be enabled.
+The 2026-11-03 release snapshot contains **33 independent Mod IDs** maintained by SuQing for **Project Zomboid Build 42.21 single-player**: compatibility fixes, Chinese translations, menu and performance improvements, drug-status UI and small extensions. Select individual entries; this is not one combined mod that requires everything to be enabled.
 
-[Ten source repositories and 42 Mod IDs](docs/project-index.md) · [Single-player enabled snapshot from 2026-11-02 01:10 UTC+08:00](docs/current-single-player-modlist.md) · [Author’s Steam collection](https://steamcommunity.com/sharedfiles/filedetails/?id=3823981387)
+[Fourteen source repositories and 53 Mod IDs](docs/project-index.md) · [Single-player enabled snapshot from 2026-11-02 01:10 UTC+08:00](docs/current-single-player-modlist.md) · [Author’s Steam collection](https://steamcommunity.com/sharedfiles/filedetails/?id=3823981387)
 
 See [source scope and personal deployment](docs/project-index.md). The user authorized this unified Git/Steam update on 2026-11-03; working personal combinations may retain their existing versions. Music and Chum still await in-game acceptance. Personal Weight Training 0.3.1 was reported normal, while source 0.3.2 artwork awaits visual acceptance. Uploads and source synchronization do not establish gameplay acceptance.
+
+## Source additions from 2026-11-04 now in the public 32-entry item
+
+These entries are now registered in source/rebuild manifests and the public November 6 32-entry item. The 33-entry count and November 3 notes below remain historical snapshots. Consult the project index for all 53 current Mod IDs and separate online/personal states.
+
+| Local addition | Mod ID | Validation boundary |
+| --- | --- | --- |
+| [Viewpoint Legacy Prompt Fix](docs/patches/Codex_ViewpointLegacyPromptFix_4221.md) | `Codex_ViewpointLegacyPromptFix_4221` | Requires `ProjectViewpointQOLLegacy0.1.6`; 19 original-game Kahlua offline behavior checks passed; in-game acceptance pending |
+| [Brewing Skill Books 50x](docs/patches/Codex_ChinaBrewingBooks50_4221.md) | `Codex_ChinaBrewingBooks50_4221` | Requires `Chinesecuisine4213`; v0.1.1: 23 scenarios / 808 offline assertions passed; fixes the Script.Item exclusive-upper-bound check; restore original multipliers and save before disabling; in-game acceptance pending |
 
 ## Main mods and conditional patches
 
@@ -14,7 +27,7 @@ See [source scope and personal deployment](docs/project-index.md). The user auth
 
 | Main project or scenario | Relationship |
 | --- | --- |
-| [Ordinary Container Upgrades 1.0.1](https://github.com/suching8848/suqing-container-upgrade) | Basic operation does not require this collection. Four injector-case/Chemical-rig/HavenFall waist-pack IDs are integrated; personal 1.0.0 can retain the existing bridge for those IDs without upgrading solely for version parity. Only the legacy ordinary registrar skips 1.0.1. The separate HavenFall EX bridge remains relevant, so do not disable the whole patch |
+| [Ordinary Container Upgrades](https://github.com/suching8848/suqing-container-upgrade) | Basic operation does not require this collection. The live release is1.0.1; local source/personal1.0.3 is deployed and adds ordinary five-tier Freshness Lunchbox support. Four earlier ordinary IDs are integrated since1.0.1. The legacy ordinary registrar retains its version gate; the independent HavenFall EX bridge still applies, so do not disable the whole patch |
 | [Backpack EX](https://github.com/suching8848/suqing-backpack-super-upgrade) with Nekomata Ridge | Use `CodexNekomataEXCompat_4221` for the audited capacity-wrapper bridge. Adding Nekomata EX recipes also requires `CodexNekomataEXUpgrade_4221`, which declares the bridge, Nekomata Ridge and EX as prerequisites |
 | EX with HavenFall large backpacks | Requires `Codex_SuQingWearableCompat_4221` for this integration. It declares ordinary upgrades, EX and HavenFall. Its EX bridge is separate from the old ordinary-registration adapter; do not omit dependencies or force it into an automatic-container setup |
 | [Automatic Container Upgrades — Experimental](https://github.com/suching8848/suqing-container-auto-upgrade) | An alternative to ordinary upgrades, not a companion to enable alongside them. Not enabled in the current main save |
@@ -40,7 +53,7 @@ Build one entry that does not need external reconstruction sources:
 python tools/rebuild.py --mod-id Codex_MFSOpticsFix_4221 --output ../suqing-selected-patches
 ```
 
-Check and build all 33 entries. Replace the example Steam-library paths with your own. The output directory must not already exist:
+Check and build all registered entries (the 33-entry release snapshot plus the local additions above). Replace the example Steam-library paths with your own. The output directory must not already exist:
 
 ```powershell
 python tools/rebuild.py --check --workshop-root "D:/SteamLibrary/steamapps/workshop/content/108600" --game-root "D:/SteamLibrary/steamapps/common/ProjectZomboid"
@@ -101,3 +114,9 @@ The repository does not claim upstream code/artwork as SuQing’s original work 
 
 
 2026-11-03 publishing preparation: [Chum Mass Production Patch](docs/patches/SuQingChumMassProduction.md), no external prerequisite. In-game acceptance remains pending under the latest instruction. Included with Protein Training Boost and Recipe Input Guard in this unified source/Workshop update; consult publication receipts for actual submission results.
+
+2026-11-06 local addition: [Boat Cabin and RV Room Compatibility Patch](docs/patches/SuQingBoatRVRoomGuard_4221.md), Mod ID `SuQingBoatRVRoomGuard_4221`. Checks shared boat/3x6 RV occupancy while retaining existing interiors. 350 behavior assertions and19 real Reader fixtures pass under each stock/current PZO runtime. The user reported the entrance working; save/reload, Viewpoint and all conflict combinations remain unverified. Local source/personal candidate only; not part of the 2026-11-03 publication snapshot and not committed, pushed or published.
+
+2026-11-06 local addition: [Boat Crafting Nearby Materials Patch](docs/patches/SuQingBoatCraftFromFloor_4221.md). Preserves three boat recipes and skips forced input pretransfer. 54 offline assertions passed; in-game pending; not committed or published.
+
+2026-11-06 Boat/RV room guard rc.2 fixes cross-runtime Unicode false drift rejection. 350 assertions and 19 real-reader fixtures pass in stock and active pzopt; in-game pending, not committed or published.

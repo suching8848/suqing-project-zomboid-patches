@@ -1,0 +1,13 @@
+name=SuQing's World Object State Guard (Candidate)
+namezh=蘇清的世界对象状态保护（修复候选）
+id=SuQingWorldStateGuard_4221
+author=SuQing
+modversion=0.1.0-candidate
+description=Candidate guards for reviewed B42.21 single-player class resources: skips the animal-only inapplicable human clothing-hole call and restores a missing vehicle chunk reference only after all unique-membership checks. Unknown resources retain native behavior with warnings. No entities or saves are deleted. Requires ZombieBuddy 2.3.4 or newer and native Java approval. Initial vehicle loading and saving have limited user evidence; reloading, animal branch and performance remain unverified. See README.txt.
+descriptionzh=仅针对已审查42.21单人类资源的候选保护：跳过动物不适用的人类衣物破洞调用；全部唯一成员校验成立时才恢复车辆丢失的chunk引用。未知资源保留原行为并告警，不删除实体或存档。需要ZombieBuddy至少2.3.4和原生Java批准。已有首次车辆读档与保存的有限实测证据；重进、动物分支和性能仍待验，详见README.txt。
+require=\ZombieBuddy
+versionMin=42.21
+versionMax=42.21
+javaJarFile=media/java/client/SuQingWorldStateGuard.jar
+javaPkgName=suqingworldstateguard
+ZBVersionMin=2.3.4

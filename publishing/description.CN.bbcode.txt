@@ -1,0 +1,72 @@
+[h1]蘇清的补丁合集[/h1]
+32个独立可选子模组，适用B42.21单人。按需求选择，勿全部启用；原作另订阅，保留既有顺序。3项EX配套不重复包含，5项上游整包再分发继续暂缓。本地候选，尚未上传；离线通过不等于所有玩法已验收。
+[h2]重要限制[/h2]
+酿酒书50倍是满读书籍倍率50，非最终经验保证；停用前仍启用时调用RestoreOriginal并正常保存。Viewpoint提示仅Legacy0.1.6+Viewpoint0.1.6.1；UI选中仅CleanUI2.10.3/2.10.4；船舱守卫仅已审查组合，不支持Arcadia或多人，已有冲突会拦截而不搬迁。世界保护为候选，需ZombieBuddy≥2.3.4和原生批准，未知类保留原行为；不使用allow-all。普通停用：动作完成后正常保存退出、停用并重启；书籍倍率依前述专门恢复。Mustang每次+30至100，焊接2、面罩、匹配材料1件和喷灯3燃料。完整用途/限制/停用见各子项双语文档。
+[list]
+[*]CodexCharacterMenuTweaks_4221; R: XFACTION_DynamicTraits, CodexXFACTION_CN_4221
+将现有XFACTION进度入口移动到人物信息；调整浣熊市人物菜单呈现，不改进度或物品。
+[*]CodexNarcotics_CN_4221; R: N&CsNarcotics
+汉化N&C名称、配方、状态、特性、选项和警告台词。桥接运行当前上游并仅替换已核对文字，不收上游完整实现。
+[*]CodexTranslatorPercentFix_4221; R: ProjectFullHD
+只修复True 3D Items的zoom/zoomPlus提示重复翻译，不改渲染或保存选项。
+[*]CodexXFACTION_CN_4221; R: XFACTION_DynamicTraits
+面向XFACTION动态特性0.1.3的简体中文显示，不改特性ID、数值或进度。
+[*]Codex_AmmoBox_CN_TextFix_4221; R: B42ModTrans_CN
+目前仅修复洗衣皂中文名称的格式参数警告；旧弹药配方覆盖已退役。历史文件夹名保留以免破坏ID。
+[*]Codex_AttachedGrouping_4221; R: CleanUI
+挂点变化后刷新库存分组，并把穿戴操作限于真正可穿戴物品；不改挂点或物品属性。
+[*]Codex_ChineseCrop_Tooltip_4221; R: Chinesecuisine4213, MoreItemInformation
+在More Item Information中显示中华菜与N&C种子的已知季节和农耕数据；不改学习配方或种植规则。
+[*]Codex_DAMN_VanillaTires_4221; R: damnlib
+让DAMN维修工具可修九种原版轮胎，添加独立配方；VRO存在时提供可选维修入口。
+[*]Codex_DebugMenu_Generator_4221; R: none
+补Erika家具缺失type；只有DebugMenu启用时才运行物品生成器保护，DebugMenu不是硬依赖。
+[*]Codex_FashionoidFluidTooltip_4221; R: Fashionoid42
+让Fashionoid跳过缺少物品类型方法的非物品储液提示对象，其余判定仍交给Fashionoid。
+[*]Codex_InventoryTransferPerformance_4221; R: CleanUI
+合并静止单人批量转移时的自动库存刷新；1.2.1适配已审阅CleanUI 2.10.3并保留未知版本拒绝。原生动作、容量、配方和绘制保持，离线验证不代表FPS收益或游戏验收。
+[*]Codex_MFSOpticsFix_4221; R: ModernFirearmsSystem
+纠正已审计非瞄具配件上错误的optics标签，保留真正瞄具及枪械配件。
+[*]Codex_MFS_AmmoVisual_Compat_4221; R: ModernFirearmsSystem
+修正M110弹药盒引用，并让原始装备弹匣显示辅助检查物品定义、保留其他模组Clip挂点；不改真实装弹。
+[*]Codex_MFS_AttachedLight_Hotkey_4221; R: ModernFirearmsSystem
+让原生灯光快捷键可操作附加手电，保留MFS自动瞄准照明、手持灯和车灯。
+[*]Codex_MustangRecipeGuard_4221; R: ATA_Mustang
+把Mustang引擎盖切割配方输入限制为预期三种引擎盖；不改工具、技能、材料和产物。
+[*]Codex_NarcoticsStatus_4221; R: N&CsNarcotics
+右键N&C药物查看分类过量累计值和预计消退时间；只读状态面板，不改变药效。
+[*]Codex_NoirSling_SP_Compat_4221; R: noirrsling4-42.13patch
+抑制Noir单人补丁遗漏的第二条旧客户端动作；只为对应Noir SP补丁补足兼容。
+[*]Codex_TheyKnew_CN_TextFix_4221; R: TheyKnewContinued
+修复23个中文沙盒标签中的字面百分号，只有文本变化。
+[*]Codex_TrueMusic_Headphones_4221; R: truemusic
+修复42.21单人耳机装卸、拔耳机/关机/取电池的播放清理；普通收音机行为继续委托原实现。
+[*]Codex_XFDynamicRecordGuard_4221; R: XFACTION_DynamicTraits
+保护单人人物在生存时间短暂下降时已绑定的XFACTION进度记录，区分确认死亡和新人身份；不把旧人物记录复制给新人。
+[*]PinyinSearch_SafeSources_4221_LocalFix; R: yxjs_PinYinSearch
+保留工作台/手工配方来源和库存名称+分类组合筛选，并复核拼音排序与高亮。旧backup、.bak和个人启用名单不入库也不重建。
+[*]SuQingBatchFarmingMenu_4221; R: vac_batch_farming
+只在可耕土、耕地或作物上显示批量农耕菜单，原动作不变；不要求喷洒器扩展。
+[*]SuQingChumMassProduction; R: none
+一整袋沙或泥土，或一份黏土，加任意容器0.1L净水/污水制作5个原版饵托；满袋耗尽返空袋，沿用原版配方知识。
+[*]SuQingProteinTrainingBoost; R: VanillaFoodsExpanded
+原蛋白饮料实际摄入后，正常结算的力量与体格经验再乘10；按剂量累积至多3游戏小时，含倒计时与恢复日志保护，单人。
+[*]SuQingRecipeInputGuard_4221; R: SapphCooking_B42
+独立补齐Sapph草莓标签，防止衣服等无关物品进入草莓芝士蛋糕候选，保留原配方与牛奶输入；不改野马补丁。
+[*]Codex_ViewpointLegacyPromptFix_4221; R: ProjectViewpointQOLLegacy0.1.6
+修复旧版QOL右键菜单绕过手柄总开关的问题；控制器或提示关闭、纯鼠标时不显示A/B，保留启用时的手柄及切回提示。不含Java。
+[*]Codex_ChinaBrewingBooks50_4221; R: Chinesecuisine4213
+仅将中国菜酿酒书满读倍率设为50；部分阅读保留原版10%阶梯，按真实已读页数同步，不直接加经验或改等级。停用前需恢复原倍率并保存。
+[*]SuQingBoatRVRoomGuard_4221; R: BoteBR, FrotaBRRVAddon, PROJECTRVInterior42
+统一避让船舱与3×6房车的38个共用房间，保留已有位置与物品，传送前阻止撞房；仅B42.21单人，游戏内待验。
+[*]SuQingBoatCraftFromFloor_4221; R: BoteBR
+仅三条造船配方就地取材，避免预先全搬进人物背包；材料、工作面和重量保留。
+[*]SuQingUIInteractionFixes; R: CleanUI, ProximityInventory
+修复鼠标提示坐标及融合物品栏可见行/Shift选中起点；覆盖大堆叠、搜索、Ctrl+A。仅CleanUI2.10.3/2.10.4，未知版拒绝；不改转移规则。
+[*]SuQingMustangProtectionRepair; R: tsarslib, ATA_Mustang
+改装菜单修理已安装防撞杠、窗防护及轮防护；每次+30至100。材料/技能见前述限制，保留部件与改装。识别原作NIKKE别名；与引擎盖配方保护不同。
+[*]SuQingWorldStateGuard_4221; R: ZombieBuddy
+候选：动物缺HumanVisual时跳过不适用衣物调用；车辆唯一成员及全部校验成立才补chunk引用并继续update。不删除实体；原版/PZO指纹门禁，未知资源保留原行为。
+[/list]
+
+[url=https://github.com/suching8848/suqing-project-zomboid-patches/tree/main/docs/patches]完整双语说明 / Full bilingual guides[/url]

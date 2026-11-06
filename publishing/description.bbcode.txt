@@ -1,123 +1,76 @@
-[h1]中文[/h1]
-本工坊包提供25个独立可选子模组：修复、汉化、菜单和小扩展。按对应原作及需求选用，[b]不要全部启用[/b]。适用B42.21单人；每项保留独立Mod ID，原作须另行订阅。
-猫又岭兼容、猫猫背包EX升级和HavenFall背包EX桥接随EX主项目提供，本包不重复包含。下面每行给出用途、Mod ID与必需前置；前置仅针对该子项。
-[h1]English[/h1]
-This item provides 25 independent optional fixes, Chinese translations, menu changes and small extensions. Select for your original mods and needs; [b]do not enable everything[/b]. B42.21 single-player. Each submod has its own Mod ID; original mods must be subscribed separately.
-Nekomata compatibility, Nekomata backpack EX and HavenFall EX bridges are provided with the EX main item, not duplicated here. Each row below gives the purpose, Mod ID and required original mods for that entry.
-[h2]子模组 / Submods[/h2]
+[h1]蘇清的补丁合集[/h1]
+32个独立可选子模组，适用B42.21单人。按需求选择，勿全部启用；原作另订阅，保留既有顺序。3项EX配套不重复包含，5项上游整包再分发继续暂缓。本地候选，尚未上传；离线通过不等于所有玩法已验收。
+[h1]SuQing's Patch Collection[/h1]
+32 optional B42.21 SP patches; never enable all. R=required originals, subscribed separately. Keep order. Excludes 3 EX companions and 5 held items. Local candidate, not uploaded or fully gameplay-accepted.
+[h2]重要限制[/h2]
+酿酒书50倍是满读书籍倍率50，非最终经验保证；停用前仍启用时调用RestoreOriginal并正常保存。Viewpoint提示仅Legacy0.1.6+Viewpoint0.1.6.1；UI选中仅CleanUI2.10.3/2.10.4；船舱守卫仅已审查组合，不支持Arcadia或多人，已有冲突会拦截而不搬迁。世界保护为候选，需ZombieBuddy≥2.3.4和原生批准，未知类保留原行为；不使用allow-all。普通停用：动作完成后正常保存退出、停用并重启；书籍倍率依前述专门恢复。Mustang每次+30至100，焊接2、面罩、匹配材料1件和喷灯3燃料。完整用途/限制/停用见各子项双语文档。
+[h2]Critical limits[/h2]
+Brewing 50x sets the fully-read book multiplier to 50, not guaranteed final XP; call RestoreOriginal and save while still enabled before disabling. Viewpoint prompts: Legacy0.1.6 + Viewpoint0.1.6.1 only. Selection: CleanUI2.10.3/2.10.4 only. Cabin guard: reviewed sources only; no Arcadia/multiplayer, conflicts block entry without relocation. World Guard is a candidate: ZombieBuddy≥2.3.4 and native approval; unknown classes retain native behavior; no allow-all. Finish actions, save/exit, disable and restart; brewing needs the special restoration above. Mustang: +30 up to100, Welding2, mask, one matching material and3 torch fuel.
 [list]
-[*][b]洗衣皂文字修复 / Washing soap text fix[/b]
+[*]人物菜单调整 / Character Menu Tweaks
+CodexCharacterMenuTweaks_4221; Requires: XFACTION_DynamicTraits, CodexXFACTION_CN_4221
+[*]N&C中文补丁 / N&C Chinese Translation
+CodexNarcotics_CN_4221; Requires: N&CsNarcotics
+[*]True 3D Items百分号提示修复 / True 3D Items Percent Tooltip Fix
+CodexTranslatorPercentFix_4221; Requires: ProjectFullHD
+[*]XFACTION动态特性汉化 / XFACTION Dynamic Traits Chinese Translation
+CodexXFACTION_CN_4221; Requires: XFACTION_DynamicTraits
+[*]洗衣皂中文文本修复 / Washing Soap Chinese Text Fix
+Codex_AmmoBox_CN_TextFix_4221; Requires: B42ModTrans_CN
+[*]挂点物品分组与穿戴菜单修复 / Attached Item Grouping and Wear Menu Fix
+Codex_AttachedGrouping_4221; Requires: CleanUI
+[*]中华菜与N&C种子提示兼容 / Chinese Cuisine and N&C Seed Tooltips
+Codex_ChineseCrop_Tooltip_4221; Requires: Chinesecuisine4213, MoreItemInformation
+[*]DAMN原版轮胎维修兼容 / DAMN Vanilla Tire Repair Compatibility
+Codex_DAMN_VanillaTires_4221; Requires: damnlib
+[*]Erika家具与可选调试生成器修复 / Erika Furniture and Optional Debug Generator Fix
+Codex_DebugMenu_Generator_4221; Requires: none
+[*]Fashionoid储液提示兼容 / Fashionoid Fluid Tooltip Compatibility
+Codex_FashionoidFluidTooltip_4221; Requires: Fashionoid42
+[*]批量转移库存刷新优化 / Bulk Transfer Inventory Refresh Optimization
+Codex_InventoryTransferPerformance_4221; Requires: CleanUI
+[*]MFS瞄具标签修复 / MFS Optics Tag Fix
+Codex_MFSOpticsFix_4221; Requires: ModernFirearmsSystem
+[*]MFS弹药盒与弹匣显示兼容 / MFS Ammo Box and Magazine Visual Compatibility
+Codex_MFS_AmmoVisual_Compat_4221; Requires: ModernFirearmsSystem
+[*]MFS附加手电快捷键修复 / MFS Attached Flashlight Hotkey Fix
+Codex_MFS_AttachedLight_Hotkey_4221; Requires: ModernFirearmsSystem
+[*]Mustang引擎盖配方输入保护 / Mustang Hood Recipe Guard
+Codex_MustangRecipeGuard_4221; Requires: ATA_Mustang
+[*]N&C药物状态面板 / N&C Drug Status Panel
+Codex_NarcoticsStatus_4221; Requires: N&CsNarcotics
+[*]Noir枪带单人兼容 / Noir Sling Single-player Compatibility
+Codex_NoirSling_SP_Compat_4221; Requires: noirrsling4-42.13patch
+[*]They Knew沙盒文本修复 / They Knew Sandbox Text Fix
+Codex_TheyKnew_CN_TextFix_4221; Requires: TheyKnewContinued
+[*]True Music耳机单人兼容 / True Music Headphones Single-player Compatibility
+Codex_TrueMusic_Headphones_4221; Requires: truemusic
+[*]XFACTION进度记录保护 / XFACTION Progress Record Guard
+Codex_XFDynamicRecordGuard_4221; Requires: XFACTION_DynamicTraits
+[*]拼音搜索与界面兼容 / Pinyin Search UI Compatibility
+PinyinSearch_SafeSources_4221_LocalFix; Requires: yxjs_PinYinSearch
+[*]批量农耕菜单筛选 / Batch Farming Menu Filter
+SuQingBatchFarmingMenu_4221; Requires: vac_batch_farming
+[*]饵托量产补丁 / Chum Mass Production Patch
+SuQingChumMassProduction; Requires: none
+[*]蛋白饮料训练强化 / Protein Shake Training Boost
+SuQingProteinTrainingBoost; Requires: VanillaFoodsExpanded
+[*]配方材料输入修复 / Recipe Input Guard
+SuQingRecipeInputGuard_4221; Requires: SapphCooking_B42
+[*]蘇清的Viewpoint旧版手柄提示修复补丁 / SuQing’s Viewpoint Legacy Prompt Fix Patch
+Codex_ViewpointLegacyPromptFix_4221; Requires: ProjectViewpointQOLLegacy0.1.6
+[*]蘇清的酿酒技能书50倍补丁 / SuQing’s Brewing Skill Books 50x Patch
+Codex_ChinaBrewingBooks50_4221; Requires: Chinesecuisine4213
+[*]蘇清的船舱与房车房间兼容补丁 / SuQing's Boat Cabin and RV Room Compatibility Patch
+SuQingBoatRVRoomGuard_4221; Requires: BoteBR, FrotaBRRVAddon, PROJECTRVInterior42
+[*]蘇清的造船就地取材补丁 / SuQing's Boat Crafting Nearby Materials Patch
+SuQingBoatCraftFromFloor_4221; Requires: BoteBR
+[*]蘇清的提示框与融合物品栏修复 / SuQing's Tooltip and Proximity Selection Fixes
+SuQingUIInteractionFixes; Requires: CleanUI, ProximityInventory
+[*]蘇清的野马防护改装修复 / SuQing's Mustang Protection Repair
+SuQingMustangProtectionRepair; Requires: tsarslib, ATA_Mustang
+[*]蘇清的世界对象状态保护（修复候选） / SuQing's World Object State Guard (Candidate)
+SuQingWorldStateGuard_4221; Requires: ZombieBuddy
 [/list]
-Codex_AmmoBox_CN_TextFix_4221；前置/Requires: B42ModTrans_CN
-[list]
-[*][b]挂点分组/穿戴菜单 / Attachment grouping/Wear menu[/b]
-[/list]
-Codex_AttachedGrouping_4221；前置/Requires: CleanUI
-[list]
-[*][b]中华菜与N&C种子提示 / Chinese cuisine/N&C seed tooltips[/b]
-[/list]
-Codex_ChineseCrop_Tooltip_4221；前置/Requires: Chinesecuisine4213, MoreItemInformation
-[list]
-[*][b]Fashionoid储液提示 / Fashionoid fluid tooltips[/b]
-[/list]
-Codex_FashionoidFluidTooltip_4221；前置/Requires: Fashionoid42
-[list]
-[*][b]MFS瞄具标签 / MFS optics tags[/b]
-[/list]
-Codex_MFSOpticsFix_4221；前置/Requires: ModernFirearmsSystem
-[list]
-[*][b]Mustang引擎盖配方保护 / Mustang hood recipe guard[/b]
-[/list]
-Codex_MustangRecipeGuard_4221；前置/Requires: ATA_Mustang
-[list]
-[*][b]N&C药物状态面板 / N&C drug status panel[/b]
-[/list]
-Codex_NarcoticsStatus_4221；前置/Requires: N&CsNarcotics
-[list]
-[*][b]XFACTION进度记录保护 / XFACTION record guard[/b]
-[/list]
-Codex_XFDynamicRecordGuard_4221；前置/Requires: XFACTION_DynamicTraits
-[list]
-[*][b]人物菜单调整 / Character menu tweaks[/b]
-[/list]
-CodexCharacterMenuTweaks_4221；前置/Requires: XFACTION_DynamicTraits, CodexXFACTION_CN_4221
-[list]
-[*][b]N&C中文汉化 / N&C Chinese translation[/b]
-[/list]
-CodexNarcotics_CN_4221；前置/Requires: N&CsNarcotics
-[list]
-[*][b]True 3D Items百分号提示 / True 3D Items percent tooltip[/b]
-[/list]
-CodexTranslatorPercentFix_4221；前置/Requires: ProjectFullHD
-[list]
-[*][b]XFACTION动态特性汉化 / XFACTION Chinese translation[/b]
-[/list]
-CodexXFACTION_CN_4221；前置/Requires: XFACTION_DynamicTraits
-[list]
-[*][b]DAMN原版轮胎维修 / DAMN vanilla tire repair[/b]
-[/list]
-Codex_DAMN_VanillaTires_4221；前置/Requires: damnlib
-[list]
-[*][b]Erika家具/可选调试生成器 / Erika furniture/optional debug guard[/b]
-[/list]
-Codex_DebugMenu_Generator_4221；前置/Requires: 无硬前置/None; Erika家具/furniture; DebugMenu可选/optional QNWDebugMenuB42
-[list]
-[*][b]批量转移库存刷新优化 / Bulk transfer refresh[/b]
-[/list]
-Codex_InventoryTransferPerformance_4221；前置/Requires: CleanUI
-[list]
-[*][b]MFS弹药盒/弹匣显示 / MFS ammo/magazine visuals[/b]
-[/list]
-Codex_MFS_AmmoVisual_Compat_4221；前置/Requires: ModernFirearmsSystem
-[list]
-[*][b]MFS附加手电快捷键 / MFS flashlight hotkey[/b]
-[/list]
-Codex_MFS_AttachedLight_Hotkey_4221；前置/Requires: ModernFirearmsSystem
-[list]
-[*][b]Noir枪带单人兼容 / Noir sling SP compatibility[/b]
-[/list]
-Codex_NoirSling_SP_Compat_4221；前置/Requires: noirrsling4-42.13patch
-[list]
-[*][b]拼音搜索/界面兼容 / Pinyin search/UI[/b]
-[/list]
-PinyinSearch_SafeSources_4221_LocalFix；前置/Requires: yxjs_PinYinSearch
-[list]
-[*][b]批量农耕菜单筛选 / Batch Farming menu filter[/b]
-[/list]
-SuQingBatchFarmingMenu_4221；前置/Requires: vac_batch_farming
-[list]
-[*][b]They Knew沙盒文字 / They Knew sandbox text[/b]
-[/list]
-Codex_TheyKnew_CN_TextFix_4221；前置/Requires: TheyKnewContinued
-[list]
-[*][b]True Music耳机兼容 / True Music headphones[/b]
-[/list]
-Codex_TrueMusic_Headphones_4221；前置/Requires: truemusic
-[list]
-[*][b]饵托量产 / Chum mass production[/b]
-[/list]
-SuQingChumMassProduction；无硬前置/None。整袋沙/泥或黏土+0.1L水→5饵托 / Full sand/dirt bag or clay + 0.1L water gives 5 chum.
-[list]
-[*][b]蛋白饮料训练强化 / Protein training boost[/b]
-[/list]
-SuQingProteinTrainingBoost；前置/Requires: VanillaFoodsExpanded。饮用后力量/体格经验×10 / Strength/Fitness XP x10 after drinking.
-[list]
-[*][b]配方材料修复 / Recipe input guard[/b]
-[/list]
-SuQingRecipeInputGuard_4221；前置/Requires: SapphCooking_B42。补齐草莓标签，保留原配方 / Registers the missing strawberry tag; original recipes retained.
-[h2]选择与使用[/h2]
-先启用原作，再启对应补丁；保留原相对顺序，不自动重排名单。同Mod ID只保留一份来源，避免工坊与旧本地副本重复。启用、停用或换来源前按需备份并正常退出游戏；移除时看该子项说明，不用覆盖存档代替卸载。
-人物菜单需要本包XFACTION汉化。N&C状态面板只读显示，不是药物本体，不强制汉化。Erika修复适用于已知家具；DebugMenu保护仅在其启用时运行。MFS三项修复不是减重挂件或固定收购的强制前置；批量农耕筛选不是灌溉养护的前置。
-作者此前反馈自己的单人配置正常，仅限当时配置与版本；不代表25项、全部组合或后续原作均已实测。They Knew文字项不在该正式档反馈范围内。先在测试档检查菜单、操作及保存重进，再用于长期存档。库存刷新优化不承诺帧率提升；联机和服务器未验证。原作更新后复核补丁适用版本。
-[h2]Selection and use[/h2]
-Enable originals before their patches and preserve existing relative order. Keep one source per Mod ID; avoid duplicate local/Workshop copies. Back up as needed and exit normally before changing mods. Read each entry's removal notes; overwriting a save is not an uninstall method.
-Character Menu needs this item's XFACTION translation. The read-only N&C status panel is not the drug mod and does not require its translation. Erika fixes apply to known furniture; the DebugMenu guard runs only if DebugMenu is enabled. MFS fixes are not mandatory for Weight Charms/Fixed Buyback; Batch Farming filter is not required by Irrigation Care.
-The author's earlier normal-play report covers their configuration and versions, not all 25 entries, every combination or later originals. The They Knew text entry was outside that report. Check menus, actions and save/reload in a test save first. No FPS gain is promised; multiplayer/servers are unverified. Recheck compatibility after original-mod updates.
-[hr][/hr]
-原作代码、美术与物品归各自作者。Original code, artwork and items belong to their authors.
-[url=https://github.com/suching8848/suqing-project-zomboid-patches]Git源码与逐项说明 / Source and per-patch notes[/url]
-[url=https://github.com/suching8848/suqing-backpack-super-upgrade]EX主模组 / EX main mod[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3823981387]作者单人档合集 / Author's single-player collection[/url]
 
-本轮新增项主要经离线验证，实际操作与保存重进仍按各项说明验收；库存刷新1.2.1支持CleanUI 2.10.3。
-New entries primarily have offline validation; gameplay/save acceptance remains per entry. Inventory refresh 1.2.1 supports CleanUI 2.10.3.
+[url=https://github.com/suching8848/suqing-project-zomboid-patches/tree/main/docs/patches]完整双语说明 / Full bilingual guides[/url]

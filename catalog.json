@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target_game": "Project Zomboid Build 42.21",
-  "scope": "33 independent local patches; seven larger feature projects excluded",
+  "scope": "40 registered independent patches; 32-item local publication candidate, 3 EX companions and 5 held redistributions. Not an online publication claim.",
   "mods": [
     {
       "id": "Codex_AmmoBox_CN_TextFix_4221",
@@ -675,7 +675,7 @@
       "folder": "InventoryTransferPerformance_4221_Local",
       "title_zh": "批量转移库存刷新优化",
       "title_en": "Bulk Transfer Inventory Refresh Optimization",
-      "version": "1.2.1",
+      "version": "1.2.2",
       "description_original": "Coalesces automatic inventory UI rebuilds during stationary single-player bulk transfers. Keeps native transfers, interaction, rendering and tooltips. Requires CleanUI. Local reversible performance patch.",
       "requires_raw": "CleanUI",
       "load_after_raw": "CleanUI,NeatUI_Equipment,Codex_AttachedGrouping_4221,PinyinSearch_SafeSources_4221_LocalFix,Codex_PetGunWeightKits_4221,ProximityInventory",
@@ -1081,6 +1081,231 @@
         "own": 10
       },
       "excluded_files": [],
+      "source_roots": []
+    },
+    {
+      "id": "Codex_ViewpointLegacyPromptFix_4221",
+      "folder": "Codex_ViewpointLegacyPromptFix_4221",
+      "title_zh": "蘇清的Viewpoint旧版手柄提示修复补丁",
+      "title_en": "SuQing’s Viewpoint Legacy Prompt Fix Patch",
+      "version": "1.0.0",
+      "description_original": "Restores controller master and prompt-HUD gates for Legacy menu hints. Mouse-only context menus no longer draw A/B prompts. Keeps active-controller and keyboard-resume hints.",
+      "requires_raw": "ProjectViewpointQOLLegacy0.1.6",
+      "load_after_raw": "ProjectViewpointQOLLegacy0.1.6",
+      "required_mods": [
+        "ProjectViewpointQOLLegacy0.1.6"
+      ],
+      "load_after_mods": [
+        "ProjectViewpointQOLLegacy0.1.6"
+      ],
+      "doc": "docs/patches/Codex_ViewpointLegacyPromptFix_4221.md",
+      "reconstruction_status": "recipes_ready",
+      "source_runtime_info": "42/mod.info",
+      "summary_zh": "修复旧版QOL右键菜单绕过手柄总开关的问题；控制器或提示关闭、纯鼠标时不显示A/B，保留启用时的手柄及切回提示。不含Java。",
+      "summary_en": "Suppresses Legacy A/B context-menu prompts when controller support or its HUD is off, or no pad is active. Preserves active-pad and enabled detached-resume hints. No Java.",
+      "runtime_files": 5,
+      "runtime_bytes": 4396,
+      "reconstruction_modes": {
+        "own": 5
+      },
+      "excluded_files": [],
+      "source_roots": []
+    },
+    {
+      "id": "Codex_ChinaBrewingBooks50_4221",
+      "folder": "Codex_ChinaBrewingBooks50_4221",
+      "title_zh": "蘇清的酿酒技能书50倍补丁",
+      "title_en": "SuQing’s Brewing Skill Books 50x Patch",
+      "version": "0.1.1",
+      "description_original": "Only Chinese Cuisine's ChinaBrewing skill books reach a 50x book multiplier when fully read. Partial reading keeps the game's 10-percent steps. Existing reading progress is synchronized on load. No XP, skill level, global XP setting or other skill is changed. Single-player only. Restore the original book multipliers and save before disabling; see README.txt.",
+      "requires_raw": "Chinesecuisine4213",
+      "load_after_raw": "Chinesecuisine4213",
+      "required_mods": [
+        "Chinesecuisine4213"
+      ],
+      "load_after_mods": [
+        "Chinesecuisine4213"
+      ],
+      "doc": "docs/patches/Codex_ChinaBrewingBooks50_4221.md",
+      "reconstruction_status": "recipes_ready",
+      "source_runtime_info": "42/mod.info",
+      "summary_zh": "仅将中国菜酿酒书满读倍率设为50；部分阅读保留原版10%阶梯，按真实已读页数同步，不直接加经验或改等级。停用前需恢复原倍率并保存。",
+      "summary_en": "Sets only Chinese Cuisine brewing-book maxima to 50, retains native 10-percent reading steps and synchronizes actual read pages. No direct XP or level award. Restore original multipliers and save before disabling.",
+      "runtime_files": 4,
+      "runtime_bytes": 15091,
+      "reconstruction_modes": {
+        "own": 4
+      },
+      "excluded_files": [],
+      "source_roots": []
+    },
+    {
+      "id": "SuQingBoatRVRoomGuard_4221",
+      "folder": "SuQingBoatRVRoomGuard_4221",
+      "title_zh": "蘇清的船舱与房车房间兼容补丁",
+      "title_en": "SuQing's Boat Cabin and RV Room Compatibility Patch",
+      "version": "0.1.0-rc.2",
+      "description_original": "Preserves native allocation while excluding other assignment groups from the shared 38-room pool; retains existing interiors and blocks collisions before teleportation. Reviewed B42.21 single-player only.",
+      "requires_raw": "BoteBR,FrotaBRRVAddon,PROJECTRVInterior42",
+      "load_after_raw": "PROJECTRVInterior42,BoteBR,FrotaBRRVAddon,RVViewpointPatch",
+      "required_mods": [
+        "BoteBR",
+        "FrotaBRRVAddon",
+        "PROJECTRVInterior42"
+      ],
+      "load_after_mods": [
+        "PROJECTRVInterior42",
+        "BoteBR",
+        "FrotaBRRVAddon",
+        "RVViewpointPatch"
+      ],
+      "doc": "docs/patches/SuQingBoatRVRoomGuard_4221.md",
+      "reconstruction_status": "recipes_ready",
+      "source_runtime_info": "42/mod.info",
+      "summary_zh": "统一避让船舱与3×6房车的38个共用房间，保留已有位置与物品，传送前阻止撞房；仅B42.21单人，游戏内待验。",
+      "summary_en": "Shares occupancy checks for the 38 boat/3x6 RV slots, retains existing interiors and blocks conflicting entry. B42.21 single-player only; in-game acceptance pending.",
+      "runtime_files": 9,
+      "runtime_bytes": 20931,
+      "reconstruction_modes": {
+        "own": 9
+      },
+      "excluded_files": [],
+      "source_roots": [],
+      "local_registration_date": "2026-11-06",
+      "distribution": "local_only_not_committed_or_published"
+    },
+    {
+      "id": "SuQingBoatCraftFromFloor_4221",
+      "folder": "SuQingBoatCraftFromFloor_4221",
+      "title_zh": "蘇清的造船就地取材补丁",
+      "title_en": "SuQing's Boat Crafting Nearby Materials Patch",
+      "version": "0.1.0",
+      "description_original": "Adds the native nearby-input flag to the three boat recipes; retains ingredients, work surface, skills and output weights. B42.21 single-player only.",
+      "requires_raw": "BoteBR",
+      "load_after_raw": "BoteBR,Neat_Crafting",
+      "required_mods": [
+        "BoteBR"
+      ],
+      "load_after_mods": [
+        "BoteBR",
+        "Neat_Crafting"
+      ],
+      "doc": "docs/patches/SuQingBoatCraftFromFloor_4221.md",
+      "reconstruction_status": "recipes_ready",
+      "source_runtime_info": "42/mod.info",
+      "summary_zh": "仅三条造船配方就地取材，避免预先全搬进人物背包；材料、工作面和重量保留。",
+      "summary_en": "Native nearby inputs for three boat recipes; ingredients, surface and weight retained.",
+      "runtime_files": 7,
+      "runtime_bytes": 8610,
+      "reconstruction_modes": {
+        "own": 7
+      },
+      "excluded_files": [],
+      "source_roots": [],
+      "local_registration_date": "2026-11-06",
+      "distribution": "local_only_not_committed_or_published"
+    },
+    {
+      "id": "SuQingUIInteractionFixes",
+      "folder": "SuQingUIInteractionFixes",
+      "title_zh": "蘇清的提示框与融合物品栏修复",
+      "title_en": "SuQing's Tooltip and Proximity Selection Fixes",
+      "version": "1.0.1",
+      "description_original": "Fixes competing coordinate handling for mouse-following text tooltips and restores selected items and the Shift anchor against actual visible rows during Proximity Inventory refreshes. Covers expanded stacks, searches and Ctrl+A. Selection preservation is installed only for reviewed CleanUI 2.10.3/2.10.4; unknown versions are rejected. Item and transfer rules remain unchanged.",
+      "requires_raw": "CleanUI,ProximityInventory",
+      "required_mods": [
+        "CleanUI",
+        "ProximityInventory"
+      ],
+      "load_after_raw": "CleanUI,ProximityInventory,NeatUI_Equipment,PinyinSearch_SafeSources_4221_LocalFix,Codex_InventoryTransferPerformance_4221",
+      "load_after_mods": [
+        "CleanUI",
+        "ProximityInventory",
+        "NeatUI_Equipment",
+        "PinyinSearch_SafeSources_4221_LocalFix",
+        "Codex_InventoryTransferPerformance_4221"
+      ],
+      "doc": "docs/patches/SuQingUIInteractionFixes.md",
+      "reconstruction_status": "recipes_ready",
+      "source_runtime_info": "42/mod.info",
+      "summary_zh": "修复跟随鼠标的文字提示坐标竞争，并在融合附近物品栏刷新时按实际可见行恢复所选物品与Shift起点，处理大堆叠展开、搜索及Ctrl+A后的选中错位。只针对已审查的CleanUI 2.10.3和2.10.4，未知版本不安装选中保持功能；不改物品或转移机制。",
+      "summary_en": "Fixes competing coordinate handling for mouse-following text tooltips and restores selected items and the Shift anchor against actual visible rows during Proximity Inventory refreshes. Covers expanded stacks, searches and Ctrl+A. Selection preservation is installed only for reviewed CleanUI 2.10.3/2.10.4; unknown versions are rejected. Item and transfer rules remain unchanged.",
+      "runtime_files": 3,
+      "runtime_bytes": 16593,
+      "reconstruction_modes": {
+        "own": 3
+      },
+      "excluded_files": [
+        {
+          "path": "README.txt",
+          "reason": "bilingual public documentation copied separately into release candidate"
+        }
+      ],
+      "source_roots": []
+    },
+    {
+      "id": "SuQingMustangProtectionRepair",
+      "folder": "SuQingMustangProtectionRepair",
+      "title_zh": "蘇清的野马防护改装修复",
+      "title_en": "SuQing's Mustang Protection Repair",
+      "version": "1.0.0",
+      "description_original": "Adds repair actions for installed Autotsar Mustang bullbars, window protection and wheel protection through the tuning menu. Each repair restores 30 condition up to 100 and requires Welding level 2, a usable welding mask, sheet metal or a heavy chain link and 3 blowtorch fuel units. Original parts, installation and tuning data remain. Compatible NIKKE Mustang aliases are recognized. Single-player only. Separate from the existing Mustang hood recipe-input guard.",
+      "requires_raw": "\\tsarslib,\\ATA_Mustang",
+      "required_mods": [
+        "tsarslib",
+        "ATA_Mustang"
+      ],
+      "load_after_raw": "\\AA2NikkeMustang",
+      "load_after_mods": [
+        "AA2NikkeMustang"
+      ],
+      "doc": "docs/patches/SuQingMustangProtectionRepair.md",
+      "reconstruction_status": "recipes_ready",
+      "source_runtime_info": "42/mod.info",
+      "summary_zh": "在Autotsar Mustang改装菜单中修理已安装的防撞杠、窗户防护和车轮防护。每次恢复30耐久，最高100；需要焊接2级、可用焊接面罩、金属板或重型链节及喷灯3单位燃料。保留原部件、安装状态及上游改装数据，支持符合原作别名关系的NIKKE Mustang。仅单人。它与旧的Mustang引擎盖配方输入保护是两个不同补丁。",
+      "summary_en": "Adds repair actions for installed Autotsar Mustang bullbars, window protection and wheel protection through the tuning menu. Each repair restores 30 condition up to 100 and requires Welding level 2, a usable welding mask, sheet metal or a heavy chain link and 3 blowtorch fuel units. Original parts, installation and tuning data remain. Compatible NIKKE Mustang aliases are recognized. Single-player only. Separate from the existing Mustang hood recipe-input guard.",
+      "runtime_files": 4,
+      "runtime_bytes": 11683,
+      "reconstruction_modes": {
+        "own": 4
+      },
+      "excluded_files": [
+        {
+          "path": "README.txt",
+          "reason": "bilingual public documentation copied separately into release candidate"
+        }
+      ],
+      "source_roots": []
+    },
+    {
+      "id": "SuQingWorldStateGuard_4221",
+      "folder": "SuQingWorldStateGuard_4221",
+      "title_zh": "蘇清的世界对象状态保护（修复候选）",
+      "title_en": "SuQing's World Object State Guard (Candidate)",
+      "version": "0.1.0-candidate",
+      "description_original": "Provides two conservative guards for reviewed B42.21 resources: skips the inapplicable human-clothing hole write for animals without HumanVisual, and restores a missing vehicle chunk reference only when unique existing memberships and every required condition are verified. Native damage and update behavior remain. No vehicles, animals or database records are deleted and unrelated exceptions are preserved. Unknown class resources retain original behavior with warnings. First Java loading requires ZombieBuddy's native approval.",
+      "requires_raw": "\\ZombieBuddy",
+      "required_mods": [
+        "ZombieBuddy"
+      ],
+      "load_after_raw": "",
+      "load_after_mods": [],
+      "doc": "docs/patches/SuQingWorldStateGuard_4221.md",
+      "reconstruction_status": "recipes_ready",
+      "source_runtime_info": "42/mod.info",
+      "summary_zh": "为B42.21的两处世界状态异常提供保守保护：动物没有HumanVisual时跳过不适用的人类衣物破洞写入；车辆已在当前cell与已加载chunk中唯一登记、只有chunk字段丢失且全部校验成立时恢复该引用，并继续原update。保留原始伤害和更新处理，不删除车辆、动物或数据库，不吞掉其他异常。按已审查的原版和PZO类资源哈希门禁，未知资源保持原行为并告警。首次Java加载需通过ZombieBuddy原生批准。",
+      "summary_en": "Provides two conservative guards for reviewed B42.21 resources: skips the inapplicable human-clothing hole write for animals without HumanVisual, and restores a missing vehicle chunk reference only when unique existing memberships and every required condition are verified. Native damage and update behavior remain. No vehicles, animals or database records are deleted and unrelated exceptions are preserved. Unknown class resources retain original behavior with warnings. First Java loading requires ZombieBuddy's native approval.",
+      "runtime_files": 2,
+      "runtime_bytes": 9933,
+      "reconstruction_modes": {
+        "own": 2
+      },
+      "excluded_files": [
+        {
+          "path": "README.txt",
+          "reason": "bilingual public documentation copied separately into release candidate"
+        }
+      ],
       "source_roots": []
     }
   ]

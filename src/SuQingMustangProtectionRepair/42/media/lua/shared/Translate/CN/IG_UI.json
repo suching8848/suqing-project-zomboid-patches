@@ -1,0 +1,13 @@
+{
+    "IGUI_SQ_MPR_Repair": "修复",
+    "IGUI_SQ_MPR_RepairRange": "修复 %1 → %2",
+    "IGUI_SQ_MPR_SheetCost": "焊接 2 级、焊接面罩、1 块金属板、喷灯 3 单位燃料。请将材料放在随身物品栏内。",
+    "IGUI_SQ_MPR_LinkCost": "焊接 2 级、焊接面罩、1 个重型链节、喷灯 3 单位燃料。请将材料放在随身物品栏内。",
+    "IGUI_SQ_MPR_NeedSkill": "需要焊接 2 级。",
+    "IGUI_SQ_MPR_NeedMask": "需要可用的焊接面罩。",
+    "IGUI_SQ_MPR_NeedSheet": "随身物品栏里需要 1 块金属板。",
+    "IGUI_SQ_MPR_NeedLink": "随身物品栏里需要 1 个重型链节。",
+    "IGUI_SQ_MPR_NeedFuel": "需要喷灯 3 单位燃料。",
+    "IGUI_SQ_MPR_Unavailable": "现在无法修复这个零件。",
+    "IGUI_SQ_MPR_Done": "防护件已修至 %1/100。"
+}

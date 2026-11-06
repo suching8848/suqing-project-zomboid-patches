@@ -1,0 +1,49 @@
+{
+  "recorded_at": "2026-11-06T07:13:03.476974+08:00",
+  "historical_project_index": "project-index.json is the unchanged 2026-11-03 snapshot",
+  "mods": [
+    {
+      "id": "SuQingBoatRVRoomGuard_4221",
+      "source": "E:\\code\\suqing-project-zomboid-patches\\src\\SuQingBoatRVRoomGuard_4221",
+      "personal_target": "C:\\Users\\15792\\Zomboid\\mods\\SuQingBoatRVRoomGuard_4221",
+      "version": "0.1.0-rc.2",
+      "required_mods": [
+        "BoteBR",
+        "FrotaBRRVAddon",
+        "PROJECTRVInterior42"
+      ],
+      "status": "rc2 personally deployed; Unicode false drift fixed; limited user entrance acceptance, not comprehensive gameplay acceptance",
+      "validation": "Stock and current PZO: 350 offline behavior assertions and 19 real Java Reader fixtures each. User reported the entrance working on 2026-11-06; save/reload and all conflict combinations remain unverified.",
+      "deployment_receipt": "D:\\steam\\steamapps\\common\\ProjectZomboid\\CodexAssets\\BoatRVRoomGuardFix_20261106_074754\\deployment_receipt.json"
+    },
+    {
+      "id": "SuQingBoatCraftFromFloor_4221",
+      "source": "E:\\code\\suqing-project-zomboid-patches\\src\\SuQingBoatCraftFromFloor_4221",
+      "personal_target": "C:\\Users\\15792\\Zomboid\\mods\\SuQingBoatCraftFromFloor_4221",
+      "version": "0.1.0",
+      "required_mods": [
+        "BoteBR"
+      ],
+      "status": "personally deployed and enabled; 54 offline assertions passed; in-game pending; not committed or published",
+      "deployment_receipt": "D:\\steam\\steamapps\\common\\ProjectZomboid\\CodexAssets\\BoatCraftFromFloor_20261106_073120\\deployment_receipt.json"
+    }
+  ],
+  "source_patch_count": 40,
+  "imported_release_candidates": [
+    {
+      "id": "SuQingUIInteractionFixes",
+      "source": "src/SuQingUIInteractionFixes",
+      "gameplay_acceptance": "See bilingual patch documentation; not comprehensively accepted"
+    },
+    {
+      "id": "SuQingMustangProtectionRepair",
+      "source": "src/SuQingMustangProtectionRepair",
+      "gameplay_acceptance": "See bilingual patch documentation; not comprehensively accepted"
+    },
+    {
+      "id": "SuQingWorldStateGuard_4221",
+      "source": "src/SuQingWorldStateGuard_4221",
+      "gameplay_acceptance": "See bilingual patch documentation; not comprehensively accepted"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+name=蘇清的船舱与房车房间兼容补丁 / SuQing's Boat Cabin and RV Room Compatibility Patch
+id=SuQingBoatRVRoomGuard_4221
+modversion=0.1.0-rc.2
+versionMin=42.21
+versionMax=42.21
+require=BoteBR,FrotaBRRVAddon,PROJECTRVInterior42
+loadModAfter=PROJECTRVInterior42,BoteBR,FrotaBRRVAddon,RVViewpointPatch
+description=中文：统一检查船舱与3×6房车房间的占用，保留原有房间和物品，在传送前拦截重复占用。仅适配已核对的B42.21单人源码；不支持联机。上游变化时暂停相关入口。游戏内验收待完成。
+description=EN: Checks shared boat-cabin and 3x6 RV room occupancy, retains existing assignments and belongings, and blocks conflicting entry before teleportation. Reviewed B42.21 single-player sources only; no multiplayer. Upstream changes block affected entry. In-game acceptance is pending.

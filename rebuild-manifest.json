@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target_game": "Project Zomboid Build 42.21",
-  "scope": "Runtime-required files for 33 independent patches; documentation/backups omitted",
+  "scope": "40 registered independent patches; 32-item local publication candidate, 3 EX companions and 5 held redistributions. Not an online publication claim.",
   "mods": [
     {
       "id": "Codex_AmmoBox_CN_TextFix_4221",
@@ -1635,7 +1635,7 @@
     {
       "id": "Codex_InventoryTransferPerformance_4221",
       "folder": "InventoryTransferPerformance_4221_Local",
-      "version": "1.2.1",
+      "version": "1.2.2",
       "directories": [
         "42",
         "42/media",
@@ -1645,14 +1645,14 @@
       "files": [
         {
           "path": "42/media/lua/client/Codex_InventoryTransferPerformance.lua",
-          "sha256": "4c95d2c96a730720e7c86175b562cd4dba2b1634dd1215a6c0d6946ca0b8a099",
-          "size": 24114,
+          "sha256": "5f92c71fbd9935f910c5b52d26ece67ef9e22b8e9ed560b013cd7714d790c51a",
+          "size": 24207,
           "mode": "own",
           "repo_path": "src/InventoryTransferPerformance_4221_Local/42/media/lua/client/Codex_InventoryTransferPerformance.lua"
         },
         {
           "path": "42/mod.info",
-          "sha256": "44c77fbbf27a69026adb3498c9dc79f1f6f4471922bae0eb9581c02bc9129a61",
+          "sha256": "75fd130fb594d8e5d0ef40e17f49c8e6f4426a4ccdcb0519fd22a8e6f37c687a",
           "size": 540,
           "mode": "own",
           "repo_path": "src/InventoryTransferPerformance_4221_Local/42/mod.info"
@@ -2102,6 +2102,355 @@
           "size": 76,
           "mode": "own",
           "repo_path": "src/SuQingChumMassProduction/common/README.txt"
+        }
+      ]
+    },
+    {
+      "id": "Codex_ViewpointLegacyPromptFix_4221",
+      "folder": "Codex_ViewpointLegacyPromptFix_4221",
+      "version": "1.0.0",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/client",
+        "common"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/client/SQViewpointLegacyPromptGuard.lua",
+          "sha256": "6ed43e23ed7b46561a5911d7e1d69e851b9f60d30edd199369e7fa1f72b8adbf",
+          "size": 2181,
+          "mode": "own",
+          "repo_path": "src/Codex_ViewpointLegacyPromptFix_4221/42/media/lua/client/SQViewpointLegacyPromptGuard.lua"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "973a31c046bc9d5123ac07d17724467f1afa81627af94509b59699738e6ef40e",
+          "size": 453,
+          "mode": "own",
+          "repo_path": "src/Codex_ViewpointLegacyPromptFix_4221/42/mod.info"
+        },
+        {
+          "path": "common/.keep",
+          "sha256": "6a638a09a6565529c784fb4572c2a6891c9ed04ae1d810ba396c417bb2fbb6e6",
+          "size": 59,
+          "mode": "own",
+          "repo_path": "src/Codex_ViewpointLegacyPromptFix_4221/common/.keep"
+        },
+        {
+          "path": "mod.info",
+          "sha256": "973a31c046bc9d5123ac07d17724467f1afa81627af94509b59699738e6ef40e",
+          "size": 453,
+          "mode": "own",
+          "repo_path": "src/Codex_ViewpointLegacyPromptFix_4221/mod.info"
+        },
+        {
+          "path": "README-中文.txt",
+          "sha256": "9143b7c6929f54059fd4e39f4f02648e85adc165670b7dde6cb51415562c7d9e",
+          "size": 1250,
+          "mode": "own",
+          "repo_path": "src/Codex_ViewpointLegacyPromptFix_4221/README-中文.txt"
+        }
+      ]
+    },
+    {
+      "id": "Codex_ChinaBrewingBooks50_4221",
+      "folder": "Codex_ChinaBrewingBooks50_4221",
+      "version": "0.1.1",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/client",
+        "42/media/lua/shared",
+        "42/media/lua/shared/CodexChinaBrewingBooks50"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/client/zz_Codex_ChinaBrewingBooks50.lua",
+          "sha256": "ba04b763963e936e6d40bc73177143a9899a18ce23ed1423152189f83a070c0b",
+          "size": 1858,
+          "mode": "own",
+          "repo_path": "src/Codex_ChinaBrewingBooks50_4221/42/media/lua/client/zz_Codex_ChinaBrewingBooks50.lua"
+        },
+        {
+          "path": "42/media/lua/shared/CodexChinaBrewingBooks50/Core.lua",
+          "sha256": "1cb3ebd50246329f7d1ebd2288d29fed88ba05cc93c8c93bccd5a13b8160c4ac",
+          "size": 10330,
+          "mode": "own",
+          "repo_path": "src/Codex_ChinaBrewingBooks50_4221/42/media/lua/shared/CodexChinaBrewingBooks50/Core.lua"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "5328e083f08c885cb309a25facb9cdafb52bcc80a698db808066659efe191f98",
+          "size": 961,
+          "mode": "own",
+          "repo_path": "src/Codex_ChinaBrewingBooks50_4221/42/mod.info"
+        },
+        {
+          "path": "README.txt",
+          "sha256": "9f73aa70c573dd974057d4d2438f1865b24b0ac86b9f3acfe0ddc6bf3ce2ac50",
+          "size": 1942,
+          "mode": "own",
+          "repo_path": "src/Codex_ChinaBrewingBooks50_4221/README.txt"
+        }
+      ]
+    },
+    {
+      "id": "SuQingBoatRVRoomGuard_4221",
+      "folder": "SuQingBoatRVRoomGuard_4221",
+      "version": "0.1.0-rc.2",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/client",
+        "42/media/lua/shared",
+        "42/media/lua/shared/SQBoatRVRoomGuard",
+        "42/media/lua/shared/Translate",
+        "42/media/lua/shared/Translate/CN",
+        "42/media/lua/shared/Translate/EN",
+        "common"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/client/zz_SQBoatRVRoomGuard.lua",
+          "sha256": "f0a4ce9836a8178b2e2ede649df4b5f7e9869e2b7eb23a0b695c01b71d520c20",
+          "size": 6696,
+          "mode": "own",
+          "repo_path": "src/SuQingBoatRVRoomGuard_4221/42/media/lua/client/zz_SQBoatRVRoomGuard.lua"
+        },
+        {
+          "path": "42/media/lua/shared/SQBoatRVRoomGuard/Core.lua",
+          "sha256": "9d68e4863c02e1145efe169ea21a45d5131d055c17f72495cafa664202f9cd32",
+          "size": 5352,
+          "mode": "own",
+          "repo_path": "src/SuQingBoatRVRoomGuard_4221/42/media/lua/shared/SQBoatRVRoomGuard/Core.lua"
+        },
+        {
+          "path": "42/media/lua/shared/SQBoatRVRoomGuard/SourcePins.lua",
+          "sha256": "44d3849a5007cba0725edfd7f38af07ef609ad4fefecc666f6d559ba3459d353",
+          "size": 830,
+          "mode": "own",
+          "repo_path": "src/SuQingBoatRVRoomGuard_4221/42/media/lua/shared/SQBoatRVRoomGuard/SourcePins.lua"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/IG_UI.json",
+          "sha256": "9d8f40de303ba755bff32dc0df056c5b593a6611dbada53af5ff4c83d2dfb7cc",
+          "size": 358,
+          "mode": "own",
+          "repo_path": "src/SuQingBoatRVRoomGuard_4221/42/media/lua/shared/Translate/CN/IG_UI.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/EN/IG_UI.json",
+          "sha256": "6da5d12d21620bff369ac49ba313035f3f2c417a3c5c0fe7f54e12b46430a580",
+          "size": 375,
+          "mode": "own",
+          "repo_path": "src/SuQingBoatRVRoomGuard_4221/42/media/lua/shared/Translate/EN/IG_UI.json"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "a9a8e920b70c575efaaeb688b1bf8d90b06ae7cfc43373a727f051712d401f6f",
+          "size": 870,
+          "mode": "own",
+          "repo_path": "src/SuQingBoatRVRoomGuard_4221/42/mod.info"
+        },
+        {
+          "path": "common/.keep",
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "size": 1,
+          "mode": "own",
+          "repo_path": "src/SuQingBoatRVRoomGuard_4221/common/.keep"
+        },
+        {
+          "path": "mod.info",
+          "sha256": "a9a8e920b70c575efaaeb688b1bf8d90b06ae7cfc43373a727f051712d401f6f",
+          "size": 870,
+          "mode": "own",
+          "repo_path": "src/SuQingBoatRVRoomGuard_4221/mod.info"
+        },
+        {
+          "path": "README.txt",
+          "sha256": "6942984701d942adb80d2dee487c603c6bc8870e9824b07474f16dee849143eb",
+          "size": 5579,
+          "mode": "own",
+          "repo_path": "src/SuQingBoatRVRoomGuard_4221/README.txt"
+        }
+      ]
+    },
+    {
+      "id": "SuQingBoatCraftFromFloor_4221",
+      "folder": "SuQingBoatCraftFromFloor_4221",
+      "version": "0.1.0",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/shared",
+        "42/media/lua/shared/Translate",
+        "42/media/lua/shared/Translate/CN",
+        "42/media/lua/shared/Translate/EN",
+        "common"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/shared/SQBoatCraftFromFloor.lua",
+          "sha256": "fd1e2fc5966d28cd6e11271da855e984afc742f567bb09814254d9d164108a6e",
+          "size": 3535,
+          "mode": "own",
+          "repo_path": "src/SuQingBoatCraftFromFloor_4221/42/media/lua/shared/SQBoatCraftFromFloor.lua"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/IG_UI.json",
+          "sha256": "50ce162476a38a892ab48e59bd84230212e03f471dcc75193dafd9c0d1a376af",
+          "size": 127,
+          "mode": "own",
+          "repo_path": "src/SuQingBoatCraftFromFloor_4221/42/media/lua/shared/Translate/CN/IG_UI.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/EN/IG_UI.json",
+          "sha256": "6c296510f0d21d46c51ea1b58327459c4ad239a5d87a1c410d99116ef6803973",
+          "size": 155,
+          "mode": "own",
+          "repo_path": "src/SuQingBoatCraftFromFloor_4221/42/media/lua/shared/Translate/EN/IG_UI.json"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "5d4631a332e743fca58ddb04ed65a3cc70264a1561379d50d8dfe029edcbd330",
+          "size": 777,
+          "mode": "own",
+          "repo_path": "src/SuQingBoatCraftFromFloor_4221/42/mod.info"
+        },
+        {
+          "path": "common/.keep",
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "size": 1,
+          "mode": "own",
+          "repo_path": "src/SuQingBoatCraftFromFloor_4221/common/.keep"
+        },
+        {
+          "path": "mod.info",
+          "sha256": "5d4631a332e743fca58ddb04ed65a3cc70264a1561379d50d8dfe029edcbd330",
+          "size": 777,
+          "mode": "own",
+          "repo_path": "src/SuQingBoatCraftFromFloor_4221/mod.info"
+        },
+        {
+          "path": "README.txt",
+          "sha256": "90ebc15dd0b91cc219f5f3fe75a3949eccf66c3f27f55fb46a52e4819374663e",
+          "size": 3238,
+          "mode": "own",
+          "repo_path": "src/SuQingBoatCraftFromFloor_4221/README.txt"
+        }
+      ]
+    },
+    {
+      "id": "SuQingUIInteractionFixes",
+      "folder": "SuQingUIInteractionFixes",
+      "version": "1.0.1",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/client",
+        "common"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/client/SuQing_ProximitySelectionFix.lua",
+          "sha256": "5d41ca3e3729d81c0709439ee602b366222fba238f8f2a9211ef848da47e549f",
+          "size": 12779,
+          "mode": "own",
+          "repo_path": "src/SuQingUIInteractionFixes/42/media/lua/client/SuQing_ProximitySelectionFix.lua"
+        },
+        {
+          "path": "42/media/lua/client/SuQing_TooltipPositionFix.lua",
+          "sha256": "480030f4f853daa9c608e9bc46551fed38343042d78fb698b3db09f52ff489e7",
+          "size": 2979,
+          "mode": "own",
+          "repo_path": "src/SuQingUIInteractionFixes/42/media/lua/client/SuQing_TooltipPositionFix.lua"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "34a25e50ccf9bccef07e54af72c5868eb55da87f7d1695ebc7649e011712044c",
+          "size": 835,
+          "mode": "own",
+          "repo_path": "src/SuQingUIInteractionFixes/42/mod.info"
+        }
+      ]
+    },
+    {
+      "id": "SuQingMustangProtectionRepair",
+      "folder": "SuQingMustangProtectionRepair",
+      "version": "1.0.0",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/client",
+        "42/media/lua/shared",
+        "42/media/lua/shared/Translate",
+        "42/media/lua/shared/Translate/CN",
+        "42/media/lua/shared/Translate/EN",
+        "common"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/client/SuQingMustangProtectionRepair.lua",
+          "sha256": "9c854956e21618d355560e110de1aef956ff525d1997a085f4df3c6c12d6a7d0",
+          "size": 9226,
+          "mode": "own",
+          "repo_path": "src/SuQingMustangProtectionRepair/42/media/lua/client/SuQingMustangProtectionRepair.lua"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/IG_UI.json",
+          "sha256": "2a215e235d04d631eec18590ad37db63187091c60f0ff09d2d41fff51d6d4ce6",
+          "size": 831,
+          "mode": "own",
+          "repo_path": "src/SuQingMustangProtectionRepair/42/media/lua/shared/Translate/CN/IG_UI.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/EN/IG_UI.json",
+          "sha256": "5613b7c6206abe9d02221726e238db0194cb7b94da6fd834b1138bb303564ce7",
+          "size": 809,
+          "mode": "own",
+          "repo_path": "src/SuQingMustangProtectionRepair/42/media/lua/shared/Translate/EN/IG_UI.json"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "13c39cf4f15b7eecf9c075087d69cde17cb971bab2d782a18f007cd16b4aac0f",
+          "size": 817,
+          "mode": "own",
+          "repo_path": "src/SuQingMustangProtectionRepair/42/mod.info"
+        }
+      ]
+    },
+    {
+      "id": "SuQingWorldStateGuard_4221",
+      "folder": "SuQingWorldStateGuard_4221",
+      "version": "0.1.0-candidate",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/java",
+        "42/media/java/client",
+        "common"
+      ],
+      "files": [
+        {
+          "path": "42/media/java/client/SuQingWorldStateGuard.jar",
+          "sha256": "fb5689cf30ba898da68e0497b06906c081c099cf47acdcbcc245168735b48fa9",
+          "size": 8629,
+          "mode": "own",
+          "repo_path": "src/SuQingWorldStateGuard_4221/42/media/java/client/SuQingWorldStateGuard.jar"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "2661b0ebfa11842e14dce1b924ecbe0c9088276ecf39dd2b894fbf2f1e443836",
+          "size": 1304,
+          "mode": "own",
+          "repo_path": "src/SuQingWorldStateGuard_4221/42/mod.info"
         }
       ]
     }

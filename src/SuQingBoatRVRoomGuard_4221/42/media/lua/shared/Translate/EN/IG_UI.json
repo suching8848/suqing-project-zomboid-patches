@@ -1,0 +1,5 @@
+{
+  "IGUI_SQBoatRVRoomGuard_Collision": "Room occupancy conflict detected. Entry was blocked; existing interiors were not moved.",
+  "IGUI_SQBoatRVRoomGuard_Full": "All shared boat/RV rooms are allocated. A new interior cannot be assigned.",
+  "IGUI_SQBoatRVRoomGuard_Blocked": "The boat/RV compatibility check failed. Affected entry is paused; please check the log."
+}

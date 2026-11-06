@@ -1,0 +1,13 @@
+local V = PerfTest
+V.gameStart()
+V.case("two consecutive Proximity-style refreshes retain the first semantic anchor", function()
+    local p = V.prox({V.item("Bandage"), V.item("Zinc")})
+    V.click(p, 1)
+    p.inventory.nativeItems[#p.inventory.nativeItems + 1] = V.item("Apple")
+    p:refreshContainer(); p:refreshContainer(); p:renderdetails(false)
+    V.eq(V.anchorName(p), "Bandage", "second refresh cannot capture a stale row index")
+    V.eq(p.firstSelect, 2, "anchor follows insertion before selected item")
+    V.click(p, 3, true)
+    V.eq(V.selectedCount(p), 2, "Shift range starts at relocated Bandage")
+end)
+return V.done()

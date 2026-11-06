@@ -1,0 +1,5 @@
+{
+  "IGUI_SQBoatRVRoomGuard_Collision": "检测到房间占用冲突，已阻止进入。原有内饰未移动。",
+  "IGUI_SQBoatRVRoomGuard_Full": "船舱与房车共用的房间已分配完，无法分配新的内饰。",
+  "IGUI_SQBoatRVRoomGuard_Blocked": "船舱与房车兼容检查未通过，相关内饰入口已暂停，请查看日志。"
+}

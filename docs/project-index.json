@@ -1,94 +1,260 @@
 {
-  "schema": 1,
-  "generated_at_bjt": "2026-11-03T17:37:49.492314+08:00",
-  "game_target": "Project Zomboid B42.21 single-player",
-  "repository_count": 10,
-  "independent_mod_repositories": 9,
-  "patch_collection_mod_count": 33,
-  "mod_count": 42,
-  "note": "Dated source and personal-deployment snapshot. Nine main-mod repositories plus one 33-patch source collection. Source, personal runtime and Workshop distribution are separate states. On 2026-11-03 the user authorized this unified Git and Steam synchronization; there is no remaining requirement to wait for music gameplay acceptance before source/publication work. Publishing does not establish gameplay acceptance or authorize replacing a working personal mod combination. Workshop statuses reflect the stated receipts or in-progress batch only.",
+  "schema": 3,
+  "generated_at_bjt": "2026-11-06T22:23:53.030590+08:00",
+  "game_target": "Project Zomboid Build 42.21 single-player",
+  "repository_count": 14,
+  "independent_mod_repositories": 13,
+  "patch_collection_mod_count": 40,
+  "mod_count": 53,
+  "path_policy": "Only repository-relative source paths and personal paths relative to mods; absolute locations remain in the local input map.",
+  "source_and_publication_boundary": "Public, private uploaded, failed update, local source and personal installation are distinct. No game acceptance or remote per-file download is inferred.",
+  "workshop_snapshot": {
+    "started_at_bjt": "2026-11-06T22:15:35.834858+08:00",
+    "finished_at_bjt": "2026-11-06T22:15:41.329359+08:00",
+    "enumeration_stable": true,
+    "expected_owner": "76561198881912882",
+    "consumer_app": 108600,
+    "owned_entry_count": 15,
+    "owned_item_count": 14,
+    "owned_collection_count": 1,
+    "public_owned_entry_count": 11,
+    "nonpublic_owned_entry_count": 4,
+    "snapshot_sha256": "a05a8d7943cfc06b52d7937e033e7ae133aa4a1b6ba8432fda8bcab091c90565",
+    "remote_file_download": false
+  },
   "workshop_patch_distribution": {
-    "collection_optional_mod_count": 25,
+    "published_collection_mod_count": 32,
+    "private_uploaded_collection_mod_count": 0,
+    "candidate_collection_mod_count": 32,
     "EX_package_companion_mod_count": 3,
     "held_for_upstream_payload_review_count": 5,
+    "new_unpublished_patch_count": 0,
+    "existing_patch_update_count": 0,
+    "published_collection_version": "2026.11.06-32-candidate",
+    "workshop_collection_version": "2026.11.06-32-candidate",
+    "collection_visibility": 0,
+    "local_candidate_version": "2026.11.06-32-candidate",
     "held_ids": [
       "CodexCBRTIndependent_4221",
       "CodexPZOptimization_CN_4221",
       "Codex_Campers_Glovebox_4221",
       "Codex_PrimitiveTooltip_4221",
       "Codex_StimCompatibility_4221"
+    ],
+    "EX_companion_ids": [
+      "CodexNekomataEXCompat_4221",
+      "CodexNekomataEXUpgrade_4221",
+      "Codex_SuQingWearableCompat_4221"
     ]
+  },
+  "publication_counts": {
+    "published_mod_ids": 44,
+    "private_uploaded_mod_ids": 4,
+    "verified_private_mod_ids": 4,
+    "created_without_verified_payload_mod_ids": 0,
+    "unpublished_new_main_mods": 0,
+    "unpublished_new_patches": 0,
+    "published_projects_with_pending_updates": 1,
+    "failed_existing_updates": 1,
+    "held_patches": 5,
+    "git_repositories_with_remote": 14,
+    "git_repositories_without_remote": 0
+  },
+  "publication_status_counts": {
+    "update_failed_pending_node_switch": 1,
+    "published_source_version_matches": 8,
+    "verified_private_candidate": 4,
+    "verified_public_current": 32,
+    "held_pending_upstream_redistribution_review": 5,
+    "published_in_EX_package": 3
+  },
+  "historical_index": {
+    "snapshot_generated_at_bjt": "2026-11-03T17:37:49.492314+08:00",
+    "preserved_json_sha256": "0d93adbd3e7649c9a8b5a29a7b60c795121534ee2f4978dba6ee67b7fed1ab0c",
+    "retention": "Original November 3 index and November 6 prepublication index preserved verbatim in local release-repair history."
   },
   "repositories": [
     {
       "slug": "suqing-container-upgrade",
+      "local_directory_name": "suqing-container-upgrade",
       "repository": "https://github.com/suching8848/suqing-container-upgrade",
       "title_zh": "蘇清的容器升级模组",
       "title_en": "SuQing’s Container Upgrades Mod",
-      "mod_count": 1
+      "mod_count": 1,
+      "git_initialized": true,
+      "git_head": "c5ea0bd8351cc5a8e69ae5da82ce09b9a2c0ad05",
+      "git_head_policy": "Observed at generation time",
+      "git_state": "has_commit",
+      "remote_state": "configured"
     },
     {
       "slug": "suqing-modern-firearms-weight-charms",
+      "local_directory_name": "suqing-modern-firearms-weight-charms",
       "repository": "https://github.com/suching8848/suqing-modern-firearms-weight-charms",
       "title_zh": "蘇清的现代枪械减重挂件模组",
       "title_en": "SuQing’s Firearm Weight Charms Mod",
-      "mod_count": 1
+      "mod_count": 1,
+      "git_initialized": true,
+      "git_head": "d5bec7390205f1d1472f997b2b60720bc79223e2",
+      "git_head_policy": "Observed at generation time",
+      "git_state": "has_commit",
+      "remote_state": "configured"
     },
     {
       "slug": "suqing-backpack-super-upgrade",
+      "local_directory_name": "suqing-backpack-super-upgrade",
       "repository": "https://github.com/suching8848/suqing-backpack-super-upgrade",
       "title_zh": "蘇清的背包超级升级模组",
       "title_en": "SuQing’s Backpack Super Upgrades Mod",
-      "mod_count": 1
+      "mod_count": 1,
+      "git_initialized": true,
+      "git_head": "45beb0f7481da73ba34d538f3d0162410bd91557",
+      "git_head_policy": "Observed at generation time",
+      "git_state": "has_commit",
+      "remote_state": "configured"
     },
     {
       "slug": "suqing-refrigeration-upgrade",
+      "local_directory_name": "suqing-refrigeration-upgrade",
       "repository": "https://github.com/suching8848/suqing-refrigeration-upgrade",
       "title_zh": "蘇清的冷藏升级模组",
       "title_en": "SuQing’s Refrigeration Upgrades Mod",
-      "mod_count": 1
+      "mod_count": 1,
+      "git_initialized": true,
+      "git_head": "66130376fc4e2314c73e51bfbd48793dd1f12cfe",
+      "git_head_policy": "Observed at generation time",
+      "git_state": "has_commit",
+      "remote_state": "configured"
     },
     {
       "slug": "suqing-sprinkler-fertilizer",
+      "local_directory_name": "suqing-sprinkler-fertilizer",
       "repository": "https://github.com/suching8848/suqing-sprinkler-fertilizer",
       "title_zh": "蘇清的灌溉养护模组",
       "title_en": "SuQing’s Irrigation Care Mod",
-      "mod_count": 1
+      "mod_count": 1,
+      "git_initialized": true,
+      "git_head": "5291b004bd0685add3afe4cdc272461c6f189a28",
+      "git_head_policy": "Observed at generation time",
+      "git_state": "has_commit",
+      "remote_state": "configured"
     },
     {
       "slug": "suqing-mfs-fixed-buyback",
+      "local_directory_name": "suqing-mfs-fixed-buyback",
       "repository": "https://github.com/suching8848/suqing-mfs-fixed-buyback",
       "title_zh": "蘇清的枪械商店固定收购模组",
       "title_en": "SuQing’s MFS Fixed Buyback Mod",
-      "mod_count": 1
+      "mod_count": 1,
+      "git_initialized": true,
+      "git_head": "5ec73ad2276a5cd3411c1b7af35fcd35030076a0",
+      "git_head_policy": "Observed at generation time",
+      "git_state": "has_commit",
+      "remote_state": "configured"
     },
     {
       "slug": "suqing-container-auto-upgrade",
+      "local_directory_name": "suqing-container-auto-upgrade",
       "repository": "https://github.com/suching8848/suqing-container-auto-upgrade",
       "title_zh": "蘇清的容器自动识别升级模组（实验版）",
       "title_en": "SuQing’s Automatic Container Upgrades Mod — Experimental",
-      "mod_count": 1
+      "mod_count": 1,
+      "git_initialized": true,
+      "git_head": "0e18ab15665097b0daa6ea5eb5544a4d40bddb2d",
+      "git_head_policy": "Observed at generation time",
+      "git_state": "has_commit",
+      "remote_state": "configured"
     },
     {
       "slug": "suqing-music-albums",
+      "local_directory_name": "suqing-music-collections",
       "repository": "https://github.com/suching8848/suqing-music-albums",
       "title_zh": "蘇清的音乐专辑",
       "title_en": "SuQing’s Music Albums",
-      "mod_count": 1
+      "mod_count": 1,
+      "git_initialized": true,
+      "git_head": "cd36e859a9535ba8e0f583b93e026a9ef18f1923",
+      "git_head_policy": "Observed at generation time",
+      "git_state": "has_commit",
+      "remote_state": "configured"
     },
     {
       "slug": "suqing-weight-training",
+      "local_directory_name": "suqing-weight-training",
       "repository": "https://github.com/suching8848/suqing-weight-training",
       "title_zh": "蘇清的负重训练",
       "title_en": "SuQing’s Weight Training",
-      "mod_count": 1
+      "mod_count": 1,
+      "git_initialized": true,
+      "git_head": "9d6e81ed36d489766dc280d55cf122b2e695489a",
+      "git_head_policy": "Observed at generation time",
+      "git_state": "has_commit",
+      "remote_state": "configured"
+    },
+    {
+      "slug": "suqing-freshness-fridge",
+      "local_directory_name": "suqing-freshness-fridge",
+      "repository": "https://github.com/suching8848/suqing-freshness-fridge",
+      "title_zh": "蘇清的返鲜冰箱",
+      "title_en": "SuQing's Freshness Fridge",
+      "mod_count": 1,
+      "git_initialized": true,
+      "git_head": "1b8737f26fa8249c1223974158d6a648191276b7",
+      "git_head_policy": "Observed at generation time",
+      "git_state": "has_commit",
+      "remote_state": "configured"
+    },
+    {
+      "slug": "suqing-freshness-lunchbox",
+      "local_directory_name": "suqing-freshness-lunchbox",
+      "repository": "https://github.com/suching8848/suqing-freshness-lunchbox",
+      "title_zh": "蘇清的返鲜餐盒",
+      "title_en": "SuQing's Freshness Lunchbox",
+      "mod_count": 1,
+      "git_initialized": true,
+      "git_head": "82ddd87f7c28fe3faf6b80db1adade16324d70b8",
+      "git_head_policy": "Observed at generation time",
+      "git_state": "has_commit",
+      "remote_state": "configured"
+    },
+    {
+      "slug": "suqing-search-enhancement",
+      "local_directory_name": "suqing-search-enhancement",
+      "repository": "https://github.com/suching8848/suqing-search-enhancement",
+      "title_zh": "蘇清的搜索增强",
+      "title_en": "SuQing's Search Enhancement",
+      "mod_count": 1,
+      "git_initialized": true,
+      "git_head": "e7a42b388512ffccf575ab6ea1a35b13a14d8d33",
+      "git_head_policy": "Observed at generation time",
+      "git_state": "has_commit",
+      "remote_state": "configured"
+    },
+    {
+      "slug": "suqing-portals",
+      "local_directory_name": "suqing-portals",
+      "repository": "https://github.com/suching8848/suqing-portals",
+      "title_zh": "蘇清的传送门",
+      "title_en": "SuQing's Portals",
+      "mod_count": 1,
+      "git_initialized": true,
+      "git_head": "f478ebce615e8b16f3d8b9a6a5384b5b25380005",
+      "git_head_policy": "Observed at generation time",
+      "git_state": "has_commit",
+      "remote_state": "configured"
     },
     {
       "slug": "suqing-project-zomboid-patches",
+      "local_directory_name": "suqing-project-zomboid-patches",
       "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
       "title_zh": "蘇清的僵尸毁灭工程补丁合集",
       "title_en": "SuQing’s Project Zomboid Patch Collection",
-      "mod_count": 33
+      "mod_count": 40,
+      "git_initialized": true,
+      "git_head": null,
+      "git_head_policy": "Observed at generation time; owner-index commit is recorded in external publication receipts to avoid self-reference",
+      "git_state": "has_commit",
+      "remote_state": "configured"
     }
   ],
   "mods": [
@@ -97,707 +263,2872 @@
       "title_zh": "蘇清的容器升级模组",
       "title_en": "SuQing’s Container Upgrades Mod",
       "repository": "https://github.com/suching8848/suqing-container-upgrade",
-      "source_version": "1.0.1",
-      "personal_runtime_version": "1.0.0",
-      "source_form": "complete_mod_package",
+      "repository_slug": "suqing-container-upgrade",
+      "source_version": "1.0.3",
+      "source_mod_name": "蘇清的容器升级 | SuQing's Container Upgrades v1.0.3 [B42.21 SP]",
+      "personal_runtime_version": "1.0.3",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "SuQingContainerUpgrade_4221_Local/42/mod.info",
       "mod_info": "SuQingContainerUpgrade/42/mod.info",
+      "source_mod_info_sha256": "495685a668ce8cd93b5699af47feb2e1a270f535e7418940e3a74f146d9db2d5",
       "require_raw": "",
+      "required_mods": [],
       "load_after_raw": "FantasyWorkshopVS42_4.0,4123567854998,TheyKnewContinued,BackpackSystemB42,SuPrimitiveEquipment,RaccoonCityB42,Neat_Crafting,CleanUI,Codex_InventoryTransferPerformance_4221,TarkovCombatStims,CodexCBRTIndependent_4221,HavenFall",
-      "workshop_item_id": "3823988025",
+      "load_after_mods": [
+        "FantasyWorkshopVS42_4.0",
+        "4123567854998",
+        "TheyKnewContinued",
+        "BackpackSystemB42",
+        "SuPrimitiveEquipment",
+        "RaccoonCityB42",
+        "Neat_Crafting",
+        "CleanUI",
+        "Codex_InventoryTransferPerformance_4221",
+        "TarkovCombatStims",
+        "CodexCBRTIndependent_4221",
+        "HavenFall"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "complete_mod_package",
       "publication_group": "independent_main_mod",
-      "publication_status": "verified_public_2026-11-03_documentation_only_update",
-      "gameplay_validation": "Keep the working personal 1.0.0 plus wearable bridge; source 1.0.1 is recorded separately and is not deployed for version parity."
+      "workshop_item_id": "3823988025",
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "1.0.1",
+      "published_version": "1.0.1",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": false,
+      "native_upload_status": "mutation_failed",
+      "publication_evidence": [],
+      "published_version_basis": "Native version metadata, cross-checked with matching native receipts when present",
+      "publication_status": "update_failed_pending_node_switch",
+      "retry_status": "waiting_for_user_node_switch",
+      "retry_record_sha256": "5fa3d5190c2028236abe7b4e103ed2ea59fde856587ea25385f7e4871e1fab84",
+      "candidate": {
+        "selected": true,
+        "version": "1.0.3",
+        "status": "local_source_update_pending",
+        "package_verification": "Consult native verification evidence and frozen release receipt; no gameplay acceptance is inferred."
+      }
     },
     {
       "mod_id": "Codex_PetGunWeightKits_4221",
       "title_zh": "蘇清的现代枪械减重挂件模组",
       "title_en": "SuQing’s Firearm Weight Charms Mod",
       "repository": "https://github.com/suching8848/suqing-modern-firearms-weight-charms",
+      "repository_slug": "suqing-modern-firearms-weight-charms",
       "source_version": "1.2.1",
+      "source_mod_name": "蘇清的现代枪械减重挂件 | SuQing's Firearm Weight Charms",
       "personal_runtime_version": "1.2.1",
-      "source_form": "complete_mod_package",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "PetGunWeightKits_4221_Local/42/mod.info",
       "mod_info": "mods/PetGunWeightKits_4221_Local/42/mod.info",
+      "source_mod_info_sha256": "50b7cc89a8069473b60821940d7b92e2fe3d7ebc609c8973252b56a455fc42b2",
       "require_raw": "ModernFirearmsSystem",
+      "required_mods": [
+        "ModernFirearmsSystem"
+      ],
       "load_after_raw": "ModernFirearmsSystem",
-      "workshop_item_id": "3824003141",
+      "load_after_mods": [
+        "ModernFirearmsSystem"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "complete_mod_package",
       "publication_group": "independent_main_mod",
-      "publication_status": "public_unchanged_verified_2026-11-03_query",
-      "gameplay_validation": "Not comprehensively revalidated by this source/publication synchronization."
+      "workshop_item_id": "3824003141",
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "1.2.1",
+      "published_version": "1.2.1",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": false,
+      "native_upload_status": null,
+      "publication_evidence": [],
+      "published_version_basis": "Native version metadata, cross-checked with matching native receipts when present",
+      "publication_status": "published_source_version_matches",
+      "candidate": {
+        "selected": false,
+        "version": "1.2.1",
+        "status": "source_version_matches_public",
+        "package_verification": "Consult native verification evidence and frozen release receipt; no gameplay acceptance is inferred."
+      }
     },
     {
       "mod_id": "ExSuQingBackpackSuperUpgrade_4221",
       "title_zh": "蘇清的背包超级升级模组",
       "title_en": "SuQing’s Backpack Super Upgrades Mod",
       "repository": "https://github.com/suching8848/suqing-backpack-super-upgrade",
+      "repository_slug": "suqing-backpack-super-upgrade",
       "source_version": "1.0.0-rc.2",
+      "source_mod_name": "蘇清的背包超级升级",
       "personal_runtime_version": "1.0.0-rc.2",
-      "source_form": "complete_mod_package",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "ExSuQingBackpackSuperUpgrade_4221/42/mod.info",
       "mod_info": "mods/ExSuQingBackpackSuperUpgrade_4221/42/mod.info",
+      "source_mod_info_sha256": "ed36876a87dc75c5082101625f59004b527e35462626aece9346b5e4ad583b1d",
       "require_raw": "",
+      "required_mods": [],
       "load_after_raw": "SuQingContainerUpgrade_4221,RaccoonCityB42,LBB42,Legendary Backpacks - Texture Addon,CleanUI,Neat_Crafting,Codex_InventoryTransferPerformance_4221",
-      "workshop_item_id": "3832223700",
+      "load_after_mods": [
+        "SuQingContainerUpgrade_4221",
+        "RaccoonCityB42",
+        "LBB42",
+        "Legendary Backpacks - Texture Addon",
+        "CleanUI",
+        "Neat_Crafting",
+        "Codex_InventoryTransferPerformance_4221"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "complete_mod_package",
       "publication_group": "independent_main_mod",
-      "publication_status": "public_unchanged_verified_2026-11-03_query",
-      "gameplay_validation": "Not comprehensively revalidated by this source/publication synchronization."
+      "workshop_item_id": "3832223700",
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "1.0.0-rc.2",
+      "published_version": "1.0.0-rc.2",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": false,
+      "native_upload_status": null,
+      "publication_evidence": [],
+      "published_version_basis": "Native version metadata, cross-checked with matching native receipts when present",
+      "publication_status": "published_source_version_matches",
+      "candidate": {
+        "selected": false,
+        "version": "1.0.0-rc.2",
+        "status": "source_version_matches_public",
+        "package_verification": "Consult native verification evidence and frozen release receipt; no gameplay acceptance is inferred."
+      }
     },
     {
       "mod_id": "SuQingRefrigerationUpgrade_4221",
       "title_zh": "蘇清的冷藏升级模组",
       "title_en": "SuQing’s Refrigeration Upgrades Mod",
       "repository": "https://github.com/suching8848/suqing-refrigeration-upgrade",
+      "repository_slug": "suqing-refrigeration-upgrade",
       "source_version": "1.0.0-rc.2-perf.1",
+      "source_mod_name": "蘇清的冷藏升级",
       "personal_runtime_version": "1.0.0-rc.2-perf.1",
-      "source_form": "complete_mod_package",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "SuQingRefrigerationUpgrade_4221/42/mod.info",
       "mod_info": "mods/SuQingRefrigerationUpgrade_4221/42/mod.info",
+      "source_mod_info_sha256": "d5400063d3b989ea35b6ed7215ef2361dfe3e5282a3378f0cd711133c8f7ef1c",
       "require_raw": "",
+      "required_mods": [],
       "load_after_raw": "SuQingContainerUpgrade_4221,ExSuQingBackpackSuperUpgrade_4221,CleanUI,Neat_Crafting",
-      "workshop_item_id": "3832223788",
+      "load_after_mods": [
+        "SuQingContainerUpgrade_4221",
+        "ExSuQingBackpackSuperUpgrade_4221",
+        "CleanUI",
+        "Neat_Crafting"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "complete_mod_package",
       "publication_group": "independent_main_mod",
-      "publication_status": "public_unchanged_verified_2026-11-03_query",
-      "gameplay_validation": "Not comprehensively revalidated by this source/publication synchronization."
+      "workshop_item_id": "3832223788",
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "1.0.0-rc.2-perf.1",
+      "published_version": "1.0.0-rc.2-perf.1",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": false,
+      "native_upload_status": null,
+      "publication_evidence": [],
+      "published_version_basis": "Native version metadata, cross-checked with matching native receipts when present",
+      "publication_status": "published_source_version_matches",
+      "candidate": {
+        "selected": false,
+        "version": "1.0.0-rc.2-perf.1",
+        "status": "source_version_matches_public",
+        "package_verification": "Consult native verification evidence and frozen release receipt; no gameplay acceptance is inferred."
+      }
     },
     {
       "mod_id": "SuQingSprinklerFertilizer",
       "title_zh": "蘇清的灌溉养护模组",
       "title_en": "SuQing’s Irrigation Care Mod",
       "repository": "https://github.com/suching8848/suqing-sprinkler-fertilizer",
+      "repository_slug": "suqing-sprinkler-fertilizer",
       "source_version": "1.0.0",
+      "source_mod_name": "蘇清的灌溉养护模组",
       "personal_runtime_version": "0.3.2-rc.1",
-      "source_form": "complete_mod_package",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "SuQingSprinklerFertilizer/42/mod.info",
       "mod_info": "mods/SuQingSprinklerFertilizer/42/mod.info",
+      "source_mod_info_sha256": "be7fbf3fd82af1061d20c3b29a6a230a97f69faac2cecf1ec094ad7a877dc931",
       "require_raw": "Waterpipes",
+      "required_mods": [
+        "Waterpipes"
+      ],
       "load_after_raw": "Waterpipes",
-      "workshop_item_id": "3831881094",
+      "load_after_mods": [
+        "Waterpipes"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "complete_mod_package",
       "publication_group": "independent_main_mod",
-      "publication_status": "public_unchanged_verified_2026-11-03_query",
-      "gameplay_validation": "Not comprehensively revalidated by this source/publication synchronization."
+      "workshop_item_id": "3831881094",
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "1.0.0",
+      "published_version": "1.0.0",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": false,
+      "native_upload_status": null,
+      "publication_evidence": [],
+      "published_version_basis": "Native version metadata, cross-checked with matching native receipts when present",
+      "publication_status": "published_source_version_matches",
+      "candidate": {
+        "selected": false,
+        "version": "1.0.0",
+        "status": "source_version_matches_public",
+        "package_verification": "Consult native verification evidence and frozen release receipt; no gameplay acceptance is inferred."
+      }
     },
     {
       "mod_id": "SuQingMFSFixedBuyback_4221",
       "title_zh": "蘇清的枪械商店固定收购模组",
       "title_en": "SuQing’s MFS Fixed Buyback Mod",
       "repository": "https://github.com/suching8848/suqing-mfs-fixed-buyback",
+      "repository_slug": "suqing-mfs-fixed-buyback",
       "source_version": "1.1.0",
+      "source_mod_name": "蘇清的枪械商店固定收购",
       "personal_runtime_version": "1.1.0",
-      "source_form": "complete_mod_package",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "SuQingMFSFixedBuyback_4221/42/mod.info",
       "mod_info": "mod/SuQingMFSFixedBuyback_4221/42/mod.info",
+      "source_mod_info_sha256": "76c8e3991f713bba48683b0fcf2f0186fd20bebe03377239e71184b9399f4ee0",
       "require_raw": "ModernFirearmsSystem",
+      "required_mods": [
+        "ModernFirearmsSystem"
+      ],
       "load_after_raw": "ModernFirearmsSystem",
-      "workshop_item_id": "3832223597",
+      "load_after_mods": [
+        "ModernFirearmsSystem"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "complete_mod_package",
       "publication_group": "independent_main_mod",
-      "publication_status": "public_unchanged_verified_2026-11-03_query",
-      "gameplay_validation": "Not comprehensively revalidated by this source/publication synchronization."
+      "workshop_item_id": "3832223597",
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "1.1.0",
+      "published_version": "1.1.0",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": false,
+      "native_upload_status": null,
+      "publication_evidence": [],
+      "published_version_basis": "Native version metadata, cross-checked with matching native receipts when present",
+      "publication_status": "published_source_version_matches",
+      "candidate": {
+        "selected": false,
+        "version": "1.1.0",
+        "status": "source_version_matches_public",
+        "package_verification": "Consult native verification evidence and frozen release receipt; no gameplay acceptance is inferred."
+      }
     },
     {
       "mod_id": "SuQingContainerUpgradeAuto_4221",
       "title_zh": "蘇清的容器自动识别升级模组（实验版）",
       "title_en": "SuQing’s Automatic Container Upgrades Mod — Experimental",
       "repository": "https://github.com/suching8848/suqing-container-auto-upgrade",
+      "repository_slug": "suqing-container-auto-upgrade",
       "source_version": "0.1.0-test",
+      "source_mod_name": "蘇清的容器升级·自动识别测试版",
       "personal_runtime_version": "0.1.0-test",
-      "source_form": "complete_mod_package",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "SuQingContainerUpgradeAuto_4221/42/mod.info",
       "mod_info": "mods/SuQingContainerUpgradeAuto_4221/42/mod.info",
+      "source_mod_info_sha256": "31b76b424d43a92d0a9b03f9d3be9663e435fcbcf2154cb04a6522b481bc82cf",
       "require_raw": "",
+      "required_mods": [],
       "load_after_raw": "FantasyWorkshopVS42_4.0,4123567854998,TheyKnewContinued,BackpackSystemB42,SuPrimitiveEquipment,RaccoonCityB42,Neat_Crafting,CleanUI,Codex_InventoryTransferPerformance_4221",
-      "workshop_item_id": "3832223857",
+      "load_after_mods": [
+        "FantasyWorkshopVS42_4.0",
+        "4123567854998",
+        "TheyKnewContinued",
+        "BackpackSystemB42",
+        "SuPrimitiveEquipment",
+        "RaccoonCityB42",
+        "Neat_Crafting",
+        "CleanUI",
+        "Codex_InventoryTransferPerformance_4221"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "complete_mod_package",
       "publication_group": "independent_main_mod",
-      "publication_status": "public_unchanged_verified_2026-11-03_query",
-      "gameplay_validation": "Not comprehensively revalidated by this source/publication synchronization."
+      "workshop_item_id": "3832223857",
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "0.1.0-test",
+      "published_version": "0.1.0-test",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": false,
+      "native_upload_status": null,
+      "publication_evidence": [],
+      "published_version_basis": "Native version metadata, cross-checked with matching native receipts when present",
+      "publication_status": "published_source_version_matches",
+      "candidate": {
+        "selected": false,
+        "version": "0.1.0-test",
+        "status": "source_version_matches_public",
+        "package_verification": "Consult native verification evidence and frozen release receipt; no gameplay acceptance is inferred."
+      }
     },
     {
       "mod_id": "SuQingMusicCollections",
       "title_zh": "蘇清的音乐专辑",
       "title_en": "SuQing’s Music Albums",
       "repository": "https://github.com/suching8848/suqing-music-albums",
+      "repository_slug": "suqing-music-albums",
       "source_version": "1.1.0",
+      "source_mod_name": "蘇清的音乐专辑",
       "personal_runtime_version": "1.1.0",
-      "source_form": "complete_mod_package",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "SuQingMusicCollections/42/mod.info",
       "mod_info": "mods/SuQingMusicCollections/42/mod.info",
+      "source_mod_info_sha256": "b51cac223950ff4e86429947b7752dcb14a1b2eb576e249cd680188fa3cfb437",
       "require_raw": "truemusic",
+      "required_mods": [
+        "truemusic"
+      ],
       "load_after_raw": "truemusic,Codex_TrueMusic_Headphones_4221,GIRLS BAND CRY Music,Poppin'Party music b42,Anime music b42,Roselia Music",
-      "workshop_item_id": "3832881848",
+      "load_after_mods": [
+        "truemusic",
+        "Codex_TrueMusic_Headphones_4221",
+        "GIRLS BAND CRY Music",
+        "Poppin'Party music b42",
+        "Anime music b42",
+        "Roselia Music"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "complete_mod_package",
       "publication_group": "independent_main_mod",
-      "publication_status": "verified_public_2026-11-03_native_submit_and_query",
-      "gameplay_validation": "1.1.0 awaits in-game acceptance; offline checks and uploading do not establish gameplay or visual acceptance."
+      "workshop_item_id": "3832881848",
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "1.1.0",
+      "published_version": "1.1.0",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": false,
+      "native_upload_status": null,
+      "publication_evidence": [],
+      "published_version_basis": "Native version metadata, cross-checked with matching native receipts when present",
+      "publication_status": "published_source_version_matches",
+      "candidate": {
+        "selected": false,
+        "version": "1.1.0",
+        "status": "source_version_matches_public",
+        "package_verification": "Consult native verification evidence and frozen release receipt; no gameplay acceptance is inferred."
+      }
     },
     {
       "mod_id": "SuQingWeightTraining",
       "title_zh": "蘇清的负重训练",
       "title_en": "SuQing’s Weight Training",
       "repository": "https://github.com/suching8848/suqing-weight-training",
+      "repository_slug": "suqing-weight-training",
       "source_version": "0.3.2",
+      "source_mod_name": "蘇清的负重训练 | SuQing's Weight Training [SP]",
       "personal_runtime_version": "0.3.1",
-      "source_form": "complete_mod_package",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "SuQingWeightTraining/42/mod.info",
       "mod_info": "SuQingWeightTraining/42/mod.info",
+      "source_mod_info_sha256": "e6f6f403ee71012f5a51d77a8015431f8f519f2261fa3074c3d6157289a2a239",
       "require_raw": "",
+      "required_mods": [],
       "load_after_raw": "",
-      "workshop_item_id": "3832881857",
+      "load_after_mods": [],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "complete_mod_package",
       "publication_group": "independent_main_mod",
-      "publication_status": "verified_public_2026-11-03_native_submit_and_query",
-      "gameplay_validation": "Personal 0.3.1 reported normal by the user; source 0.3.2 adds release artwork and awaits in-game visual acceptance."
+      "workshop_item_id": "3832881857",
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "0.3.2",
+      "published_version": "0.3.2",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": false,
+      "native_upload_status": null,
+      "publication_evidence": [],
+      "published_version_basis": "Native version metadata, cross-checked with matching native receipts when present",
+      "publication_status": "published_source_version_matches",
+      "candidate": {
+        "selected": false,
+        "version": "0.3.2",
+        "status": "source_version_matches_public",
+        "package_verification": "Consult native verification evidence and frozen release receipt; no gameplay acceptance is inferred."
+      }
+    },
+    {
+      "mod_id": "SuQingFreshnessFridge",
+      "title_zh": "蘇清的返鲜冰箱",
+      "title_en": "SuQing's Freshness Fridge",
+      "repository": "https://github.com/suching8848/suqing-freshness-fridge",
+      "repository_slug": "suqing-freshness-fridge",
+      "source_version": "0.1.0-rc.2",
+      "source_mod_name": "SuQing's Freshness Fridge",
+      "personal_runtime_version": "0.1.0-rc.2",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "SuQingFreshnessFridge/42/mod.info",
+      "mod_info": "mods/SuQingFreshnessFridge/42/mod.info",
+      "source_mod_info_sha256": "1442ccd5fb3c0da6172472690bd468638f4b9de3a993b18f681a608bd034ea10",
+      "require_raw": "",
+      "required_mods": [],
+      "load_after_raw": "Viewpoint,SuQingRefrigerationUpgrade_4221,SuQingContainerUpgrade_4221,SuQingContainerUpgradeAuto_4221,ExSuQingBackpackSuperUpgrade_4221,CleanUI,Neat_Crafting",
+      "load_after_mods": [
+        "Viewpoint",
+        "SuQingRefrigerationUpgrade_4221",
+        "SuQingContainerUpgrade_4221",
+        "SuQingContainerUpgradeAuto_4221",
+        "ExSuQingBackpackSuperUpgrade_4221",
+        "CleanUI",
+        "Neat_Crafting"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "complete_mod_package",
+      "publication_group": "independent_main_mod",
+      "workshop_item_id": "3834692923",
+      "workshop_visibility": 2,
+      "workshop_visibility_name": "private",
+      "workshop_version": "0.1.0-rc.2",
+      "published_version": null,
+      "uploaded_private_version": "0.1.0-rc.2",
+      "currently_published": false,
+      "private_uploaded": true,
+      "native_verified": true,
+      "native_upload_status": "uploaded",
+      "publication_evidence": [
+        {
+          "stage": "upload",
+          "filename": "upload-20261106_220922_966389.json",
+          "sha256": "e39a2f0d1593c1e31672714396165e083e54c74d65b474ce09851f5376f65715"
+        },
+        {
+          "stage": "verify",
+          "filename": "verify-20261106_221235_438239.json",
+          "sha256": "662a59e15b748139b9a2fa61c5f0cfea4c904a36e4459da0d773fa643dcc05b0"
+        }
+      ],
+      "published_version_basis": "Native version metadata, cross-checked with matching native receipts when present",
+      "publication_status": "verified_private_candidate",
+      "candidate": {
+        "selected": true,
+        "version": "0.1.0-rc.2",
+        "status": "private_uploaded_candidate",
+        "package_verification": "Consult native verification evidence and frozen release receipt; no gameplay acceptance is inferred."
+      }
+    },
+    {
+      "mod_id": "SuQingFreshnessLunchbox",
+      "title_zh": "蘇清的返鲜餐盒",
+      "title_en": "SuQing's Freshness Lunchbox",
+      "repository": "https://github.com/suching8848/suqing-freshness-lunchbox",
+      "repository_slug": "suqing-freshness-lunchbox",
+      "source_version": "0.1.0-rc.5",
+      "source_mod_name": "SuQing's Freshness Lunchbox",
+      "personal_runtime_version": "0.1.0-rc.5",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "SuQingFreshnessLunchbox/42/mod.info",
+      "mod_info": "mods/SuQingFreshnessLunchbox/42/mod.info",
+      "source_mod_info_sha256": "033c10ef3d6cd4de9030f0961efe899908fa7c87b6b1976b337a47fe2c409180",
+      "require_raw": "",
+      "required_mods": [],
+      "load_after_raw": "SuQingFreshnessFridge,SuQingRefrigerationUpgrade_4221,SuQingContainerUpgrade_4221,CleanUI,Neat_Crafting",
+      "load_after_mods": [
+        "SuQingFreshnessFridge",
+        "SuQingRefrigerationUpgrade_4221",
+        "SuQingContainerUpgrade_4221",
+        "CleanUI",
+        "Neat_Crafting"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "complete_mod_package",
+      "publication_group": "independent_main_mod",
+      "workshop_item_id": "3834693433",
+      "workshop_visibility": 2,
+      "workshop_visibility_name": "private",
+      "workshop_version": "0.1.0-rc.5",
+      "published_version": null,
+      "uploaded_private_version": "0.1.0-rc.5",
+      "currently_published": false,
+      "private_uploaded": true,
+      "native_verified": true,
+      "native_upload_status": "uploaded",
+      "publication_evidence": [
+        {
+          "stage": "upload",
+          "filename": "upload-20261106_221032_684714.json",
+          "sha256": "c71dfeb13e27d53f8a121b47022634dbb057884ae97849d35bf432437e448e33"
+        },
+        {
+          "stage": "verify",
+          "filename": "verify-20261106_221236_482503.json",
+          "sha256": "962f9b0f328410dc81b63290bcedbf63006a9b214a1d6d805f362f29b3c59e35"
+        }
+      ],
+      "published_version_basis": "Native version metadata, cross-checked with matching native receipts when present",
+      "publication_status": "verified_private_candidate",
+      "candidate": {
+        "selected": true,
+        "version": "0.1.0-rc.5",
+        "status": "private_uploaded_candidate",
+        "package_verification": "Consult native verification evidence and frozen release receipt; no gameplay acceptance is inferred."
+      }
+    },
+    {
+      "mod_id": "SuQingSearchEnhancement",
+      "title_zh": "蘇清的搜索增强",
+      "title_en": "SuQing's Search Enhancement",
+      "repository": "https://github.com/suching8848/suqing-search-enhancement",
+      "repository_slug": "suqing-search-enhancement",
+      "source_version": "0.1.0",
+      "source_mod_name": "SuQing's Search Enhancement",
+      "personal_runtime_version": "0.1.0-rc.3",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "SuQingSearchEnhancement/42/mod.info",
+      "mod_info": "mods/SuQingSearchEnhancement/42/mod.info",
+      "source_mod_info_sha256": "7378abeecdf982ee1b375d1016de9b43c07401478d38cb9a0444923125de5259",
+      "require_raw": "",
+      "required_mods": [],
+      "load_after_raw": "CleanUI,yxjs_PinYinSearch,PinyinSearch_SafeSources_4221_LocalFix,ProximityInventory,SuQingUIInteractionFixes,Codex_InventoryTransferPerformance_4221",
+      "load_after_mods": [
+        "CleanUI",
+        "yxjs_PinYinSearch",
+        "PinyinSearch_SafeSources_4221_LocalFix",
+        "ProximityInventory",
+        "SuQingUIInteractionFixes",
+        "Codex_InventoryTransferPerformance_4221"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "complete_mod_package",
+      "publication_group": "independent_main_mod",
+      "workshop_item_id": "3834692575",
+      "workshop_visibility": 2,
+      "workshop_visibility_name": "private",
+      "workshop_version": "0.1.0",
+      "published_version": null,
+      "uploaded_private_version": "0.1.0",
+      "currently_published": false,
+      "private_uploaded": true,
+      "native_verified": true,
+      "native_upload_status": "uploaded",
+      "publication_evidence": [
+        {
+          "stage": "upload",
+          "filename": "upload-20261106_220838_945156.json",
+          "sha256": "aad2cba2a485da52fd3c5cb183a829c92aa07b9d42c17d458ca671b0d065a667"
+        },
+        {
+          "stage": "verify",
+          "filename": "verify-20261106_221234_306706.json",
+          "sha256": "bcb2c5e1df3c7b19b5c6ac07c30d047fffe6ff826b724d2d11afb376b06fc3d2"
+        }
+      ],
+      "published_version_basis": "Native version metadata, cross-checked with matching native receipts when present",
+      "publication_status": "verified_private_candidate",
+      "candidate": {
+        "selected": true,
+        "version": "0.1.0",
+        "status": "private_uploaded_candidate",
+        "package_verification": "Consult native verification evidence and frozen release receipt; no gameplay acceptance is inferred."
+      }
+    },
+    {
+      "mod_id": "SuQingPortals",
+      "title_zh": "蘇清的传送门",
+      "title_en": "SuQing's Portals",
+      "repository": "https://github.com/suching8848/suqing-portals",
+      "repository_slug": "suqing-portals",
+      "source_version": "0.1.3-lua-test.2",
+      "source_mod_name": "SuQing's Portals",
+      "personal_runtime_version": null,
+      "personal_installed": false,
+      "personal_mod_info_relative_to_mods": null,
+      "mod_info": "mods/SuQingPortals/42/mod.info",
+      "source_mod_info_sha256": "5700701fd9ba563b4c47b565eb65933099514c23efa8df1b0ac82a041b416ab5",
+      "require_raw": "",
+      "required_mods": [],
+      "load_after_raw": "Viewpoint",
+      "load_after_mods": [
+        "Viewpoint"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "complete_mod_package",
+      "publication_group": "independent_main_mod",
+      "workshop_item_id": "3834693880",
+      "workshop_visibility": 2,
+      "workshop_visibility_name": "private",
+      "workshop_version": "0.1.3-lua-test.2",
+      "published_version": null,
+      "uploaded_private_version": "0.1.3-lua-test.2",
+      "currently_published": false,
+      "private_uploaded": true,
+      "native_verified": true,
+      "native_upload_status": "uploaded",
+      "publication_evidence": [
+        {
+          "stage": "upload",
+          "filename": "upload-20261106_221123_843841.json",
+          "sha256": "0da49972b43e735f69e1d3ded2f221ae44d875e0da72d7a4395a4532aae5b57f"
+        },
+        {
+          "stage": "verify",
+          "filename": "verify-20261106_221237_407447.json",
+          "sha256": "dcae45687f5f56436f88ff36e1f8614db73800229ccad302d0e39a6181c1338b"
+        }
+      ],
+      "published_version_basis": "Native version metadata, cross-checked with matching native receipts when present",
+      "publication_status": "verified_private_candidate",
+      "candidate": {
+        "selected": true,
+        "version": "0.1.3-lua-test.2",
+        "status": "private_uploaded_candidate",
+        "package_verification": "Consult native verification evidence and frozen release receipt; no gameplay acceptance is inferred."
+      }
     },
     {
       "mod_id": "Codex_AmmoBox_CN_TextFix_4221",
       "title_zh": "蘇清的洗衣皂中文文本修复补丁",
       "title_en": "SuQing’s Washing Soap Chinese Text Fix Patch",
       "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
       "source_version": "1.2.0",
+      "source_mod_name": "[B42.21 CN] Washing Soap Text Fix",
       "personal_runtime_version": "1.2.0",
-      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "AmmoBox_CN_4221_LocalFix/42/mod.info",
       "mod_info": "src/AmmoBox_CN_4221_LocalFix/42/mod.info",
-      "documentation": "docs/patches/Codex_AmmoBox_CN_TextFix_4221.md",
+      "source_mod_info_sha256": "b4af3e30328df46ed309486c5f2fb7184fd7fae7383f3832cbe973f42d6fda36",
       "require_raw": "B42ModTrans_CN",
+      "required_mods": [
+        "B42ModTrans_CN"
+      ],
       "load_after_raw": "B42ModTrans_CN,GardeniaTranslate_CN",
+      "load_after_mods": [
+        "B42ModTrans_CN",
+        "GardeniaTranslate_CN"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/Codex_AmmoBox_CN_TextFix_4221.md",
       "publication_group": "optional_in_patch_collection",
       "workshop_item_id": "3832223928",
-      "publication_status": "verified_public_2026-11-03_native_submit_and_query",
-      "gameplay_validation": "Not comprehensively revalidated by this source/publication synchronization."
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "1.2.0",
+      "published_version": "1.2.0",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": true,
+      "native_upload_status": "uploaded",
+      "publication_evidence": [
+        {
+          "stage": "upload",
+          "filename": "upload-20261106_221254_268969.json",
+          "sha256": "0d623188e17294d8066ba45d12ce2992cfa71cd2b6c920abb2e741987a4cb3e1"
+        },
+        {
+          "stage": "verify",
+          "filename": "verify-20261106_221328_994041.json",
+          "sha256": "2c958b3e1c79b0528d69b0077dd1aba6a0cfcd9c3c59b258bc74bcc7903a8f46"
+        }
+      ],
+      "published_version_basis": "Matching native upload/verify plus final owner metadata; no remote per-file download",
+      "publication_status": "verified_public_current",
+      "candidate": {
+        "selected": true,
+        "version": "1.2.0",
+        "collection_version": "2026.11.06-32-candidate",
+        "status": "matches_verified_public_payload",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
     },
     {
       "mod_id": "Codex_AttachedGrouping_4221",
       "title_zh": "蘇清的挂点物品分组与穿戴菜单修复补丁",
       "title_en": "SuQing’s Attached Item Grouping and Wear Menu Fix Patch",
       "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
       "source_version": "1.0.0",
+      "source_mod_name": "[B42.21] Attached Item Grouping and Wear Menu Fix (Local)",
       "personal_runtime_version": "1.0.0",
-      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "AttachedGrouping_4221_LocalFix/42/mod.info",
       "mod_info": "src/AttachedGrouping_4221_LocalFix/42/mod.info",
-      "documentation": "docs/patches/Codex_AttachedGrouping_4221.md",
+      "source_mod_info_sha256": "3703bb48dc85ea490ae20c072e481bfb2690f633befda4519ef4346993344a43",
       "require_raw": "CleanUI",
+      "required_mods": [
+        "CleanUI"
+      ],
       "load_after_raw": "CleanUI,CleanHotBar,REORDER_THE_HOTBAR,noirrslingMutiple,noirrsling4-42.13patch,NeatUI_Equipment",
+      "load_after_mods": [
+        "CleanUI",
+        "CleanHotBar",
+        "REORDER_THE_HOTBAR",
+        "noirrslingMutiple",
+        "noirrsling4-42.13patch",
+        "NeatUI_Equipment"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/Codex_AttachedGrouping_4221.md",
       "publication_group": "optional_in_patch_collection",
       "workshop_item_id": "3832223928",
-      "publication_status": "verified_public_2026-11-03_native_submit_and_query",
-      "gameplay_validation": "Not comprehensively revalidated by this source/publication synchronization."
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "1.0.0",
+      "published_version": "1.0.0",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": true,
+      "native_upload_status": "uploaded",
+      "publication_evidence": [
+        {
+          "stage": "upload",
+          "filename": "upload-20261106_221254_268969.json",
+          "sha256": "0d623188e17294d8066ba45d12ce2992cfa71cd2b6c920abb2e741987a4cb3e1"
+        },
+        {
+          "stage": "verify",
+          "filename": "verify-20261106_221328_994041.json",
+          "sha256": "2c958b3e1c79b0528d69b0077dd1aba6a0cfcd9c3c59b258bc74bcc7903a8f46"
+        }
+      ],
+      "published_version_basis": "Matching native upload/verify plus final owner metadata; no remote per-file download",
+      "publication_status": "verified_public_current",
+      "candidate": {
+        "selected": true,
+        "version": "1.0.0",
+        "collection_version": "2026.11.06-32-candidate",
+        "status": "matches_verified_public_payload",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
     },
     {
       "mod_id": "Codex_Campers_Glovebox_4221",
       "title_zh": "蘇清的房车手套箱容器兼容补丁",
       "title_en": "SuQing’s Campers Glovebox Compatibility Patch",
       "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
       "source_version": "1.0.0",
+      "source_mod_name": "[B42.21] Campers Glovebox Container Compatibility",
       "personal_runtime_version": "1.0.0",
-      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "Campers_Glovebox_4221_LocalFix/42.21/mod.info",
       "mod_info": "src/Campers_Glovebox_4221_LocalFix/42.21/mod.info",
-      "documentation": "docs/patches/Codex_Campers_Glovebox_4221.md",
+      "source_mod_info_sha256": "6ce5b8b53adb6f644e9d44d23a4f6574226f472bc8eba667d1f2ba1a6199abce",
       "require_raw": "\\KI5campers",
+      "required_mods": [
+        "KI5campers"
+      ],
       "load_after_raw": "KI5campers",
+      "load_after_mods": [
+        "KI5campers"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/Codex_Campers_Glovebox_4221.md",
       "publication_group": "held_upstream_payload",
       "workshop_item_id": null,
-      "publication_status": "held_for_upstream_payload_review",
-      "gameplay_validation": "Not comprehensively revalidated by this source/publication synchronization."
+      "workshop_visibility": null,
+      "workshop_version": null,
+      "published_version": null,
+      "uploaded_private_version": null,
+      "currently_published": false,
+      "private_uploaded": false,
+      "native_verified": false,
+      "publication_status": "held_pending_upstream_redistribution_review",
+      "publication_evidence": [],
+      "published_version_basis": null,
+      "candidate": {
+        "selected": false,
+        "version": null,
+        "collection_version": null,
+        "status": "held_or_separate_EX_distribution",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
     },
     {
       "mod_id": "Codex_ChineseCrop_Tooltip_4221",
       "title_zh": "蘇清的中华菜与N&C种子提示兼容补丁",
       "title_en": "SuQing’s Chinese Cuisine and N&C Seed Tooltips Patch",
       "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
       "source_version": "1.1",
+      "source_mod_name": "Chinese Crop Season Tooltip B42.21 (Local)",
       "personal_runtime_version": "1.1",
-      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "ChineseCrop_Tooltip_4221_LocalFix/42/mod.info",
       "mod_info": "src/ChineseCrop_Tooltip_4221_LocalFix/42/mod.info",
-      "documentation": "docs/patches/Codex_ChineseCrop_Tooltip_4221.md",
+      "source_mod_info_sha256": "d19c22e0eed39301308bb3053d272fe92a64cdc9b561cb8e82fa9c94c825f5c2",
       "require_raw": "Chinesecuisine4213,MoreItemInformation",
+      "required_mods": [
+        "Chinesecuisine4213",
+        "MoreItemInformation"
+      ],
       "load_after_raw": "Chinesecuisine4213,MoreItemInformation,CleanUI,B42ModTrans_CN,GardeniaTranslate_CN",
+      "load_after_mods": [
+        "Chinesecuisine4213",
+        "MoreItemInformation",
+        "CleanUI",
+        "B42ModTrans_CN",
+        "GardeniaTranslate_CN"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/Codex_ChineseCrop_Tooltip_4221.md",
       "publication_group": "optional_in_patch_collection",
       "workshop_item_id": "3832223928",
-      "publication_status": "verified_public_2026-11-03_native_submit_and_query",
-      "gameplay_validation": "Not comprehensively revalidated by this source/publication synchronization."
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "1.1",
+      "published_version": "1.1",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": true,
+      "native_upload_status": "uploaded",
+      "publication_evidence": [
+        {
+          "stage": "upload",
+          "filename": "upload-20261106_221254_268969.json",
+          "sha256": "0d623188e17294d8066ba45d12ce2992cfa71cd2b6c920abb2e741987a4cb3e1"
+        },
+        {
+          "stage": "verify",
+          "filename": "verify-20261106_221328_994041.json",
+          "sha256": "2c958b3e1c79b0528d69b0077dd1aba6a0cfcd9c3c59b258bc74bcc7903a8f46"
+        }
+      ],
+      "published_version_basis": "Matching native upload/verify plus final owner metadata; no remote per-file download",
+      "publication_status": "verified_public_current",
+      "candidate": {
+        "selected": true,
+        "version": "1.1",
+        "collection_version": "2026.11.06-32-candidate",
+        "status": "matches_verified_public_payload",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
     },
     {
       "mod_id": "Codex_FashionoidFluidTooltip_4221",
       "title_zh": "蘇清的Fashionoid储液提示兼容补丁",
       "title_en": "SuQing’s Fashionoid Fluid Tooltip Compatibility Patch",
       "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
       "source_version": "1.0.0",
+      "source_mod_name": "[B42.21] Fashionoid Fluid Tooltip Compatibility (Local)",
       "personal_runtime_version": "1.0.0",
-      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "Codex_FashionoidFluidTooltip_4221/42/mod.info",
       "mod_info": "src/Codex_FashionoidFluidTooltip_4221/42/mod.info",
-      "documentation": "docs/patches/Codex_FashionoidFluidTooltip_4221.md",
+      "source_mod_info_sha256": "e30a7b9b37c109fba4eb36a5697813722d79f02d70bbe756858fe4d7995cd963",
       "require_raw": "Fashionoid42",
+      "required_mods": [
+        "Fashionoid42"
+      ],
       "load_after_raw": "Fashionoid42",
+      "load_after_mods": [
+        "Fashionoid42"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/Codex_FashionoidFluidTooltip_4221.md",
       "publication_group": "optional_in_patch_collection",
       "workshop_item_id": "3832223928",
-      "publication_status": "verified_public_2026-11-03_native_submit_and_query",
-      "gameplay_validation": "Not comprehensively revalidated by this source/publication synchronization."
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "1.0.0",
+      "published_version": "1.0.0",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": true,
+      "native_upload_status": "uploaded",
+      "publication_evidence": [
+        {
+          "stage": "upload",
+          "filename": "upload-20261106_221254_268969.json",
+          "sha256": "0d623188e17294d8066ba45d12ce2992cfa71cd2b6c920abb2e741987a4cb3e1"
+        },
+        {
+          "stage": "verify",
+          "filename": "verify-20261106_221328_994041.json",
+          "sha256": "2c958b3e1c79b0528d69b0077dd1aba6a0cfcd9c3c59b258bc74bcc7903a8f46"
+        }
+      ],
+      "published_version_basis": "Matching native upload/verify plus final owner metadata; no remote per-file download",
+      "publication_status": "verified_public_current",
+      "candidate": {
+        "selected": true,
+        "version": "1.0.0",
+        "collection_version": "2026.11.06-32-candidate",
+        "status": "matches_verified_public_payload",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
     },
     {
       "mod_id": "Codex_MFSOpticsFix_4221",
       "title_zh": "蘇清的MFS瞄具标签修复补丁",
       "title_en": "SuQing’s MFS Optics Tag Fix Patch",
       "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
       "source_version": "1.0.0",
+      "source_mod_name": "[B42.21] MFS optics tag compatibility fix (Local)",
       "personal_runtime_version": "1.0.0",
-      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "Codex_MFSOpticsFix_4221/42/mod.info",
       "mod_info": "src/Codex_MFSOpticsFix_4221/42/mod.info",
-      "documentation": "docs/patches/Codex_MFSOpticsFix_4221.md",
+      "source_mod_info_sha256": "e7151352eb6bb8c9f82a19f5bf95cdf13cf75cd62415fae9cc2b742614432c95",
       "require_raw": "ModernFirearmsSystem",
+      "required_mods": [
+        "ModernFirearmsSystem"
+      ],
       "load_after_raw": "ModernFirearmsSystem",
+      "load_after_mods": [
+        "ModernFirearmsSystem"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/Codex_MFSOpticsFix_4221.md",
       "publication_group": "optional_in_patch_collection",
       "workshop_item_id": "3832223928",
-      "publication_status": "verified_public_2026-11-03_native_submit_and_query",
-      "gameplay_validation": "Not comprehensively revalidated by this source/publication synchronization."
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "1.0.0",
+      "published_version": "1.0.0",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": true,
+      "native_upload_status": "uploaded",
+      "publication_evidence": [
+        {
+          "stage": "upload",
+          "filename": "upload-20261106_221254_268969.json",
+          "sha256": "0d623188e17294d8066ba45d12ce2992cfa71cd2b6c920abb2e741987a4cb3e1"
+        },
+        {
+          "stage": "verify",
+          "filename": "verify-20261106_221328_994041.json",
+          "sha256": "2c958b3e1c79b0528d69b0077dd1aba6a0cfcd9c3c59b258bc74bcc7903a8f46"
+        }
+      ],
+      "published_version_basis": "Matching native upload/verify plus final owner metadata; no remote per-file download",
+      "publication_status": "verified_public_current",
+      "candidate": {
+        "selected": true,
+        "version": "1.0.0",
+        "collection_version": "2026.11.06-32-candidate",
+        "status": "matches_verified_public_payload",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
     },
     {
       "mod_id": "Codex_MustangRecipeGuard_4221",
       "title_zh": "蘇清的Mustang引擎盖配方输入保护补丁",
       "title_en": "SuQing’s Mustang Hood Recipe Guard Patch",
       "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
       "source_version": "1.0.0",
+      "source_mod_name": "[B42.21 SP] Mustang Hood Recipe Compatibility (Local)",
       "personal_runtime_version": "1.0.0",
-      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "Codex_MustangRecipeGuard_4221/42/mod.info",
       "mod_info": "src/Codex_MustangRecipeGuard_4221/42/mod.info",
-      "documentation": "docs/patches/Codex_MustangRecipeGuard_4221.md",
+      "source_mod_info_sha256": "31974d10823b0d340ca0a0623263cc9fab3c8d1971c70c73db27cb26ea91dfd2",
       "require_raw": "ATA_Mustang",
+      "required_mods": [
+        "ATA_Mustang"
+      ],
       "load_after_raw": "ATA_Mustang",
+      "load_after_mods": [
+        "ATA_Mustang"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/Codex_MustangRecipeGuard_4221.md",
       "publication_group": "optional_in_patch_collection",
       "workshop_item_id": "3832223928",
-      "publication_status": "verified_public_2026-11-03_native_submit_and_query",
-      "gameplay_validation": "Not comprehensively revalidated by this source/publication synchronization."
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "1.0.0",
+      "published_version": "1.0.0",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": true,
+      "native_upload_status": "uploaded",
+      "publication_evidence": [
+        {
+          "stage": "upload",
+          "filename": "upload-20261106_221254_268969.json",
+          "sha256": "0d623188e17294d8066ba45d12ce2992cfa71cd2b6c920abb2e741987a4cb3e1"
+        },
+        {
+          "stage": "verify",
+          "filename": "verify-20261106_221328_994041.json",
+          "sha256": "2c958b3e1c79b0528d69b0077dd1aba6a0cfcd9c3c59b258bc74bcc7903a8f46"
+        }
+      ],
+      "published_version_basis": "Matching native upload/verify plus final owner metadata; no remote per-file download",
+      "publication_status": "verified_public_current",
+      "candidate": {
+        "selected": true,
+        "version": "1.0.0",
+        "collection_version": "2026.11.06-32-candidate",
+        "status": "matches_verified_public_payload",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
     },
     {
       "mod_id": "Codex_NarcoticsStatus_4221",
       "title_zh": "蘇清的N&C药物状态面板补丁",
       "title_en": "SuQing’s N&C Drug Status Panel Patch",
       "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
       "source_version": "1.0.0",
+      "source_mod_name": "N&C 药物状态面板 [B42.21]",
       "personal_runtime_version": "1.0.0",
-      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "Codex_NarcoticsStatus_4221/42/mod.info",
       "mod_info": "src/Codex_NarcoticsStatus_4221/42/mod.info",
-      "documentation": "docs/patches/Codex_NarcoticsStatus_4221.md",
+      "source_mod_info_sha256": "f494577eb816a48301877f60f37bc9235159d445013e2197758e3c15682db41c",
       "require_raw": "\\N&CsNarcotics",
+      "required_mods": [
+        "N&CsNarcotics"
+      ],
       "load_after_raw": "N&CsNarcotics,CodexNarcotics_CN_4221",
+      "load_after_mods": [
+        "N&CsNarcotics",
+        "CodexNarcotics_CN_4221"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/Codex_NarcoticsStatus_4221.md",
       "publication_group": "optional_in_patch_collection",
       "workshop_item_id": "3832223928",
-      "publication_status": "verified_public_2026-11-03_native_submit_and_query",
-      "gameplay_validation": "Not comprehensively revalidated by this source/publication synchronization."
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "1.0.0",
+      "published_version": "1.0.0",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": true,
+      "native_upload_status": "uploaded",
+      "publication_evidence": [
+        {
+          "stage": "upload",
+          "filename": "upload-20261106_221254_268969.json",
+          "sha256": "0d623188e17294d8066ba45d12ce2992cfa71cd2b6c920abb2e741987a4cb3e1"
+        },
+        {
+          "stage": "verify",
+          "filename": "verify-20261106_221328_994041.json",
+          "sha256": "2c958b3e1c79b0528d69b0077dd1aba6a0cfcd9c3c59b258bc74bcc7903a8f46"
+        }
+      ],
+      "published_version_basis": "Matching native upload/verify plus final owner metadata; no remote per-file download",
+      "publication_status": "verified_public_current",
+      "candidate": {
+        "selected": true,
+        "version": "1.0.0",
+        "collection_version": "2026.11.06-32-candidate",
+        "status": "matches_verified_public_payload",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
     },
     {
       "mod_id": "Codex_StimCompatibility_4221",
       "title_zh": "蘇清的针剂减重与肾上腺素笔兼容补丁",
       "title_en": "SuQing’s Stim Weight and Adrenapen Compatibility Patch",
       "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
       "source_version": "1.0.1",
+      "source_mod_name": "针剂轻量化与肾上腺素笔兼容 [B42.21]",
       "personal_runtime_version": "1.0.1",
-      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "Codex_StimCompatibility_4221/42/mod.info",
       "mod_info": "src/Codex_StimCompatibility_4221/42/mod.info",
-      "documentation": "docs/patches/Codex_StimCompatibility_4221.md",
+      "source_mod_info_sha256": "b63f72418082da3bbbd1725f1f7a4be6248f0e72a42ef36c478d22c11064a8e2",
       "require_raw": "TarkovCombatStims,AdrenalineShot",
+      "required_mods": [
+        "TarkovCombatStims",
+        "AdrenalineShot"
+      ],
       "load_after_raw": "TarkovCombatStims,AdrenalineShot,Codex_SuQingWearableCompat_4221",
+      "load_after_mods": [
+        "TarkovCombatStims",
+        "AdrenalineShot",
+        "Codex_SuQingWearableCompat_4221"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/Codex_StimCompatibility_4221.md",
       "publication_group": "held_upstream_payload",
       "workshop_item_id": null,
-      "publication_status": "held_for_upstream_payload_review",
-      "gameplay_validation": "Not comprehensively revalidated by this source/publication synchronization."
+      "workshop_visibility": null,
+      "workshop_version": null,
+      "published_version": null,
+      "uploaded_private_version": null,
+      "currently_published": false,
+      "private_uploaded": false,
+      "native_verified": false,
+      "publication_status": "held_pending_upstream_redistribution_review",
+      "publication_evidence": [],
+      "published_version_basis": null,
+      "candidate": {
+        "selected": false,
+        "version": null,
+        "collection_version": null,
+        "status": "held_or_separate_EX_distribution",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
     },
     {
       "mod_id": "Codex_SuQingWearableCompat_4221",
       "title_zh": "蘇清的旧普通容器桥接与HavenFall EX兼容补丁",
       "title_en": "SuQing’s Legacy Container Bridge and HavenFall EX Compatibility Patch",
       "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
       "source_version": "1.0.0",
+      "source_mod_name": "蘇清容器升级：针剂盒与新增衣物兼容 [B42.21]",
       "personal_runtime_version": "1.0.0",
-      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "Codex_SuQingWearableCompat_4221/42/mod.info",
       "mod_info": "src/Codex_SuQingWearableCompat_4221/42/mod.info",
-      "documentation": "docs/patches/Codex_SuQingWearableCompat_4221.md",
+      "source_mod_info_sha256": "28dac48d5b0715e3d2f0ff27dad8b8103063166b91bc2b20a97dd9b7cad53cac",
       "require_raw": "SuQingContainerUpgrade_4221,ExSuQingBackpackSuperUpgrade_4221,HavenFall",
+      "required_mods": [
+        "SuQingContainerUpgrade_4221",
+        "ExSuQingBackpackSuperUpgrade_4221",
+        "HavenFall"
+      ],
       "load_after_raw": "SuQingContainerUpgrade_4221,TarkovCombatStims,CodexCBRTIndependent_4221,ExSuQingBackpackSuperUpgrade_4221,CodexNekomataEXCompat_4221,CodexNekomataEXUpgrade_4221,HavenFall",
+      "load_after_mods": [
+        "SuQingContainerUpgrade_4221",
+        "TarkovCombatStims",
+        "CodexCBRTIndependent_4221",
+        "ExSuQingBackpackSuperUpgrade_4221",
+        "CodexNekomataEXCompat_4221",
+        "CodexNekomataEXUpgrade_4221",
+        "HavenFall"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/Codex_SuQingWearableCompat_4221.md",
       "publication_group": "optional_companion_in_EX_package",
       "workshop_item_id": "3832223700",
-      "publication_status": "public_unchanged_verified_2026-11-03_query",
-      "gameplay_validation": "Not comprehensively revalidated by this source/publication synchronization."
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "1.0.0",
+      "published_version": "1.0.0",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": false,
+      "native_upload_status": null,
+      "publication_evidence": [],
+      "published_version_basis": "Preserved EX payload with unchanged parent version",
+      "publication_status": "published_in_EX_package",
+      "candidate": {
+        "selected": false,
+        "version": null,
+        "collection_version": null,
+        "status": "matches_verified_public_payload",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
     },
     {
       "mod_id": "Codex_XFDynamicRecordGuard_4221",
       "title_zh": "蘇清的XFACTION进度记录保护补丁",
       "title_en": "SuQing’s XFACTION Progress Record Guard Patch",
       "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
       "source_version": "1.0.0",
+      "source_mod_name": "[B42.21 SP] XFACTION Progress Record Guard (Local)",
       "personal_runtime_version": "1.0.0",
-      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "Codex_XFDynamicRecordGuard_4221/42/mod.info",
       "mod_info": "src/Codex_XFDynamicRecordGuard_4221/42/mod.info",
-      "documentation": "docs/patches/Codex_XFDynamicRecordGuard_4221.md",
+      "source_mod_info_sha256": "4b70b21511dc29e7f676c739197c85fe19222aa922636f70584614961302a12c",
       "require_raw": "XFACTION_DynamicTraits",
+      "required_mods": [
+        "XFACTION_DynamicTraits"
+      ],
       "load_after_raw": "XFACTION_DynamicTraits",
+      "load_after_mods": [
+        "XFACTION_DynamicTraits"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/Codex_XFDynamicRecordGuard_4221.md",
       "publication_group": "optional_in_patch_collection",
       "workshop_item_id": "3832223928",
-      "publication_status": "verified_public_2026-11-03_native_submit_and_query",
-      "gameplay_validation": "Not comprehensively revalidated by this source/publication synchronization."
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "1.0.0",
+      "published_version": "1.0.0",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": true,
+      "native_upload_status": "uploaded",
+      "publication_evidence": [
+        {
+          "stage": "upload",
+          "filename": "upload-20261106_221254_268969.json",
+          "sha256": "0d623188e17294d8066ba45d12ce2992cfa71cd2b6c920abb2e741987a4cb3e1"
+        },
+        {
+          "stage": "verify",
+          "filename": "verify-20261106_221328_994041.json",
+          "sha256": "2c958b3e1c79b0528d69b0077dd1aba6a0cfcd9c3c59b258bc74bcc7903a8f46"
+        }
+      ],
+      "published_version_basis": "Matching native upload/verify plus final owner metadata; no remote per-file download",
+      "publication_status": "verified_public_current",
+      "candidate": {
+        "selected": true,
+        "version": "1.0.0",
+        "collection_version": "2026.11.06-32-candidate",
+        "status": "matches_verified_public_payload",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
     },
     {
       "mod_id": "CodexCBRTIndependent_4221",
       "title_zh": "蘇清的Chemical独立兼容构建补丁",
       "title_en": "SuQing’s Chemical Independent Compatibility Build Patch",
       "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
       "source_version": "1.0.0-local",
+      "source_mod_name": "Chemical 独立兼容版 [42.21]",
       "personal_runtime_version": "1.0.0-local",
-      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "CodexCBRTIndependent_4221/42/mod.info",
       "mod_info": "src/CodexCBRTIndependent_4221/42/mod.info",
-      "documentation": "docs/patches/CodexCBRTIndependent_4221.md",
+      "source_mod_info_sha256": "eaf1f1960f780f8aebef029dd49514f06d79842ac6c4fe86e53e23c919cace47",
       "require_raw": "",
+      "required_mods": [],
       "load_after_raw": "",
+      "load_after_mods": [],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/CodexCBRTIndependent_4221.md",
       "publication_group": "held_upstream_payload",
       "workshop_item_id": null,
-      "publication_status": "held_for_upstream_payload_review",
-      "gameplay_validation": "Not comprehensively revalidated by this source/publication synchronization."
+      "workshop_visibility": null,
+      "workshop_version": null,
+      "published_version": null,
+      "uploaded_private_version": null,
+      "currently_published": false,
+      "private_uploaded": false,
+      "native_verified": false,
+      "publication_status": "held_pending_upstream_redistribution_review",
+      "publication_evidence": [],
+      "published_version_basis": null,
+      "candidate": {
+        "selected": false,
+        "version": null,
+        "collection_version": null,
+        "status": "held_or_separate_EX_distribution",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
     },
     {
       "mod_id": "CodexCharacterMenuTweaks_4221",
       "title_zh": "蘇清的人物菜单调整补丁",
       "title_en": "SuQing’s Character Menu Tweaks Patch",
       "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
       "source_version": "1.0.0",
+      "source_mod_name": "[B42.21] Character Menu Tweaks",
       "personal_runtime_version": "1.0.0",
-      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "CodexCharacterMenuTweaks_4221/42/mod.info",
       "mod_info": "src/CodexCharacterMenuTweaks_4221/42/mod.info",
-      "documentation": "docs/patches/CodexCharacterMenuTweaks_4221.md",
+      "source_mod_info_sha256": "a704cf60044f5b31e2938082eeb2b0b0f7cd9d30b08e73035fdb78593b980dcf",
       "require_raw": "XFACTION_DynamicTraits,CodexXFACTION_CN_4221",
+      "required_mods": [
+        "XFACTION_DynamicTraits",
+        "CodexXFACTION_CN_4221"
+      ],
       "load_after_raw": "XFACTION_DynamicTraits,CodexXFACTION_CN_4221,Fashionoid42,RaccoonCityB42,BuildingCraftRaccoonCity",
+      "load_after_mods": [
+        "XFACTION_DynamicTraits",
+        "CodexXFACTION_CN_4221",
+        "Fashionoid42",
+        "RaccoonCityB42",
+        "BuildingCraftRaccoonCity"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/CodexCharacterMenuTweaks_4221.md",
       "publication_group": "optional_in_patch_collection",
       "workshop_item_id": "3832223928",
-      "publication_status": "verified_public_2026-11-03_native_submit_and_query",
-      "gameplay_validation": "Not comprehensively revalidated by this source/publication synchronization."
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "1.0.0",
+      "published_version": "1.0.0",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": true,
+      "native_upload_status": "uploaded",
+      "publication_evidence": [
+        {
+          "stage": "upload",
+          "filename": "upload-20261106_221254_268969.json",
+          "sha256": "0d623188e17294d8066ba45d12ce2992cfa71cd2b6c920abb2e741987a4cb3e1"
+        },
+        {
+          "stage": "verify",
+          "filename": "verify-20261106_221328_994041.json",
+          "sha256": "2c958b3e1c79b0528d69b0077dd1aba6a0cfcd9c3c59b258bc74bcc7903a8f46"
+        }
+      ],
+      "published_version_basis": "Matching native upload/verify plus final owner metadata; no remote per-file download",
+      "publication_status": "verified_public_current",
+      "candidate": {
+        "selected": true,
+        "version": "1.0.0",
+        "collection_version": "2026.11.06-32-candidate",
+        "status": "matches_verified_public_payload",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
     },
     {
       "mod_id": "CodexNarcotics_CN_4221",
       "title_zh": "蘇清的N&C中文补丁",
       "title_en": "SuQing’s N&C Chinese Translation Patch",
       "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
       "source_version": "1.0.0",
+      "source_mod_name": "N&C's Narcotics 中文补丁 [B42.21]",
       "personal_runtime_version": "1.0.0",
-      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "CodexNarcotics_CN_4221/42/mod.info",
       "mod_info": "src/CodexNarcotics_CN_4221/42/mod.info",
-      "documentation": "docs/patches/CodexNarcotics_CN_4221.md",
+      "source_mod_info_sha256": "ae92dceced671410d789868dfbdd1f01a15599271f05b5d76774aa684f004a18",
       "require_raw": "\\N&CsNarcotics",
+      "required_mods": [
+        "N&CsNarcotics"
+      ],
       "load_after_raw": "N&CsNarcotics,B42ModTrans_CN,GardeniaTranslate_CN",
+      "load_after_mods": [
+        "N&CsNarcotics",
+        "B42ModTrans_CN",
+        "GardeniaTranslate_CN"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/CodexNarcotics_CN_4221.md",
       "publication_group": "optional_in_patch_collection",
       "workshop_item_id": "3832223928",
-      "publication_status": "verified_public_2026-11-03_native_submit_and_query",
-      "gameplay_validation": "Not comprehensively revalidated by this source/publication synchronization."
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "1.0.0",
+      "published_version": "1.0.0",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": true,
+      "native_upload_status": "uploaded",
+      "publication_evidence": [
+        {
+          "stage": "upload",
+          "filename": "upload-20261106_221254_268969.json",
+          "sha256": "0d623188e17294d8066ba45d12ce2992cfa71cd2b6c920abb2e741987a4cb3e1"
+        },
+        {
+          "stage": "verify",
+          "filename": "verify-20261106_221328_994041.json",
+          "sha256": "2c958b3e1c79b0528d69b0077dd1aba6a0cfcd9c3c59b258bc74bcc7903a8f46"
+        }
+      ],
+      "published_version_basis": "Matching native upload/verify plus final owner metadata; no remote per-file download",
+      "publication_status": "verified_public_current",
+      "candidate": {
+        "selected": true,
+        "version": "1.0.0",
+        "collection_version": "2026.11.06-32-candidate",
+        "status": "matches_verified_public_payload",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
     },
     {
       "mod_id": "CodexNekomataEXCompat_4221",
       "title_zh": "蘇清的猫又岭与EX兼容桥接补丁",
       "title_en": "SuQing’s Nekomata Ridge and EX Compatibility Patch",
       "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
       "source_version": "1.0.0",
+      "source_mod_name": "猫又岭与蘇清背包超级升级兼容",
       "personal_runtime_version": "1.0.0",
-      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "CodexNekomataEXCompat_4221/42/mod.info",
       "mod_info": "src/CodexNekomataEXCompat_4221/42/mod.info",
-      "documentation": "docs/patches/CodexNekomataEXCompat_4221.md",
+      "source_mod_info_sha256": "9901bd7a21d49bd4b90e7c50f9bbc05e795154389f48ca5764e7388e1b81255f",
       "require_raw": "\\Nekomata Ridge,ExSuQingBackpackSuperUpgrade_4221",
+      "required_mods": [
+        "Nekomata Ridge",
+        "ExSuQingBackpackSuperUpgrade_4221"
+      ],
       "load_after_raw": "Nekomata Ridge,ExSuQingBackpackSuperUpgrade_4221",
+      "load_after_mods": [
+        "Nekomata Ridge",
+        "ExSuQingBackpackSuperUpgrade_4221"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/CodexNekomataEXCompat_4221.md",
       "publication_group": "optional_companion_in_EX_package",
       "workshop_item_id": "3832223700",
-      "publication_status": "public_unchanged_verified_2026-11-03_query",
-      "gameplay_validation": "Not comprehensively revalidated by this source/publication synchronization."
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "1.0.0",
+      "published_version": "1.0.0",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": false,
+      "native_upload_status": null,
+      "publication_evidence": [],
+      "published_version_basis": "Preserved EX payload with unchanged parent version",
+      "publication_status": "published_in_EX_package",
+      "candidate": {
+        "selected": false,
+        "version": null,
+        "collection_version": null,
+        "status": "matches_verified_public_payload",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
     },
     {
       "mod_id": "CodexNekomataEXUpgrade_4221",
       "title_zh": "蘇清的猫猫背包EX升级扩展补丁",
       "title_en": "SuQing’s Nekomata Backpack EX Upgrade Extension Patch",
       "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
       "source_version": "1.0.0",
+      "source_mod_name": "猫猫背包蘇清超级升级扩展",
       "personal_runtime_version": "1.0.0",
-      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "CodexNekomataEXUpgrade_4221/42/mod.info",
       "mod_info": "src/CodexNekomataEXUpgrade_4221/42/mod.info",
-      "documentation": "docs/patches/CodexNekomataEXUpgrade_4221.md",
+      "source_mod_info_sha256": "f683b746493d19958822468d25fa2a33f190398a834464863468799b74b978b3",
       "require_raw": "\\CodexNekomataEXCompat_4221,Nekomata Ridge,ExSuQingBackpackSuperUpgrade_4221",
+      "required_mods": [
+        "CodexNekomataEXCompat_4221",
+        "Nekomata Ridge",
+        "ExSuQingBackpackSuperUpgrade_4221"
+      ],
       "load_after_raw": "CodexNekomataEXCompat_4221,Nekomata Ridge,ExSuQingBackpackSuperUpgrade_4221",
+      "load_after_mods": [
+        "CodexNekomataEXCompat_4221",
+        "Nekomata Ridge",
+        "ExSuQingBackpackSuperUpgrade_4221"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/CodexNekomataEXUpgrade_4221.md",
       "publication_group": "optional_companion_in_EX_package",
       "workshop_item_id": "3832223700",
-      "publication_status": "public_unchanged_verified_2026-11-03_query",
-      "gameplay_validation": "Not comprehensively revalidated by this source/publication synchronization."
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "1.0.0",
+      "published_version": "1.0.0",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": false,
+      "native_upload_status": null,
+      "publication_evidence": [],
+      "published_version_basis": "Preserved EX payload with unchanged parent version",
+      "publication_status": "published_in_EX_package",
+      "candidate": {
+        "selected": false,
+        "version": null,
+        "collection_version": null,
+        "status": "matches_verified_public_payload",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
     },
     {
       "mod_id": "CodexPZOptimization_CN_4221",
       "title_zh": "蘇清的PZ Optimization设置汉化补丁",
       "title_en": "SuQing’s PZ Optimization Chinese Settings Patch",
       "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
       "source_version": "1.1.0",
+      "source_mod_name": "PZ Optimization 设置汉化 [B42.21]",
       "personal_runtime_version": "1.1.0",
-      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "CodexPZOptimization_CN_4221/42/mod.info",
       "mod_info": "src/CodexPZOptimization_CN_4221/42/mod.info",
-      "documentation": "docs/patches/CodexPZOptimization_CN_4221.md",
+      "source_mod_info_sha256": "65e5954fe68ea74b952388533c9f49f02720a980e7c4e8e9f1eddd3905581f53",
       "require_raw": "",
+      "required_mods": [],
       "load_after_raw": "",
+      "load_after_mods": [],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/CodexPZOptimization_CN_4221.md",
       "publication_group": "held_upstream_payload",
       "workshop_item_id": null,
-      "publication_status": "held_for_upstream_payload_review",
-      "gameplay_validation": "1.1.0 targets PZ Optimization 154126d0; actual settings-screen and input acceptance remains separate."
+      "workshop_visibility": null,
+      "workshop_version": null,
+      "published_version": null,
+      "uploaded_private_version": null,
+      "currently_published": false,
+      "private_uploaded": false,
+      "native_verified": false,
+      "publication_status": "held_pending_upstream_redistribution_review",
+      "publication_evidence": [],
+      "published_version_basis": null,
+      "candidate": {
+        "selected": false,
+        "version": null,
+        "collection_version": null,
+        "status": "held_or_separate_EX_distribution",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
     },
     {
       "mod_id": "CodexTranslatorPercentFix_4221",
       "title_zh": "蘇清的True 3D Items百分号提示修复补丁",
       "title_en": "SuQing’s True 3D Items Percent Tooltip Fix Patch",
       "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
       "source_version": "1.0.0",
+      "source_mod_name": "True 3D Items - Tooltip Percent Fix (42.21)",
       "personal_runtime_version": "1.0.0",
-      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "CodexTranslatorPercentFix_4221/42/mod.info",
       "mod_info": "src/CodexTranslatorPercentFix_4221/42/mod.info",
-      "documentation": "docs/patches/CodexTranslatorPercentFix_4221.md",
+      "source_mod_info_sha256": "b57cd5e9bf3a71f6938261c798fc1a83de8d696d4d548677160008639a4cc6f1",
       "require_raw": "\\ProjectFullHD",
+      "required_mods": [
+        "ProjectFullHD"
+      ],
       "load_after_raw": "",
+      "load_after_mods": [],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/CodexTranslatorPercentFix_4221.md",
       "publication_group": "optional_in_patch_collection",
       "workshop_item_id": "3832223928",
-      "publication_status": "verified_public_2026-11-03_native_submit_and_query",
-      "gameplay_validation": "Not comprehensively revalidated by this source/publication synchronization."
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "1.0.0",
+      "published_version": "1.0.0",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": true,
+      "native_upload_status": "uploaded",
+      "publication_evidence": [
+        {
+          "stage": "upload",
+          "filename": "upload-20261106_221254_268969.json",
+          "sha256": "0d623188e17294d8066ba45d12ce2992cfa71cd2b6c920abb2e741987a4cb3e1"
+        },
+        {
+          "stage": "verify",
+          "filename": "verify-20261106_221328_994041.json",
+          "sha256": "2c958b3e1c79b0528d69b0077dd1aba6a0cfcd9c3c59b258bc74bcc7903a8f46"
+        }
+      ],
+      "published_version_basis": "Matching native upload/verify plus final owner metadata; no remote per-file download",
+      "publication_status": "verified_public_current",
+      "candidate": {
+        "selected": true,
+        "version": "1.0.0",
+        "collection_version": "2026.11.06-32-candidate",
+        "status": "matches_verified_public_payload",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
     },
     {
       "mod_id": "CodexXFACTION_CN_4221",
       "title_zh": "蘇清的XFACTION动态特性汉化补丁",
       "title_en": "SuQing’s XFACTION Dynamic Traits Chinese Translation Patch",
       "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
       "source_version": "1.0.1",
+      "source_mod_name": "[B42.21 CN] XFACTION Dynamic Traits Chinese",
       "personal_runtime_version": "1.0.1",
-      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "CodexXFACTION_CN_4221/42/mod.info",
       "mod_info": "src/CodexXFACTION_CN_4221/42/mod.info",
-      "documentation": "docs/patches/CodexXFACTION_CN_4221.md",
+      "source_mod_info_sha256": "66c0bd0e01811cc05ca134f7aa139d0445addc71a62a3ef7f4752df161dd6abf",
       "require_raw": "XFACTION_DynamicTraits",
+      "required_mods": [
+        "XFACTION_DynamicTraits"
+      ],
       "load_after_raw": "XFACTION_DynamicTraits,B42ModTrans_CN",
+      "load_after_mods": [
+        "XFACTION_DynamicTraits",
+        "B42ModTrans_CN"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/CodexXFACTION_CN_4221.md",
       "publication_group": "optional_in_patch_collection",
       "workshop_item_id": "3832223928",
-      "publication_status": "verified_public_2026-11-03_native_submit_and_query",
-      "gameplay_validation": "Not comprehensively revalidated by this source/publication synchronization."
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "1.0.1",
+      "published_version": "1.0.1",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": true,
+      "native_upload_status": "uploaded",
+      "publication_evidence": [
+        {
+          "stage": "upload",
+          "filename": "upload-20261106_221254_268969.json",
+          "sha256": "0d623188e17294d8066ba45d12ce2992cfa71cd2b6c920abb2e741987a4cb3e1"
+        },
+        {
+          "stage": "verify",
+          "filename": "verify-20261106_221328_994041.json",
+          "sha256": "2c958b3e1c79b0528d69b0077dd1aba6a0cfcd9c3c59b258bc74bcc7903a8f46"
+        }
+      ],
+      "published_version_basis": "Matching native upload/verify plus final owner metadata; no remote per-file download",
+      "publication_status": "verified_public_current",
+      "candidate": {
+        "selected": true,
+        "version": "1.0.1",
+        "collection_version": "2026.11.06-32-candidate",
+        "status": "matches_verified_public_payload",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
     },
     {
       "mod_id": "Codex_DAMN_VanillaTires_4221",
       "title_zh": "蘇清的DAMN原版轮胎维修兼容补丁",
       "title_en": "SuQing’s DAMN Vanilla Tire Repair Compatibility Patch",
       "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
       "source_version": "1.0.0",
+      "source_mod_name": "[B42.21 SP] DAMN Vanilla Tire Repair (Local)",
       "personal_runtime_version": "1.0.0",
-      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "DAMN_VanillaTires_4221_LocalCompat/42/mod.info",
       "mod_info": "src/DAMN_VanillaTires_4221_LocalCompat/42/mod.info",
-      "documentation": "docs/patches/Codex_DAMN_VanillaTires_4221.md",
+      "source_mod_info_sha256": "5d26243a443f15ee95d1b8adbc7985df68eec8570bb3ce2ae10e8313776498d2",
       "require_raw": "damnlib",
+      "required_mods": [
+        "damnlib"
+      ],
       "load_after_raw": "damnlib",
+      "load_after_mods": [
+        "damnlib"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/Codex_DAMN_VanillaTires_4221.md",
       "publication_group": "optional_in_patch_collection",
       "workshop_item_id": "3832223928",
-      "publication_status": "verified_public_2026-11-03_native_submit_and_query",
-      "gameplay_validation": "Not comprehensively revalidated by this source/publication synchronization."
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "1.0.0",
+      "published_version": "1.0.0",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": true,
+      "native_upload_status": "uploaded",
+      "publication_evidence": [
+        {
+          "stage": "upload",
+          "filename": "upload-20261106_221254_268969.json",
+          "sha256": "0d623188e17294d8066ba45d12ce2992cfa71cd2b6c920abb2e741987a4cb3e1"
+        },
+        {
+          "stage": "verify",
+          "filename": "verify-20261106_221328_994041.json",
+          "sha256": "2c958b3e1c79b0528d69b0077dd1aba6a0cfcd9c3c59b258bc74bcc7903a8f46"
+        }
+      ],
+      "published_version_basis": "Matching native upload/verify plus final owner metadata; no remote per-file download",
+      "publication_status": "verified_public_current",
+      "candidate": {
+        "selected": true,
+        "version": "1.0.0",
+        "collection_version": "2026.11.06-32-candidate",
+        "status": "matches_verified_public_payload",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
     },
     {
       "mod_id": "Codex_DebugMenu_Generator_4221",
       "title_zh": "蘇清的Erika家具与可选调试生成器修复补丁",
       "title_en": "SuQing’s Erika Furniture and Optional Debug Generator Fix Patch",
       "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
       "source_version": "1.2.0",
+      "source_mod_name": "[B42.21 SP] Erika Furniture Fix + Optional DebugMenu Guard",
       "personal_runtime_version": "1.2.0",
-      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "DebugMenuGenerator_4221_LocalFix/42/mod.info",
       "mod_info": "src/DebugMenuGenerator_4221_LocalFix/42/mod.info",
-      "documentation": "docs/patches/Codex_DebugMenu_Generator_4221.md",
+      "source_mod_info_sha256": "9f20379801f6a141eba329ac0e795c1ef69ed0aa049ce060bd37248a4ad5262e",
       "require_raw": "",
+      "required_mods": [],
       "load_after_raw": "QNWDebugMenuB42",
+      "load_after_mods": [
+        "QNWDebugMenuB42"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/Codex_DebugMenu_Generator_4221.md",
       "publication_group": "optional_in_patch_collection",
       "workshop_item_id": "3832223928",
-      "publication_status": "verified_public_2026-11-03_native_submit_and_query",
-      "gameplay_validation": "Not comprehensively revalidated by this source/publication synchronization."
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "1.2.0",
+      "published_version": "1.2.0",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": true,
+      "native_upload_status": "uploaded",
+      "publication_evidence": [
+        {
+          "stage": "upload",
+          "filename": "upload-20261106_221254_268969.json",
+          "sha256": "0d623188e17294d8066ba45d12ce2992cfa71cd2b6c920abb2e741987a4cb3e1"
+        },
+        {
+          "stage": "verify",
+          "filename": "verify-20261106_221328_994041.json",
+          "sha256": "2c958b3e1c79b0528d69b0077dd1aba6a0cfcd9c3c59b258bc74bcc7903a8f46"
+        }
+      ],
+      "published_version_basis": "Matching native upload/verify plus final owner metadata; no remote per-file download",
+      "publication_status": "verified_public_current",
+      "candidate": {
+        "selected": true,
+        "version": "1.2.0",
+        "collection_version": "2026.11.06-32-candidate",
+        "status": "matches_verified_public_payload",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
     },
     {
       "mod_id": "Codex_InventoryTransferPerformance_4221",
       "title_zh": "蘇清的批量转移库存刷新优化补丁",
       "title_en": "SuQing’s Bulk Transfer Inventory Refresh Optimization Patch",
       "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
-      "source_version": "1.2.1",
-      "personal_runtime_version": "1.2.1",
-      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "repository_slug": "suqing-project-zomboid-patches",
+      "source_version": "1.2.2",
+      "source_mod_name": "[B42.21] Inventory Transfer Performance (Local)",
+      "personal_runtime_version": "1.2.2",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "InventoryTransferPerformance_4221_Local/42/mod.info",
       "mod_info": "src/InventoryTransferPerformance_4221_Local/42/mod.info",
-      "documentation": "docs/patches/Codex_InventoryTransferPerformance_4221.md",
+      "source_mod_info_sha256": "75fd130fb594d8e5d0ef40e17f49c8e6f4426a4ccdcb0519fd22a8e6f37c687a",
       "require_raw": "CleanUI",
+      "required_mods": [
+        "CleanUI"
+      ],
       "load_after_raw": "CleanUI,NeatUI_Equipment,Codex_AttachedGrouping_4221,PinyinSearch_SafeSources_4221_LocalFix,Codex_PetGunWeightKits_4221,ProximityInventory",
+      "load_after_mods": [
+        "CleanUI",
+        "NeatUI_Equipment",
+        "Codex_AttachedGrouping_4221",
+        "PinyinSearch_SafeSources_4221_LocalFix",
+        "Codex_PetGunWeightKits_4221",
+        "ProximityInventory"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/Codex_InventoryTransferPerformance_4221.md",
       "publication_group": "optional_in_patch_collection",
       "workshop_item_id": "3832223928",
-      "publication_status": "verified_public_2026-11-03_native_submit_and_query",
-      "gameplay_validation": "1.2.1 source matches deployment and its prior offline validation; actual UI, transfers and FPS require separate acceptance."
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "1.2.2",
+      "published_version": "1.2.2",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": true,
+      "native_upload_status": "uploaded",
+      "publication_evidence": [
+        {
+          "stage": "upload",
+          "filename": "upload-20261106_221254_268969.json",
+          "sha256": "0d623188e17294d8066ba45d12ce2992cfa71cd2b6c920abb2e741987a4cb3e1"
+        },
+        {
+          "stage": "verify",
+          "filename": "verify-20261106_221328_994041.json",
+          "sha256": "2c958b3e1c79b0528d69b0077dd1aba6a0cfcd9c3c59b258bc74bcc7903a8f46"
+        }
+      ],
+      "published_version_basis": "Matching native upload/verify plus final owner metadata; no remote per-file download",
+      "publication_status": "verified_public_current",
+      "candidate": {
+        "selected": true,
+        "version": "1.2.2",
+        "collection_version": "2026.11.06-32-candidate",
+        "status": "matches_verified_public_payload",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
     },
     {
       "mod_id": "Codex_MFS_AmmoVisual_Compat_4221",
       "title_zh": "蘇清的MFS弹药盒与弹匣显示兼容补丁",
       "title_en": "SuQing’s MFS Ammo Box and Magazine Visual Compatibility Patch",
       "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
       "source_version": "1.0.0",
+      "source_mod_name": "[B42.21] MFS Ammo Box and Magazine Visual Compatibility (Local)",
       "personal_runtime_version": "1.0.0",
-      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "MFS_AmmoVisual_Compat_4221_LocalFix/42/mod.info",
       "mod_info": "src/MFS_AmmoVisual_Compat_4221_LocalFix/42/mod.info",
-      "documentation": "docs/patches/Codex_MFS_AmmoVisual_Compat_4221.md",
+      "source_mod_info_sha256": "ab1e33a6350200e77821642bb0b40ee08e272a4625617fe5f9d711c3e7ee44a4",
       "require_raw": "ModernFirearmsSystem",
+      "required_mods": [
+        "ModernFirearmsSystem"
+      ],
       "load_after_raw": "ModernFirearmsSystem,SuPrimitiveEquipment",
+      "load_after_mods": [
+        "ModernFirearmsSystem",
+        "SuPrimitiveEquipment"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/Codex_MFS_AmmoVisual_Compat_4221.md",
       "publication_group": "optional_in_patch_collection",
       "workshop_item_id": "3832223928",
-      "publication_status": "verified_public_2026-11-03_native_submit_and_query",
-      "gameplay_validation": "Not comprehensively revalidated by this source/publication synchronization."
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "1.0.0",
+      "published_version": "1.0.0",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": true,
+      "native_upload_status": "uploaded",
+      "publication_evidence": [
+        {
+          "stage": "upload",
+          "filename": "upload-20261106_221254_268969.json",
+          "sha256": "0d623188e17294d8066ba45d12ce2992cfa71cd2b6c920abb2e741987a4cb3e1"
+        },
+        {
+          "stage": "verify",
+          "filename": "verify-20261106_221328_994041.json",
+          "sha256": "2c958b3e1c79b0528d69b0077dd1aba6a0cfcd9c3c59b258bc74bcc7903a8f46"
+        }
+      ],
+      "published_version_basis": "Matching native upload/verify plus final owner metadata; no remote per-file download",
+      "publication_status": "verified_public_current",
+      "candidate": {
+        "selected": true,
+        "version": "1.0.0",
+        "collection_version": "2026.11.06-32-candidate",
+        "status": "matches_verified_public_payload",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
     },
     {
       "mod_id": "Codex_MFS_AttachedLight_Hotkey_4221",
       "title_zh": "蘇清的MFS附加手电快捷键修复补丁",
       "title_en": "SuQing’s MFS Attached Flashlight Hotkey Fix Patch",
       "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
       "source_version": "1.0.0",
+      "source_mod_name": "[B42.21] MFS Attached Flashlight Hotkey Fix (Local)",
       "personal_runtime_version": "1.0.0",
-      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "MFS_AttachedLight_Hotkey_4221_LocalFix/42/mod.info",
       "mod_info": "src/MFS_AttachedLight_Hotkey_4221_LocalFix/42/mod.info",
-      "documentation": "docs/patches/Codex_MFS_AttachedLight_Hotkey_4221.md",
+      "source_mod_info_sha256": "94ee87db6fa252cf434eea2652d5e97986d69a7c87d1ccc3297eb52ad4890f56",
       "require_raw": "ModernFirearmsSystem",
+      "required_mods": [
+        "ModernFirearmsSystem"
+      ],
       "load_after_raw": "ModernFirearmsSystem,VanillaFoodsExpanded,FixedLightOnBeltAF,Flashlight&LanternOnBeltB42",
+      "load_after_mods": [
+        "ModernFirearmsSystem",
+        "VanillaFoodsExpanded",
+        "FixedLightOnBeltAF",
+        "Flashlight&LanternOnBeltB42"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/Codex_MFS_AttachedLight_Hotkey_4221.md",
       "publication_group": "optional_in_patch_collection",
       "workshop_item_id": "3832223928",
-      "publication_status": "verified_public_2026-11-03_native_submit_and_query",
-      "gameplay_validation": "Not comprehensively revalidated by this source/publication synchronization."
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "1.0.0",
+      "published_version": "1.0.0",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": true,
+      "native_upload_status": "uploaded",
+      "publication_evidence": [
+        {
+          "stage": "upload",
+          "filename": "upload-20261106_221254_268969.json",
+          "sha256": "0d623188e17294d8066ba45d12ce2992cfa71cd2b6c920abb2e741987a4cb3e1"
+        },
+        {
+          "stage": "verify",
+          "filename": "verify-20261106_221328_994041.json",
+          "sha256": "2c958b3e1c79b0528d69b0077dd1aba6a0cfcd9c3c59b258bc74bcc7903a8f46"
+        }
+      ],
+      "published_version_basis": "Matching native upload/verify plus final owner metadata; no remote per-file download",
+      "publication_status": "verified_public_current",
+      "candidate": {
+        "selected": true,
+        "version": "1.0.0",
+        "collection_version": "2026.11.06-32-candidate",
+        "status": "matches_verified_public_payload",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
     },
     {
       "mod_id": "Codex_NoirSling_SP_Compat_4221",
       "title_zh": "蘇清的Noir枪带单人兼容补丁",
       "title_en": "SuQing’s Noir Sling Single-player Compatibility Patch",
       "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
       "source_version": "1.0.0",
+      "source_mod_name": "[B42.21 SP] Noir Sling Local Compatibility Fix",
       "personal_runtime_version": "1.0.0",
-      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "NoirSling_SP_4221_LocalFix/42/mod.info",
       "mod_info": "src/NoirSling_SP_4221_LocalFix/42/mod.info",
-      "documentation": "docs/patches/Codex_NoirSling_SP_Compat_4221.md",
+      "source_mod_info_sha256": "68d022ddc9605e1cbb714cdf94fb8d6fd13e2d1936cf525638923d5f55b56160",
       "require_raw": "\\noirrsling4-42.13patch",
+      "required_mods": [
+        "noirrsling4-42.13patch"
+      ],
       "load_after_raw": "",
+      "load_after_mods": [],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/Codex_NoirSling_SP_Compat_4221.md",
       "publication_group": "optional_in_patch_collection",
       "workshop_item_id": "3832223928",
-      "publication_status": "verified_public_2026-11-03_native_submit_and_query",
-      "gameplay_validation": "Not comprehensively revalidated by this source/publication synchronization."
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "1.0.0",
+      "published_version": "1.0.0",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": true,
+      "native_upload_status": "uploaded",
+      "publication_evidence": [
+        {
+          "stage": "upload",
+          "filename": "upload-20261106_221254_268969.json",
+          "sha256": "0d623188e17294d8066ba45d12ce2992cfa71cd2b6c920abb2e741987a4cb3e1"
+        },
+        {
+          "stage": "verify",
+          "filename": "verify-20261106_221328_994041.json",
+          "sha256": "2c958b3e1c79b0528d69b0077dd1aba6a0cfcd9c3c59b258bc74bcc7903a8f46"
+        }
+      ],
+      "published_version_basis": "Matching native upload/verify plus final owner metadata; no remote per-file download",
+      "publication_status": "verified_public_current",
+      "candidate": {
+        "selected": true,
+        "version": "1.0.0",
+        "collection_version": "2026.11.06-32-candidate",
+        "status": "matches_verified_public_payload",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
     },
     {
       "mod_id": "PinyinSearch_SafeSources_4221_LocalFix",
       "title_zh": "蘇清的拼音搜索与界面兼容补丁",
       "title_en": "SuQing’s Pinyin Search UI Compatibility Patch",
       "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
       "source_version": "1.1",
+      "source_mod_name": "Pinyin Search Safe Sources B42.21 (Local)",
       "personal_runtime_version": "1.1",
-      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "Pinyin_UI_4221_LocalCompat/42/mod.info",
       "mod_info": "src/Pinyin_UI_4221_LocalCompat/42/mod.info",
-      "documentation": "docs/patches/PinyinSearch_SafeSources_4221_LocalFix.md",
+      "source_mod_info_sha256": "a637aaaecd7537af12c2d4dac832029b2584261f31e4e47e73d7a42fdc979b29",
       "require_raw": "yxjs_PinYinSearch",
+      "required_mods": [
+        "yxjs_PinYinSearch"
+      ],
       "load_after_raw": "yxjs_PinYinSearch,CleanUI,Neat_Crafting,Neat_Building",
+      "load_after_mods": [
+        "yxjs_PinYinSearch",
+        "CleanUI",
+        "Neat_Crafting",
+        "Neat_Building"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/PinyinSearch_SafeSources_4221_LocalFix.md",
       "publication_group": "optional_in_patch_collection",
       "workshop_item_id": "3832223928",
-      "publication_status": "verified_public_2026-11-03_native_submit_and_query",
-      "gameplay_validation": "Not comprehensively revalidated by this source/publication synchronization."
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "1.1",
+      "published_version": "1.1",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": true,
+      "native_upload_status": "uploaded",
+      "publication_evidence": [
+        {
+          "stage": "upload",
+          "filename": "upload-20261106_221254_268969.json",
+          "sha256": "0d623188e17294d8066ba45d12ce2992cfa71cd2b6c920abb2e741987a4cb3e1"
+        },
+        {
+          "stage": "verify",
+          "filename": "verify-20261106_221328_994041.json",
+          "sha256": "2c958b3e1c79b0528d69b0077dd1aba6a0cfcd9c3c59b258bc74bcc7903a8f46"
+        }
+      ],
+      "published_version_basis": "Matching native upload/verify plus final owner metadata; no remote per-file download",
+      "publication_status": "verified_public_current",
+      "candidate": {
+        "selected": true,
+        "version": "1.1",
+        "collection_version": "2026.11.06-32-candidate",
+        "status": "matches_verified_public_payload",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
     },
     {
       "mod_id": "Codex_PrimitiveTooltip_4221",
       "title_zh": "蘇清的原始装备储液提示修复补丁",
       "title_en": "SuQing’s Primitive Equipment Fluid Tooltip Fix Patch",
       "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
       "source_version": "1.0.0",
+      "source_mod_name": "[B42.21 SP] Primitive Equipment Fluid Tooltip Fix (Local)",
       "personal_runtime_version": "1.0.0",
-      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "PrimitiveTooltip_4221_LocalFix/42/mod.info",
       "mod_info": "src/PrimitiveTooltip_4221_LocalFix/42/mod.info",
-      "documentation": "docs/patches/Codex_PrimitiveTooltip_4221.md",
+      "source_mod_info_sha256": "733d96360250ce24fd5594550eacc3f268ef1908734a1360c6aa1ac1bdbcf514",
       "require_raw": "SuPrimitiveEquipment",
+      "required_mods": [
+        "SuPrimitiveEquipment"
+      ],
       "load_after_raw": "SuPrimitiveEquipment",
+      "load_after_mods": [
+        "SuPrimitiveEquipment"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/Codex_PrimitiveTooltip_4221.md",
       "publication_group": "held_upstream_payload",
       "workshop_item_id": null,
-      "publication_status": "held_for_upstream_payload_review",
-      "gameplay_validation": "Not comprehensively revalidated by this source/publication synchronization."
+      "workshop_visibility": null,
+      "workshop_version": null,
+      "published_version": null,
+      "uploaded_private_version": null,
+      "currently_published": false,
+      "private_uploaded": false,
+      "native_verified": false,
+      "publication_status": "held_pending_upstream_redistribution_review",
+      "publication_evidence": [],
+      "published_version_basis": null,
+      "candidate": {
+        "selected": false,
+        "version": null,
+        "collection_version": null,
+        "status": "held_or_separate_EX_distribution",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
     },
     {
       "mod_id": "SuQingBatchFarmingMenu_4221",
       "title_zh": "蘇清的批量农耕菜单筛选补丁",
       "title_en": "SuQing’s Batch Farming Menu Filter Patch",
       "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
       "source_version": "0.1.0",
+      "source_mod_name": "蘇清的批量农耕菜单筛选",
       "personal_runtime_version": "0.1.0",
-      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "SuQingBatchFarmingMenu_4221/42/mod.info",
       "mod_info": "src/SuQingBatchFarmingMenu_4221/42/mod.info",
-      "documentation": "docs/patches/SuQingBatchFarmingMenu_4221.md",
+      "source_mod_info_sha256": "b0eb08ecca95f7985f5c74def742abe375649583876947e9321dc6296694727c",
       "require_raw": "vac_batch_farming",
+      "required_mods": [
+        "vac_batch_farming"
+      ],
       "load_after_raw": "vac_batch_farming",
+      "load_after_mods": [
+        "vac_batch_farming"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/SuQingBatchFarmingMenu_4221.md",
       "publication_group": "optional_in_patch_collection",
       "workshop_item_id": "3832223928",
-      "publication_status": "verified_public_2026-11-03_native_submit_and_query",
-      "gameplay_validation": "Not comprehensively revalidated by this source/publication synchronization."
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "0.1.0",
+      "published_version": "0.1.0",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": true,
+      "native_upload_status": "uploaded",
+      "publication_evidence": [
+        {
+          "stage": "upload",
+          "filename": "upload-20261106_221254_268969.json",
+          "sha256": "0d623188e17294d8066ba45d12ce2992cfa71cd2b6c920abb2e741987a4cb3e1"
+        },
+        {
+          "stage": "verify",
+          "filename": "verify-20261106_221328_994041.json",
+          "sha256": "2c958b3e1c79b0528d69b0077dd1aba6a0cfcd9c3c59b258bc74bcc7903a8f46"
+        }
+      ],
+      "published_version_basis": "Matching native upload/verify plus final owner metadata; no remote per-file download",
+      "publication_status": "verified_public_current",
+      "candidate": {
+        "selected": true,
+        "version": "0.1.0",
+        "collection_version": "2026.11.06-32-candidate",
+        "status": "matches_verified_public_payload",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
     },
     {
       "mod_id": "Codex_TheyKnew_CN_TextFix_4221",
       "title_zh": "蘇清的They Knew沙盒文本修复补丁",
       "title_en": "SuQing’s They Knew Sandbox Text Fix Patch",
       "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
       "source_version": "1.0.0",
+      "source_mod_name": "[B42.21 CN] They Knew Sandbox Text Fix",
       "personal_runtime_version": "1.0.0",
-      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "TheyKnew_CN_TextFix_4221/42/mod.info",
       "mod_info": "src/TheyKnew_CN_TextFix_4221/42/mod.info",
-      "documentation": "docs/patches/Codex_TheyKnew_CN_TextFix_4221.md",
+      "source_mod_info_sha256": "f64a75e063fc782cf0239151ef760550c1de03856086bdd04d9c695db5587f02",
       "require_raw": "TheyKnewContinued",
+      "required_mods": [
+        "TheyKnewContinued"
+      ],
       "load_after_raw": "TheyKnewContinued,B42ModTrans_CN",
+      "load_after_mods": [
+        "TheyKnewContinued",
+        "B42ModTrans_CN"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/Codex_TheyKnew_CN_TextFix_4221.md",
       "publication_group": "optional_in_patch_collection",
       "workshop_item_id": "3832223928",
-      "publication_status": "verified_public_2026-11-03_native_submit_and_query",
-      "gameplay_validation": "Not comprehensively revalidated by this source/publication synchronization."
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "1.0.0",
+      "published_version": "1.0.0",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": true,
+      "native_upload_status": "uploaded",
+      "publication_evidence": [
+        {
+          "stage": "upload",
+          "filename": "upload-20261106_221254_268969.json",
+          "sha256": "0d623188e17294d8066ba45d12ce2992cfa71cd2b6c920abb2e741987a4cb3e1"
+        },
+        {
+          "stage": "verify",
+          "filename": "verify-20261106_221328_994041.json",
+          "sha256": "2c958b3e1c79b0528d69b0077dd1aba6a0cfcd9c3c59b258bc74bcc7903a8f46"
+        }
+      ],
+      "published_version_basis": "Matching native upload/verify plus final owner metadata; no remote per-file download",
+      "publication_status": "verified_public_current",
+      "candidate": {
+        "selected": true,
+        "version": "1.0.0",
+        "collection_version": "2026.11.06-32-candidate",
+        "status": "matches_verified_public_payload",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
     },
     {
       "mod_id": "Codex_TrueMusic_Headphones_4221",
       "title_zh": "蘇清的True Music耳机单人兼容补丁",
       "title_en": "SuQing’s True Music Headphones Single-player Compatibility Patch",
       "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
       "source_version": "1.0.0",
+      "source_mod_name": "[B42.21 SP] True Music Headphones Compatibility (Local)",
       "personal_runtime_version": "1.0.0",
-      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "TrueMusicHeadphones_4221_LocalFix/42/mod.info",
       "mod_info": "src/TrueMusicHeadphones_4221_LocalFix/42/mod.info",
-      "documentation": "docs/patches/Codex_TrueMusic_Headphones_4221.md",
+      "source_mod_info_sha256": "fd26bba2689d905c2242ce2ac176c784b39c374f1e9206b9bf608ecbaa70d835",
       "require_raw": "truemusic",
+      "required_mods": [
+        "truemusic"
+      ],
       "load_after_raw": "truemusic",
+      "load_after_mods": [
+        "truemusic"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/Codex_TrueMusic_Headphones_4221.md",
       "publication_group": "optional_in_patch_collection",
       "workshop_item_id": "3832223928",
-      "publication_status": "verified_public_2026-11-03_native_submit_and_query",
-      "gameplay_validation": "Not comprehensively revalidated by this source/publication synchronization."
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "1.0.0",
+      "published_version": "1.0.0",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": true,
+      "native_upload_status": "uploaded",
+      "publication_evidence": [
+        {
+          "stage": "upload",
+          "filename": "upload-20261106_221254_268969.json",
+          "sha256": "0d623188e17294d8066ba45d12ce2992cfa71cd2b6c920abb2e741987a4cb3e1"
+        },
+        {
+          "stage": "verify",
+          "filename": "verify-20261106_221328_994041.json",
+          "sha256": "2c958b3e1c79b0528d69b0077dd1aba6a0cfcd9c3c59b258bc74bcc7903a8f46"
+        }
+      ],
+      "published_version_basis": "Matching native upload/verify plus final owner metadata; no remote per-file download",
+      "publication_status": "verified_public_current",
+      "candidate": {
+        "selected": true,
+        "version": "1.0.0",
+        "collection_version": "2026.11.06-32-candidate",
+        "status": "matches_verified_public_payload",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
     },
     {
       "mod_id": "SuQingProteinTrainingBoost",
       "title_zh": "蘇清的蛋白饮料训练强化",
       "title_en": "SuQing's Protein Shake Training Boost",
       "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
       "source_version": "1.0.0",
+      "source_mod_name": "SuQing's Protein Shake Training Boost [SP]",
       "personal_runtime_version": "1.0.0",
-      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "SuQingProteinTrainingBoost/42/mod.info",
       "mod_info": "src/SuQingProteinTrainingBoost/42/mod.info",
-      "documentation": "docs/patches/SuQingProteinTrainingBoost.md",
+      "source_mod_info_sha256": "2a1c928306dc32296038bb70741b4df97d9f079cef1b30fb8c72132cb054a528",
       "require_raw": "VanillaFoodsExpanded",
+      "required_mods": [
+        "VanillaFoodsExpanded"
+      ],
       "load_after_raw": "VanillaFoodsExpanded,SkillRecoveryJournal,CleanUI",
+      "load_after_mods": [
+        "VanillaFoodsExpanded",
+        "SkillRecoveryJournal",
+        "CleanUI"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/SuQingProteinTrainingBoost.md",
       "publication_group": "optional_in_patch_collection",
       "workshop_item_id": "3832223928",
-      "publication_status": "verified_public_2026-11-03_native_submit_and_query",
-      "gameplay_validation": "Offline validation recorded; in-game acceptance remains pending."
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "1.0.0",
+      "published_version": "1.0.0",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": true,
+      "native_upload_status": "uploaded",
+      "publication_evidence": [
+        {
+          "stage": "upload",
+          "filename": "upload-20261106_221254_268969.json",
+          "sha256": "0d623188e17294d8066ba45d12ce2992cfa71cd2b6c920abb2e741987a4cb3e1"
+        },
+        {
+          "stage": "verify",
+          "filename": "verify-20261106_221328_994041.json",
+          "sha256": "2c958b3e1c79b0528d69b0077dd1aba6a0cfcd9c3c59b258bc74bcc7903a8f46"
+        }
+      ],
+      "published_version_basis": "Matching native upload/verify plus final owner metadata; no remote per-file download",
+      "publication_status": "verified_public_current",
+      "candidate": {
+        "selected": true,
+        "version": "1.0.0",
+        "collection_version": "2026.11.06-32-candidate",
+        "status": "matches_verified_public_payload",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
     },
     {
       "mod_id": "SuQingRecipeInputGuard_4221",
       "title_zh": "蘇清的配方材料输入修复",
       "title_en": "SuQing's Recipe Input Guard",
       "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
       "source_version": "1.0.0",
+      "source_mod_name": "SuQing's Recipe Input Guard [SP]",
       "personal_runtime_version": "1.0.0",
-      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "SuQingRecipeInputGuard_4221/42/mod.info",
       "mod_info": "src/SuQingRecipeInputGuard_4221/42/mod.info",
-      "documentation": "docs/patches/SuQingRecipeInputGuard_4221.md",
+      "source_mod_info_sha256": "a1567eed93cb53e78fb13537ac5396a01d09d4cd5b904f43bbf3885c92052176",
       "require_raw": "SapphCooking_B42",
+      "required_mods": [
+        "SapphCooking_B42"
+      ],
       "load_after_raw": "SapphCooking_B42",
+      "load_after_mods": [
+        "SapphCooking_B42"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/SuQingRecipeInputGuard_4221.md",
       "publication_group": "optional_in_patch_collection",
       "workshop_item_id": "3832223928",
-      "publication_status": "verified_public_2026-11-03_native_submit_and_query",
-      "gameplay_validation": "Offline validation recorded; in-game acceptance remains pending."
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "1.0.0",
+      "published_version": "1.0.0",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": true,
+      "native_upload_status": "uploaded",
+      "publication_evidence": [
+        {
+          "stage": "upload",
+          "filename": "upload-20261106_221254_268969.json",
+          "sha256": "0d623188e17294d8066ba45d12ce2992cfa71cd2b6c920abb2e741987a4cb3e1"
+        },
+        {
+          "stage": "verify",
+          "filename": "verify-20261106_221328_994041.json",
+          "sha256": "2c958b3e1c79b0528d69b0077dd1aba6a0cfcd9c3c59b258bc74bcc7903a8f46"
+        }
+      ],
+      "published_version_basis": "Matching native upload/verify plus final owner metadata; no remote per-file download",
+      "publication_status": "verified_public_current",
+      "candidate": {
+        "selected": true,
+        "version": "1.0.0",
+        "collection_version": "2026.11.06-32-candidate",
+        "status": "matches_verified_public_payload",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
     },
     {
       "mod_id": "SuQingChumMassProduction",
       "title_zh": "蘇清的饵托量产补丁",
       "title_en": "SuQing’s Chum Mass Production Patch",
       "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
       "source_version": "1.0.0",
+      "source_mod_name": "蘇清的饵托量产补丁",
       "personal_runtime_version": "1.0.0",
-      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "SuQingChumMassProduction/42/mod.info",
       "mod_info": "src/SuQingChumMassProduction/42/mod.info",
-      "documentation": "docs/patches/SuQingChumMassProduction.md",
+      "source_mod_info_sha256": "494037039a661ac3c40dbb7fd53614a6464ea3a8551bd508acc09f155ffb449e",
       "require_raw": "",
+      "required_mods": [],
       "load_after_raw": "",
+      "load_after_mods": [],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/SuQingChumMassProduction.md",
       "publication_group": "optional_in_patch_collection",
       "workshop_item_id": "3832223928",
-      "publication_status": "verified_public_2026-11-03_native_submit_and_query",
-      "gameplay_validation": "Awaits in-game acceptance under the user’s latest instruction; previous normal-play wording is not reused as current acceptance."
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "1.0.0",
+      "published_version": "1.0.0",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": true,
+      "native_upload_status": "uploaded",
+      "publication_evidence": [
+        {
+          "stage": "upload",
+          "filename": "upload-20261106_221254_268969.json",
+          "sha256": "0d623188e17294d8066ba45d12ce2992cfa71cd2b6c920abb2e741987a4cb3e1"
+        },
+        {
+          "stage": "verify",
+          "filename": "verify-20261106_221328_994041.json",
+          "sha256": "2c958b3e1c79b0528d69b0077dd1aba6a0cfcd9c3c59b258bc74bcc7903a8f46"
+        }
+      ],
+      "published_version_basis": "Matching native upload/verify plus final owner metadata; no remote per-file download",
+      "publication_status": "verified_public_current",
+      "candidate": {
+        "selected": true,
+        "version": "1.0.0",
+        "collection_version": "2026.11.06-32-candidate",
+        "status": "matches_verified_public_payload",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
+    },
+    {
+      "mod_id": "Codex_ViewpointLegacyPromptFix_4221",
+      "title_zh": "蘇清的Viewpoint旧版手柄提示修复补丁",
+      "title_en": "SuQing’s Viewpoint Legacy Prompt Fix Patch",
+      "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
+      "source_version": "1.0.0",
+      "source_mod_name": "蘇清的Viewpoint旧版手柄提示修复补丁 / SuQing's Viewpoint Legacy Prompt Fix",
+      "personal_runtime_version": "1.0.0",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "Codex_ViewpointLegacyPromptFix_4221/42/mod.info",
+      "mod_info": "src/Codex_ViewpointLegacyPromptFix_4221/42/mod.info",
+      "source_mod_info_sha256": "973a31c046bc9d5123ac07d17724467f1afa81627af94509b59699738e6ef40e",
+      "require_raw": "ProjectViewpointQOLLegacy0.1.6",
+      "required_mods": [
+        "ProjectViewpointQOLLegacy0.1.6"
+      ],
+      "load_after_raw": "ProjectViewpointQOLLegacy0.1.6",
+      "load_after_mods": [
+        "ProjectViewpointQOLLegacy0.1.6"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/Codex_ViewpointLegacyPromptFix_4221.md",
+      "publication_group": "optional_in_patch_collection",
+      "workshop_item_id": "3832223928",
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "1.0.0",
+      "published_version": "1.0.0",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": true,
+      "native_upload_status": "uploaded",
+      "publication_evidence": [
+        {
+          "stage": "upload",
+          "filename": "upload-20261106_221254_268969.json",
+          "sha256": "0d623188e17294d8066ba45d12ce2992cfa71cd2b6c920abb2e741987a4cb3e1"
+        },
+        {
+          "stage": "verify",
+          "filename": "verify-20261106_221328_994041.json",
+          "sha256": "2c958b3e1c79b0528d69b0077dd1aba6a0cfcd9c3c59b258bc74bcc7903a8f46"
+        }
+      ],
+      "published_version_basis": "Matching native upload/verify plus final owner metadata; no remote per-file download",
+      "publication_status": "verified_public_current",
+      "candidate": {
+        "selected": true,
+        "version": "1.0.0",
+        "collection_version": "2026.11.06-32-candidate",
+        "status": "matches_verified_public_payload",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
+    },
+    {
+      "mod_id": "Codex_ChinaBrewingBooks50_4221",
+      "title_zh": "蘇清的酿酒技能书50倍补丁",
+      "title_en": "SuQing’s Brewing Skill Books 50x Patch",
+      "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
+      "source_version": "0.1.1",
+      "source_mod_name": "蘇清的酿酒技能书50倍 | SuQing's Brewing Books 50x [SP]",
+      "personal_runtime_version": "0.1.1",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "Codex_ChinaBrewingBooks50_4221/42/mod.info",
+      "mod_info": "src/Codex_ChinaBrewingBooks50_4221/42/mod.info",
+      "source_mod_info_sha256": "5328e083f08c885cb309a25facb9cdafb52bcc80a698db808066659efe191f98",
+      "require_raw": "Chinesecuisine4213",
+      "required_mods": [
+        "Chinesecuisine4213"
+      ],
+      "load_after_raw": "Chinesecuisine4213",
+      "load_after_mods": [
+        "Chinesecuisine4213"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/Codex_ChinaBrewingBooks50_4221.md",
+      "publication_group": "optional_in_patch_collection",
+      "workshop_item_id": "3832223928",
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "0.1.1",
+      "published_version": "0.1.1",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": true,
+      "native_upload_status": "uploaded",
+      "publication_evidence": [
+        {
+          "stage": "upload",
+          "filename": "upload-20261106_221254_268969.json",
+          "sha256": "0d623188e17294d8066ba45d12ce2992cfa71cd2b6c920abb2e741987a4cb3e1"
+        },
+        {
+          "stage": "verify",
+          "filename": "verify-20261106_221328_994041.json",
+          "sha256": "2c958b3e1c79b0528d69b0077dd1aba6a0cfcd9c3c59b258bc74bcc7903a8f46"
+        }
+      ],
+      "published_version_basis": "Matching native upload/verify plus final owner metadata; no remote per-file download",
+      "publication_status": "verified_public_current",
+      "candidate": {
+        "selected": true,
+        "version": "0.1.1",
+        "collection_version": "2026.11.06-32-candidate",
+        "status": "matches_verified_public_payload",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
+    },
+    {
+      "mod_id": "SuQingBoatRVRoomGuard_4221",
+      "title_zh": "蘇清的船舱与房车房间兼容补丁",
+      "title_en": "SuQing's Boat Cabin and RV Room Compatibility Patch",
+      "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
+      "source_version": "0.1.0-rc.2",
+      "source_mod_name": "蘇清的船舱与房车房间兼容补丁 / SuQing's Boat Cabin and RV Room Compatibility Patch",
+      "personal_runtime_version": "0.1.0-rc.2",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "SuQingBoatRVRoomGuard_4221/42/mod.info",
+      "mod_info": "src/SuQingBoatRVRoomGuard_4221/42/mod.info",
+      "source_mod_info_sha256": "a9a8e920b70c575efaaeb688b1bf8d90b06ae7cfc43373a727f051712d401f6f",
+      "require_raw": "BoteBR,FrotaBRRVAddon,PROJECTRVInterior42",
+      "required_mods": [
+        "BoteBR",
+        "FrotaBRRVAddon",
+        "PROJECTRVInterior42"
+      ],
+      "load_after_raw": "PROJECTRVInterior42,BoteBR,FrotaBRRVAddon,RVViewpointPatch",
+      "load_after_mods": [
+        "PROJECTRVInterior42",
+        "BoteBR",
+        "FrotaBRRVAddon",
+        "RVViewpointPatch"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/SuQingBoatRVRoomGuard_4221.md",
+      "publication_group": "optional_in_patch_collection",
+      "workshop_item_id": "3832223928",
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "0.1.0-rc.2",
+      "published_version": "0.1.0-rc.2",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": true,
+      "native_upload_status": "uploaded",
+      "publication_evidence": [
+        {
+          "stage": "upload",
+          "filename": "upload-20261106_221254_268969.json",
+          "sha256": "0d623188e17294d8066ba45d12ce2992cfa71cd2b6c920abb2e741987a4cb3e1"
+        },
+        {
+          "stage": "verify",
+          "filename": "verify-20261106_221328_994041.json",
+          "sha256": "2c958b3e1c79b0528d69b0077dd1aba6a0cfcd9c3c59b258bc74bcc7903a8f46"
+        }
+      ],
+      "published_version_basis": "Matching native upload/verify plus final owner metadata; no remote per-file download",
+      "publication_status": "verified_public_current",
+      "candidate": {
+        "selected": true,
+        "version": "0.1.0-rc.2",
+        "collection_version": "2026.11.06-32-candidate",
+        "status": "matches_verified_public_payload",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
+    },
+    {
+      "mod_id": "SuQingBoatCraftFromFloor_4221",
+      "title_zh": "蘇清的造船就地取材补丁",
+      "title_en": "SuQing's Boat Crafting Nearby Materials Patch",
+      "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
+      "source_version": "0.1.0",
+      "source_mod_name": "蘇清的造船就地取材补丁 / SuQing's Boat Crafting Nearby Materials Patch",
+      "personal_runtime_version": "0.1.0",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "SuQingBoatCraftFromFloor_4221/42/mod.info",
+      "mod_info": "src/SuQingBoatCraftFromFloor_4221/42/mod.info",
+      "source_mod_info_sha256": "5d4631a332e743fca58ddb04ed65a3cc70264a1561379d50d8dfe029edcbd330",
+      "require_raw": "BoteBR",
+      "required_mods": [
+        "BoteBR"
+      ],
+      "load_after_raw": "BoteBR,Neat_Crafting",
+      "load_after_mods": [
+        "BoteBR",
+        "Neat_Crafting"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/SuQingBoatCraftFromFloor_4221.md",
+      "publication_group": "optional_in_patch_collection",
+      "workshop_item_id": "3832223928",
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "0.1.0",
+      "published_version": "0.1.0",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": true,
+      "native_upload_status": "uploaded",
+      "publication_evidence": [
+        {
+          "stage": "upload",
+          "filename": "upload-20261106_221254_268969.json",
+          "sha256": "0d623188e17294d8066ba45d12ce2992cfa71cd2b6c920abb2e741987a4cb3e1"
+        },
+        {
+          "stage": "verify",
+          "filename": "verify-20261106_221328_994041.json",
+          "sha256": "2c958b3e1c79b0528d69b0077dd1aba6a0cfcd9c3c59b258bc74bcc7903a8f46"
+        }
+      ],
+      "published_version_basis": "Matching native upload/verify plus final owner metadata; no remote per-file download",
+      "publication_status": "verified_public_current",
+      "candidate": {
+        "selected": true,
+        "version": "0.1.0",
+        "collection_version": "2026.11.06-32-candidate",
+        "status": "matches_verified_public_payload",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
+    },
+    {
+      "mod_id": "SuQingUIInteractionFixes",
+      "title_zh": "蘇清的提示框与融合物品栏修复",
+      "title_en": "SuQing's Tooltip and Proximity Selection Fixes",
+      "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
+      "source_version": "1.0.1",
+      "source_mod_name": "蘇清的提示框与融合物品栏修复 / SuQing's Tooltip and Proximity Selection Fixes",
+      "personal_runtime_version": "1.0.1",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "SuQingUIInteractionFixes/42/mod.info",
+      "mod_info": "src/SuQingUIInteractionFixes/42/mod.info",
+      "source_mod_info_sha256": "34a25e50ccf9bccef07e54af72c5868eb55da87f7d1695ebc7649e011712044c",
+      "require_raw": "CleanUI,ProximityInventory",
+      "required_mods": [
+        "CleanUI",
+        "ProximityInventory"
+      ],
+      "load_after_raw": "CleanUI,ProximityInventory,NeatUI_Equipment,PinyinSearch_SafeSources_4221_LocalFix,Codex_InventoryTransferPerformance_4221",
+      "load_after_mods": [
+        "CleanUI",
+        "ProximityInventory",
+        "NeatUI_Equipment",
+        "PinyinSearch_SafeSources_4221_LocalFix",
+        "Codex_InventoryTransferPerformance_4221"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/SuQingUIInteractionFixes.md",
+      "publication_group": "optional_in_patch_collection",
+      "workshop_item_id": "3832223928",
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "1.0.1",
+      "published_version": "1.0.1",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": true,
+      "native_upload_status": "uploaded",
+      "publication_evidence": [
+        {
+          "stage": "upload",
+          "filename": "upload-20261106_221254_268969.json",
+          "sha256": "0d623188e17294d8066ba45d12ce2992cfa71cd2b6c920abb2e741987a4cb3e1"
+        },
+        {
+          "stage": "verify",
+          "filename": "verify-20261106_221328_994041.json",
+          "sha256": "2c958b3e1c79b0528d69b0077dd1aba6a0cfcd9c3c59b258bc74bcc7903a8f46"
+        }
+      ],
+      "published_version_basis": "Matching native upload/verify plus final owner metadata; no remote per-file download",
+      "publication_status": "verified_public_current",
+      "candidate": {
+        "selected": true,
+        "version": "1.0.1",
+        "collection_version": "2026.11.06-32-candidate",
+        "status": "matches_verified_public_payload",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
+    },
+    {
+      "mod_id": "SuQingMustangProtectionRepair",
+      "title_zh": "蘇清的野马防护改装修复",
+      "title_en": "SuQing's Mustang Protection Repair",
+      "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
+      "source_version": "1.0.0",
+      "source_mod_name": "蘇清的野马防护改装修复 / SuQing's Mustang Protection Repair",
+      "personal_runtime_version": "1.0.0",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "SuQingMustangProtectionRepair/42/mod.info",
+      "mod_info": "src/SuQingMustangProtectionRepair/42/mod.info",
+      "source_mod_info_sha256": "13c39cf4f15b7eecf9c075087d69cde17cb971bab2d782a18f007cd16b4aac0f",
+      "require_raw": "\\tsarslib,\\ATA_Mustang",
+      "required_mods": [
+        "tsarslib",
+        "ATA_Mustang"
+      ],
+      "load_after_raw": "\\AA2NikkeMustang",
+      "load_after_mods": [
+        "AA2NikkeMustang"
+      ],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/SuQingMustangProtectionRepair.md",
+      "publication_group": "optional_in_patch_collection",
+      "workshop_item_id": "3832223928",
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "1.0.0",
+      "published_version": "1.0.0",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": true,
+      "native_upload_status": "uploaded",
+      "publication_evidence": [
+        {
+          "stage": "upload",
+          "filename": "upload-20261106_221254_268969.json",
+          "sha256": "0d623188e17294d8066ba45d12ce2992cfa71cd2b6c920abb2e741987a4cb3e1"
+        },
+        {
+          "stage": "verify",
+          "filename": "verify-20261106_221328_994041.json",
+          "sha256": "2c958b3e1c79b0528d69b0077dd1aba6a0cfcd9c3c59b258bc74bcc7903a8f46"
+        }
+      ],
+      "published_version_basis": "Matching native upload/verify plus final owner metadata; no remote per-file download",
+      "publication_status": "verified_public_current",
+      "candidate": {
+        "selected": true,
+        "version": "1.0.0",
+        "collection_version": "2026.11.06-32-candidate",
+        "status": "matches_verified_public_payload",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
+    },
+    {
+      "mod_id": "SuQingWorldStateGuard_4221",
+      "title_zh": "蘇清的世界对象状态保护（修复候选）",
+      "title_en": "SuQing's World Object State Guard (Candidate)",
+      "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
+      "repository_slug": "suqing-project-zomboid-patches",
+      "source_version": "0.1.0-candidate",
+      "source_mod_name": "SuQing's World Object State Guard (Candidate)",
+      "personal_runtime_version": "0.1.0-candidate",
+      "personal_installed": true,
+      "personal_mod_info_relative_to_mods": "SuQingWorldStateGuard_4221/42/mod.info",
+      "mod_info": "src/SuQingWorldStateGuard_4221/42/mod.info",
+      "source_mod_info_sha256": "2661b0ebfa11842e14dce1b924ecbe0c9088276ecf39dd2b894fbf2f1e443836",
+      "require_raw": "\\ZombieBuddy",
+      "required_mods": [
+        "ZombieBuddy"
+      ],
+      "load_after_raw": "",
+      "load_after_mods": [],
+      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "source_form": "custom_source_and_pinned_upstream_reconstruction",
+      "documentation": "docs/patches/SuQingWorldStateGuard_4221.md",
+      "publication_group": "optional_in_patch_collection",
+      "workshop_item_id": "3832223928",
+      "workshop_visibility": 0,
+      "workshop_visibility_name": "public",
+      "workshop_version": "0.1.0-candidate",
+      "published_version": "0.1.0-candidate",
+      "uploaded_private_version": null,
+      "currently_published": true,
+      "private_uploaded": false,
+      "native_verified": true,
+      "native_upload_status": "uploaded",
+      "publication_evidence": [
+        {
+          "stage": "upload",
+          "filename": "upload-20261106_221254_268969.json",
+          "sha256": "0d623188e17294d8066ba45d12ce2992cfa71cd2b6c920abb2e741987a4cb3e1"
+        },
+        {
+          "stage": "verify",
+          "filename": "verify-20261106_221328_994041.json",
+          "sha256": "2c958b3e1c79b0528d69b0077dd1aba6a0cfcd9c3c59b258bc74bcc7903a8f46"
+        }
+      ],
+      "published_version_basis": "Matching native upload/verify plus final owner metadata; no remote per-file download",
+      "publication_status": "verified_public_current",
+      "candidate": {
+        "selected": true,
+        "version": "0.1.0-candidate",
+        "collection_version": "2026.11.06-32-candidate",
+        "status": "matches_verified_public_payload",
+        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+      }
     }
-  ],
-  "publication_verification_date_bjt": "2026-11-03",
-  "publication_verification_boundary": "Four successful native submits: two new main mods, the 25-entry collection and a documentation-only container package update. Six other existing mod items queried unchanged. No remote per-file download or gameplay acceptance."
+  ]
 }

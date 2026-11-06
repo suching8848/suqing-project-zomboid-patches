@@ -1,0 +1,72 @@
+[h1]SuQing's Patch Collection[/h1]
+32 optional B42.21 SP patches; never enable all. R=required originals, subscribed separately. Keep order. Excludes 3 EX companions and 5 held items. Local candidate, not uploaded or fully gameplay-accepted.
+[h2]Critical limits[/h2]
+Brewing 50x sets the fully-read book multiplier to 50, not guaranteed final XP; call RestoreOriginal and save while still enabled before disabling. Viewpoint prompts: Legacy0.1.6 + Viewpoint0.1.6.1 only. Selection: CleanUI2.10.3/2.10.4 only. Cabin guard: reviewed sources only; no Arcadia/multiplayer, conflicts block entry without relocation. World Guard is a candidate: ZombieBuddy≥2.3.4 and native approval; unknown classes retain native behavior; no allow-all. Finish actions, save/exit, disable and restart; brewing needs the special restoration above. Mustang: +30 up to100, Welding2, mask, one matching material and3 torch fuel.
+[list]
+[*]CodexCharacterMenuTweaks_4221; R: XFACTION_DynamicTraits, CodexXFACTION_CN_4221
+Moves the existing XFACTION progress entry into character information and adjusts Raccoon City menu presentation without changing progression or items.
+[*]CodexNarcotics_CN_4221; R: N&CsNarcotics
+Translates N&C names, recipes, moodles, traits, options and warning speech. The bridge runs installed upstream code with audited text substitutions instead of bundling its full implementation.
+[*]CodexTranslatorPercentFix_4221; R: ProjectFullHD
+Fixes double translation of True 3D Items zoom/zoomPlus tooltips without changing rendering or saved option values.
+[*]CodexXFACTION_CN_4221; R: XFACTION_DynamicTraits
+Simplified Chinese presentation for XFACTION Dynamic Traits 0.1.3, without changing trait IDs, values or progression.
+[*]Codex_AmmoBox_CN_TextFix_4221; R: B42ModTrans_CN
+Currently fixes the Chinese washing-soap label and missing-format-argument warnings. Old ammo-recipe overrides are retired; the historical folder/ID is preserved.
+[*]Codex_AttachedGrouping_4221; R: CleanUI
+Refreshes inventory grouping after attachment changes and limits Wear actions to wearable items. Attachment slots and item properties are retained.
+[*]Codex_ChineseCrop_Tooltip_4221; R: Chinesecuisine4213, MoreItemInformation
+Shows learned seasons and farming data for Chinese Cuisine and N&C seed packets in More Item Information, without changing learned recipes or planting rules.
+[*]Codex_DAMN_VanillaTires_4221; R: damnlib
+Lets DAMN repair tools service all nine vanilla tires with a separate recipe and optional Vehicle Repair Overhaul repair integration.
+[*]Codex_DebugMenu_Generator_4221; R: none
+Repairs missing types on known Erika furniture. The item-generator guard runs only when DebugMenu is enabled; DebugMenu is not a hard dependency.
+[*]Codex_FashionoidFluidTooltip_4221; R: Fashionoid42
+Lets Fashionoid skip non-item fluid tooltip objects without the item-type method. Normal eligibility is still delegated to Fashionoid.
+[*]Codex_InventoryTransferPerformance_4221; R: CleanUI
+Coalesces stationary single-player bulk-transfer UI refreshes. Version 1.2.1 supports reviewed CleanUI 2.10.3 and retains unknown-version refusal; native actions, capacity, recipes and rendering remain unchanged. Offline checks are not FPS or gameplay acceptance.
+[*]Codex_MFSOpticsFix_4221; R: ModernFirearmsSystem
+Corrects optics tags on audited non-sight accessories while preserving real scopes and weapon parts.
+[*]Codex_MFS_AmmoVisual_Compat_4221; R: ModernFirearmsSystem
+Corrects the M110 ammo-box reference and makes Primitive Equipment magazine-visual helpers validate item definitions and preserve other Clip attachments, without changing real ammunition loading.
+[*]Codex_MFS_AttachedLight_Hotkey_4221; R: ModernFirearmsSystem
+Lets the native light hotkey reach attached flashlights while preserving MFS aiming lights, handheld lights and vehicle headlights.
+[*]Codex_MustangRecipeGuard_4221; R: ATA_Mustang
+Restricts the Mustang hood-cutting recipe to the three intended hood items, preserving tools, skills, other materials and outputs.
+[*]Codex_NarcoticsStatus_4221; R: N&CsNarcotics
+Adds a read-only N&C drug context panel for accumulated overdose categories and estimated decay times; it does not alter effects.
+[*]Codex_NoirSling_SP_Compat_4221; R: noirrsling4-42.13patch
+Suppresses the second legacy client action left by the corresponding Noir Sling single-player patch.
+[*]Codex_TheyKnew_CN_TextFix_4221; R: TheyKnewContinued
+Fixes literal percent symbols in 23 Chinese sandbox labels; text only.
+[*]Codex_TrueMusic_Headphones_4221; R: truemusic
+Fixes 42.21 single-player headphone attachment/removal and playback cleanup after unplugging, switching off or removing a battery. Ordinary boombox handling continues through the original implementation.
+[*]Codex_XFDynamicRecordGuard_4221; R: XFACTION_DynamicTraits
+Protects a bound single-player XFACTION progress record during transient survival-time drops, distinguishing confirmed death and new identities instead of copying old progress to a new character.
+[*]PinyinSearch_SafeSources_4221_LocalFix; R: yxjs_PinYinSearch
+Preserves workbench/manual recipe sources and combined inventory name/category filters, with pinyin sorting/highlights. Old backup/.bak files and personal enabled lists are neither tracked nor rebuilt.
+[*]SuQingBatchFarmingMenu_4221; R: vac_batch_farming
+Shows the Batch Farming menu only on tillable soil, tilled plots or crops. Upstream actions are unchanged and the sprinkler extension is not required.
+[*]SuQingChumMassProduction; R: none
+Five original chum per full sand/dirt bag or clay, using 0.1 L clean/tainted water from any fluid container; empty bags and vanilla recipe knowledge retained.
+[*]SuQingProteinTrainingBoost; R: VanillaFoodsExpanded
+Multiplies final Strength/Fitness XP by ten after actual protein-shake consumption; dose-scaled duration capped at three game hours, countdown UI and recovery-grant protection; single-player.
+[*]SuQingRecipeInputGuard_4221; R: SapphCooking_B42
+Standalone missing-strawberry-tag registration for Sapph; preserves quantities/fluids and leaves the Mustang guard unchanged.
+[*]Codex_ViewpointLegacyPromptFix_4221; R: ProjectViewpointQOLLegacy0.1.6
+Suppresses Legacy A/B context-menu prompts when controller support or its HUD is off, or no pad is active. Preserves active-pad and enabled detached-resume hints. No Java.
+[*]Codex_ChinaBrewingBooks50_4221; R: Chinesecuisine4213
+Sets only Chinese Cuisine brewing-book maxima to 50, retains native 10-percent reading steps and synchronizes actual read pages. No direct XP or level award. Restore original multipliers and save before disabling.
+[*]SuQingBoatRVRoomGuard_4221; R: BoteBR, FrotaBRRVAddon, PROJECTRVInterior42
+Shares occupancy checks for the 38 boat/3x6 RV slots, retains existing interiors and blocks conflicting entry. B42.21 single-player only; in-game acceptance pending.
+[*]SuQingBoatCraftFromFloor_4221; R: BoteBR
+Native nearby inputs for three boat recipes; ingredients, surface and weight retained.
+[*]SuQingUIInteractionFixes; R: CleanUI, ProximityInventory
+Fixes tooltip coordinates and visible-row/Shift selections in Proximity Inventory, including expanded stacks, search and Ctrl+A. Only CleanUI2.10.3/2.10.4; unknown versions rejected. Transfer rules remain.
+[*]SuQingMustangProtectionRepair; R: tsarslib, ATA_Mustang
+Repairs installed Mustang bullbars/window/wheel protection in tuning. +30 up to100; requirements above. Parts/tuning remain. Recognizes upstream NIKKE aliases; separate from hood recipe protection.
+[*]SuQingWorldStateGuard_4221; R: ZombieBuddy
+Candidate: skips an inapplicable clothing call only for animals lacking HumanVisual; restores a missing vehicle chunk only after unique-membership/all checks, then continues update. No entity deletion. Pinned stock/PZO classes; unknown sources retain native behavior.
+[/list]
+
+[url=https://github.com/suching8848/suqing-project-zomboid-patches/tree/main/docs/patches]完整双语说明 / Full bilingual guides[/url]

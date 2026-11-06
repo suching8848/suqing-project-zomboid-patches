@@ -1,0 +1,16 @@
+local V = PerfTest
+V.gameStart()
+V.case("real CleanUI 240-item expanded stack follows its 50-child row limit", function()
+    local items = {}; for i = 1, 240 do items[i] = V.item("Wood") end
+    items[#items + 1] = V.item("Zinc")
+    local p = V.prox(items)
+    p.collapsed.Wood = false; p:refreshContainer(); p:renderdetails(false)
+    V.eq(#p.items, 52, "native rendered 51 stack rows plus Zinc")
+    V.click(p, 52)
+    p:refreshContainer(); p:renderdetails(false)
+    V.eq(p.firstSelect, 52, "anchor row uses rendered rows, not all 240 children")
+    V.eq(V.anchorName(p), "Zinc", "anchor identity retained below large stack")
+    V.eq(p.selected[52], p.items[52], "selection follows visible Zinc row")
+    V.eq(p.selected[242], nil, "no invisible selection row")
+end)
+return V.done()

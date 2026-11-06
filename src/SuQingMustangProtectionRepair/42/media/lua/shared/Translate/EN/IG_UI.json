@@ -1,0 +1,13 @@
+{
+    "IGUI_SQ_MPR_Repair": "Repair",
+    "IGUI_SQ_MPR_RepairRange": "Repair %1 → %2",
+    "IGUI_SQ_MPR_SheetCost": "Welding 2, welding mask, 1 metal sheet and 3 propane torch uses. Carry the materials in your inventory.",
+    "IGUI_SQ_MPR_LinkCost": "Welding 2, welding mask, 1 heavy chain link and 3 propane torch uses. Carry the materials in your inventory.",
+    "IGUI_SQ_MPR_NeedSkill": "I need welding level 2.",
+    "IGUI_SQ_MPR_NeedMask": "I need a usable welding mask.",
+    "IGUI_SQ_MPR_NeedSheet": "I need a metal sheet in my inventory.",
+    "IGUI_SQ_MPR_NeedLink": "I need a heavy chain link in my inventory.",
+    "IGUI_SQ_MPR_NeedFuel": "I need 3 propane torch uses.",
+    "IGUI_SQ_MPR_Unavailable": "I can't repair this part here.",
+    "IGUI_SQ_MPR_Done": "Protection repaired to %1/100."
+}

@@ -1,0 +1,8 @@
+name=蘇清的Viewpoint旧版手柄提示修复补丁 / SuQing's Viewpoint Legacy Prompt Fix
+id=Codex_ViewpointLegacyPromptFix_4221
+description=Restores controller master and prompt-HUD gates for Legacy menu hints. Mouse-only context menus no longer draw A/B prompts. Keeps active-controller and keyboard-resume hints.
+require=ProjectViewpointQOLLegacy0.1.6
+loadModAfter=ProjectViewpointQOLLegacy0.1.6
+versionMin=42.21
+versionMax=42.21
+modversion=1.0.0
