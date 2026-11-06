@@ -1,6 +1,6 @@
 {
   "schema": 3,
-  "generated_at_bjt": "2026-11-06T22:23:53.030590+08:00",
+  "generated_at_bjt": "2026-11-06T22:38:12.437426+08:00",
   "game_target": "Project Zomboid Build 42.21 single-player",
   "repository_count": 14,
   "independent_mod_repositories": 13,
@@ -9,8 +9,8 @@
   "path_policy": "Only repository-relative source paths and personal paths relative to mods; absolute locations remain in the local input map.",
   "source_and_publication_boundary": "Public, private uploaded, failed update, local source and personal installation are distinct. No game acceptance or remote per-file download is inferred.",
   "workshop_snapshot": {
-    "started_at_bjt": "2026-11-06T22:15:35.834858+08:00",
-    "finished_at_bjt": "2026-11-06T22:15:41.329359+08:00",
+    "started_at_bjt": "2026-11-06T22:35:42.187765+08:00",
+    "finished_at_bjt": "2026-11-06T22:35:54.336136+08:00",
     "enumeration_stable": true,
     "expected_owner": "76561198881912882",
     "consumer_app": 108600,
@@ -19,7 +19,7 @@
     "owned_collection_count": 1,
     "public_owned_entry_count": 11,
     "nonpublic_owned_entry_count": 4,
-    "snapshot_sha256": "a05a8d7943cfc06b52d7937e033e7ae133aa4a1b6ba8432fda8bcab091c90565",
+    "snapshot_sha256": "b100be0074340eb82b6af95ca99268ffb0696a0b432bba0f5ab3a85eb2377520",
     "remote_file_download": false
   },
   "workshop_patch_distribution": {
@@ -54,17 +54,16 @@
     "created_without_verified_payload_mod_ids": 0,
     "unpublished_new_main_mods": 0,
     "unpublished_new_patches": 0,
-    "published_projects_with_pending_updates": 1,
-    "failed_existing_updates": 1,
+    "published_projects_with_pending_updates": 0,
+    "failed_existing_updates": 0,
     "held_patches": 5,
     "git_repositories_with_remote": 14,
     "git_repositories_without_remote": 0
   },
   "publication_status_counts": {
-    "update_failed_pending_node_switch": 1,
+    "verified_public_current": 33,
     "published_source_version_matches": 8,
     "verified_private_candidate": 4,
-    "verified_public_current": 32,
     "held_pending_upstream_redistribution_review": 5,
     "published_in_EX_package": 3
   },
@@ -82,7 +81,7 @@
       "title_en": "SuQing’s Container Upgrades Mod",
       "mod_count": 1,
       "git_initialized": true,
-      "git_head": "c5ea0bd8351cc5a8e69ae5da82ce09b9a2c0ad05",
+      "git_head": "4f42b256975f20c1ba7b028499ecdc6bba73b381",
       "git_head_policy": "Observed at generation time",
       "git_state": "has_commit",
       "remote_state": "configured"
@@ -294,22 +293,31 @@
       "workshop_item_id": "3823988025",
       "workshop_visibility": 0,
       "workshop_visibility_name": "public",
-      "workshop_version": "1.0.1",
-      "published_version": "1.0.1",
+      "workshop_version": "1.0.3",
+      "published_version": "1.0.3",
       "uploaded_private_version": null,
       "currently_published": true,
       "private_uploaded": false,
-      "native_verified": false,
-      "native_upload_status": "mutation_failed",
-      "publication_evidence": [],
+      "native_verified": true,
+      "native_upload_status": "uploaded",
+      "publication_evidence": [
+        {
+          "stage": "upload",
+          "filename": "upload-20261106_223443_739773.json",
+          "sha256": "e39344e862621d6fdf00be673bc4d1c4f6d373027e4d966ee4fd9915b9170f5b"
+        },
+        {
+          "stage": "verify",
+          "filename": "verify-20261106_223524_935060.json",
+          "sha256": "66793e0fd42f4389de333f474997e702169a4b1f0399abc248040a3a149559c3"
+        }
+      ],
       "published_version_basis": "Native version metadata, cross-checked with matching native receipts when present",
-      "publication_status": "update_failed_pending_node_switch",
-      "retry_status": "waiting_for_user_node_switch",
-      "retry_record_sha256": "5fa3d5190c2028236abe7b4e103ed2ea59fde856587ea25385f7e4871e1fab84",
+      "publication_status": "verified_public_current",
       "candidate": {
-        "selected": true,
+        "selected": false,
         "version": "1.0.3",
-        "status": "local_source_update_pending",
+        "status": "source_version_matches_public",
         "package_verification": "Consult native verification evidence and frozen release receipt; no gameplay acceptance is inferred."
       }
     },

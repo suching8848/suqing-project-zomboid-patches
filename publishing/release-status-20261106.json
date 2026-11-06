@@ -39,11 +39,23 @@
   "ordinary_container": {
     "item": "3823988025",
     "source_version": "1.0.3",
-    "online_version": "1.0.1",
-    "status": "update_failed_pending_node_switch"
+    "online_version": "1.0.3",
+    "status": "uploaded_verified_public",
+    "successful_native_receipts": [
+      {
+        "stage": "upload",
+        "receipt": "upload-20261106_223443_739773.json",
+        "sha256": "e39344e862621d6fdf00be673bc4d1c4f6d373027e4d966ee4fd9915b9170f5b"
+      },
+      {
+        "stage": "verify",
+        "receipt": "verify-20261106_223524_935060.json",
+        "sha256": "66793e0fd42f4389de333f474997e702169a4b1f0399abc248040a3a149559c3"
+      }
+    ]
   },
-  "summary_zh": "补丁合集32项已原生上传并公开核验；4个新主模组为私密已上传验证候选。普通容器线上仍1.0.1，等待用户换节点后重试1.0.3。5项上游完整输出继续暂缓工坊分发。",
-  "summary_en": "The 32-entry patch item was submitted and verified public. Four new main mods are verified private uploaded candidates. Ordinary Containers remains 1.0.1 online, pending the user node switch before retrying 1.0.3. Five upstream-payload cases remain withheld from Workshop distribution.",
+  "summary_zh": "补丁合集32项已原生上传并公开核验；4个新主模组为私密已上传验证候选。普通容器1.0.3已在原ID提交成功并公开核验。5项上游完整输出继续暂缓工坊分发。",
+  "summary_en": "The 32-entry patch item was submitted and verified public. Four new main mods are verified private uploaded candidates. Ordinary Containers 1.0.3 was submitted successfully and verified public. Five upstream-payload cases remain withheld from Workshop distribution.",
   "personal_environment_changed": false,
   "validation_boundary": "Native success/metadata verification does not establish complete gameplay acceptance or a remote per-file download."
 }

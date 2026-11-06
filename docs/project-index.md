@@ -1,15 +1,15 @@
 # 蘇清的模组与补丁项目索引 | SuQing’s Mod and Patch Index
 
-生成时间 / Generated at: 2026-11-06T22:23:53.030590+08:00
+生成时间 / Generated at: 2026-11-06T22:38:12.437426+08:00
 
 **53个Mod ID：13个主模组、40个补丁，共14个本地Git仓库；14个已配置远端。**
 **53 Mod IDs: 13 main mods and 40 patches in 14 local Git repositories; 14 have configured remotes.**
 
-线上依据2026-11-06T22:15:41.329359+08:00的首尾一致owner快照：14个项目、1个个人合集。源码、候选、个人安装、公开发布和私密已上传分别记录；上传失败保留实际线上旧版。
-Online state uses the stable owner snapshot at 2026-11-06T22:15:41.329359+08:00: 14 items and 1 personal collection. Source, candidate, installation, public and private uploads are separate; failed updates retain observed older versions.
+线上依据2026-11-06T22:35:54.336136+08:00的首尾一致owner快照：14个项目、1个个人合集。源码、候选、个人安装、公开发布和私密已上传分别记录；上传失败保留实际线上旧版。
+Online state uses the stable owner snapshot at 2026-11-06T22:35:54.336136+08:00: 14 items and 1 personal collection. Source, candidate, installation, public and private uploads are separate; failed updates retain observed older versions.
 
-当前公开44个Mod ID，非公开已上传4个（其中原生验证4个），暂缓5项。公开补丁合集32项；本地选择32项，另3项随EX。既有更新失败1项。
-There are 44 publicly available Mod IDs and 4 nonpublic uploaded IDs (4 natively verified), plus 5 held patches. The public patch item contains 32 submods; the local selection has 32, with 3 separate EX companions. 1 existing updates failed.
+当前公开44个Mod ID，非公开已上传4个（其中原生验证4个），暂缓5项。公开补丁合集32项；本地选择32项，另3项随EX。既有更新失败0项。
+There are 44 publicly available Mod IDs and 4 nonpublic uploaded IDs (4 natively verified), plus 5 held patches. The public patch item contains 32 submods; the local selection has 32, with 3 separate EX companions. 0 existing updates failed.
 
 私密上传不代表已公开，也不代表完整游戏内验收。原生验证仅核对提交回执、文案、元数据树哈希、字节数、标签、预览和依赖；没有重新下载远端逐文件SHA。
 Private upload does not establish public availability or complete gameplay acceptance. Native verification covers submit receipts, text, metadata tree identity, byte totals, tags, preview and dependencies; no new remote per-file SHA download was performed.
@@ -40,7 +40,7 @@ Personal means installed files, not save enablement. Workshop versions retain ac
 
 | Mod ID | 名称 / Title | 源码 / Source | 本地候选 / Candidate | 个人 / Personal | Workshop版本 / Version | 状态 / Status |
 | --- | --- | --- | --- | --- | --- | --- |
-| `SuQingContainerUpgrade_4221` | 蘇清的容器升级模组 / SuQing’s Container Upgrades Mod | 1.0.3 | 1.0.3 | 1.0.3 | 1.0.1 | 更新失败待用户切节点 / failed; waiting for user node switch |
+| `SuQingContainerUpgrade_4221` | 蘇清的容器升级模组 / SuQing’s Container Upgrades Mod | 1.0.3 | 1.0.3 | 1.0.3 | 1.0.3 | 原生验证已公开 / verified public |
 | `Codex_PetGunWeightKits_4221` | 蘇清的现代枪械减重挂件模组 / SuQing’s Firearm Weight Charms Mod | 1.2.1 | 1.2.1 | 1.2.1 | 1.2.1 | 已公开同版本 / public same version |
 | `ExSuQingBackpackSuperUpgrade_4221` | 蘇清的背包超级升级模组 / SuQing’s Backpack Super Upgrades Mod | 1.0.0-rc.2 | 1.0.0-rc.2 | 1.0.0-rc.2 | 1.0.0-rc.2 | 已公开同版本 / public same version |
 | `SuQingRefrigerationUpgrade_4221` | 蘇清的冷藏升级模组 / SuQing’s Refrigeration Upgrades Mod | 1.0.0-rc.2-perf.1 | 1.0.0-rc.2-perf.1 | 1.0.0-rc.2-perf.1 | 1.0.0-rc.2-perf.1 | 已公开同版本 / public same version |

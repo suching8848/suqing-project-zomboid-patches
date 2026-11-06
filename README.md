@@ -2,7 +2,7 @@
 
 ## 2026年11月6日发布状态
 
-当前源码登记40项：32项补丁合集可选子模组已原生上传并公开核验，3项仍随EX提供，5项再分发暂缓。11月3日25项旧清单保存在publishing/history；candidate-20261106.json保留发布前选择快照，当前线上以publishing/workshop.json为准。4个新主模组为私密已上传验证候选；普通容器1.0.3上传失败、线上仍1.0.1，待用户换节点重试。详见[本次发布状态](publishing/release-status-20261106.json)；源码和上传均不代替单项游戏验收。
+当前源码登记40项：32项补丁合集可选子模组已原生上传并公开核验，3项仍随EX提供，5项再分发暂缓。11月3日25项旧清单保存在publishing/history；candidate-20261106.json保留发布前选择快照，当前线上以publishing/workshop.json为准。4个新主模组为私密已上传验证候选；普通容器1.0.3已在原ID上传成功并公开核验。详见[本次发布状态](publishing/release-status-20261106.json)；源码和上传均不代替单项游戏验收。
 
 [中文](README.md) · [English](README.en.md)
 

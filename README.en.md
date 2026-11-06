@@ -2,7 +2,7 @@
 
 ## November 6 publication status
 
-The source catalog has 40 entries: 32 optional collection submods were submitted and verified public, with 3 separate EX companions and 5 redistribution holds. The old 25-entry manifest is preserved in publishing/history; candidate-20261106.json remains pre-upload selection evidence, while publishing/workshop.json records the verified online item. Four new main mods are verified private uploaded candidates. Ordinary Containers 1.0.3 failed to upload and remains 1.0.1 online, pending the user node switch. See [publication status](publishing/release-status-20261106.json); source/upload status does not establish gameplay acceptance.
+The source catalog has 40 entries: 32 optional collection submods were submitted and verified public, with 3 separate EX companions and 5 redistribution holds. The old 25-entry manifest is preserved in publishing/history; candidate-20261106.json remains pre-upload selection evidence, while publishing/workshop.json records the verified online item. Four new main mods are verified private uploaded candidates. Ordinary Containers 1.0.3 was uploaded to its existing item and verified public. See [publication status](publishing/release-status-20261106.json); source/upload status does not establish gameplay acceptance.
 
 [中文](README.md) · [English](README.en.md)
 
