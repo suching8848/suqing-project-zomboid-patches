@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target_game": "Project Zomboid Build 42.21",
-  "scope": "42 registered patches: 34 optional collection patches, 3 EX companions and 5 redistribution holds. See publishing/workshop.json for the verified online payload.",
+  "scope": "43 registered patches: 35 optional collection patches, 3 EX companions and 5 redistribution holds. See publishing/workshop.json for the verified online payload.",
   "mods": [
     {
       "id": "Codex_AmmoBox_CN_TextFix_4221",
@@ -1373,6 +1373,38 @@
       "excluded_files": [],
       "source_roots": [],
       "local_registration_date": "2026-11-07",
+      "distribution": "optional_in_patch_collection"
+    },
+    {
+      "id": "SuQingProjectIronCN_4221",
+      "folder": "SuQingProjectIronCN_4221",
+      "title_zh": "蘇清的 Project Iron 简体中文补丁",
+      "title_en": "SuQing's Project Iron Chinese Patch",
+      "version": "1.0.0",
+      "description_original": "Simplified Chinese menus, equipment, supplements, status text and sandbox options for Project Iron 0.6.0 on Build 42.21.",
+      "requires_raw": "SweatWorkz",
+      "load_after_raw": "SweatWorkz,B42ModTrans_CN,GardeniaTranslate_CN",
+      "required_mods": [
+        "SweatWorkz"
+      ],
+      "load_after_mods": [
+        "SweatWorkz",
+        "B42ModTrans_CN",
+        "GardeniaTranslate_CN"
+      ],
+      "doc": "docs/patches/SuQingProjectIronCN_4221.md",
+      "reconstruction_status": "recipes_ready",
+      "source_runtime_info": "42/mod.info",
+      "summary_zh": "汉化 Project Iron 0.6.0 的器械、补剂、状态、菜单、沙盒设置及音效名称。",
+      "summary_en": "Translates equipment, supplements, status text, menus, sandbox options and sound names for Project Iron 0.6.0.",
+      "runtime_files": 12,
+      "runtime_bytes": 15886,
+      "reconstruction_modes": {
+        "own": 12
+      },
+      "excluded_files": [],
+      "source_roots": [],
+      "local_registration_date": "2026-11-08",
       "distribution": "optional_in_patch_collection"
     }
   ]

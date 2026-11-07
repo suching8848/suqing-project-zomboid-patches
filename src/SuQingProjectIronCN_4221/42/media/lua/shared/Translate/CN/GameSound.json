@@ -1,0 +1,18 @@
+{
+    "GameSound_SWZ_TreadmillStart": "跑步机启动",
+    "GameSound_SWZ_TreadmillWalkLoop": "跑步机慢走",
+    "GameSound_SWZ_TreadmillRunLoop": "跑步机跑步",
+    "GameSound_SWZ_TreadmillStop": "跑步机停止",
+    "GameSound_SWZ_StairClimberLoop": "登阶机运转",
+    "GameSound_SWZ_StairClimberStop": "登阶机停止",
+    "GameSound_SWZ_AirBikeLoop": "风阻单车运转",
+    "GameSound_SWZ_AirBikeStop": "风阻单车停止",
+    "GameSound_SWZ_CablePull": "绳索训练器拉动",
+    "GameSound_SWZ_CableReturn": "绳索训练器回位",
+    "GameSound_SWZ_BarbellClank": "杠铃碰撞",
+    "GameSound_SWZ_BarbellRattle": "杠铃晃动",
+    "GameSound_SWZ_BenchPressClank": "卧推杠铃碰撞",
+    "GameSound_SWZ_BenchPressRattle": "卧推杠铃晃动",
+    "GameSound_SWZ_LegPressClank": "腿举配重碰撞",
+    "GameSound_SWZ_LegPressRattle": "腿举配重晃动"
+}

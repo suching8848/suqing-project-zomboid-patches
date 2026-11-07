@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target_game": "Project Zomboid Build 42.21",
-  "scope": "42 registered patches: 34 optional collection patches, 3 EX companions and 5 redistribution holds. See publishing/workshop.json for the verified online payload.",
+  "scope": "43 registered patches: 35 optional collection patches, 3 EX companions and 5 redistribution holds. See publishing/workshop.json for the verified online payload.",
   "mods": [
     {
       "id": "Codex_AmmoBox_CN_TextFix_4221",
@@ -2552,6 +2552,106 @@
           "size": 625,
           "mode": "own",
           "repo_path": "src/SuQingFavouriteRecipeMaterials_4221/mod.info"
+        }
+      ]
+    },
+    {
+      "id": "SuQingProjectIronCN_4221",
+      "folder": "SuQingProjectIronCN_4221",
+      "version": "1.0.0",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/shared",
+        "42/media/lua/shared/Translate",
+        "42/media/lua/shared/Translate/CN",
+        "common"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/shared/Translate/CN/ContextMenu.json",
+          "sha256": "d1c93f548fe41becfe823535d463c82f158273896082f30ac5ee80619f7109cd",
+          "size": 1438,
+          "mode": "own",
+          "repo_path": "src/SuQingProjectIronCN_4221/42/media/lua/shared/Translate/CN/ContextMenu.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/Fluids.json",
+          "sha256": "116c9ac60e16a4eaf886b367c27f7f8a59f492fb68b72c09d218314e4d500c04",
+          "size": 288,
+          "mode": "own",
+          "repo_path": "src/SuQingProjectIronCN_4221/42/media/lua/shared/Translate/CN/Fluids.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/GameSound.json",
+          "sha256": "a069f310128e5d3d367b82e0982d30b9d1d49e8e0b7f93541fb6d287801915f8",
+          "size": 900,
+          "mode": "own",
+          "repo_path": "src/SuQingProjectIronCN_4221/42/media/lua/shared/Translate/CN/GameSound.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/IG_UI.json",
+          "sha256": "7b2e512ab59faed95b8192a5cf973bfdce732752b8eae36dbb44f55c02b44362",
+          "size": 1864,
+          "mode": "own",
+          "repo_path": "src/SuQingProjectIronCN_4221/42/media/lua/shared/Translate/CN/IG_UI.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/ItemName.json",
+          "sha256": "f3339573d1120290d716fbef63a2c5e834e2fdacde6b7033ceea1ee253a0bec4",
+          "size": 1810,
+          "mode": "own",
+          "repo_path": "src/SuQingProjectIronCN_4221/42/media/lua/shared/Translate/CN/ItemName.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/Mod.json",
+          "sha256": "2c31a434536ab47edd68edf4576a2c1d1a2a6efc555d921301ebd8ff380b1bcd",
+          "size": 186,
+          "mode": "own",
+          "repo_path": "src/SuQingProjectIronCN_4221/42/media/lua/shared/Translate/CN/Mod.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/Moveables.json",
+          "sha256": "22a40e1d4107ea0a318b870831f7087d588664dfefbf7a5fe57477c4abcf4d98",
+          "size": 1727,
+          "mode": "own",
+          "repo_path": "src/SuQingProjectIronCN_4221/42/media/lua/shared/Translate/CN/Moveables.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/Sandbox.json",
+          "sha256": "702b8a4ab83665fcab542fa498e6b0931f54a7109bf90797db9bdc6338813100",
+          "size": 5601,
+          "mode": "own",
+          "repo_path": "src/SuQingProjectIronCN_4221/42/media/lua/shared/Translate/CN/Sandbox.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/Tooltip.json",
+          "sha256": "40e418d080a216e729772cc16eb8a039d7402e55856be0c4656c42ad4f4c6138",
+          "size": 1433,
+          "mode": "own",
+          "repo_path": "src/SuQingProjectIronCN_4221/42/media/lua/shared/Translate/CN/Tooltip.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/UI.json",
+          "sha256": "52094a98578eb5e2814817fe37d557abaa4b4b60872e7b6faefaece2eae5bc08",
+          "size": 293,
+          "mode": "own",
+          "repo_path": "src/SuQingProjectIronCN_4221/42/media/lua/shared/Translate/CN/UI.json"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "c23914d533e82e2678b79f10d5e3e0be500b3f638338b9be4324c68a84387baa",
+          "size": 346,
+          "mode": "own",
+          "repo_path": "src/SuQingProjectIronCN_4221/42/mod.info"
+        },
+        {
+          "path": "common/.gitkeep",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0,
+          "mode": "own",
+          "repo_path": "src/SuQingProjectIronCN_4221/common/.gitkeep"
         }
       ]
     }

@@ -1,0 +1,20 @@
+{
+    "Tooltip_SWZ_NoYogaMat": "你没有瑜伽垫。",
+    "Tooltip_SWZ_YogaMatNoRoom": "瑜伽垫朝向的东侧或南侧需要留一格空地。",
+    "Tooltip_SWZ_TooTired": "你现在太累，无法锻炼。",
+    "Tooltip_SWZ_NeedBarbell": "先把杠铃放上架。",
+    "Tooltip_SWZ_StationBusy": "已经有人在使用。",
+    "Tooltip_SWZ_NoPlates": "装上配重可获得更多力量经验。",
+    "Tooltip_SWZ_NoRoomForFeet": "双脚朝向的一侧需要留一格空地。",
+    "Tooltip_SWZ_NoPower": "需要供电。",
+    "Tooltip_SWZ_NeedOwnBarbell": "你需要一根杠铃。",
+    "Tooltip_SWZ_ShakerBottle": "装入水后右键加入补剂。每勺需要 400 毫升水。",
+    "Tooltip_SWZ_WheyProtein": "每罐 30 勺。每勺加 400 毫升水摇匀，训练后在恢复窗口内饮用可缓解酸痛并恢复耐力。",
+    "Tooltip_SWZ_PreWorkout": "每罐 30 勺。每勺加 400 毫升水摇匀，训练前饮用可暂时提高力量和体格经验，药效消退后可能增加疲劳和压力。",
+    "Tooltip_SWZ_NeedWater": "先往摇摇杯加入至少 400 毫升干净的水。",
+    "Tooltip_SWZ_OnlyWater": "摇摇杯只接受干净的水和已调好的补剂，请先倒空。",
+    "Tooltip_SWZ_TubEmpty": "罐子已经空了。",
+    "Tooltip_SWZ_NeedShaker": "你需要一个摇摇杯。",
+    "Tooltip_SWZ_RackFull": "哑铃架已放满。",
+    "Tooltip_SWZ_NoDumbbell": "你没有哑铃。"
+}
