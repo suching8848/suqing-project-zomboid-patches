@@ -1,8 +1,15 @@
 # 蘇清的僵尸毁灭工程补丁合集 / SuQing’s Project Zomboid Patch Collection
 
+## 2026-11-07 新增子模组
+
+两项均为 0.1.0，适用于 B42.21 单人。启用前按需选择，游戏内验收待完成。合集当前线上版本以[已核验发布清单](publishing/workshop.json)为准。
+
+- [蘇清的好彩香烟菜单修复](docs/patches/SuQingLuckyStrikeMenuFix_4221.md) 区分中文单根与盒装名称，并保护已审查的 CleanUI 2.10.4 混合好彩组菜单。需要 CleanUI 和 More MRE。离线通过 22 场景／239 断言。
+- [蘇清的收藏配方材料标记修复](docs/patches/SuQingFavouriteRecipeMaterials_4221.md) 恢复自定义模块收藏配方材料的绿勾及悬停提示。无必需前置。原版和当前 PZO Kahlua 各通过 7 场景／46 断言。
+
 ## 2026年11月6日发布状态
 
-当前源码登记40项：32项补丁合集可选子模组已原生上传并公开核验，3项仍随EX提供，5项再分发暂缓。11月3日25项旧清单保存在publishing/history；candidate-20261106.json保留发布前选择快照，当前线上以publishing/workshop.json为准。4个新主模组为私密已上传验证候选；普通容器1.0.3已在原ID上传成功并公开核验。详见[本次发布状态](publishing/release-status-20261106.json)；源码和上传均不代替单项游戏验收。
+当次源码快照登记40项：32项补丁合集可选子模组已原生上传并公开核验，3项仍随EX提供，5项再分发暂缓。11月3日25项旧清单保存在publishing/history；candidate-20261106.json保留发布前选择快照，当前线上以publishing/workshop.json为准。4个新主模组为私密已上传验证候选；普通容器1.0.3已在原ID上传成功并公开核验。详见[本次发布状态](publishing/release-status-20261106.json)；源码和上传均不代替单项游戏验收。
 
 [中文](README.md) · [English](README.en.md)
 

@@ -1,8 +1,15 @@
 # SuQing’s Project Zomboid Patch Collection / 蘇清的僵尸毁灭工程补丁合集
 
+## November 7 patch additions
+
+Both optional patches are version 0.1.0 for B42.21 single-player. In-game acceptance is pending. See the [verified Workshop manifest](publishing/workshop.json) for the live collection payload.
+
+- [Lucky Strike Menu Fix](docs/patches/SuQingLuckyStrikeMenuFix_4221.md) distinguishes Chinese loose/pack names and guards mixed Lucky Strike groups in the reviewed CleanUI 2.10.4 menu. Requires CleanUI and More MRE. 22 offline scenarios and 239 assertions passed.
+- [Favourite Recipe Materials Fix](docs/patches/SuQingFavouriteRecipeMaterials_4221.md) restores the stock green badge and hover hint for materials used by custom-module favourites. Has no hard prerequisites. Stock and current PZO Kahlua each passed 7 scenarios and 46 assertions.
+
 ## November 6 publication status
 
-The source catalog has 40 entries: 32 optional collection submods were submitted and verified public, with 3 separate EX companions and 5 redistribution holds. The old 25-entry manifest is preserved in publishing/history; candidate-20261106.json remains pre-upload selection evidence, while publishing/workshop.json records the verified online item. Four new main mods are verified private uploaded candidates. Ordinary Containers 1.0.3 was uploaded to its existing item and verified public. See [publication status](publishing/release-status-20261106.json); source/upload status does not establish gameplay acceptance.
+The source snapshot had 40 entries: 32 optional collection submods were submitted and verified public, with 3 separate EX companions and 5 redistribution holds. The old 25-entry manifest is preserved in publishing/history; candidate-20261106.json remains pre-upload selection evidence, while publishing/workshop.json records the verified online item. Four new main mods are verified private uploaded candidates. Ordinary Containers 1.0.3 was uploaded to its existing item and verified public. See [publication status](publishing/release-status-20261106.json); source/upload status does not establish gameplay acceptance.
 
 [中文](README.md) · [English](README.en.md)
 

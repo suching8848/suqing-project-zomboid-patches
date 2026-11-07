@@ -3138,5 +3138,76 @@
         "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
       }
     }
+  ],
+  "post_snapshot_additions": [
+    {
+      "recorded_on_bjt": "2026-11-07",
+      "mod_id": "SuQingLuckyStrikeMenuFix_4221",
+      "title_zh": "蘇清的好彩香烟菜单修复",
+      "title_en": "SuQing's Lucky Strike Menu Fix",
+      "repository_slug": "suqing-project-zomboid-patches",
+      "source_version": "0.1.0",
+      "source_mod_info": "src/SuQingLuckyStrikeMenuFix_4221/42/mod.info",
+      "documentation": "docs/patches/SuQingLuckyStrikeMenuFix_4221.md",
+      "required_mods": [
+        "CleanUI",
+        "MREfood4213"
+      ],
+      "load_after_mods": [
+        "CleanUI",
+        "MREfood4213",
+        "GardeniaTranslate_CN",
+        "SuQingUIInteractionFixes",
+        "Codex_InventoryTransferPerformance_4221"
+      ],
+      "target_game": "Project Zomboid Build 42.21 single-player",
+      "reviewed_cleanui_version": "2.10.4",
+      "validation_status": "Offline regression passed. User gameplay acceptance is pending.",
+      "source_mod_info_sha256": "1ca98e1d12a3eb580d52e96a2d2a660910240b4222bb5c6d8234a303a5fd85a1",
+      "source_runtime_files": 6,
+      "source_runtime_bytes": 10385,
+      "offline_validation": {
+        "checked_at_bjt": "2026-11-07T07:23:35.656127+08:00",
+        "passed": true,
+        "cases": 22,
+        "assertions": 239,
+        "candidate_lua_sha256": "3a25d5cb9c85314b7eb0657737a6ddcaf143382db9a1062128cb86d874683d6c",
+        "test_runner": "tests/lucky_strike_menu_fix/run_tests.py",
+        "boundary": "Unmodified installed CleanUI Lua in standalone actual-game Kahlua; Java items, players, containers, UI and closure metadata are controlled fixtures. No gameplay, native UI, smoking action, save reload or FPS acceptance."
+      },
+      "publication_manifest": "../publishing/workshop.json"
+    },
+    {
+      "recorded_on_bjt": "2026-11-07",
+      "mod_id": "SuQingFavouriteRecipeMaterials_4221",
+      "title_zh": "蘇清的收藏配方材料标记修复",
+      "title_en": "SuQing's Favourite Recipe Materials Fix",
+      "repository_slug": "suqing-project-zomboid-patches",
+      "source_version": "0.1.0",
+      "source_mod_info": "src/SuQingFavouriteRecipeMaterials_4221/42/mod.info",
+      "documentation": "docs/patches/SuQingFavouriteRecipeMaterials_4221.md",
+      "required_mods": [],
+      "load_after_mods": [
+        "CleanUI",
+        "Neat_Crafting",
+        "SuQingSearchEnhancement",
+        "SuQingRefrigerationUpgrade_4221",
+        "ExSuQingBackpackSuperUpgrade_4221"
+      ],
+      "target_game": "Project Zomboid Build 42.21 single-player",
+      "reviewed_cleanui_version": "2.10.4",
+      "validation_status": "Offline regression passed. User gameplay acceptance is pending.",
+      "source_mod_info_sha256": "ea36573f3cab4873969e1ae4c7d93711f3fa463e304c282990e92060c94d7a3e",
+      "source_runtime_files": 4,
+      "source_runtime_bytes": 7343,
+      "offline_validation": {
+        "passed": true,
+        "cases": 7,
+        "assertions": 46,
+        "fixture": "tests/favourite_recipe_materials/regression.lua",
+        "boundary": "Stock and active PZO Kahlua with real stock ISToolTipInv Lua. Java and drawing boundaries are fixtures."
+      },
+      "publication_manifest": "../publishing/workshop.json"
+    }
   ]
 }

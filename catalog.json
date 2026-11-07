@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target_game": "Project Zomboid Build 42.21",
-  "scope": "40 registered independent patches; 32-item local publication candidate, 3 EX companions and 5 held redistributions. Not an online publication claim.",
+  "scope": "42 registered patches: 34 optional collection patches, 3 EX companions and 5 redistribution holds. See publishing/workshop.json for the verified online payload.",
   "mods": [
     {
       "id": "Codex_AmmoBox_CN_TextFix_4221",
@@ -1307,6 +1307,73 @@
         }
       ],
       "source_roots": []
+    },
+    {
+      "id": "SuQingLuckyStrikeMenuFix_4221",
+      "folder": "SuQingLuckyStrikeMenuFix_4221",
+      "title_zh": "蘇清的好彩香烟菜单修复",
+      "title_en": "SuQing's Lucky Strike Menu Fix",
+      "version": "0.1.0",
+      "description_original": "Distinguishes Chinese Lucky Strike single/pack names and normalizes only reviewed CleanUI 2.10.4 mixed Lucky Strike groups before their original context menu. B42.21 single-player only.",
+      "requires_raw": "CleanUI,MREfood4213",
+      "load_after_raw": "CleanUI,MREfood4213,GardeniaTranslate_CN,SuQingUIInteractionFixes,Codex_InventoryTransferPerformance_4221",
+      "required_mods": [
+        "CleanUI",
+        "MREfood4213"
+      ],
+      "load_after_mods": [
+        "CleanUI",
+        "MREfood4213",
+        "GardeniaTranslate_CN",
+        "SuQingUIInteractionFixes",
+        "Codex_InventoryTransferPerformance_4221"
+      ],
+      "doc": "docs/patches/SuQingLuckyStrikeMenuFix_4221.md",
+      "reconstruction_status": "recipes_ready",
+      "source_runtime_info": "42/mod.info",
+      "summary_zh": "区分好彩香烟单根与盒装的中文名称，仅保护已审查CleanUI2.10.4的好彩混组菜单；保留全部成员、吸烟与转移规则。",
+      "summary_en": "Separates Chinese Lucky Strike single/pack names and guards only reviewed CleanUI 2.10.4 mixed groups, retaining every item and original smoking/transfer rules.",
+      "runtime_files": 6,
+      "runtime_bytes": 10385,
+      "reconstruction_modes": {
+        "own": 6
+      },
+      "excluded_files": [],
+      "source_roots": [],
+      "local_registration_date": "2026-11-07",
+      "distribution": "optional_in_patch_collection"
+    },
+    {
+      "id": "SuQingFavouriteRecipeMaterials_4221",
+      "folder": "SuQingFavouriteRecipeMaterials_4221",
+      "title_zh": "蘇清的收藏配方材料标记修复",
+      "title_en": "SuQing's Favourite Recipe Materials Fix",
+      "version": "0.1.0",
+      "description_original": "修复 B42.21.0 单人游戏中自定义模块收藏配方材料缺少绿勾和悬停提示。兼容原版与 CleanUI 详细列表。 <LINE> Restores the green badge and hover hint for favourite recipes in custom modules on B42.21.0 single-player. Works with vanilla and CleanUI detailed lists.",
+      "requires_raw": "",
+      "load_after_raw": "CleanUI,Neat_Crafting,SuQingSearchEnhancement,SuQingRefrigerationUpgrade_4221,ExSuQingBackpackSuperUpgrade_4221",
+      "required_mods": [],
+      "load_after_mods": [
+        "CleanUI",
+        "Neat_Crafting",
+        "SuQingSearchEnhancement",
+        "SuQingRefrigerationUpgrade_4221",
+        "ExSuQingBackpackSuperUpgrade_4221"
+      ],
+      "doc": "docs/patches/SuQingFavouriteRecipeMaterials_4221.md",
+      "reconstruction_status": "recipes_ready",
+      "source_runtime_info": "42/mod.info",
+      "summary_zh": "补齐自定义模块收藏配方材料的原有绿勾与绿色悬停提示。",
+      "summary_en": "Restores the stock green badge and hover hint for materials of favourites in custom modules.",
+      "runtime_files": 4,
+      "runtime_bytes": 7343,
+      "reconstruction_modes": {
+        "own": 4
+      },
+      "excluded_files": [],
+      "source_roots": [],
+      "local_registration_date": "2026-11-07",
+      "distribution": "optional_in_patch_collection"
     }
   ]
 }

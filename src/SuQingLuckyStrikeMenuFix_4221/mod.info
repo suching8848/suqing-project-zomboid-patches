@@ -1,0 +1,9 @@
+name=蘇清的好彩香烟菜单修复 / SuQing's Lucky Strike Menu Fix
+id=SuQingLuckyStrikeMenuFix_4221
+author=SuQing
+modversion=0.1.0
+versionMin=42.21
+versionMax=42.21
+require=CleanUI,MREfood4213
+loadModAfter=CleanUI,MREfood4213,GardeniaTranslate_CN,SuQingUIInteractionFixes,Codex_InventoryTransferPerformance_4221
+description=区分好彩香烟单根与盒装的中文名称，修复 CleanUI 中两种类型混组时的右键菜单报错。B42.21 单人 / CleanUI 2.10.4；离线验证，游戏内待验收。 <LINE> Distinguishes the Chinese names of Lucky Strike singles and packs and guards their mixed-stack context menu in CleanUI. B42.21 SP / CleanUI 2.10.4; offline validation, in-game acceptance pending.

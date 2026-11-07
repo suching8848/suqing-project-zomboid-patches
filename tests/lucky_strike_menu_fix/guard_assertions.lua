@@ -1,0 +1,11 @@
+local T=LuckyTest
+T.case("unsupported environment leaves original menu installed",function()
+ T.start()
+ T.eq(ISInventoryPaneContextMenu.createMenu,T.originalMenu)
+ T.check(SuQingLuckyStrikeMenuFix.installed~=true)
+ T.check(type(SuQingLuckyStrikeMenuFix.inactiveReason)=="string")
+ local a=T.item("Food");local b=T.item("DrainableComboItem")
+ local ok=pcall(T.call,{T.group({a,b})})
+ T.eq(ok,false,"guard does not swallow original failure")
+end)
+return "cases="..T.cases.."; assertions="..T.assertions.."; tests="..table.concat(T.names," | ")

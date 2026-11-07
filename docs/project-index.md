@@ -14,6 +14,17 @@ There are 44 publicly available Mod IDs and 4 nonpublic uploaded IDs (4 natively
 私密上传不代表已公开，也不代表完整游戏内验收。原生验证仅核对提交回执、文案、元数据树哈希、字节数、标签、预览和依赖；没有重新下载远端逐文件SHA。
 Private upload does not establish public availability or complete gameplay acceptance. Native verification covers submit receipts, text, metadata tree identity, byte totals, tags, preview and dependencies; no new remote per-file SHA download was performed.
 
+## 2026-11-07 新增补丁 | Patch additions after the snapshot
+
+以下两项是在 11 月 6 日的 53 项历史快照之后登记的补丁。当前合集分发状态见[已核验发布清单](../publishing/workshop.json)。 These two patches were registered after the 53-entry November 6 snapshot. See the [verified Workshop manifest](../publishing/workshop.json) for the current collection payload.
+
+| Mod ID | 名称 / Title | 版本 / Version | 状态 / Status |
+| --- | --- | --- | --- |
+| `SuQingLuckyStrikeMenuFix_4221` | [蘇清的好彩香烟菜单修复 / SuQing's Lucky Strike Menu Fix](patches/SuQingLuckyStrikeMenuFix_4221.md) | 0.1.0 | 离线22场景／239断言通过，已部署启用；待用户游戏验收 / 22 offline scenarios / 239 assertions passed; deployed and enabled; user gameplay acceptance pending |
+| `SuQingFavouriteRecipeMaterials_4221` | [蘇清的收藏配方材料标记修复 / SuQing's Favourite Recipe Materials Fix](patches/SuQingFavouriteRecipeMaterials_4221.md) | 0.1.0 | 离线 7 场景／46 断言通过，当前单人档已启用，待游戏内验收。 / 7 offline scenarios / 46 assertions passed. Enabled in the target single-player save. In-game acceptance pending. |
+
+索引生成器保留 11 月 6 日快照口径，以上两项在此单独登记。 The index generator retains the November 6 snapshot scope. The two additions are recorded separately here.
+
 ## 仓库入口 | Repository entries
 
 | 仓库 / Repository | 中英名称 / Bilingual title | Mod ID数 / Count | Git状态 / Git state |

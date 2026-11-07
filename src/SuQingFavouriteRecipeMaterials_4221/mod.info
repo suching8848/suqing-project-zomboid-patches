@@ -1,0 +1,9 @@
+name=蘇清的收藏配方材料标记修复 / SuQing's Favourite Recipe Materials Fix
+id=SuQingFavouriteRecipeMaterials_4221
+author=SuQing
+modversion=0.1.0
+versionMin=42.21
+versionMax=42.21
+loadModAfter=CleanUI,Neat_Crafting,SuQingSearchEnhancement,SuQingRefrigerationUpgrade_4221,ExSuQingBackpackSuperUpgrade_4221
+description=修复 B42.21.0 单人游戏中自定义模块收藏配方材料缺少绿勾和悬停提示。兼容原版与 CleanUI 详细列表。 <LINE> Restores the green badge and hover hint for favourite recipes in custom modules on B42.21.0 single-player. Works with vanilla and CleanUI detailed lists.
+

@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target_game": "Project Zomboid Build 42.21",
-  "scope": "40 registered independent patches; 32-item local publication candidate, 3 EX companions and 5 held redistributions. Not an online publication claim.",
+  "scope": "42 registered patches: 34 optional collection patches, 3 EX companions and 5 redistribution holds. See publishing/workshop.json for the verified online payload.",
   "mods": [
     {
       "id": "Codex_AmmoBox_CN_TextFix_4221",
@@ -2451,6 +2451,107 @@
           "size": 1304,
           "mode": "own",
           "repo_path": "src/SuQingWorldStateGuard_4221/42/mod.info"
+        }
+      ]
+    },
+    {
+      "id": "SuQingLuckyStrikeMenuFix_4221",
+      "folder": "SuQingLuckyStrikeMenuFix_4221",
+      "version": "0.1.0",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/client",
+        "42/media/lua/shared",
+        "42/media/lua/shared/Translate",
+        "42/media/lua/shared/Translate/CN",
+        "common"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/client/SuQing_LuckyStrikeMenuFix.lua",
+          "sha256": "3a25d5cb9c85314b7eb0657737a6ddcaf143382db9a1062128cb86d874683d6c",
+          "size": 4558,
+          "mode": "own",
+          "repo_path": "src/SuQingLuckyStrikeMenuFix_4221/42/media/lua/client/SuQing_LuckyStrikeMenuFix.lua"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/ItemName.json",
+          "sha256": "0c5dfdd5a4065fe5c08729d8084d69f9e5093a543a7a0692308202297ac6c8da",
+          "size": 94,
+          "mode": "own",
+          "repo_path": "src/SuQingLuckyStrikeMenuFix_4221/42/media/lua/shared/Translate/CN/ItemName.json"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "1ca98e1d12a3eb580d52e96a2d2a660910240b4222bb5c6d8234a303a5fd85a1",
+          "size": 716,
+          "mode": "own",
+          "repo_path": "src/SuQingLuckyStrikeMenuFix_4221/42/mod.info"
+        },
+        {
+          "path": "README.txt",
+          "sha256": "cf0bc4c9d1751ef5d65c80fe898d59d2448c90f551c970c0cc3570a53a048d81",
+          "size": 4300,
+          "mode": "own",
+          "repo_path": "src/SuQingLuckyStrikeMenuFix_4221/README.txt"
+        },
+        {
+          "path": "common/.keep",
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "size": 1,
+          "mode": "own",
+          "repo_path": "src/SuQingLuckyStrikeMenuFix_4221/common/.keep"
+        },
+        {
+          "path": "mod.info",
+          "sha256": "1ca98e1d12a3eb580d52e96a2d2a660910240b4222bb5c6d8234a303a5fd85a1",
+          "size": 716,
+          "mode": "own",
+          "repo_path": "src/SuQingLuckyStrikeMenuFix_4221/mod.info"
+        }
+      ]
+    },
+    {
+      "id": "SuQingFavouriteRecipeMaterials_4221",
+      "folder": "SuQingFavouriteRecipeMaterials_4221",
+      "version": "0.1.0",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/client",
+        "common"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/client/SuQing_FavouriteRecipeMaterials.lua",
+          "sha256": "511bd3f2a9e8412b89a1ed3c82164318434ebfc3fd49debd0f8868f91c3fb890",
+          "size": 6092,
+          "mode": "own",
+          "repo_path": "src/SuQingFavouriteRecipeMaterials_4221/42/media/lua/client/SuQing_FavouriteRecipeMaterials.lua"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "ea36573f3cab4873969e1ae4c7d93711f3fa463e304c282990e92060c94d7a3e",
+          "size": 625,
+          "mode": "own",
+          "repo_path": "src/SuQingFavouriteRecipeMaterials_4221/42/mod.info"
+        },
+        {
+          "path": "common/.keep",
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "size": 1,
+          "mode": "own",
+          "repo_path": "src/SuQingFavouriteRecipeMaterials_4221/common/.keep"
+        },
+        {
+          "path": "mod.info",
+          "sha256": "ea36573f3cab4873969e1ae4c7d93711f3fa463e304c282990e92060c94d7a3e",
+          "size": 625,
+          "mode": "own",
+          "repo_path": "src/SuQingFavouriteRecipeMaterials_4221/mod.info"
         }
       ]
     }
