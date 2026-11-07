@@ -1,7 +1,7 @@
 {
   "publishedfileid": "3832223928",
   "visibility": "public",
-  "version": "2026.11.07-34",
+  "version": "2026.11.08-35",
   "status": "verified_public",
   "mod_ids": [
     "CodexCharacterMenuTweaks_4221",
@@ -34,16 +34,17 @@
     "SuQingFavouriteRecipeMaterials_4221",
     "SuQingLuckyStrikeMenuFix_4221",
     "SuQingMustangProtectionRepair",
+    "SuQingProjectIronCN_4221",
     "SuQingProteinTrainingBoost",
     "SuQingRecipeInputGuard_4221",
     "SuQingUIInteractionFixes",
     "SuQingWorldStateGuard_4221"
   ],
-  "source_patch_count": 42,
+  "source_patch_count": 43,
   "companion_EX_patch_count": 3,
   "held_count": 5,
-  "verification": "Native successful submit and uncached public readback matched the frozen payload metadata, byte count, description, title, preview, tags and dependencies. Remote per-file downloads and gameplay acceptance were outside this verification.",
-  "published_patch_count": 34,
+  "verification": "Native submit succeeded. Uncached public readback matched the content byte count, metadata tree hash, description, title, preview size, tags and dependencies. The frozen payload preserves the previous 34 children byte-for-byte and adds one optional translation child. Remote per-file download and in-game display are outside this verification.",
+  "published_patch_count": 35,
   "mod_versions": {
     "Codex_AmmoBox_CN_TextFix_4221": "1.2.0",
     "Codex_AttachedGrouping_4221": "1.0.0",
@@ -78,14 +79,16 @@
     "Codex_TheyKnew_CN_TextFix_4221": "1.0.0",
     "Codex_TrueMusic_Headphones_4221": "1.0.0",
     "SuQingLuckyStrikeMenuFix_4221": "0.1.0",
-    "SuQingFavouriteRecipeMaterials_4221": "0.1.0"
+    "SuQingFavouriteRecipeMaterials_4221": "0.1.0",
+    "SuQingProjectIronCN_4221": "1.0.0"
   },
-  "content_tree_sha256": "da906dd73c018f4b50b947d29acde0000989275282d6cb3b4949c2948e54e53b",
-  "verification_receipt_sha256": "fe6e21886c56c5601d19146c180c312b473a34b39952a022c4194db16f9d4357",
-  "historical_publication_manifest": "history/workshop-20261106-32.json",
+  "content_tree_sha256": "13848fbeea6a5caaba008b044bd862bf884a1c3301bfc90219c1e28517a57cad",
+  "verification_receipt_sha256": "a822c3cfdabc9cb613e3d78bc01d94bd654277757ca29eebe405f8f754ebfa92",
+  "historical_publication_manifest": "history/workshop-20261107-34.json",
   "candidate_manifest_policy": "candidate-20261106.json remains the pre-upload selection for the November 6 release. This file describes the current verified item.",
-  "source_git_commit": "8fc2eac5a298c451fbd2c255072af9e8be5164b1",
-  "uploaded_at_bjt": "2026-11-07T23:45:46.551797+08:00",
-  "verified_at_bjt": "2026-11-07T23:46:15.265046+08:00",
-  "upload_receipt_sha256": "5415eb1487c50f7c9618f095972cac2c2bdba4f97a0d22d46de67b34b6540f17"
+  "source_git_commit": "ff0f9015b48e07677514761b531bf4d40e20b694",
+  "uploaded_at_bjt": "2026-11-08T00:20:07.465158+08:00",
+  "verified_at_bjt": "2026-11-08T00:20:19.807883+08:00",
+  "upload_receipt_sha256": "653b93dd02fa51477561ae69269611dbe81946f983dd77e1d2ad0333cb6568f3",
+  "workshop_manifest": "18446744073709551615"
 }
