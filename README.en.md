@@ -115,7 +115,7 @@ Exact reconstruction verifies the recorded runtime bytes. It does not establish 
 
 The repository does not claim upstream code/artwork as SuQing’s original work or relicense third-party files under one blanket license. Keep original attribution, source/version constraints and provenance. Personal enabled lists, rollback copies and unrelated `.bak` files are not installable content. Runtime-required stim fallback references are restored from matching installed originals by the builder.
 
-2026-11-03 local addition: [Protein Shake Training Boost](docs/patches/SuQingProteinTrainingBoost.md), `SuQingProteinTrainingBoost`, requires `VanillaFoodsExpanded`. Offline validated; in-game acceptance pending. Included in the current unified source/publication batch; consult the publication receipts for actual submission results.
+2026-11-08: [Protein Shake Training Boost](docs/patches/SuQingProteinTrainingBoost.md) 1.1.0 adds optional Project Iron 0.6.0 support. Strength and Fitness XP reach ×20 while both buffs are active at the default pre-workout setting. The existing Mod ID still requires Vanilla Foods Expanded.
 
 2026-11-03 local addition: [Recipe Input Guard](docs/patches/SuQingRecipeInputGuard_4221.md) is independent of the unchanged Mustang guard. Full restart required; in-game crafting acceptance pending.
 

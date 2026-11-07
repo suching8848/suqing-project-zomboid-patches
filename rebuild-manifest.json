@@ -1908,7 +1908,7 @@
     {
       "id": "SuQingProteinTrainingBoost",
       "folder": "SuQingProteinTrainingBoost",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "directories": [
         "42",
         "42/media",
@@ -1932,50 +1932,57 @@
         },
         {
           "path": "42/media/lua/client/SuQingProteinTrainingBoost/StatusUI.lua",
-          "sha256": "9b26a61244ac0f0c7f271a23bc840386634e3675217c3b3ee30c79e4896d61c2",
-          "size": 2926,
+          "sha256": "bc4596bf3ff362a9930fc6ba44c00a768334a93b242f2e0d5f4a081866130cee",
+          "size": 3159,
           "mode": "own",
           "repo_path": "src/SuQingProteinTrainingBoost/42/media/lua/client/SuQingProteinTrainingBoost/StatusUI.lua"
         },
         {
           "path": "42/media/lua/client/SuQingProteinTrainingBoost_Bootstrap.lua",
-          "sha256": "51b6b41da2043473f87463c100ca7f433bd16aa8dc2f584c439415cfb4058354",
-          "size": 820,
+          "sha256": "0b088007b1ca29e79c3241e92a8d148651eff7df44a3002e8dbb3399f25a4a28",
+          "size": 1136,
           "mode": "own",
           "repo_path": "src/SuQingProteinTrainingBoost/42/media/lua/client/SuQingProteinTrainingBoost_Bootstrap.lua"
         },
         {
           "path": "42/media/lua/shared/SuQingProteinTrainingBoost/Core.lua",
-          "sha256": "572524dcc3ea967e930b2a835f38c2c19eab39b0ffccd191726f6bd3ac68c7bd",
+          "sha256": "ffe8a75cfa9e385e0cbcafab392620bb0c95c6adf94051165c520e02450fd307",
           "size": 3024,
           "mode": "own",
           "repo_path": "src/SuQingProteinTrainingBoost/42/media/lua/shared/SuQingProteinTrainingBoost/Core.lua"
         },
         {
+          "path": "42/media/lua/shared/SuQingProteinTrainingBoost/Iron.lua",
+          "sha256": "7eb9a0681f31147969622f5d662f2f97d564836c9bb0c3005814da64e097f671",
+          "size": 4538,
+          "mode": "own",
+          "repo_path": "src/SuQingProteinTrainingBoost/42/media/lua/shared/SuQingProteinTrainingBoost/Iron.lua"
+        },
+        {
           "path": "42/media/lua/shared/SuQingProteinTrainingBoost/XP.lua",
-          "sha256": "b946f3b9139be101088078fb7bb22b6f73fd98c1d1394ef57ac6c7d43c8aaa44",
-          "size": 8386,
+          "sha256": "c2d050c73c9f6587349b9ad0cc5384c8dae9ce8f01c60c6776e5738d4b5010f5",
+          "size": 8833,
           "mode": "own",
           "repo_path": "src/SuQingProteinTrainingBoost/42/media/lua/shared/SuQingProteinTrainingBoost/XP.lua"
         },
         {
           "path": "42/media/lua/shared/Translate/CN/IG_UI.json",
-          "sha256": "ab12b0f17765c180d07f0a4d0a1f9e8c231fb659e63a05913ad98a5a63ba5b00",
+          "sha256": "8c0c4d9a12bb9517f1279d422063efb79c46689d3aca14ac40cd5e202566c3a6",
           "size": 363,
           "mode": "own",
           "repo_path": "src/SuQingProteinTrainingBoost/42/media/lua/shared/Translate/CN/IG_UI.json"
         },
         {
           "path": "42/media/lua/shared/Translate/EN/IG_UI.json",
-          "sha256": "e1512efeb398ba6bb6b68a80f2f440ff3c10e0abb4835c25fda34d25f48f1c31",
+          "sha256": "3b9ec822b8a744dc0810507d0ff8fd0418656f20ff54c7cf86ac9eb20dc5727b",
           "size": 352,
           "mode": "own",
           "repo_path": "src/SuQingProteinTrainingBoost/42/media/lua/shared/Translate/EN/IG_UI.json"
         },
         {
           "path": "42/mod.info",
-          "sha256": "2a1c928306dc32296038bb70741b4df97d9f079cef1b30fb8c72132cb054a528",
-          "size": 863,
+          "sha256": "f285ff3f40f7ed9b1bbec79a5afb32f83aab667d3422f5f75e71350208abe039",
+          "size": 936,
           "mode": "own",
           "repo_path": "src/SuQingProteinTrainingBoost/42/mod.info"
         }

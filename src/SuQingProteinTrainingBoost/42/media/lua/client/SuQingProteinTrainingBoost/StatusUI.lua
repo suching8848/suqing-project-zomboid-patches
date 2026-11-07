@@ -13,7 +13,9 @@ end
 
 function StatusPanel:render()
     if not B.IsActive(self.player) then return end
-    self:drawText(getText("IGUI_SuQingProteinTrainingBoost_Active"), 10, 5,
+    local multiplier = B.XP.GetMultiplier(self.player)
+    if not multiplier then return end
+    self:drawText(getText("IGUI_SuQingProteinTrainingBoost_Active", string.format("%.12g", multiplier)), 10, 5,
         0.65, 1, 0.65, 1, UIFont.Small)
     self:drawText(getText("IGUI_SuQingProteinTrainingBoost_Remaining", B.FormatRemaining(self.player)),
         10, 6 + getTextManager():getFontHeight(UIFont.Small), 1, 1, 1, 1, UIFont.Small)
@@ -27,7 +29,7 @@ local function showPanel(player)
         local top = getPlayerScreenTop and getPlayerScreenTop(index) or 0
         local width = getPlayerScreenWidth and getPlayerScreenWidth(index) or getCore():getScreenWidth()
         local panelWidth = math.max(280, getTextManager():MeasureStringX(UIFont.Small,
-            getText("IGUI_SuQingProteinTrainingBoost_Active")) + 24)
+            getText("IGUI_SuQingProteinTrainingBoost_Active", "110.0")) + 24)
         local height = getTextManager():getFontHeight(UIFont.Small) * 2 + 16
         panel = StatusPanel:new(left + math.max(0, (width - panelWidth) / 2), top + 18, panelWidth, height)
         panel:initialise()
@@ -57,9 +59,12 @@ function UI.Update(player)
         end
         return
     end
-    local active = B.IsActive(player)
-    if active then
-        showPanel(player)
+    if B.IsActive(player) then
+        if B.XP.GetMultiplier(player) then
+            showPanel(player)
+        elseif panel then
+            panel:setVisible(false)
+        end
     elseif panel and panel:isVisible() then
         panel:setVisible(false)
         if HaloTextHelper then

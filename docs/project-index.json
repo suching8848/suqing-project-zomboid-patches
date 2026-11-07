@@ -2566,13 +2566,13 @@
       "title_en": "SuQing's Protein Shake Training Boost",
       "repository": "https://github.com/suching8848/suqing-project-zomboid-patches",
       "repository_slug": "suqing-project-zomboid-patches",
-      "source_version": "1.0.0",
+      "source_version": "1.1.0",
       "source_mod_name": "SuQing's Protein Shake Training Boost [SP]",
-      "personal_runtime_version": "1.0.0",
+      "personal_runtime_version": "1.1.0",
       "personal_installed": true,
       "personal_mod_info_relative_to_mods": "SuQingProteinTrainingBoost/42/mod.info",
       "mod_info": "src/SuQingProteinTrainingBoost/42/mod.info",
-      "source_mod_info_sha256": "2a1c928306dc32296038bb70741b4df97d9f079cef1b30fb8c72132cb054a528",
+      "source_mod_info_sha256": "f285ff3f40f7ed9b1bbec79a5afb32f83aab667d3422f5f75e71350208abe039",
       "require_raw": "VanillaFoodsExpanded",
       "required_mods": [
         "VanillaFoodsExpanded"
@@ -2583,7 +2583,7 @@
         "SkillRecoveryJournal",
         "CleanUI"
       ],
-      "gameplay_validation": "Metadata/source/publication indexing only. See project documentation for limited user acceptance and remaining gameplay tests.",
+      "gameplay_validation": "Lua 5.1, stock Kahlua and PZO Kahlua offline suites passed. User accepted the isolated single-player setup. One drinking sample was rejected by the existing volume guard.",
       "source_form": "custom_source_and_pinned_upstream_reconstruction",
       "documentation": "docs/patches/SuQingProteinTrainingBoost.md",
       "publication_group": "optional_in_patch_collection",
@@ -2610,13 +2610,13 @@
         }
       ],
       "published_version_basis": "Matching native upload/verify plus final owner metadata; no remote per-file download",
-      "publication_status": "verified_public_current",
+      "publication_status": "published_update_pending",
       "candidate": {
         "selected": true,
-        "version": "1.0.0",
-        "collection_version": "2026.11.06-32-candidate",
-        "status": "matches_verified_public_payload",
-        "package_verification": "Native proof and exact frozen manifest are separate from gameplay acceptance."
+        "version": "1.1.0",
+        "collection_version": "2026.11.08-35-protein.1",
+        "status": "personal_install_verified",
+        "package_verification": "Local reconstruction and the nine installed runtime files matched SHA-256."
       }
     },
     {

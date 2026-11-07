@@ -6,6 +6,7 @@ local active, singlePlayer, worldHours, expiresAt = true, true, 0, 3
 local logMessages, handlers = {}, {}
 local B = {
     VERSION = "test",
+    MULTIPLIER = 10,
     IsSinglePlayer = function() return singlePlayer end,
     IsActive = function() return active and worldHours < expiresAt end,
     Log = function(message) logMessages[#logMessages + 1] = message end,

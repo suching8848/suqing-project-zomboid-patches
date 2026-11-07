@@ -25,6 +25,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--game-root", type=Path)
     parser.add_argument("--kahlua-runner-dir", type=Path)
+    parser.add_argument("--project-iron-dir", type=Path, help="Path to the installed SweatWorkz 0.6.0 42 branch")
     parser.add_argument("--report", type=Path)
     args = parser.parse_args()
     os.chdir(ROOT)
@@ -44,7 +45,19 @@ def main():
         game_drink = (args.game_root / "media/lua/shared/TimedActions/ISDrinkFluidAction.lua").resolve()
         source_map[game_drink.as_posix()] = game_drink.read_text(encoding="utf-8-sig")
 
+    iron_sources = {}
+    if args.project_iron_dir:
+        for name, relative in {
+            "IRON_SUPPLEMENTS_SOURCE_PATH": "media/lua/shared/SweatWorkz_Supplements.lua",
+            "IRON_UI_SOURCE_PATH": "media/lua/client/SweatWorkz_BoostUI.lua",
+        }.items():
+            path = (args.project_iron_dir / relative).resolve()
+            iron_sources[name] = path.as_posix()
+            source_map[path.as_posix()] = path.read_text(encoding="utf-8-sig")
+
     suites = ["core", "xp", "drinking"] + (["integration"] if game_drink else [])
+    if iron_sources:
+        suites.append("iron")
     results = []
     for suite in suites:
         lua = LuaRuntime(unpack_returned_tuples=True)
@@ -52,6 +65,8 @@ def main():
         lua.execute("local paths = ...; package.path = paths .. ';' .. package.path", paths)
         if game_drink:
             lua.globals().GAME_DRINK_SOURCE_PATH = game_drink.as_posix()
+        for name, path in iron_sources.items():
+            lua.globals()[name] = path
         for path, source in source_map.items():
             lua.execute("local source, path = ...; assert(loadstring(source, path))", source, path)
         outcome = lua.execute(source_map[f"tests/protein_training_boost/{suite}_tests.lua"])
@@ -87,6 +102,8 @@ for path, source in pairs(sources) do assert(loadstring(source, path)) end
 """)
             if game_drink:
                 prelude.append(f"GAME_DRINK_SOURCE_PATH = {long_string(game_drink.as_posix())}")
+            for name, path in iron_sources.items():
+                prelude.append(f"{name} = {long_string(path)}")
             prelude.append(f"local outcome = dofile('tests/protein_training_boost/{suite}_tests.lua')")
             if suite == "drinking":
                 prelude.append("outcome.run()")
@@ -104,6 +121,8 @@ for path, source in pairs(sources) do assert(loadstring(source, path)) end
 
     report = {"result": "PASS", "suites": results, "syntax_files": len(source_map),
               "gameplay_validation": "not performed; isolated offline fixtures",
+              "project_iron_sources": {path: hashlib.sha256(Path(path).read_bytes()).hexdigest()
+                                       for path in iron_sources.values()},
               "runtime_sha256": {path.relative_to(ROOT).as_posix(): hashlib.sha256(path.read_bytes()).hexdigest()
                                  for path in (ROOT / "src/SuQingProteinTrainingBoost").rglob("*") if path.is_file()}}
     if args.report:

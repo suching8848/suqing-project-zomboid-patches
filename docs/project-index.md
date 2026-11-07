@@ -94,7 +94,7 @@ Personal means installed files, not save enablement. Workshop versions retain ac
 | `SuQingBatchFarmingMenu_4221` | 蘇清的批量农耕菜单筛选补丁 / SuQing’s Batch Farming Menu Filter Patch | 0.1.0 | 0.1.0 | 0.1.0 | 0.1.0 | 原生验证已公开 / verified public |
 | `Codex_TheyKnew_CN_TextFix_4221` | 蘇清的They Knew沙盒文本修复补丁 / SuQing’s They Knew Sandbox Text Fix Patch | 1.0.0 | 1.0.0 | 1.0.0 | 1.0.0 | 原生验证已公开 / verified public |
 | `Codex_TrueMusic_Headphones_4221` | 蘇清的True Music耳机单人兼容补丁 / SuQing’s True Music Headphones Single-player Compatibility Patch | 1.0.0 | 1.0.0 | 1.0.0 | 1.0.0 | 原生验证已公开 / verified public |
-| `SuQingProteinTrainingBoost` | 蘇清的蛋白饮料训练强化 / SuQing's Protein Shake Training Boost | 1.0.0 | 1.0.0 | 1.0.0 | 1.0.0 | 原生验证已公开 / verified public |
+| `SuQingProteinTrainingBoost` | 蘇清的蛋白饮料训练强化 / SuQing's Protein Shake Training Boost | 1.1.0 | 1.1.0 | 1.0.0 | 1.0.0 | 已验收候选，工坊更新待核对 / accepted candidate, Workshop update pending |
 | `SuQingRecipeInputGuard_4221` | 蘇清的配方材料输入修复 / SuQing's Recipe Input Guard | 1.0.0 | 1.0.0 | 1.0.0 | 1.0.0 | 原生验证已公开 / verified public |
 | `SuQingChumMassProduction` | 蘇清的饵托量产补丁 / SuQing’s Chum Mass Production Patch | 1.0.0 | 1.0.0 | 1.0.0 | 1.0.0 | 原生验证已公开 / verified public |
 | `Codex_ViewpointLegacyPromptFix_4221` | 蘇清的Viewpoint旧版手柄提示修复补丁 / SuQing’s Viewpoint Legacy Prompt Fix Patch | 1.0.0 | 1.0.0 | 1.0.0 | 1.0.0 | 原生验证已公开 / verified public |

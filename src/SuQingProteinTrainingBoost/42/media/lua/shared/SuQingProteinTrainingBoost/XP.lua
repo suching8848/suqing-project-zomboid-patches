@@ -7,7 +7,6 @@ XP._locks = XP._locks or setmetatable({}, { __mode = "k" })
 XP._flatDepth = XP._flatDepth or setmetatable({}, { __mode = "k" })
 XP._faults = XP._faults or setmetatable({}, { __mode = "k" })
 
-local EXTRA_MULTIPLIER = 9
 local TRAINING_FIELDS = {
     "strengthUpTimer", "strengthMod", "fitnessUpTimer", "fitnessMod",
 }
@@ -82,6 +81,17 @@ local function restoreTrainingData(data, saved)
     end
 end
 
+-- The same effective multiplier is used by the award and the status panel.
+function XP.GetMultiplier(player)
+    if B.RuntimeReady == false or XP.HasFault(player) then return nil end
+    local iron = 1
+    if B.Iron then
+        iron = B.Iron.GetMultiplier(player)
+        if not iron then return nil end
+    end
+    return iron * (B.IsActive(player) and B.MULTIPLIER or 1)
+end
+
 -- amount is the positive increment already committed by the native XP method.
 -- Return values are diagnostic; the Events API ignores them.
 function XP.Handle(player, perk, amount)
@@ -94,7 +104,8 @@ function XP.Handle(player, perk, amount)
     if (XP._flatDepth[player] or 0) > 0 then return false, "flat-xp" end
     local locks = XP._locks[player]
     if locks and locks[perk] then return false, "recursive" end
-    if not B.IsActive(player) then return false, "inactive" end
+    local multiplier = XP.GetMultiplier(player)
+    if not multiplier or multiplier <= 1 then return false, "inactive" end
 
     locks = locks or {}
     XP._locks[player] = locks
@@ -111,7 +122,7 @@ function XP.Handle(player, perk, amount)
         end
         if beforeXP >= maximum then return { reason = "maximum", extra = 0 } end
 
-        local requestedExtra = amount * EXTRA_MULTIPLIER
+        local requestedExtra = amount * (multiplier - 1)
         if not finite(requestedExtra) then error("XP bonus overflow") end
         expectedExtra = math.min(requestedExtra, maximum - beforeXP)
         local factor = XP.GetProteinFactor(player, perk)
@@ -197,6 +208,11 @@ end
 function XP.Install()
     if not B.IsSinglePlayer() then return false, "multiplayer" end
     if not Events or not Events.AddXP then return false, "missing-event" end
+    local ok, reason = XP.InstallFlatSuppression()
+    if not ok then
+        log("XP flat-grant suppression unavailable: " .. tostring(reason))
+        return false, reason
+    end
     if XP._registeredHandler ~= XP.Handle then
         if XP._registeredHandler and Events.AddXP.Remove then
             Events.AddXP.Remove(XP._registeredHandler)
@@ -204,9 +220,7 @@ function XP.Install()
         Events.AddXP.Add(XP.Handle)
         XP._registeredHandler = XP.Handle
     end
-    local ok, reason = XP.InstallFlatSuppression()
-    if not ok then log("XP flat-grant suppression unavailable: " .. tostring(reason)) end
-    return ok, reason
+    return true
 end
 
 return XP

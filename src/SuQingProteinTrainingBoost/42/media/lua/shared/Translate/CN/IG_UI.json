@@ -1,5 +1,5 @@
 {
-  "IGUI_SuQingProteinTrainingBoost_Active": "蛋白训练强化：力量 / 体格经验 ×10",
+  "IGUI_SuQingProteinTrainingBoost_Active": "蛋白训练强化：力量 / 体格经验 ×%1",
   "IGUI_SuQingProteinTrainingBoost_Remaining": "剩余 %1（游戏时间，可拖动）",
   "IGUI_SuQingProteinTrainingBoost_Expired": "蛋白训练强化已结束",
   "IGUI_SuQingProteinTrainingBoost_Failed": "蛋白训练强化已暂停，请查看游戏日志"

@@ -1006,8 +1006,8 @@
       "folder": "SuQingProteinTrainingBoost",
       "title_zh": "蛋白饮料训练强化",
       "title_en": "Protein Shake Training Boost",
-      "version": "1.0.0",
-      "description_original": "Final Strength and Fitness XP x10 after drinking Vanilla Foods Expanded protein shakes; 0.5 L provides three game hours, partial doses scale, capped at three hours.",
+      "version": "1.1.0",
+      "description_original": "After drinking Vanilla Foods Expanded protein shakes, multiply normally awarded Strength and Fitness XP by 10. A 500 mL dose grants 3 game hours; partial drinks scale by actual protein-shake volume, stacking duration up to 3 hours. Stacks once with Project Iron 0.6.0 pre-workout (x20 combined at its default setting). Single-player only.",
       "requires_raw": "VanillaFoodsExpanded",
       "load_after_raw": "VanillaFoodsExpanded,SkillRecoveryJournal,CleanUI",
       "required_mods": [
@@ -1021,12 +1021,12 @@
       "doc": "docs/patches/SuQingProteinTrainingBoost.md",
       "reconstruction_status": "recipes_ready",
       "source_runtime_info": "42/mod.info",
-      "summary_zh": "原蛋白饮料实际摄入后，正常结算的力量与体格经验再乘10；按剂量累积至多3游戏小时，含倒计时与恢复日志保护，单人。",
-      "summary_en": "Multiplies final Strength/Fitness XP by ten after actual protein-shake consumption; dose-scaled duration capped at three game hours, countdown UI and recovery-grant protection; single-player.",
-      "runtime_files": 8,
-      "runtime_bytes": 20745,
+      "summary_zh": "原蛋白饮料力量与体格经验×10，按摄入量最多3游戏小时；单人适配 Project Iron 0.6.0，默认双增益×20，排除恢复日志经验。",
+      "summary_en": "Dose-scaled Strength/Fitness XP x10 for up to three game hours. Single-player Project Iron 0.6.0 compatibility stacks both boosts once (x20 by default) and excludes recovery XP.",
+      "runtime_files": 9,
+      "runtime_bytes": 26352,
       "reconstruction_modes": {
-        "own": 8
+        "own": 9
       },
       "excluded_files": [],
       "source_roots": []

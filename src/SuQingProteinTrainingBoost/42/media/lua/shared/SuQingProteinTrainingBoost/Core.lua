@@ -2,7 +2,7 @@
 SuQingProteinTrainingBoost = SuQingProteinTrainingBoost or {}
 local B = SuQingProteinTrainingBoost
 
-B.VERSION = "1.0.0"
+B.VERSION = "1.1.0"
 B.MULTIPLIER = 10
 B.DOSE_LITRES = 0.5
 B.MAX_HOURS = 3

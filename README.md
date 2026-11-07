@@ -115,7 +115,7 @@ python tools/rebuild.py --output ../suqing-patches-built --workshop-root "D:/Ste
 
 本仓库不宣称所有上游代码或美术素材为蘇清原创，也不向第三方文件重新授予统一许可。保留原作归属、版本约束与来源说明。个人配置名单、旧回滚副本和无关 `.bak` 不属于可安装补丁；运行确需的针剂回退参考文件由重建器从匹配的已安装来源恢复。
 
-2026-11-03 本地新增：[蘇清的蛋白饮料训练强化](docs/patches/SuQingProteinTrainingBoost.md)，Mod ID `SuQingProteinTrainingBoost`，依赖 `VanillaFoodsExpanded`。已离线验证，游戏内验收待完成；已纳入本轮统一源码与发布批次，实际提交结果以发布回执为准。
+2026-11-08：[蘇清的蛋白饮料训练强化](docs/patches/SuQingProteinTrainingBoost.md) 1.1.0 加入可选 Project Iron 0.6.0 适配。训练前补剂使用默认设置时，双增益期间力量与体格经验 ×20。继续使用原 Mod ID 与 Vanilla Foods Expanded 前置。
 
 2026-11-03 本地新增：[配方材料输入修复](docs/patches/SuQingRecipeInputGuard_4221.md)，独立于未改动的野马保护补丁；需完全重启，游戏内制作验收待完成。
 
