@@ -50,7 +50,7 @@
 [*]SuQingChumMassProduction; R: none
 一整袋沙或泥土，或一份黏土，加任意容器0.1L净水/污水制作5个原版饵托；满袋耗尽返空袋，沿用原版配方知识。
 [*]SuQingProteinTrainingBoost; R: VanillaFoodsExpanded
-原蛋白饮料实际摄入后，正常结算的力量与体格经验再乘10；按剂量累积至多3游戏小时，含倒计时与恢复日志保护，单人。
+1.1.0 单人。饮用 Vanilla Foods Expanded 蛋白饮料后，正常结算的力量与体格经验 ×10，按摄入量计时，最长 3 游戏小时。可选适配 Project Iron 0.6.0，默认双增益 ×20。恢复经验按原规则结算。
 [*]SuQingRecipeInputGuard_4221; R: SapphCooking_B42
 独立补齐Sapph草莓标签，防止衣服等无关物品进入草莓芝士蛋糕候选，保留原配方与牛奶输入；不改野马补丁。
 [*]Codex_ViewpointLegacyPromptFix_4221; R: ProjectViewpointQOLLegacy0.1.6

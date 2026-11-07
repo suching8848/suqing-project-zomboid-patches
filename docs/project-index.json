@@ -2590,8 +2590,8 @@
       "workshop_item_id": "3832223928",
       "workshop_visibility": 0,
       "workshop_visibility_name": "public",
-      "workshop_version": "1.0.0",
-      "published_version": "1.0.0",
+      "workshop_version": "1.1.0",
+      "published_version": "1.1.0",
       "uploaded_private_version": null,
       "currently_published": true,
       "private_uploaded": false,
@@ -2600,23 +2600,23 @@
       "publication_evidence": [
         {
           "stage": "upload",
-          "filename": "upload-20261106_221254_268969.json",
-          "sha256": "0d623188e17294d8066ba45d12ce2992cfa71cd2b6c920abb2e741987a4cb3e1"
+          "filename": "upload.json",
+          "sha256": "3c290ff58d498609ba99a33fdb6a9cc69fa39687fdc554683ecf2e2c65f35278"
         },
         {
           "stage": "verify",
-          "filename": "verify-20261106_221328_994041.json",
-          "sha256": "2c958b3e1c79b0528d69b0077dd1aba6a0cfcd9c3c59b258bc74bcc7903a8f46"
+          "filename": "verify.json",
+          "sha256": "f82a936db01b6a2f88074a0f6fe6c6c7b7413954fe358e5b298ed124ece005d2"
         }
       ],
       "published_version_basis": "Matching native upload/verify plus final owner metadata; no remote per-file download",
-      "publication_status": "published_update_pending",
+      "publication_status": "verified_public_current",
       "candidate": {
         "selected": true,
         "version": "1.1.0",
         "collection_version": "2026.11.08-35-protein.1",
-        "status": "personal_install_verified",
-        "package_verification": "Local reconstruction and the nine installed runtime files matched SHA-256."
+        "status": "matches_verified_public_payload",
+        "package_verification": "All nine runtime files matched the accepted local version. Native submit and uncached owner readback verified the frozen collection identity."
       }
     },
     {

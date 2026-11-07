@@ -50,7 +50,7 @@ Shows the Batch Farming menu only on tillable soil, tilled plots or crops. Upstr
 [*]SuQingChumMassProduction; R: none
 Five original chum per full sand/dirt bag or clay, using 0.1 L clean/tainted water from any fluid container; empty bags and vanilla recipe knowledge retained.
 [*]SuQingProteinTrainingBoost; R: VanillaFoodsExpanded
-Multiplies final Strength/Fitness XP by ten after actual protein-shake consumption; dose-scaled duration capped at three game hours, countdown UI and recovery-grant protection; single-player.
+1.1.0 for single-player. Drinking a Vanilla Foods Expanded protein shake gives ten times normally awarded Strength and Fitness XP for up to three game hours, based on dose. Optional Project Iron 0.6.0 compatibility gives ×20 while both boosts are active at the default setting. Recovery XP follows its usual rules.
 [*]SuQingRecipeInputGuard_4221; R: SapphCooking_B42
 Standalone missing-strawberry-tag registration for Sapph; preserves quantities/fluids and leaves the Mustang guard unchanged.
 [*]Codex_ViewpointLegacyPromptFix_4221; R: ProjectViewpointQOLLegacy0.1.6

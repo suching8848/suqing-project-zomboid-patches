@@ -1,2 +1,3 @@
-本地32项候选：新增7项可选补丁；库存转移1.2.2支持CleanUI2.10.4。整理三项散落源码、双语说明与离线工具，保留候选/验收边界。未上传。
-Local 32-entry candidate: seven optional additions; Inventory Refresh1.2.2 supports CleanUI2.10.4. Imports three source projects, bilingual guides and offline tools. Candidate/acceptance limits remain. Not uploaded.
+蛋白饮料训练强化升至 1.1.0，内置可选 Project Iron 0.6.0 适配。训练前补剂为默认 +100% 时，双增益期间力量与体格经验 ×20，两项增益合并结算。保留原 Mod ID 与 Vanilla Foods Expanded 前置。B42.21.0 单人。
+
+Protein Shake Training Boost 1.1.0 adds optional Project Iron 0.6.0 support. Strength and Fitness XP reach ×20 while both buffs are active at the default +100% pre-workout setting. Both bonuses are applied in one award. The existing Mod ID and Vanilla Foods Expanded requirement carry forward. B42.21.0 single-player.
