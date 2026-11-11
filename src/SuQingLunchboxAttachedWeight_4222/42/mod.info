@@ -1,0 +1,15 @@
+name=SuQing's Lunchbox Attached Weight Fix
+namezh=蘇清的返鲜餐盒外挂减重修复
+id=SuQingLunchboxAttachedWeight_4222
+author=SuQing
+modversion=0.1.0-rc.1
+require=\SuQingFreshnessLunchbox,\ZombieBuddy
+loadModAfter=SuQingFreshnessLunchbox
+versionMin=42.22.2
+versionMax=42.22.2
+javaJarFile=media/java/client/SuQingLunchboxAttachedWeight.jar
+javaPkgName=suqinglunchboxweight
+ZBVersionMin=2.3.4
+ZBVersionMax=2.3.4
+description=Applies the lunchbox's current content weight reduction while attached to a backpack-bottom slot. B42.22.2 single-player candidate. Requires ZombieBuddy 2.3.4 and native Java approval. See README.txt.
+descriptionzh=让挂在背包底部的返鲜餐盒按当前减重比例计算内容物。B42.22.2单人候选。需要ZombieBuddy 2.3.4及原生Java批准，详见README.txt。

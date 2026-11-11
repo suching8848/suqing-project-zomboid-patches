@@ -1,5 +1,7 @@
 # 蘇清的僵尸毁灭工程补丁合集 / SuQing’s Project Zomboid Patch Collection
 
+- [返鲜餐盒外挂减重修复](docs/patches/SuQingLunchboxAttachedWeight_4222.md) 0.1.0-rc.1。B42.22.2 单人，配套返鲜餐盒与 ZombieBuddy 2.3.4。原生负重离线验证通过，游戏内待验收。
+
 ## 2026-11-07 新增子模组
 
 两项均为 0.1.0，适用于 B42.21 单人。启用前按需选择，游戏内验收待完成。合集当前线上版本以[已核验发布清单](publishing/workshop.json)为准。

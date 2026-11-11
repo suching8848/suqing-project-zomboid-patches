@@ -1,5 +1,7 @@
 # SuQing’s Project Zomboid Patch Collection / 蘇清的僵尸毁灭工程补丁合集
 
+- [Lunchbox Attached Weight Fix](docs/patches/SuQingLunchboxAttachedWeight_4222.md) 0.1.0-rc.1. An optional B42.22.2 single-player patch for the Freshness Lunchbox and ZombieBuddy 2.3.4. Native weight validation passed offline. In-game testing is pending.
+
 ## November 7 patch additions
 
 Both optional patches are version 0.1.0 for B42.21 single-player. In-game acceptance is pending. See the [verified Workshop manifest](publishing/workshop.json) for the live collection payload.

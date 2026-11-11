@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target_game": "Project Zomboid Build 42.21",
-  "scope": "43 registered patches: 35 optional collection patches, 3 EX companions and 5 redistribution holds. See publishing/workshop.json for the verified online payload.",
+  "scope": "44 registered patches: 35 optional collection patches, 3 EX companions, 5 redistribution holds and 1 optional Freshness Lunchbox companion.",
   "mods": [
     {
       "id": "Codex_AmmoBox_CN_TextFix_4221",
@@ -2661,6 +2661,34 @@
           "repo_path": "src/SuQingProjectIronCN_4221/common/.gitkeep"
         }
       ]
+    },
+    {
+      "id": "SuQingLunchboxAttachedWeight_4222",
+      "folder": "SuQingLunchboxAttachedWeight_4222",
+      "version": "0.1.0-rc.1",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/java",
+        "42/media/java/client"
+      ],
+      "files": [
+        {
+          "path": "42/media/java/client/SuQingLunchboxAttachedWeight.jar",
+          "sha256": "9a91de3c9d9d6ab7522b52bce4526d6db11e32b113acb1803a59878ff6698b5e",
+          "size": 5150,
+          "mode": "own",
+          "repo_path": "src/SuQingLunchboxAttachedWeight_4222/42/media/java/client/SuQingLunchboxAttachedWeight.jar"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "4deac85b33601658157581f0d1f687859937962239cc6ff03ef730abeec75827",
+          "size": 808,
+          "mode": "own",
+          "repo_path": "src/SuQingLunchboxAttachedWeight_4222/42/mod.info"
+        }
+      ],
+      "compatibility_candidate_game": "42.22.2"
     }
   ]
 }

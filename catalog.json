@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target_game": "Project Zomboid Build 42.21",
-  "scope": "43 registered patches: 35 optional collection patches, 3 EX companions and 5 redistribution holds. See publishing/workshop.json for the verified online payload.",
+  "scope": "44 registered patches: 35 optional collection patches, 3 EX companions, 5 redistribution holds and 1 optional Freshness Lunchbox companion.",
   "mods": [
     {
       "id": "Codex_AmmoBox_CN_TextFix_4221",
@@ -1406,6 +1406,42 @@
       "source_roots": [],
       "local_registration_date": "2026-11-08",
       "distribution": "optional_in_patch_collection"
+    },
+    {
+      "id": "SuQingLunchboxAttachedWeight_4222",
+      "folder": "SuQingLunchboxAttachedWeight_4222",
+      "title_zh": "蘇清的返鲜餐盒外挂减重修复",
+      "title_en": "SuQing's Lunchbox Attached Weight Fix",
+      "version": "0.1.0-rc.1",
+      "description_original": "Applies the current content weight reduction while attached to a backpack-bottom slot.",
+      "requires_raw": "\\SuQingFreshnessLunchbox,\\ZombieBuddy",
+      "load_after_raw": "SuQingFreshnessLunchbox",
+      "required_mods": [
+        "SuQingFreshnessLunchbox",
+        "ZombieBuddy"
+      ],
+      "load_after_mods": [
+        "SuQingFreshnessLunchbox"
+      ],
+      "doc": "docs/patches/SuQingLunchboxAttachedWeight_4222.md",
+      "reconstruction_status": "recipes_ready",
+      "source_runtime_info": "42/mod.info",
+      "summary_zh": "返鲜餐盒外挂到背包底部时，内容物使用当前容器减重比例。",
+      "summary_en": "Applies the container reduction to food in an attached lunchbox.",
+      "runtime_files": 2,
+      "runtime_bytes": 5958,
+      "reconstruction_modes": {
+        "own": 2
+      },
+      "excluded_files": [
+        {
+          "path": "42/README.txt",
+          "reason": "bilingual documentation"
+        }
+      ],
+      "source_roots": [],
+      "distribution": "freshness_lunchbox_optional_submod",
+      "compatibility_candidate_game": "42.22.2"
     }
   ]
 }
