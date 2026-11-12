@@ -5,4 +5,4 @@ modversion=1.1
 require=yxjs_PinYinSearch
 loadModAfter=yxjs_PinYinSearch,CleanUI,Neat_Crafting,Neat_Building
 versionMin=42.21
-versionMax=42.21
+versionMax=42.22

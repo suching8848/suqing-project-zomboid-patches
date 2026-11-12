@@ -7,7 +7,7 @@
 | Mod ID | `Codex_DAMN_VanillaTires_4221` |
 | 文件夹 / Folder | `DAMN_VanillaTires_4221_LocalCompat` |
 | 版本 / Version | `1.0.0` |
-| 适用 / Target | Project Zomboid Build 42.21; single-player scope |
+| 适用 / Target | Project Zomboid 42.21.0 and 42.22.2, single-player offline candidate |
 | 元数据硬依赖 / Declared prerequisites | `damnlib` |
 | 原样require / Literal require | `damnlib` |
 | 加载在其后 / Load after | `damnlib` |
@@ -43,3 +43,9 @@ Exact reconstruction proves byte identity to the audited local runtime files, no
 见[第三方来源说明](../THIRD_PARTY.md)。本仓库不对上游代码、模型、纹理或差异中的上游上下文另授MIT等许可。读取本机来源不等于获得再次分发原件的许可。
 
 See [third-party notes](../THIRD_PARTY.md). No MIT or other blanket license is applied to upstream code, models, textures or upstream context in diffs. Access to a local source does not grant redistribution rights.
+
+## 42.22.2 离线适配 / Offline compatibility
+
+两版原版解析通过九种轮胎 ID、受损轮胎和工具保留模式及 DAMN 原修理回调。已核对本机 VRO 可选 API。实际轮胎修理与消耗待验收。
+
+Both stock parsers verified the nine tire IDs, the keep modes for the damaged tire and repair tool, and the upstream DAMN callback. The installed optional VRO API was checked. Actual repairs and material consumption await in-game acceptance.

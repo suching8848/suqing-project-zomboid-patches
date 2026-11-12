@@ -1,9 +1,9 @@
-name=[B42.21] MFS Ammo Box and Magazine Visual Compatibility (Local)
-namezh=[B42.21] MFS弹盒与弹匣外观兼容补丁（本地）
+name=[B42.21–42.22] MFS Ammo Box and Magazine Visual Compatibility (Local)
+namezh=[B42.21–42.22] MFS弹盒与弹匣外观兼容补丁（本地）
 id=Codex_MFS_AmmoVisual_Compat_4221
 description=Corrects the M110 ammo-box reference and makes SuPrimitiveEquipment magazine visual helpers validate item definitions and preserve other mods' Clip attachments. Does not replace firearms or change real ammunition loading.
 require=ModernFirearmsSystem
 loadModAfter=ModernFirearmsSystem,SuPrimitiveEquipment
 versionMin=42.21
-versionMax=42.21
-modversion=1.0.0
+versionMax=42.22
+modversion=1.0.1-rc.1

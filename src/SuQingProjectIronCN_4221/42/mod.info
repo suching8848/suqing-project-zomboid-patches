@@ -1,9 +1,9 @@
 name=SuQing's Project Iron Chinese Patch
 id=SuQingProjectIronCN_4221
 author=SuQing
-modversion=1.0.0
+modversion=1.0.1-rc.1
 versionMin=42.21
-versionMax=42.21
+versionMax=42.22
 require=SweatWorkz
 loadModAfter=SweatWorkz,B42ModTrans_CN,GardeniaTranslate_CN
-description=Simplified Chinese menus, equipment, supplements, status text and sandbox options for Project Iron 0.6.0 on Build 42.21.
+description=Simplified Chinese menus, equipment, supplements, status text and sandbox options for Project Iron 0.6.0 on Builds 42.21–42.22.

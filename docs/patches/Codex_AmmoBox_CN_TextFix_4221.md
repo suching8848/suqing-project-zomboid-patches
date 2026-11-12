@@ -6,8 +6,8 @@
 | --- | --- |
 | Mod ID | `Codex_AmmoBox_CN_TextFix_4221` |
 | 文件夹 / Folder | `AmmoBox_CN_4221_LocalFix` |
-| 版本 / Version | `1.2.0` |
-| 适用 / Target | Project Zomboid Build 42.21; single-player scope |
+| 版本 / Version | `1.2.1` |
+| 适用 / Target | Project Zomboid 42.21.0 and 42.22.2（单人 / single player） |
 | 元数据硬依赖 / Declared prerequisites | `B42ModTrans_CN` |
 | 原样require / Literal require | `B42ModTrans_CN` |
 | 加载在其后 / Load after | `B42ModTrans_CN`, `GardeniaTranslate_CN` |
@@ -33,6 +33,10 @@ There are 2 runtime files: 2 tracked bridge/translation/metadata files, 0 local 
 Run `tools/rebuild.py --mod-id "Codex_AmmoBox_CN_TextFix_4221" --check` with the required source-root arguments, then use a new isolated `--output` directory. Missing or updated sources fail their pinned hashes; do not substitute a renamed newer file. The tool performs no download, subscription, deployment or enabled-list edits. Old personal README/backup/.bak artifacts are not shipped as runtime source; current guidance is collected here.
 
 ## 验证边界 / Validation boundary
+
+原版中文仍使用「肥皂」。离线按实际启用顺序验证本补丁覆盖汉化前置中的 `%1`，英文回退保持原版。游戏内可用简体中文打开洗涤交互并核对肥皂标签。
+
+The stock Simplified Chinese label still reads 肥皂. Offline lookup in the declared load order verifies that the patch replaces the translation pack's `%1` while preserving the stock English fallback. In-game acceptance is to open the washing interaction in Simplified Chinese and check the soap label.
 
 重建SHA一致仅证明还原了审计时的运行文件，不等于游戏内、所有组合、多人或存档持久化验收。原有调试、测试版或单人限制仍以该补丁为准。先在隔离单人档按本功能操作检查，勿把正式档当作自动测试环境。
 

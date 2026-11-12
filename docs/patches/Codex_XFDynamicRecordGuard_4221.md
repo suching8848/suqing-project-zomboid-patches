@@ -6,8 +6,8 @@
 | --- | --- |
 | Mod ID | `Codex_XFDynamicRecordGuard_4221` |
 | 文件夹 / Folder | `Codex_XFDynamicRecordGuard_4221` |
-| 版本 / Version | `1.0.0` |
-| 适用 / Target | Project Zomboid Build 42.21; single-player scope |
+| 版本 / Version | `1.0.1` |
+| 适用 / Target | Build 42.21–42.22 单人 / single-player. Tested offline on 42.22.2. |
 | 元数据硬依赖 / Declared prerequisites | `XFACTION_DynamicTraits` |
 | 原样require / Literal require | `XFACTION_DynamicTraits` |
 | 加载在其后 / Load after | `XFACTION_DynamicTraits` |
@@ -33,6 +33,10 @@ There are 2 runtime files: 2 tracked bridge/translation/metadata files, 0 local 
 Run `tools/rebuild.py --mod-id "Codex_XFDynamicRecordGuard_4221" --check` with the required source-root arguments, then use a new isolated `--output` directory. Missing or updated sources fail their pinned hashes; do not substitute a renamed newer file. The tool performs no download, subscription, deployment or enabled-list edits. Old personal README/backup/.bak artifacts are not shipped as runtime source; current guidance is collected here.
 
 ## 验证边界 / Validation boundary
+
+用当前 XFACTION 0.1.5 核对旧角色标记、年龄短暂回落、等待读回、已确认换人和死亡。沿用两侧角色绑定字段及原有单人条件。
+
+Checked existing character tokens, transient age drops, deferred readback, confirmed character changes and death with XFACTION 0.1.5. Keeps the existing paired identity fields and single-player conditions.
 
 重建SHA一致仅证明还原了审计时的运行文件，不等于游戏内、所有组合、多人或存档持久化验收。原有调试、测试版或单人限制仍以该补丁为准。先在隔离单人档按本功能操作检查，勿把正式档当作自动测试环境。
 

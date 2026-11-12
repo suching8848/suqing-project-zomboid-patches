@@ -1,5 +1,11 @@
 # 蘇清的蛋白饮料训练强化 / SuQing's Protein Shake Training Boost
 
+## 42.22.2 离线候选 / Offline candidate
+
+`1.1.1-rc.1` 支持 B42.21–42.22 单人。保留饮用计量和原有存档字段。与当前 Project Iron 0.6.0 按既有规则叠乘。游戏内待验。
+
+`1.1.1-rc.1` targets B42.21–42.22 single-player. Keeps dosing and existing save fields. The existing stacking rules apply to the installed Project Iron 0.6.0. In-game testing is pending.
+
 | 项目 / Field | 值 / Value |
 | --- | --- |
 | Mod ID / Folder | `SuQingProteinTrainingBoost` |
@@ -54,9 +60,9 @@ Use a new output directory. The generated mod contains `common` and `42`. Enable
 python tools/validate_protein_training_boost.py --game-root "D:/steam/steamapps/common/ProjectZomboid" --kahlua-runner-dir "D:/steam/steamapps/common/ProjectZomboid/CodexAssets/InventoryTransferAdapt_20261102_234116/tests" --project-iron-dir "D:/steam/steamapps/workshop/content/108600/3830338118/mods/SweatWorkz/42" --report .validation/protein-training-boost.json
 ```
 
-离线工具使用 `lupa.lua51` 和已有的 `KahluaValidation.class`。其饮用集成用例接入原版 `ISDrinkFluidAction:updateEat()`，在隔离环境运行。1.0.0 的离线验证记录为 2026-11-03。2026-11-08 的 1.1.0 在 Lua 5.1、原版 Kahlua 和当前 PZO Kahlua 各通过五套离线测试。Project Iron 专项载入实包的补剂和状态界面脚本，共 157 项检查。个人安装已逐文件校验，用户确认隔离单人测试可用。测试日志记录一次液体体积前后读数不一致，原有饮用保护跳过该次增益计时。
+离线工具使用 `lupa.lua51` 和已有的 `KahluaValidation.class`。其饮用集成用例接入原版 `ISDrinkFluidAction:updateEat()`，在隔离环境运行。1.0.0 的离线验证记录为 2026-11-03。2026-11-08 的 1.1.0 在 Lua 5.1、原版 Kahlua 和当前 PZO Kahlua 各通过五套离线测试。Project Iron 专项载入实包的补剂和状态界面脚本，共 157 项检查。个人安装已逐文件校验，游戏内验收及工坊发布待完成。
 
-The offline runner uses `lupa.lua51` and the existing `KahluaValidation.class`. Its drinking integration fixture runs the vanilla `ISDrinkFluidAction:updateEat()` in isolation. The 1.0.0 offline validation was recorded on 2026-11-03. On November 8, 2026, version 1.1.0 passed five offline suites on Lua 5.1, stock Kahlua and the current PZO Kahlua runtime. The Project Iron suite loads the installed supplement and status scripts and runs 157 checks. The personal installation was verified file by file. The user accepted the isolated single-player setup. The existing drinking guard skipped one boost-timer update when the test log recorded inconsistent fluid volume measurements.
+The offline runner uses `lupa.lua51` and the existing `KahluaValidation.class`. Its drinking integration fixture runs the vanilla `ISDrinkFluidAction:updateEat()` in isolation. The 1.0.0 offline validation was recorded on 2026-11-03. On November 8, 2026, version 1.1.0 passed five offline suites on Lua 5.1, stock Kahlua and the current PZO Kahlua runtime. The Project Iron suite loads the installed supplement and status scripts and runs 157 checks. The personal installation was verified file by file. In-game acceptance and Workshop release are pending.
 
 ## 游戏内验收 / In-game acceptance
 

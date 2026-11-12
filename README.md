@@ -1,5 +1,12 @@
 # 蘇清的僵尸毁灭工程补丁合集 / SuQing’s Project Zomboid Patch Collection
 
+## 2026-11-12 兼容更新
+
+本轮更新在 B42.22.2 离线复核了 26 个既有子模组，保留它们原有的 B42.21 范围。新增撬锁拓展 0.1.3 和现代枪械强化 0.6.0，两者均可单独启用。车门撬锁和旧版枪械强化已有游戏内验证，当前挂锁修复、枪械维护与投掷物制作仍待游戏内复测。
+
+- [撬锁拓展补丁](docs/patches/SuQingVanillaPryUpgrade.md)
+- [现代枪械强化补丁](docs/patches/SuQingMFSFirearmUpgrade_4221.md)
+
 - [返鲜餐盒外挂减重修复](docs/patches/SuQingLunchboxAttachedWeight_4222.md) 0.1.0-rc.1。B42.22.2 单人，配套返鲜餐盒与 ZombieBuddy 2.3.4。原生负重离线验证通过，游戏内待验收。
 
 ## 2026-11-07 新增子模组

@@ -7,14 +7,14 @@
 | Mod ID | `Codex_TrueMusic_Headphones_4221` |
 | 文件夹 / Folder | `TrueMusicHeadphones_4221_LocalFix` |
 | 版本 / Version | `1.0.0` |
-| 适用 / Target | Project Zomboid Build 42.21; single-player scope |
+| 适用 / Target | Project Zomboid 42.21.0 / 42.22.2，单人 / single-player |
 | 元数据硬依赖 / Declared prerequisites | `truemusic` |
 | 原样require / Literal require | `truemusic` |
 | 加载在其后 / Load after | `truemusic` |
 
 ## 中文说明
 
-修复42.21单人耳机装卸、拔耳机/关机/取电池的播放清理；普通收音机行为继续委托原实现。
+修复单人耳机装卸、拔耳机/关机/取电池的播放清理；普通收音机行为继续委托原实现。
 
 只按需要安装本子补丁，不能把本仓库30项当作所有主模组的共同前置。`loadModAfter`是加载顺序声明，不等于要求安装列出的全部模组。`require`原字节保留，包括历史前缀语法；本仓库不擅自迁移Mod ID或改变依赖。
 
@@ -24,7 +24,7 @@
 
 ## English notes
 
-Fixes 42.21 single-player headphone attachment/removal and playback cleanup after unplugging, switching off or removing a battery. Ordinary boombox handling continues through the original implementation.
+Fixes single-player headphone attachment/removal and playback cleanup after unplugging, switching off or removing a battery. Ordinary boombox handling continues through the original implementation.
 
 Install this optional subpatch only for the relevant use case. All 30 are not a universal prerequisite. `loadModAfter` declares ordering, not a requirement to install every named mod. Literal `require` bytes, including historical prefix syntax, remain unchanged. No IDs or dependencies are migrated.
 
@@ -33,6 +33,10 @@ There are 2 runtime files: 2 tracked bridge/translation/metadata files, 0 local 
 Run `tools/rebuild.py --mod-id "Codex_TrueMusic_Headphones_4221" --check` with the required source-root arguments, then use a new isolated `--output` directory. Missing or updated sources fail their pinned hashes; do not substitute a renamed newer file. The tool performs no download, subscription, deployment or enabled-list edits. Old personal README/backup/.bak artifacts are not shipped as runtime source; current guidance is collected here.
 
 ## 验证边界 / Validation boundary
+
+当前 True Music 已更新原生耳机参数，拔耳机、关机和取电池的播放清理仍引用未定义的播放键。此补丁继续保护单人随身设备，并保留普通设备的原有处理。请在隔离单人沙盒检查耳机和耳塞装卸、随身听播放清理，以及普通音箱拔耳机后的播放。教程、挑战和多人未纳入本轮。
+
+Current True Music uses the new native headphone signatures. Unplugging, switching off and removing the battery still refer to an undefined playback key. The patch continues to protect single-player portable devices and delegates ordinary device handling. In an isolated single-player sandbox, check headphones and earbuds, Walkman cleanup and ordinary boombox playback after unplugging. Tutorial, challenge and multiplayer modes were outside this validation.
 
 重建SHA一致仅证明还原了审计时的运行文件，不等于游戏内、所有组合、多人或存档持久化验收。原有调试、测试版或单人限制仍以该补丁为准。先在隔离单人档按本功能操作检查，勿把正式档当作自动测试环境。
 

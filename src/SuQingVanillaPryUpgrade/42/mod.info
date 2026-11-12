@@ -1,0 +1,7 @@
+name=撬锁拓展补丁
+id=SuQingVanillaPryUpgrade
+author=SuQing
+modversion=0.1.3
+versionMin=42.22.2
+versionMax=42.22.2
+description=用撬棍撬开防盗门锁、挂锁和车辆锁。车辆操作在 V 键轮盘中。适用 B42.22.2 单人模式。 <LINE> Pry security doors, padlocks and vehicle locks with a crowbar. Vehicle actions appear in the V radial menu. Build 42.22.2 single-player.

@@ -38,7 +38,7 @@ end
 
 local ok, failure = pcall(function()
     local B = require("SuQingProteinTrainingBoost/Core")
-    equal(B.VERSION, "1.1.0", "version")
+    equal(B.VERSION, "1.1.1-rc.1", "version")
     equal(B.MULTIPLIER, 10, "experience multiplier")
     near(B.DOSE_LITRES, 0.5, "full dose volume")
     near(B.MAX_HOURS, 3, "duration cap")

@@ -1,0 +1,11 @@
+name=SuQing's Modern Firearm Upgrade Patch
+namezh=蘇清的现代枪械强化补丁
+id=SuQingMFSFirearmUpgrade_4221
+author=SuQing
+modversion=0.6.0
+versionMin=42.21
+versionMax=42.22
+require=ModernFirearmsSystem
+loadModAfter=ModernFirearmsSystem
+description=Five levels of per-firearm upgrades, dry-towel maintenance, and three throwable recipes. Requires Modern Firearms System. Build 42.21–42.22 single-player.
+descriptionzh=五档单枪强化、干毛巾擦拭维护和三条投掷物配方。需要现代枪械系统。适用 Build 42.21–42.22 单人模式。

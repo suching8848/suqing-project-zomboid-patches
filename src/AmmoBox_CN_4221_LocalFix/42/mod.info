@@ -1,8 +1,8 @@
-name=[B42.21 CN] Washing Soap Text Fix
+name=[B42.21-42.22 CN] Washing Soap Text Fix
 id=Codex_AmmoBox_CN_TextFix_4221
 description=Corrects the washing soap Chinese label that causes missing-format-argument warnings. Obsolete ammo recipe translation overrides have been retired. Translation only.
 require=B42ModTrans_CN
 loadModAfter=B42ModTrans_CN,GardeniaTranslate_CN
 versionMin=42.21
-versionMax=42.21
-modversion=1.2.0
+versionMax=42.22
+modversion=1.2.1

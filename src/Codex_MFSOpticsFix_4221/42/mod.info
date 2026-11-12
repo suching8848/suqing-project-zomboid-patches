@@ -1,9 +1,9 @@
-name=[B42.21] MFS optics tag compatibility fix (Local)
-namezh=[B42.21] 现代枪械配件瞄具标签修复
+name=[B42.21–42.22] MFS optics tag compatibility fix (Local)
+namezh=[B42.21–42.22] 现代枪械配件瞄具标签修复
 id=Codex_MFSOpticsFix_4221
 description=Corrects audited non-sight attachments incorrectly tagged as optics. Keeps weapon parts and actual scopes intact.
 require=ModernFirearmsSystem
 loadModAfter=ModernFirearmsSystem
 versionMin=42.21
-versionMax=42.21
-modversion=1.0.0
+versionMax=42.22
+modversion=1.0.1-rc.1

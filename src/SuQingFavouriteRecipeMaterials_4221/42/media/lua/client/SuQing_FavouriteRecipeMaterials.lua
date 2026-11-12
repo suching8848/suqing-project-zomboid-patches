@@ -91,7 +91,10 @@ end
 
 local function install()
     materialsByType = nil
-    if installed or isClient() or isServer() or getCore():getVersionNumber() ~= "42.21" then return end
+    if installed or isClient() or isServer() then return end
+    local core = getCore()
+    local build = core and core.getGameAndBuildVersion and core:getGameAndBuildVersion()
+    if build ~= "42.21.0" and build ~= "42.22.2" then return end
 
     local tooltips = ISToolTipInv
     local render = tooltips and tooltips.render
@@ -147,7 +150,7 @@ local function install()
         return result
     end
     installed = true
-    print("[SuQing Favourite Recipe Materials] 0.1.0 ready")
+    print("[SuQing Favourite Recipe Materials] 0.1.1-rc.1 ready")
 end
 
 Events.OnGameStart.Add(install)

@@ -1,5 +1,11 @@
 # 蘇清的MFS附加手电快捷键修复补丁 / SuQing’s MFS Attached Flashlight Hotkey Fix Patch
 
+## 42.22.2 离线候选 / Offline candidate
+
+`1.0.1-rc.1` 支持 B42.21–42.22 单人。核对新版原版按键处理，继续通过既有处理器转发。游戏内待验。
+
+`1.0.1-rc.1` targets B42.21–42.22 single-player. Keeps the existing key handler and checks the updated vanilla path. In-game testing is pending.
+
 [返回总目录 / Back to index](../../README.md) · [English overview](../../README.en.md)
 
 | 项目 / Field | 当前值 / Current value |

@@ -43,3 +43,13 @@ Exact reconstruction proves byte identity to the audited local runtime files, no
 见[第三方来源说明](../THIRD_PARTY.md)。本仓库不对上游代码、模型、纹理或差异中的上游上下文另授MIT等许可。读取本机来源不等于获得再次分发原件的许可。
 
 See [third-party notes](../THIRD_PARTY.md). No MIT or other blanket license is applied to upstream code, models, textures or upstream context in diffs. Access to a local source does not grant redistribution rights.
+
+## B42.22.2 单人适配候选 / Single-player candidate
+
+B42.22.2 单人候选核对 CleanUI 2.10.4 的 42.22 分支，继续调用原生清单和筛选方法。保留 B42.21 加载范围与 1.1 兼容标识。
+
+The B42.22.2 single-player candidate uses the CleanUI 2.10.4 methods in the 42.22 branch for native lists and filtering. B42.21 loading and the 1.1 compatibility identifier remain available.
+
+游戏内界面与鼠标操作待用户验收。
+
+In-game UI and mouse input await user validation.

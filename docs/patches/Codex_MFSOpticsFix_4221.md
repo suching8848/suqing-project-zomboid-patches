@@ -1,5 +1,11 @@
 # 蘇清的MFS瞄具标签修复补丁 / SuQing’s MFS Optics Tag Fix Patch
 
+## 42.22.2 离线候选 / Offline candidate
+
+`1.0.1-rc.1` 支持 B42.21–42.22 单人。保留对既有名单、槽位和零瞄距的三重校验。游戏内待验。
+
+`1.0.1-rc.1` targets B42.21–42.22 single-player. Keeps the audited part list, slot check and zero-sight-range check. In-game testing is pending.
+
 [返回总目录 / Back to index](../../README.md) · [English overview](../../README.en.md)
 
 | 项目 / Field | 当前值 / Current value |

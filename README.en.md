@@ -1,5 +1,12 @@
 # SuQing’s Project Zomboid Patch Collection / 蘇清的僵尸毁灭工程补丁合集
 
+## 2026-11-12 Compatibility update
+
+This update verifies 26 existing submods offline on B42.22.2 and retains their B42.21 range. Crowbar Prying Expansion 0.1.3 and Modern Firearm Upgrades 0.6.0 are optional. Vehicle prying and an earlier firearm upgrade build were tested in game. The current padlock fix, firearm maintenance and throwable recipes await gameplay retesting.
+
+- [Crowbar Prying Expansion](docs/patches/SuQingVanillaPryUpgrade.md)
+- [Modern Firearm Upgrades](docs/patches/SuQingMFSFirearmUpgrade_4221.md)
+
 - [Lunchbox Attached Weight Fix](docs/patches/SuQingLunchboxAttachedWeight_4222.md) 0.1.0-rc.1. An optional B42.22.2 single-player patch for the Freshness Lunchbox and ZombieBuddy 2.3.4. Native weight validation passed offline. In-game testing is pending.
 
 ## November 7 patch additions

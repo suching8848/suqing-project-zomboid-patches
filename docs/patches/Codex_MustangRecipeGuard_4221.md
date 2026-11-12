@@ -7,7 +7,7 @@
 | Mod ID | `Codex_MustangRecipeGuard_4221` |
 | 文件夹 / Folder | `Codex_MustangRecipeGuard_4221` |
 | 版本 / Version | `1.0.0` |
-| 适用 / Target | Project Zomboid Build 42.21; single-player scope |
+| 适用 / Target | Project Zomboid 42.21.0 and 42.22.2, single-player offline candidate |
 | 元数据硬依赖 / Declared prerequisites | `ATA_Mustang` |
 | 原样require / Literal require | `ATA_Mustang` |
 | 加载在其后 / Load after | `ATA_Mustang` |
@@ -43,3 +43,9 @@ Exact reconstruction proves byte identity to the audited local runtime files, no
 见[第三方来源说明](../THIRD_PARTY.md)。本仓库不对上游代码、模型、纹理或差异中的上游上下文另授MIT等许可。读取本机来源不等于获得再次分发原件的许可。
 
 See [third-party notes](../THIRD_PARTY.md). No MIT or other blanket license is applied to upstream code, models, textures or upstream context in diffs. Access to a local source does not grant redistribution rights.
+
+## 42.22.2 离线适配 / Offline compatibility
+
+两版原版配方解析核对仍为三行，首行是原引擎盖标签，三种目标引擎盖仍由上游定义。保留原结构、候选列表回退和单人门禁。实际制作与材料扣除待验收。
+
+Both stock recipe parsers read the same three input lines, including the original hood tag. The three allowed hood items are still defined upstream. The structural guard, candidate-list rollback and single-player scope are retained. Actual crafting and ingredient use await in-game acceptance.

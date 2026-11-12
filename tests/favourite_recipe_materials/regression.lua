@@ -73,7 +73,7 @@ if not T then
     function getText(key) return key end
     function getCore() return T.core end
     T.core = {
-        getVersionNumber = function() return "42.21" end,
+        getGameAndBuildVersion = function() return FavouriteRecipeGameBuild or "42.21.0" end,
         getScreenWidth = function() return 1920 end,
         getScreenHeight = function() return 1080 end,
         getGoodHighlitedColor = function()
@@ -195,6 +195,13 @@ local ductTape = T.item("Base.DuctTape", DrainableComboItem)
 
 eq(#T.installers, 1, "single installation callback")
 eq(leather:isFavouriteRecipeInput(player), false, "native negative before installation")
+local reviewedBuild = FavouriteRecipeGameBuild
+FavouriteRecipeGameBuild = "42.22.1"
+local renderBefore = ISToolTipInv.render
+T.installers[1]()
+eq(ISToolTipInv.render, renderBefore, "unreviewed build preserves native tooltip rendering")
+eq(leather:isFavouriteRecipeInput(player), false, "unreviewed build preserves native item lookup")
+FavouriteRecipeGameBuild = reviewedBuild
 T.installers[1]()
 eq(T.scanCount, 0, "index waits until after startup callbacks")
 T.addLateInput("Fixture.RuntimeAdded")

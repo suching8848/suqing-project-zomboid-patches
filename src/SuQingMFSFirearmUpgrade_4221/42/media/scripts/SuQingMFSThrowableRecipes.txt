@@ -1,0 +1,54 @@
+module Base
+{
+    craftRecipe SuQingMFS_MakeOffensiveGrenade
+    {
+        timedAction = Making,
+        time = 100,
+        Tags = InHandCraft,
+        category = 现代枪械系统ModernFirearmsSystem,
+        inputs
+        {
+            item 1 [Base.AmmoReloadingKit] mode:keep,
+            item 1 [Base.part2_cat],
+            item 3 [Base.GunPowder],
+        }
+        outputs
+        {
+            item 1 Base.BombSmall,
+        }
+    }
+
+    craftRecipe SuQingMFS_MakeDefensiveGrenade
+    {
+        timedAction = Making,
+        time = 150,
+        Tags = InHandCraft,
+        category = 现代枪械系统ModernFirearmsSystem,
+        inputs
+        {
+            item 1 [Base.AmmoReloadingKit] mode:keep,
+            item 2 [Base.part2_cat],
+            item 5 [Base.GunPowder],
+        }
+        outputs
+        {
+            item 1 Base.BombBig,
+        }
+    }
+
+    craftRecipe SuQingMFS_ModifyAerosolBomb
+    {
+        timedAction = Making,
+        time = 80,
+        Tags = InHandCraft,
+        category = 现代枪械系统ModernFirearmsSystem,
+        inputs
+        {
+            item 1 [Base.Aerosolbomb] mode:destroy,
+        }
+        outputs
+        {
+            item 1 Base.Aerosolbomb2,
+        }
+    }
+}

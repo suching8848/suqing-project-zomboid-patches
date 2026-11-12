@@ -1,8 +1,8 @@
-name=Chinese Crop Season Tooltip B42.21 (Local)
+name=Chinese Crop Season Tooltip B42.21-42.22 (Local)
 id=Codex_ChineseCrop_Tooltip_4221
 description=Display compatibility for Chinesecuisine and N&C seed packets in More Item Information. Does not change learned recipes or planting rules.
-modversion=1.1
+modversion=1.1.1
 require=Chinesecuisine4213,MoreItemInformation
 loadModAfter=Chinesecuisine4213,MoreItemInformation,CleanUI,B42ModTrans_CN,GardeniaTranslate_CN
 versionMin=42.21
-versionMax=42.21
+versionMax=42.22

@@ -6,8 +6,8 @@
 | --- | --- |
 | Mod ID | `CodexNarcotics_CN_4221` |
 | 文件夹 / Folder | `CodexNarcotics_CN_4221` |
-| 版本 / Version | `1.0.0` |
-| 适用 / Target | Project Zomboid Build 42.21; single-player scope |
+| 版本 / Version | `1.0.2` |
+| 适用 / Target | Build 42.21–42.22 单人 / single-player. Tested offline on 42.22.2. |
 | 元数据硬依赖 / Declared prerequisites | `N&CsNarcotics` |
 | 原样require / Literal require | `\N&CsNarcotics` |
 | 加载在其后 / Load after | `N&CsNarcotics`, `B42ModTrans_CN`, `GardeniaTranslate_CN` |
@@ -15,6 +15,8 @@
 ## 中文说明
 
 汉化N&C名称、配方、状态、特性、选项和警告台词。桥接运行当前上游并仅替换已核对文字，不收上游完整实现。
+
+1.0.1 为本机 N&C 版本中已有物品说明的 92 个可用物品追加一行简中类别。类别按药物状态面板分组，羟考酮显示「药物类别：阿片类」，LSD 和致幻蘑菇注明共用 MDMA 药效。已有说明的内容照常显示。
 
 只按需要安装本子补丁，不能把本仓库30项当作所有主模组的共同前置。`loadModAfter`是加载顺序声明，不等于要求安装列出的全部模组。`require`原字节保留，包括历史前缀语法；本仓库不擅自迁移Mod ID或改变依赖。
 
@@ -26,6 +28,8 @@
 
 Translates N&C names, recipes, moodles, traits, options and warning speech. The bridge runs installed upstream code with audited text substitutions instead of bundling its full implementation.
 
+Version 1.0.1 adds one Simplified Chinese category line to the existing descriptions of 92 usable items in the reviewed N&C build. It follows the status panel's groups. For example, oxycodone is in the opioid group and LSD and mushrooms share the MDMA effect row.
+
 Install this optional subpatch only for the relevant use case. All 30 are not a universal prerequisite. `loadModAfter` declares ordering, not a requirement to install every named mod. Literal `require` bytes, including historical prefix syntax, remain unchanged. No IDs or dependencies are migrated.
 
 There are 13 runtime files: 13 tracked bridge/translation/metadata files, 0 local upstream copies and 0 context-diff reconstructions. The [manifest](../../rebuild-manifest.json) records every input/output SHA-256 and path. Full third-party artwork, overlay originals and stimulant reference originals are not stored in Git.
@@ -33,6 +37,10 @@ There are 13 runtime files: 13 tracked bridge/translation/metadata files, 0 loca
 Run `tools/rebuild.py --mod-id "CodexNarcotics_CN_4221" --check` with the required source-root arguments, then use a new isolated `--output` directory. Missing or updated sources fail their pinned hashes; do not substitute a renamed newer file. The tool performs no download, subscription, deployment or enabled-list edits. Old personal README/backup/.bak artifacts are not shipped as runtime source; current guidance is collected here.
 
 ## 验证边界 / Validation boundary
+
+用当前 N&C 服药和同步脚本核对原句替换、编译及文本漂移回退。已有药物类别说明继续保留。
+
+Checked exact replacements, compilation and text-drift fallback against the installed N&C dose and synchronization scripts. Keeps the existing drug-category descriptions.
 
 重建SHA一致仅证明还原了审计时的运行文件，不等于游戏内、所有组合、多人或存档持久化验收。原有调试、测试版或单人限制仍以该补丁为准。先在隔离单人档按本功能操作检查，勿把正式档当作自动测试环境。
 

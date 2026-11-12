@@ -1,8 +1,8 @@
-name=[B42.21 CN] They Knew Sandbox Text Fix
+name=[B42.21-42.22 CN] They Knew Sandbox Text Fix
 id=Codex_TheyKnew_CN_TextFix_4221
 description=Fixes literal percentage symbols in 23 Chinese sandbox labels. No gameplay changes.
 require=TheyKnewContinued
 loadModAfter=TheyKnewContinued,B42ModTrans_CN
 versionMin=42.21
-versionMax=42.21
-modversion=1.0.0
+versionMax=42.22
+modversion=1.0.1

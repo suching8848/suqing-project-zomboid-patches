@@ -6,15 +6,15 @@
 | --- | --- |
 | Mod ID | `CodexXFACTION_CN_4221` |
 | 文件夹 / Folder | `CodexXFACTION_CN_4221` |
-| 版本 / Version | `1.0.1` |
-| 适用 / Target | Project Zomboid Build 42.21; single-player scope |
+| 版本 / Version | `1.0.2` |
+| 适用 / Target | Build 42.21–42.22 单人 / single-player. Tested offline on 42.22.2. |
 | 元数据硬依赖 / Declared prerequisites | `XFACTION_DynamicTraits` |
 | 原样require / Literal require | `XFACTION_DynamicTraits` |
 | 加载在其后 / Load after | `XFACTION_DynamicTraits`, `B42ModTrans_CN` |
 
 ## 中文说明
 
-面向XFACTION动态特性0.1.3的简体中文显示，不改特性ID、数值或进度。
+面向XFACTION动态特性0.1.5的简体中文显示，不改特性ID、数值或进度。
 
 只按需要安装本子补丁，不能把本仓库30项当作所有主模组的共同前置。`loadModAfter`是加载顺序声明，不等于要求安装列出的全部模组。`require`原字节保留，包括历史前缀语法；本仓库不擅自迁移Mod ID或改变依赖。
 
@@ -24,7 +24,7 @@
 
 ## English notes
 
-Simplified Chinese presentation for XFACTION Dynamic Traits 0.1.3, without changing trait IDs, values or progression.
+Simplified Chinese presentation for XFACTION Dynamic Traits 0.1.5, without changing trait IDs, values or progression.
 
 Install this optional subpatch only for the relevant use case. All 30 are not a universal prerequisite. `loadModAfter` declares ordering, not a requirement to install every named mod. Literal `require` bytes, including historical prefix syntax, remain unchanged. No IDs or dependencies are migrated.
 
@@ -33,6 +33,10 @@ There are 5 runtime files: 5 tracked bridge/translation/metadata files, 0 local 
 Run `tools/rebuild.py --mod-id "CodexXFACTION_CN_4221" --check` with the required source-root arguments, then use a new isolated `--output` directory. Missing or updated sources fail their pinned hashes; do not substitute a renamed newer file. The tool performs no download, subscription, deployment or enabled-list edits. Old personal README/backup/.bak artifacts are not shipped as runtime source; current guidance is collected here.
 
 ## 验证边界 / Validation boundary
+
+用当前 XFACTION 0.1.5 核对 57 项特质目录、原版阅读神速、强健背脊说明和英文回退。现有显示键、特质注册及规则保持。
+
+Checked the 57-entry catalog, native Fast Reader, Strong Back text and English fallback with XFACTION 0.1.5. Keeps the existing presentation keys, trait registration and gameplay rules.
 
 重建SHA一致仅证明还原了审计时的运行文件，不等于游戏内、所有组合、多人或存档持久化验收。原有调试、测试版或单人限制仍以该补丁为准。先在隔离单人档按本功能操作检查，勿把正式档当作自动测试环境。
 

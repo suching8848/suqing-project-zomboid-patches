@@ -1,5 +1,11 @@
 # 蘇清的 Project Iron 简体中文补丁 / SuQing's Project Iron Chinese Patch
 
+## 42.22.2 离线候选 / Offline candidate
+
+`1.0.1-rc.1` 支持 B42.21–42.22 单人。核对当前 Project Iron 0.6.0 英文键和占位符。游戏内待验。
+
+`1.0.1-rc.1` targets B42.21–42.22 single-player. Checks English keys and placeholders in the installed Project Iron 0.6.0. In-game testing is pending.
+
 [返回总目录 / Back to index](../../README.md) · [English overview](../../README.en.md)
 
 | 项目 / Field | 当前值 / Current value |

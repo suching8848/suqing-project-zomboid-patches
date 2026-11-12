@@ -6,15 +6,15 @@
 | --- | --- |
 | Mod ID | `Codex_TheyKnew_CN_TextFix_4221` |
 | 文件夹 / Folder | `TheyKnew_CN_TextFix_4221` |
-| 版本 / Version | `1.0.0` |
-| 适用 / Target | Project Zomboid Build 42.21; single-player scope |
+| 版本 / Version | `1.0.1` |
+| 适用 / Target | Project Zomboid 42.21.0 and 42.22.2（单人 / single player） |
 | 元数据硬依赖 / Declared prerequisites | `TheyKnewContinued` |
 | 原样require / Literal require | `TheyKnewContinued` |
 | 加载在其后 / Load after | `TheyKnewContinued`, `B42ModTrans_CN` |
 
 ## 中文说明
 
-修复23个中文沙盒标签中的字面百分号，只有文本变化。
+将 23 个简体中文沙盒选项标签中的百分号统一为全角「％」。
 
 只按需要安装本子补丁，不能把本仓库30项当作所有主模组的共同前置。`loadModAfter`是加载顺序声明，不等于要求安装列出的全部模组。`require`原字节保留，包括历史前缀语法；本仓库不擅自迁移Mod ID或改变依赖。
 
@@ -24,7 +24,7 @@
 
 ## English notes
 
-Fixes literal percent symbols in 23 Chinese sandbox labels; text only.
+Uses the full-width percent sign in 23 Simplified Chinese sandbox option labels.
 
 Install this optional subpatch only for the relevant use case. All 30 are not a universal prerequisite. `loadModAfter` declares ordering, not a requirement to install every named mod. Literal `require` bytes, including historical prefix syntax, remain unchanged. No IDs or dependencies are migrated.
 
@@ -33,6 +33,10 @@ There are 2 runtime files: 2 tracked bridge/translation/metadata files, 0 local 
 Run `tools/rebuild.py --mod-id "Codex_TheyKnew_CN_TextFix_4221" --check` with the required source-root arguments, then use a new isolated `--output` directory. Missing or updated sources fail their pinned hashes; do not substitute a renamed newer file. The tool performs no download, subscription, deployment or enabled-list edits. Old personal README/backup/.bak artifacts are not shipped as runtime source; current guidance is collected here.
 
 ## 验证边界 / Validation boundary
+
+原生沙盒翻译会将当前上游的「%%」显示为单个半角百分号。离线核对了当前上游沙盒选项和全部 23 个简体中文翻译键，并验证候选包使用全角符号。游戏内可打开 They Knew 沙盒选项查看各百分比标签。
+
+The native sandbox translator renders the upstream double percent escape as a single ASCII percent sign. Offline checks confirm all 23 keys against the current sandbox options and verify the candidate's full-width sign. In-game acceptance is to inspect the percentage labels in the They Knew sandbox options.
 
 重建SHA一致仅证明还原了审计时的运行文件，不等于游戏内、所有组合、多人或存档持久化验收。原有调试、测试版或单人限制仍以该补丁为准。先在隔离单人档按本功能操作检查，勿把正式档当作自动测试环境。
 

@@ -1,14 +1,14 @@
 {
   "schema": 1,
   "target_game": "Project Zomboid Build 42.21",
-  "scope": "44 registered patches: 35 optional collection patches, 3 EX companions, 5 redistribution holds and 1 optional Freshness Lunchbox companion.",
+  "scope": "46 registered patches: 37 optional collection patches, 3 EX companions, 5 redistribution holds and 1 optional Freshness Lunchbox companion.",
   "mods": [
     {
       "id": "Codex_AmmoBox_CN_TextFix_4221",
       "folder": "AmmoBox_CN_4221_LocalFix",
       "title_zh": "洗衣皂中文文本修复",
       "title_en": "Washing Soap Chinese Text Fix",
-      "version": "1.2.0",
+      "version": "1.2.1",
       "description_original": "Corrects the washing soap Chinese label that causes missing-format-argument warnings. Obsolete ammo recipe translation overrides have been retired. Translation only.",
       "requires_raw": "B42ModTrans_CN",
       "load_after_raw": "B42ModTrans_CN,GardeniaTranslate_CN",
@@ -25,7 +25,7 @@
       "summary_zh": "目前仅修复洗衣皂中文名称的格式参数警告；旧弹药配方覆盖已退役。历史文件夹名保留以免破坏ID。",
       "summary_en": "Currently fixes the Chinese washing-soap label and missing-format-argument warnings. Old ammo-recipe overrides are retired; the historical folder/ID is preserved.",
       "runtime_files": 2,
-      "runtime_bytes": 417,
+      "runtime_bytes": 423,
       "reconstruction_modes": {
         "own": 2
       },
@@ -35,7 +35,9 @@
           "reason": "documentation/history/personal configuration; not a runtime source"
         }
       ],
-      "source_roots": []
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2",
+      "distribution": "optional_in_patch_collection"
     },
     {
       "id": "Codex_AttachedGrouping_4221",
@@ -106,7 +108,7 @@
       "folder": "ChineseCrop_Tooltip_4221_LocalFix",
       "title_zh": "中华菜与N&C种子提示兼容",
       "title_en": "Chinese Cuisine and N&C Seed Tooltips",
-      "version": "1.1",
+      "version": "1.1.1",
       "description_original": "Display compatibility for Chinesecuisine and N&C seed packets in More Item Information. Does not change learned recipes or planting rules.",
       "requires_raw": "Chinesecuisine4213,MoreItemInformation",
       "load_after_raw": "Chinesecuisine4213,MoreItemInformation,CleanUI,B42ModTrans_CN,GardeniaTranslate_CN",
@@ -127,19 +129,21 @@
       "summary_zh": "在More Item Information中显示中华菜与N&C种子的已知季节和农耕数据；不改学习配方或种植规则。",
       "summary_en": "Shows learned seasons and farming data for Chinese Cuisine and N&C seed packets in More Item Information, without changing learned recipes or planting rules.",
       "runtime_files": 5,
-      "runtime_bytes": 6168,
+      "runtime_bytes": 6176,
       "reconstruction_modes": {
         "own": 5
       },
       "excluded_files": [],
-      "source_roots": []
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2",
+      "distribution": "optional_in_patch_collection"
     },
     {
       "id": "Codex_FashionoidFluidTooltip_4221",
       "folder": "Codex_FashionoidFluidTooltip_4221",
       "title_zh": "Fashionoid储液提示兼容",
       "title_en": "Fashionoid Fluid Tooltip Compatibility",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "description_original": "Allows Fashionoid to skip non-item tooltip objects that lack the item type method. Normal item eligibility remains delegated to Fashionoid. Review after Fashionoid updates.",
       "requires_raw": "Fashionoid42",
       "load_after_raw": "Fashionoid42",
@@ -155,19 +159,21 @@
       "summary_zh": "让Fashionoid跳过缺少物品类型方法的非物品储液提示对象，其余判定仍交给Fashionoid。",
       "summary_en": "Lets Fashionoid skip non-item fluid tooltip objects without the item-type method. Normal eligibility is still delegated to Fashionoid.",
       "runtime_files": 2,
-      "runtime_bytes": 1095,
+      "runtime_bytes": 1101,
       "reconstruction_modes": {
         "own": 2
       },
       "excluded_files": [],
-      "source_roots": []
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2",
+      "distribution": "optional_in_patch_collection"
     },
     {
       "id": "Codex_MFSOpticsFix_4221",
       "folder": "Codex_MFSOpticsFix_4221",
       "title_zh": "MFS瞄具标签修复",
       "title_en": "MFS Optics Tag Fix",
-      "version": "1.0.0",
+      "version": "1.0.1-rc.1",
       "description_original": "Corrects audited non-sight attachments incorrectly tagged as optics. Keeps weapon parts and actual scopes intact.",
       "requires_raw": "ModernFirearmsSystem",
       "load_after_raw": "ModernFirearmsSystem",
@@ -183,7 +189,7 @@
       "summary_zh": "纠正已审计非瞄具配件上错误的optics标签，保留真正瞄具及枪械配件。",
       "summary_en": "Corrects optics tags on audited non-sight accessories while preserving real scopes and weapon parts.",
       "runtime_files": 3,
-      "runtime_bytes": 5272,
+      "runtime_bytes": 5314,
       "reconstruction_modes": {
         "own": 3
       },
@@ -193,7 +199,9 @@
           "reason": "documentation/history/personal configuration; not a runtime source"
         }
       ],
-      "source_roots": []
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2",
+      "distribution": "optional_in_patch_collection"
     },
     {
       "id": "Codex_MustangRecipeGuard_4221",
@@ -221,7 +229,9 @@
         "own": 2
       },
       "excluded_files": [],
-      "source_roots": []
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2",
+      "distribution": "optional_in_patch_collection"
     },
     {
       "id": "Codex_NarcoticsStatus_4221",
@@ -343,7 +353,7 @@
       "folder": "Codex_XFDynamicRecordGuard_4221",
       "title_zh": "XFACTION进度记录保护",
       "title_en": "XFACTION Progress Record Guard",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "description_original": "Preserves a bound single-player XFACTION progress record during transient survival-time drops, while separating confirmed deaths and new character identities.",
       "requires_raw": "XFACTION_DynamicTraits",
       "load_after_raw": "XFACTION_DynamicTraits",
@@ -359,12 +369,14 @@
       "summary_zh": "保护单人人物在生存时间短暂下降时已绑定的XFACTION进度记录，区分确认死亡和新人身份；不把旧人物记录复制给新人。",
       "summary_en": "Protects a bound single-player XFACTION progress record during transient survival-time drops, distinguishing confirmed death and new identities instead of copying old progress to a new character.",
       "runtime_files": 2,
-      "runtime_bytes": 4235,
+      "runtime_bytes": 4243,
       "reconstruction_modes": {
         "own": 2
       },
       "excluded_files": [],
-      "source_roots": []
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2",
+      "distribution": "optional_in_patch_collection"
     },
     {
       "id": "CodexCBRTIndependent_4221",
@@ -399,7 +411,7 @@
       "folder": "CodexCharacterMenuTweaks_4221",
       "title_zh": "人物菜单调整",
       "title_en": "Character Menu Tweaks",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "description_original": "Moves the existing XFACTION progress entry into character information. Presentation-only, no progression or item changes.",
       "requires_raw": "XFACTION_DynamicTraits,CodexXFACTION_CN_4221",
       "load_after_raw": "XFACTION_DynamicTraits,CodexXFACTION_CN_4221,Fashionoid42,RaccoonCityB42,BuildingCraftRaccoonCity",
@@ -420,19 +432,21 @@
       "summary_zh": "将现有XFACTION进度入口移动到人物信息；调整浣熊市人物菜单呈现，不改进度或物品。",
       "summary_en": "Moves the existing XFACTION progress entry into character information and adjusts Raccoon City menu presentation without changing progression or items.",
       "runtime_files": 5,
-      "runtime_bytes": 6617,
+      "runtime_bytes": 6625,
       "reconstruction_modes": {
         "own": 5
       },
       "excluded_files": [],
-      "source_roots": []
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2",
+      "distribution": "optional_in_patch_collection"
     },
     {
       "id": "CodexNarcotics_CN_4221",
       "folder": "CodexNarcotics_CN_4221",
       "title_zh": "N&C中文补丁",
       "title_en": "N&C Chinese Translation",
-      "version": "1.0.0",
+      "version": "1.0.2",
       "description_original": "Simplified Chinese for N&C's Narcotics: names, recipes, moodles, traits, options and warning speech. Presentation only; no balance changes.",
       "requires_raw": "\\N&CsNarcotics",
       "load_after_raw": "N&CsNarcotics,B42ModTrans_CN,GardeniaTranslate_CN",
@@ -450,7 +464,7 @@
       "summary_zh": "汉化N&C名称、配方、状态、特性、选项和警告台词。桥接运行当前上游并仅替换已核对文字，不收上游完整实现。",
       "summary_en": "Translates N&C names, recipes, moodles, traits, options and warning speech. The bridge runs installed upstream code with audited text substitutions instead of bundling its full implementation.",
       "runtime_files": 13,
-      "runtime_bytes": 35240,
+      "runtime_bytes": 36073,
       "reconstruction_modes": {
         "own": 13
       },
@@ -460,7 +474,9 @@
           "reason": "documentation/history/personal configuration; not a runtime source"
         }
       ],
-      "source_roots": []
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2",
+      "distribution": "optional_in_patch_collection"
     },
     {
       "id": "CodexNekomataEXCompat_4221",
@@ -587,8 +603,8 @@
       "folder": "CodexXFACTION_CN_4221",
       "title_zh": "XFACTION动态特性汉化",
       "title_en": "XFACTION Dynamic Traits Chinese Translation",
-      "version": "1.0.1",
-      "description_original": "Simplified Chinese presentation for XFACTION Dynamic Traits 0.1.3. No progression, stat or trait identifier changes. Requires a restart.",
+      "version": "1.0.2",
+      "description_original": "Simplified Chinese presentation for XFACTION Dynamic Traits 0.1.5. No progression, stat or trait identifier changes. Requires a restart.",
       "requires_raw": "XFACTION_DynamicTraits",
       "load_after_raw": "XFACTION_DynamicTraits,B42ModTrans_CN",
       "required_mods": [
@@ -604,12 +620,14 @@
       "summary_zh": "面向XFACTION动态特性0.1.3的简体中文显示，不改特性ID、数值或进度。",
       "summary_en": "Simplified Chinese presentation for XFACTION Dynamic Traits 0.1.3, without changing trait IDs, values or progression.",
       "runtime_files": 5,
-      "runtime_bytes": 47819,
+      "runtime_bytes": 47833,
       "reconstruction_modes": {
         "own": 5
       },
       "excluded_files": [],
-      "source_roots": []
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2",
+      "distribution": "optional_in_patch_collection"
     },
     {
       "id": "Codex_DAMN_VanillaTires_4221",
@@ -642,7 +660,9 @@
           "reason": "documentation/history/personal configuration; not a runtime source"
         }
       ],
-      "source_roots": []
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2",
+      "distribution": "optional_in_patch_collection"
     },
     {
       "id": "Codex_DebugMenu_Generator_4221",
@@ -663,12 +683,14 @@
       "summary_zh": "补Erika家具缺失type；只有DebugMenu启用时才运行物品生成器保护，DebugMenu不是硬依赖。",
       "summary_en": "Repairs missing types on known Erika furniture. The item-generator guard runs only when DebugMenu is enabled; DebugMenu is not a hard dependency.",
       "runtime_files": 3,
-      "runtime_bytes": 19233,
+      "runtime_bytes": 19239,
       "reconstruction_modes": {
         "own": 3
       },
       "excluded_files": [],
-      "source_roots": []
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2",
+      "distribution": "optional_in_patch_collection"
     },
     {
       "id": "Codex_InventoryTransferPerformance_4221",
@@ -713,7 +735,7 @@
       "folder": "MFS_AmmoVisual_Compat_4221_LocalFix",
       "title_zh": "MFS弹药盒与弹匣显示兼容",
       "title_en": "MFS Ammo Box and Magazine Visual Compatibility",
-      "version": "1.0.0",
+      "version": "1.0.1-rc.1",
       "description_original": "Corrects the M110 ammo-box reference and makes SuPrimitiveEquipment magazine visual helpers validate item definitions and preserve other mods' Clip attachments. Does not replace firearms or change real ammunition loading.",
       "requires_raw": "ModernFirearmsSystem",
       "load_after_raw": "ModernFirearmsSystem,SuPrimitiveEquipment",
@@ -730,7 +752,7 @@
       "summary_zh": "修正M110弹药盒引用，并让原始装备弹匣显示辅助检查物品定义、保留其他模组Clip挂点；不改真实装弹。",
       "summary_en": "Corrects the M110 ammo-box reference and makes Primitive Equipment magazine-visual helpers validate item definitions and preserve other Clip attachments, without changing real ammunition loading.",
       "runtime_files": 3,
-      "runtime_bytes": 8580,
+      "runtime_bytes": 8601,
       "reconstruction_modes": {
         "own": 3
       },
@@ -740,14 +762,16 @@
           "reason": "documentation/history/personal configuration; not a runtime source"
         }
       ],
-      "source_roots": []
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2",
+      "distribution": "optional_in_patch_collection"
     },
     {
       "id": "Codex_MFS_AttachedLight_Hotkey_4221",
       "folder": "MFS_AttachedLight_Hotkey_4221_LocalFix",
       "title_zh": "MFS附加手电快捷键修复",
       "title_en": "MFS Attached Flashlight Hotkey Fix",
-      "version": "1.0.0",
+      "version": "1.0.1-rc.1",
       "description_original": "Lets the normal light-source hotkey reach an attached flashlight when a held ranged weapon reports a non-switchable light. Preserves MFS automatic aiming lights, normal handheld lights, vehicle headlights and existing light handlers.",
       "requires_raw": "ModernFirearmsSystem",
       "load_after_raw": "ModernFirearmsSystem,VanillaFoodsExpanded,FixedLightOnBeltAF,Flashlight&LanternOnBeltB42",
@@ -766,7 +790,7 @@
       "summary_zh": "让原生灯光快捷键可操作附加手电，保留MFS自动瞄准照明、手持灯和车灯。",
       "summary_en": "Lets the native light hotkey reach attached flashlights while preserving MFS aiming lights, handheld lights and vehicle headlights.",
       "runtime_files": 2,
-      "runtime_bytes": 4010,
+      "runtime_bytes": 4023,
       "reconstruction_modes": {
         "own": 2
       },
@@ -776,7 +800,9 @@
           "reason": "documentation/history/personal configuration; not a runtime source"
         }
       ],
-      "source_roots": []
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2",
+      "distribution": "optional_in_patch_collection"
     },
     {
       "id": "Codex_NoirSling_SP_Compat_4221",
@@ -797,7 +823,7 @@
       "summary_zh": "抑制Noir单人补丁遗漏的第二条旧客户端动作；只为对应Noir SP补丁补足兼容。",
       "summary_en": "Suppresses the second legacy client action left by the corresponding Noir Sling single-player patch.",
       "runtime_files": 2,
-      "runtime_bytes": 560,
+      "runtime_bytes": 566,
       "reconstruction_modes": {
         "own": 2
       },
@@ -807,7 +833,9 @@
           "reason": "documentation/history/personal configuration; not a runtime source"
         }
       ],
-      "source_roots": []
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2",
+      "distribution": "optional_in_patch_collection"
     },
     {
       "id": "PinyinSearch_SafeSources_4221_LocalFix",
@@ -883,7 +911,9 @@
           "reason": "documentation/history/personal configuration; not a runtime source"
         }
       ],
-      "source_roots": []
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2",
+      "distribution": "optional_in_patch_collection"
     },
     {
       "id": "Codex_PrimitiveTooltip_4221",
@@ -922,7 +952,7 @@
       "title_zh": "批量农耕菜单筛选",
       "title_en": "Batch Farming Menu Filter",
       "version": "0.1.0",
-      "description_original": "Show Batch Farming only on tillable soil, tilled plots or crops. Keeps the upstream actions unchanged. Local B42.21 menu patch.",
+      "description_original": "仅在可耕土、耕地或作物上显示批量农耕菜单，沿用上游动作。支持 B42.21 和 B42.22 单人版。 | Show Batch Farming only on tillable soil, tilled plots or crops. Keeps the upstream actions unchanged. Supports single-player B42.21 and B42.22.",
       "requires_raw": "vac_batch_farming",
       "load_after_raw": "vac_batch_farming",
       "required_mods": [
@@ -937,19 +967,21 @@
       "summary_zh": "只在可耕土、耕地或作物上显示批量农耕菜单，原动作不变；不要求喷洒器扩展。",
       "summary_en": "Shows the Batch Farming menu only on tillable soil, tilled plots or crops. Upstream actions are unchanged and the sprinkler extension is not required.",
       "runtime_files": 3,
-      "runtime_bytes": 1722,
+      "runtime_bytes": 1863,
       "reconstruction_modes": {
         "own": 3
       },
       "excluded_files": [],
-      "source_roots": []
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2",
+      "distribution": "optional_in_patch_collection"
     },
     {
       "id": "Codex_TheyKnew_CN_TextFix_4221",
       "folder": "TheyKnew_CN_TextFix_4221",
       "title_zh": "They Knew沙盒文本修复",
       "title_en": "They Knew Sandbox Text Fix",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "description_original": "Fixes literal percentage symbols in 23 Chinese sandbox labels. No gameplay changes.",
       "requires_raw": "TheyKnewContinued",
       "load_after_raw": "TheyKnewContinued,B42ModTrans_CN",
@@ -966,12 +998,14 @@
       "summary_zh": "修复23个中文沙盒标签中的字面百分号，只有文本变化。",
       "summary_en": "Fixes literal percent symbols in 23 Chinese sandbox labels; text only.",
       "runtime_files": 2,
-      "runtime_bytes": 2271,
+      "runtime_bytes": 2277,
       "reconstruction_modes": {
         "own": 2
       },
       "excluded_files": [],
-      "source_roots": []
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2",
+      "distribution": "optional_in_patch_collection"
     },
     {
       "id": "Codex_TrueMusic_Headphones_4221",
@@ -979,7 +1013,7 @@
       "title_zh": "True Music耳机单人兼容",
       "title_en": "True Music Headphones Single-player Compatibility",
       "version": "1.0.0",
-      "description_original": "Updates True Music headphone installation and removal for 42.21 single-player, including playback cleanup when unplugging headphones, switching off or removing the battery.",
+      "description_original": "Updates True Music headphone installation and removal for single-player, including playback cleanup when unplugging headphones, switching off or removing the battery.",
       "requires_raw": "truemusic",
       "load_after_raw": "truemusic",
       "required_mods": [
@@ -999,14 +1033,16 @@
         "own": 2
       },
       "excluded_files": [],
-      "source_roots": []
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2",
+      "distribution": "optional_in_patch_collection"
     },
     {
       "id": "SuQingProteinTrainingBoost",
       "folder": "SuQingProteinTrainingBoost",
       "title_zh": "蛋白饮料训练强化",
       "title_en": "Protein Shake Training Boost",
-      "version": "1.1.0",
+      "version": "1.1.1-rc.1",
       "description_original": "After drinking Vanilla Foods Expanded protein shakes, multiply normally awarded Strength and Fitness XP by 10. A 500 mL dose grants 3 game hours; partial drinks scale by actual protein-shake volume, stacking duration up to 3 hours. Stacks once with Project Iron 0.6.0 pre-workout (x20 combined at its default setting). Single-player only.",
       "requires_raw": "VanillaFoodsExpanded",
       "load_after_raw": "VanillaFoodsExpanded,SkillRecoveryJournal,CleanUI",
@@ -1024,12 +1060,14 @@
       "summary_zh": "原蛋白饮料力量与体格经验×10，按摄入量最多3游戏小时；单人适配 Project Iron 0.6.0，默认双增益×20，排除恢复日志经验。",
       "summary_en": "Dose-scaled Strength/Fitness XP x10 for up to three game hours. Single-player Project Iron 0.6.0 compatibility stacks both boosts once (x20 by default) and excludes recovery XP.",
       "runtime_files": 9,
-      "runtime_bytes": 26352,
+      "runtime_bytes": 26362,
       "reconstruction_modes": {
         "own": 9
       },
       "excluded_files": [],
-      "source_roots": []
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2",
+      "distribution": "optional_in_patch_collection"
     },
     {
       "id": "SuQingRecipeInputGuard_4221",
@@ -1037,7 +1075,7 @@
       "title_zh": "配方材料输入修复",
       "title_en": "Recipe Input Guard",
       "version": "1.0.0",
-      "description_original": "Early registration of Sapph's missing strawberry tag, with read-only startup validation of resolved ingredient candidates.",
+      "description_original": "Registers Sapph's missing strawberry tag before item and recipe parsing, preventing unrelated items from appearing as strawberry-cheesecake ingredients. Preserves recipe quantities, outputs and milk-fluid inputs. Requires a full restart. Single-player validation scope.",
       "requires_raw": "SapphCooking_B42",
       "load_after_raw": "SapphCooking_B42",
       "required_mods": [
@@ -1057,7 +1095,9 @@
         "own": 3
       },
       "excluded_files": [],
-      "source_roots": []
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2",
+      "distribution": "optional_in_patch_collection"
     },
     {
       "id": "SuQingChumMassProduction",
@@ -1065,7 +1105,7 @@
       "title_zh": "饵托量产补丁",
       "title_en": "Chum Mass Production Patch",
       "version": "1.0.0",
-      "description_original": "Craft five original chum items from one full sand/dirt bag or one clay and 0.1 L water in any fluid container. Retains original recipe knowledge and subsequent bait loading.",
+      "description_original": "每批使用一整袋沙或泥土，或一份黏土，加任意容器的0.1升水，制作5个原版饵托。支持净水、污水及两者混合水；满袋消耗后保留空袋，水容器保留。沿用原版饵托学习和加料机制。支持 B42.21 和 B42.22 单人版。 | Uses a full sand or dirt bag, or one clay, and 0.1 L of clean or tainted water to make five vanilla chum. Returns an empty bag, keeps the water container and preserves vanilla recipe knowledge. Supports single-player B42.21 and B42.22.",
       "requires_raw": "",
       "load_after_raw": "",
       "required_mods": [],
@@ -1076,12 +1116,14 @@
       "summary_zh": "一整袋沙或泥土，或一份黏土，加任意容器0.1L净水/污水制作5个原版饵托；满袋耗尽返空袋，沿用原版配方知识。",
       "summary_en": "Five original chum per full sand/dirt bag or clay, using 0.1 L clean/tainted water from any fluid container; empty bags and vanilla recipe knowledge retained.",
       "runtime_files": 10,
-      "runtime_bytes": 8609,
+      "runtime_bytes": 8845,
       "reconstruction_modes": {
         "own": 10
       },
       "excluded_files": [],
-      "source_roots": []
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2",
+      "distribution": "optional_in_patch_collection"
     },
     {
       "id": "Codex_ViewpointLegacyPromptFix_4221",
@@ -1132,12 +1174,14 @@
       "summary_zh": "仅将中国菜酿酒书满读倍率设为50；部分阅读保留原版10%阶梯，按真实已读页数同步，不直接加经验或改等级。停用前需恢复原倍率并保存。",
       "summary_en": "Sets only Chinese Cuisine brewing-book maxima to 50, retains native 10-percent reading steps and synchronizes actual read pages. No direct XP or level award. Restore original multipliers and save before disabling.",
       "runtime_files": 4,
-      "runtime_bytes": 15091,
+      "runtime_bytes": 15142,
       "reconstruction_modes": {
         "own": 4
       },
       "excluded_files": [],
-      "source_roots": []
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2",
+      "distribution": "optional_in_patch_collection"
     },
     {
       "id": "SuQingBoatRVRoomGuard_4221",
@@ -1179,8 +1223,8 @@
       "folder": "SuQingBoatCraftFromFloor_4221",
       "title_zh": "蘇清的造船就地取材补丁",
       "title_en": "SuQing's Boat Crafting Nearby Materials Patch",
-      "version": "0.1.0",
-      "description_original": "Adds the native nearby-input flag to the three boat recipes; retains ingredients, work surface, skills and output weights. B42.21 single-player only.",
+      "version": "0.1.1-rc.1",
+      "description_original": "中文：仅让三条造船配方沿用原版就地取材，避免开工前把所有材料搬入人物背包；材料、技能、工作面、成品重量不变。B42.21–42.22单人离线适配，游戏内待验收。上游配方变化时不应用。",
       "requires_raw": "BoteBR",
       "load_after_raw": "BoteBR,Neat_Crafting",
       "required_mods": [
@@ -1196,14 +1240,15 @@
       "summary_zh": "仅三条造船配方就地取材，避免预先全搬进人物背包；材料、工作面和重量保留。",
       "summary_en": "Native nearby inputs for three boat recipes; ingredients, surface and weight retained.",
       "runtime_files": 7,
-      "runtime_bytes": 8610,
+      "runtime_bytes": 8652,
       "reconstruction_modes": {
         "own": 7
       },
       "excluded_files": [],
       "source_roots": [],
       "local_registration_date": "2026-11-06",
-      "distribution": "local_only_not_committed_or_published"
+      "compatibility_candidate_game": "42.22.2",
+      "distribution": "optional_in_patch_collection"
     },
     {
       "id": "SuQingUIInteractionFixes",
@@ -1249,7 +1294,7 @@
       "title_zh": "蘇清的野马防护改装修复",
       "title_en": "SuQing's Mustang Protection Repair",
       "version": "1.0.0",
-      "description_original": "Adds repair actions for installed Autotsar Mustang bullbars, window protection and wheel protection through the tuning menu. Each repair restores 30 condition up to 100 and requires Welding level 2, a usable welding mask, sheet metal or a heavy chain link and 3 blowtorch fuel units. Original parts, installation and tuning data remain. Compatible NIKKE Mustang aliases are recognized. Single-player only. Separate from the existing Mustang hood recipe-input guard.",
+      "description_original": "Repair installed Autotsar Mustang protection through the tuning menu. Each action restores 30 condition up to 100. Welding 2, usable welding mask, one matching metal sheet/heavy chain link and 3 blowtorch fuel units are required. Retains parts and tuning data. Single-player only; see README.txt.",
       "requires_raw": "\\tsarslib,\\ATA_Mustang",
       "required_mods": [
         "tsarslib",
@@ -1265,7 +1310,7 @@
       "summary_zh": "在Autotsar Mustang改装菜单中修理已安装的防撞杠、窗户防护和车轮防护。每次恢复30耐久，最高100；需要焊接2级、可用焊接面罩、金属板或重型链节及喷灯3单位燃料。保留原部件、安装状态及上游改装数据，支持符合原作别名关系的NIKKE Mustang。仅单人。它与旧的Mustang引擎盖配方输入保护是两个不同补丁。",
       "summary_en": "Adds repair actions for installed Autotsar Mustang bullbars, window protection and wheel protection through the tuning menu. Each repair restores 30 condition up to 100 and requires Welding level 2, a usable welding mask, sheet metal or a heavy chain link and 3 blowtorch fuel units. Original parts, installation and tuning data remain. Compatible NIKKE Mustang aliases are recognized. Single-player only. Separate from the existing Mustang hood recipe-input guard.",
       "runtime_files": 4,
-      "runtime_bytes": 11683,
+      "runtime_bytes": 11680,
       "reconstruction_modes": {
         "own": 4
       },
@@ -1275,7 +1320,9 @@
           "reason": "bilingual public documentation copied separately into release candidate"
         }
       ],
-      "source_roots": []
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2",
+      "distribution": "optional_in_patch_collection"
     },
     {
       "id": "SuQingWorldStateGuard_4221",
@@ -1348,8 +1395,8 @@
       "folder": "SuQingFavouriteRecipeMaterials_4221",
       "title_zh": "蘇清的收藏配方材料标记修复",
       "title_en": "SuQing's Favourite Recipe Materials Fix",
-      "version": "0.1.0",
-      "description_original": "修复 B42.21.0 单人游戏中自定义模块收藏配方材料缺少绿勾和悬停提示。兼容原版与 CleanUI 详细列表。 <LINE> Restores the green badge and hover hint for favourite recipes in custom modules on B42.21.0 single-player. Works with vanilla and CleanUI detailed lists.",
+      "version": "0.1.1-rc.1",
+      "description_original": "修复 B42.21.0 与 B42.22.2 单人游戏中自定义模块收藏配方材料缺少绿勾和悬停提示。兼容原版与 CleanUI 详细列表。 <LINE> Restores the green badge and hover hint for favourite recipes in custom modules on B42.21.0 and B42.22.2 single-player. Works with vanilla and CleanUI detailed lists.",
       "requires_raw": "",
       "load_after_raw": "CleanUI,Neat_Crafting,SuQingSearchEnhancement,SuQingRefrigerationUpgrade_4221,ExSuQingBackpackSuperUpgrade_4221",
       "required_mods": [],
@@ -1366,13 +1413,14 @@
       "summary_zh": "补齐自定义模块收藏配方材料的原有绿勾与绿色悬停提示。",
       "summary_en": "Restores the stock green badge and hover hint for materials of favourites in custom modules.",
       "runtime_files": 4,
-      "runtime_bytes": 7343,
+      "runtime_bytes": 7547,
       "reconstruction_modes": {
         "own": 4
       },
       "excluded_files": [],
       "source_roots": [],
       "local_registration_date": "2026-11-07",
+      "compatibility_candidate_game": "42.22.2",
       "distribution": "optional_in_patch_collection"
     },
     {
@@ -1380,8 +1428,8 @@
       "folder": "SuQingProjectIronCN_4221",
       "title_zh": "蘇清的 Project Iron 简体中文补丁",
       "title_en": "SuQing's Project Iron Chinese Patch",
-      "version": "1.0.0",
-      "description_original": "Simplified Chinese menus, equipment, supplements, status text and sandbox options for Project Iron 0.6.0 on Build 42.21.",
+      "version": "1.0.1-rc.1",
+      "description_original": "Simplified Chinese menus, equipment, supplements, status text and sandbox options for Project Iron 0.6.0 on Builds 42.21–42.22.",
       "requires_raw": "SweatWorkz",
       "load_after_raw": "SweatWorkz,B42ModTrans_CN,GardeniaTranslate_CN",
       "required_mods": [
@@ -1398,15 +1446,16 @@
       "summary_zh": "汉化 Project Iron 0.6.0 的器械、补剂、状态、菜单、沙盒设置及音效名称。",
       "summary_en": "Translates equipment, supplements, status text, menus, sandbox options and sound names for Project Iron 0.6.0.",
       "runtime_files": 12,
-      "runtime_bytes": 15886,
+      "runtime_bytes": 15900,
       "reconstruction_modes": {
         "own": 12
       },
       "excluded_files": [],
       "source_roots": [],
       "local_registration_date": "2026-11-08",
+      "compatibility_candidate_game": "42.22.2",
       "distribution": "optional_in_patch_collection"
-    },
+    },
     {
       "id": "SuQingLunchboxAttachedWeight_4222",
       "folder": "SuQingLunchboxAttachedWeight_4222",
@@ -1442,6 +1491,62 @@
       "source_roots": [],
       "distribution": "freshness_lunchbox_optional_submod",
       "compatibility_candidate_game": "42.22.2"
+    },
+    {
+      "id": "SuQingVanillaPryUpgrade",
+      "folder": "SuQingVanillaPryUpgrade",
+      "title_zh": "撬锁拓展补丁",
+      "title_en": "Crowbar Prying Expansion Patch",
+      "version": "0.1.3",
+      "description_original": "用撬棍撬开防盗门锁、挂锁和车辆锁。车辆操作在 V 键轮盘中。适用 B42.22.2 单人模式。 <LINE> Pry security doors, padlocks and vehicle locks with a crowbar. Vehicle actions appear in the V radial menu. Build 42.22.2 single-player.",
+      "requires_raw": "",
+      "load_after_raw": "",
+      "required_mods": [],
+      "load_after_mods": [],
+      "doc": "docs/patches/SuQingVanillaPryUpgrade.md",
+      "reconstruction_status": "recipes_ready",
+      "source_runtime_info": "42/mod.info",
+      "summary_zh": "扩展原版撬棍动作，支持防盗门、挂锁与车辆 V 键轮盘。门窗须先拆除路障。",
+      "summary_en": "Extends vanilla crowbar prying to reinforced doors, padlocks and the vehicle radial menu. Barricades must be removed first.",
+      "runtime_files": 8,
+      "runtime_bytes": 11220,
+      "reconstruction_modes": {
+        "own": 8
+      },
+      "excluded_files": [],
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2",
+      "distribution": "optional_in_patch_collection"
+    },
+    {
+      "id": "SuQingMFSFirearmUpgrade_4221",
+      "folder": "SuQingMFSFirearmUpgrade_4221",
+      "title_zh": "蘇清的现代枪械强化补丁",
+      "title_en": "SuQing's Modern Firearm Upgrades",
+      "version": "0.6.0",
+      "description_original": "Five levels of per-firearm upgrades, dry-towel maintenance, and three throwable recipes. Requires Modern Firearms System. Build 42.21–42.22 single-player.",
+      "requires_raw": "ModernFirearmsSystem",
+      "load_after_raw": "ModernFirearmsSystem",
+      "required_mods": [
+        "ModernFirearmsSystem"
+      ],
+      "load_after_mods": [
+        "ModernFirearmsSystem"
+      ],
+      "doc": "docs/patches/SuQingMFSFirearmUpgrade_4221.md",
+      "reconstruction_status": "recipes_ready",
+      "source_runtime_info": "42/mod.info",
+      "summary_zh": "五档单枪强化、干毛巾擦拭维护和三条投掷物配方。",
+      "summary_en": "Five levels of per-gun upgrades, dry-towel maintenance, and three throwable recipes.",
+      "runtime_files": 10,
+      "runtime_bytes": 39480,
+      "reconstruction_modes": {
+        "own": 10
+      },
+      "excluded_files": [],
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2",
+      "distribution": "optional_in_patch_collection"
     }
   ]
 }

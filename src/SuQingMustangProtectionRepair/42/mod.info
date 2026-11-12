@@ -1,7 +1,7 @@
 name=蘇清的野马防护改装修复 / SuQing's Mustang Protection Repair
 id=SuQingMustangProtectionRepair
 versionMin=42.21.0
-versionMax=42.21.99
+versionMax=42.22
 modversion=1.0.0
 require=\tsarslib,\ATA_Mustang
 loadModAfter=\AA2NikkeMustang

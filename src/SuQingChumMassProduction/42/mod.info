@@ -3,5 +3,5 @@ id=SuQingChumMassProduction
 author=蘇清
 modversion=1.0.0
 versionMin=42.21
-versionMax=42.21
-description=每批使用一整袋沙或泥土，或一份黏土，加任意容器的0.1升水，制作5个原版饵托。支持净水、污水及两者混合水；满袋消耗后保留空袋，水容器保留。沿用原版饵托学习和加料机制。独立本地补丁，适用于B42.21。
+versionMax=42.22
+description=每批使用一整袋沙或泥土，或一份黏土，加任意容器的0.1升水，制作5个原版饵托。支持净水、污水及两者混合水；满袋消耗后保留空袋，水容器保留。沿用原版饵托学习和加料机制。支持 B42.21 和 B42.22 单人版。 | Uses a full sand or dirt bag, or one clay, and 0.1 L of clean or tainted water to make five vanilla chum. Returns an empty bag, keeps the water container and preserves vanilla recipe knowledge. Supports single-player B42.21 and B42.22.

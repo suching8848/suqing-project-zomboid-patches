@@ -1,9 +1,9 @@
-name=[B42.21] Fashionoid Fluid Tooltip Compatibility (Local)
+name=[B42.21-42.22] Fashionoid Fluid Tooltip Compatibility (Local)
 id=Codex_FashionoidFluidTooltip_4221
 require=Fashionoid42
 loadModAfter=Fashionoid42
 versionMin=42.21
-versionMax=42.21
-modversion=1.0.0
+versionMax=42.22
+modversion=1.0.1
 author=Local compatibility fix
 description=Allows Fashionoid to skip non-item tooltip objects that lack the item type method. Normal item eligibility remains delegated to Fashionoid. Review after Fashionoid updates.

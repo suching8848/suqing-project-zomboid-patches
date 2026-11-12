@@ -1,8 +1,8 @@
-name=[B42.21 SP] True Music Headphones Compatibility (Local)
+name=[B42.21/42.22 SP] True Music Headphones Compatibility (Local)
 id=Codex_TrueMusic_Headphones_4221
-description=Updates True Music headphone installation and removal for 42.21 single-player, including playback cleanup when unplugging headphones, switching off or removing the battery.
+description=Updates True Music headphone installation and removal for single-player, including playback cleanup when unplugging headphones, switching off or removing the battery.
 require=truemusic
 loadModAfter=truemusic
 versionMin=42.21
-versionMax=42.21
+versionMax=42.22
 modversion=1.0.0

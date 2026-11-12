@@ -1,4 +1,4 @@
--- Independent Simplified Chinese presentation adapter for XFACTION 0.1.3 / B42.21.
+-- Independent Simplified Chinese presentation adapter for XFACTION 0.1.5 / B42.21-42.22.
 -- Native trait identifiers, progress rules, state snapshots and stat methods stay untouched.
 if isServer() then return end
 if getText('UI_CodexXFCN_Enabled')~='1' then return end
@@ -11,7 +11,7 @@ if not C or not C.Panel or not T.Catalog or not T.Runtime then
     return
 end
 local D=require 'CodexXFACTIONCN4221/Presentation'
-local L={version=2,targetVersion='0.1.3'}
+local L={version=2,targetVersion='0.1.5'}
 CodexXFACTION_CN_4221=L
 
 -- Missing local keys must leave the author's display text intact. Never pass an

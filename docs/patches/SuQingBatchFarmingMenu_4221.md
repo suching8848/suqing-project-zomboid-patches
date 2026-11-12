@@ -7,7 +7,7 @@
 | Mod ID | `SuQingBatchFarmingMenu_4221` |
 | 文件夹 / Folder | `SuQingBatchFarmingMenu_4221` |
 | 版本 / Version | `0.1.0` |
-| 适用 / Target | Project Zomboid Build 42.21; single-player scope |
+| 适用 / Target | Project Zomboid Build 42.21 and 42.22 (single-player) |
 | 元数据硬依赖 / Declared prerequisites | `vac_batch_farming` |
 | 原样require / Literal require | `vac_batch_farming` |
 | 加载在其后 / Load after | `vac_batch_farming` |
@@ -33,6 +33,10 @@ There are 3 runtime files: 3 tracked bridge/translation/metadata files, 0 local 
 Run `tools/rebuild.py --mod-id "SuQingBatchFarmingMenu_4221" --check` with the required source-root arguments, then use a new isolated `--output` directory. Missing or updated sources fail their pinned hashes; do not substitute a renamed newer file. The tool performs no download, subscription, deployment or enabled-list edits. Old personal README/backup/.bak artifacts are not shipped as runtime source; current guidance is collected here.
 
 ## 验证边界 / Validation boundary
+
+42.22.2 离线回归通过 65 项。使用该版本的原版耕种菜单和右键菜单 Lua、实际安装的 Batch Farming 与补丁，覆盖可耕土、耕地、作物、非耕地、楼层限制及其他右键选项。界面和实际批量动作待游戏内验收。
+
+On 42.22.2, 65 offline checks used the stock farming and context menu Lua, the installed Batch Farming script and this patch. They covered tillable ground, plots, crops, unsuitable surfaces, floor restrictions and unrelated context options. In-game menu display and batch actions still require acceptance.
 
 重建SHA一致仅证明还原了审计时的运行文件，不等于游戏内、所有组合、多人或存档持久化验收。原有调试、测试版或单人限制仍以该补丁为准。先在隔离单人档按本功能操作检查，勿把正式档当作自动测试环境。
 

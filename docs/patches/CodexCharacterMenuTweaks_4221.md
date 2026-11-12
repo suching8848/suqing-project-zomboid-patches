@@ -6,8 +6,8 @@
 | --- | --- |
 | Mod ID | `CodexCharacterMenuTweaks_4221` |
 | 文件夹 / Folder | `CodexCharacterMenuTweaks_4221` |
-| 版本 / Version | `1.0.0` |
-| 适用 / Target | Project Zomboid Build 42.21; single-player scope |
+| 版本 / Version | `1.0.1` |
+| 适用 / Target | Build 42.21–42.22 单人 / single-player. Tested offline on 42.22.2. |
 | 元数据硬依赖 / Declared prerequisites | `XFACTION_DynamicTraits`, `CodexXFACTION_CN_4221` |
 | 原样require / Literal require | `XFACTION_DynamicTraits,CodexXFACTION_CN_4221` |
 | 加载在其后 / Load after | `XFACTION_DynamicTraits`, `CodexXFACTION_CN_4221`, `Fashionoid42`, `RaccoonCityB42`, `BuildingCraftRaccoonCity` |
@@ -33,6 +33,10 @@ There are 5 runtime files: 5 tracked bridge/translation/metadata files, 0 local 
 Run `tools/rebuild.py --mod-id "CodexCharacterMenuTweaks_4221" --check` with the required source-root arguments, then use a new isolated `--output` directory. Missing or updated sources fail their pinned hashes; do not substitute a renamed newer file. The tool performs no download, subscription, deployment or enabled-list edits. Old personal README/backup/.bak artifacts are not shipped as runtime source; current guidance is collected here.
 
 ## 验证边界 / Validation boundary
+
+用当前原版人物页和 Fashionoid 回归 XFACTION 入口布局与大字号，核对浣熊市入口回调的正常、晚载与缺失场景。
+
+Checked the XFACTION entry on the current vanilla and Fashionoid character screens, including larger fonts. Checked the optional Raccoon City callback for normal order, late loading and absence.
 
 重建SHA一致仅证明还原了审计时的运行文件，不等于游戏内、所有组合、多人或存档持久化验收。原有调试、测试版或单人限制仍以该补丁为准。先在隔离单人档按本功能操作检查，勿把正式档当作自动测试环境。
 

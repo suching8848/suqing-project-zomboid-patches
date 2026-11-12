@@ -6,7 +6,7 @@
 | --- | --- |
 | Mod ID / Folder | `Codex_ChinaBrewingBooks50_4221` |
 | 版本 / Version | `0.1.1` |
-| 游戏 / Game | Project Zomboid Build 42.21; single-player only |
+| 游戏 / Game | Project Zomboid 42.21.0 and 42.22.2 offline candidate; single-player only |
 | 声明前置 / Declared prerequisite | `Chinesecuisine4213` |
 | 加载在其后 / Load after | `Chinesecuisine4213` |
 | 登记状态 / Registration | 2026-11-04 本地源码新增；尚未提交、推送或发布 / Local source addition; not committed, pushed or published |
@@ -46,6 +46,12 @@ Only the five Chinese Cuisine `ChinaBrewing` books have a fully-read book maximu
 The currently trainable volume is synchronized from actual saved read pages. The patch does not award XP, change levels, mark books read, edit sandbox settings or modify Workshop originals. It validates the expected original book metadata and caps, and records ownership in a separate ModData key. It fails closed on unexpected definitions or saved schemas and preserves unrelated high custom multipliers during load synchronization.
 
 Before disabling, call `RestoreOriginal` while the patch is enabled, confirm `true`, save and quit. It restores the original `3/5/8/12/16` caps at the character’s actual reading progress without undoing earned XP or levels. A detected external change is preserved and reports failure. Removing the mod cannot execute cleanup of a saved multiplier; re-enable it to perform recovery. Do not restore an old player database over newer progress.
+
+## B42.22.2 离线适配 / Offline compatibility
+
+2026-11-09 在两版原版 Kahlua 中分别使用各自的阅读动作及本机中国菜技能定义，22 情景、955 条断言各通过。两版另各通过 46 条原生断言，由实际五卷脚本和原版 Item、Literature 核对排他上限及包含上限。保留 0.1.1 运行版本和原有存档 schema，仅扩展适用分支，游戏内待验。
+
+Each stock runtime passed 22 scenarios and 955 assertions using its native reading action and the locally installed Chinese Cuisine skill definition. Each native parser and item implementation passed 46 additional assertions on the five actual book scripts, including the exclusive script and inclusive inventory bounds. The 0.1.1 runtime and save schema are retained. In-game acceptance remains pending.
 
 ## 源码与重建 / Source and rebuild
 

@@ -1,5 +1,12 @@
 # 蘇清的造船就地取材补丁 / SuQing's Boat Crafting Nearby Materials Patch
 
+## 42.22.2 离线候选 / Offline candidate
+
+`0.1.1-rc.1` 支持 B42.21–42.22 单人。保留三条配方和上游配方指纹。覆盖新版原版和 Neat Crafting 的取材路径。游戏内待验。
+
+`0.1.1-rc.1` targets B42.21–42.22 single-player. Preserves the three recipe IDs and upstream recipe pin. The offline candidate covers vanilla and Neat Crafting material selection. In-game testing is pending.
+
+
 Mod ID `SuQingBoatCraftFromFloor_4221` · version `0.1.0` · B42.21 single-player · requires `BoteBR`.
 
 当前三条船配方只有 `AnySurfaceCraft`。原版与当前 Neat Crafting 会识别附近材料，但开工前仍把它们全部转入人物主背包，可能因容量不足失败。

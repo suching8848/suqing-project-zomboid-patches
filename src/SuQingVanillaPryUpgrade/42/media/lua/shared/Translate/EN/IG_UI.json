@@ -1,0 +1,4 @@
+{
+    "IGUI_SuQingPry_Failed": "Could not pry the lock open",
+    "IGUI_SuQingPry_Blocked": "Lock forced, but the door will not open"
+}

@@ -6,8 +6,8 @@
 | --- | --- |
 | Mod ID | `Codex_ChineseCrop_Tooltip_4221` |
 | 文件夹 / Folder | `ChineseCrop_Tooltip_4221_LocalFix` |
-| 版本 / Version | `1.1` |
-| 适用 / Target | Project Zomboid Build 42.21; single-player scope |
+| 版本 / Version | `1.1.1` |
+| 适用 / Target | Project Zomboid 42.21.0 and 42.22.2（单人 / single player） |
 | 元数据硬依赖 / Declared prerequisites | `Chinesecuisine4213`, `MoreItemInformation` |
 | 原样require / Literal require | `Chinesecuisine4213,MoreItemInformation` |
 | 加载在其后 / Load after | `Chinesecuisine4213`, `MoreItemInformation`, `CleanUI`, `B42ModTrans_CN`, `GardeniaTranslate_CN` |
@@ -33,6 +33,10 @@ There are 5 runtime files: 5 tracked bridge/translation/metadata files, 0 local 
 Run `tools/rebuild.py --mod-id "Codex_ChineseCrop_Tooltip_4221" --check` with the required source-root arguments, then use a new isolated `--output` directory. Missing or updated sources fail their pinned hashes; do not substitute a renamed newer file. The tool performs no download, subscription, deployment or enabled-list edits. Old personal README/backup/.bak artifacts are not shipped as runtime source; current guidance is collected here.
 
 ## 验证边界 / Validation boundary
+
+离线核对中华菜与 N&C 的播种月份和生长时间，并核对原版的两个种植季节入口。游戏内可用简体中文分别查看已学习和未学习的种子提示，再从右键菜单和文学页配方列表进入种植季节页签。N&C 为可选项。
+
+Offline checks cover the live Chinese Cuisine and N&C sowing months, growth times and both stock growing-season entry points. For in-game acceptance, compare known and unknown seed tooltips in Simplified Chinese, then open the growing-season tab from the context menu and the literature recipe list. N&C is optional.
 
 重建SHA一致仅证明还原了审计时的运行文件，不等于游戏内、所有组合、多人或存档持久化验收。原有调试、测试版或单人限制仍以该补丁为准。先在隔离单人档按本功能操作检查，勿把正式档当作自动测试环境。
 

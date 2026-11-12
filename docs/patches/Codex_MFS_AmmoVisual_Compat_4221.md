@@ -1,5 +1,11 @@
 # 蘇清的MFS弹药盒与弹匣显示兼容补丁 / SuQing’s MFS Ammo Box and Magazine Visual Compatibility Patch
 
+## 42.22.2 离线候选 / Offline candidate
+
+`1.0.1-rc.1` 支持 B42.21–42.22 单人。保留 M110 弹盒定点修复及弹匣外观的原有保护。游戏内待验。
+
+`1.0.1-rc.1` targets B42.21–42.22 single-player. Keeps the targeted M110 ammo-box fix and the magazine visual guards. In-game testing is pending.
+
 [返回总目录 / Back to index](../../README.md) · [English overview](../../README.en.md)
 
 | 项目 / Field | 当前值 / Current value |

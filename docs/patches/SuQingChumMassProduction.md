@@ -4,7 +4,7 @@
 | --- | --- |
 | Mod ID / Folder | `SuQingChumMassProduction` |
 | Version | `1.0.0` |
-| Target | Project Zomboid 42.21, single-player |
+| Target | Project Zomboid Build 42.21 and 42.22 (single-player) |
 | Required mods | None; uses vanilla items/recipes |
 | Source | `src/SuQingChumMassProduction` in this collection |
 
@@ -39,8 +39,12 @@ The output must not already exist. No external mod is required. Enable only the 
 
 ## 验证与来源 / Validation and provenance
 
-2026-11-02原开发源码通过216项游戏原生离线检查，包括原生配方/计量/流体/知识与真实Kahlua兼容层；本次发布导入10文件与该测试源哈希逐项相同。用户随后明确反馈“饵托功能正常”。这项反馈不扩展为所有模组组合、多人或服务器验收。
+42.22.2 原生离线回归通过 216 项，覆盖原版同名配方合并、材料与流体判定、配方知识和已知上游变更时的回退。新版制作界面、实际批量扣料和空袋返还待游戏内验收。
 
-The original 216 native offline checks passed. All ten imported files match that tested source byte for byte. The user subsequently reported that the chum feature works in game; this does not establish every combination, multiplayer or server support.
+On 42.22.2, 216 native offline checks passed, covering vanilla recipe merging, material and fluid checks, recipe knowledge and fallback for known upstream changes. The updated crafting UI, full batch transactions and empty bag return still require in-game acceptance.
+
+2026-11-02原开发源码通过216项游戏原生离线检查，包括原生配方/计量/流体/知识与真实Kahlua兼容层；当时发布导入的10份文件与该测试源哈希逐项相同。用户随后明确反馈“饵托功能正常”。这项反馈不扩展为所有模组组合、多人或服务器验收。
+
+The original 216 native offline checks passed. The ten files imported for that release matched the tested source byte for byte. The user subsequently reported that the chum feature works in game; this does not establish every combination, multiplayer or server support.
 
 既有独立开发目录保留为 `D:/steam/steamapps/common/ProjectZomboid/CodexRepos/suqing-chum-mass-production`；本Git新增源码为明确的发布归档，不搬动或覆盖该开发目录、个人安装和存档。工坊待上传包以已公开22项为基础仅追加本补丁，独立于本仓库其他待提交内容。

@@ -4,7 +4,7 @@
 | --- | --- |
 | Mod ID / folder | `SuQingRecipeInputGuard_4221` |
 | Version | `1.0.0` |
-| Target | Project Zomboid 42.21, single-player validation scope |
+| Target | Project Zomboid 42.21.0 and 42.22.2, single-player offline candidate |
 | Dependency | `SapphCooking_B42`, Workshop `3409143790` |
 | Source | `src/SuQingRecipeInputGuard_4221` |
 
@@ -48,3 +48,9 @@ python tools/validate_recipe_input_guard.py --game-root "D:/steam/steamapps/comm
 ## English notes
 
 Standalone early-registry fix for Sapph's missing `sapphcooking:strawberry` tag. The missing tag can put unrelated items with other unresolved tags into the same native null-tag bucket. Registration happens before item and recipe parsing; a read-only startup verifier checks the resolved ingredient candidates. Existing upstream tags are reused, legitimate tagged additions remain allowed, and recipe quantities, outputs and fluid inputs are retained. A full game restart is required. The Mustang guard is neither modified nor required. Single-player offline checks do not establish gameplay or multiplayer acceptance.
+
+## 42.22.2 离线适配 / Offline compatibility
+
+两版原版离线解析读取实际 Sapph 草莓输入，注册后可解析为有效原生标签。已有注册和输入核验回归通过。草莓与糖浆来源仍来自现有上游。游戏内制作待验收。
+
+Both stock engines read the installed Sapph input with a valid native tag after registration. Existing registration and input validation checks pass. The strawberry and syrup still use their upstream definitions. In-game crafting is pending.

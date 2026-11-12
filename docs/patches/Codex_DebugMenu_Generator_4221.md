@@ -7,7 +7,7 @@
 | Mod ID | `Codex_DebugMenu_Generator_4221` |
 | 文件夹 / Folder | `DebugMenuGenerator_4221_LocalFix` |
 | 版本 / Version | `1.2.0` |
-| 适用 / Target | Project Zomboid Build 42.21; single-player scope |
+| 适用 / Target | Project Zomboid 42.21.0 / 42.22.2，单人 / single-player |
 | 元数据硬依赖 / Declared prerequisites | 无mod.info硬依赖 / none declared in mod.info |
 | 原样require / Literal require | `(none)` |
 | 加载在其后 / Load after | `QNWDebugMenuB42` |
@@ -33,6 +33,10 @@ There are 3 runtime files: 3 tracked bridge/translation/metadata files, 0 local 
 Run `tools/rebuild.py --mod-id "Codex_DebugMenu_Generator_4221" --check` with the required source-root arguments, then use a new isolated `--output` directory. Missing or updated sources fail their pinned hashes; do not substitute a renamed newer file. The tool performs no download, subscription, deployment or enabled-list edits. Old personal README/backup/.bak artifacts are not shipped as runtime source; current guidance is collected here.
 
 ## 验证边界 / Validation boundary
+
+当前 Erika Furniture Store 2.2.1 的 337 项家具定义仍使用旧的 `Type = Moveable` 键。42.21.0 和 42.22.2 原生参数解析均拒绝该键，因此补丁仍只补齐已知家具缺少的类型。QNW DebugMenu 启用时才安装生成器保护。请在隔离单人档分别检查有无 QNW 时的家具，再用 QNW 打开生成器，确认可显示原版与模组条目。
+
+All 337 furniture definitions in Erika Furniture Store 2.2.1 still use the legacy `Type = Moveable` key. Both 42.21.0 and 42.22.2 reject that key in native parameter parsing. The repair still fills only missing types on known entries, and the generator guard installs only with QNW DebugMenu active. In an isolated single-player save, check the furniture with and without QNW, then open its generator and confirm that base-game and mod items appear.
 
 重建SHA一致仅证明还原了审计时的运行文件，不等于游戏内、所有组合、多人或存档持久化验收。原有调试、测试版或单人限制仍以该补丁为准。先在隔离单人档按本功能操作检查，勿把正式档当作自动测试环境。
 
