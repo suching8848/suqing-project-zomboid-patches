@@ -1,6 +1,6 @@
 # 蘇清的好彩香烟菜单修复 / SuQing's Lucky Strike Menu Fix
 
-Mod ID `SuQingLuckyStrikeMenuFix_4221` · version `0.1.0` · Project Zomboid B42.21 single-player · CleanUI `2.10.4`.
+Mod ID `SuQingLuckyStrikeMenuFix_4221` · version `0.1.1-rc.1` · Project Zomboid B42.21.0 and B42.22.2 single-player · CleanUI `2.10.4`.
 
 ## 中文
 
@@ -11,7 +11,7 @@ Mod ID `SuQingLuckyStrikeMenuFix_4221` · version `0.1.0` · Project Zomboid B42
 - 中文分别显示“好彩香烟”和“好彩香烟（盒装）”；保留上游英文物品名称。
 - Lua 保护仅接受已审查来源的 CleanUI 2.10.4 菜单。当好彩组头是食物类、实际成员中存在非食物类时，使用现有 `getActualItems` 将本次完整选择展平并去重，再调用原菜单一次。正常同质组和无关选择保留原参数引用，不改物品、配方、转移规则或存档结构。
 
-来源门禁使用游戏的 `getFilenameOfClosure` 与 `getFirstLineOfClosure`。已审查的 CleanUI 42.19 分支中，菜单的定义行为326、API读回首条指令行为327；`getActualItems` 的定义行4013、API读回首条指令行4014。未知版本、来源或首条指令行跳过Lua保护并记录日志，中文名称修复仍可生效。
+来源门禁使用游戏的 `getFilenameOfClosure` 与 `getFirstLineOfClosure`。两条已审查的 CleanUI 分支中，菜单的定义行为326、API读回首条指令行为327；`getActualItems` 的定义行4013、API读回首条指令行4014。未知版本、来源或首条指令行跳过Lua保护并记录日志，中文名称修复仍可生效。
 
 经本补丁归一化后仍混有两种类型的选择不提供统一的“吸烟”入口；分别选择单根或盒装后按原流程使用。盒装组首等未触发保护的路径保留原菜单行为。转移等通用菜单保留本次选择的全部实际物品，不会借保护逻辑丢弃盒装成员。
 
@@ -32,7 +32,7 @@ This patch makes two targeted changes:
 - Distinguishes loose cigarettes and packs in Chinese. Upstream English item names are retained.
 - Installs the Lua guard only for the reviewed CleanUI 2.10.4 menu source. If a Lucky Strike group has a Food header but includes non-Food members, the existing `getActualItems` function flattens and deduplicates the entire selection before the original menu is called once. Homogeneous groups and unrelated selections keep their original argument reference. Item definitions, recipes, transfer rules and save structures are preserved.
 
-The source gate uses the game APIs `getFilenameOfClosure` and `getFirstLineOfClosure`. In the reviewed CleanUI 42.19 branch, the menu definition is at line 326 and the API reports its first instruction at 327; `getActualItems` is defined at 4013 with its first instruction reported at 4014. Unknown versions, sources or first-instruction lines skip the Lua guard with a log message; the Chinese name fix can still apply.
+The source gate uses the game APIs `getFilenameOfClosure` and `getFirstLineOfClosure`. In both reviewed CleanUI branches, the menu definition is at line 326 and the API reports its first instruction at 327; `getActualItems` is defined at 4013 with its first instruction reported at 4014. Unknown versions, sources or first-instruction lines skip the Lua guard with a log message; the Chinese name fix can still apply.
 
 A normalized selection that still mixes both types has no combined Smoke action. Select loose cigarettes or packs separately to use their original action. Pack-header groups and other paths that do not trigger the guard retain their original menu behavior. Generic actions such as transfer retain every selected actual item; the guard does not discard packs.
 
@@ -54,3 +54,15 @@ User acceptance: restart and check distinct loose/pack names; right-click ten lo
 | CleanUI 物品栏 / inventory pane | `3437629766/mods/CleanUI/42.19/media/lua/client/ISUI/ISInventoryPane.lua` | `b0de68c2766c29ef26d001a20ba42e8fe17176b77eeaed1c73035b0e8e7ac06e` |
 | 栀子汉化 / Gardenia Chinese names | `3488835702/mods/Gardenia's translation _CN/42.0/media/lua/shared/Translate/CN/ItemName.json` | `ed67285d353a096a69be01fc2fc15bac030a6dcbdf676984b9cb775b3eb68126` |
 | MoreMRE 物品脚本 / item definitions | `3488617262/mods/MoreMRE/42/media/scripts/items/items_shiwu.txt` | `90713a439da2c9c455793284a03cc194d607c4da8eb7cf938e6b8f801bc3e35d` |
+
+## 42.22.2 离线适配 / Offline compatibility
+
+按完整构建号配对 CleanUI 2.10.4 的 42.19 与 42.22 分支。两组实际完整 CleanUI Lua 与对应原版 Kahlua 各通过 23 场景、243 断言，保留来源、首指令行及版本拒绝。实际菜单、吸烟与保存重进待验收。
+
+The full game build selects the reviewed CleanUI 2.10.4 branch. The two full upstream Lua sources passed 23 scenarios and 243 assertions each with the corresponding stock Kahlua. Source paths, first-instruction lines and version checks remain enforced. In-game menus, smoking and save/reload are pending.
+
+## 0.1.1-rc.2 · CleanUI 2.10.5
+
+CleanUI 2.10.5 的两条分支保留了菜单入口与堆叠展开契约。混组保护继续校验完整游戏版本、对应分支、函数来源和入口行。B42.21.0 和 B42.22.2 各通过 23 场景、243 条离线断言，游戏内右键菜单和吸烟操作待验收。
+
+Both reviewed CleanUI 2.10.5 branches retain the menu entry point and stack expansion contract. The mixed-stack guard still checks the full game version, branch, closure source and entry line. B42.21.0 and B42.22.2 each passed 23 offline cases and 243 assertions. In-game menus and smoking await testing.

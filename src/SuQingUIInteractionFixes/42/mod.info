@@ -1,9 +1,9 @@
 name=蘇清的提示框与融合物品栏修复 / SuQing's Tooltip and Proximity Selection Fixes
 id=SuQingUIInteractionFixes
 author=SuQing
-modversion=1.0.1
+modversion=1.0.3
 versionMin=42.21
-versionMax=42.21
+versionMax=42.22
 require=CleanUI,ProximityInventory
 loadModAfter=CleanUI,ProximityInventory,NeatUI_Equipment,PinyinSearch_SafeSources_4221_LocalFix,Codex_InventoryTransferPerformance_4221
-description=修复鼠标跟随文字提示的局部/屏幕坐标竞争，以及融合物品栏刷新时丢失 Shift 连选起点、展开大堆叠时选中行错位的问题。独立客户端补丁，不修改物品或转移机制。 <LINE> Fixes mouse-following text tooltip coordinates and preserves visible-row selections and the Shift anchor during Proximity Inventory refreshes. Standalone client-side patch for the reviewed B42.21 / CleanUI 2.10.3/2.10.4 combination.
+description=修复鼠标跟随文字提示的局部/屏幕坐标竞争，以及融合物品栏刷新时丢失 Shift 连选起点、展开大堆叠时选中行错位的问题。独立客户端补丁，不修改物品或转移机制。 <LINE> Fixes mouse-following text tooltip coordinates and preserves visible-row selections and the Shift anchor during Proximity Inventory refreshes. Standalone client-side patch for the reviewed B42.21–42.22 / CleanUI 2.10.3/2.10.4/2.10.5 combinations.

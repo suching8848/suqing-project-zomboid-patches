@@ -47,3 +47,19 @@ Exact reconstruction proves byte identity to the audited local runtime files, no
 见[第三方来源说明](../THIRD_PARTY.md)。本仓库不对上游代码、模型、纹理或差异中的上游上下文另授MIT等许可。读取本机来源不等于获得再次分发原件的许可。
 
 See [third-party notes](../THIRD_PARTY.md). No MIT or other blanket license is applied to upstream code, models, textures or upstream context in diffs. Access to a local source does not grant redistribution rights.
+
+## B42.22.2 单人适配候选 / Single-player candidate
+
+1.2.3 在 CleanUI 2.10.4 的 42.22 分支恢复可见堆叠子行与明确选中的展示物品。旧分支沿用旧选择语义。补丁仅处理界面刷新，转移仍由原版处理，包含 42.22 的递归容器检查。
+
+Version 1.2.3 restores visible selected stack children and explicitly selected display items in the CleanUI 2.10.4 branch for 42.22. Earlier branches retain their selection rules. The patch handles UI refreshes. Native transfers retain the 42.22 recursive-container check.
+
+游戏内界面与鼠标操作待用户验收。
+
+In-game UI and mouse input await user validation.
+
+## 1.2.4 · CleanUI 2.10.5
+
+在已审查的 42.19 和 42.22 分支恢复批量转移刷新合并与搜索优先级同步。42.22 同时保留展开堆叠的可见子行选区。启用 Snake Utils 时保留 CleanUI 自己的渲染器。B42.21.0 和 B42.22.2 各通过 180 场景、945 条离线断言，游戏内转移与帧率待验收。
+
+Restores bulk-transfer refresh coalescing and search-priority synchronization for CleanUI 2.10.5 branches 42.19 and 42.22. The 42.22 branch also preserves visible child-row selection in expanded stacks. When Snake Utils is active, CleanUI retains control of its renderer. The B42.21.0 and B42.22.2 offline suites each passed 180 cases and 945 assertions. In-game transfers and frame rates await testing.

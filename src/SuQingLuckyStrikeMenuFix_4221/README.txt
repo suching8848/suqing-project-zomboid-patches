@@ -1,9 +1,9 @@
 蘇清的好彩香烟菜单修复 / SuQing's Lucky Strike Menu Fix
 Mod ID: SuQingLuckyStrikeMenuFix_4221
-Version: 0.1.0
+Version: 0.1.1-rc.2
 
 中文
-适用：Project Zomboid B42.21 单人，CleanUI 2.10.4（42.19 分支）。
+适用：Project Zomboid B42.21.0 或 B42.22.2 单人，分别使用 CleanUI 2.10.4/2.10.5 的 42.19 或 42.22 分支。
 必需：CleanUI、More MRE and World Cuisine（MREfood4213）。栀子汉化为可选来源，不强制安装。
 
 修复：当前栀子汉化 42.0 分支将 MR.lucky_strike 和 MR.lucky_strike_Pack 都译为“好彩香烟”。
@@ -29,7 +29,7 @@ Lua 保护仅接受审查过的版本、分支、原函数来源和起始行；�
 交付状态：已完成离线回归，游戏内操作待用户验收。
 
 English
-Target: Project Zomboid B42.21 single-player, CleanUI 2.10.4, 42.19 branch.
+Target: Project Zomboid B42.21.0 or B42.22.2 single-player, with CleanUI 2.10.4/2.10.5 branches 42.19 or 42.22 respectively.
 Requires CleanUI and More MRE and World Cuisine (MREfood4213).
 GardeniaTranslate_CN is optional; it must precede this patch when present.
 

@@ -7,8 +7,14 @@ SuQingLuckyStrikeMenuFix = SuQingLuckyStrikeMenuFix or {}
 local M = SuQingLuckyStrikeMenuFix
 if M.loaded then return end
 M.loaded = true
-M.version = "0.1.0"
+M.version = "0.1.1-rc.2"
 M.normalizedMenus = 0
+
+-- Both reviewed versions and branches have the same entry instruction lines.
+local reviewedBranches = {
+    ["42.21.0"] = "/42.19",
+    ["42.22.2"] = "/42.22",
+}
 
 local function normalized(path)
     if type(path) ~= "string" then return nil end
@@ -52,23 +58,24 @@ end
 
 local function install()
     if M.installed then return end
-    local reason
+    local reason, cleanVersion
     if type(getModInfoByID) ~= "function" or type(getCore) ~= "function"
         or type(getFilenameOfClosure) ~= "function" or type(getFirstLineOfClosure) ~= "function" then
         reason = "source or metadata APIs unavailable"
     else
         local ok, info, gameVersion = pcall(function()
-            return getModInfoByID("CleanUI") or getModInfoByID("\\CleanUI"), getCore():getVersionNumber()
+            return getModInfoByID("CleanUI") or getModInfoByID("\\CleanUI"), getCore():getGameAndBuildVersion()
         end)
         if not ok or not info or not info.getModVersion or not info.getVersionDir then
             reason = "CleanUI metadata unavailable"
-        elseif gameVersion ~= "42.21" and gameVersion ~= "42.21.0" then
+        elseif not reviewedBranches[gameVersion] then
             reason = "unsupported game version"
-        elseif tostring(info:getModVersion()) ~= "2.10.4" then
-            reason = "reviewed CleanUI 2.10.4 required"
         else
+            cleanVersion = tostring(info:getModVersion())
             local dir = normalized(info:getVersionDir())
-            if not dir or dir:sub(-6) ~= "/42.19" then
+            if cleanVersion ~= "2.10.4" and cleanVersion ~= "2.10.5" then
+                reason = "reviewed CleanUI 2.10.4 or 2.10.5 required"
+            elseif not dir or dir:sub(-6) ~= reviewedBranches[gameVersion] then
                 reason = "unreviewed CleanUI branch"
             elseif not ISInventoryPane or not ISInventoryPaneContextMenu
                 or not reviewedClosure(ISInventoryPaneContextMenu.createMenu,
@@ -98,7 +105,7 @@ local function install()
     end
     M.installed = true
     M.inactiveReason = nil
-    print("[SuQing LuckyStrike] 0.1.0 ready; CleanUI=2.10.4; targeted mixed-stack menu guard")
+    print("[SuQing LuckyStrike] " .. M.version .. " ready; CleanUI=" .. cleanVersion .. "; targeted mixed-stack menu guard")
 end
 
 Events.OnGameStart.Add(install)

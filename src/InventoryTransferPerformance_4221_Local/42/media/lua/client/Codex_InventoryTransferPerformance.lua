@@ -9,7 +9,7 @@ CodexInventoryTransferPerformance = CodexInventoryTransferPerformance or {}
 local M = CodexInventoryTransferPerformance
 if M.loaded then return end
 M.loaded = true
-M.version = "1.2.2"
+M.version = "1.2.4"
 M.enabled = true
 M.refreshIntervalMs = 180
 M.stats = { pageRefreshes = 0, pageDeferred = 0, paneRefreshes = 0,
@@ -182,9 +182,23 @@ local function restoreRowSelection(pane, saved)
     local selected = pane.selected or {}
     table.wipe(selected)
     pane.firstSelect = nil
+    local stackSelected = false
     for row, value in ipairs(pane.items or {}) do
         local key, group = selectionKey(value)
-        if (group and saved.groups[key]) or (not group and saved.items[key]) then selected[row] = value end
+        local separator = type(value) == "table" and value.type == "separator"
+        if separator then
+            stackSelected = false
+        elseif group then
+            stackSelected = saved.groups[key]
+            local displayItem = value.cleanUIDisplayItem or value.firstItem or value.items[1]
+            if stackSelected then
+                selected[row] = value
+            elseif M.expandedSelection and saved.items[displayItem] then
+                selected[row] = displayItem
+            end
+        elseif saved.items[key] or (M.expandedSelection and stackSelected) then
+            selected[row] = value
+        end
         if saved.anchor ~= nil and group == saved.anchorGroup and key == saved.anchor then pane.firstSelect = row end
     end
     pane.selected = selected
@@ -198,7 +212,7 @@ local function runForced(fn, ...)
     return a, b, c
 end
 
--- CleanUI 2.10.1 through 2.10.4 finish category/search/pin ordering in a private helper,
+-- CleanUI 2.10.1 through 2.10.5 finish category/search/pin ordering in a private helper,
 -- after external refresh wrappers have run. Its public searchContainer method
 -- reaches that helper without drawing. Reuse the already completed refresh
 -- exactly once, then let all of CleanUI's own reconciliation execute normally.
@@ -342,17 +356,26 @@ local function install()
     end
     local info = getModInfoByID("CleanUI") or getModInfoByID("\\CleanUI")
     local cleanVersion = info and info.getModVersion and tostring(info:getModVersion())
-    if cleanVersion ~= "2.9.9" and cleanVersion ~= "2.10.1" and cleanVersion ~= "2.10.2" and cleanVersion ~= "2.10.3" and cleanVersion ~= "2.10.4" then
-        stopOptimizing("CleanUI 2.9.9, 2.10.1, 2.10.2, 2.10.3 or 2.10.4 required; review other versions before enabling")
+    local branch = info and info.getVersionDir and info:getVersionDir()
+    local branchName = type(branch) == "string" and branch:gsub("\\", "/"):match("/([^/]+)/?$")
+    local clean2105 = cleanVersion == "2.10.5" and (branchName == "42.19" or branchName == "42.22")
+    local needsPriorityBarrier = cleanVersion == "2.10.1" or cleanVersion == "2.10.2"
+        or cleanVersion == "2.10.3" or cleanVersion == "2.10.4" or clean2105
+    if cleanVersion ~= "2.9.9" and not needsPriorityBarrier then
+        stopOptimizing("unreviewed CleanUI version or branch")
         return
     end
-    if (cleanVersion == "2.10.1" or cleanVersion == "2.10.2" or cleanVersion == "2.10.3" or cleanVersion == "2.10.4") and type(ISInventoryPane.searchContainer) ~= "function" then
+    if needsPriorityBarrier and type(ISInventoryPane.searchContainer) ~= "function" then
         stopOptimizing("CleanUI search reconciliation interface unavailable")
         return
     end
     -- This optional mod suppresses rows through a private renderer helper.
     -- Decline optimization rather than construct an ambiguous hit-test map.
     local active = type(getActivatedMods) == "function" and getActivatedMods() or nil
+    if clean2105 and active and (active:contains("SMP_SnakeUtilsPack") or active:contains("\\SMP_SnakeUtilsPack")) then
+        stopOptimizing("CleanUI Snake Utils renderer takeover")
+        return
+    end
     if active and (active:contains("EQUIPMENT_UI") or active:contains("\\EQUIPMENT_UI")) then
         stopOptimizing("Equipment UI private row layout is unsupported")
         return
@@ -364,8 +387,9 @@ local function install()
             return
         end
     end
+    M.expandedSelection = (cleanVersion == "2.10.4" or clean2105) and branchName == "42.22"
     M.cleanUIVersion = cleanVersion
-    M.needsPriorityBarrier = cleanVersion == "2.10.1" or cleanVersion == "2.10.2" or cleanVersion == "2.10.3" or cleanVersion == "2.10.4"
+    M.needsPriorityBarrier = needsPriorityBarrier
     originals.searchContainer = ISInventoryPane.searchContainer
     M.installed = true
     originals.refreshContainer = ISInventoryPane.refreshContainer

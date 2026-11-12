@@ -8,7 +8,7 @@ local M = SuQingUIInteractionFixes.proximitySelection or {}
 SuQingUIInteractionFixes.proximitySelection = M
 if M.loaded then return end
 M.loaded = true
-M.version = "1.0.1"
+M.version = "1.0.3"
 M.enabled = true
 M.stats = { captured = 0, restored = 0, invalidated = 0 }
 
@@ -50,10 +50,21 @@ end
 
 local function capture(pane)
     local saved = { inventory = pane.inventory, items = {}, groups = {} }
-    for _, value in pairs(pane.selected or {}) do
+    for row, value in pairs(pane.selected or {}) do
         local key, group = identity(value)
         if key ~= nil then
-            if group then saved.groups[key] = true else saved.items[key] = true end
+            if group then
+                saved.groups[key] = true
+            else
+                saved.items[key] = true
+                if M.expandedSelection then
+                    local header, isGroup = identity(pane.items and pane.items[row])
+                    if isGroup then
+                        saved.headers = saved.headers or {}
+                        saved.headers[header] = value
+                    end
+                end
+            end
         end
     end
     if pane.firstSelect and pane.items then
@@ -94,36 +105,51 @@ local function pendingFor(pane, s)
     return saved
 end
 
+local function selectedValue(pane, saved, row, restoring)
+    if type(row) ~= "number" then return nil end
+    local rows = pane.items
+    local value = rows and rows[row]
+    local key, group = identity(value)
+    if key == nil then return nil end
+    if group then
+        if saved.groups[key] then return value end
+        if M.expandedSelection then
+            local displayItem = value.cleanUIDisplayItem or value.firstItem or value.items[1]
+            if saved.items[displayItem] and (restoring or (saved.headers and saved.headers[key] == displayItem)) then
+                return displayItem
+            end
+        end
+    elseif saved.items[key] then
+        return value
+    elseif restoring and M.expandedSelection and hasEntries(saved.groups) then
+        -- CleanUI 42.22 restores visible child rows of a selected stack.
+        -- Find the owning header in the rendered row map, up to a separator.
+        for prior = row - 1, 1, -1 do
+            local parent, isGroup = identity(rows[prior])
+            if parent == nil then break end
+            if isGroup then
+                if saved.groups[parent] then return value end
+                break
+            end
+        end
+    end
+    return nil
+end
+
 local function restore(pane, saved)
     if pane.inventory ~= saved.inventory or type(pane.items) ~= "table" then return end
     local selected = pane.selected or {}
     table.wipe(selected)
     pane.firstSelect = nil
-    -- These are the rows actually drawn by the complete renderer chain. This
-    -- respects the 50-child limit, virtual headers, search ordering and filters.
     for row, value in ipairs(pane.items) do
+        selected[row] = selectedValue(pane, saved, row, true)
         local key, group = identity(value)
-        if key ~= nil then
-            if (group and saved.groups[key]) or (not group and saved.items[key]) then
-                selected[row] = value
-            end
-            if saved.anchor ~= nil and group == saved.anchorGroup and key == saved.anchor then
-                pane.firstSelect = row
-            end
+        if saved.anchor ~= nil and group == saved.anchorGroup and key == saved.anchor then
+            pane.firstSelect = row
         end
     end
     pane.selected = selected
     M.stats.restored = M.stats.restored + 1
-end
-
-local function selectedValue(pane, saved, row)
-    if type(row) ~= "number" then return nil end
-    local value = pane.items and pane.items[row]
-    local key, group = identity(value)
-    if key ~= nil and ((group and saved.groups[key]) or (not group and saved.items[key])) then
-        return value
-    end
-    return nil
 end
 
 local function wrapInput(name)
@@ -161,12 +187,22 @@ local function install()
     if type(getModInfoByID) ~= "function" then return end
     local info = getModInfoByID("CleanUI") or getModInfoByID("\\CleanUI")
     local cleanVersion = info and info.getModVersion and tostring(info:getModVersion())
-    if cleanVersion ~= "2.10.3" and cleanVersion ~= "2.10.4" then
-        print("[SuQing UI Interaction] proximity selection inactive; reviewed CleanUI 2.10.3 or 2.10.4 required")
+    local branch = info and info.getVersionDir and info:getVersionDir()
+    local branchName = type(branch) == "string" and branch:gsub("\\", "/"):match("/([^/]+)/?$")
+    local clean2105 = cleanVersion == "2.10.5" and (branchName == "42.19" or branchName == "42.22")
+    if cleanVersion ~= "2.10.3" and cleanVersion ~= "2.10.4" and not clean2105 then
+        print("[SuQing UI Interaction] proximity selection inactive; unreviewed CleanUI version or branch")
+        return
+    end
+    local active = clean2105 and type(getActivatedMods) == "function" and getActivatedMods()
+    if active and (active:contains("SMP_SnakeUtilsPack") or active:contains("\\SMP_SnakeUtilsPack")) then
+        print("[SuQing UI Interaction] proximity selection inactive; CleanUI Snake Utils renderer takeover")
         return
     end
     if not ISInventoryPane or type(ISInventoryPane.refreshContainer) ~= "function"
         or type(ISInventoryPane.renderdetails) ~= "function" then return end
+
+    M.expandedSelection = (cleanVersion == "2.10.4" or clean2105) and branchName == "42.22"
 
     local originalRefresh = ISInventoryPane.refreshContainer
     ISInventoryPane.refreshContainer = function(self, ...)
@@ -205,10 +241,12 @@ local function install()
         self.selected = selected
         -- CleanUI writes each real row into self.items before asking whether it
         -- is highlighted. Resolve that query from semantic identity while the
-        -- native renderer is building the actual row map. Numeric writes from
-        -- its obsolete refresh restoration are held until the map is complete.
+        -- native renderer is building the actual row map. Hold numeric writes
+        -- from native restoration until the rendered row map is complete.
         setmetatable(selected, {
-            __index = function(_, row) return selectedValue(self, saved, row) end,
+            __index = function(_, row)
+                return selectedValue(self, saved, row, wasPending or self.refreshContainerCount ~= generation)
+            end,
             __newindex = function(t, row, value)
                 if type(row) ~= "number" then rawset(t, row, value) end
             end,

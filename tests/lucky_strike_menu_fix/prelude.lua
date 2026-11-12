@@ -19,7 +19,8 @@ function isAdmin()return false end
 function getCore()return {
  getGameMode=function()return "Sandbox" end,
  getGoodHighlitedColor=function()return {r=0,g=1,b=0,a=1} end,
- getVersionNumber=function()return T.gameVersion end,
+ getGameAndBuildVersion=function()return T.gameVersion end,
+ isTutorial=function()return false end,
  getOptionInventoryFont=function()return "Small" end,
 }end
 function getModInfoByID(id)

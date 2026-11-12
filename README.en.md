@@ -1,5 +1,9 @@
 # SuQing’s Project Zomboid Patch Collection / 蘇清的僵尸毁灭工程补丁合集
 
+## CleanUI 2.10.5 compatibility
+
+Bulk Transfer Inventory Refresh 1.2.4, Tooltip and Proximity Selection 1.0.3, and Lucky Strike Menu 0.1.1-rc.2 support the reviewed CleanUI 2.10.5 branches. Offline regressions passed on B42.21.0 and B42.22.2. Gameplay verification is pending.
+
 ## 2026-11-12 Compatibility update
 
 This update verifies 26 existing submods offline on B42.22.2 and retains their B42.21 range. Crowbar Prying Expansion 0.1.3 and Modern Firearm Upgrades 0.6.0 are optional. Vehicle prying and an earlier firearm upgrade build were tested in game. The current padlock fix, firearm maintenance and throwable recipes await gameplay retesting.

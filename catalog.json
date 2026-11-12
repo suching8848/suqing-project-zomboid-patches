@@ -700,7 +700,7 @@
       "folder": "InventoryTransferPerformance_4221_Local",
       "title_zh": "批量转移库存刷新优化",
       "title_en": "Bulk Transfer Inventory Refresh Optimization",
-      "version": "1.2.2",
+      "version": "1.2.4",
       "description_original": "Coalesces automatic inventory UI rebuilds during stationary single-player bulk transfers. Keeps native transfers, interaction, rendering and tooltips. Requires CleanUI. Local reversible performance patch.",
       "requires_raw": "CleanUI",
       "load_after_raw": "CleanUI,NeatUI_Equipment,Codex_AttachedGrouping_4221,PinyinSearch_SafeSources_4221_LocalFix,Codex_PetGunWeightKits_4221,ProximityInventory",
@@ -718,10 +718,10 @@
       "doc": "docs/patches/Codex_InventoryTransferPerformance_4221.md",
       "reconstruction_status": "recipes_ready",
       "source_runtime_info": "42/mod.info",
-      "summary_zh": "合并静止单人批量转移时的自动库存刷新；1.2.1适配已审阅CleanUI 2.10.3并保留未知版本拒绝。原生动作、容量、配方和绘制保持，离线验证不代表FPS收益或游戏验收。",
-      "summary_en": "Coalesces stationary single-player bulk-transfer UI refreshes. Version 1.2.1 supports reviewed CleanUI 2.10.3 and retains unknown-version refusal; native actions, capacity, recipes and rendering remain unchanged. Offline checks are not FPS or gameplay acceptance.",
+      "summary_zh": "合并单人批量转移的库存刷新。支持 CleanUI 2.10.5 的 42.19 和 42.22 分支，保留已审查旧版的适配。",
+      "summary_en": "Coalesces single-player bulk-transfer inventory refreshes. Supports CleanUI 2.10.5 branches 42.19 and 42.22 and retains reviewed older adapters.",
       "runtime_files": 2,
-      "runtime_bytes": 24654,
+      "runtime_bytes": 25737,
       "reconstruction_modes": {
         "own": 2
       },
@@ -731,7 +731,9 @@
           "reason": "documentation/history/personal configuration; not a runtime source"
         }
       ],
-      "source_roots": []
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2",
+      "distribution": "optional_in_patch_collection"
     },
     {
       "id": "Codex_MFS_AmmoVisual_Compat_4221",
@@ -1258,8 +1260,8 @@
       "folder": "SuQingUIInteractionFixes",
       "title_zh": "蘇清的提示框与融合物品栏修复",
       "title_en": "SuQing's Tooltip and Proximity Selection Fixes",
-      "version": "1.0.1",
-      "description_original": "Fixes competing coordinate handling for mouse-following text tooltips and restores selected items and the Shift anchor against actual visible rows during Proximity Inventory refreshes. Covers expanded stacks, searches and Ctrl+A. Selection preservation is installed only for reviewed CleanUI 2.10.3/2.10.4; unknown versions are rejected. Item and transfer rules remain unchanged.",
+      "version": "1.0.3",
+      "description_original": "修复鼠标跟随文字提示的局部/屏幕坐标竞争，以及融合物品栏刷新时丢失 Shift 连选起点、展开大堆叠时选中行错位的问题。独立客户端补丁，不修改物品或转移机制。 <LINE> Fixes mouse-following text tooltip coordinates and preserves visible-row selections and the Shift anchor during Proximity Inventory refreshes. Standalone client-side patch for the reviewed B42.21–42.22 / CleanUI 2.10.3/2.10.4/2.10.5 combinations.",
       "requires_raw": "CleanUI,ProximityInventory",
       "required_mods": [
         "CleanUI",
@@ -1276,10 +1278,10 @@
       "doc": "docs/patches/SuQingUIInteractionFixes.md",
       "reconstruction_status": "recipes_ready",
       "source_runtime_info": "42/mod.info",
-      "summary_zh": "修复跟随鼠标的文字提示坐标竞争，并在融合附近物品栏刷新时按实际可见行恢复所选物品与Shift起点，处理大堆叠展开、搜索及Ctrl+A后的选中错位。只针对已审查的CleanUI 2.10.3和2.10.4，未知版本不安装选中保持功能；不改物品或转移机制。",
-      "summary_en": "Fixes competing coordinate handling for mouse-following text tooltips and restores selected items and the Shift anchor against actual visible rows during Proximity Inventory refreshes. Covers expanded stacks, searches and Ctrl+A. Selection preservation is installed only for reviewed CleanUI 2.10.3/2.10.4; unknown versions are rejected. Item and transfer rules remain unchanged.",
+      "summary_zh": "修复跟随鼠标的文字提示坐标竞争，并在融合附近物品栏刷新时按实际可见行恢复所选物品与Shift起点，处理大堆叠展开、搜索及Ctrl+A后的选中错位。只针对已审查的CleanUI 2.10.3、2.10.4 和 2.10.5，未知版本不安装选中保持功能；不改物品或转移机制。",
+      "summary_en": "Fixes competing coordinate handling for mouse-following text tooltips and restores selected items and the Shift anchor against actual visible rows during Proximity Inventory refreshes. Covers expanded stacks, searches and Ctrl+A. Selection preservation is installed only for reviewed CleanUI 2.10.3/2.10.4/2.10.5; unknown versions are rejected. Item and transfer rules remain unchanged.",
       "runtime_files": 3,
-      "runtime_bytes": 16593,
+      "runtime_bytes": 18378,
       "reconstruction_modes": {
         "own": 3
       },
@@ -1289,7 +1291,9 @@
           "reason": "bilingual public documentation copied separately into release candidate"
         }
       ],
-      "source_roots": []
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2",
+      "distribution": "optional_in_patch_collection"
     },
     {
       "id": "SuQingMustangProtectionRepair",
@@ -1363,8 +1367,8 @@
       "folder": "SuQingLuckyStrikeMenuFix_4221",
       "title_zh": "蘇清的好彩香烟菜单修复",
       "title_en": "SuQing's Lucky Strike Menu Fix",
-      "version": "0.1.0",
-      "description_original": "Distinguishes Chinese Lucky Strike single/pack names and normalizes only reviewed CleanUI 2.10.4 mixed Lucky Strike groups before their original context menu. B42.21 single-player only.",
+      "version": "0.1.1-rc.2",
+      "description_original": "区分好彩香烟单根与盒装的中文名称，修复 CleanUI 中两种类型混组时的右键菜单报错。B42.21.0 与 B42.22.2 单人 / CleanUI 2.10.4/2.10.5；离线验证，游戏内待验收。 <LINE> Distinguishes the Chinese names of Lucky Strike singles and packs and guards their mixed-stack context menu in CleanUI. B42.21.0 and B42.22.2 SP / CleanUI 2.10.4/2.10.5; offline validation, in-game acceptance pending.",
       "requires_raw": "CleanUI,MREfood4213",
       "load_after_raw": "CleanUI,MREfood4213,GardeniaTranslate_CN,SuQingUIInteractionFixes,Codex_InventoryTransferPerformance_4221",
       "required_mods": [
@@ -1381,17 +1385,18 @@
       "doc": "docs/patches/SuQingLuckyStrikeMenuFix_4221.md",
       "reconstruction_status": "recipes_ready",
       "source_runtime_info": "42/mod.info",
-      "summary_zh": "区分好彩香烟单根与盒装的中文名称，仅保护已审查CleanUI2.10.4的好彩混组菜单；保留全部成员、吸烟与转移规则。",
-      "summary_en": "Separates Chinese Lucky Strike single/pack names and guards only reviewed CleanUI 2.10.4 mixed groups, retaining every item and original smoking/transfer rules.",
+      "summary_zh": "区分好彩香烟单根与盒装的中文名称，仅保护已审查CleanUI 2.10.4/2.10.5的好彩混组菜单；保留全部成员、吸烟与转移规则。",
+      "summary_en": "Separates Chinese Lucky Strike single/pack names and guards only reviewed CleanUI 2.10.4/2.10.5 mixed groups, retaining every item and original smoking/transfer rules.",
       "runtime_files": 6,
-      "runtime_bytes": 10385,
+      "runtime_bytes": 10890,
       "reconstruction_modes": {
         "own": 6
       },
       "excluded_files": [],
       "source_roots": [],
       "local_registration_date": "2026-11-07",
-      "distribution": "optional_in_patch_collection"
+      "distribution": "optional_in_patch_collection",
+      "compatibility_candidate_game": "42.22.2"
     },
     {
       "id": "SuQingFavouriteRecipeMaterials_4221",

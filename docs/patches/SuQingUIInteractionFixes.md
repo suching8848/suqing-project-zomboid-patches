@@ -17,3 +17,19 @@ Requires CleanUI and ProximityInventory. B42.21 single-player. Fixes competing t
 No separate settings are needed. Keep upstream dependencies and relative order. Exit normally, disable and restart to remove it; no custom items require migration. Recorded actual-Lua controlled-object tests cover 30 cases/89 assertions and version acceptance/rejection. Imported-source reruns are recorded separately. Gameplay and FPS remain for user acceptance.
 
 Acceptance: expand a stack of over 50 items, Shift-select, Ctrl+A, search/clear, refresh and transfer; check tooltips and save/reload. Bulk Inventory Refresh is a separate optional fix.
+
+## B42.22.2 单人适配候选 / Single-player candidate
+
+1.0.2 在 CleanUI 2.10.4 的 42.22 分支按真实绘制行恢复堆叠选中、可见子行与 Shift 锚点，旧分支沿用旧选择语义。新版原生对转移对象去重。
+
+Version 1.0.2 restores selected stacks, visible children and Shift anchors from the rendered rows of CleanUI 2.10.4 for 42.22. Earlier branches retain their selection rules. CleanUI de-duplicates selected transfer items.
+
+游戏内界面与鼠标操作待用户验收。
+
+In-game UI and mouse input await user validation.
+
+## 1.0.3 · CleanUI 2.10.5
+
+在 42.19 和 42.22 分支恢复附近容器融合列表的选区和 Shift 起点。启用 Snake Utils 时保留 CleanUI 自己的渲染器。B42.21.0 和 B42.22.2 各通过 89 条离线断言，待游戏内验收。
+
+Restores selection and Shift anchors in the Proximity Inventory list for CleanUI 2.10.5 branches 42.19 and 42.22. When Snake Utils is active, CleanUI retains control of its renderer. B42.21.0 and B42.22.2 each passed 89 offline assertions. In-game testing is pending.
