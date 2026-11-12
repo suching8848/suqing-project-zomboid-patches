@@ -20,26 +20,22 @@ function U.TestRestore(item, character)
 end
 if U.loaded then return U end
 if not X or X.version ~= "1.0.0-rc.2" or not S or not S.hookedCapacity
+    or type(S.ReadAuthorCapacity) ~= "function"
     or (X.types[FULL_TYPE] ~= nil and X.types[FULL_TYPE] ~= KIND) then return U end
 U.loaded, U.enabled = true, true
 U.fullType = FULL_TYPE
 
--- Script Item has no getCapacity accessor in 42.21. InstanceItem(false) reads
--- the script's native InventoryContainer capacity without adding it anywhere.
--- Cache one detached prototype result per script definition, never per frame.
-function U.ReadNativeBase()
-    local manager = ScriptManager and ScriptManager.instance
-    local script = manager and manager:FindItem(FULL_TYPE)
-    if not script or not script.InstanceItem then return nil, "maomao_script_unavailable" end
-    if U.script == script and U.nativeBase == 120 then return U.nativeBase end
-    local ok, prototype = pcall(script.InstanceItem, script, nil, false)
-    if not ok or not prototype or not instanceof(prototype, "InventoryContainer")
-        or prototype:getFullType() ~= FULL_TYPE or prototype:getContainer() ~= nil then
-        return nil, "maomao_native_prototype"
+-- Stock inventory items cap physical capacity at 50 minus item weight.
+-- The verified author's ItemContainer wrapper supplies the 120 baseline.
+function U.ReadNativeBase(item)
+    local container = item:getInventory()
+    if not container or container:getContainingItem() ~= item then
+        return nil, "maomao_container_unavailable"
     end
-    local base = prototype:getCapacity()
-    if not X.IsInteger(base, 120, 120) then return nil, "maomao_native_capacity_changed" end
-    U.script, U.nativeBase = script, base
+    local ok, base = pcall(S.ReadAuthorCapacity, container)
+    if not ok or not X.IsInteger(base, 120, 120) then
+        return nil, "maomao_native_capacity_changed"
+    end
     return base
 end
 
@@ -48,7 +44,7 @@ X.types[FULL_TYPE], X.supported[FULL_TYPE] = KIND, true
 X.GetNativeBase = function(item, ...)
     if item and item.getFullType and item:getFullType() == FULL_TYPE then
         if not X.IsSupported(item) then return nil, "unsupported" end
-        return U.ReadNativeBase()
+        return U.ReadNativeBase(item)
     end
     return U.originalNativeBase(item, ...)
 end

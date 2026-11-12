@@ -586,7 +586,7 @@
     {
       "id": "Codex_SuQingWearableCompat_4221",
       "folder": "Codex_SuQingWearableCompat_4221",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "directories": [
         "42",
         "42/media",
@@ -610,12 +610,13 @@
         },
         {
           "path": "42/mod.info",
-          "sha256": "28dac48d5b0715e3d2f0ff27dad8b8103063166b91bc2b20a97dd9b7cad53cac",
-          "size": 647,
+          "sha256": "deaa8258f035cde088fb977b34c93ecc84dcc543a60a51190853e06fefc986ad",
+          "size": 655,
           "mode": "own",
           "repo_path": "src/Codex_SuQingWearableCompat_4221/42/mod.info"
         }
-      ]
+      ],
+      "compatibility_candidate_game": "42.22.2"
     },
     {
       "id": "Codex_XFDynamicRecordGuard_4221",
@@ -1337,7 +1338,7 @@
     {
       "id": "CodexNekomataEXCompat_4221",
       "folder": "CodexNekomataEXCompat_4221",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "directories": [
         "42",
         "42/media",
@@ -1349,24 +1350,25 @@
       "files": [
         {
           "path": "42/media/lua/shared/CodexNekomataEXCompat4221/Compat.lua",
-          "sha256": "069337cee61edaa652936d9122c6d8f66bd1c87f8cec90c7f5a7a5f58608ee2c",
-          "size": 7341,
+          "sha256": "e92431d368ebfe5fd0d17199a830fa515632c42a3c80f3402ff7565a2004fb75",
+          "size": 7538,
           "mode": "own",
           "repo_path": "src/CodexNekomataEXCompat_4221/42/media/lua/shared/CodexNekomataEXCompat4221/Compat.lua"
         },
         {
           "path": "42/mod.info",
-          "sha256": "9901bd7a21d49bd4b90e7c50f9bbc05e795154389f48ca5764e7388e1b81255f",
-          "size": 570,
+          "sha256": "b9409c2e85c794272216cb6f68bee47de4835be185fd73590fd1f12313f2f62f",
+          "size": 580,
           "mode": "own",
           "repo_path": "src/CodexNekomataEXCompat_4221/42/mod.info"
         }
-      ]
+      ],
+      "compatibility_candidate_game": "42.22.2"
     },
     {
       "id": "CodexNekomataEXUpgrade_4221",
       "folder": "CodexNekomataEXUpgrade_4221",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "directories": [
         "42",
         "42/media",
@@ -1382,8 +1384,8 @@
       "files": [
         {
           "path": "42/media/lua/shared/CodexNekomataEXUpgrade4221/Upgrade.lua",
-          "sha256": "a9d0e593146554b16360e44b9b4fa759118ca2a7f6445e607c98adca21651de8",
-          "size": 3616,
+          "sha256": "d4349750cdaaef65bd98adcbe379963bf45e13d233fbf1802abdde4cb4ccb9f6",
+          "size": 3158,
           "mode": "own",
           "repo_path": "src/CodexNekomataEXUpgrade_4221/42/media/lua/shared/CodexNekomataEXUpgrade4221/Upgrade.lua"
         },
@@ -1410,12 +1412,13 @@
         },
         {
           "path": "42/mod.info",
-          "sha256": "f683b746493d19958822468d25fa2a33f190398a834464863468799b74b978b3",
-          "size": 652,
+          "sha256": "f499dba61871f6938c5a27b2323138f2da64f1c431c1bf5c67ed218d59b77d17",
+          "size": 662,
           "mode": "own",
           "repo_path": "src/CodexNekomataEXUpgrade_4221/42/mod.info"
         }
-      ]
+      ],
+      "compatibility_candidate_game": "42.22.2"
     },
     {
       "id": "CodexPZOptimization_CN_4221",

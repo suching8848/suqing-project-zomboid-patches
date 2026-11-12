@@ -6,8 +6,8 @@
 | --- | --- |
 | Mod ID | `CodexNekomataEXUpgrade_4221` |
 | 文件夹 / Folder | `CodexNekomataEXUpgrade_4221` |
-| 版本 / Version | `1.0.0` |
-| 适用 / Target | Project Zomboid Build 42.21; single-player scope |
+| 版本 / Version | `1.0.1` |
+| 适用 / Target | Build 42.21–42.22 单人 / single-player. Tested offline on 42.22.2. |
 | 元数据硬依赖 / Declared prerequisites | `CodexNekomataEXCompat_4221`, `Nekomata Ridge`, `ExSuQingBackpackSuperUpgrade_4221` |
 | 原样require / Literal require | `\CodexNekomataEXCompat_4221,Nekomata Ridge,ExSuQingBackpackSuperUpgrade_4221` |
 | 加载在其后 / Load after | `CodexNekomataEXCompat_4221`, `Nekomata Ridge`, `ExSuQingBackpackSuperUpgrade_4221` |
@@ -33,6 +33,10 @@ There are 5 runtime files: 5 tracked bridge/translation/metadata files, 0 local 
 Run `tools/rebuild.py --mod-id "CodexNekomataEXUpgrade_4221" --check` with the required source-root arguments, then use a new isolated `--output` directory. Missing or updated sources fail their pinned hashes; do not substitute a renamed newer file. The tool performs no download, subscription, deployment or enabled-list edits. Old personal README/backup/.bak artifacts are not shipped as runtime source; current guidance is collected here.
 
 ## 验证边界 / Validation boundary
+
+1.0.1 配合猫又岭兼容桥接 1.0.1。原厂 42.21 和 42.22.2 物品原型容量实读为 49，因此从已识别的作者包装读取实际 120 基线。旧的 120→240 实例记录、付款、返料和配方 ID 沿用。离线核对包含保存记录模拟、付款、还原及拒绝未知包装。游戏内保存重进待验收。
+
+Version 1.0.1 pairs with the Nekomata compatibility bridge 1.0.1. Stock 42.21 and 42.22.2 read the physical prototype capacity as 49. The extension now reads the authored base of 120 through the recognized wrapper. The existing 120-to-240 records, payments, refunds and recipe IDs carry over. Offline checks cover simulated saved records, payment, restoration and refusal of unknown wrappers. In-game reloading remains to be checked.
 
 重建SHA一致仅证明还原了审计时的运行文件，不等于游戏内、所有组合、多人或存档持久化验收。原有调试、测试版或单人限制仍以该补丁为准。先在隔离单人档按本功能操作检查，勿把正式档当作自动测试环境。
 

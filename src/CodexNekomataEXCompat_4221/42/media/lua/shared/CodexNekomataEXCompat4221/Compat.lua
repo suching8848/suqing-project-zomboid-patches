@@ -49,6 +49,12 @@ local function isMaoTarget(container)
     return container.getType and container:getType() == "MaoMaoBackpack"
 end
 
+function S.ReadAuthorCapacity(container)
+    local _, wrappers = authorLayer()
+    if not wrappers or not isMaoTarget(container) then return nil end
+    return wrappers.getCapacity(container)
+end
+
 local function ownedMao(container)
     local extension = CodexNekomataEXUpgrade_4221
     if not extension or not extension.enabled or not container or not container.getContainingItem then return false end

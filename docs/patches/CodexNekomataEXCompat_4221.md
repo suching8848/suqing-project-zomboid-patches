@@ -6,8 +6,8 @@
 | --- | --- |
 | Mod ID | `CodexNekomataEXCompat_4221` |
 | 文件夹 / Folder | `CodexNekomataEXCompat_4221` |
-| 版本 / Version | `1.0.0` |
-| 适用 / Target | Project Zomboid Build 42.21; single-player scope |
+| 版本 / Version | `1.0.1` |
+| 适用 / Target | Build 42.21–42.22 单人 / single-player. Tested offline on 42.22.2. |
 | 元数据硬依赖 / Declared prerequisites | `Nekomata Ridge`, `ExSuQingBackpackSuperUpgrade_4221` |
 | 原样require / Literal require | `\Nekomata Ridge,ExSuQingBackpackSuperUpgrade_4221` |
 | 加载在其后 / Load after | `Nekomata Ridge`, `ExSuQingBackpackSuperUpgrade_4221` |
@@ -33,6 +33,10 @@ There are 2 runtime files: 2 tracked bridge/translation/metadata files, 0 local 
 Run `tools/rebuild.py --mod-id "CodexNekomataEXCompat_4221" --check` with the required source-root arguments, then use a new isolated `--output` directory. Missing or updated sources fail their pinned hashes; do not substitute a renamed newer file. The tool performs no download, subscription, deployment or enabled-list edits. Old personal README/backup/.bak artifacts are not shipped as runtime source; current guidance is collected here.
 
 ## 验证边界 / Validation boundary
+
+1.0.1 已在 42.22.2 原厂 Kahlua 核对猫又岭与 EX 1.0.0-rc.2 的调用链。新版桥接仅在已识别的作者包装上读取实际容量，供猫猫背包扩展取得 120 基线。未知包装仍拒绝。请与猫猫背包扩展 1.0.1 一起使用。
+
+Version 1.0.1 checks the Nekomata Ridge and EX 1.0.0-rc.2 call chain on stock 42.22.2 Kahlua. It reads the authored base capacity for the backpack extension only through the recognized wrapper. Unknown wrappers remain blocked. Pair this bridge with backpack extension 1.0.1.
 
 重建SHA一致仅证明还原了审计时的运行文件，不等于游戏内、所有组合、多人或存档持久化验收。原有调试、测试版或单人限制仍以该补丁为准。先在隔离单人档按本功能操作检查，勿把正式档当作自动测试环境。
 

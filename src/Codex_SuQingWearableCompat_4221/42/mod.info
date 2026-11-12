@@ -1,9 +1,9 @@
-name=蘇清容器升级：针剂盒与新增衣物兼容 [B42.21]
+name=蘇清容器升级：针剂盒与新增衣物兼容 [B42.21–42.22]
 id=Codex_SuQingWearableCompat_4221
 author=Local compatibility
-modversion=1.0.0
+modversion=1.0.1
 versionMin=42.21
-versionMax=42.21
+versionMax=42.22
 require=SuQingContainerUpgrade_4221,ExSuQingBackpackSuperUpgrade_4221,HavenFall
 loadModAfter=SuQingContainerUpgrade_4221,TarkovCombatStims,CodexCBRTIndependent_4221,ExSuQingBackpackSuperUpgrade_4221,CodexNekomataEXCompat_4221,CodexNekomataEXUpgrade_4221,HavenFall
 description=为当前单人档的针剂盒、生化胸挂、HavenFall前后腰包接入蘇清普通容器升级；保留针剂过滤及腰包换位保护；兼容HavenFall背包EX超级升级。

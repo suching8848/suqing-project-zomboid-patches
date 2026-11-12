@@ -6,8 +6,8 @@
 | --- | --- |
 | Mod ID | `Codex_SuQingWearableCompat_4221` |
 | 文件夹 / Folder | `Codex_SuQingWearableCompat_4221` |
-| 版本 / Version | `1.0.0` |
-| 适用 / Target | Project Zomboid Build 42.21; single-player scope |
+| 版本 / Version | `1.0.1` |
+| 适用 / Target | Build 42.21–42.22 单人 / single-player. Tested offline on 42.22.2. |
 | 元数据硬依赖 / Declared prerequisites | `SuQingContainerUpgrade_4221`, `ExSuQingBackpackSuperUpgrade_4221`, `HavenFall` |
 | 原样require / Literal require | `SuQingContainerUpgrade_4221,ExSuQingBackpackSuperUpgrade_4221,HavenFall` |
 | 加载在其后 / Load after | `SuQingContainerUpgrade_4221`, `TarkovCombatStims`, `CodexCBRTIndependent_4221`, `ExSuQingBackpackSuperUpgrade_4221`, `CodexNekomataEXCompat_4221`, `CodexNekomataEXUpgrade_4221`, `HavenFall` |
@@ -33,6 +33,10 @@ There are 3 runtime files: 3 tracked bridge/translation/metadata files, 0 local 
 Run `tools/rebuild.py --mod-id "Codex_SuQingWearableCompat_4221" --check` with the required source-root arguments, then use a new isolated `--output` directory. Missing or updated sources fail their pinned hashes; do not substitute a renamed newer file. The tool performs no download, subscription, deployment or enabled-list edits. Old personal README/backup/.bak artifacts are not shipped as runtime source; current guidance is collected here.
 
 ## 验证边界 / Validation boundary
+
+1.0.1 已在 42.22.2 原厂 Kahlua 核对普通容器 1.0.3、背包 EX 1.0.0-rc.2 和猫猫背包桥接。普通容器 1.0.3 已内置针剂盒、生化胸挂和 HavenFall 腰包，旧普通适配器仍只匹配 1.0.0，避免重复注册。此包继续给 20 款 HavenFall 背包提供 EX 适配，并阻止原生款式升级消耗已强化实例。游戏内保存重进待验收。
+
+Version 1.0.1 was checked on stock 42.22.2 Kahlua with Container Upgrades 1.0.3, Backpack EX 1.0.0-rc.2 and the MaoMao bridge. Container Upgrades 1.0.3 registers the injector case, Chemical chest rig and HavenFall waist bags internally. The legacy ordinary adapter stays limited to 1.0.0 to avoid duplicate registration. This package still supplies EX support for 20 HavenFall backpacks and blocks native conversion of an EX-upgraded instance. In-game reloading remains to be checked.
 
 重建SHA一致仅证明还原了审计时的运行文件，不等于游戏内、所有组合、多人或存档持久化验收。原有调试、测试版或单人限制仍以该补丁为准。先在隔离单人档按本功能操作检查，勿把正式档当作自动测试环境。
 

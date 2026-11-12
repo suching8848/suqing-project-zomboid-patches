@@ -312,7 +312,7 @@
       "folder": "Codex_SuQingWearableCompat_4221",
       "title_zh": "旧普通容器桥接与HavenFall EX兼容",
       "title_en": "Legacy Container Bridge and HavenFall EX Compatibility",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "description_original": "为当前单人档的针剂盒、生化胸挂、HavenFall前后腰包接入蘇清普通容器升级；保留针剂过滤及腰包换位保护；兼容HavenFall背包EX超级升级。",
       "requires_raw": "SuQingContainerUpgrade_4221,ExSuQingBackpackSuperUpgrade_4221,HavenFall",
       "load_after_raw": "SuQingContainerUpgrade_4221,TarkovCombatStims,CodexCBRTIndependent_4221,ExSuQingBackpackSuperUpgrade_4221,CodexNekomataEXCompat_4221,CodexNekomataEXUpgrade_4221,HavenFall",
@@ -336,7 +336,7 @@
       "summary_zh": "旧普通1.0.0的四个物品接入与HavenFall EX桥接。普通发布1.0.1已内置四ID；该版本下旧普通adapter整体拒绝接入，HavenFall EX独立脚本仍按EX rc.2版本验证工作。",
       "summary_en": "Contains four-item integration for ordinary 1.0.0 and a HavenFall EX bridge. Ordinary release 1.0.1 already includes the four IDs; its legacy ordinary adapter is rejected as a whole, while the separate HavenFall EX script retains its EX rc.2 version checks.",
       "runtime_files": 3,
-      "runtime_bytes": 17042,
+      "runtime_bytes": 17050,
       "reconstruction_modes": {
         "own": 3
       },
@@ -346,7 +346,8 @@
           "reason": "documentation/history/personal configuration; not a runtime source"
         }
       ],
-      "source_roots": []
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2"
     },
     {
       "id": "Codex_XFDynamicRecordGuard_4221",
@@ -483,8 +484,8 @@
       "folder": "CodexNekomataEXCompat_4221",
       "title_zh": "猫又岭与EX兼容桥接",
       "title_en": "Nekomata Ridge and EX Compatibility",
-      "version": "1.0.0",
-      "description_original": "Build42.21单人独立兼容：保留猫又背包原逻辑，为其他容器完整透传hasRoomFor参数；仅识别已核MaoMao包装链恢复蘇清背包超级升级就绪判定。未知外层仍拒绝。不改容量、物品、材料、付款、配方或存档数据。",
+      "version": "1.0.1",
+      "description_original": "Build 42.21–42.22 单人独立兼容：保留猫又背包原逻辑，为其他容器完整透传hasRoomFor参数；仅识别已核MaoMao包装链恢复蘇清背包超级升级就绪判定。未知外层仍拒绝。不改容量、物品、材料、付款、配方或存档数据。",
       "requires_raw": "\\Nekomata Ridge,ExSuQingBackpackSuperUpgrade_4221",
       "load_after_raw": "Nekomata Ridge,ExSuQingBackpackSuperUpgrade_4221",
       "required_mods": [
@@ -501,20 +502,21 @@
       "summary_zh": "保留猫又背包逻辑，为其他容器透传hasRoomFor参数，并仅对已知MaoMao包装链恢复EX就绪判定；未知包装仍拒绝。",
       "summary_en": "Preserves Nekomata backpack logic, passes hasRoomFor arguments for other containers and restores EX readiness only for the audited MaoMao wrapper chain; unknown wrappers remain rejected.",
       "runtime_files": 2,
-      "runtime_bytes": 7911,
+      "runtime_bytes": 8118,
       "reconstruction_modes": {
         "own": 2
       },
       "excluded_files": [],
-      "source_roots": []
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2"
     },
     {
       "id": "CodexNekomataEXUpgrade_4221",
       "folder": "CodexNekomataEXUpgrade_4221",
       "title_zh": "猫猫背包EX升级扩展",
       "title_en": "Nekomata Backpack EX Upgrade Extension",
-      "version": "1.0.0",
-      "description_original": "Build42.21单人：猫猫背包可通过独立制作配方从原生120升级为有效基础容量240，沿用蘇清EX材料、技能、付款与50%还原返料。未升级仍保持作者120；自重、减重、储水与挂点不变。正常退出后禁用扩展会回原容量，记录保留供重新启用。",
+      "version": "1.0.1",
+      "description_original": "Build 42.21–42.22 单人：猫猫背包可通过独立制作配方从原生120升级为有效基础容量240，沿用蘇清EX材料、技能、付款与50%还原返料。未升级仍保持作者120；自重、减重、储水与挂点不变。正常退出后禁用扩展会回原容量，记录保留供重新启用。",
       "requires_raw": "\\CodexNekomataEXCompat_4221,Nekomata Ridge,ExSuQingBackpackSuperUpgrade_4221",
       "load_after_raw": "CodexNekomataEXCompat_4221,Nekomata Ridge,ExSuQingBackpackSuperUpgrade_4221",
       "required_mods": [
@@ -533,12 +535,13 @@
       "summary_zh": "猫猫背包从原生120升级到EX基础240，沿用EX材料、技能、账本及50%返料；未升级仍为120，停用后的容量行为按原说明。",
       "summary_en": "Adds an EX recipe taking the Nekomata backpack from native base 120 to 240, using EX materials, skills, ledger and 50% refunds. Unupgraded items remain at 120; disable behavior follows the original extension notes.",
       "runtime_files": 5,
-      "runtime_bytes": 5974,
+      "runtime_bytes": 5526,
       "reconstruction_modes": {
         "own": 5
       },
       "excluded_files": [],
-      "source_roots": []
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2"
     },
     {
       "id": "CodexPZOptimization_CN_4221",
