@@ -1,11 +1,10 @@
 [h1]蘇清的补丁合集[/h1]
-35个独立可选子模组，适用B42.21单人。按需求选择，勿全部启用；原作另订阅，保留既有顺序。3项EX配套不重复包含，5项上游整包再分发继续暂缓。各子项的游戏内验收状态见双语说明。
+37个独立可选单人补丁。B42.21／B42.22.2 的适用范围因子模组而异。按需启用，前置另订阅。
 [h1]SuQing's Patch Collection[/h1]
-35 optional B42.21 SP patches; never enable all. R=required originals, subscribed separately. Keep order. Excludes 3 EX companions and 5 held items. See each bilingual guide for gameplay validation status.
-[h2]重要限制[/h2]
-酿酒书50倍是满读书籍倍率50，非最终经验保证；停用前仍启用时调用RestoreOriginal并正常保存。Viewpoint提示仅Legacy0.1.6+Viewpoint0.1.6.1；UI选中仅CleanUI2.10.3/2.10.4；船舱守卫仅已审查组合，不支持Arcadia或多人，已有冲突会拦截而不搬迁。世界保护为候选，需ZombieBuddy≥2.3.4和原生批准，未知类保留原行为；不使用allow-all。普通停用：动作完成后正常保存退出、停用并重启；书籍倍率依前述专门恢复。Mustang每次+30至100，焊接2、面罩、匹配材料1件和喷灯3燃料。完整用途/限制/停用见各子项双语文档。
-[h2]Critical limits[/h2]
-Brewing 50x sets the fully-read book multiplier to 50, not guaranteed final XP; call RestoreOriginal and save while still enabled before disabling. Viewpoint prompts: Legacy0.1.6 + Viewpoint0.1.6.1 only. Selection: CleanUI2.10.3/2.10.4 only. Cabin guard: reviewed sources only; no Arcadia/multiplayer, conflicts block entry without relocation. World Guard is a candidate: ZombieBuddy≥2.3.4 and native approval; unknown classes retain native behavior; no allow-all. Finish actions, save/exit, disable and restart; brewing needs the special restoration above. Mustang: +30 up to100, Welding2, mask, one matching material and3 torch fuel.
+37 optional single-player patches. Build 42.21 / 42.22.2 support varies by submod. Enable individually and subscribe to required originals.
+[h2]停用和兼容 / Disabling and compatibility[/h2]
+酿酒书停用前调用 RestoreOriginal 并保存。世界保护需要 ZombieBuddy 2.3.4 及本机批准。船舱、旧 Viewpoint 与 CleanUI 补丁的适用版本见各项说明。
+RestoreOriginal and save before disabling Brewing 50x. World Guard requires ZombieBuddy 2.3.4 and local approval. See individual guides for boat cabins, legacy Viewpoint and CleanUI support.
 [list]
 [*]人物菜单调整 / Character Menu Tweaks
 CodexCharacterMenuTweaks_4221; Requires: XFACTION_DynamicTraits, CodexXFACTION_CN_4221
@@ -54,7 +53,7 @@ SuQingBatchFarmingMenu_4221; Requires: vac_batch_farming
 [*]饵托量产补丁 / Chum Mass Production Patch
 SuQingChumMassProduction; Requires: none
 [*]蛋白饮料训练强化 / Protein Shake Training Boost
-SuQingProteinTrainingBoost (1.1.0). 需 Vanilla Foods Expanded，单人可选适配 Project Iron 0.6.0。双增益默认 ×20 力量与体格经验。 Requires Vanilla Foods Expanded. Optional Project Iron 0.6.0 support for single-player, with ×20 Strength and Fitness XP while both buffs are active at the default setting.
+SuQingProteinTrainingBoost (1.1.1-rc.1). 需 Vanilla Foods Expanded，单人可选适配 Project Iron 0.6.0。双增益默认 ×20 力量与体格经验。 Requires Vanilla Foods Expanded. Optional Project Iron 0.6.0 support for single-player, with ×20 Strength and Fitness XP while both buffs are active at the default setting.
 [*]配方材料输入修复 / Recipe Input Guard
 SuQingRecipeInputGuard_4221; Requires: SapphCooking_B42
 [*]蘇清的Viewpoint旧版手柄提示修复补丁 / SuQing’s Viewpoint Legacy Prompt Fix Patch
@@ -74,11 +73,16 @@ SuQingWorldStateGuard_4221; Requires: ZombieBuddy
 [*]蘇清的好彩香烟菜单修复 / SuQing's Lucky Strike Menu Fix
 SuQingLuckyStrikeMenuFix_4221 (0.1.0). 区分单根与盒装中文名称，保护混组右键菜单。Requires: CleanUI 2.10.4, MoreMRE (MREfood4213). Distinguishes loose cigarettes and packs in Chinese and guards mixed-stack context menus.
 [*]蘇清的收藏配方材料标记修复 / SuQing's Favourite Recipe Materials Fix
-SuQingFavouriteRecipeMaterials_4221 (0.1.0). 恢复自定义模块收藏配方材料的绿勾和悬停提示。Restores the green badge and hover hint for custom-module favourite recipe materials. CleanUI and Neat Crafting are optional.
+SuQingFavouriteRecipeMaterials_4221 (0.1.1-rc.1). 恢复自定义模块收藏配方材料的绿勾和悬停提示。Restores the green badge and hover hint for custom-module favourite recipe materials. CleanUI and Neat Crafting are optional.
 [*]蘇清的 Project Iron 简体中文补丁 / SuQing's Project Iron Chinese Patch
-SuQingProjectIronCN_4221 (1.0.0). 汉化训练器械、补剂、状态提示及沙盒设置。Simplified Chinese for gym equipment, supplements, status text and sandbox options. 需要另订阅 / Requires [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3830338118]Project Iron 0.6.0 (SweatWorkz)[/url].
+SuQingProjectIronCN_4221 (1.0.1-rc.1). 汉化训练器械、补剂、状态提示及沙盒设置。Simplified Chinese for gym equipment, supplements, status text and sandbox options. 需要另订阅 / Requires [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3830338118]Project Iron 0.6.0 (SweatWorkz)[/url].
+[*]撬锁拓展补丁 / Crowbar Prying Expansion
+SuQingVanillaPryUpgrade 0.1.3 · B42.22.2 SP. 防盗门、挂锁和车辆轮盘。Reinforced doors, padlocks and vehicle radial menu. 无前置 / No prerequisites.
+[*]现代枪械强化 / Modern Firearm Upgrades
+SuQingMFSFirearmUpgrade_4221 0.6.0 · 五档单枪强化、维护和投掷物配方。Five tiers, maintenance and throwable recipes. Requires [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3633421539]Modern Firearms System[/url]. 与全局伤害子模组互斥 / Conflicts with ModernFirearmsSystemDamageSandbox.
 [/list]
 
-本次新增汉化通过离线检查，游戏内显示待验收。The new translation passed offline checks. In-game display is pending verification.
+本轮 26 项兼容更新已离线复核。新补丁完整实测待补。
+26 compatibility updates checked offline. Full gameplay checks for the new patches are pending.
 
 [url=https://github.com/suching8848/suqing-project-zomboid-patches/tree/main/docs/patches]完整双语说明 / Full bilingual guides[/url]

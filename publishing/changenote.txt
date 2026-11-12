@@ -1,3 +1,2 @@
-蛋白饮料训练强化升至 1.1.0，内置可选 Project Iron 0.6.0 适配。训练前补剂为默认 +100% 时，双增益期间力量与体格经验 ×20，两项增益合并结算。保留原 Mod ID 与 Vanilla Foods Expanded 前置。B42.21.0 单人。
-
-Protein Shake Training Boost 1.1.0 adds optional Project Iron 0.6.0 support. Strength and Fitness XP reach ×20 while both buffs are active at the default +100% pre-workout setting. Both bonuses are applied in one award. The existing Mod ID and Vanilla Foods Expanded requirement carry forward. B42.21.0 single-player.
+B42.22.2 兼容更新 26 项。新增可选撬锁拓展 0.1.3 和现代枪械强化 0.6.0。保留原条目和已有子模组。
+26 B42.22.2 compatibility updates. Adds optional Crowbar Prying Expansion 0.1.3 and Modern Firearm Upgrades 0.6.0.
