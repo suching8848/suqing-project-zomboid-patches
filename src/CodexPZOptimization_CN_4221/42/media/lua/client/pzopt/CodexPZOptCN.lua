@@ -1,4 +1,4 @@
--- Independent local Simplified Chinese UI patch 1.1.0 for PZ Optimization 154126d0 / B42.21.
+-- Simplified Chinese settings localization 1.3.0 for PZ Optimization fad57862 and f0bca707 / B42.22.2.
 -- Display data only. Never writes settings, changes choices or starts tools.
 CodexPZOptCN = CodexPZOptCN or {}
 local CN = CodexPZOptCN
@@ -2231,15 +2231,24 @@ function CN.richText(s, width, font)
     return table.concat(out)
 end
 
+local function installedSupportedCommit()
+    local ok, commit = pcall(function()
+        if Translator.getLanguage():name() ~= "CN" then return nil end
+        local performance = getPerformance()
+        if not performance:hasPzoptOptions() then return nil end
+        return performance:getPzoptUpdateInstalledCommit()
+    end)
+    if ok and (commit == "fad57862" or commit == "f0bca707") then return commit end
+end
+
+function CN.canApply()
+    return installedSupportedCommit() ~= nil
+end
+
 function CN.install()
     if CN.applied or not PzoptSettings or not PzoptOptionSections or not PzoptSettingsLayout then return end
-    local p = getPerformance()
-    local ok, present = pcall(function() return p:hasPzoptOptions() end)
-    if not ok or not present then return end
-    local vok, version = pcall(function() return p:getPzoptUpdateInstalledCommit() end)
-    if vok and version and version ~= '' and version ~= '154126d0' then
-        print('[CodexPZOptCN] warning: installed engine ' .. tostring(version) .. '; this UI patch targets 154126d0. Disable this UI patch before a future engine update; its menu override is version-specific.')
-    end
+    local commit = installedSupportedCommit()
+    if not commit then return end
     local count, tips = 0, 0
     local function translateEntry(e)
         if not e or not e.key then return end
@@ -2279,6 +2288,10 @@ function CN.install()
     PzoptSettings.UNINSTALL_TITLE = CN.strings["s194"]
     PzoptSettings.UNINSTALL_TIP = CN.strings["s193"]
     PzoptSettings.UNINSTALL_CONFIRM = CN.strings["s192"]
+    if commit == "fad57862" then
+        PzoptSettings.UNINSTALL_TIP = PzoptSettings.UNINSTALL_TIP .. " " .. CN.makeUnicode("57 69 6e 64 6f 77 73 ff1a 82e5 20 53 74 65 61 6d 20 542f 52a8 9009 9879 5f15 7528 20 70 7a 6f 70 74 2d 6c 61 75 6e 63 68 2e 63 6d 64 ff0c 5378 8f7d 540e 8bf7 6e05 9664 6b64 9879 ff0c 5426 5219 6e38 620f 65e0 6cd5 4ece 20 53 74 65 61 6d 20 542f 52a8 3002")
+        PzoptSettings.UNINSTALL_CONFIRM = PzoptSettings.UNINSTALL_CONFIRM .. CN.makeUnicode("a a 57 69 6e 64 6f 77 73 ff1a 82e5 20 53 74 65 61 6d 20 542f 52a8 9009 9879 5f15 7528 a 70 7a 6f 70 74 2d 6c 61 75 6e 63 68 2e 63 6d 64 ff0c 5378 8f7d 540e 8bf7 6e05 9664 6b64 9879 ff0c a 5426 5219 6e38 620f 65e0 6cd5 4ece 20 53 74 65 61 6d 20 542f 52a8 3002")
+    end
     local oldCat = PzoptSettings.CATS.entry
     PzoptSettings.CATS.entry = function(cat, live)
         local e = oldCat(cat, live)
@@ -2320,8 +2333,6 @@ function CN.install()
         PzoptPreview.text = function(self, text, ...) return oldText(self, CN.ui[text] or text, ...) end
     end
     CN.applied, CN.labelCount, CN.tipCount = true, count, tips
-    print('[CodexPZOptCN] installed: ' .. count .. ' setting labels, ' .. tips .. ' Chinese descriptions; UI only; engine 154126d0.')
+    print('[CodexPZOptCN] installed: ' .. count .. ' setting labels, ' .. tips .. ' Chinese descriptions; UI only; engine ' .. commit .. '.')
 end
 
-Events.OnGameBoot.Add(CN.install)
-if Events.OnMainMenuEnter then Events.OnMainMenuEnter.Add(CN.install) end

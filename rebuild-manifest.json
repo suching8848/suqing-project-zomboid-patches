@@ -1424,7 +1424,7 @@
     {
       "id": "CodexPZOptimization_CN_4221",
       "folder": "CodexPZOptimization_CN_4221",
-      "version": "1.1.0",
+      "version": "1.3.0",
       "directories": [
         "42",
         "42/media",
@@ -1436,15 +1436,15 @@
       "files": [
         {
           "path": "42/media/lua/client/pzopt/CodexPZOptCN.lua",
-          "sha256": "213c033cc84b88adb5772d5877b576c30bfe4946023578fa3a42bc14f4f4fa97",
-          "size": 172158,
+          "sha256": "b43118e97bd88cd6408276aebe5a245980e902bb737fac196af18845127b97e7",
+          "size": 172856,
           "mode": "own",
           "repo_path": "src/CodexPZOptimization_CN_4221/42/media/lua/client/pzopt/CodexPZOptCN.lua"
         },
         {
-          "path": "42/media/lua/client/pzopt/pzopt_mainscreen_menu.lua",
-          "sha256": "b4bfa7e773ac378181045aede043f4f7dfc50f4955d423ba94f0d65df3ba64e6",
-          "size": 396694,
+          "path": "42/media/lua/client/pzopt/zz_CodexPZOptCN_Menu.lua",
+          "sha256": "966003107eb2a93ffeca11620d44b0ecb87296a17a8dbf1e7eb84e8d9c89bc41",
+          "size": 378531,
           "source": {
             "root": "game",
             "path": "media/lua/client/pzopt/pzopt_mainscreen_menu.lua",
@@ -1452,7 +1452,7 @@
           },
           "mode": "patch",
           "patch_path": "patches/CodexPZOptimization_CN_4221/42/media/lua/client/pzopt/pzopt_mainscreen_menu.lua.patch",
-          "patch_sha256": "ae443c9eba9256a8b1d87ed21fecb117448402d29bbccbd1f1cc0f17a36b7d85",
+          "patch_sha256": "697f3b6f4bd2878c81b0110adc712001d200f737c06052486f8874aacba17db4",
           "text_encoding": {
             "bom": false,
             "newline": "lf",
@@ -1461,12 +1461,13 @@
         },
         {
           "path": "42/mod.info",
-          "sha256": "65e5954fe68ea74b952388533c9f49f02720a980e7c4e8e9f1eddd3905581f53",
-          "size": 351,
+          "sha256": "610341f9185c9a9d8d4a80c670c2923f924a821979998589fd5f53c1bd6a5dc5",
+          "size": 363,
           "mode": "own",
           "repo_path": "src/CodexPZOptimization_CN_4221/42/mod.info"
         }
-      ]
+      ],
+      "compatibility_candidate_game": "42.22.2"
     },
     {
       "id": "CodexTranslatorPercentFix_4221",

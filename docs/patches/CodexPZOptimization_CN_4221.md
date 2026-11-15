@@ -1,49 +1,22 @@
-# 蘇清的PZ Optimization设置汉化补丁 / SuQing’s PZ Optimization Chinese Settings Patch
+# 蘇清的 PZ Optimization 设置汉化 / SuQing’s PZ Optimization Chinese Settings
 
-[返回总目录 / Back to index](../../README.md) · [English overview](../../README.en.md)
-
-| 项目 / Field | 当前值 / Current value |
+| 项目 / Field | 当前值 / Value |
 | --- | --- |
 | Mod ID | `CodexPZOptimization_CN_4221` |
-| 文件夹 / Folder | `CodexPZOptimization_CN_4221` |
-| 版本 / Version | `1.1.0` |
-| 适用 / Target | Project Zomboid Build 42.21; single-player scope |
-| 元数据硬依赖 / Declared prerequisites | 无mod.info硬依赖 / none declared in mod.info |
-| 原样require / Literal require | `(none)` |
-| 加载在其后 / Load after | 无 / none |
+| 版本 / Version | `1.3.0` |
+| 游戏 / Game | B42.22.2，单人 / single-player |
+| 外部前置 / External prerequisite | PZ Optimization `fad57862` / `f0bca707` |
 
-## 中文说明
+## 中文
 
-对应PZ Optimization 154126d0的577项名称、导航控件、部分说明汉化及UTF-8排版。新增预设按原始标题映射，保留中文查询、新版页面与设置动作。上游菜单整份覆盖不入库，以游戏目录原件精确SHA和上下文差异重建；更新或卸载引擎补丁前应重新核对。
+沿用 577 项设置标签、选项说明、菜单导航、中文搜索和 7 项预设翻译。简体中文且检测到指定 PZO 时才挂接译文。其他语言、缺少 PZO 或版本不符时使用作者原有界面。作者的入口动作、事件和设置键保留。1.3.0 加入 fad57862 以及该版本新增的 Windows 卸载提醒。
 
-源码同步已部署1.1.0的同字节文件。既有隔离Kahlua验证为2370断言，覆盖577标签、7预设动作身份、设置键、section路由及中文查询；真实屏幕布局与点击仍需用户验收，未随本次源码同步部署或启动游戏。
+使用 `tools/rebuild.py --game-root <游戏目录> --mod-id CodexPZOptimization_CN_4221 --check` 校验来源，再使用新的 `--output` 目录构建。菜单差异以作者原件的 SHA-256 固定输入。游戏内验收时打开 PZ Optimization 的性能、画质、预设和兼容性页面，检查中文查询、换行及返回。1.1.0 对应 B42.21 与 PZO 154126d0。
 
-只按需要安装本子补丁，不能把本仓库的全部子项当作所有主模组的共同前置。`loadModAfter`是加载顺序声明，不等于要求安装列出的全部模组。`require`原字节保留，包括历史前缀语法；本仓库不擅自迁移Mod ID或改变依赖。
+## English
 
-本补丁运行文件共3份。仓库直接收录2份自制桥接/翻译/元数据，另从本机上游原件复制重建0份、应用上下文差异重建1份。完整路径、输入与输出SHA-256见[重建清单](../../rebuild-manifest.json)。第三方完整美术、原始覆盖文件和针剂reference原件不直接入Git。
+The optional Simplified Chinese localization retains 577 setting labels, selected descriptions, menu navigation, Chinese search and seven presets. It activates for the Simplified Chinese game language with PZ Optimization fad57862 or f0bca707. The author's interface stays active for other languages or when the engine is missing or mismatched. Original menu actions, events and settings keys are preserved. Version 1.3.0 includes the Windows uninstall warning added in fad57862.
 
-使用`tools/rebuild.py --mod-id "CodexPZOptimization_CN_4221" --check`配合所需来源根参数，先验证来源；再使用全新的隔离`--output`目录。缺失文件、上游更新或SHA不符会拒绝输出，不能靠重命名新版本绕过。工具不下载、不订阅、不部署、不编辑当前启用列表。原始个人README/backup/.bak不作为运行源码发布，内容已在本页重新整理。
+Check the pinned local source with `tools/rebuild.py --game-root <game directory> --mod-id CodexPZOptimization_CN_4221 --check`, then build to a fresh `--output` directory. To validate in game, open the optimization, enhancement, preset and compatibility pages and check text layout, Chinese search and back navigation. Version 1.1.0 targeted B42.21 and PZO 154126d0.
 
-## English notes
-
-Chinese localization/layout for 577 labels, navigation, controls and selected descriptions of PZ Optimization 154126d0. Preset titles map to their original names; Chinese queries, current pages and settings actions are retained. The full upstream menu overlay is not stored; it is reconstructed from the exact newly pinned game-directory source and context diff. Recheck before changing/removing the engine patch.
-
-Sources match the deployed 1.1.0 bytes. The existing isolated Kahlua validation covered 2,370 assertions, including 577 labels, seven preset action identities, setting keys, section routing and Chinese queries. Actual screen layout and clicks remain user acceptance work; this source synchronization does not deploy or launch the game.
-
-Install this optional subpatch only for the relevant use case. The whole collection is not a universal prerequisite. `loadModAfter` declares ordering, not a requirement to install every named mod. Literal `require` bytes, including historical prefix syntax, remain unchanged. No IDs or dependencies are migrated.
-
-There are 3 runtime files: 2 tracked bridge/translation/metadata files, 0 local upstream copies and 1 context-diff reconstructions. The [manifest](../../rebuild-manifest.json) records every input/output SHA-256 and path. Full third-party artwork, overlay originals and stimulant reference originals are not stored in Git.
-
-Run `tools/rebuild.py --mod-id "CodexPZOptimization_CN_4221" --check` with the required source-root arguments, then use a new isolated `--output` directory. Missing or updated sources fail their pinned hashes; do not substitute a renamed newer file. The tool performs no download, subscription, deployment or enabled-list edits. Old personal README/backup/.bak artifacts are not shipped as runtime source; current guidance is collected here.
-
-## 验证边界 / Validation boundary
-
-重建SHA一致仅证明还原了审计时的运行文件，不等于游戏内、所有组合、多人或存档持久化验收。原有调试、测试版或单人限制仍以该补丁为准。先在隔离单人档按本功能操作检查，勿把正式档当作自动测试环境。
-
-Exact reconstruction proves byte identity to the audited local runtime files, not gameplay, all combinations, multiplayer or persistence. Existing test/single-player restrictions remain. Use an isolated single-player test save for acceptance; this repository never opens a personal save.
-
-## 来源与权利 / Sources and rights
-
-见[第三方来源说明](../THIRD_PARTY.md)。本仓库不对上游代码、模型、纹理或差异中的上游上下文另授MIT等许可。读取本机来源不等于获得再次分发原件的许可。
-
-See [third-party notes](../THIRD_PARTY.md). No MIT or other blanket license is applied to upstream code, models, textures or upstream context in diffs. Access to a local source does not grant redistribution rights.
+The translated menu methods are reconstructed from the pinned author menu with a context diff. See [third-party sources](../THIRD_PARTY.md) and the [rebuild manifest](../../rebuild-manifest.json). Public distribution remains on hold.

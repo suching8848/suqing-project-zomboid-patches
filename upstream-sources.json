@@ -364,7 +364,7 @@
     },
     {
       "mod_id": "CodexPZOptimization_CN_4221",
-      "target": "42/media/lua/client/pzopt/pzopt_mainscreen_menu.lua",
+      "target": "42/media/lua/client/pzopt/zz_CodexPZOptCN_Menu.lua",
       "mode": "patch",
       "root": "game",
       "path": "media/lua/client/pzopt/pzopt_mainscreen_menu.lua",

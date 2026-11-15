@@ -1,13 +1,20 @@
---- a/media/lua/client/pzopt/pzopt_mainscreen_menu.lua
-+++ b/42/media/lua/client/pzopt/pzopt_mainscreen_menu.lua
-@@ -1,3 +1,6 @@
-+-- Local Chinese display override; original engine file is unchanged. Target: 154126d0.
+--- media/lua/client/pzopt/pzopt_mainscreen_menu.lua
++++ 42/media/lua/client/pzopt/zz_CodexPZOptCN_Menu.lua
+@@ -1,3 +1,13 @@
++-- Simplified Chinese display methods for the author menu in PZ Optimization fad57862 and f0bca707.
 +require "pzopt/CodexPZOptCN"
++if not CodexPZOptCN.canApply() or CodexPZOptCN.menuApplied then return end
++if not MainScreen or not MainScreen.pzoptMenuItem
++        or not PzoptMenuList or not PzoptMenuControl or not PzoptMenuSidebar or not PzoptMainMenu
++        or not PzoptSettings or not PzoptOptionSections or not PzoptSettingsLayout then return end
++
++-- Build the translated methods on temporary tables before attaching them to the original classes.
++local PzoptMenuList, PzoptMenuControl, PzoptMenuSidebar, PzoptMainMenu
 +
  -- pzopt: the main menu's "PZ OPTIMIZATION" item and the PZ Optimization screen (2026-10-18), the only home of the pzopt
  -- settings (the game's Options screen had a PZ Optimization tab until 2026-10-18; its data and actions are
  -- pzopt_optimizations_options.lua's PzoptSettings).
-@@ -41,7 +44,7 @@
+@@ -41,7 +51,7 @@
  -- needs a restart only shows the notice at the bottom right). The bar under the page holds BACK, a switch that hides the
  -- sidebar, the preset box with SAVE... and EXPORT / IMPORT... / UNINSTALL (2026-10-20). false = the released layout.
  local TAB_LAYOUT = true
@@ -16,7 +23,7 @@
  local FONT_SMALL = getTextManager():getFontHeight(UIFont.Small)
  local FONT_MEDIUM = getTextManager():getFontHeight(UIFont.Medium)
  local FONT_LARGE = getTextManager():getFontHeight(UIFont.Large)
-@@ -60,27 +63,7 @@
+@@ -60,27 +70,7 @@
  
  -- s in lines no wider than maxW; a word wider than maxW is broken between characters
  local function wrap(s, font, maxW)
@@ -45,7 +52,7 @@
  end
  
  -- ------------------------------------------------------------------ the updater's state, as text
-@@ -125,7 +108,7 @@
+@@ -125,7 +115,7 @@
  
  -- the main-menu item: "PZ OPTIMIZATION - UPDATE AVAILABLE" while a newer build is offered (pzopt.Updater's state, the
  -- same the UPDATE page reads), else "PZ OPTIMIZATION"
@@ -54,7 +61,7 @@
  
  local function itemText()
      return updState() == "available" and ITEM_UPDATE_TEXT or ITEM_TEXT
-@@ -134,56 +117,56 @@
+@@ -134,56 +124,56 @@
  -- the main-menu item's small line: the installed build, or the updater's news (bright)
  local function itemNote()
      local s = updState()
@@ -138,7 +145,7 @@
      end
      return "Once per boot the game asks whether a newer build exists for this game revision (GitHub releases, the Steam "
          .. "Workshop copy). This card and the main-menu item light up when one does."
-@@ -217,10 +200,7 @@
+@@ -217,10 +207,7 @@
  local function rgb(t) return { r = t[1], g = t[2], b = t[3] } end
  
  local function clipText(font, s, w)
@@ -150,7 +157,7 @@
  end
  
  -- the lines of a text at a width; a height is the most any variant of its texts needs
-@@ -234,9 +214,9 @@
+@@ -234,9 +221,9 @@
  
  -- the options tab's groups (pzopt_optimizations_layout.lua) and their master switches
  local GROUPS = {
@@ -163,7 +170,7 @@
  }
  -- (tab layout) "Boot and loading" and "System" are tabs of their own (maintainer, 2026-10-20), split off Optimizations
  -- in settingsTree: the one category's switch is the tab's (no separate tab switch); the whole mod's `enabled` still gates it
-@@ -252,7 +232,7 @@
+@@ -252,7 +239,7 @@
      { tab = "compat", cat = "mp", title = "Mods & MP", catTitle = "Multiplayer settings", colour = { 0.55, 0.85, 0.85 },
        blurb = "Playing on a server.",
        subTitle = "Multiplayer", keys = { "luaChecksumExempt" } },
@@ -172,7 +179,7 @@
        blurb = "How new releases reach you: the offer in the main menu, the download in the background, where it comes from.",
        subTitle = "Updates", keys = { "updateCheck", "updatePrefetch", "updateFromWorkshop" } },
  }
-@@ -260,7 +240,7 @@
+@@ -260,7 +247,7 @@
  local SPLIT_TABS = {
      { id = "boot", cat = BOOT_CAT, name = "Loading", master = "catLoadEnabled", colour = { 0.94, 0.56, 0.66 },
        note = "Faster launches and loads: from launch to the menu, and from Continue to the world." },
@@ -181,7 +188,7 @@
        note = "The PC side: Java memory (heap size), cores and power, the audio mix." },
  }
  for _, sp in ipairs(TAB_LAYOUT and SPLIT_TABS or {}) do
-@@ -349,7 +329,7 @@
+@@ -349,7 +336,7 @@
              end
              if cat then
                  if not cat.more then
@@ -190,7 +197,7 @@
                      table.insert(cat.subs, cat.more)
                  end
                  table.insert(cat.more.keys, key)
-@@ -430,11 +410,11 @@
+@@ -430,11 +417,11 @@
  -- search and Fix a problem show every match. Kept for the session, Simple first, like the tab. (Tab layout: every page lists
  -- every setting, its subcategories and modifiers fold instead.)
  local VIEW = { level = TAB_LAYOUT and 3 or 1 }
@@ -206,7 +213,7 @@
  }
  
  local function tierOf(key)
-@@ -486,11 +466,11 @@
+@@ -486,11 +473,11 @@
  -- every master switch: key -> { live, label } (the groups', the categories' from the layout)
  local function masterInfo(key)
      for _, g in pairs(GROUPS) do
@@ -220,7 +227,7 @@
          end
      end
      return nil
-@@ -498,7 +478,7 @@
+@@ -498,7 +485,7 @@
  
  local function valueText(key, e)
      local v = opt("getPzoptOption", key)
@@ -229,7 +236,7 @@
      if e and e.note and e.note[v] then t = t .. " (" .. e.note[v] .. ")" end
      return t
  end
-@@ -506,22 +486,22 @@
+@@ -506,22 +493,22 @@
  -- the update entry's short state
  local function updateShort()
      local s = updState()
@@ -262,7 +269,7 @@
  
  -- (tab layout) a tip without its "applies on the next launch" sentence: the detail's metadata says "Needs restart"
  local function stripLaunchNote(t)
-@@ -550,7 +530,7 @@
+@@ -550,7 +537,7 @@
  end
  
  local function showValue(v, e)
@@ -271,7 +278,7 @@
      if e and e.note and e.note[v] then t = t .. " (" .. e.note[v] .. ")" end
      return t
  end
-@@ -693,7 +673,7 @@
+@@ -693,7 +680,7 @@
              live = settingLive(k, b.e, b.page)
              label = (b.e and b.e.label) or k
          end
@@ -280,7 +287,7 @@
          if live then return end
          local nextV = (b and b.page == 2) and effectiveNext(k) or (settingNext(k))
          if nextV ~= opt("getPzoptOption", k) then
-@@ -721,19 +701,19 @@
+@@ -721,19 +708,19 @@
  local SEARCH = { query = "" } -- what the search page shows (the crumbs name it)
  
  local TOP = {
@@ -310,7 +317,7 @@
  }
  
  local function split3(id)
-@@ -759,9 +739,9 @@
+@@ -759,9 +746,9 @@
  local TABS = {
      { id = "perf", short = "OPTIMIZE" }, { id = "boot", label = "LOADING", short = "LOAD" },
      { id = "sys", label = "SYSTEM", short = "SYSTEM" }, { id = "vis", short = "ENHANCE" },
@@ -323,7 +330,7 @@
  }
  
  -- the tab a node lives in (Fix a problem: Home's, the HELP tab in the tab layout); nil for the search results, which
-@@ -789,7 +769,7 @@
+@@ -789,7 +776,7 @@
  end
  
  local function titleOf(id)
@@ -332,7 +339,7 @@
      local t = settingsTree()
      local a, b = split3(id)
      if GROUPS[a] then
-@@ -798,21 +778,21 @@
+@@ -798,21 +785,21 @@
          return node and node.title or id
      end
      if a == "bench" then
@@ -359,7 +366,7 @@
      return id
  end
  
-@@ -850,11 +830,11 @@
+@@ -850,11 +837,11 @@
  local function homeDesc(id)
      if id == "perf" or id == "boot" or id == "sys" or id == "vis" or id == "tools" then
          local G = settingsTree().byId[id]
@@ -375,7 +382,7 @@
      elseif id == "update" then
          return updateDesc()
      elseif id == "compat" then
-@@ -892,53 +872,53 @@
+@@ -892,53 +879,53 @@
  end
  
  local function clipsAction()
@@ -445,7 +452,7 @@
                      act = function()
                          TOUCHED.enabled = true
                          for _, k in ipairs(PzoptSettings.pageKeys(1)) do TOUCHED[k] = true end
-@@ -946,39 +926,39 @@
+@@ -946,39 +933,39 @@
                          showMessage(self, preset.title .. ": " .. preset.apply())
                      end } } })
          end
@@ -497,7 +504,18 @@
          end })
      return p
  end
-@@ -1213,14 +1193,14 @@
+@@ -1073,10 +1060,6 @@
+     end
+     return tex
+ end
+-function WHY.preload() -- (a function: the loop's locals would count against the file's 200)
+-    for _, id in ipairs({ "cpu", "render", "cores", "gpu", "vram", "ram", "disk", "load", "chunks" }) do WHY.iconTexture(id) end
+-end
+-WHY.preload()
+ 
+ function WHY.icon(el, id, x, y, s, c)
+     local tex = WHY.iconTexture(id)
+@@ -1213,14 +1196,14 @@
  local function masterRow(id, key, label, live, tip)
      return { id = id, kind = "master", master = key,
          label = label,
@@ -515,7 +533,7 @@
              return d
          end,
          activate = function() toggleMasterKey(key) end,
-@@ -1237,16 +1217,16 @@
+@@ -1237,16 +1220,16 @@
  
  -- "Reset ... to defaults": the keys back to the build's defaults, the switches on (asks first)
  local function resetRow(self, id, title, keysFn)
@@ -537,7 +555,7 @@
          end } } }
  end
  
-@@ -1254,11 +1234,11 @@
+@@ -1254,11 +1237,11 @@
      local t = settingsTree()
      local G, g = t.byId[a], GROUPS[a]
      local p = { items = {} }
@@ -551,7 +569,7 @@
                  return tostring(catCount(cat))
              end,
              desc = function()
-@@ -1283,10 +1263,10 @@
+@@ -1283,10 +1266,10 @@
      if cat and cat.master then
          local live = cat.group.page ~= 1
          local entry = PzoptSettings and PzoptSettings.CATS.entry({ master = cat.master, title = cat.title }, live)
@@ -564,7 +582,7 @@
      end
      for i, s in ipairs(cat and cat.subs or {}) do
          local sub = s
-@@ -1299,7 +1279,7 @@
+@@ -1299,7 +1282,7 @@
                      local e = t.entry[k] and t.entry[k].e
                      table.insert(names, esc(e and e.label or k) .. ": " .. esc(showValue((settingNext(k)), e)))
                  end
@@ -573,7 +591,7 @@
                  return table.concat(names, " <LINE> ")
              end })
      end
-@@ -1315,7 +1295,7 @@
+@@ -1315,7 +1298,7 @@
  end
  
  -- the performance overlay's own toggle (the F9 key's, L3 + R3's), first on PROFILER > Performance overlay > Overlay
@@ -582,7 +600,7 @@
  
  local function overlayKeys()
      local ok, name = pcall(function()
-@@ -1335,20 +1315,20 @@
+@@ -1335,20 +1318,20 @@
          local ok, v = pcall(function() return perf():isPzoptOverlaySampling() end)
          return ok and v
      end
@@ -610,7 +628,7 @@
  end
  
  -- A setting's detail text: what it does, when it applies, its values, who pins it, the release it came with, the Java
-@@ -1360,18 +1340,18 @@
+@@ -1360,18 +1343,18 @@
      local def = opt("getPzoptOptionDefault", k)
      local d = esc(TAB_LAYOUT and stripLaunchNote(e and e.tip) or (e and e.tip or "")) .. WHY.MARK .. " <LINE> <LINE> <RGB:0.66,0.66,0.70> "
          .. (TAB_LAYOUT and "" or ((settingLive(k, e, page) and LIVE_NOTE or RESTART_NOTE) .. " <LINE> "))
@@ -634,7 +652,7 @@
      end
      return d
  end
-@@ -1384,7 +1364,7 @@
+@@ -1384,7 +1367,7 @@
          local date = PzoptSettings.date(k)
          m.released = date or "new in this version"
          local classes = PzoptSettings.classes(k)
@@ -643,7 +661,7 @@
      end
      return m
  end
-@@ -1482,9 +1462,9 @@
+@@ -1482,9 +1465,9 @@
                  d = d .. " <LINE> <RGB:0.66,0.66,0.70> " .. esc(parentLabel) .. " is off: the value picked here is the one its switch "
                      .. "turns on to. <LINE> "
              end
@@ -656,7 +674,7 @@
              return d .. (where and (" <LINE> <RGB:0.66,0.66,0.70> On the page " .. esc(where)) or "")
          end
          it.chooser = { type = "chooser", label = leaf.label, get = function() return showValue(current(), nil) end,
-@@ -1502,7 +1482,7 @@
+@@ -1502,7 +1485,7 @@
          it.controls = { { type = "chooser", label = leaf.label, get = it.chooser.get, set = step } }
          it.activate = function() step(1) end
          it.value = function() return it.chooser.get() end
@@ -665,7 +683,7 @@
              if pinned() then return end
              LAST_ON[k] = nil
              if (settingNext(k)) ~= leaf.off then settingStore(k, onValueOf(k, e, true)) end
-@@ -1522,7 +1502,7 @@
+@@ -1522,7 +1505,7 @@
          meta = function() return settingMeta(k, e, page) end }
      if kind == "bool" or kind == "choice" or kind == "bezier" then
          item.activate = function() settingStep(k, e, 1) end
@@ -674,7 +692,7 @@
              -- (the and / or form returned "Off", a truthy string, for a switch that is off: the tick box was always filled)
              get = function()
                  if kind == "bool" then return (settingNext(k)) == "true" end
-@@ -1537,7 +1517,7 @@
+@@ -1537,7 +1520,7 @@
          item.activate = function() pickColour(self, k) end
          item.controls = { { type = "colour", label = "Colour", get = function() return (settingNext(k)) end, set = function() pickColour(self, k) end } }
      end
@@ -683,7 +701,7 @@
          if opt("getPzoptOptionPinnedBy", k) == "" then settingStore(k, opt("getPzoptOptionDefault", k)) end
      end }, clipsAction() }
      -- (prototype) changed from the build's default: the row's dot and its reset (DEFAULT as a row action)
-@@ -1566,7 +1546,7 @@
+@@ -1566,7 +1549,7 @@
              local reset = item.actions[1].act
              item.actions[1].act = function() LAST_ON[k] = nil reset() end
              -- (left / right on the row: nothing to step, the value is the leaf's; a tick as for a plain switch)
@@ -692,7 +710,7 @@
              if leaf then item.leaf = leafRow(e, leaf, item) end
          elseif kind == "choice" or kind == "bezier" then
              -- a dropdown: the closed box shows the value (the curve: its preset's name), the list every choice but the
-@@ -1575,7 +1555,7 @@
+@@ -1575,7 +1558,7 @@
                  if kind == "bezier" then return (e.note and e.note[v]) or (v == "" and "-" or "custom") end
                  return showValue(v, nil)
              end
@@ -701,7 +719,7 @@
                  set = function(dir) settingStepOn(k, e, dir or 1) end,
                  shown = function() return not off or settingOn(k, e) end,
                  pinned = function() return opt("getPzoptOptionPinnedBy", k) ~= "" end,
-@@ -1634,13 +1614,13 @@
+@@ -1634,13 +1617,13 @@
          end
      end
      if s and s.dlss and PzoptSettings then
@@ -717,7 +735,7 @@
                      act = function() PzoptSettings.depsInstall() end } }
              end })
          PzoptSettings.depsCheck()
-@@ -1658,10 +1638,10 @@
+@@ -1658,10 +1641,10 @@
                      .. "switches to " .. VIEW_NAMES[nextLevel] .. " (" .. VIEW_TIPS[nextLevel] .. ") until the game closes; the view is on the home page."
              end,
              activate = function() VIEW.level = nextLevel end,
@@ -732,7 +750,7 @@
      return p
  end
  
-@@ -1697,13 +1677,13 @@
+@@ -1697,13 +1680,13 @@
  end
  
  -- "Reset to defaults" at the right end of a category's heading (and of the tab's switch): asks first; X with a controller
@@ -749,7 +767,7 @@
      end }
  end
  
-@@ -1726,7 +1706,7 @@
+@@ -1726,7 +1709,7 @@
                      local e = t.entry[k] and t.entry[k].e
                      table.insert(names, esc(e and e.label or k) .. ": " .. esc(showValue((settingNext(k)), e)))
                  end
@@ -758,7 +776,7 @@
                      .. ". A click on the heading (A with a controller) folds or opens it. <LINE> <LINE> " .. table.concat(names, " <LINE> ")
              end })
          if open then
-@@ -1747,7 +1727,7 @@
+@@ -1747,7 +1730,7 @@
                      it.kids = #n.kids + (leaf and 1 or 0)
                      it.folded = COLLAPSED[ck] == true
                      it.fold = function() COLLAPSED[ck] = (not COLLAPSED[ck]) or nil end
@@ -767,7 +785,7 @@
                          act = it.fold })
                  end
                  table.insert(p.items, it)
-@@ -1769,13 +1749,13 @@
+@@ -1769,13 +1752,13 @@
              end
              for _, n in ipairs(nodes) do add(n, head, {}) end
              if s.dlss and PzoptSettings then
@@ -783,7 +801,7 @@
                              act = function() PzoptSettings.depsInstall() end } }
                      end })
                  PzoptSettings.depsCheck()
-@@ -1790,14 +1770,14 @@
+@@ -1790,14 +1773,14 @@
      local n, changed = 0, 0
      for _, sub in ipairs(cat.subs) do n, changed = n + #sub.keys, changed + changedCount(sub.keys) end
      local it = { id = "cat:" .. id, kind = "cat", label = cat.title, anchor = id,
@@ -800,7 +818,7 @@
          it.master, it.toggle, it.activate, it.isOn, it.meta = cat.master, m.toggle, m.activate, m.toggle.get, m.meta
          it.desc = function() return esc(cat.blurb or "") .. " <LINE> <LINE> " .. m.desc() end
      end
-@@ -1815,7 +1795,7 @@
+@@ -1815,7 +1798,7 @@
      if g.catSwitch then -- (Loading, System: its category's switch is the tab's; the whole mod's switch still dims it)
          top = { isOn = function() return (masterState(GROUPS.perf.master)) end }
      else
@@ -809,7 +827,7 @@
          top.isOn = top.toggle and top.toggle.get
          top.headLink = { text = RESET_LINK, action = resetAction(self, g.name, function()
              -- (what this page lists: Loading, the mod and multiplayer settings live on their own tabs now)
-@@ -1918,7 +1898,7 @@
+@@ -1918,7 +1901,7 @@
      local p = { items = {}, settingsPage = true }
      local q = self.query or ""
      local idx = self:searchIndex()
@@ -818,7 +836,7 @@
      local list = {}
      for row, score in pairs(hits or {}) do table.insert(list, { row = row, score = score }) end
      table.sort(list, function(a, b) if a.score ~= b.score then return a.score > b.score end return a.row.key < b.row.key end)
-@@ -1948,7 +1928,7 @@
+@@ -1948,7 +1931,7 @@
              local goAct = { label = "GO TO SECTION", key = "x", quiet = true, act = go }
              table.insert(list, { head = { id = "searchcat:" .. cn, kind = "cat", label = first.cat.title,
                  count = first.tabName .. ", " .. #hs .. (#hs == 1 and " match" or " matches"),
@@ -827,7 +845,7 @@
                  desc = function()
                      return "Matches in " .. esc(first.tabName) .. " / " .. esc(first.cat.title)
                          .. ". Go to section (A with a controller) opens it on its page; B comes back to these results."
-@@ -1967,7 +1947,7 @@
+@@ -1967,7 +1950,7 @@
              local item = settingItem(self, row.key, row.where)
              if TAB_LAYOUT then item.depth = 0 else item.value = function() return showValue((settingNext(row.key)), nil) end end
              item.searchNode = row.node
@@ -836,7 +854,7 @@
              if TAB_LAYOUT then -- (tab layout) the row opens the setting on its page; its value still changes on the row
                  item.activate = function() self:openSetting(row.node, row.key) end
                  item.verb = "Open its page"
-@@ -1977,13 +1957,13 @@
+@@ -1977,13 +1960,13 @@
              if leaf then
                  item.leafShown, leaf.depth, leaf.treeParent, leaf.lastFlags = true, (item.depth or 0) + 1, item, { true }
                  leaf.searchNode = row.node
@@ -852,7 +870,7 @@
      elseif total > 60 then
          table.insert(p.items, { kind = "note", label = (total - 60) .. " more: type more words to narrow it down." })
      end
-@@ -2047,7 +2027,7 @@
+@@ -2047,7 +2030,7 @@
      local PROFILER_NOTE = "The full performance overlay is on: drawing and sampling it costs frames, so this run scores lower "
          .. "than the same run without it. Compare its scores only with runs that had the overlay on too."
      p.head = function()
@@ -861,7 +879,7 @@
              .. "every pass, so each one starts alike: keep the window in front until the report shows."
              .. (S.opt.profiler and (" <LINE> <RGB:1,0.75,0.3> " .. PROFILER_NOTE) or "")
              .. (B.error and (" <LINE> <RGB:1,0.6,0.5> " .. esc(B.error)) or "")
-@@ -2055,13 +2035,13 @@
+@@ -2055,13 +2038,13 @@
      local start = { danger = true, key = "y",
          label = function()
              local e = PzoptBench.estimateText(S, B.scenarios)
@@ -877,7 +895,7 @@
                  .. (S.opt.profiler and ("\n\n" .. PROFILER_NOTE) or "")
          end,
          act = function() B.error = PzoptBench.start(S, B.scenarios) end }
-@@ -2100,7 +2080,7 @@
+@@ -2100,7 +2083,7 @@
                  return {
                      { "Where", info.where or "-", C_GREY },
                      { "Length", string.format("About %d s a pass, plus about 16 s to restart and load", sc.seconds), C_GREY },
@@ -886,7 +904,7 @@
                          PzoptBench.weathers[per.weather].label, PzoptBench.fogs[per.fog].label, PzoptBench.times[per.time].label,
                          PzoptBench.seasons[per.season or 1].label), C_GREY },
                      { "Score", id == "sweep" and "Not in the score: it measures each Visuals feature" or "Counts in the score", C_GREY },
-@@ -2118,7 +2098,7 @@
+@@ -2118,7 +2101,7 @@
          table.insert(p.items, row)
          if S.scen[id] then
              table.insert(p.items, dropRow("passes:" .. id, "Passes", PzoptBench.passes,
@@ -895,7 +913,7 @@
                  function() return per.passes end, function(i) per.passes = i end,
                  "How many times " .. esc(sc.title) .. " runs. The report gives its mean and how far the passes spread: more "
                      .. "passes, a tighter number.", 1, card))
-@@ -2148,8 +2128,8 @@
+@@ -2148,8 +2131,8 @@
          end
      end
      table.insert(p.items, { kind = "section", label = "Run" })
@@ -906,7 +924,7 @@
          function() return S.cool end, function(i) S.cool = i end,
          "A pause before each pass so the CPU and GPU start at the same temperature; worth it on laptops, whose clocks drop "
              .. "when they are hot."))
-@@ -2180,7 +2160,7 @@
+@@ -2180,7 +2163,7 @@
          value = function() -- (the time is on the button)
              local ids, _, _, _, steps = PzoptBench.estimate(S, B.scenarios)
              if #ids == 0 then return "Choose at least one scene" end
@@ -915,7 +933,7 @@
          end,
          desc = function()
              local e = estimate()
-@@ -2200,51 +2180,51 @@
+@@ -2200,51 +2183,51 @@
      local p = { items = {}, cardPage = TAB_LAYOUT }
      local function estimateLine()
          local ids, passes, ab, total, steps = PzoptBench.estimate(S, B.scenarios)
@@ -979,7 +997,7 @@
              toggle = TAB_LAYOUT and { get = function() return S.scen[id] == true end, set = function() S.scen[id] = not S.scen[id] end } or nil,
              depth = TAB_LAYOUT and 0 or nil,
              activate = function() S.scen[id] = not S.scen[id] end,
-@@ -2274,7 +2254,7 @@
+@@ -2274,7 +2257,7 @@
      for _, o in ipairs(PzoptBench.options) do
          local id = o.id
          table.insert(p.items, { id = "opt:" .. id, kind = "tick", label = o.title,
@@ -988,7 +1006,7 @@
              toggle = TAB_LAYOUT and { get = function() return S.opt[id] == true end, set = function() S.opt[id] = not S.opt[id] end } or nil,
              depth = TAB_LAYOUT and 0 or nil,
              activate = function() S.opt[id] = not S.opt[id] end,
-@@ -2288,7 +2268,7 @@
+@@ -2288,7 +2271,7 @@
      B.items = PzoptBench.history()
      local p = { items = {} }
      if #B.items == 0 then
@@ -997,7 +1015,7 @@
      end
      for i, it in ipairs(B.items) do
          local run = it[1]
-@@ -2303,8 +2283,8 @@
+@@ -2303,8 +2286,8 @@
              end,
              activate = function() self:openPage("bench/report", { run }, "bench/history") end,
              actions = {
@@ -1008,7 +1026,7 @@
                      local base = B.baseline
                      if not base or base == run then
                          local older = B.items[i + 1]
-@@ -2317,9 +2297,9 @@
+@@ -2317,9 +2300,9 @@
                      end
                      self:openPage("bench/compare", { base, run }, "bench/history")
                  end },
@@ -1020,7 +1038,7 @@
              } })
      end
      return p
-@@ -2339,9 +2319,9 @@
+@@ -2339,9 +2322,9 @@
      end
      local st = B.cmp
      local actions = {
@@ -1033,7 +1051,7 @@
            act = function() self:setOnlyDiff(not B.onlyDiff) end },
      }
      for _, k in ipairs({ "a", "b" }) do
-@@ -2365,24 +2345,24 @@
+@@ -2365,24 +2348,24 @@
      end
      local p = { items = {} }
      if not B.rep then
@@ -1064,7 +1082,7 @@
      }
      if TAB_LAYOUT then -- (the reports are the sidebar: Compare with the run before this one, the folder)
          actions[4] = { label = "COMPARE WITH PREVIOUS", act = function()
-@@ -2396,7 +2376,7 @@
+@@ -2396,7 +2379,7 @@
              self:openPage("bench/compare", { { run = prev, scene = sel.scene, cfg = sel.cfg },
                  { run = R.run, scene = sel.scene, cfg = sel.cfg, pass = sel.pass } })
          end }
@@ -1073,7 +1091,7 @@
      end
      if TAB_LAYOUT and PzoptReportDash then -- (2026-10-21) the Grafana run page's panels for one pass (pzopt_mainscreen_report.lua, showDash)
          p.dash = { run = R.run, rep = d, state = R, actions = actions,
-@@ -2448,7 +2428,7 @@
+@@ -2448,7 +2431,7 @@
              desc2 = function() return PzoptBench.recText(d) end,
              actions = actions })
      end
@@ -1082,7 +1100,7 @@
      return p
  end
  
-@@ -2470,7 +2450,7 @@
+@@ -2470,7 +2453,7 @@
                  local v = PzoptUpdateApi.view()
                  local t = "<RGB:1,1,1> " .. v.text
                  if id == "notes" or extra then
@@ -1091,7 +1109,7 @@
                  end
                  return breakLong(t)
              end,
-@@ -2478,18 +2458,18 @@
+@@ -2478,18 +2461,18 @@
                  local v = PzoptUpdateApi.view()
                  return v.actions
              end,
@@ -1114,7 +1132,7 @@
      p.progress = function()
          local v = PzoptUpdateApi.view()
          return v.progress
-@@ -2522,7 +2502,7 @@
+@@ -2522,7 +2505,7 @@
          -- the screen's own restart (restartNow: the harness rig, the helper, the stock quit that saves a game first); none
          -- where restartBlocked says why (a multiplayer client, a harness run's bench save)
          if now ~= nextV and pinned == "" and not self:restartBlocked() then
@@ -1123,7 +1141,7 @@
          end
          return acts
      end
-@@ -2536,17 +2516,17 @@
+@@ -2536,17 +2519,17 @@
                  .. "the code its author tested, and windows mods draw in are redrawn at the game's own rate. A value you pick for either "
                  .. "setting on the options tab still wins. <LINE> <LINE> <RGB:0.66,0.66,0.70> Next launch: <RGB:1,1,1> <SPACE> " .. esc(names[nextV] or nextV)
                  .. " <RGB:0.66,0.66,0.70>    Running now: <RGB:1,1,1> <SPACE> " .. esc(names[now] or now)
@@ -1145,7 +1163,7 @@
      for i, m in ipairs(tick) do
          local mod = m
          local names = PzoptCompatApi.TICK_NAMES
-@@ -2568,7 +2548,7 @@
+@@ -2568,7 +2551,7 @@
                      .. "are never spaced out (pick it when something of the mod lags or misbehaves with a rate set). Capped: they "
                      .. "follow the rate even where the check would keep them every frame. Applies on the next launch."
                  local pin = PzoptCompatApi.tickPinned()
@@ -1154,7 +1172,7 @@
                  return t
              end,
              actionsFn = function()
-@@ -2585,7 +2565,7 @@
+@@ -2585,7 +2568,7 @@
              end,
              reserve = { { "* AUTO", "* EVERY FRAME", "* CAPPED" } } })
      end
@@ -1163,7 +1181,7 @@
      for i, jar in ipairs(d.jars) do
          table.insert(p.items, { id = "jar" .. i, kind = "row", label = jar.name, value = PzoptCompatApi.verdict(d, i),
              desc = function() return PzoptCompatApi.jarText(d, i) end })
-@@ -2626,7 +2606,7 @@
+@@ -2626,7 +2609,7 @@
                              desc = function() return esc(tostring(val(c.label))) .. ": " .. esc(tostring(c.get() or "")) .. (c.options and ". Click or A for the list of choices; left / right step through them." or ". Click or A for the next value, left for the previous.") end })
                      elseif c.type == "tick" then
                          table.insert(rows, { id = "ctl:" .. tostring(val(c.label)), kind = "setting", label = c.label,
@@ -1172,7 +1190,7 @@
                              desc = function() return esc(tostring(val(c.label))) .. "." end })
                      elseif c.type == "entry" then
                          table.insert(rows, { id = "ctl:" .. tostring(val(c.label)), kind = "row", label = c.label,
-@@ -2748,12 +2728,12 @@
+@@ -2748,12 +2731,12 @@
      if it.verb then return it.verb end
      if it.kind == "node" then return "Open" end
      if it.kind == "group" then return it.open and "Fold" or "Open" end
@@ -1188,7 +1206,7 @@
      end
      local a = firstAction(it)
      return a and tostring(val(a.label)) or nil
-@@ -3152,7 +3132,7 @@
+@@ -3152,7 +3135,7 @@
              local vc = dim and C_DIM or C_GREY
              local v = L.value
              if not dim then
@@ -1197,7 +1215,7 @@
                  elseif v and string.sub(v, 1, 1) == "+" then vc = C_OPT elseif v and string.match(v, "^%-%d") then vc = { r = 1, g = 0.55, b = 0.35 } end
              end
              local vty, vcol = ty, self.valueCol -- (where the control sits: right of the name, or under it)
-@@ -3385,7 +3365,7 @@
+@@ -3385,7 +3368,7 @@
          local fy = y + h - foot
          self:drawRect(x + 1, fy, d.w - 2, 1, 0.35, c.r, c.g, c.b)
          local T = Joypad.Texture
@@ -1206,7 +1224,7 @@
      end
  end
  
-@@ -3484,7 +3464,7 @@
+@@ -3484,7 +3467,7 @@
              end
              local vc = C_GREY
              local v = L.value
@@ -1215,7 +1233,7 @@
              elseif v and string.sub(v, 1, 1) == "+" then vc = C_OPT elseif v and string.match(v, "^%-%d") then vc = { r = 1, g = 0.55, b = 0.35 } end
              if L.inline then
                  local right = self.width - 4 - pad + 4
-@@ -3925,7 +3905,7 @@
+@@ -3925,7 +3908,7 @@
              drawArrow(self, x0, ty, hS, not r.folded, (hot and mx < x) and C_TEXT or C_GREY, 1)
              if not r.folded then guide(gx, ty + hS, r.y + r.h - ty - hS) end
          end
@@ -1224,7 +1242,7 @@
          local col = (sel or hot or (path[r.id] and not r.run) or (r.secs and sideRowIs(s, r))) and C_TEXT or { r = 0.8, g = 0.8, b = 0.82 }
          if off then col = { r = 0.55, g = 0.55, b = 0.58 } end
          local count = r.count
-@@ -3963,7 +3943,7 @@
+@@ -3963,7 +3946,7 @@
      local tx = self.width - pad - G.tw
      drawToggle(self, tx, ry + math.floor((rh - G.th) / 2), G, clipsOn(), 1, hot)
      local lc = hot and C_TEXT or { r = 0.8, g = 0.8, b = 0.82 }
@@ -1233,7 +1251,7 @@
  end
  
  function PzoptMenuSidebar:prerender()
-@@ -3997,7 +3977,7 @@
+@@ -3997,7 +3980,7 @@
          local countW = count and (textW(UIFont.Small, count) + pad) or 0
          self:drawText(clipText(UIFont.Small, r.label, self.width - x - pad - countW), x, r.y + 5, col.r, col.g, col.b, 1, UIFont.Small)
          if count then
@@ -1242,7 +1260,7 @@
              self:drawTextRight(count, self.width - pad, r.y + 5, cc.r, cc.g, cc.b, 1, UIFont.Small)
          end
          if r.note then
-@@ -4098,7 +4078,7 @@
+@@ -4098,7 +4081,7 @@
  -- tools moved from a card over the sidebar to BACK's line); the box is as wide as "Recommended" with A's prompt
  local function presetBoxW()
      local hS = fontH(UIFont.Small)
@@ -1251,7 +1269,7 @@
  end
  
  function PzoptPresetCard:new(x, y, h, screen)
-@@ -4135,11 +4115,11 @@
+@@ -4135,11 +4118,11 @@
      local name = s.presetName or "Custom"
      local nc = s.presetName and C_TEXT or C_GREY
      local room = bw - 16 - hS - 6
@@ -1265,7 +1283,7 @@
      end
      local nx = bx + 8
      if s:promptsOn() and not open then -- (2026-10-21) X opens the list from anywhere: its glyph in the box
-@@ -4264,7 +4244,7 @@
+@@ -4264,7 +4247,7 @@
          local fy = self.height - foot
          self:drawRect(1, fy, self.width - 2, 1, 0.35, 1, 1, 1)
          local T = Joypad.Texture
@@ -1274,7 +1292,7 @@
      end
  end
  
-@@ -4347,10 +4327,10 @@
+@@ -4347,10 +4330,10 @@
          if self.restartBtn then self.restartBtn:setVisible(false) end
          return nil
      end
@@ -1288,7 +1306,7 @@
          self.restartBtn:initialise()
          self.restartBtn:instantiate()
          self.restartBtn:enableAcceptColor()
-@@ -4401,7 +4381,7 @@
+@@ -4401,7 +4384,7 @@
          for _, cat in ipairs(t.byId[tab] and t.byId[tab].cats or {}) do
              local off = cat.master and not (masterState(cat.master))
              local cid = tab .. "/" .. cat.id
@@ -1297,7 +1315,7 @@
              r.kids, r.folded = #cat.subs > 0, SIDE_FOLD[cid] == true
              if not r.folded then
                  for i, sub in ipairs(cat.subs) do add(cid .. "/" .. i, sub.title, 1, tostring(#(shownKeys(sub.keys)))) end
-@@ -4486,7 +4466,7 @@
+@@ -4486,7 +4469,7 @@
          add("home", "Start here", 0)
      elseif tab == "problems" then
          local probs = (PzoptSettingsLayout or {}).problems or {}
@@ -1306,7 +1324,7 @@
          r.kids, r.folded = #probs > 0, SIDE_FOLD.problems == true
          if not r.folded then
              for i, pr in ipairs(probs) do add("problems/" .. i, pr.title, 1) end
-@@ -4558,13 +4538,13 @@
+@@ -4558,13 +4541,13 @@
          rows = {}
          for _, e in ipairs(TOP) do
              local count = nil
@@ -1322,7 +1340,7 @@
                          if withSubs and b == cat.id then
                              for i, s in ipairs(cat.subs) do add(top .. "/" .. cat.id .. "/" .. i, s.title, 2, false, tostring(#(shownKeys(s.keys)))) end
                          end
-@@ -4641,7 +4621,7 @@
+@@ -4641,7 +4624,7 @@
          local p = pr
          local n = #p.lines
          table.insert(out, { label = p.name,
@@ -1331,7 +1349,7 @@
              current = self.presetSaved and self.presetName == p.name,
              pick = function() self:loadSavedPreset(p, unsaved) end })
      end
-@@ -4695,10 +4675,10 @@
+@@ -4695,10 +4678,10 @@
              PRESET_LAST = { title = saved, text = text, saved = true }
              local n = 0
              for _ in string.gmatch(text, "[^\n]+") do n = n + 1 end
@@ -1344,7 +1362,7 @@
          end
          for _, pr in ipairs(PzoptSettings.userPresets()) do
              if pr.name == name and not (self.presetSaved and self.presetName == name) then
-@@ -4926,28 +4906,28 @@
+@@ -4926,28 +4909,28 @@
      self.presetCard = PzoptPresetCard:new(0, 0, h, self)
      self.presetCard:initialise()
      self:addChild(self.presetCard)
@@ -1378,7 +1396,7 @@
      for _, t in ipairs(tools) do
          local tool = t
          local b = button(tool.label, nil, tool.act, tool.tip)
-@@ -4965,7 +4945,7 @@
+@@ -4965,7 +4948,7 @@
      end
      local group = 3 * gap
      local nav, presets = width(1, 2), width(3, #self.barEls)
@@ -1387,7 +1405,7 @@
      local two = x0 + nav + group + presets + group + restartW > x1
      local barH = two and (2 * h + gap) or h
      local function place(from, to, x, y)
-@@ -5031,7 +5011,7 @@
+@@ -5031,7 +5014,7 @@
      -- the sidebar: as wide as its widest row (every category and subcategory), within a fifth and 30 % of the window
      local t = settingsTree()
      local widest = textW(UIFont.Medium, ITEM_TEXT)
@@ -1396,7 +1414,7 @@
      for _, G in ipairs(t.groups) do
          for _, c in ipairs(G.cats) do
              widest = math.max(widest, textW(UIFont.Small, c.title) + 14 + textW(UIFont.Small, "000") + 12)
-@@ -5148,6 +5128,13 @@
+@@ -5148,6 +5131,13 @@
      t.clip = true
      t.autosetheight = false
      t.marginLeft, t.marginRight, t.marginTop = 12, 12, 10
@@ -1410,7 +1428,7 @@
      self:addChild(t)
      t:addScrollBars()
      return t
-@@ -5173,7 +5160,7 @@
+@@ -5173,7 +5163,7 @@
      function PzoptMenuImpact:prerender()
          ISPanel.prerender(self)
          local x, y, w = self.pad, 6, self.width - 2 * self.pad
@@ -1419,7 +1437,7 @@
          y = y + self.hM + 4
          if self.key then self:drawBars(x, y, w, PzoptSettings.effects(self.key)) end
      end
-@@ -5348,7 +5335,7 @@
+@@ -5348,7 +5338,7 @@
          valX = pad + labW + 14
      else
          -- (always the same rows, Java on two lines at most: the metadata's height never changes either)
@@ -1428,7 +1446,7 @@
          table.insert(rows, { "Released", m.released or "-", C_GREY })
          table.insert(rows, { "Key", m.key or key, C_GREY })
          for _, r in ipairs({ "Applies", "Released", "Key", "Java" }) do labW = math.max(labW, textW(UIFont.Small, r)) end
-@@ -5522,7 +5509,7 @@
+@@ -5522,7 +5512,7 @@
          local acts = {}
          if not row then return acts end
          if row.kind == "node" then
@@ -1437,7 +1455,7 @@
          end
          for _, a in ipairs(row.actions or {}) do table.insert(acts, a) end
          if row.actionsFn then for _, a in ipairs(row.actionsFn()) do table.insert(acts, a) end end
-@@ -5797,7 +5784,7 @@
+@@ -5797,7 +5787,7 @@
          local f = screen.focusables[screen.detailIndex or 1]
          local list = {}
          if f and f.button then table.insert(list, { T.AButton, tostring(f.el.title) }) end
@@ -1446,7 +1464,7 @@
          if f and f.el.spec and f.el.spec.type == "chooser" then table.insert(list, { BT[Joypad.DPadLeft], "Change" }) end
          local xa, ya = screen:keyAction("x"), screen:keyAction("y")
          if ya then table.insert(list, { T.YButton, tostring(val(ya.label)) }) end
-@@ -5869,7 +5856,7 @@
+@@ -5869,7 +5859,7 @@
      box.render = function(o)
          ISTextEntryBox.render(o)
          if o:getText() == "" and not o:isFocused() then
@@ -1455,7 +1473,7 @@
              o:drawText(clipText(UIFont.Small, hint, o.width - 16), 8, math.floor((o.height - fontH(UIFont.Small)) / 2),
                  C_GREY.r, C_GREY.g, C_GREY.b, 1, UIFont.Small)
          end
-@@ -5893,7 +5880,7 @@
+@@ -5893,7 +5883,7 @@
      box:setWidth(w)
      box:setX(self.contentX + self.contentW - w)
      box:setY(self.crumbY + math.floor((fontH(UIFont.Medium) - box:getHeight()) / 2))
@@ -1464,7 +1482,7 @@
  end
  
  -- the search box takes the keyboard (Ctrl+F, a click) or, with a controller, the game's on-screen keyboard (L3)
-@@ -5935,10 +5922,10 @@
+@@ -5935,10 +5925,10 @@
  function PzoptMainMenu:runSearch(text)
      self.query = text
      SEARCH.query = text
@@ -1477,7 +1495,7 @@
      elseif self.selected == "search" then
          self:selectNode(self.searchFrom or (TAB_LAYOUT and "perf" or "home"), "master")
      end
-@@ -5949,7 +5936,7 @@
+@@ -5949,7 +5939,7 @@
      local w = math.min(720, getCore():getScreenWidth() - 40)
      local h = 2 * (math.max(25, fontH(UIFont.Small) + 6) + 20)
      local box = ISTextBox:new((getCore():getScreenWidth() - w) / 2, getCore():getScreenHeight() / 2 - 200, w, h,
@@ -1486,7 +1504,7 @@
          PzoptSettings and PzoptSettings.importSource() or "", self, function(target, button)
              if button.internal ~= "OK" then return end
              local msg = PzoptSettings.importSettings(button.parent.entry:getText() or "")
-@@ -6033,12 +6020,12 @@
+@@ -6033,12 +6023,12 @@
      local w = math.min(self.contentW - 40, math.max(420, hS * 36))
      local inner = w - 32
      local blocked = self:restartBlocked()
@@ -1502,7 +1520,7 @@
          table.insert(names, wrap("- " .. p.label, UIFont.Small, inner - 12))
      end
      local h = 16 + fontH(UIFont.Medium) + 10 + #lines * hS + 8
-@@ -6050,7 +6037,7 @@
+@@ -6050,7 +6040,7 @@
      panel.borderColor = { r = 1, g = 1, b = 1, a = 1 }
      local screen = self
      panel.render = function(o)
@@ -1511,7 +1529,7 @@
          local y = 16 + fontH(UIFont.Medium) + 6
          for _, l in ipairs(lines) do o:drawText(l, 16, y, 0.85, 0.85, 0.88, 1, UIFont.Small) y = y + hS end
          y = y + 8
-@@ -6066,11 +6053,11 @@
+@@ -6066,11 +6056,11 @@
      panel.pzoptReadRoot = true
      self:addChild(panel)
      self.promptPanel = panel
@@ -1525,7 +1543,7 @@
          restart:initialise()
          restart:instantiate()
          restart:enableAcceptColor()
-@@ -6078,14 +6065,14 @@
+@@ -6078,14 +6068,14 @@
          table.insert(self.promptButtons, restart)
          bx = bx + bw + 10
      end
@@ -1542,7 +1560,7 @@
      self:traceFocus()
  end
  
-@@ -6114,10 +6101,10 @@
+@@ -6114,10 +6104,10 @@
  function PzoptMainMenu:restartBlocked()
      local ms = MainScreen.instance
      if ms and ms.inGame then
@@ -1555,7 +1573,7 @@
          end
      end
      return nil
-@@ -6133,7 +6120,7 @@
+@@ -6133,7 +6123,7 @@
  function PzoptMainMenu:askRestart()
      if self:restartBlocked() then return end
      local n = #pendingRestart()
@@ -1564,7 +1582,7 @@
          function() self:restartNow() end)
  end
  
-@@ -6238,7 +6225,7 @@
+@@ -6238,7 +6228,7 @@
  function PzoptMainMenu:setOnlyDiff(on)
      local B = benchState(self)
      B.onlyDiff = on
@@ -1573,7 +1591,7 @@
      if self.selected == "bench/compare" then self:refreshPage() end
  end
  
-@@ -6298,7 +6285,7 @@
+@@ -6298,7 +6288,7 @@
  function PzoptMainMenu:askShareCode()
      local w, h = math.min(520, getCore():getScreenWidth() - 40), 140
      local box = ISTextBox:new((getCore():getScreenWidth() - w) / 2, (getCore():getScreenHeight() - h) / 2, w, h,
@@ -1582,7 +1600,7 @@
              if button.internal == "OK" then target:applyShareCode(button.parent.entry:getText() or "") end
          end)
      box:initialise()
-@@ -6326,7 +6313,7 @@
+@@ -6326,7 +6316,7 @@
          elseif (self.sideIndex or 1) >= self:sideBackIndex() then
              el, row = self.back, self.sideIndex
          elseif TAB_LAYOUT and self.sideIndex == self:sideClipsIndex() then
@@ -1591,7 +1609,7 @@
          else
              el = { name = r and r.label or "-" }
              row = self.sideIndex or 1
-@@ -6928,53 +6915,53 @@
+@@ -6928,53 +6918,53 @@
      local out = {}
      local function add(tex, label) if tex and label then table.insert(out, { tex, label }) end end
      if self.help then
@@ -1661,7 +1679,7 @@
          add(T.BButton, "List")
      end
      local x, y = self:keyAction("x"), self:keyAction("y")
-@@ -6992,25 +6979,25 @@
+@@ -6992,25 +6982,25 @@
          return {}
      end
      local nPend = #pendingRestart()
@@ -1700,7 +1718,7 @@
  }
  
  function PzoptMainMenu:render()
-@@ -7097,7 +7084,7 @@
+@@ -7097,7 +7087,7 @@
      if TAB_LAYOUT and self.search and self:promptsOn() and not self.prompt then
          -- (2026-10-21) the controller's "R3 Clips, View / L3 Search" left of the box: at 1280x720 "Compare" ran into them
          local g = fontH(UIFont.Small)
@@ -1709,7 +1727,7 @@
      end
      local sep = "  >  "
      local sepW = textW(UIFont.Medium, sep)
-@@ -7297,7 +7284,7 @@
+@@ -7297,7 +7287,7 @@
          if self.search and self:promptsOn() and not self.prompt then
              local bx, by = self.search:getX(), self.search:getY() + math.floor((self.search:getHeight() - fontH(UIFont.Small)) / 2)
              local BT = Joypad.ButtonTextures -- (R3: the clips, next to the other header prompt)
@@ -1718,21 +1736,466 @@
                  bx - 10, by, self.contentX)
          end
          -- B on BACK while the sidebar has the cursor (B closes from there), Start on RESTART NOW
-@@ -7500,7 +7487,7 @@
-     label:setVisible(self.optionsOption:isVisible())
-     self.bottomPanel:setHeight(self.bottomPanel:getHeight() + labelHgt)
-     self.maxMenuItemWidth = math.max(self.maxMenuItemWidth or 0, textW(UIFont.Large, ITEM_TEXT), textW(UIFont.Large, ITEM_UPDATE_TEXT),
+@@ -7420,98 +7410,6 @@
+ 
+ -- Once per frame while the screen exists: the column stays hidden under it, it comes back when Options closes, and the
+ -- controller goes back to it when a box it opened (the share code) gave the focus away.
+-local function screenTick(ms)
+-    local s = ms.pzoptMenuScreen
+-    if not s then return end
+-    if not s:isVisible() then return end
+-    if s.rebuildPending then s:rebuildNow() return end
+-    if ms.bottomPanel and ms.bottomPanel:isVisible() then ms.bottomPanel:setVisible(false) end
+-    if UIManager.isModalVisible() then return end
+-    for _, cls in ipairs({ PzoptUpdateDialog, PzoptCompatDialog }) do
+-        if cls and cls.instance and cls.instance:isVisible() then return end
+-    end
+-    local jd = mainJoypad()
+-    if jd and jd.focus ~= s then
+-        local f = jd.focus
+-        local lost = f == nil or f == ms
+-        if not lost then
+-            local ok, vis = pcall(function() return f:isReallyVisible() end)
+-            lost = not ok or not vis
+-        end
+-        if lost then
+-            jd.focus = s
+-            updateJoypadFocus(jd)
+-        end
+-    end
+-end
+-
+--- ------------------------------------------------------------------ the main-menu item
+-
+-local function labelHeight()
+-    return FONT_LARGE + 8 * 2
+-end
+-
+-local function onItemClick(item, x, y)
+-    local ms = MainScreen.instance
+-    if not ms or (ms.delay or 0) > 0 or ms.tutorialButton or ms.checkSavefileModal then return end
+-    getSoundManager():playUISound("UIActivateMainMenuItem")
+-    local s = PzoptMainMenu.show()
+-    -- an offered update (the item says so): the screen opens on the UPDATE page, not on home
+-    if s and updateOffered(updState()) then s:selectNode("update", "master") end
+-    PzoptLogInfo("[pzopt] menu: screen opened on " .. tostring(s and s.selected))
+-end
+-
+--- The stock hover fade over the stock row height; the note line under it in the small font (the label is taller than the
+--- stock ones by that line; fitMenuColumn keeps room for it).
+-local function itemPrerender(self)
+-    local fullHgt = self.height
+-    self.height = self.pzoptRowHgt
+-    MainScreen.prerenderBottomPanelLabel(self)
+-    self.height = fullHgt
+-    local note, news = itemNote()
+-    if news then
+-        self:drawText(note, 0, self.pzoptRowHgt - 6, 0.6, 1, 0.6, 1, UIFont.Small)
+-    else
+-        self:drawText(note, 0, self.pzoptRowHgt - 6, 0.7, 0.7, 0.7, 1, UIFont.Small)
+-    end
+-end
+-
+--- Right below Options, in the main menu and in the pause menu (the performance overlay's item that sat there moved into
+--- the screen's Profiler page, 2026-10-18).
+-local function addItem(self)
+-    if not self.optionsOption or not self.bottomPanel or self.pzoptMenuOption then return end -- the main and the pause menu
+-    local above = self.optionsOption
+-    local rowHgt = labelHeight()
+-    local labelHgt = rowHgt + FONT_SMALL -- the note line starts 6 px above the stock row's bottom
+-    local y = above:getBottom()
+-    for _, child in pairs(self.bottomPanel:getChildren()) do
+-        if child.Type == "ISLabel" and child ~= above and child ~= self.optionsOption and child:getY() >= y then
+-            child:setY(child:getY() + labelHgt)
+-        end
+-    end
+-    local label = ISLabel:new(self.optionsOption:getX(), y, labelHgt, ITEM_TEXT, 1, 1, 1, 1, UIFont.Large, true)
+-    label.internal = "PZOPT_MENU"
+-    label:initialise()
+-    label.onMouseDown = onItemClick
+-    label.fade = UITransition.new()
+-    label.fade:setFadeIn(false)
+-    label.prerender = itemPrerender
+-    label.pzoptRowHgt = rowHgt
+-    label:setVisible(self.optionsOption:isVisible())
+-    self.bottomPanel:setHeight(self.bottomPanel:getHeight() + labelHgt)
+-    self.maxMenuItemWidth = math.max(self.maxMenuItemWidth or 0, textW(UIFont.Large, ITEM_TEXT), textW(UIFont.Large, ITEM_UPDATE_TEXT),
 -        textW(UIFont.Small, "Restart to finish the update"))
-+        textW(UIFont.Small, CodexPZOptCN.strings["s2"]))
-     label:setWidth(math.max(self.bottomPanel:getWidth(), self.maxMenuItemWidth))
-     self.bottomPanel:addChild(label)
-     self.pzoptMenuOption = label
-@@ -7695,7 +7682,7 @@
-             s:selectNode("home", "master")
-             for i, it in ipairs(s.list.items) do if it.id == "uninstall" then s.list:setSelected(i) end end
-             s:showDetail()
+-    label:setWidth(math.max(self.bottomPanel:getWidth(), self.maxMenuItemWidth))
+-    self.bottomPanel:addChild(label)
+-    self.pzoptMenuOption = label
+-    pcall(function() perf():pzoptUpdateCheck() end) -- the once-per-boot release check (pzopt.Updater)
+-    PzoptLogInfo("[pzopt] menu: main menu item added")
+-end
+-
+--- Controller. The D-pad walks self.joypadButtonsY, which the stock MainScreen:onGainJoypadFocus rebuilds from its own
+--- list of labels, and A goes through onMenuItemMouseDownMainMenu, which only knows the stock `internal` names. The item
+--- gets its own row after the overlay item's (or Options') while it is visible; runs after every stock rebuild and once
+--- per frame while the menu holds the focus.
+ syncJoypadRow = function(self)
+     local label = self.pzoptMenuOption
+     local rows = self.joypadButtonsY
+@@ -7539,320 +7437,47 @@
+     end
+ end
+ 
+-local function syncItem(self)
+-    local label = self.pzoptMenuOption
+-    label:setVisible(self.optionsOption:isVisible())
+-    local text = itemText() -- the updater's check finishing while the menu shows: the label follows at once
+-    if label.name ~= text then
+-        label:setNameWithoutMoving(text)
+-        label:setWidth(self.maxMenuItemWidth or label:getWidth())
+-        PzoptLogInfo("[pzopt] menu: main menu item now " .. text)
+-    end
+-    if self.joyfocus then syncJoypadRow(self) end
+-end
+-
+--- The main menu column fits the window. The stock column plus our rows was taller than a 1280 x 720 window with the
+--- large UI font, and the stock layout, which gives the logo what the column leaves, then put Continue and Load above the
+--- screen. Rows (and the gaps between groups) are packed closer, never below the font's own height, until the column fits
+--- between the stock margins; from the rows' original places, so a later resize undoes it.
+-local function fitMenuColumn(self)
+-    local bp = self.bottomPanel
+-    if not bp or self.inGame then return end
+-    local sw, sh = getCore():getScreenWidth(), getCore():getScreenHeight()
+-    local labels, total0 = {}, 0
+-    for _, c in pairs(bp:getChildren()) do
+-        if c.Type == "ISLabel" then
+-            if c.pzoptFitY == nil or c:getY() ~= c.pzoptFitY then -- first sight, or someone else moved it: its own place
+-                c.pzoptY0, c.pzoptH0, c.pzoptRow0 = c:getY(), c:getHeight(), c.pzoptRowHgt
+-            end
+-            table.insert(labels, c)
+-            total0 = math.max(total0, c.pzoptY0 + c.pzoptH0)
+-        end
+-    end
+-    if total0 <= 0 then return end
+-    local padding = 50 * (sw / 1920)
+-    local f = math.min(1, (sh - 2 * padding) / total0)
+-    if f == bp.pzoptFitF and sh == bp.pzoptFitH then return end
+-    bp.pzoptFitF, bp.pzoptFitH = f, sh
+-    local minH = FONT_LARGE + 2
+-    local bottom = 0
+-    table.sort(labels, function(a, b) return a.pzoptY0 < b.pzoptY0 end)
+-    for _, c in ipairs(labels) do
+-        local y, h = math.floor(c.pzoptY0 * f), math.max(math.min(c.pzoptH0, minH), math.floor(c.pzoptH0 * f))
+-        if c.pzoptRow0 then
+-            -- the item with a note line draws it 6 px above its row's bottom: the row keeps room for the title above it
+-            c.pzoptRowHgt = math.min(c.pzoptRow0, math.max(FONT_LARGE + 12, math.floor(c.pzoptRow0 * f)))
+-            h = math.max(h, c.pzoptRowHgt - 6 + FONT_SMALL + 2)
+-        end
+-        y = math.max(y, bottom) -- never on top of the row above (the item with a note keeps more than its share)
+-        c:setY(y)
+-        c:setHeight(h)
+-        c.pzoptFitY = y
+-        bottom = math.max(bottom, y + h)
+-    end
+-    bp:setHeight(bottom)
+-end
+-
+--- The pause menu: no row on top of another (Workshop report 2026-10-19: "the PZO entries in the ESC menu overlap options
+--- from other mods"). A mod that adds its own row under Options after us (its instantiate wraps ours: game-dir Lua loads
+--- first) places it where ours already is and moves only Exit / Quit down. Every frame, after the stock and the mods'
+--- layout: the visible rows in their order, each pushed down to the bottom of the one above when it overlaps it, the panel
+--- as tall as the column. Rows that do not overlap keep their place, so the stock layout is untouched.
+-local function unstackPauseMenu(self)
+-    local bp = self.bottomPanel
+-    local me = self.pzoptMenuOption
+-    if not bp or not me or not me:isVisible() then return end
+-    local x0, x1 = me:getX(), me:getX() + math.max(1, me:getWidth())
+-    local rows = {}
+-    for _, c in pairs(bp:getChildren()) do
+-        -- the column's rows (a row of another column, beside ours, is left where it is)
+-        if c.Type == "ISLabel" and c:isVisible() and c:getX() < x1 and c:getX() + math.max(1, c:getWidth()) > x0 then table.insert(rows, c) end
+-    end
+-    if #rows < 2 then return end
+-    -- by place; on the same place ours first (it was there first: the other row was put on top of it)
+-    table.sort(rows, function(a, b)
+-        if a == b then return false end
+-        local ya, yb = a:getY(), b:getY()
+-        if ya ~= yb then return ya < yb end
+-        if a == me or b == me then return a == me end
+-        return tostring(a.internal or a.name) < tostring(b.internal or b.name)
+-    end)
+-    local bottom, moved = rows[1]:getY() + rows[1]:getHeight(), false
+-    for i = 2, #rows do
+-        local c = rows[i]
+-        if c:getY() < bottom - 1 then
+-            c:setY(bottom)
+-            moved = true
+-        end
+-        bottom = math.max(bottom, c:getY() + c:getHeight())
+-    end
+-    if moved or bp:getHeight() < bottom then
+-        if bp:getHeight() < bottom then bp:setHeight(bottom) end
+-        if not self.pzoptUnstackLogged then
+-            self.pzoptUnstackLogged = true
+-            PzoptLogInfo("[pzopt] menu: pause menu rows moved apart (another mod's row overlapped)")
+-        end
+-    end
+-end
+-
+--- Escape at the main menu: the open pzopt dialog first (they never get key events of their own: UIManager sends those
+--- only to elements that ask for them), then the screen; the stock screens keep theirs.
+-local function onEscape(ms)
+-    for _, cls in ipairs({ PzoptUpdateDialog, PzoptCompatDialog }) do -- the dialogs of the rigs (devUpdateDrive, compat_check)
+-        local d = cls and cls.instance
+-        if d and d:isVisible() then
+-            if d.onKeyRelease then d:onKeyRelease(Keyboard.KEY_ESCAPE) else d:close() end
+-            return true
+-        end
+-    end
+-    local s = ms.pzoptMenuScreen
+-    if s and s:isVisible() and s.presetOpen and s:presetOpen() then -- the preset card's list closes first
+-        s:closePresets()
+-        return true
+-    end
+-    if s and s:isVisible() and s.list and s.list.drop then -- an open dropdown closes first
+-        s.list:closeDrop()
+-        return true
+-    end
+-    if s and s:isVisible() and s.search and s.search:isFocused() then
+-        s.search:unfocus()
+-        return true
+-    end
+-    if s and s:isVisible() then
+-        -- an Escape right after a controller press (a trigger: Steam's desktop controller layout can send it as a key) is
+-        -- that press, not the keyboard's: the controller's own button decides
+-        if s.joyfocus and getTimestampMs() - (s.padInputAt or 0) < 400 then
+-            PzoptLogInfo("[pzopt] menu: Escape right after a controller press ignored")
+-            return true
+-        end
+-        s:close("Escape")
+-        return true
+-    end
+-    return false
+-end
+-
+--- devUninstallDrive (dev rig, Config key; harness/uninstall-e2e.sh): once the main menu is up, the real controls in order:
+--- the PZ OPTIMIZATION screen, its home page's Uninstall PZ Optimization... row, its UNINSTALL button, Yes. Each step is
+--- logged ("[pzopt-e2e] ...") and held a few seconds for the script's screenshot; Yes starts pzopt.Uninstall and quits.
+-local uninstallDrive = { step = 0, at = 0 }
+-local function uninstallDriveTick()
+-    local d = uninstallDrive
+-    if d.step < 0 then return end
+-    if d.step == 0 then
+-        local ok, v = pcall(function() return getPerformance():getPzoptOption("devUninstallDrive") end)
+-        if not ok or v ~= "true" then d.step = -1 return end
+-        d.step, d.at = 1, getTimestampMs() + 4000
+-        return
+-    end
+-    if getTimestampMs() < d.at then return end
+-    local ms = MainScreen.instance
+-    if not ms or ms.inGame or not ms.pzoptMenuOption then return end
+-    if d.step == 1 then
+-        local s = PzoptMainMenu.show()
+-        if not s then return end
+-        local b = s.cardButtons and s.cardButtons.uninstall -- (tab layout: in the bar under the page)
+-        if not b then
+-            s:selectNode("home", "master")
+-            for i, it in ipairs(s.list.items) do if it.id == "uninstall" then s.list:setSelected(i) end end
+-            s:showDetail()
 -            for _, f in ipairs(s.actionButtons or {}) do if f.title == "UNINSTALL" then b = f end end
-+            for _, f in ipairs(s.actionButtons or {}) do if f.title == CodexPZOptCN.strings["s1"] then b = f end end
-         end
-         if not b then
-             print("[pzopt-e2e] uninstall drive: no UNINSTALL button on the screen's home page (" .. tostring(s.lastDesc) .. ")")
+-        end
+-        if not b then
+-            print("[pzopt-e2e] uninstall drive: no UNINSTALL button on the screen's home page (" .. tostring(s.lastDesc) .. ")")
+-            d.step = -1
+-            return
+-        end
+-        d.button = b
+-        print("[pzopt-e2e] screen shown: button \"" .. tostring(b.title) .. "\" enabled=" .. tostring(b.enable) .. " visible="
+-            .. tostring(b:isReallyVisible()) .. " detail=" .. tostring(s.lastDesc))
+-        getCore():TakeFullScreenshot("pzopt-e2e-A-screen.png")
+-        d.step, d.at = 2, getTimestampMs() + 3000
+-    elseif d.step == 2 then
+-        d.button:forceClick()
+-        d.step, d.at = 3, getTimestampMs() + 1500
+-    elseif d.step == 3 then
+-        local s = PzoptMainMenu.instance()
+-        local m = s and s.confirmModal
+-        if not m then
+-            print("[pzopt-e2e] uninstall drive: the button opened no dialog")
+-            d.step = -1
+-            return
+-        end
+-        print("[pzopt-e2e] dialog shown: " .. string.gsub(tostring(m.text), "\n", " | "))
+-        getCore():TakeFullScreenshot("pzopt-e2e-A-dialog.png")
+-        d.step, d.at = 4, getTimestampMs() + 3000
+-    elseif d.step == 4 then
+-        local m = PzoptMainMenu.instance().confirmModal
+-        d.step = -1
+-        print("[pzopt-e2e] pressing Yes at " .. getTimestampMs())
+-        m:onClick(m.yes)
+-    end
+-end
+-Events.OnFETick.Add(function() pcall(uninstallDriveTick) end)
+-
+-local function install()
+-    if not MainScreen or MainScreen.pzoptMenuItem then return end
+-    local ok, has = pcall(function() return getPerformance():hasPzoptOptions() end)
+-    if not ok or not has then
+-        print("[pzopt] menu: PerformanceSettings override not loaded or build mismatch, item not added")
+-        return
+-    end
+-    MainScreen.pzoptMenuItem = true
+-    local stockInstantiate = MainScreen.instantiate
++do
++    local function copyMethods(target, translated)
++        for key, method in pairs(translated) do
++            if type(method) == "function" then target[key] = method end
++        end
++        return target
++    end
++
++    PzoptMenuList = copyMethods(_G.PzoptMenuList, PzoptMenuList)
++    PzoptMenuControl = copyMethods(_G.PzoptMenuControl, PzoptMenuControl)
++    PzoptMenuSidebar = copyMethods(_G.PzoptMenuSidebar, PzoptMenuSidebar)
++    PzoptMainMenu = copyMethods(_G.PzoptMainMenu, PzoptMainMenu)
++
++    -- Leave the label's internal name and click handler to the author. ISLabel draws its translation field.
++    local function localizeLabel(screen)
++        local label = screen and screen.pzoptMenuOption
++        if not label or label.internal ~= "PZOPT_MENU" or label.codexPzoptCN then return end
++        label.codexPzoptCN = true
++        label.translation = itemText()
++        screen.maxMenuItemWidth = math.max(screen.maxMenuItemWidth or 0,
++            textW(UIFont.Large, ITEM_TEXT), textW(UIFont.Large, ITEM_UPDATE_TEXT))
++        label:setWidth(math.max(label:getWidth(), screen.maxMenuItemWidth))
++
++        local drawText = label.drawText
++        function label:drawText(text, x, y, r, g, b, a, font)
++            if x == 0 and y == self.pzoptRowHgt - 6 and font == UIFont.Small then text = itemNote() end
++            return drawText(self, text, x, y, r, g, b, a, font)
++        end
++        local prerender = label.prerender
++        function label:prerender(...)
++            self.translation = itemText()
++            return prerender(self, ...)
++        end
++    end
++
++    local instantiate = MainScreen.instantiate
+     function MainScreen:instantiate(...)
+-        stockInstantiate(self, ...)
+-        local okAdd, err = pcall(addItem, self)
+-        if not okAdd then print("[pzopt] menu: item failed: " .. tostring(err)) end
+-    end
+-    local stockPrerender = MainScreen.prerender
+-    function MainScreen:prerender(...)
+-        pcall(fitMenuColumn, self) -- before the stock layout places the column under the logo
+-        stockPrerender(self, ...)
+-        if self.pzoptMenuOption then
+-            local okSync, err = pcall(syncItem, self)
+-            if not okSync then
+-                print("[pzopt] menu: sync failed, item removed: " .. tostring(err))
+-                self.pzoptMenuOption:setVisible(false)
+-                self.pzoptMenuOption = nil
+-            end
+-        end
+-        if self.pzoptMenuScreen then
+-            local okTick, err = pcall(screenTick, self)
+-            if not okTick then print("[pzopt] menu: screen tick: " .. tostring(err)) end
+-        end
+-    end
+-    local stockGainJoypadFocus = MainScreen.onGainJoypadFocus
+-    function MainScreen:onGainJoypadFocus(...)
+-        stockGainJoypadFocus(self, ...)
+-        if self.pzoptMenuOption then pcall(syncJoypadRow, self) end
+-    end
+-    -- (2026-10-24, the flip) a controller's first A goes to this when it has no focus yet (JoypadControllerData
+-    -- onPressButtonNoFocus); stock knows the column and its own screens, not ours, so with the screen up before any press
+-    -- (the benchmark's report after its restart) the A was dropped and the pad never reached the screen
+-    local stockFocusForController = MainScreen.getCurrentFocusForController
+-    function MainScreen:getCurrentFocusForController(...)
+-        local s = self.pzoptMenuScreen
+-        if s and s:isReallyVisible() and not (self.animPopup and self.animPopup:isReallyVisible()) and not UIManager.isModalVisible() then
+-            for _, cls in ipairs({ PzoptUpdateDialog, PzoptCompatDialog }) do
+-                if cls and cls.instance and cls.instance:isReallyVisible() then return cls.instance end
+-            end
+-            return s
+-        end
+-        return stockFocusForController(self, ...)
+-    end
+-    local stockJoypadDown = MainScreen.onJoypadDown
+-    function MainScreen:onJoypadDown(button, ...)
+-        local label = self.pzoptMenuOption
+-        if label and button == Joypad.AButton and self.joypadButtons and self.joypadButtons[self.joypadIndex] == label then
+-            onItemClick(label, 0, 0)
+-            return
+-        end
+-        return stockJoypadDown(self, button, ...)
+-    end
+-    local stockKeyRelease = MainScreen.onKeyRelease
+-    function MainScreen:onKeyRelease(key, ...)
+-        if key == Keyboard.KEY_F and PzoptMainMenu.ctrlDown() and self.pzoptMenuScreen and self.pzoptMenuScreen:isVisible() then
+-            self.pzoptMenuScreen:focusSearch()
+-            return
+-        end
+-        if key == Keyboard.KEY_S and self.pzoptMenuScreen and self.pzoptMenuScreen:isVisible() and self.pzoptMenuScreen:shortcut(key) then return end
+-        if key == Keyboard.KEY_ESCAPE and not self.inGame and not UIManager.isModalVisible() then
+-            local okEsc, done = pcall(onEscape, self)
+-            if okEsc and done then return end
+-        end
+-        return stockKeyRelease(self, key, ...)
+-    end
+-    -- The multiplayer pause menu lays out Options, Exit and Quit to desktop again every frame in the stock render (the
+-    -- invite item comes and goes): the item goes back below Options, the two under it one row down.
+-    local stockRender = MainScreen.render
+-    function MainScreen:render(...)
+-        stockRender(self, ...)
+-        local label = self.pzoptMenuOption
+-        if label and self.inGame and isClient() and self.optionsOption then
+-            pcall(function()
+-                local h = label:getHeight()
+-                label:setY(self.optionsOption:getBottom())
+-                if self.exitOption then self.exitOption:setY(self.exitOption:getY() + h) end
+-                if self.quitToDesktopOption then
+-                    self.quitToDesktopOption:setY(self.quitToDesktopOption:getY() + h)
+-                    self.bottomPanel:setHeight(self.quitToDesktopOption:getBottom())
+-                end
+-            end)
+-        end
+-        if label and self.inGame then pcall(unstackPauseMenu, self) end
+-    end
+-    -- In a game the menu key (Escape) toggles the pause menu (the stock ToggleEscapeMenu): with the PZ Optimization screen
+-    -- up it closes the screen first, back onto the pause menu, instead of resuming the game under it
+-    if ToggleEscapeMenu and not MainScreen.pzoptEscapeWrapped then
+-        MainScreen.pzoptEscapeWrapped = true
+-        local stockToggle = ToggleEscapeMenu
+-        local function toggle(key)
+-            local ms = MainScreen.instance
+-            local isMenuKey = false
+-            pcall(function()
+-                isMenuKey = getCore():isKey(KeybindId.MAIN_MENU, key) or (getCore():getKey(KeybindId.MAIN_MENU) == 0 and key == Keyboard.KEY_ESCAPE)
+-            end)
+-            if isMenuKey and ms and ms.inGame and ms:isVisible() and not UIManager.isModalVisible() then
+-                local okEsc, done = pcall(onEscape, ms)
+-                if okEsc and done then return end
+-            end
+-            return stockToggle(key)
+-        end
+-        -- The global is the wrapper too (hotfix 2026-10-19): mods wrap the menu key with Events.OnKeyPressed.Remove(
+-        -- ToggleEscapeMenu) + their own function calling the old global + Add. With the global left at the stock function
+-        -- their Remove missed ours, so stock ran twice per press and the pause menu opened and closed in one frame.
+-        ToggleEscapeMenu = toggle
+-        Events.OnKeyPressed.Remove(stockToggle)
+-        Events.OnKeyPressed.Add(ToggleEscapeMenu)
+-    end
+-    -- Ctrl+F, Ctrl+S, Alt+S in a game (the pause menu's screen: MainScreen.onKeyRelease is the main menu's)
+-    Events.OnKeyPressed.Add(function(key)
+-        local ms = MainScreen.instance
+-        local s = ms and ms.inGame and ms.pzoptMenuScreen
+-        if key == Keyboard.KEY_F and PzoptMainMenu.ctrlDown() and s and s:isVisible() then pcall(function() s:focusSearch() end) end
+-        if key == Keyboard.KEY_S and s and s:isVisible() then pcall(function() s:shortcut(key) end) end
+-    end)
+-end
+-
+-install()
+-Events.OnGameBoot.Add(install)
++        instantiate(self, ...)
++        localizeLabel(self)
++    end
++    localizeLabel(MainScreen.instance)
++    CodexPZOptCN.install()
++    CodexPZOptCN.menuApplied = true
++end
