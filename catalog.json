@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target_game": "Project Zomboid Build 42.21",
-  "scope": "46 registered patches: 37 optional collection patches, 3 EX companions, 5 redistribution holds and 1 optional Freshness Lunchbox companion.",
+  "scope": "50 registered patches. See publishing/workshop.json for the verified public payload.",
   "mods": [
     {
       "id": "Codex_AmmoBox_CN_TextFix_4221",
@@ -238,8 +238,8 @@
       "folder": "Codex_NarcoticsStatus_4221",
       "title_zh": "N&C药物状态面板",
       "title_en": "N&C Drug Status Panel",
-      "version": "1.0.0",
-      "description_original": "右键 N&C 药物查看各类过量累计值和预计消退时间。",
+      "version": "1.1.1",
+      "description_original": "右键 N&C 药物查看过量、成瘾、药效、戒断与混用状态。",
       "requires_raw": "\\N&CsNarcotics",
       "load_after_raw": "N&CsNarcotics,CodexNarcotics_CN_4221",
       "required_mods": [
@@ -252,10 +252,10 @@
       "doc": "docs/patches/Codex_NarcoticsStatus_4221.md",
       "reconstruction_status": "recipes_ready",
       "source_runtime_info": "42/mod.info",
-      "summary_zh": "右键N&C药物查看分类过量累计值和预计消退时间；只读状态面板，不改变药效。",
-      "summary_en": "Adds a read-only N&C drug context panel for accumulated overdose categories and estimated decay times; it does not alter effects.",
+      "summary_zh": "右键查看过量累计、成瘾预警、当前药效、戒断和混用状态。",
+      "summary_en": "Read-only context panel for overdose, addiction, active effects, withdrawal and interactions.",
       "runtime_files": 5,
-      "runtime_bytes": 12732,
+      "runtime_bytes": 27974,
       "reconstruction_modes": {
         "own": 5
       },
@@ -265,7 +265,9 @@
           "reason": "documentation/history/personal configuration; not a runtime source"
         }
       ],
-      "source_roots": []
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2",
+      "distribution": "optional_in_patch_collection"
     },
     {
       "id": "Codex_StimCompatibility_4221",
@@ -336,7 +338,7 @@
       "summary_zh": "旧普通1.0.0的四个物品接入与HavenFall EX桥接。普通发布1.0.1已内置四ID；该版本下旧普通adapter整体拒绝接入，HavenFall EX独立脚本仍按EX rc.2版本验证工作。",
       "summary_en": "Contains four-item integration for ordinary 1.0.0 and a HavenFall EX bridge. Ordinary release 1.0.1 already includes the four IDs; its legacy ordinary adapter is rejected as a whole, while the separate HavenFall EX script retains its EX rc.2 version checks.",
       "runtime_files": 3,
-      "runtime_bytes": 17050,
+      "runtime_bytes": 17813,
       "reconstruction_modes": {
         "own": 3
       },
@@ -502,7 +504,7 @@
       "summary_zh": "保留猫又背包逻辑，为其他容器透传hasRoomFor参数，并仅对已知MaoMao包装链恢复EX就绪判定；未知包装仍拒绝。",
       "summary_en": "Preserves Nekomata backpack logic, passes hasRoomFor arguments for other containers and restores EX readiness only for the audited MaoMao wrapper chain; unknown wrappers remain rejected.",
       "runtime_files": 2,
-      "runtime_bytes": 8118,
+      "runtime_bytes": 10518,
       "reconstruction_modes": {
         "own": 2
       },
@@ -1135,7 +1137,7 @@
       "folder": "Codex_ViewpointLegacyPromptFix_4221",
       "title_zh": "蘇清的Viewpoint旧版手柄提示修复补丁",
       "title_en": "SuQing’s Viewpoint Legacy Prompt Fix Patch",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "description_original": "Restores controller master and prompt-HUD gates for Legacy menu hints. Mouse-only context menus no longer draw A/B prompts. Keeps active-controller and keyboard-resume hints.",
       "requires_raw": "ProjectViewpointQOLLegacy0.1.6",
       "load_after_raw": "ProjectViewpointQOLLegacy0.1.6",
@@ -1148,15 +1150,16 @@
       "doc": "docs/patches/Codex_ViewpointLegacyPromptFix_4221.md",
       "reconstruction_status": "recipes_ready",
       "source_runtime_info": "42/mod.info",
-      "summary_zh": "修复旧版QOL右键菜单绕过手柄总开关的问题；控制器或提示关闭、纯鼠标时不显示A/B，保留启用时的手柄及切回提示。不含Java。",
-      "summary_en": "Suppresses Legacy A/B context-menu prompts when controller support or its HUD is off, or no pad is active. Preserves active-pad and enabled detached-resume hints. No Java.",
+      "summary_zh": "修复旧版 QOL 的右键手柄提示。支持 42.21 和 42.22，在 Legacy 版本不匹配、手柄或提示关闭以及纯鼠标时隐藏 A/B。Lua 补丁。",
+      "summary_en": "Fixes Legacy QOL right-click controller prompts on 42.21 and 42.22. Suppresses A/B on an unsupported Viewpoint version, disabled controller/HUD, or mouse-only menus. Lua only.",
       "runtime_files": 5,
-      "runtime_bytes": 4396,
+      "runtime_bytes": 4739,
       "reconstruction_modes": {
         "own": 5
       },
       "excluded_files": [],
-      "source_roots": []
+      "source_roots": [],
+      "distribution": "optional_in_patch_collection"
     },
     {
       "id": "Codex_ChinaBrewingBooks50_4221",
@@ -1193,8 +1196,8 @@
       "folder": "SuQingBoatRVRoomGuard_4221",
       "title_zh": "蘇清的船舱与房车房间兼容补丁",
       "title_en": "SuQing's Boat Cabin and RV Room Compatibility Patch",
-      "version": "0.1.0-rc.2",
-      "description_original": "Preserves native allocation while excluding other assignment groups from the shared 38-room pool; retains existing interiors and blocks collisions before teleportation. Reviewed B42.21 single-player only.",
+      "version": "0.1.0-rc.3",
+      "description_original": "中文：统一检查船舱与3×6房车房间的占用，保留原有房间和物品，在传送前拦截重复占用。仅适配已核对的B42.21–42.22单人源码；不支持联机。上游变化时暂停相关入口。游戏内验收待完成。",
       "requires_raw": "BoteBR,FrotaBRRVAddon,PROJECTRVInterior42",
       "load_after_raw": "PROJECTRVInterior42,BoteBR,FrotaBRRVAddon,RVViewpointPatch",
       "required_mods": [
@@ -1214,14 +1217,15 @@
       "summary_zh": "统一避让船舱与3×6房车的38个共用房间，保留已有位置与物品，传送前阻止撞房；仅B42.21单人，游戏内待验。",
       "summary_en": "Shares occupancy checks for the 38 boat/3x6 RV slots, retains existing interiors and blocks conflicting entry. B42.21 single-player only; in-game acceptance pending.",
       "runtime_files": 9,
-      "runtime_bytes": 20931,
+      "runtime_bytes": 20963,
       "reconstruction_modes": {
         "own": 9
       },
       "excluded_files": [],
       "source_roots": [],
       "local_registration_date": "2026-11-06",
-      "distribution": "local_only_not_committed_or_published"
+      "distribution": "optional_in_patch_collection",
+      "compatibility_candidate_game": "42.22.2"
     },
     {
       "id": "SuQingBoatCraftFromFloor_4221",
@@ -1336,8 +1340,8 @@
       "folder": "SuQingWorldStateGuard_4221",
       "title_zh": "蘇清的世界对象状态保护（修复候选）",
       "title_en": "SuQing's World Object State Guard (Candidate)",
-      "version": "0.1.0-candidate",
-      "description_original": "Provides two conservative guards for reviewed B42.21 resources: skips the inapplicable human-clothing hole write for animals without HumanVisual, and restores a missing vehicle chunk reference only when unique existing memberships and every required condition are verified. Native damage and update behavior remain. No vehicles, animals or database records are deleted and unrelated exceptions are preserved. Unknown class resources retain original behavior with warnings. First Java loading requires ZombieBuddy's native approval.",
+      "version": "0.1.1-candidate",
+      "description_original": "Single-player candidate for reviewed 42.21 resources and the stock 42.22.2 class pair. Skips the animal-only human clothing-hole call and restores a vehicle's missing chunk reference after unique-membership checks. Requires ZombieBuddy 2.3.4 or newer and native Java approval. B42.22.2 game acceptance is pending. See README.txt.",
       "requires_raw": "\\ZombieBuddy",
       "required_mods": [
         "ZombieBuddy"
@@ -1347,10 +1351,10 @@
       "doc": "docs/patches/SuQingWorldStateGuard_4221.md",
       "reconstruction_status": "recipes_ready",
       "source_runtime_info": "42/mod.info",
-      "summary_zh": "为B42.21的两处世界状态异常提供保守保护：动物没有HumanVisual时跳过不适用的人类衣物破洞写入；车辆已在当前cell与已加载chunk中唯一登记、只有chunk字段丢失且全部校验成立时恢复该引用，并继续原update。保留原始伤害和更新处理，不删除车辆、动物或数据库，不吞掉其他异常。按已审查的原版和PZO类资源哈希门禁，未知资源保持原行为并告警。首次Java加载需通过ZombieBuddy原生批准。",
-      "summary_en": "Provides two conservative guards for reviewed B42.21 resources: skips the inapplicable human-clothing hole write for animals without HumanVisual, and restores a missing vehicle chunk reference only when unique existing memberships and every required condition are verified. Native damage and update behavior remain. No vehicles, animals or database records are deleted and unrelated exceptions are preserved. Unknown class resources retain original behavior with warnings. First Java loading requires ZombieBuddy's native approval.",
+      "summary_zh": "适用于已审查的42.21类资源和42.22.2原版类组合的单人候选。跳过动物不适用的人类衣物破洞调用，并在唯一成员校验后恢复车辆丢失的区块引用。需要ZombieBuddy至少2.3.4和原生Java批准。42.22.2游戏内验收待完成，详见README.txt。",
+      "summary_en": "Single-player candidate for reviewed 42.21 resources and the stock 42.22.2 class pair. Skips the animal-only human clothing-hole call and restores a vehicle's missing chunk reference after unique-membership checks. Requires ZombieBuddy 2.3.4 or newer and native Java approval. B42.22.2 game acceptance is pending. See README.txt.",
       "runtime_files": 2,
-      "runtime_bytes": 9933,
+      "runtime_bytes": 10906,
       "reconstruction_modes": {
         "own": 2
       },
@@ -1360,7 +1364,9 @@
           "reason": "bilingual public documentation copied separately into release candidate"
         }
       ],
-      "source_roots": []
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2",
+      "distribution": "optional_in_patch_collection"
     },
     {
       "id": "SuQingLuckyStrikeMenuFix_4221",
@@ -1505,8 +1511,8 @@
       "folder": "SuQingVanillaPryUpgrade",
       "title_zh": "撬锁拓展补丁",
       "title_en": "Crowbar Prying Expansion Patch",
-      "version": "0.1.3",
-      "description_original": "用撬棍撬开防盗门锁、挂锁和车辆锁。车辆操作在 V 键轮盘中。适用 B42.22.2 单人模式。 <LINE> Pry security doors, padlocks and vehicle locks with a crowbar. Vehicle actions appear in the V radial menu. Build 42.22.2 single-player.",
+      "version": "0.1.5",
+      "description_original": "用撬棍撬开防盗门锁、挂锁和车辆锁。车辆操作在 V 键轮盘中。原版和拓展撬锁成功率均为力量等级 × 10%。适用 B42.22.2 单人模式。 <LINE> Pry security doors, padlocks and vehicle locks with a crowbar. Vehicle actions appear in the V radial menu. Both vanilla and expanded crowbar actions use Strength level times 10% as the success chance. Build 42.22.2 single-player.",
       "requires_raw": "",
       "load_after_raw": "",
       "required_mods": [],
@@ -1514,12 +1520,12 @@
       "doc": "docs/patches/SuQingVanillaPryUpgrade.md",
       "reconstruction_status": "recipes_ready",
       "source_runtime_info": "42/mod.info",
-      "summary_zh": "扩展原版撬棍动作，支持防盗门、挂锁与车辆 V 键轮盘。门窗须先拆除路障。",
-      "summary_en": "Extends vanilla crowbar prying to reinforced doors, padlocks and the vehicle radial menu. Barricades must be removed first.",
-      "runtime_files": 8,
-      "runtime_bytes": 11220,
+      "summary_zh": "扩展撬棍动作，支持防盗门、挂锁与车辆 V 键轮盘。原版与拓展动作均按力量等级 × 10% 判定。",
+      "summary_en": "Adds crowbar actions for reinforced doors, padlocks and vehicles. Vanilla and expanded crowbar actions use Strength level times 10%.",
+      "runtime_files": 10,
+      "runtime_bytes": 12233,
       "reconstruction_modes": {
-        "own": 8
+        "own": 10
       },
       "excluded_files": [],
       "source_roots": [],
@@ -1555,6 +1561,138 @@
       "source_roots": [],
       "compatibility_candidate_game": "42.22.2",
       "distribution": "optional_in_patch_collection"
+    },
+    {
+      "id": "SuQingMethadoneReset_4221",
+      "folder": "SuQingMethadoneReset_4221",
+      "title_zh": "蘇清的美沙酮增强",
+      "title_en": "SuQing's Methadone Reset",
+      "version": "1.0.2",
+      "description_original": "美沙酮清除 N&C 过量和未转为依赖的成瘾累计。 Methadone clears N&C overdose and addiction buildup.",
+      "requires_raw": "\\N&CsNarcotics",
+      "load_after_raw": "N&CsNarcotics,CodexNarcotics_CN_4221",
+      "required_mods": [
+        "N&CsNarcotics"
+      ],
+      "load_after_mods": [
+        "N&CsNarcotics",
+        "CodexNarcotics_CN_4221"
+      ],
+      "doc": "docs/patches/SuQingMethadoneReset_4221.md",
+      "reconstruction_status": "recipes_ready",
+      "source_runtime_info": "42/mod.info",
+      "summary_zh": "服用美沙酮后清零过量和成瘾累计，保留已有依赖和戒除进度。",
+      "summary_en": "Methadone clears overdose and addiction buildup while preserving existing dependence and recovery progress.",
+      "runtime_files": 5,
+      "runtime_bytes": 3038,
+      "reconstruction_modes": {
+        "own": 5
+      },
+      "excluded_files": [],
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2",
+      "distribution": "optional_in_patch_collection"
+    },
+    {
+      "id": "SuQingLiveWireISACompat_4221",
+      "folder": "SuQingLiveWireISACompat_4221",
+      "title_zh": "蘇清的 Live Wire × ISA 统一电网",
+      "title_en": "SuQing's Live Wire × ISA Unified Grid",
+      "version": "0.1.3-rc.6",
+      "description_original": "Manually connect one ISA power bank to a Live Wire grid for shared solar generation, battery storage and load settlement. Single-player, Live Wire 1.7.2 and ISA 1.2.15.",
+      "requires_raw": "batman_LiveWire,ISA",
+      "load_after_raw": "batman_LiveWire,ISA,SuQingPortals",
+      "required_mods": [
+        "batman_LiveWire",
+        "ISA"
+      ],
+      "load_after_mods": [
+        "batman_LiveWire",
+        "ISA",
+        "SuQingPortals"
+      ],
+      "doc": "docs/patches/SuQingLiveWireISACompat_4221.md",
+      "reconstruction_status": "recipes_ready",
+      "source_runtime_info": "42/mod.info",
+      "summary_zh": "将一台 ISA 电池柜手动接入 Live Wire 电网，共享光伏发电、储电和负载结算。",
+      "summary_en": "Manual ISA battery and solar integration into a single Live Wire kWh grid with shared load, backup, battery conversions and optional portal metering.",
+      "runtime_files": 14,
+      "runtime_bytes": 92934,
+      "reconstruction_modes": {
+        "own": 14
+      },
+      "excluded_files": [],
+      "source_roots": [],
+      "local_registration_date": "2026-11-08",
+      "distribution": "optional_in_patch_collection",
+      "compatibility_candidate_game": "42.22.2"
+    },
+    {
+      "id": "SuQingLiveWireWaterBridge",
+      "folder": "SuQingLiveWireWaterBridge",
+      "title_zh": "蘇清的 Live Wire × Waterpipes 水路桥接 [单人]",
+      "title_en": "SuQing's Live Wire and Waterpipes Bridge [SP]",
+      "version": "0.1.1-rc.6",
+      "description_original": "Share compatible rain collectors and connect one Live Wire pump to a dedicated Waterpipes line. Single player.",
+      "requires_raw": "Waterpipes,batman_LiveWire",
+      "load_after_raw": "Waterpipes,batman_LiveWire,SuQingSprinklerFertilizer",
+      "required_mods": [
+        "Waterpipes",
+        "batman_LiveWire"
+      ],
+      "load_after_mods": [
+        "Waterpipes",
+        "batman_LiveWire",
+        "SuQingSprinklerFertilizer"
+      ],
+      "doc": "docs/patches/SuQingLiveWireWaterBridge.md",
+      "reconstruction_status": "recipes_ready",
+      "source_runtime_info": "42.21/mod.info",
+      "summary_zh": "共用兼容的集雨桶，并将一台 Live Wire 水泵接入独立的 Waterpipes 管线。仅单人。",
+      "summary_en": "Share compatible rain collectors and connect one Live Wire pump to a dedicated Waterpipes line. Single player.",
+      "runtime_files": 10,
+      "runtime_bytes": 39914,
+      "reconstruction_modes": {
+        "own": 10
+      },
+      "excluded_files": [],
+      "source_roots": [],
+      "local_registration_date": "2026-11-08",
+      "distribution": "optional_in_patch_collection",
+      "compatibility_candidate_game": "42.22.2"
+    },
+    {
+      "id": "Codex_WeldingMaskTextureFix_4222",
+      "folder": "Codex_WeldingMaskTextureFix_4222",
+      "title_zh": "蘇清的焊工面罩贴图修复",
+      "title_en": "SuQing's Welding Mask Texture Fix",
+      "version": "1.0.0",
+      "description_original": "修复 FantasyWorkshop 4.0 导致的焊工面罩红白格纹。 / Restores the welder mask texture path overridden by FantasyWorkshop 4.0.",
+      "requires_raw": "FantasyWorkshopVS42_4.0",
+      "load_after_raw": "FantasyWorkshopVS42_4.0",
+      "required_mods": [
+        "FantasyWorkshopVS42_4.0"
+      ],
+      "load_after_mods": [
+        "FantasyWorkshopVS42_4.0"
+      ],
+      "doc": "docs/patches/Codex_WeldingMaskTextureFix_4222.md",
+      "reconstruction_status": "recipes_ready",
+      "source_runtime_info": "42/mod.info",
+      "summary_zh": "恢复 FantasyWorkshop 4.0 覆盖的原版焊工面罩贴图路径。",
+      "summary_en": "Restores the original welder mask texture path overridden by FantasyWorkshop 4.0.",
+      "runtime_files": 2,
+      "runtime_bytes": 918,
+      "reconstruction_modes": {
+        "own": 1,
+        "patch": 1
+      },
+      "excluded_files": [],
+      "source_roots": [
+        "workshop"
+      ],
+      "compatibility_candidate_game": "42.22.2",
+      "distribution": "local_rebuild_third_party_output_not_in_workshop"
     }
   ]
 }

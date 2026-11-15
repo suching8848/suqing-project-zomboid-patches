@@ -34,6 +34,10 @@ Run `tools/rebuild.py --mod-id "CodexNekomataEXCompat_4221" --check` with the re
 
 ## 验证边界 / Validation boundary
 
+2026-11-13 本地热修识别返鲜冰箱包装后的已知容量链，避免换装与角色创建时重复添加包装。需配合同轮 EX 与返鲜冰箱文件。B42.22.2 Kahlua 离线回归通过，游戏内验收待完成。
+
+The November 13 local hotfix recognizes the audited capacity chain under Freshness Fridge and avoids adding wrappers again on clothing and player events. Pair it with the matching EX and fridge builds. The B42.22.2 Kahlua regression passed. In-game acceptance is pending.
+
 1.0.1 已在 42.22.2 原厂 Kahlua 核对猫又岭与 EX 1.0.0-rc.2 的调用链。新版桥接仅在已识别的作者包装上读取实际容量，供猫猫背包扩展取得 120 基线。未知包装仍拒绝。请与猫猫背包扩展 1.0.1 一起使用。
 
 Version 1.0.1 checks the Nekomata Ridge and EX 1.0.0-rc.2 call chain on stock 42.22.2 Kahlua. It reads the authored base capacity for the backpack extension only through the recognized wrapper. Unknown wrappers remain blocked. Pair this bridge with backpack extension 1.0.1.

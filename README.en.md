@@ -1,5 +1,9 @@
 # SuQing’s Project Zomboid Patch Collection / 蘇清的僵尸毁灭工程补丁合集
 
+## November 15 compatibility and gameplay changes
+
+Includes Crowbar Prying 0.1.5, the N&C Status Panel 1.1.1 and the reviewed compatibility files used by the current single-player setup. Methadone Reset and both Live Wire bridges are optional. The welder mask fix uses a [local reconstruction](docs/patches/Codex_WeldingMaskTextureFix_4222.md).
+
 ## CleanUI 2.10.5 compatibility
 
 Bulk Transfer Inventory Refresh 1.2.4, Tooltip and Proximity Selection 1.0.3, and Lucky Strike Menu 0.1.1-rc.2 support the reviewed CleanUI 2.10.5 branches. Offline regressions passed on B42.21.0 and B42.22.2. Gameplay verification is pending.

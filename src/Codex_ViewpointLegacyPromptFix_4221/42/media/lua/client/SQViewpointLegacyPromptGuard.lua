@@ -2,7 +2,7 @@
 -- In the audited upstream build, context menus bypass hudVisible().
 SQViewpointLegacyPromptGuard = SQViewpointLegacyPromptGuard or {}
 local Patch = SQViewpointLegacyPromptGuard
-Patch.version = "1.0.0"
+Patch.version = "1.0.1"
 
 local function shouldRender()
     local options = ViewpointControllerOptions
@@ -11,9 +11,14 @@ local function shouldRender()
         return false
     end
 
+    local controller = ViewpointController
+    if controller and type(controller.isViewpointVersionSupported) == "function"
+        and not controller.isViewpointVersionSupported() then
+        return false
+    end
+
     -- Upstream intentionally shows a resume hint after switching to keyboard.
     -- Keep that path even though the controller is no longer marked active.
-    local controller = ViewpointController
     if controller and controller.hotswapDetached
         and type(vpcIsCaptured) == "function" and vpcIsCaptured()
         and type(getGameSpeed) == "function" and getGameSpeed() > 0

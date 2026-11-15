@@ -1,9 +1,9 @@
-name=N&C 药物状态面板 [B42.21]
+name=N&C 药物状态面板 [B42.21–42.22]
 id=Codex_NarcoticsStatus_4221
 author=Local compatibility
-modversion=1.0.0
+modversion=1.1.1
 versionMin=42.21
-versionMax=42.21
+versionMax=42.22
 require=\N&CsNarcotics
 loadModAfter=N&CsNarcotics,CodexNarcotics_CN_4221
-description=右键 N&C 药物查看各类过量累计值和预计消退时间。
+description=右键 N&C 药物查看过量、成瘾、药效、戒断与混用状态。

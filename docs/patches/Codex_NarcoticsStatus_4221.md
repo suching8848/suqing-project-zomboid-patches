@@ -6,15 +6,15 @@
 | --- | --- |
 | Mod ID | `Codex_NarcoticsStatus_4221` |
 | 文件夹 / Folder | `Codex_NarcoticsStatus_4221` |
-| 版本 / Version | `1.0.0` |
-| 适用 / Target | Project Zomboid Build 42.21; single-player scope |
+| 版本 / Version | `1.1.1` |
+| 适用 / Target | Build 42.21–42.22 单人 / single-player. Tested offline on 42.22.2. |
 | 元数据硬依赖 / Declared prerequisites | `N&CsNarcotics` |
 | 原样require / Literal require | `\N&CsNarcotics` |
 | 加载在其后 / Load after | `N&CsNarcotics`, `CodexNarcotics_CN_4221` |
 
 ## 中文说明
 
-右键N&C药物查看分类过量累计值和预计消退时间；只读状态面板，不改变药效。
+右键 N&C 药物，选择「查看药物状态」。同一行分别显示过量累计、过量预警、清零估算、成瘾预警和当前药效。药效倒计时以当前阶段结束为准。已有依赖时显示戒断阶段和恢复进度，混用及美沙酮抑制在相关状态下出现。时间按当前沙盒日长和正常速度估算。面板只读。
 
 只按需要安装本子补丁，不能把本仓库30项当作所有主模组的共同前置。`loadModAfter`是加载顺序声明，不等于要求安装列出的全部模组。`require`原字节保留，包括历史前缀语法；本仓库不擅自迁移Mod ID或改变依赖。
 
@@ -24,7 +24,7 @@
 
 ## English notes
 
-Adds a read-only N&C drug context panel for accumulated overdose categories and estimated decay times; it does not alter effects.
+Right-click an N&C drug and choose “View Drug Status”. Each row separates overdose buildup, overdose alerts, estimated clearance, addiction alerts and the current effect. The effect timer estimates the end of the current phase. Existing dependence shows withdrawal and recovery, and applicable interactions or methadone suppression appear when active. Estimates use the current sandbox day length and normal speed. The panel is read-only.
 
 Install this optional subpatch only for the relevant use case. All 30 are not a universal prerequisite. `loadModAfter` declares ordering, not a requirement to install every named mod. Literal `require` bytes, including historical prefix syntax, remain unchanged. No IDs or dependencies are migrated.
 
@@ -33,6 +33,14 @@ There are 5 runtime files: 5 tracked bridge/translation/metadata files, 0 local 
 Run `tools/rebuild.py --mod-id "Codex_NarcoticsStatus_4221" --check` with the required source-root arguments, then use a new isolated `--output` directory. Missing or updated sources fail their pinned hashes; do not substitute a renamed newer file. The tool performs no download, subscription, deployment or enabled-list edits. Old personal README/backup/.bak artifacts are not shipped as runtime source; current guidance is collected here.
 
 ## 验证边界 / Validation boundary
+
+核对简中、繁中和英文的右键入口及独立过量、成瘾、药效列，同时检查纳洛酮提示和混用详情。面板只读取角色数据。
+
+Checked the inventory menu and separate overdose, addiction and effect columns in Simplified Chinese, Traditional Chinese and English, along with naloxone and interaction details. The panel reads character state.
+
+1.1.0 游戏内验收：右键 N&C 药物打开面板。若甲基苯丙胺组仍有过量累计 180、成瘾累计 1952，应同时显示过量正常和成瘾预警。查看活跃药效及美沙酮提示。面板和[美沙酮增强](SuQingMethadoneReset_4221.md)可独立使用。
+
+In-game acceptance for 1.1.0: open the panel from an N&C drug. A meth-family buildup of 180 overdose and 1952 addiction should show normal overdose status and an addiction alert together. Check the active effect and methadone rows. The panel and the [methadone enhancement](SuQingMethadoneReset_4221.md) can be used independently.
 
 重建SHA一致仅证明还原了审计时的运行文件，不等于游戏内、所有组合、多人或存档持久化验收。原有调试、测试版或单人限制仍以该补丁为准。先在隔离单人档按本功能操作检查，勿把正式档当作自动测试环境。
 

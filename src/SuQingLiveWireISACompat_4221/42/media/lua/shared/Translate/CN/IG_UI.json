@@ -1,0 +1,19 @@
+{
+    "IGUI_SQLWISA_Monitor_Unavailable": "暂无数据",
+    "IGUI_SQLWISA_Monitor_paired": "已并网",
+    "IGUI_SQLWISA_Monitor_unloaded": "电池柜未加载",
+    "IGUI_SQLWISA_Monitor_unpaired": "尚未接入电池柜",
+    "IGUI_SQLWISA_Monitor_Battery": "电池",
+    "IGUI_SQLWISA_Monitor_BatteryPage": "电池储能",
+    "IGUI_SQLWISA_Monitor_Bank": "电池组 %1",
+    "IGUI_SQLWISA_Monitor_Condition": "耐久 %1",
+    "IGUI_SQLWISA_Monitor_TotalStorage": "总储能",
+    "IGUI_SQLWISA_Monitor_AvailableStorage": "储电量 / 容量",
+    "IGUI_SQLWISA_Monitor_NoSources": "尚未连接 LiveWire 发电设备。",
+    "IGUI_SQLWISA_Monitor_SolarProduction": "太阳能发电",
+    "IGUI_SQLWISA_Monitor_LinkedPanels": "已连接面板",
+    "IGUI_SQLWISA_Monitor_Panel": "面板 %1",
+    "IGUI_SQLWISA_Monitor_Backup": "备用发电机",
+    "IGUI_SQLWISA_Monitor_Mains": "公共电网取电",
+    "IGUI_SQLWISA_Monitor_ForecastScope": "发电预测仅计 LiveWire 电源。"
+}

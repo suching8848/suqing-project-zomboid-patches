@@ -1,0 +1,5 @@
+--- a/Hat_WeldersMask.xml
++++ b/Hat_WeldersMask.xml
+@@ -12 +12 @@
+-	<textureChoices>weldermask</textureChoices>
++	<textureChoices>clothes\hat\weldermask</textureChoices>

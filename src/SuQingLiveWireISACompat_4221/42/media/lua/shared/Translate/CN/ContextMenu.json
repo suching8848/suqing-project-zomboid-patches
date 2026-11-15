@@ -1,0 +1,14 @@
+{
+  "ContextMenu_SQLWISA_Select": "选择 ISA 电池柜并网",
+  "ContextMenu_SQLWISA_Attach": "将选中的 ISA 电池柜接入此逆变器",
+  "ContextMenu_SQLWISA_Detach": "将 ISA 电池柜退出统一电网",
+  "ContextMenu_SQLWISA_Selected": "已选中 ISA 电池柜。右键 Live Wire 主逆变器接入。",
+  "ContextMenu_SQLWISA_Joined": "ISA 电池柜已接入 Live Wire 电网。",
+  "ContextMenu_SQLWISA_Detached": "ISA 电池柜已恢复独立供电。",
+  "ContextMenu_SQLWISA_InvalidTarget": "请靠近有效的电池柜或逆变器再试。两台设备都要已加载。",
+  "ContextMenu_SQLWISA_OutOfRange": "电池柜超出逆变器的接线距离。",
+  "ContextMenu_SQLWISA_AlreadyLinked": "该电池柜或逆变器已有并网连接。",
+  "ContextMenu_SQLWISA_StopBackup": "请先关闭 ISA 备用发电机。发电机必须已加载且能唯一确认。",
+  "ContextMenu_SQLWISA_UnlinkBackup": "退出并网前，请先在 Live Wire 解除备用机接线，并确认原 ISA 备用机已加载。",
+  "ContextMenu_SQLWISA_Unavailable": "统一电网暂不可用，请查看游戏日志。"
+}

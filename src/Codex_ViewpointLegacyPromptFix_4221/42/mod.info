@@ -4,5 +4,5 @@ description=Restores controller master and prompt-HUD gates for Legacy menu hint
 require=ProjectViewpointQOLLegacy0.1.6
 loadModAfter=ProjectViewpointQOLLegacy0.1.6
 versionMin=42.21
-versionMax=42.21
-modversion=1.0.0
+versionMax=42.22
+modversion=1.0.1

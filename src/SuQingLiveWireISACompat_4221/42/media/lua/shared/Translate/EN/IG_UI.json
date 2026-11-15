@@ -1,0 +1,19 @@
+{
+    "IGUI_SQLWISA_Monitor_Unavailable": "Unavailable",
+    "IGUI_SQLWISA_Monitor_paired": "Connected",
+    "IGUI_SQLWISA_Monitor_unloaded": "Cabinet unloaded",
+    "IGUI_SQLWISA_Monitor_unpaired": "No connected cabinet",
+    "IGUI_SQLWISA_Monitor_Battery": "Battery",
+    "IGUI_SQLWISA_Monitor_BatteryPage": "Battery storage",
+    "IGUI_SQLWISA_Monitor_Bank": "Power bank %1",
+    "IGUI_SQLWISA_Monitor_Condition": "Cond. %1",
+    "IGUI_SQLWISA_Monitor_TotalStorage": "Total storage",
+    "IGUI_SQLWISA_Monitor_AvailableStorage": "Stored / capacity",
+    "IGUI_SQLWISA_Monitor_NoSources": "No LiveWire generators connected.",
+    "IGUI_SQLWISA_Monitor_SolarProduction": "Solar output",
+    "IGUI_SQLWISA_Monitor_LinkedPanels": "Connected panels",
+    "IGUI_SQLWISA_Monitor_Panel": "Panel %1",
+    "IGUI_SQLWISA_Monitor_Backup": "Backup generator",
+    "IGUI_SQLWISA_Monitor_Mains": "Public grid draw",
+    "IGUI_SQLWISA_Monitor_ForecastScope": "Generation forecast includes LiveWire sources only."
+}

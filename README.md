@@ -1,5 +1,9 @@
 # 蘇清的僵尸毁灭工程补丁合集 / SuQing’s Project Zomboid Patch Collection
 
+## 11 月 15 日兼容与功能更新
+
+撬锁拓展 0.1.5、N&C 状态面板 1.1.1 与当前正式档使用的适配源码已纳入。美沙酮增强与两项 Live Wire 桥接按需启用。焊工面罩修复通过 [独立重建](docs/patches/Codex_WeldingMaskTextureFix_4222.md) 生成。
+
 ## CleanUI 2.10.5 兼容更新
 
 批量转移库存刷新优化 1.2.4、提示框与融合物品栏修复 1.0.3、好彩香烟菜单修复 0.1.1-rc.2 支持已审查的 CleanUI 2.10.5 分支。B42.21.0 与 B42.22.2 离线回归通过，待游戏内验收。

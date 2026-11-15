@@ -1,2 +1,2 @@
-B42.22.2 兼容更新 26 项。新增可选撬锁拓展 0.1.3 和现代枪械强化 0.6.0。保留原条目和已有子模组。
-26 B42.22.2 compatibility updates. Adds optional Crowbar Prying Expansion 0.1.3 and Modern Firearm Upgrades 0.6.0.
+更新撬锁拓展 0.1.5、N&C 状态面板和兼容修复，加入可选的美沙酮增强、Live Wire × ISA 统一电网及 Waterpipes 水路桥接。
+Updates Prying Expansion 0.1.5, N&C Status Panel and compatibility fixes. Adds optional Methadone Reset, Live Wire × ISA Unified Grid and the Waterpipes Bridge.

@@ -6,6 +6,7 @@ This repository contains local bridges, translations, metadata and contextual ch
 
 | 来源 / Source | 处理 / Treatment |
 | --- | --- |
+| Workshop 3717576490, FantasyWorkshop 4.0 | One contextual XML diff pins the upstream welder mask definition. The full local reconstruction stays outside Git and the public collection. |
 | Workshop 3799632784, C.B.R.T. Chemical | 26 FBX/PNG files byte-match the installed original and are absent from Git. Source-clothing/item/registry overlays use copy/diff recipes. Renamed destinations are recorded in rebuild-manifest.json. Neither the local build nor audited upstream directory contained a LICENSE/COPYING/NOTICE file. |
 | Workshop 3670064951, KI5campers 42.20 | Six complete vehicle definitions stay external; only six context diffs and source/output hashes are tracked. |
 | Workshop 3619229745, SuPrimitiveEquipment | Full PE_Shield.lua stays external; an exact-source context diff reconstructs the fluid-tooltip overlay. |

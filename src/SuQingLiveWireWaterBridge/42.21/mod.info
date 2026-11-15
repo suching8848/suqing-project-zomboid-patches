@@ -1,0 +1,11 @@
+name=SuQing's Live Wire and Waterpipes Bridge [SP]
+namezh=蘇清的 Live Wire × Waterpipes 水路桥接 [单人]
+id=SuQingLiveWireWaterBridge
+author=SuQing
+modversion=0.1.1-rc.6
+versionMin=42.21
+versionMax=42.22
+require=Waterpipes,batman_LiveWire
+loadModAfter=Waterpipes,batman_LiveWire,SuQingSprinklerFertilizer
+description=Share compatible rain collectors and connect one Live Wire pump to a dedicated Waterpipes line. Single player.
+descriptionzh=共用兼容的集雨桶，并将一台 Live Wire 水泵接入独立的 Waterpipes 管线。仅单人。

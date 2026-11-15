@@ -1,0 +1,18 @@
+{
+  "IGUI_SQWaterBridge_Menu": "Waterpipes bridge",
+  "IGUI_SQWaterBridge_ConnectEast": "Connect east pipe",
+  "IGUI_SQWaterBridge_ConnectWest": "Connect west pipe",
+  "IGUI_SQWaterBridge_ConnectSouth": "Connect south pipe",
+  "IGUI_SQWaterBridge_ConnectNorth": "Connect north pipe",
+  "IGUI_SQWaterBridge_Disconnect": "Disconnect water bridge",
+  "IGUI_SQWaterBridge_Connected": "Connected to the Waterpipes line.",
+  "IGUI_SQWaterBridge_Disconnected": "Water bridge disconnected.",
+  "IGUI_SQWaterBridge_Unavailable": "The water bridge is currently unavailable.",
+  "IGUI_SQWaterBridge_OnePump": "Disconnect the other pump first.",
+  "IGUI_SQWaterBridge_PumpInUse": "The pump is unavailable or already supplies a vanilla-plumbed fixture.",
+  "IGUI_SQWaterBridge_Unsupported": "This line is outside the supported layout.",
+  "IGUI_SQWaterBridge_NoInlet": "No adjacent inlet with a matching pipe direction.",
+  "IGUI_SQWaterBridge_NoOutlet": "The line has no loaded sprinkler or compatible fixture.",
+  "IGUI_SQWaterBridge_MixedFeed": "This line has a competing inlet or a fixture has multiple water feeds.",
+  "IGUI_SQWaterBridge_ReturnFlow": "The line contains a loop."
+}

@@ -27,11 +27,30 @@ local function authorBase(id)
     if ok and value == B.baseline[id] then return value end
     return nil
 end
+local function craftGuardPrior(mod, wrapper)
+    local lock = mod and mod.Lock
+    if lock and type(lock.CraftGuardPrior) == "function" then
+        return lock.CraftGuardPrior(wrapper)
+    end
+end
+
+local function conversionGuardReady()
+    if not B.craftGuard or not ISHandcraftAction then return false end
+    local current = ISHandcraftAction.performRecipe
+    -- Each freshness lock proves the immediate continuation of its own wrapper.
+    for _ = 1, 2 do
+        if current == B.craftGuard then return true end
+        current = craftGuardPrior(SuQingFreshnessLunchbox, current)
+            or craftGuardPrior(SuQingFreshnessFridge, current)
+        if not current then return false end
+    end
+    return current == B.craftGuard
+end
+
 local priorBase, priorValid, priorCanUpgrade = X.GetNativeBase, X.IsValidRecord, X.CanUpgrade
 X.CanUpgrade = function(item, ...)
     local id = item and item.getFullType and item:getFullType()
-    if id and B.baseline[id] and (not B.enabled or not B.craftGuard
-        or not ISHandcraftAction or ISHandcraftAction.performRecipe ~= B.craftGuard) then
+    if id and B.baseline[id] and (not B.enabled or not conversionGuardReady()) then
         return false, "havenfall_native_conversion_guard_not_ready"
     end
     return priorCanUpgrade(item, ...)
@@ -65,11 +84,12 @@ local previousReady=C.IsReady
 local previousCompat=CodexNekomataEXCompat_4221
 local readyHook=function(...)
     if previousReady(...) then return true end
-    local index=indexTable(); local layer=B.bridge
-    return B.enabled and X.IsSinglePlayer() and layer and index
-        and index.getEffectiveCapacity==layer.effective and index.hasRoomFor==layer.room
-        and C.installedEffective and C.installedRoom and C.installedTransfer
-        and javaTransferItems==C.installedTransfer or false
+    local layer=B.bridge
+    if not B.enabled or not layer or not C.installedEffective or not C.installedRoom then return false end
+    if C.IsCapacityLayerReady then return C.IsCapacityLayerReady(layer.effective, layer.room) end
+    local index=indexTable()
+    return X.IsSinglePlayer() and index and index.getEffectiveCapacity==layer.effective
+        and index.hasRoomFor==layer.room and C.installedTransfer and javaTransferItems==C.installedTransfer or false
 end
 C.IsReady=readyHook
 if previousCompat and previousCompat.hookedCapacity==C and previousCompat.readyHook==previousReady then
@@ -179,7 +199,7 @@ local function isHavenFallRecipe(name)
     return type(name)=="string" and string.sub(name,1,#"ESHFUpgrade.")=="ESHFUpgrade."
 end
 local function installConversionGuard()
-    if B.craftGuard then return ISHandcraftAction and ISHandcraftAction.performRecipe == B.craftGuard end
+    if B.craftGuard then return conversionGuardReady() end
     if not ISHandcraftAction or not ISHandcraftAction.performRecipe then return false end
     local old=ISHandcraftAction.performRecipe
     local guard=function(self, ...)

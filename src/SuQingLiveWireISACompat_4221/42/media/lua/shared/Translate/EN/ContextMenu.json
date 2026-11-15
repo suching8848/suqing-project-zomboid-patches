@@ -1,0 +1,14 @@
+{
+  "ContextMenu_SQLWISA_Select": "Select ISA cabinet for the unified grid",
+  "ContextMenu_SQLWISA_Attach": "Connect selected ISA cabinet to this inverter",
+  "ContextMenu_SQLWISA_Detach": "Disconnect ISA cabinet from the unified grid",
+  "ContextMenu_SQLWISA_Selected": "ISA cabinet selected. Right-click a Live Wire master inverter to connect it.",
+  "ContextMenu_SQLWISA_Joined": "ISA cabinet connected to the Live Wire grid.",
+  "ContextMenu_SQLWISA_Detached": "ISA cabinet returned to its own power system.",
+  "ContextMenu_SQLWISA_InvalidTarget": "Stand near a valid cabinet or inverter and try again. Both devices must be loaded.",
+  "ContextMenu_SQLWISA_OutOfRange": "The cabinet is beyond the inverter's wiring range.",
+  "ContextMenu_SQLWISA_AlreadyLinked": "This cabinet or inverter already has a unified-grid connection.",
+  "ContextMenu_SQLWISA_StopBackup": "Switch off the ISA backup first. Its generator must be present and unambiguous.",
+  "ContextMenu_SQLWISA_UnlinkBackup": "Unlink this generator in Live Wire and verify the original ISA backup is present before disconnecting.",
+  "ContextMenu_SQLWISA_Unavailable": "The unified grid is unavailable. Check the game log."
+}

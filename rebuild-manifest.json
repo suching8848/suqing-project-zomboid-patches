@@ -344,7 +344,7 @@
     {
       "id": "Codex_NarcoticsStatus_4221",
       "folder": "Codex_NarcoticsStatus_4221",
-      "version": "1.0.0",
+      "version": "1.1.1",
       "directories": [
         "42",
         "42/media",
@@ -359,40 +359,41 @@
       "files": [
         {
           "path": "42/media/lua/client/CodexNarcoticsStatus.lua",
-          "sha256": "8665d55c1d1e167013fac5a0a1577c7626bb1f8ed7340e9643a57a2add7ca404",
-          "size": 9810,
+          "sha256": "22d5406aaec316813805c5ecde76b569c61abbd96cf71d46b8c8422c03d78029",
+          "size": 18636,
           "mode": "own",
           "repo_path": "src/Codex_NarcoticsStatus_4221/42/media/lua/client/CodexNarcoticsStatus.lua"
         },
         {
           "path": "42/media/lua/shared/Translate/CH/IG_UI.json",
-          "sha256": "32e9cf6d8efcc34814ceabff680037d8b4ae70d6f4f9b87999b201f542276619",
-          "size": 888,
+          "sha256": "590550cceeffa8afc4ffcef35ac23b1953e5751aefb2c1885f1df960bdd84086",
+          "size": 2997,
           "mode": "own",
           "repo_path": "src/Codex_NarcoticsStatus_4221/42/media/lua/shared/Translate/CH/IG_UI.json"
         },
         {
           "path": "42/media/lua/shared/Translate/CN/IG_UI.json",
-          "sha256": "83c0cc0ba2dac9f9a82d841d95e7a109dc2269353271b819b95a0ce395290826",
-          "size": 885,
+          "sha256": "1830b93d8f34f7ac1b36436006c1fbd6dc5a45999606fef04d9aa78101f6def3",
+          "size": 2994,
           "mode": "own",
           "repo_path": "src/Codex_NarcoticsStatus_4221/42/media/lua/shared/Translate/CN/IG_UI.json"
         },
         {
           "path": "42/media/lua/shared/Translate/EN/IG_UI.json",
-          "sha256": "add0100ea5fb4781877d58fe6da76dbd219c492ea26ecd271328dcca2d6849f3",
-          "size": 841,
+          "sha256": "8e36f1679f94543b6e8b3230c27da1f0892eafba4f571551277d304d927dfa51",
+          "size": 3025,
           "mode": "own",
           "repo_path": "src/Codex_NarcoticsStatus_4221/42/media/lua/shared/Translate/EN/IG_UI.json"
         },
         {
           "path": "42/mod.info",
-          "sha256": "f494577eb816a48301877f60f37bc9235159d445013e2197758e3c15682db41c",
-          "size": 308,
+          "sha256": "1364b0fe3e5b1b7db6dcca6f5450ddc5946c6123d33babdb284a18fcdf8ac4ee",
+          "size": 322,
           "mode": "own",
           "repo_path": "src/Codex_NarcoticsStatus_4221/42/mod.info"
         }
-      ]
+      ],
+      "compatibility_candidate_game": "42.22.2"
     },
     {
       "id": "Codex_StimCompatibility_4221",
@@ -596,8 +597,8 @@
       "files": [
         {
           "path": "42/media/lua/client/Codex_SuQingHavenFallEX.lua",
-          "sha256": "c6714c71d22335e4c419110cfba241231e7d5472c1197e7296ed06929c38ca13",
-          "size": 11235,
+          "sha256": "4b90d2f339ad25c37217e2a6f4786a23b4eb736692ce5cd4f292c7cee19cdc1e",
+          "size": 11998,
           "mode": "own",
           "repo_path": "src/Codex_SuQingWearableCompat_4221/42/media/lua/client/Codex_SuQingHavenFallEX.lua"
         },
@@ -1350,8 +1351,8 @@
       "files": [
         {
           "path": "42/media/lua/shared/CodexNekomataEXCompat4221/Compat.lua",
-          "sha256": "e92431d368ebfe5fd0d17199a830fa515632c42a3c80f3402ff7565a2004fb75",
-          "size": 7538,
+          "sha256": "b94129708e82cc2935ef84bdc095173347c88e46ca5dcc79598be9753afe7215",
+          "size": 9938,
           "mode": "own",
           "repo_path": "src/CodexNekomataEXCompat_4221/42/media/lua/shared/CodexNekomataEXCompat4221/Compat.lua"
         },
@@ -2140,7 +2141,7 @@
     {
       "id": "Codex_ViewpointLegacyPromptFix_4221",
       "folder": "Codex_ViewpointLegacyPromptFix_4221",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "directories": [
         "42",
         "42/media",
@@ -2151,14 +2152,14 @@
       "files": [
         {
           "path": "42/media/lua/client/SQViewpointLegacyPromptGuard.lua",
-          "sha256": "6ed43e23ed7b46561a5911d7e1d69e851b9f60d30edd199369e7fa1f72b8adbf",
-          "size": 2181,
+          "sha256": "2dbf1d73cfb6432370ff3659368fb423ed50baa0d0a83a6a5903fd60fe797c06",
+          "size": 2354,
           "mode": "own",
           "repo_path": "src/Codex_ViewpointLegacyPromptFix_4221/42/media/lua/client/SQViewpointLegacyPromptGuard.lua"
         },
         {
           "path": "42/mod.info",
-          "sha256": "973a31c046bc9d5123ac07d17724467f1afa81627af94509b59699738e6ef40e",
+          "sha256": "b94df90e56b75cb057c273d6545bad449f1732d412bb10ecb98328ce8fb28a47",
           "size": 453,
           "mode": "own",
           "repo_path": "src/Codex_ViewpointLegacyPromptFix_4221/42/mod.info"
@@ -2172,7 +2173,7 @@
         },
         {
           "path": "mod.info",
-          "sha256": "973a31c046bc9d5123ac07d17724467f1afa81627af94509b59699738e6ef40e",
+          "sha256": "b94df90e56b75cb057c273d6545bad449f1732d412bb10ecb98328ce8fb28a47",
           "size": 453,
           "mode": "own",
           "repo_path": "src/Codex_ViewpointLegacyPromptFix_4221/mod.info"
@@ -2233,7 +2234,7 @@
     {
       "id": "SuQingBoatRVRoomGuard_4221",
       "folder": "SuQingBoatRVRoomGuard_4221",
-      "version": "0.1.0-rc.2",
+      "version": "0.1.0-rc.3",
       "directories": [
         "42",
         "42/media",
@@ -2249,7 +2250,7 @@
       "files": [
         {
           "path": "42/media/lua/client/zz_SQBoatRVRoomGuard.lua",
-          "sha256": "f0a4ce9836a8178b2e2ede649df4b5f7e9869e2b7eb23a0b695c01b71d520c20",
+          "sha256": "560841a2290e6477589e6df6a4718d9742a9654ed02a4b0ad78189ee9d0f8866",
           "size": 6696,
           "mode": "own",
           "repo_path": "src/SuQingBoatRVRoomGuard_4221/42/media/lua/client/zz_SQBoatRVRoomGuard.lua"
@@ -2284,8 +2285,8 @@
         },
         {
           "path": "42/mod.info",
-          "sha256": "a9a8e920b70c575efaaeb688b1bf8d90b06ae7cfc43373a727f051712d401f6f",
-          "size": 870,
+          "sha256": "dccf136a98a067522b5a08fe6cd2000bd0b14de272209be9c610d53c8f0d6ce7",
+          "size": 886,
           "mode": "own",
           "repo_path": "src/SuQingBoatRVRoomGuard_4221/42/mod.info"
         },
@@ -2298,8 +2299,8 @@
         },
         {
           "path": "mod.info",
-          "sha256": "a9a8e920b70c575efaaeb688b1bf8d90b06ae7cfc43373a727f051712d401f6f",
-          "size": 870,
+          "sha256": "dccf136a98a067522b5a08fe6cd2000bd0b14de272209be9c610d53c8f0d6ce7",
+          "size": 886,
           "mode": "own",
           "repo_path": "src/SuQingBoatRVRoomGuard_4221/mod.info"
         },
@@ -2310,7 +2311,8 @@
           "mode": "own",
           "repo_path": "src/SuQingBoatRVRoomGuard_4221/README.txt"
         }
-      ]
+      ],
+      "compatibility_candidate_game": "42.22.2"
     },
     {
       "id": "SuQingBoatCraftFromFloor_4221",
@@ -2465,7 +2467,7 @@
     {
       "id": "SuQingWorldStateGuard_4221",
       "folder": "SuQingWorldStateGuard_4221",
-      "version": "0.1.0-candidate",
+      "version": "0.1.1-candidate",
       "directories": [
         "42",
         "42/media",
@@ -2476,19 +2478,20 @@
       "files": [
         {
           "path": "42/media/java/client/SuQingWorldStateGuard.jar",
-          "sha256": "fb5689cf30ba898da68e0497b06906c081c099cf47acdcbcc245168735b48fa9",
-          "size": 8629,
+          "sha256": "8943672c4c58a5390a4ea0461c4b184ef6166c5b0a0dcb96d5903833e63e9683",
+          "size": 9896,
           "mode": "own",
           "repo_path": "src/SuQingWorldStateGuard_4221/42/media/java/client/SuQingWorldStateGuard.jar"
         },
         {
           "path": "42/mod.info",
-          "sha256": "2661b0ebfa11842e14dce1b924ecbe0c9088276ecf39dd2b894fbf2f1e443836",
-          "size": 1304,
+          "sha256": "f6d115f65660b9021da99f8cbd8641b54e5ad1de94effcc83efcddc4525aa4e9",
+          "size": 1010,
           "mode": "own",
           "repo_path": "src/SuQingWorldStateGuard_4221/42/mod.info"
         }
-      ]
+      ],
+      "compatibility_candidate_game": "42.22.2"
     },
     {
       "id": "SuQingLuckyStrikeMenuFix_4221",
@@ -2725,7 +2728,7 @@
     {
       "id": "SuQingVanillaPryUpgrade",
       "folder": "SuQingVanillaPryUpgrade",
-      "version": "0.1.3",
+      "version": "0.1.5",
       "directories": [
         "42",
         "42/media",
@@ -2747,10 +2750,17 @@
         },
         {
           "path": "42/media/lua/client/SuQingVanillaPryUpgrade/PryAction.lua",
-          "sha256": "486466f8320c89f6848e91b84b32f44e8c6db50b5f426fcae0d050ea5c39da75",
-          "size": 4226,
+          "sha256": "a5e3d6896df46afe872371bece4afc339a2154d37af3a90635cb10c183e88cd3",
+          "size": 3731,
           "mode": "own",
           "repo_path": "src/SuQingVanillaPryUpgrade/42/media/lua/client/SuQingVanillaPryUpgrade/PryAction.lua"
+        },
+        {
+          "path": "42/media/lua/client/SuQingVanillaPryUpgrade/RollSuccess.lua",
+          "sha256": "b4c69c17adc67c30159654c50d0ec3eed217298894ceacbc433794f4bcde9122",
+          "size": 102,
+          "mode": "own",
+          "repo_path": "src/SuQingVanillaPryUpgrade/42/media/lua/client/SuQingVanillaPryUpgrade/RollSuccess.lua"
         },
         {
           "path": "42/media/lua/client/SuQingVanillaPryUpgrade/Targets.lua",
@@ -2758,6 +2768,13 @@
           "size": 2220,
           "mode": "own",
           "repo_path": "src/SuQingVanillaPryUpgrade/42/media/lua/client/SuQingVanillaPryUpgrade/Targets.lua"
+        },
+        {
+          "path": "42/media/lua/client/SuQingVanillaPryUpgrade/VanillaAction.lua",
+          "sha256": "30816c70773df1feabdf8d7d2b36c4005d8ca1cdf388b5ab5b06ae95443bde8b",
+          "size": 1246,
+          "mode": "own",
+          "repo_path": "src/SuQingVanillaPryUpgrade/42/media/lua/client/SuQingVanillaPryUpgrade/VanillaAction.lua"
         },
         {
           "path": "42/media/lua/shared/Translate/CN/ContextMenu.json",
@@ -2789,8 +2806,8 @@
         },
         {
           "path": "42/mod.info",
-          "sha256": "b61e8d0feda3ab8c7c2633c8169aa26d1e0a9c8c59c556af3d1b8ab87dc02381",
-          "size": 399,
+          "sha256": "8a2f05cc379dd0c428bfd083654929c06c33621d265ebfc5c941958372fd0e85",
+          "size": 551,
           "mode": "own",
           "repo_path": "src/SuQingVanillaPryUpgrade/42/mod.info"
         }
@@ -2883,6 +2900,310 @@
           "size": 566,
           "mode": "own",
           "repo_path": "src/SuQingMFSFirearmUpgrade_4221/42/mod.info"
+        }
+      ],
+      "compatibility_candidate_game": "42.22.2"
+    },
+    {
+      "id": "SuQingMethadoneReset_4221",
+      "folder": "SuQingMethadoneReset_4221",
+      "version": "1.0.2",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/client",
+        "42/media/lua/shared",
+        "42/media/lua/shared/Translate",
+        "42/media/lua/shared/Translate/CH",
+        "42/media/lua/shared/Translate/CN",
+        "42/media/lua/shared/Translate/EN"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/client/SuQingMethadoneReset.lua",
+          "sha256": "fd8b8d3428dc410e174ab34d667811e5188ab4dae56e006b1c1b28400782ef56",
+          "size": 2172,
+          "mode": "own",
+          "repo_path": "src/SuQingMethadoneReset_4221/42/media/lua/client/SuQingMethadoneReset.lua"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CH/Tooltip.json",
+          "sha256": "e3107dcd78de605ea21ee179c587e128c461486cf1f31739bb33b70d187e14c6",
+          "size": 152,
+          "mode": "own",
+          "repo_path": "src/SuQingMethadoneReset_4221/42/media/lua/shared/Translate/CH/Tooltip.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/Tooltip.json",
+          "sha256": "d842f4b15200409092a6d4fba707f9538c3dde5f8a97479d049a6238bb3fae04",
+          "size": 195,
+          "mode": "own",
+          "repo_path": "src/SuQingMethadoneReset_4221/42/media/lua/shared/Translate/CN/Tooltip.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/EN/Tooltip.json",
+          "sha256": "2b48db53be94d08050847c912fcae9db56e73b5b552507deda66e73f9d2acf83",
+          "size": 167,
+          "mode": "own",
+          "repo_path": "src/SuQingMethadoneReset_4221/42/media/lua/shared/Translate/EN/Tooltip.json"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "7d65473c1791e9cf6b65f4816a64817903e31bb8d0bcd472ac0dda0908af9dd4",
+          "size": 352,
+          "mode": "own",
+          "repo_path": "src/SuQingMethadoneReset_4221/42/mod.info"
+        }
+      ],
+      "compatibility_candidate_game": "42.22.2"
+    },
+    {
+      "id": "SuQingLiveWireISACompat_4221",
+      "folder": "SuQingLiveWireISACompat_4221",
+      "version": "0.1.3-rc.6",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/lua",
+        "42/media/lua/client",
+        "42/media/lua/server",
+        "42/media/lua/server/SuQingLiveWireISACompat",
+        "42/media/lua/shared",
+        "42/media/lua/shared/Translate",
+        "42/media/lua/shared/Translate/CN",
+        "42/media/lua/shared/Translate/EN"
+      ],
+      "files": [
+        {
+          "path": "42/media/lua/client/zz_SuQingLiveWireISACompatMenu.lua",
+          "sha256": "fe2e13914405afd3d02d15937d3439401a4e1a4c6db92b4e0e078b634493bc56",
+          "size": 2223,
+          "mode": "own",
+          "repo_path": "src/SuQingLiveWireISACompat_4221/42/media/lua/client/zz_SuQingLiveWireISACompatMenu.lua"
+        },
+        {
+          "path": "42/media/lua/client/zz_SuQingLiveWireISAMonitor.lua",
+          "sha256": "d2e214635068925b125a27e4fe59083c23cbf104cc8a1d8773bc9414292f3ab6",
+          "size": 15529,
+          "mode": "own",
+          "repo_path": "src/SuQingLiveWireISACompat_4221/42/media/lua/client/zz_SuQingLiveWireISAMonitor.lua"
+        },
+        {
+          "path": "42/media/lua/server/SuQingLiveWireISACompat/BatteryRecipes.lua",
+          "sha256": "e6fcc09ab1dde60214e6d6a1678c351a4e746c24f80d40094c03169779b07faa",
+          "size": 4131,
+          "mode": "own",
+          "repo_path": "src/SuQingLiveWireISACompat_4221/42/media/lua/server/SuQingLiveWireISACompat/BatteryRecipes.lua"
+        },
+        {
+          "path": "42/media/lua/server/SuQingLiveWireISACompat/Bridge.lua",
+          "sha256": "3870e894ac09aa335b0e0c5c36d9de4571cb3e6e787bab80681434878a0b2a02",
+          "size": 8628,
+          "mode": "own",
+          "repo_path": "src/SuQingLiveWireISACompat_4221/42/media/lua/server/SuQingLiveWireISACompat/Bridge.lua"
+        },
+        {
+          "path": "42/media/lua/server/SuQingLiveWireISACompat/Gate.lua",
+          "sha256": "8c29394f71ed66404fcff616aa8eef1f6a257f655dd779790363d60dca1e9982",
+          "size": 12766,
+          "mode": "own",
+          "repo_path": "src/SuQingLiveWireISACompat_4221/42/media/lua/server/SuQingLiveWireISACompat/Gate.lua"
+        },
+        {
+          "path": "42/media/lua/server/SuQingLiveWireISACompat/ISA.lua",
+          "sha256": "227b1fbf452291dced5428eb886807a6baba847d38090b0378d8969f069713f4",
+          "size": 14664,
+          "mode": "own",
+          "repo_path": "src/SuQingLiveWireISACompat_4221/42/media/lua/server/SuQingLiveWireISACompat/ISA.lua"
+        },
+        {
+          "path": "42/media/lua/server/SuQingLiveWireISACompat/LiveWire.lua",
+          "sha256": "737545a999bc3015d2539c61cedba8b830561c2d1d0f7459f22ee738478a5a1c",
+          "size": 23883,
+          "mode": "own",
+          "repo_path": "src/SuQingLiveWireISACompat_4221/42/media/lua/server/SuQingLiveWireISACompat/LiveWire.lua"
+        },
+        {
+          "path": "42/media/lua/server/SuQingLiveWireISACompat/Portals.lua",
+          "sha256": "d9d655e9cb3d511cbad52c20eac074076a443120b3c45273f94d28a57e71c530",
+          "size": 5051,
+          "mode": "own",
+          "repo_path": "src/SuQingLiveWireISACompat_4221/42/media/lua/server/SuQingLiveWireISACompat/Portals.lua"
+        },
+        {
+          "path": "42/media/lua/server/zz_SuQingLiveWireISACompat.lua",
+          "sha256": "8182b4a0a9ce48959ba011c0cb3550b53008aec35ef3c2780633a5daa3212f91",
+          "size": 986,
+          "mode": "own",
+          "repo_path": "src/SuQingLiveWireISACompat_4221/42/media/lua/server/zz_SuQingLiveWireISACompat.lua"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/ContextMenu.json",
+          "sha256": "282d436c6db473a516af03c5009ae6142db4aa5e09842e1046125dcd0a1a8769",
+          "size": 1116,
+          "mode": "own",
+          "repo_path": "src/SuQingLiveWireISACompat_4221/42/media/lua/shared/Translate/CN/ContextMenu.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/IG_UI.json",
+          "sha256": "88b2fddf481fb20ab31444bddfb2991b11e50316e1f793606fafa6c8db6f2a5b",
+          "size": 994,
+          "mode": "own",
+          "repo_path": "src/SuQingLiveWireISACompat_4221/42/media/lua/shared/Translate/CN/IG_UI.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/EN/ContextMenu.json",
+          "sha256": "6c37dc846de38e3eb5d9003068178c2963d7d38adaadaf25e419efb73d402b2a",
+          "size": 1193,
+          "mode": "own",
+          "repo_path": "src/SuQingLiveWireISACompat_4221/42/media/lua/shared/Translate/EN/ContextMenu.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/EN/IG_UI.json",
+          "sha256": "7468f43a40227cd26725d2a74b49cb2b77d009798a778c1076dd49bbecf39f9a",
+          "size": 1003,
+          "mode": "own",
+          "repo_path": "src/SuQingLiveWireISACompat_4221/42/media/lua/shared/Translate/EN/IG_UI.json"
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "05cadca6b98607a65a78a7d539fe13e6d463ee2ca55883fc78d1d79a47818a57",
+          "size": 767,
+          "mode": "own",
+          "repo_path": "src/SuQingLiveWireISACompat_4221/42/mod.info"
+        }
+      ],
+      "compatibility_candidate_game": "42.22.2"
+    },
+    {
+      "id": "SuQingLiveWireWaterBridge",
+      "folder": "SuQingLiveWireWaterBridge",
+      "version": "0.1.1-rc.6",
+      "directories": [
+        "42.21",
+        "42.21/media",
+        "42.21/media/lua",
+        "42.21/media/lua/client",
+        "42.21/media/lua/client/SQWaterBridge",
+        "42.21/media/lua/server",
+        "42.21/media/lua/server/SQWaterBridge",
+        "42.21/media/lua/shared",
+        "42.21/media/lua/shared/Translate",
+        "42.21/media/lua/shared/Translate/CN",
+        "42.21/media/lua/shared/Translate/EN",
+        "common"
+      ],
+      "files": [
+        {
+          "path": "42.21/media/lua/client/SQWaterBridge/ContextMenu.lua",
+          "sha256": "73afeb5e0564c8038976973e8ff1747282f4080e9df53ed925d969340876bd61",
+          "size": 2702,
+          "mode": "own",
+          "repo_path": "src/SuQingLiveWireWaterBridge/42.21/media/lua/client/SQWaterBridge/ContextMenu.lua"
+        },
+        {
+          "path": "42.21/media/lua/server/SQWaterBridge/LiveWire.lua",
+          "sha256": "6bc36d4b9759b8b22d102c771c9fdf0a0d0730503d1f32af5daacbaffd084e98",
+          "size": 8684,
+          "mode": "own",
+          "repo_path": "src/SuQingLiveWireWaterBridge/42.21/media/lua/server/SQWaterBridge/LiveWire.lua"
+        },
+        {
+          "path": "42.21/media/lua/server/SQWaterBridge/Native.lua",
+          "sha256": "6b25d879cd315119edf703af046210e316bc63c63263269fba0f8b3207ac72e9",
+          "size": 3909,
+          "mode": "own",
+          "repo_path": "src/SuQingLiveWireWaterBridge/42.21/media/lua/server/SQWaterBridge/Native.lua"
+        },
+        {
+          "path": "42.21/media/lua/server/SQWaterBridge/State.lua",
+          "sha256": "4fbf8f5fdc97396b530727df9c276a0f7889eea0e667c8aecc470021999412b6",
+          "size": 2993,
+          "mode": "own",
+          "repo_path": "src/SuQingLiveWireWaterBridge/42.21/media/lua/server/SQWaterBridge/State.lua"
+        },
+        {
+          "path": "42.21/media/lua/server/SQWaterBridge/Waterpipes.lua",
+          "sha256": "b915ad2612ac55c4fb06b9310d7b76d4af506dd8746099dd646f4395fb1d8c46",
+          "size": 11595,
+          "mode": "own",
+          "repo_path": "src/SuQingLiveWireWaterBridge/42.21/media/lua/server/SQWaterBridge/Waterpipes.lua"
+        },
+        {
+          "path": "42.21/media/lua/server/WPServer.lua",
+          "sha256": "5affd2507f8e0e9452b90ef6c3c6274a6f5257b15776a4ea39a93006a822e67b",
+          "size": 7166,
+          "mode": "own",
+          "repo_path": "src/SuQingLiveWireWaterBridge/42.21/media/lua/server/WPServer.lua"
+        },
+        {
+          "path": "42.21/media/lua/shared/Translate/CN/IG_UI.json",
+          "sha256": "52fbc704b7e9f46d4bb37a61a9b8b38f1520d3dd0a417be5decd399f0376e067",
+          "size": 1135,
+          "mode": "own",
+          "repo_path": "src/SuQingLiveWireWaterBridge/42.21/media/lua/shared/Translate/CN/IG_UI.json"
+        },
+        {
+          "path": "42.21/media/lua/shared/Translate/EN/IG_UI.json",
+          "sha256": "65c673dee4ab24ff878f6deed99cfe2b7fa89290ebf17e41a200758f8ae7d7e6",
+          "size": 1174,
+          "mode": "own",
+          "repo_path": "src/SuQingLiveWireWaterBridge/42.21/media/lua/shared/Translate/EN/IG_UI.json"
+        },
+        {
+          "path": "42.21/mod.info",
+          "sha256": "6ef9e17662284d8f2487306c379a151357a003f080bacf27a297011ee8befb98",
+          "size": 556,
+          "mode": "own",
+          "repo_path": "src/SuQingLiveWireWaterBridge/42.21/mod.info"
+        },
+        {
+          "path": "common/.gitkeep",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0,
+          "mode": "own",
+          "repo_path": "src/SuQingLiveWireWaterBridge/common/.gitkeep"
+        }
+      ],
+      "compatibility_candidate_game": "42.22.2"
+    },
+    {
+      "id": "Codex_WeldingMaskTextureFix_4222",
+      "folder": "Codex_WeldingMaskTextureFix_4222",
+      "version": "1.0.0",
+      "directories": [
+        "42",
+        "42/media",
+        "42/media/clothing",
+        "42/media/clothing/clothingItems",
+        "common"
+      ],
+      "files": [
+        {
+          "path": "42/media/clothing/clothingItems/Hat_WeldersMask.xml",
+          "sha256": "d4d7143e80b21476cee285981ba3f4ccfd6b97c0a1b50dff7c3e3c1acf66e064",
+          "size": 536,
+          "source": {
+            "root": "workshop",
+            "path": "3717576490/mods/oldcat/42/media/clothing/clothingItems/Hat_WeldersMask.xml",
+            "sha256": "b2ddab03ea08aa2681ec7104bd5b39fcc02833b63f7f0a44700e886dce9ae215"
+          },
+          "mode": "patch",
+          "patch_path": "patches/Codex_WeldingMaskTextureFix_4222/42/media/clothing/clothingItems/Hat_WeldersMask.xml.patch",
+          "patch_sha256": "2ef9af9c2bfaf75c718f7eba5d2f5423406ace7357d79812b4c8e3c33e6bbf66",
+          "text_encoding": {
+            "bom": true,
+            "newline": "crlf",
+            "ends_with_newline": false
+          }
+        },
+        {
+          "path": "42/mod.info",
+          "sha256": "17ac2a9f575f05b90afffd576a62c3d089501fbcb71fffeb45d0e9c2d61ba897",
+          "size": 382,
+          "mode": "own",
+          "repo_path": "src/Codex_WeldingMaskTextureFix_4222/42/mod.info"
         }
       ],
       "compatibility_candidate_game": "42.22.2"

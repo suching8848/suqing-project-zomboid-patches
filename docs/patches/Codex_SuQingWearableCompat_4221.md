@@ -34,6 +34,10 @@ Run `tools/rebuild.py --mod-id "Codex_SuQingWearableCompat_4221" --check` with t
 
 ## 验证边界 / Validation boundary
 
+2026-11-13 本地热修保留 HavenFall 档位转换保护，并识别返鲜餐盒及返鲜冰箱公开的制作包装。需配合同轮 EX 和返鲜模组文件。离线测试覆盖粉毛小栀包 T3 的 120→240、实付扣料、50% 返还及未知包装拒绝。游戏内制作待验收。
+
+The November 13 local hotfix preserves the HavenFall tier-conversion guard and recognizes the craft wrappers exposed by Freshness Lunchbox and Freshness Fridge. Pair it with the matching EX and freshness builds. Offline tests cover the Zhizi Backpack T3 upgrade from 120 to 240, payment, the 50% refund, and rejection of unknown wrappers. In-game crafting remains to be verified.
+
 1.0.1 已在 42.22.2 原厂 Kahlua 核对普通容器 1.0.3、背包 EX 1.0.0-rc.2 和猫猫背包桥接。普通容器 1.0.3 已内置针剂盒、生化胸挂和 HavenFall 腰包，旧普通适配器仍只匹配 1.0.0，避免重复注册。此包继续给 20 款 HavenFall 背包提供 EX 适配，并阻止原生款式升级消耗已强化实例。游戏内保存重进待验收。
 
 Version 1.0.1 was checked on stock 42.22.2 Kahlua with Container Upgrades 1.0.3, Backpack EX 1.0.0-rc.2 and the MaoMao bridge. Container Upgrades 1.0.3 registers the injector case, Chemical chest rig and HavenFall waist bags internally. The legacy ordinary adapter stays limited to 1.0.0 to avoid duplicate registration. This package still supplies EX support for 20 HavenFall backpacks and blocks native conversion of an EX-upgraded instance. In-game reloading remains to be checked.

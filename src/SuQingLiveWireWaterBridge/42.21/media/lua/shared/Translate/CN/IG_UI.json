@@ -1,0 +1,18 @@
+{
+  "IGUI_SQWaterBridge_Menu": "Waterpipes 水路桥接",
+  "IGUI_SQWaterBridge_ConnectEast": "接入东侧管道",
+  "IGUI_SQWaterBridge_ConnectWest": "接入西侧管道",
+  "IGUI_SQWaterBridge_ConnectSouth": "接入南侧管道",
+  "IGUI_SQWaterBridge_ConnectNorth": "接入北侧管道",
+  "IGUI_SQWaterBridge_Disconnect": "解除水路桥接",
+  "IGUI_SQWaterBridge_Connected": "已接入 Waterpipes 管线。",
+  "IGUI_SQWaterBridge_Disconnected": "已解除水路桥接。",
+  "IGUI_SQWaterBridge_Unavailable": "当前水路桥接不可用。",
+  "IGUI_SQWaterBridge_OnePump": "请先解除另一台水泵的桥接。",
+  "IGUI_SQWaterBridge_PumpInUse": "水泵不可用，或已给原版外接器具供水。",
+  "IGUI_SQWaterBridge_Unsupported": "这段管线超出首版支持范围。",
+  "IGUI_SQWaterBridge_NoInlet": "没有相邻且朝向正确的入口管道。",
+  "IGUI_SQWaterBridge_NoOutlet": "管线没有已加载的喷头或兼容器具。",
+  "IGUI_SQWaterBridge_MixedFeed": "管线与另一供水入口相连，或器具有多个供水入口。",
+  "IGUI_SQWaterBridge_ReturnFlow": "管线形成了回路。"
+}

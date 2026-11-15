@@ -3,7 +3,7 @@ require "SQBoatRVRoomGuard/SourcePins"
 local Core = SQBoatRVRoomGuardCore
 SuQingBoatRVRoomGuard = SuQingBoatRVRoomGuard or {}
 local G = SuQingBoatRVRoomGuard
-G.version = "0.1.0-rc.2"
+G.version = "0.1.0-rc.3"
 
 local function multiplayer()
     return (isClient and isClient()) or (isServer and isServer())

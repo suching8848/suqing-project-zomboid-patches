@@ -1,0 +1,9 @@
+name=蘇清的美沙酮增强 / SuQing's Methadone Reset
+id=SuQingMethadoneReset_4221
+author=SuQing
+modversion=1.0.2
+versionMin=42.21
+versionMax=42.22
+require=\N&CsNarcotics
+loadModAfter=N&CsNarcotics,CodexNarcotics_CN_4221
+description=美沙酮清除 N&C 过量和未转为依赖的成瘾累计。 Methadone clears N&C overdose and addiction buildup.

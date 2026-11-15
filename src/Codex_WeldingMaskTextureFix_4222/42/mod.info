@@ -1,0 +1,8 @@
+name=蘇清的焊工面罩贴图修复 / SuQing's Welding Mask Texture Fix
+id=Codex_WeldingMaskTextureFix_4222
+description=修复 FantasyWorkshop 4.0 导致的焊工面罩红白格纹。 / Restores the welder mask texture path overridden by FantasyWorkshop 4.0.
+require=FantasyWorkshopVS42_4.0
+loadModAfter=FantasyWorkshopVS42_4.0
+versionMin=42.22
+versionMax=42.22
+modversion=1.0.0

@@ -18,7 +18,9 @@ function getText(key)
     return key
 end
 function getTexture(path) return path end
-function instanceof(object, class) return object.class == class end
+function instanceof(object, class)
+    return object.class == class or (class == "IForceablePortal" and object.forceable == true)
+end
 
 ISBaseObject = {}
 function ISBaseObject:derive(name)
@@ -63,7 +65,7 @@ local inventory = { tool = crowbar, getFirstTagEvalRecurse = function(self, tag,
 end,
     haveThisKeyId = function() return false end }
 local player = {
-    hand = nil, z = 0, burglar = false, sitting = false,
+    hand = nil, z = 0, burglar = false, sitting = false, strength = 10,
     getPlayerNum = function() return 0 end,
     getCurrentSquare = function() return square end,
     getInventory = function() return inventory end,
@@ -74,8 +76,7 @@ local player = {
     isTimedActionInstant = function() return true end,
     DistToProper = function() return 1 end,
     hasTrait = function(self, trait) assert(trait == CharacterTrait.BURGLAR); return self.burglar end,
-    getPerkLevel = function(_, perk) return perk == Perks.Strength and 10 or 0 end,
-    getBaseForceOpenChance = function() return 20 end,
+    getPerkLevel = function(self, perk) return perk == Perks.Strength and self.strength or 0 end,
     getX = function() return 0 end, getY = function() return 0 end, getZ = function(self) return self.z end,
     exertForForcing = function() strain = strain + 1 end,
     setMetabolicTarget = function(_, value) assert(value == Metabolics.UsingTools) end,
@@ -188,6 +189,8 @@ end
 
 Vector3f = { new = function() return {} end }
 local moduleName = "SuQingVanillaPryUpgrade/"
+require "TimedActions/ISForceOpen"
+local originalAttempt = ISForceOpen.attempt
 require "Vehicles/ISUI/ISVehicleMenu"
 ISVehicleMenu.doTowingMenu = function() end
 local baseFill = ISVehicleMenu.FillPartMenu
@@ -199,11 +202,19 @@ end
 client = true
 assert(loadstring(sources[moduleName .. "Menus"]))()
 expect(#worldHandlers == 1 and not ISVehicleMenu.SuQingVanillaPryUpgrade, "client registers no addon")
+assert(loadstring(sources[moduleName .. "VanillaAction"]))()
+expect(ISForceOpen.attempt == originalAttempt, "client keeps the original action")
 client = false
 server = true
 assert(loadstring(sources[moduleName .. "Menus"]))()
 expect(#worldHandlers == 1 and not ISVehicleMenu.SuQingVanillaPryUpgrade, "server registers no addon")
+assert(loadstring(sources[moduleName .. "VanillaAction"]))()
+expect(ISForceOpen.attempt == originalAttempt, "server keeps the original action")
 server = false
+require(moduleName .. "VanillaAction")
+local patchedAttempt = ISForceOpen.attempt
+assert(loadstring(sources[moduleName .. "VanillaAction"]))()
+expect(patchedAttempt ~= originalAttempt and ISForceOpen.attempt == patchedAttempt, "singleplayer installs the override once")
 require(moduleName .. "Menus")
 assert(loadstring(sources[moduleName .. "Menus"]))()
 expect(#worldHandlers == 2, "menu hook is registered once")
@@ -264,28 +275,29 @@ action:update()
 expect(action.stopped and door.locked and strain == 0, "added barricade cancels before rolling")
 door.boarded = false
 action = selectWorld(1)
-rolls = { 99, 99, 0 }
-action:update()
-expect(not action.finished and door.locked and strain == 1, "failed success roll continues same action")
+player.strength = 5
+rolls = { 50 }
 action:update()
 action:perform()
-expect(action.finished and door.failed and door.locked and lastHalo == "IGUI_SuQingPry_Failed", "hard failure uses vanilla door damage")
+expect(action.finished and #rolls == 0 and strain == 1 and door.failed and door.locked
+    and lastHalo == "IGUI_SuQingPry_Failed", "failure ends this action and applies vanilla door effects")
+player.strength = 10
 action = selectWorld(1)
-rolls = { 99, 9 }
+rolls = { 99 }
 action:update()
 action:perform()
-expect(door.open and not door.locked, "strength floor applies to a reinforced door")
+expect(action.finished and door.open and not door.locked, "strength ten succeeds even on roll 99")
 local thumpable = worldObject("IsoThumpable")
 thumpable.door, thumpable.padlock, thumpable.code = true, true, 987
 context.options = {}
 worldMenu(0, context, { thumpable, storage }, false)
 action = selectWorld(1)
-rolls = { 99, 0 }
+rolls = { 0 }
 action:update()
 action:perform()
 expect(not thumpable.padlock and thumpable.code == 0 and thumpable.open, "door lock fields clear together")
 action = selectWorld(2)
-rolls = { 99, 0 }
+rolls = { 0 }
 action:update()
 action:perform()
 expect(walkTarget == "container" and storage.code == 0 and storage.synced and lootUpdates == 1, "padlocked storage becomes available")
@@ -294,7 +306,7 @@ otherDoor.blocked = true
 context.options = {}
 worldMenu(0, context, { otherDoor }, false)
 action = selectWorld(1)
-rolls = { 99, 0 }
+rolls = { 0 }
 action:update()
 action:perform()
 expect(not otherDoor.locked and not otherDoor.open and lastHalo == "IGUI_SuQingPry_Blocked", "does not override a physically blocked opening")
@@ -339,21 +351,117 @@ expect(openRadial()[1] == "ContextMenu_SuQingPry_VehicleTrunk", "trunk has separ
 part.id = "EngineDoor"
 expect(openRadial()[1] == "ContextMenu_SuQingPry_VehicleHood", "hood has separate wording")
 part.id = "DoorFrontLeft"
+player.strength = 0
 action = selectVehicle()
 rolls = { 0, 0 }
 action:update()
 action:perform()
-expect(lock.locked and not action.nextAction and crowbar.condition == 9, "vehicle failure can wear the crowbar and leaves the lock")
+expect(action.finished and #rolls == 0 and lock.locked and not action.nextAction and crowbar.condition == 9,
+    "strength zero fails even on roll zero and can wear the crowbar")
 player.burglar = true
+player.strength = 10
 action = selectVehicle()
-rolls = { 7, 34 }
+rolls = { 99 }
 action:update()
 action:perform()
-expect(not lock.locked and not lock.open and vehicle.transmitted == 1 and lastRadius == 7, "burglar threshold, noise and selected lock update")
+expect(not lock.locked and not lock.open and vehicle.transmitted == 1 and lastRadius == 7,
+    "vehicle unlocks the selected part and burglar noise stays reduced")
 expect(action.nextAction and action.nextAction.Type == "ISOpenVehicleDoor" and action.nextAction.part == part,
     "queue contains exactly the native open action for this door")
 function action.nextAction:selectContainerInLootWindow() end
 action.nextAction:complete()
 expect(lock.open and vehicle.alarm and lootUpdates == 2 and completed == 7 and sounds == strain, "native opening keeps alarm and loot side effects")
+
+local function checkOdds(selectAction)
+    for strength = 0, 10 do
+        player.strength = strength
+        local successes = 0
+        for roll = 0, 99 do
+            local attempt = selectAction()
+            rolls = { roll }
+            attempt:update()
+            assert(attempt.finished and #rolls == 0, "each attempt uses one roll and ends")
+            if attempt.outcome == "opened" then successes = successes + 1 end
+        end
+        expect(successes == strength * 10, "each strength level adds exactly ten percentage points")
+    end
+end
+
+door.open, door.locked = false, true
+lock.open, lock.locked = false, true
+context.options = {}
+worldMenu(0, context, { door }, false)
+for _, burglar in ipairs({ false, true }) do
+    player.burglar = burglar
+    checkOdds(function() return selectWorld(1) end)
+    checkOdds(selectVehicle)
+end
+
+local function vanillaPortal(class)
+    local portal = worldObject(class)
+    portal.forceable = true
+    portal.isNotValidForForcing = function(self)
+        return self.boarded or self.open or not self.present
+    end
+    portal.forceStruggleDamage = function(self, character)
+        assert(character == player)
+        self.struggleHits = (self.struggleHits or 0) + 1
+        if self.breakOnPry then self.present = false end
+    end
+    return portal
+end
+
+local appliedState
+local nativeState = {
+    forceSucceeded = function(_, character) assert(character == player); appliedState = "success" end,
+    forceStopped = function(_, character) assert(character == player); appliedState = "fail" end
+}
+ForceOpenState = { instance = function() return nativeState end }
+
+local function vanillaAttempt(portal)
+    local attempt = attachActionMethods(ISForceOpen:new(player, portal))
+    appliedState = nil
+    attempt:animEvent("ForceOpenAttempt")
+    assert((attempt.finished or attempt.stopped) and appliedState == attempt.outcome)
+    return attempt.outcome
+end
+
+for _, class in ipairs({ "IsoDoor", "IsoWindow", "IsoThumpable" }) do
+    for strength = 0, 10 do
+        player.strength = strength
+        local successes = 0
+        for roll = 0, 99 do
+            local portal = vanillaPortal(class)
+            rolls = { roll }
+            local result = vanillaAttempt(portal)
+            assert(#rolls == 0 and portal.struggleHits == 1, "valid vanilla attempt rolls once after dealing struggle damage")
+            assert((result == "fail") == (portal.failed == true), "failed roll applies native failure effects")
+            if result == "success" then successes = successes + 1 end
+        end
+        expect(successes == strength * 10, "vanilla portal uses the shared Strength rule")
+    end
+end
+
+rolls = {}
+local unlockedPortal = vanillaPortal("IsoDoor")
+unlockedPortal.locked = false
+expect(vanillaAttempt(unlockedPortal) == "success" and not unlockedPortal.struggleHits, "unlocked target skips the roll")
+
+local guardedPortal = vanillaPortal("IsoDoor")
+player.hand = nil
+expect(vanillaAttempt(guardedPortal) == "fail" and not guardedPortal.struggleHits, "missing crowbar prevents prying")
+player.hand = crowbar
+crowbar.condition = 0
+expect(vanillaAttempt(guardedPortal) == "fail" and not guardedPortal.struggleHits, "broken crowbar prevents prying")
+crowbar.condition = 9
+reach = false
+expect(vanillaAttempt(guardedPortal) == "fail" and not guardedPortal.struggleHits, "unreachable target prevents prying")
+reach = true
+guardedPortal.boarded = true
+expect(vanillaAttempt(guardedPortal) == "fail" and not guardedPortal.struggleHits, "barricade prevents prying")
+guardedPortal.boarded = false
+guardedPortal.breakOnPry = true
+expect(vanillaAttempt(guardedPortal) == "fail" and guardedPortal.struggleHits == 1
+    and not guardedPortal.failed, "target invalidated by native damage skips the roll")
 
 return "PASS " .. assertions .. " assertions"

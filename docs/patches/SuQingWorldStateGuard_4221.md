@@ -1,23 +1,27 @@
-# 蘇清的世界对象状态保护
+# 蘇清的世界对象状态保护 / SuQing's World Object State Guard
 
-SuQing's World Object State Guard 0.1.0-candidate
+版本 / Version  `0.1.1-candidate`
 
 ## 中文
 
-需要 ZombieBuddy 至少2.3.4，适用已审查的42.21单人类资源。首次加载Java需通过ZombieBuddy原生批准，JAR变化可能需重新批准；不提供或自动设置allow-all，不改审批记录。
+适用于已审查的 42.21 原版和 PZO 类资源，以及 42.22.2 原版单人环境。需要 ZombieBuddy 2.3.4 或更新版本。新 JAR 首次加载需要通过 ZombieBuddy 的原生审批。
 
-动物保护仅在动物缺少HumanVisual时跳过不适用的人类衣物破洞调用；人类、已有HumanVisual的动物、原伤害、部位及其他异常保持。车辆保护仅在当前cell与已加载chunk都按对象身份唯一含该车、其他全部状态成立时恢复丢失的chunk字段，继续原update。不创建区块，不增删集合，不删除车辆、动物、数据库或存档，不关闭原生异常复制，也不承诺修复所有车辆问题。
+动物保护仅在动物缺少 HumanVisual 时跳过不适用的人类衣物破洞操作，保留原落地伤害和其余处理。车辆保护仅在同一辆车已按对象身份唯一登记于当前 cell 和已加载 chunk，且其余状态校验通过时，恢复丢失的区块引用并继续原版车辆更新。车辆更新失败时仍由原版处理。
 
-类资源按Compatibility.java中固定SHA256识别原版/PZO。未知、不可读资源保持原行为并明确告警；不放宽门禁。已有11月5用户首次进入原档、实际车辆保护触发及正常保存退出证据；再次读档、动物触发、Viewpoint、FPS及多人仍未全面验收，保留候选标签。正常退出、停用本ID并重启可撤销保护；不回滚世界进度或套用旧配置。
+42.22.2 要求完整构建号和两个目标类的原版 SHA-256 同时匹配。混合或缺失资源会保留原行为并在日志告警。42.21 仍按已审查哈希分别判断两项保护。42.22.2 的 PZO 组合仍待独立验证。
 
-源码保存在java/world_state_guard/source，独立构建工具tools/build_world_state_guard.py；固定ZIP时间和JDK构建收据保留可重现性。离线测试包含真实方法抽取fixture、ZombieBuddy转换/签名及ByteBuddy编织、未知资源拒绝和107项车辆受控状态断言，不启动游戏。
+42.22.2 已完成原版类离线比对、实际 ZombieBuddy/ByteBuddy 编织和受控回归，游戏内验收待完成。42.21 曾有用户首次读档、车辆保护触发和正常保存退出的记录。独立验收可在配套的 42.22.2 环境读档，检查日志的构建号及两项门禁，然后正常保存退出并重进。退出后可停用该 Mod ID。
+
+源码位于 `java/world_state_guard/source`。用 `tools/build_world_state_guard.py` 在独立目录复现候选 JAR，用 `tests/world_state_guard/run_adaptation.py` 对两版原版类、旧版 PZO 动物类和未知资源运行离线检查。
 
 ## English
 
-Requires ZombieBuddy 2.3.4 or newer and reviewed B42.21 single-player class resources. First Java loading requires ZombieBuddy's native approval; changed JAR bytes may require reapproval. No allow-all flag or approval-record changes are provided.
+Supports reviewed 42.21 stock and PZO class resources and stock 42.22.2 single player. It requires ZombieBuddy 2.3.4 or newer. A new JAR requires ZombieBuddy's native approval on first load.
 
-The animal guard only skips an inapplicable human clothing-hole call for animals lacking HumanVisual. Human behavior, visual-equipped animals, original damage/parts and other exceptions remain. The vehicle guard restores only a missing chunk field after unique identity membership in the current cell and a loaded chunk and every other condition pass, then continues the original update. It creates no chunks, changes no memberships and deletes no entities, databases or saves. Native crash copying remains. It is not a universal vehicle repair.
+The animal guard skips the human clothing-hole operation only for animals lacking HumanVisual and preserves the rest of landing damage handling. The vehicle guard restores a missing chunk reference only after unique identity membership in the current cell and a loaded chunk and the remaining state checks pass. It then continues the original vehicle update. The engine still handles vehicle update failures.
 
-Compatibility.java pins reviewed stock/PZO resource SHA256 values. Unknown/unreadable resources retain native behavior and emit warnings. Keep the candidate label: initial save loading, an actual vehicle guard trigger and normal saving/exiting have limited November 5 evidence. Reloading, animals, Viewpoint, FPS and multiplayer are not comprehensively accepted. Exit normally, disable this ID and restart to remove its behavior without rolling back progress or settings.
+The 42.22.2 gate requires the full build number and matching SHA-256 digests for both stock target classes. Mixed or missing resources preserve engine behavior and emit a warning. The reviewed 42.21 hashes retain separate eligibility for the two guards. A 42.22.2 PZO configuration awaits separate validation.
 
-Sources: java/world_state_guard/source. Isolated reproducible builder: tools/build_world_state_guard.py. Offline tests preserve actual-method fixtures, native ZombieBuddy conversion/signatures, ByteBuddy weaving, unknown-resource rejection and 107 vehicle-state assertions. They never start the game.
+Offline checks for 42.22.2 cover the stock classes, actual ZombieBuddy and ByteBuddy weaving, and controlled regressions. In-game acceptance remains pending. The 42.21 release had limited user evidence of loading a save, a vehicle guard trigger, and normal saving and exiting. For acceptance in a matching 42.22.2 test environment, load a save, check the reported build and both gates in the log, save, exit normally, and reload. The Mod ID can be disabled after exiting.
+
+Sources are in `java/world_state_guard/source`. Reproduce the candidate JAR in a fresh directory with `tools/build_world_state_guard.py`. Run `tests/world_state_guard/run_adaptation.py` to verify both stock builds, the old PZO animal class, and unknown resources offline.

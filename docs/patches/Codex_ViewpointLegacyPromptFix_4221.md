@@ -5,11 +5,11 @@
 | 项目 / Field | 当前值 / Current value |
 | --- | --- |
 | Mod ID / Folder | `Codex_ViewpointLegacyPromptFix_4221` |
-| 版本 / Version | `1.0.0` |
-| 游戏 / Game | Project Zomboid Build 42.21 |
+| 版本 / Version | `1.0.1` |
+| 游戏 / Game | Project Zomboid Build 42.21 / 42.22 |
 | 声明前置 / Declared prerequisite | `ProjectViewpointQOLLegacy0.1.6` |
 | 加载在其后 / Load after | `ProjectViewpointQOLLegacy0.1.6` |
-| Viewpoint 目标 / Viewpoint target | Legacy 的 Viewpoint 0.1.6.1 组合；不是当前 0.1.7 QOL 的补丁 |
+| Viewpoint 目标 / Viewpoint target | Legacy 在 Viewpoint 0.1.6.1 的手柄提示，以及在 0.1.6.2 被停用后的残余提示 |
 | 登记状态 / Registration | 2026-11-04 本地源码新增；尚未提交、推送或发布 / Local source addition; not committed, pushed or published |
 
 ## 中文说明
@@ -47,3 +47,9 @@ The 19 offline checks reproduce the upstream bug and exercise the wrapper with t
 本地源码登记不等于 Git 提交、远端同步或创意工坊发布；2026-11-03 的 33 项发布快照保持独立记录。
 
 Local registration is distinct from a Git commit, remote synchronization or Workshop publication. The previous 33-entry release snapshot remains separately recorded.
+
+
+### 1.0.1（2026-11-11） / 1.0.1 (2026-11-11)
+
+旧版 QOL 的 HUD 在 Viewpoint 0.1.6.2 上仍能挂载。补丁额外检查上游兼容性，在该版本下抑制残余 A/B 提示。23 项原版 Kahlua 回归通过。
+The Legacy HUD can attach on Viewpoint 0.1.6.2. This version checks the upstream version gate before rendering residual A/B prompts. All 23 offline Kahlua cases passed.

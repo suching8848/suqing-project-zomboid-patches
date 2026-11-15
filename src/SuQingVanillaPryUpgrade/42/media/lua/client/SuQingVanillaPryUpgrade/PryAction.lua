@@ -1,8 +1,8 @@
 require "TimedActions/ISBaseTimedAction"
-require "TimedActions/ISForceOpen"
 require "Vehicles/TimedActions/ISOpenVehicleDoor"
 
 local Targets = require "SuQingVanillaPryUpgrade/Targets"
+local rollSuccess = require "SuQingVanillaPryUpgrade/RollSuccess"
 local PryAction = ISBaseTimedAction:derive("SuQingVanillaPryUpgradeAction")
 
 local ATTEMPT_TICKS = 80
@@ -36,7 +36,6 @@ function PryAction:update()
     self.character:setMetabolicTarget(Metabolics.UsingTools)
     self.elapsed = self.elapsed + getGameTime():getMultiplier()
     if self.elapsed < self.interval then return end
-    self.elapsed = self.elapsed - self.interval
     if not self:isValid() then
         self:forceStop()
         return
@@ -49,17 +48,8 @@ function PryAction:update()
     character:playSound("CrowbarHit")
     addSound(character, character:getX(), character:getY(), character:getZ(), radius, radius)
 
-    local failChance = burglar and ISForceOpen.FAIL_CHANCE_BURGLAR or ISForceOpen.FAIL_CHANCE
-    if ZombRand(100) < failChance then
-        self.outcome = "failed"
-    else
-        local modifier = self.kind == "vehicle" and -5 or -10
-        if burglar then modifier = modifier + 20 end
-        local strength = character:getPerkLevel(Perks.Strength)
-        local chance = math.max(1, strength, character:getBaseForceOpenChance() + modifier)
-        if ZombRand(100) < chance then self.outcome = "opened" end
-    end
-    if self.outcome then self:forceComplete() end
+    self.outcome = rollSuccess(character) and "opened" or "failed"
+    self:forceComplete()
 end
 
 function PryAction:perform()

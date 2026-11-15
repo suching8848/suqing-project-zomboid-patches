@@ -1,5 +1,12 @@
 # 蘇清的船舱与房车房间兼容补丁 / SuQing's Boat Cabin and RV Room Compatibility Patch
 
+## 42.22.2 离线候选 / Offline candidate
+
+`0.1.0-rc.3` 支持 B42.21–42.22 单人。房间、物品与原分配键沿用现有格式。保留六个上游源码指纹及入口回退。游戏内待验。
+
+`0.1.0-rc.3` targets B42.21–42.22 single-player. Preserves room and item assignments, all six upstream source pins, and the entry safeguards. In-game testing is pending.
+
+
 [总目录 / Index](../../README.md) · [English overview](../../README.en.md)
 
 | 项目 / Field | 值 / Value |

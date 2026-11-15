@@ -377,6 +377,14 @@
       "root": "workshop",
       "path": "3619229745/mods/SuPrimitiveEquipment/common/media/lua/client/PE_Shield.lua",
       "sha256": "39bab6064f82909d98fd5065fd6d52ea9f792eeef2504aee89fd1537f7d38b55"
+    },
+    {
+      "mod_id": "Codex_WeldingMaskTextureFix_4222",
+      "target": "42/media/clothing/clothingItems/Hat_WeldersMask.xml",
+      "mode": "patch",
+      "root": "workshop",
+      "path": "3717576490/mods/oldcat/42/media/clothing/clothingItems/Hat_WeldersMask.xml",
+      "sha256": "b2ddab03ea08aa2681ec7104bd5b39fcc02833b63f7f0a44700e886dce9ae215"
     }
   ]
 }

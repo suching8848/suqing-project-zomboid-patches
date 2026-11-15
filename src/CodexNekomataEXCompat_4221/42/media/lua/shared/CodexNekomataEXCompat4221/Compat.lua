@@ -8,6 +8,7 @@ local C = X and X.Capacity
 local MAO_KEY = "__maomao_backpack_capacity_wrappers_v1"
 local PATCH_KEY = "__codex_nekomata_ex_room_forward_v1"
 local EX_VERSION = "1.0.0-rc.2"
+local fridgeLayer
 
 local function supported()
     return X and C and X.version == EX_VERSION and X.IsSinglePlayer()
@@ -35,6 +36,44 @@ local function authorLayer()
         or index.getEffectiveCapacity ~= w.getEffectiveCapacity
         or index.hasRoomFor ~= w.hasRoomFor then return nil end
     return index, w
+end
+
+-- MaoMao retries installation on player/clothing events. Publish the exact
+-- active trio to its idempotence record while keeping its continuations intact.
+function S.RecordFridgeLayer(fridge)
+    if not supported() or not SuQingFreshnessFridge or fridge ~= SuQingFreshnessFridge.Capacity
+        or not fridge.IsReady() then return false end
+    local index = indexTable()
+    local w = index and rawget(index, MAO_KEY)
+    local patch = type(w) == "table" and rawget(w, PATCH_KEY)
+    if type(patch) ~= "table" or patch.owner ~= S
+        or patch.forwarded ~= w.hasRoomFor
+        or (patch.forwardedEffective and patch.forwardedEffective ~= w.getEffectiveCapacity)
+        or patch.sourceRoom ~= w.sourceHasRoomFor or patch.sourceEffective ~= w.sourceGetEffectiveCapacity then
+        return false
+    end
+    local prior = fridge.originals
+    if prior.getCapacity ~= w.getCapacity or prior.getEffectiveCapacity ~= w.getEffectiveCapacity
+        or prior.hasRoomFor ~= w.hasRoomFor then return false end
+    fridgeLayer = { fridge = fridge, author = w, patch = patch }
+    local outer = fridge.wrappers
+    w.getCapacity, w.getEffectiveCapacity, w.hasRoomFor =
+        outer.getCapacity, outer.getEffectiveCapacity, outer.hasRoomFor
+    return true
+end
+
+local function activeFridge(w, patch)
+    local layer = fridgeLayer
+    if not layer or layer.author ~= w or layer.patch ~= patch then return nil end
+    local fridge = layer.fridge
+    local outer = fridge.wrappers
+    local prior = fridge.originals
+    if fridge.IsReady() and patch.forwarded == prior.hasRoomFor
+        and (not patch.forwardedEffective or patch.forwardedEffective == prior.getEffectiveCapacity)
+        and w.getCapacity == outer.getCapacity
+        and w.getEffectiveCapacity == outer.getEffectiveCapacity and w.hasRoomFor == outer.hasRoomFor then
+        return fridge
+    end
 end
 
 -- Match the author's two target rules exactly; do not classify another bag.
@@ -86,6 +125,11 @@ function S.BridgeAuthorRoom()
     if not index then return false end
     local prior = rawget(w, PATCH_KEY)
     if prior then
+        local fridge = activeFridge(w, prior)
+        if fridge then
+            return prior.owner == S and prior.forwarded == fridge.originals.hasRoomFor
+                and prior.sourceRoom == w.sourceHasRoomFor and prior.sourceEffective == w.sourceGetEffectiveCapacity
+        end
         local intact = type(prior) == "table" and prior.owner == S
             and prior.forwarded == w.hasRoomFor
             and prior.sourceRoom == w.sourceHasRoomFor
@@ -118,13 +162,16 @@ function S.IsKnownEXChain()
     local index, w = authorLayer()
     if not index then return false end
     local patch = rawget(w, PATCH_KEY)
-    return type(C.installedEffective) == "function" and type(C.installedRoom) == "function"
+    local fridge = activeFridge(w, patch)
+    local room = fridge and fridge.originals.hasRoomFor or w.hasRoomFor
+    local known = type(C.installedEffective) == "function" and type(C.installedRoom) == "function"
         and w.sourceGetEffectiveCapacity == C.installedEffective
         and w.sourceHasRoomFor == C.installedRoom
         and type(patch) == "table" and patch.owner == S
-        and patch.forwarded == w.hasRoomFor
+        and patch.forwarded == room
         and patch.sourceRoom == C.installedRoom
         and patch.sourceEffective == C.installedEffective
+    return known, fridge
 end
 
 function S.InstallHooks()
@@ -138,11 +185,15 @@ function S.InstallHooks()
     S.readyHook = function(...)
         local original = S.originalReady(...)
         if original then return original end
-        if not supported() or not S.IsKnownEXChain() then return original end
-        -- Preserve every other guard in the audited original IsReady. Only the
-        -- two direct function-identity checks gain the exact known-chain case.
-        return C.installedEffective ~= nil and C.installedTransfer ~= nil
-            and javaTransferItems == C.installedTransfer
+        if not supported() then return original end
+        local known, fridge = S.IsKnownEXChain()
+        if not known then return original end
+        if fridge then
+            local prior = fridge.originals
+            return type(C.IsCapacityLayerReady) == "function"
+                and C.IsCapacityLayerReady(prior.getEffectiveCapacity, prior.hasRoomFor)
+        end
+        return C.installedTransfer ~= nil and javaTransferItems == C.installedTransfer
     end
     S.installHook = function(...)
         local original = S.originalInstall(...)
