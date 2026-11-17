@@ -1,5 +1,11 @@
 # 蘇清的好彩香烟菜单修复 / SuQing's Lucky Strike Menu Fix
 
+0.1.1-rc.4 支持已审查的 CleanUI 2.10.7 和 More MRE。保留单根与盒装好彩香烟的中文分名，并保护混组的右键菜单。两个受检分支各通过 23 场景和 243 项离线断言。未识别的菜单版本沿用原路径。
+
+0.1.1-rc.4 supports reviewed CleanUI 2.10.7 with More MRE, retains distinct Simplified Chinese names for loose and pack items, and guards the mixed-group context menu. Each reviewed branch passed 23 scenarios and 243 offline assertions.
+
+## 先前版本记录 / Earlier release notes
+
 Mod ID `SuQingLuckyStrikeMenuFix_4221` · version `0.1.1-rc.1` · Project Zomboid B42.21.0 and B42.22.2 single-player · CleanUI `2.10.4`.
 
 ## 中文

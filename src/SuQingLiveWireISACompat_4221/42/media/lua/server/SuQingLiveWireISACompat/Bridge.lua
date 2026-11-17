@@ -49,6 +49,7 @@ function Bridge.install(isa, lw, gate, portalAdapter, portalVersion, wireVersion
             watts = ISA.watts,
             markBattery = recipes.mark,
             verify = gate.fromMod,
+            verifyDevices = gate.fromLiveWireDevices,
         }, wireVersion)
         assert(ready, "Live Wire adapter refused initialization: " .. tostring(reason))
         ready, reason = ISA.install(enrolled, managedBackup, gate.fromMod)

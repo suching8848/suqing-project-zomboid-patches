@@ -1,0 +1,7 @@
+name=蘇清的皮革晾晒加速 / SuQing's Faster Leather Drying
+id=SuQingLeatherRackSpeed_4222
+author=SuQing
+modversion=1.0.0
+versionMin=42.22.2
+versionMax=42.22.2
+description=小、中、大皮革晾晒架的原有干燥速率乘 2，保留温度和雨雪规则。适用于 B42.22.2 单人档。 <LINE> Doubles the existing drying rate for small, medium and large leather racks while preserving temperature and precipitation rules. For B42.22.2 single-player.

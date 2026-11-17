@@ -1,0 +1,11 @@
+name=SuQing's MFS Chinese Ammo Names
+namezh=蘇清的现代枪械弹药名称修复
+id=SuQingMFSAmmo38NamesCN_4222
+author=SuQing
+modversion=1.1.0
+versionMin=42.22
+versionMax=42.22
+require=ModernFirearmsSystem
+loadModAfter=ModernFirearmsSystem,B42Trans_CN,B42ModTrans_CN,GardeniaTranslate_CN
+description=Restores Modern Firearms System's Simplified Chinese names for 12 ammunition families in loose, boxed and cartoned form.
+descriptionzh=恢复现代枪械 12 类弹药的散装、盒装和整箱简中名称。

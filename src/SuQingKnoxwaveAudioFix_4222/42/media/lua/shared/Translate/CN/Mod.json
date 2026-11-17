@@ -1,0 +1,4 @@
+{
+  "name": "蘇清的 KNOXWAVE 音量修复",
+  "description": "修复 KNOXWAVE 0.15.34 的原音量、音效名读取和设置页加载。适用于 B42.22.2 单人，需要 ZombieBuddy 2.3.4，并批准两个模组的 Java 文件。"
+}

@@ -7,10 +7,16 @@ SuQingLuckyStrikeMenuFix = SuQingLuckyStrikeMenuFix or {}
 local M = SuQingLuckyStrikeMenuFix
 if M.loaded then return end
 M.loaded = true
-M.version = "0.1.1-rc.2"
+M.version = "0.1.1-rc.4"
 M.normalizedMenus = 0
 
--- Both reviewed versions and branches have the same entry instruction lines.
+-- The reviewed revisions use the same entry instruction lines on both branches.
+local reviewedVersions = {
+    ["2.10.4"] = true,
+    ["2.10.5"] = true,
+    ["2.10.6"] = true,
+    ["2.10.7"] = true,
+}
 local reviewedBranches = {
     ["42.21.0"] = "/42.19",
     ["42.22.2"] = "/42.22",
@@ -73,8 +79,8 @@ local function install()
         else
             cleanVersion = tostring(info:getModVersion())
             local dir = normalized(info:getVersionDir())
-            if cleanVersion ~= "2.10.4" and cleanVersion ~= "2.10.5" then
-                reason = "reviewed CleanUI 2.10.4 or 2.10.5 required"
+            if not reviewedVersions[cleanVersion] then
+                reason = "unreviewed CleanUI version " .. cleanVersion
             elseif not dir or dir:sub(-6) ~= reviewedBranches[gameVersion] then
                 reason = "unreviewed CleanUI branch"
             elseif not ISInventoryPane or not ISInventoryPaneContextMenu

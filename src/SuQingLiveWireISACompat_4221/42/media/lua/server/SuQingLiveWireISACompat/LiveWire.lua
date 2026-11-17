@@ -13,6 +13,9 @@ local runtimeVersions = {
     ["2.1.0"] = "2.1.0",
     ["2.1.1"] = "2.1.1",
     ["2.1.2"] = "2.1.2",
+    ["2.1.3"] = "2.1.3",
+    ["2.1.4"] = "2.1.4",
+    ["2.1.5"] = "2.1.5",
 }
 
 local function finite(n)
@@ -278,7 +281,6 @@ function Bridge.install(adapter, wireVersion)
         { server .. "LW_Demand.lua", { n = 1, lw.Demand.measure } },
         { server .. "LW_Circuits.lua", { n = 1, lw.Circuits.owner } },
         { server .. "LW_Forecast.lua", { n = 1, lw.Forecast.build } },
-        { server .. "LW_Devices.lua", { n = 1, lw.Devices.find } },
         { shared .. "LW_Physics.lua", { n = 1, settle } },
         { shared .. "LW_Config.lua", { n = 2, lw.Config.tileRange, lw.Config.verticalRange } },
         { shared .. "LW_Defs.lua", { n = 1, lw.Defs.modelOfObject } },
@@ -296,6 +298,12 @@ function Bridge.install(adapter, wireVersion)
         for i = 1, check[2].n do
             if not adapter.verify(check[2][i], "batman_LiveWire", check[1]) then return false, check[1] end
         end
+    end
+
+    local devicesPath = server .. "LW_Devices.lua"
+    if not adapter.verify(lw.Devices.find, "batman_LiveWire", devicesPath)
+        and (type(adapter.verifyDevices) ~= "function" or not adapter.verifyDevices(lw.Devices.find)) then
+        return false, devicesPath
     end
 
     hooks = adapter

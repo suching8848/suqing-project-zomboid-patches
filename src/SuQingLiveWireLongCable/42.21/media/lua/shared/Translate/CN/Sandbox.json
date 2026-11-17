@@ -1,0 +1,4 @@
+{
+    "Sandbox_SQLongCableDeviceRange": "设备长距离接电上限",
+    "Sandbox_SQLongCableDeviceRange_tooltip": "LiveWire 设备接入主逆变器的额外水平距离。0 或低于原电缆范围时沿用原范围。最大 100 格。"
+}

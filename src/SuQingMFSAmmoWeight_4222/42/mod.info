@@ -1,0 +1,10 @@
+name=SuQing's MFS Ammunition Weight
+namezh=蘇清的现代枪械弹药重量补丁
+id=SuQingMFSAmmoWeight_4222
+author=SuQing
+modversion=1.0.0
+versionMin=42.22
+versionMax=42.22
+require=ModernFirearmsSystem
+description=Rebalances magazine, ammunition and ammo packaging weights using half of the proposed real-world reference values.
+descriptionzh=按现实参考方案的半倍率调整弹匣、弹药和包装负重。

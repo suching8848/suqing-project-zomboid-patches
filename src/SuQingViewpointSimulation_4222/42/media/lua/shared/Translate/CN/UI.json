@@ -1,0 +1,10 @@
+{
+  "UI_SQViewpointSimulation_Title": "Viewpoint 模拟频率",
+  "UI_SQViewpointSimulation_Mode": "固定模拟频率",
+  "UI_SQViewpointSimulation_ModeTooltip": "设置单人游戏中 Viewpoint 3D 视角的模拟更新频率。选择关闭后使用常规游戏循环及现有显示限帧。",
+  "UI_SQViewpointSimulation_30Hz": "30 Hz",
+  "UI_SQViewpointSimulation_60Hz": "60 Hz",
+  "UI_SQViewpointSimulation_Off": "关闭",
+  "UI_SQViewpointSimulation_Ready": "点击应用后生效，默认 60 Hz。",
+  "UI_SQViewpointSimulation_Unavailable": "模拟频率当前不可用。请检查 Viewpoint 版本、ZombieBuddy 和 Java 批准状态，然后重启游戏。"
+}

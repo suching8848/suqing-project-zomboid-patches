@@ -1,0 +1,11 @@
+name=SuQing's More Item Information Tooltip Fix
+namezh=蘇清的物品详情提示修复
+id=SuQingMoreItemInfoText_4222
+author=SuQing
+modversion=1.0.0
+versionMin=42.22
+versionMax=42.22
+require=\MoreItemInformation
+loadModAfter=MoreItemInformation
+description=Fixes numeric values causing errors when More Item Information draws an item tooltip.
+descriptionzh=修复 More Item Information 绘制物品提示时因数值类型导致的报错。

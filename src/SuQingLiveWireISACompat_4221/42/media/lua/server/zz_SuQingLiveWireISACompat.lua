@@ -20,7 +20,7 @@ local function initialize()
         print("[SuQingLiveWireISACompat] inactive: " .. tostring(reason))
         return
     end
-    print("[SuQingLiveWireISACompat] 0.1.3-rc.6 ready")
+    print("[SuQingLiveWireISACompat] 0.1.3-rc.11 ready")
 end
 
 Events.OnInitGlobalModData.Add(initialize)

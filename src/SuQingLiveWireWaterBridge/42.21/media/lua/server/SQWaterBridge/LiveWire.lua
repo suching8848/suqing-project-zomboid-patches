@@ -191,17 +191,21 @@ function Adapter.install(bridge)
         or not LiveWire.Registry or not LiveWire.Marks or not LiveWire.Install or not LiveWire.Devices then
         return false
     end
+    if (bridge.sourceVersion == "2.1.4" or bridge.sourceVersion == "2.1.5")
+        and (not LiveWire.Config or type(LiveWire.Config.pumpTankLitres) ~= "function") then return false end
     if installedStep then return pump.step == installedStep end
     local provider
     if bridge.sourceVersion == "2.0.0" or bridge.sourceVersion == "2.0.2"
         or bridge.sourceVersion == "2.0.3" or bridge.sourceVersion == "2.1.0"
-        or bridge.sourceVersion == "2.1.1" or bridge.sourceVersion == "2.1.2" then
+        or bridge.sourceVersion == "2.1.1" or bridge.sourceVersion == "2.1.2"
+        or bridge.sourceVersion == "2.1.3" or bridge.sourceVersion == "2.1.4" or bridge.sourceVersion == "2.1.5" then
         provider = LiveWire.CircuitProvider
         if not provider or type(provider.deviceBlocked) ~= "function" or type(provider.blocked) ~= "function"
             or type(pump.checkBarrels) ~= "function" then return false end
     end
     local previousStep = pump.step
     installedStep = function(dev)
+        -- Live Wire owns native outlets and resizes their relay tanks during its original step.
         if not bridge.getBinding(dev) or hasNativeOutlet(dev) then return previousStep(dev) end
         if provider and not pump.disabled() and getCell():getGridSquare(dev.x, dev.y, dev.z)
             and pump.checkBarrels(dev) then LiveWire.Devices.syncMark(dev) end

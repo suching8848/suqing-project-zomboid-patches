@@ -1,4 +1,4 @@
-# 蘇清的猫猫背包EX升级扩展补丁 / SuQing’s Nekomata Backpack EX Upgrade Extension Patch
+# 蘇清的猫猫背包超级升级还原 / SuQing’s MaoMao Backpack EX Restoration
 
 [返回总目录 / Back to index](../../README.md) · [English overview](../../README.en.md)
 
@@ -6,7 +6,7 @@
 | --- | --- |
 | Mod ID | `CodexNekomataEXUpgrade_4221` |
 | 文件夹 / Folder | `CodexNekomataEXUpgrade_4221` |
-| 版本 / Version | `1.0.1` |
+| 版本 / Version | `1.0.2` |
 | 适用 / Target | Build 42.21–42.22 单人 / single-player. Tested offline on 42.22.2. |
 | 元数据硬依赖 / Declared prerequisites | `CodexNekomataEXCompat_4221`, `Nekomata Ridge`, `ExSuQingBackpackSuperUpgrade_4221` |
 | 原样require / Literal require | `\CodexNekomataEXCompat_4221,Nekomata Ridge,ExSuQingBackpackSuperUpgrade_4221` |
@@ -14,7 +14,7 @@
 
 ## 中文说明
 
-猫猫背包从原生120升级到EX基础240，沿用EX材料、技能、账本及50%返料；未升级仍为120，停用后的容量行为按原说明。
+保留已做过 EX 的猫猫背包的 240 基础容量及还原配方。先卸下并清空背包，即可还原并取回 50% 实付材料。新增升级走普通容器升级，并保留作者设定的 120 基础容量。
 
 只按需要安装本子补丁，不能把本仓库30项当作所有主模组的共同前置。`loadModAfter`是加载顺序声明，不等于要求安装列出的全部模组。`require`原字节保留，包括历史前缀语法；本仓库不擅自迁移Mod ID或改变依赖。
 
@@ -24,7 +24,7 @@
 
 ## English notes
 
-Adds an EX recipe taking the Nekomata backpack from native base 120 to 240, using EX materials, skills, ledger and 50% refunds. Unupgraded items remain at 120; disable behavior follows the original extension notes.
+Preserves the effective base capacity of 240 and the restoration recipe for previously EX-upgraded MaoMao backpacks. Empty and unequip the backpack, then restore it to recover 50% of paid materials. New upgrades use ordinary Container Upgrades and keep the authored base capacity of 120.
 
 Install this optional subpatch only for the relevant use case. All 30 are not a universal prerequisite. `loadModAfter` declares ordering, not a requirement to install every named mod. Literal `require` bytes, including historical prefix syntax, remain unchanged. No IDs or dependencies are migrated.
 
@@ -33,6 +33,10 @@ There are 5 runtime files: 5 tracked bridge/translation/metadata files, 0 local 
 Run `tools/rebuild.py --mod-id "CodexNekomataEXUpgrade_4221" --check` with the required source-root arguments, then use a new isolated `--output` directory. Missing or updated sources fail their pinned hashes; do not substitute a renamed newer file. The tool performs no download, subscription, deployment or enabled-list edits. Old personal README/backup/.bak artifacts are not shipped as runtime source; current guidance is collected here.
 
 ## 验证边界 / Validation boundary
+
+1.0.2 配合背包超级升级 1.0.0-rc.3 与猫又岭兼容桥接 1.0.2。沿用旧记录与 `MaoMaoEXRestore` 配方，移除新的超级升级制作入口。B42.22.2 原厂脚本解析器读回还原配方。Kahlua 回归验证了模拟旧存档的容量、物品转移和一次性 50% 返料，游戏内保存重进待验收。
+
+Version 1.0.2 requires Backpack EX 1.0.0-rc.3 and Nekomata EX Compatibility 1.0.2. It keeps the saved records and `MaoMaoEXRestore` recipe and removes the recipe for new EX upgrades. The stock B42.22.2 script parser loaded the restoration recipe. Kahlua tests with a simulated old save covered legacy capacity, item transfers and the one-time 50% refund. In-game save and reload remain to be verified.
 
 1.0.1 配合猫又岭兼容桥接 1.0.1。原厂 42.21 和 42.22.2 物品原型容量实读为 49，因此从已识别的作者包装读取实际 120 基线。旧的 120→240 实例记录、付款、返料和配方 ID 沿用。离线核对包含保存记录模拟、付款、还原及拒绝未知包装。游戏内保存重进待验收。
 

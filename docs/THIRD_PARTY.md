@@ -12,6 +12,9 @@ This repository contains local bridges, translations, metadata and contextual ch
 | Workshop 3619229745, SuPrimitiveEquipment | Full PE_Shield.lua stays external; an exact-source context diff reconstructs the fluid-tooltip overlay. |
 | Game media/lua/client/pzopt/pzopt_mainscreen_menu.lua | The menu source is pinned by SHA and is byte-identical in external PZ Optimization fad57862 and f0bca707. Only the translation/layout diff and own translation dictionary are tracked. Its upstream redistribution license has not been established by this task. |
 | Workshop 3791221767, AdrenalineShot; 3815980431, TarkovCombatStims | Five runtime fallback/reference files are rebuilt from installed upstream sources; four are exact copies and one needs only byte-format restoration. No original reference payload is stored in Git. |
+| Workshop 3395171770, Moodles in Lua v17 | The same-path override is reconstructed from the original script and the pinned refresh diff. |
+| Workshop 3494474677, More Item Information | The complete tooltip Lua stays external. Its measured-width and drawing changes are stored as a pinned context diff. |
+| Workshop 3633421539, Modern Firearms System | The 36 short Simplified Chinese ammunition names restore the game's original MFS terminology. The full MFS translation dictionary and mod remain external. |
 
 查看[精确输入路径与SHA](../upstream-sources.json)和[逐输出重建清单](../rebuild-manifest.json)。如果上游自动更新了这些字节，重建器拒绝输出；应重新审阅差异，不能用静默回退或关闭校验冒充兼容。
 

@@ -59,7 +59,8 @@ local function buildIndex()
 end
 
 local function isCustomFavouriteInput(item, player)
-    if not player then return false end
+    -- ISToolTipInv is also used by fluid and energy controls.
+    if not player or not item or not instanceof(item, "InventoryItem") then return false end
     -- Read the resolved inputs after start-up handlers have finished changing them.
     if not materialsByType then
         local ok, result = pcall(buildIndex)
@@ -150,7 +151,7 @@ local function install()
         return result
     end
     installed = true
-    print("[SuQing Favourite Recipe Materials] 0.1.1-rc.1 ready")
+    print("[SuQing Favourite Recipe Materials] 0.1.1-rc.2 ready")
 end
 
 Events.OnGameStart.Add(install)

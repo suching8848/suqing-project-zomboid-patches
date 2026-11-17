@@ -9,7 +9,7 @@ CodexInventoryTransferPerformance = CodexInventoryTransferPerformance or {}
 local M = CodexInventoryTransferPerformance
 if M.loaded then return end
 M.loaded = true
-M.version = "1.2.4"
+M.version = "1.2.6"
 M.enabled = true
 M.refreshIntervalMs = 180
 M.stats = { pageRefreshes = 0, pageDeferred = 0, paneRefreshes = 0,
@@ -212,7 +212,7 @@ local function runForced(fn, ...)
     return a, b, c
 end
 
--- CleanUI 2.10.1 through 2.10.5 finish category/search/pin ordering in a private helper,
+-- CleanUI 2.10.1 through 2.10.7 finish category/search/pin ordering in a private helper,
 -- after external refresh wrappers have run. Its public searchContainer method
 -- reaches that helper without drawing. Reuse the already completed refresh
 -- exactly once, then let all of CleanUI's own reconciliation execute normally.
@@ -339,6 +339,9 @@ local function wrapInput(class, name, isPage)
     end
 end
 
+local preserveReadOverlay
+local knownClosure
+
 local function install()
     if M.installed then return end
     -- Unknown layouts retain the unmodified native code path.
@@ -358,11 +361,18 @@ local function install()
     local cleanVersion = info and info.getModVersion and tostring(info:getModVersion())
     local branch = info and info.getVersionDir and info:getVersionDir()
     local branchName = type(branch) == "string" and branch:gsub("\\", "/"):match("/([^/]+)/?$")
-    local clean2105 = cleanVersion == "2.10.5" and (branchName == "42.19" or branchName == "42.22")
+    local reviewedBranch = branchName == "42.19" or branchName == "42.22"
+    local reviewedRecent = reviewedBranch
+        and (cleanVersion == "2.10.5" or cleanVersion == "2.10.6" or cleanVersion == "2.10.7")
     local needsPriorityBarrier = cleanVersion == "2.10.1" or cleanVersion == "2.10.2"
-        or cleanVersion == "2.10.3" or cleanVersion == "2.10.4" or clean2105
+        or cleanVersion == "2.10.3" or cleanVersion == "2.10.4" or reviewedRecent
     if cleanVersion ~= "2.9.9" and not needsPriorityBarrier then
         stopOptimizing("unreviewed CleanUI version or branch")
+        return
+    end
+    if cleanVersion == "2.10.7" and not knownClosure(rawget(ISInventoryPane, "_cleanUIOwnRenderdetails"),
+        "CleanUI", cleanVersion, "isui/isinventorypane.lua") then
+        stopOptimizing("unreviewed CleanUI base renderer")
         return
     end
     if needsPriorityBarrier and type(ISInventoryPane.searchContainer) ~= "function" then
@@ -372,7 +382,7 @@ local function install()
     -- This optional mod suppresses rows through a private renderer helper.
     -- Decline optimization rather than construct an ambiguous hit-test map.
     local active = type(getActivatedMods) == "function" and getActivatedMods() or nil
-    if clean2105 and active and (active:contains("SMP_SnakeUtilsPack") or active:contains("\\SMP_SnakeUtilsPack")) then
+    if reviewedRecent and active and (active:contains("SMP_SnakeUtilsPack") or active:contains("\\SMP_SnakeUtilsPack")) then
         stopOptimizing("CleanUI Snake Utils renderer takeover")
         return
     end
@@ -387,7 +397,7 @@ local function install()
             return
         end
     end
-    M.expandedSelection = (cleanVersion == "2.10.4" or clean2105) and branchName == "42.22"
+    M.expandedSelection = (cleanVersion == "2.10.4" or reviewedRecent) and branchName == "42.22"
     M.cleanUIVersion = cleanVersion
     M.needsPriorityBarrier = needsPriorityBarrier
     originals.searchContainer = ISInventoryPane.searchContainer
@@ -440,6 +450,7 @@ local function install()
             return originals.prerender(self, ...)
         end
     end
+    local keepReadOverlay = cleanVersion == "2.10.6" and preserveReadOverlay(active)
     originals.renderdetails = ISInventoryPane.renderdetails
     ISInventoryPane.renderdetails = function(self, doDragged, ...)
         local time = nowMs()
@@ -464,6 +475,11 @@ local function install()
         if not ok then error(a, 0) end
         return a, b, c
     end
+    if keepReadOverlay then
+        -- Publish the composed renderer so CleanUI does not overwrite it on rebind.
+        ISInventoryPane._cleanUIHasBeenReadWrapper = ISInventoryPane.renderdetails
+    end
+
     local paneInputs = { "onMouseDown", "onMouseUp", "onMouseDoubleClick", "onRightMouseUp",
         "onMouseMove", "onMouseWheel", "onMouseDownOutside", "onMouseUpOutside",
         "doContextOnJoypadSelected", "onJoypadDown", "onJoypadDirUp", "onJoypadDirDown",
@@ -497,6 +513,55 @@ local function install()
     print("[Codex InventoryTransferPerformance] " .. M.version .. " ready; CleanUI=" .. cleanVersion
         .. "; SP bulk refresh interval=" .. tostring(interval()) .. "ms")
 end
+knownClosure = function(fn, id, version, relativePath)
+    if type(fn) ~= "function" or type(getFilenameOfClosure) ~= "function" then return false end
+    local info = getModInfoByID(id) or getModInfoByID("\\" .. id)
+    local dir = info and info.getVersionDir and info:getVersionDir()
+    if type(dir) ~= "string" or not info.getModVersion or tostring(info:getModVersion()) ~= version then return false end
+    local ok, source = pcall(getFilenameOfClosure, fn)
+    return ok and type(source) == "string"
+        and source:gsub("^@", ""):gsub("\\", "/"):lower()
+            == dir:gsub("\\", "/"):gsub("/$", ""):lower() .. "/media/lua/client/" .. relativePath
+end
+
+-- CleanUI 2.10.6 reinstalls its reading overlay during startup and mode switches.
+-- PinyinSafeCompat 1.1 reuses the renderer captured before that overlay was installed.
+preserveReadOverlay = function(active)
+    local pane = ISInventoryPane
+    local installOverlay = CleanUI_HasBeenReadInstall
+    local base = rawget(pane, "_cleanUIOwnRenderdetails")
+    if not active or not (active:contains("P4HasBeenRead") or active:contains("\\P4HasBeenRead"))
+        or type(installOverlay) ~= "function" or type(base) ~= "function" then return false end
+    local current = pane.renderdetails
+    local previous = rawget(pane, "_cleanUIHasBeenReadWrapper")
+    if current == previous then return true end
+
+    if previous and current ~= base then
+        local pinyinID = "PinyinSearch_SafeSources_4221_LocalFix"
+        local pinyinFile = "pinyinsafecompat.lua"
+        local neat = knownClosure(current, "NeatUI_Equipment", "1.0.2", "neatequipment/patches/neq_hideequipped.lua")
+        local pinyin = knownClosure(pane.searchContainer, pinyinID, "1.1", pinyinFile)
+            and (neat or knownClosure(current, pinyinID, "1.1", pinyinFile))
+        if not pinyin then
+            -- The reviewed Neat renderer wraps the current renderer on game start.
+            -- The workshop Pinyin mod can replace it, so don't infer that chain.
+            return neat and not active:contains(pinyinID) and not active:contains("\\" .. pinyinID)
+                and not active:contains("yxjs_PinYinSearch") and not active:contains("\\yxjs_PinYinSearch")
+        end
+    end
+
+    -- Let CleanUI create its overlay around the live chain (including Neat), then
+    -- give it back its own original renderer for future compatibility checks.
+    pane._cleanUIOwnRenderdetails = current
+    local ok, installed = pcall(installOverlay)
+    pane._cleanUIOwnRenderdetails = base
+    if ok and installed and pane.renderdetails ~= current and pane.renderdetails == pane._cleanUIHasBeenReadWrapper then
+        return true
+    end
+    pane.renderdetails, pane._cleanUIHasBeenReadWrapper = current, previous
+    return false
+end
+
 M.install = install
 Events.OnGameStart.Add(install)
 

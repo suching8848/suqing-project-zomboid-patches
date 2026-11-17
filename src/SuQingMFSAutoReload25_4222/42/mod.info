@@ -1,0 +1,11 @@
+name=SuQing's MFS Auto-Reload 25 Rounds
+namezh=蘇清的现代枪械自动装弹 25 发补丁
+id=SuQingMFSAutoReload25_4222
+author=SuQing
+modversion=1.0.0
+versionMin=42.22
+versionMax=42.22
+require=ModernFirearmsSystem
+loadModAfter=ModernFirearmsSystem
+description=Load up to 25 rounds per cycle when carrying or wearing the automatic reloading device.
+descriptionzh=携带或佩戴自动装弹机构时，每轮最多装 25 发。

@@ -1,0 +1,8 @@
+name=增强消防斧耐久保险 / Trusty Fire Axe Condition Guard
+id=SuQingTrustyAxeConditionGuard_4222
+author=SuQing
+modversion=0.1.0
+versionMin=42.22.2
+versionMax=42.22.2
+require=TrustyFireAxeRedux
+description=将增强消防斧的斧刃耐久限制在游戏实际允许的上限，避免磨刀追逐达不到的锋利度。适用 B42.22.2 单人档。 <LINE> Caps the Trusty Firefighter Axe's blade condition at the game's effective maximum to keep sharpening targets reachable. Build 42.22.2 single-player.

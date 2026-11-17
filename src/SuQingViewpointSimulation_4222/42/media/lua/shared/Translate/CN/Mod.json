@@ -1,0 +1,4 @@
+{
+  "name": "蘇清的 Viewpoint 模拟频率",
+  "description": "为 Viewpoint 0.1.7 的固定模拟提供 30 Hz、60 Hz 和关闭三档，默认 60 Hz。适用于 B42.22.2 单人，需要 ZombieBuddy 2.3.4 与 Java 批准。"
+}

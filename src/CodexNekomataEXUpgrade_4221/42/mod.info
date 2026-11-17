@@ -1,9 +1,9 @@
-name=猫猫背包蘇清超级升级扩展
+name=蘇清的猫猫背包超级升级还原 / SuQing's MaoMao Backpack EX Restoration
 id=CodexNekomataEXUpgrade_4221
 author=SuQing / local extension
-modversion=1.0.1
+modversion=1.0.2
 versionMin=42.21
 versionMax=42.22
 require=\CodexNekomataEXCompat_4221,Nekomata Ridge,ExSuQingBackpackSuperUpgrade_4221
 loadModAfter=CodexNekomataEXCompat_4221,Nekomata Ridge,ExSuQingBackpackSuperUpgrade_4221
-description=Build 42.21–42.22 单人：猫猫背包可通过独立制作配方从原生120升级为有效基础容量240，沿用蘇清EX材料、技能、付款与50%还原返料。未升级仍保持作者120；自重、减重、储水与挂点不变。正常退出后禁用扩展会回原容量，记录保留供重新启用。
+description=B42.21–42.22 单人。配合超级升级 1.0.0-rc.3 保留猫猫背包原有 EX 容量和还原，按实付材料返还 50%。新增升级使用普通容器升级。 / B42.21–42.22 single-player. With Backpack EX 1.0.0-rc.3, preserves existing MaoMao EX capacity and restoration with a 50% refund of paid materials. New upgrades use ordinary Container Upgrades.

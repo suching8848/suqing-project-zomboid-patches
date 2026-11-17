@@ -1,5 +1,11 @@
 # 蘇清的批量转移库存刷新优化补丁 / SuQing’s Bulk Transfer Inventory Refresh Optimization Patch
 
+1.2.6 修复 CleanUI 2.10.7 批量转移的库存刷新，保留默认库存转移规则和原生回退。适配已审查的 42.19 和 42.22 分支。原版 Kahlua 两份分支各通过 210 场景、1,053 项断言，包括与搜索、近邻容器选区和冷藏显示的联动。游戏内启动已确认，实际库存操作待复测。
+
+1.2.6 restores bulk transfer inventory refresh with the reviewed CleanUI 2.10.7 branches for B42.19 and B42.22. Each branch passed 210 offline scenarios and 1,053 assertions. Startup is verified in game. Transfer behavior should be checked with each enabled inventory integration.
+
+## 先前版本记录 / Earlier release notes
+
 [返回总目录 / Back to index](../../README.md) · [English overview](../../README.en.md)
 
 | 项目 / Field | 当前值 / Current value |

@@ -6,7 +6,7 @@
 | --- | --- |
 | Mod ID | `CodexNekomataEXCompat_4221` |
 | 文件夹 / Folder | `CodexNekomataEXCompat_4221` |
-| 版本 / Version | `1.0.1` |
+| 版本 / Version | `1.0.2` |
 | 适用 / Target | Build 42.21–42.22 单人 / single-player. Tested offline on 42.22.2. |
 | 元数据硬依赖 / Declared prerequisites | `Nekomata Ridge`, `ExSuQingBackpackSuperUpgrade_4221` |
 | 原样require / Literal require | `\Nekomata Ridge,ExSuQingBackpackSuperUpgrade_4221` |
@@ -33,6 +33,10 @@ There are 2 runtime files: 2 tracked bridge/translation/metadata files, 0 local 
 Run `tools/rebuild.py --mod-id "CodexNekomataEXCompat_4221" --check` with the required source-root arguments, then use a new isolated `--output` directory. Missing or updated sources fail their pinned hashes; do not substitute a renamed newer file. The tool performs no download, subscription, deployment or enabled-list edits. Old personal README/backup/.bak artifacts are not shipped as runtime source; current guidance is collected here.
 
 ## 验证边界 / Validation boundary
+
+1.0.2 配合背包超级升级 1.0.0-rc.3 和猫猫背包还原 1.0.2。B42.22.2 Kahlua 回归验证了猫又岭、HavenFall 与返鲜冰箱组合加载后，反复换装及角色创建事件中的容量和转移调用链。游戏内复测待完成。
+
+Version 1.0.2 pairs with Backpack EX 1.0.0-rc.3 and MaoMao Backpack Restoration 1.0.2. B42.22.2 Kahlua tests covered the capacity and transfer hooks with Nekomata Ridge, HavenFall and Freshness Fridge loaded, including repeated clothing and player events. In-game verification is pending.
 
 2026-11-13 本地热修识别返鲜冰箱包装后的已知容量链，避免换装与角色创建时重复添加包装。需配合同轮 EX 与返鲜冰箱文件。B42.22.2 Kahlua 离线回归通过，游戏内验收待完成。
 

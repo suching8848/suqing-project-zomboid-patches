@@ -1,4 +1,20 @@
-# 蘇清的 Live Wire × ISA 统一电网 | SuQing's Live Wire × ISA Unified Grid
+# 蘇清的 Live Wire × ISA 统一电网 / SuQing's Live Wire × ISA Unified Grid
+
+0.1.3-rc.11 适配已验证的 Live Wire 2.1.5 和 Immersive Solar Arrays 1.2.16，适用于已复核的 B42.21.0 和 B42.22.2 单人环境。两项前置后加载。若同时安装传送门，将补丁放在已核对的传送门版本后。
+
+在 ISA 柜上选择要并网的设备，再在附近 Live Wire 主逆变器上接入。两类储能、负载、发电和备用机按混合电网结算。混合电网给传送门 0.1.6-rc.11 充电时，按电池实际充入量扣电。更换依赖前先退出并网。启动时仍校验实际脚本，陌生版本按原生逻辑运行。
+
+148 项新组合断言分别通过 Lua 5.1 和原版 Kahlua。正式档已确认启动，实际并网、充放电和设备控制待玩法复测。
+
+## English
+
+0.1.3-rc.11 supports the reviewed Live Wire 2.1.5 and Immersive Solar Arrays 1.2.16 single-player combinations. Load after both dependencies and after the supported Portals release if it is enabled.
+
+Select the cabinet using the ISA context menu, then connect it at the nearby Live Wire master inverter. The grid handles both storage pools, load, production and the backup generator. When charging Portals 0.1.6-rc.11 from the mixed grid, the bridge settles the amount actually stored. Disconnect the cabinet before changing dependencies. The original behavior remains available for unrecognized source revisions.
+
+The new combination passed 148 assertions each in Lua 5.1 and native Kahlua. In-game initialization is verified. Grid operations still need gameplay verification.
+
+## 先前版本记录 / Earlier release notes
 
 ## 中文
 

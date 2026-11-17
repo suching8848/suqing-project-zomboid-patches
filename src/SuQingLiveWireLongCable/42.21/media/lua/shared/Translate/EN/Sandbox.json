@@ -1,0 +1,4 @@
+{
+    "Sandbox_SQLongCableDeviceRange": "Long equipment cable range",
+    "Sandbox_SQLongCableDeviceRange_tooltip": "Extended horizontal range for LiveWire equipment wired to its master inverter. Zero or a value below the base cable range uses the base range. Maximum 100 tiles."
+}

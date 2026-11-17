@@ -55,7 +55,7 @@ local function verifiedLiveWireVersion()
             { "server/LiveWire/LW_Circuits.lua", 3447202187, 2070311534 },
         }
     else
-        -- Workshop 2.0.0 and 2.0.1 share a core. All reviewed 2.x releases share the pump sources.
+        -- Workshop 2.0.0 and 2.0.1 share a core. Live Wire 2.1.4 adds configurable native relay tanks.
         local circuitAdler, circuitRolling = 1986253812, 2313228458
         if matches(core, 578931324, 2663626545) then
             version = "2.0.0"
@@ -69,21 +69,39 @@ local function verifiedLiveWireVersion()
             version = "2.1.1"
         elseif matches(core, 806341247, 1730586772) then
             version = "2.1.2"
+        elseif matches(core, 882100864, 99927285) then
+            version = "2.1.3"
+        elseif matches(core, 957860481, 2764235094) then
+            version = "2.1.4"
+        elseif matches(core, 1033620098, 1133575607) then
+            version = "2.1.5"
         else
             return nil
         end
-        local usesConsumerFamilies = version == "2.1.0" or version == "2.1.1" or version == "2.1.2"
+        local usesConsumerFamilies = version == "2.1.0" or version == "2.1.1"
+            or version == "2.1.2" or version == "2.1.3" or version == "2.1.4" or version == "2.1.5"
         if usesConsumerFamilies then
             circuitAdler, circuitRolling = 4197378089, 726854015
+        end
+        local configurableRelayTank = version == "2.1.4" or version == "2.1.5"
+        local relayAdler, relayRolling = 4211289607, 1786054732
+        local transferAdler, transferRolling = 639289267, 2049862322
+        if configurableRelayTank then
+            relayAdler, relayRolling = 2906207381, 1814353210
+            transferAdler, transferRolling = 1772141096, 1206972376
         end
         pins = {
             { "server/LiveWire/LW_Pump.lua", 4054543926, 2236479571 },
             { "server/LiveWire/LW_Circuits.lua", circuitAdler, circuitRolling },
-            { "server/LiveWire/LW_PumpRelays.lua", 4211289607, 1786054732 },
-            { "server/LiveWire/LW_PumpTransfer.lua", 639289267, 2049862322 },
+            { "server/LiveWire/LW_PumpRelays.lua", relayAdler, relayRolling },
+            { "server/LiveWire/LW_PumpTransfer.lua", transferAdler, transferRolling },
             { "shared/LiveWire/LW_CircuitProvider.lua", 165980985, 3342867999 },
             { "shared/LiveWire/LW_Coverage.lua", 1084570187, 2158006856 },
         }
+        if configurableRelayTank then
+            pins[#pins + 1] = { "shared/LiveWire/LW_Config.lua", 3886809174, 543404205 }
+            pins[#pins + 1] = { "shared/LiveWire/LW_Defs.lua", 784931141, 2575647255 }
+        end
         if usesConsumerFamilies then
             pins[#pins + 1] = { "shared/LiveWire/LW_ApplianceFamilies.lua", 854645148, 1351327607 }
             pins[#pins + 1] = { "shared/LiveWire/LW_Consumers.lua", 654919684, 4118434416 }
@@ -118,6 +136,10 @@ local function adapt()
         { "local matrix = {", "local bridge, feedingPump\nlocal matrix = {" },
         { "local function hasClosedValve",
             "SQWaterBridge.Waterpipes.setRouting(getVectors)\nlocal function hasClosedValve" },
+        { "elseif barrel then",
+            "elseif bridge and bridge.Native.pourUsefulBarrel(x, y, z, dir, medium, amount, feedingPump) then\n"
+            .. "            pipeTraversed[traverseId] = true\n"
+            .. "        elseif barrel then" },
         { "WPVirtual.BarrelPourIn(x, y, z, medium, amount)",
             "if bridge then bridge.Native.pourBarrel(x, y, z, medium, amount, feedingPump)\n"
             .. "            else WPVirtual.BarrelPourIn(x, y, z, medium, amount) end" },

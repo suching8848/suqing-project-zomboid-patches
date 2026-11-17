@@ -5,6 +5,16 @@ Bridge.Native = Native
 
 local linked = {}
 
+local function loadUsefulBarrels()
+    local mods = type(getActivatedMods) == "function" and getActivatedMods()
+    if not mods or not mods:contains("UsefulBarrelsMP") then return nil end
+    local ok, api = pcall(require, "UB_Barrel")
+    if ok and type(api) == "table" and type(api.validate) == "function" then return api end
+end
+
+local usefulBarrels = loadUsefulBarrels()
+
+
 function Native.prepare(gmd)
     linked = {}
     for _, dev in pairs(LiveWire.Registry.devices()) do
@@ -39,18 +49,72 @@ local function sharedBarrel(x, y, z)
     return nil, true
 end
 
-local function addToCollector(barrel, medium, units)
-    if not barrel or type(units) ~= "number" or units <= 0 then return 0 end
+local function addWater(fc, medium, units)
+    if not fc or type(units) ~= "number" or units <= 0 then return 0 end
     if medium ~= "Water" and medium ~= "TaintedWater" then return 0 end
-    if LiveWire.Install.barrelState(barrel) ~= "ok" then return 0 end
-    local fc = barrel:getFluidContainer()
     local before = fc:getAmount()
     local requested = math.min(units / 100, fc:getCapacity() - before)
     if requested <= 0 then return 0 end
     fc:addFluid(Fluid[medium], requested)
     local accepted = (fc:getAmount() - before) * 100
     if accepted <= 0 then return 0 end
-    return accepted
+    return accepted, before
+end
+
+local function addToCollector(barrel, medium, units)
+    if not barrel or LiveWire.Install.barrelState(barrel) ~= "ok" then return 0 end
+    return addWater(barrel:getFluidContainer(), medium, units)
+end
+
+local function poweredPump(cell, pump)
+    local square = pump and cell:getGridSquare(pump.x, pump.y, pump.z)
+    return square and square:haveElectricity() and WPIso.GetPump(square)
+end
+
+local function usefulBarrelAt(square)
+    local objects = square:getObjects()
+    local barrel, container
+    for index = 0, objects:size() - 1 do
+        local obj = objects:get(index)
+        if not instanceof(obj, "IsoWorldInventoryObject") and usefulBarrels.validate(obj)
+            and not obj:getUsesExternalWaterSource() then
+            local fc = obj:getFluidContainer()
+            if fc and fc:getCapacity() > 0 then
+                if barrel then return nil end
+                barrel, container = obj, fc
+            end
+        end
+    end
+    return barrel, container
+end
+
+-- A Waterpipes outlet can reach an opened Useful Barrels object on the next tile.
+-- The fixture owns its water. Waterpipes keeps no virtual barrel row for it.
+function Native.pourUsefulBarrel(x, y, z, direction, medium, units, pump)
+    local settings = SandboxVars and SandboxVars.UsefulBarrels
+    if not usefulBarrels or not settings or settings.AllowWater ~= true
+        or (medium ~= "Water" and medium ~= "TaintedWater") then return false end
+    local cell = getCell()
+    local square = cell:getGridSquare(x, y, z)
+    if not square or WPIso.GetBarrel(square) then return false end
+    local barrel, fc = usefulBarrelAt(square)
+    if not barrel then return false end
+    local inlet
+    for _, step in ipairs(Bridge.directions) do
+        if step.dir == direction then
+            inlet = cell:getGridSquare(x - step.dx, y - step.dy, z)
+            break
+        end
+    end
+    if not inlet or not WPIso.GetPipe(inlet) or not poweredPump(cell, pump) then return false end
+
+    local water = fc:getSpecificFluidAmount(Fluid.Water) + fc:getSpecificFluidAmount(Fluid.TaintedWater)
+    if fc:getAmount() - water > 0.001 or not fc:canAddFluid(Fluid[medium]) then return false end
+    local accepted, before = addWater(fc, medium, units)
+    if accepted <= 0 then return false end
+    LuaEventManager.triggerEvent("OnWaterAmountChange", barrel, before)
+    barrel:sync()
+    return true
 end
 
 function Native.syncBarrel(barrel)
@@ -67,8 +131,7 @@ end
 function Native.pourBarrel(x, y, z, medium, units, pump)
     local obj, managed = sharedBarrel(x, y, z)
     if not managed then return WPVirtual.BarrelPourIn(x, y, z, medium, units) end
-    local square = pump and getCell():getGridSquare(pump.x, pump.y, pump.z)
-    if not square or not square:haveElectricity() or not WPIso.GetPump(square) then return 0 end
+    if not poweredPump(getCell(), pump) then return 0 end
     local accepted = addToCollector(obj, medium, units)
     if accepted > 0 then obj:sync() end
     return accepted

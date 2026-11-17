@@ -1,0 +1,10 @@
+{
+  "UI_SQViewpointSimulation_Title": "Viewpoint Simulation Rate",
+  "UI_SQViewpointSimulation_Mode": "Fixed simulation rate",
+  "UI_SQViewpointSimulation_ModeTooltip": "Sets the simulation update rate for Viewpoint's 3D view in single-player. Off follows the regular game loop and configured display framerate limit.",
+  "UI_SQViewpointSimulation_30Hz": "30 Hz",
+  "UI_SQViewpointSimulation_60Hz": "60 Hz",
+  "UI_SQViewpointSimulation_Off": "Off",
+  "UI_SQViewpointSimulation_Ready": "Applies when you select Apply. Defaults to 60 Hz.",
+  "UI_SQViewpointSimulation_Unavailable": "Simulation rate is unavailable. Check Viewpoint support, ZombieBuddy and Java approval, then restart."
+}

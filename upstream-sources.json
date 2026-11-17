@@ -385,6 +385,30 @@
       "root": "workshop",
       "path": "3717576490/mods/oldcat/42/media/clothing/clothingItems/Hat_WeldersMask.xml",
       "sha256": "b2ddab03ea08aa2681ec7104bd5b39fcc02833b63f7f0a44700e886dce9ae215"
+    },
+    {
+      "mod_id": "SuQingMFSAutoReload25_4222",
+      "target": "42/media/lua/shared/TimedActions/AutoReloadMagazineAction.lua",
+      "mode": "patch",
+      "root": "workshop",
+      "path": "3633421539/mods/Escape from Kentucky4215/42/media/lua/shared/TimedActions/AutoReloadMagazineAction.lua",
+      "sha256": "ef0df7fb6d21f49ea12e5e3fb4d5299c59022561676ae3660d7818348bff117d"
+    },
+    {
+      "mod_id": "SuQingMoreItemInfoText_4222",
+      "target": "42/media/lua/client/ItemInfo.lua",
+      "mode": "patch",
+      "root": "workshop",
+      "path": "3494474677/mods/MoreItemInformation/42.13.0/media/lua/client/ItemInfo.lua",
+      "sha256": "4f23f4fbc23adcd6499343da937c74a5e2546b90010fa9e34847f89cdb425555"
+    },
+    {
+      "mod_id": "SuQingNarcoticsMoodlesCompat_4222",
+      "target": "42/media/lua/client/MoodlesIn.lua",
+      "mode": "patch",
+      "root": "workshop",
+      "path": "3395171770/mods/MoodlesInLua/42.20/media/lua/client/MoodlesIn.lua",
+      "sha256": "42992ec814e3bba0f519882f13f3bfeba5c46f9803be1a4ceb13749ae6f1d62f"
     }
   ]
 }

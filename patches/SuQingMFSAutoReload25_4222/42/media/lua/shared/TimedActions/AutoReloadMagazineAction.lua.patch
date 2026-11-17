@@ -1,0 +1,5 @@
+--- upstream/42/media/lua/shared/TimedActions/AutoReloadMagazineAction.lua
++++ patched/42/media/lua/shared/TimedActions/AutoReloadMagazineAction.lua
+@@ -9 +9 @@
+-local ROUNDS_PER_CYCLE = 5
++local ROUNDS_PER_CYCLE = 25

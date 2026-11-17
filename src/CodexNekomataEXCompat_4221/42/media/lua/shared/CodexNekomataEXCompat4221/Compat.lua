@@ -1,4 +1,4 @@
--- Narrow integration for the audited EX 1.0.0-rc.2 and MaoMao capacity layer.
+-- Narrow integration for the audited EX 1.0.0-rc.3 and MaoMao capacity layer.
 require "ExSuQingBackpackSuperUpgrade/Capacity"
 
 CodexNekomataEXCompat_4221 = CodexNekomataEXCompat_4221 or {}
@@ -7,7 +7,7 @@ local X = ExSuQingBackpackSuperUpgrade
 local C = X and X.Capacity
 local MAO_KEY = "__maomao_backpack_capacity_wrappers_v1"
 local PATCH_KEY = "__codex_nekomata_ex_room_forward_v1"
-local EX_VERSION = "1.0.0-rc.2"
+local EX_VERSION = "1.0.0-rc.3"
 local fridgeLayer
 
 local function supported()

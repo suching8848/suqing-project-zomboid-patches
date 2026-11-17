@@ -67,7 +67,7 @@ if not T then
     function require() end
     function isClient() return false end
     function isServer() return false end
-    function instanceof(value, class) return value.fixtureClass == class end
+    function instanceof(value, class) return value ~= nil and value.fixtureClass == class end
     function getMouseX() return 10 end
     function getMouseY() return 10 end
     function getText(key) return key end
@@ -120,7 +120,8 @@ if not T then
     DrainableComboItem = expose({})
     InventoryContainer = expose({})
     function T.item(fullName, class, native)
-        return setmetatable({ fullName = fullName, scriptItem = scriptItem(fullName, native), native = native },
+        return setmetatable({ fixtureClass = "InventoryItem", fullName = fullName,
+            scriptItem = scriptItem(fullName, native), native = native },
             __classmetatables[(class or InventoryItem).class])
     end
 
@@ -205,6 +206,21 @@ FavouriteRecipeGameBuild = reviewedBuild
 T.installers[1]()
 eq(T.scanCount, 0, "index waits until after startup callbacks")
 T.addLateInput("Fixture.RuntimeAdded")
+
+scenario(function()
+    for _, class in ipairs({ "FluidContainer", "ResourceEnergy" }) do
+        local component = { fixtureClass = class, DoTooltip = T.nativeTooltip }
+        local panel = T.panel(component, player)
+        panel:render()
+        eq(#panel.tooltip.calls, 2, class .. " still renders both native passes")
+        eq(panel.tooltip.calls[1].item, component, class .. " remains the rendered object")
+        eq(panel.tooltip.calls[1].measure, true, class .. " measures first")
+        eq(panel.tooltip.calls[2].measure, false, class .. " draws second")
+        eq(panel.height, 32, class .. " retains native height")
+        eq(#panel.tooltip.text, 0, class .. " gets no recipe hint")
+    end
+    eq(T.scanCount, 0, "non-item tooltips never build the recipe index")
+end)
 
 scenario(function()
     eq(rubberBand:isFavouriteRecipeInput(player), true, "native positive remains positive")

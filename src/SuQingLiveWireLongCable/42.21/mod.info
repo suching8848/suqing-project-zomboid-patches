@@ -1,0 +1,11 @@
+name=SuQing's LiveWire Long Cable [SP]
+namezh=蘇清的 LiveWire 长距离接电 [单人]
+id=SuQingLiveWireLongCable
+author=SuQing
+modversion=0.1.0-rc.5
+versionMin=42.21
+versionMax=42.22
+require=batman_LiveWire
+loadModAfter=batman_LiveWire,SuQingLiveWireISACompat_4221,SuQingLiveWireWaterBridge
+description=Wire LiveWire equipment directly to its master inverter up to 100 tiles away. Single player.
+descriptionzh=让 LiveWire 设备直接接入最远 100 格外的主逆变器。仅单人。

@@ -1,5 +1,12 @@
 # SuQing’s Project Zomboid Patch Collection / 蘇清的僵尸毁灭工程补丁合集
 
+## November 18 compatibility update
+
+- CleanUI 2.10.7 updates cover bulk transfers, scrolled container dragging, proximity selection and mixed-group menus. Favourite Recipe Materials also keeps fluid and electricity tooltips working.
+- Reviewed Live Wire 2.1.5 integrations cover the unified grid, Waterpipes and long-distance wiring. Mixed-grid portal charging uses the matching Portals 0.1.6-rc.11 release.
+- Added individual patch sources for leather drying, fire axe condition, Modern Firearms System ammunition names and weight, KNOXWAVE, and Viewpoint's simulation rate. Backpack EX companions retain their independent mod IDs.
+- The MFS auto-loader, More Item Information and N&C moodle fixes rebuild their complete runtime overrides from the locally installed upstream scripts and the diffs published here. See [third-party sources](docs/THIRD_PARTY.md). Gameplay evidence and the [verified Workshop release](publishing/workshop.json) are recorded separately.
+
 ## November 15 compatibility and gameplay changes
 
 Includes Crowbar Prying 0.1.5, the N&C Status Panel 1.1.1 and the reviewed compatibility files used by the current single-player setup. Methadone Reset and both Live Wire bridges are optional. The welder mask fix uses a [local reconstruction](docs/patches/Codex_WeldingMaskTextureFix_4222.md).

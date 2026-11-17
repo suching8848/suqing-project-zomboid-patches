@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "target_game": "Project Zomboid Build 42.21",
-  "scope": "50 registered patches. See publishing/workshop.json for the verified public payload.",
+  "target_game": "Project Zomboid Build 42. See each mod's branch and compatibility range.",
+  "scope": "61 registered individual patches. See publishing/workshop.json for the verified collection release and per-patch guides for rebuilding and dependencies.",
   "mods": [
     {
       "id": "Codex_AmmoBox_CN_TextFix_4221",
@@ -313,9 +313,9 @@
       "id": "Codex_SuQingWearableCompat_4221",
       "folder": "Codex_SuQingWearableCompat_4221",
       "title_zh": "旧普通容器桥接与HavenFall EX兼容",
-      "title_en": "Legacy Container Bridge and HavenFall EX Compatibility",
-      "version": "1.0.1",
-      "description_original": "为当前单人档的针剂盒、生化胸挂、HavenFall前后腰包接入蘇清普通容器升级；保留针剂过滤及腰包换位保护；兼容HavenFall背包EX超级升级。",
+      "title_en": "蘇清容器升级：针剂盒与新增衣物兼容 [B42.21–42.22]",
+      "version": "1.0.2",
+      "description_original": "B42.21–42.22 单人。配合超级升级 1.0.0-rc.3 保留 HavenFall 背包既有 EX 容量和还原。使用原生进阶前须先还原蘇清升级。保留对旧普通升级 1.0.0 的原有桥接。 / B42.21–42.22 single-player. With Backpack EX 1.0.0-rc.3, preserves existing HavenFall EX capacity and restoration. Restore SuQing upgrades before native tier crafting. Includes the legacy ordinary 1.0.0 compatibility layer.",
       "requires_raw": "SuQingContainerUpgrade_4221,ExSuQingBackpackSuperUpgrade_4221,HavenFall",
       "load_after_raw": "SuQingContainerUpgrade_4221,TarkovCombatStims,CodexCBRTIndependent_4221,ExSuQingBackpackSuperUpgrade_4221,CodexNekomataEXCompat_4221,CodexNekomataEXUpgrade_4221,HavenFall",
       "required_mods": [
@@ -336,18 +336,13 @@
       "reconstruction_status": "recipes_ready",
       "source_runtime_info": "42/mod.info",
       "summary_zh": "旧普通1.0.0的四个物品接入与HavenFall EX桥接。普通发布1.0.1已内置四ID；该版本下旧普通adapter整体拒绝接入，HavenFall EX独立脚本仍按EX rc.2版本验证工作。",
-      "summary_en": "Contains four-item integration for ordinary 1.0.0 and a HavenFall EX bridge. Ordinary release 1.0.1 already includes the four IDs; its legacy ordinary adapter is rejected as a whole, while the separate HavenFall EX script retains its EX rc.2 version checks.",
+      "summary_en": "B42.21–42.22 单人。配合超级升级 1.0.0-rc.3 保留 HavenFall 背包既有 EX 容量和还原。使用原生进阶前须先还原蘇清升级。保留对旧普通升级 1.0.0 的原有桥接。 / B42.21–42.22 single-player. With Backpack EX 1.0.0-rc.3, preserves existing HavenFall EX capacity and restoration. Restore SuQing upgrades before native tier crafting. Includes the legacy ordinary 1.0.0 compatibility layer.",
       "runtime_files": 3,
-      "runtime_bytes": 17813,
+      "runtime_bytes": 17717,
       "reconstruction_modes": {
         "own": 3
       },
-      "excluded_files": [
-        {
-          "path": "README.txt",
-          "reason": "documentation/history/personal configuration; not a runtime source"
-        }
-      ],
+      "excluded_files": [],
       "source_roots": [],
       "compatibility_candidate_game": "42.22.2"
     },
@@ -485,8 +480,8 @@
       "id": "CodexNekomataEXCompat_4221",
       "folder": "CodexNekomataEXCompat_4221",
       "title_zh": "猫又岭与EX兼容桥接",
-      "title_en": "Nekomata Ridge and EX Compatibility",
-      "version": "1.0.1",
+      "title_en": "猫又岭与蘇清背包超级升级兼容",
+      "version": "1.0.2",
       "description_original": "Build 42.21–42.22 单人独立兼容：保留猫又背包原逻辑，为其他容器完整透传hasRoomFor参数；仅识别已核MaoMao包装链恢复蘇清背包超级升级就绪判定。未知外层仍拒绝。不改容量、物品、材料、付款、配方或存档数据。",
       "requires_raw": "\\Nekomata Ridge,ExSuQingBackpackSuperUpgrade_4221",
       "load_after_raw": "Nekomata Ridge,ExSuQingBackpackSuperUpgrade_4221",
@@ -502,7 +497,7 @@
       "reconstruction_status": "recipes_ready",
       "source_runtime_info": "42/mod.info",
       "summary_zh": "保留猫又背包逻辑，为其他容器透传hasRoomFor参数，并仅对已知MaoMao包装链恢复EX就绪判定；未知包装仍拒绝。",
-      "summary_en": "Preserves Nekomata backpack logic, passes hasRoomFor arguments for other containers and restores EX readiness only for the audited MaoMao wrapper chain; unknown wrappers remain rejected.",
+      "summary_en": "Build 42.21–42.22 单人独立兼容：保留猫又背包原逻辑，为其他容器完整透传hasRoomFor参数；仅识别已核MaoMao包装链恢复蘇清背包超级升级就绪判定。未知外层仍拒绝。不改容量、物品、材料、付款、配方或存档数据。",
       "runtime_files": 2,
       "runtime_bytes": 10518,
       "reconstruction_modes": {
@@ -516,9 +511,9 @@
       "id": "CodexNekomataEXUpgrade_4221",
       "folder": "CodexNekomataEXUpgrade_4221",
       "title_zh": "猫猫背包EX升级扩展",
-      "title_en": "Nekomata Backpack EX Upgrade Extension",
-      "version": "1.0.1",
-      "description_original": "Build 42.21–42.22 单人：猫猫背包可通过独立制作配方从原生120升级为有效基础容量240，沿用蘇清EX材料、技能、付款与50%还原返料。未升级仍保持作者120；自重、减重、储水与挂点不变。正常退出后禁用扩展会回原容量，记录保留供重新启用。",
+      "title_en": "蘇清的猫猫背包超级升级还原 / SuQing's MaoMao Backpack EX Restoration",
+      "version": "1.0.2",
+      "description_original": "B42.21–42.22 单人。配合超级升级 1.0.0-rc.3 保留猫猫背包原有 EX 容量和还原，按实付材料返还 50%。新增升级使用普通容器升级。 / B42.21–42.22 single-player. With Backpack EX 1.0.0-rc.3, preserves existing MaoMao EX capacity and restoration with a 50% refund of paid materials. New upgrades use ordinary Container Upgrades.",
       "requires_raw": "\\CodexNekomataEXCompat_4221,Nekomata Ridge,ExSuQingBackpackSuperUpgrade_4221",
       "load_after_raw": "CodexNekomataEXCompat_4221,Nekomata Ridge,ExSuQingBackpackSuperUpgrade_4221",
       "required_mods": [
@@ -535,9 +530,9 @@
       "reconstruction_status": "recipes_ready",
       "source_runtime_info": "42/mod.info",
       "summary_zh": "猫猫背包从原生120升级到EX基础240，沿用EX材料、技能、账本及50%返料；未升级仍为120，停用后的容量行为按原说明。",
-      "summary_en": "Adds an EX recipe taking the Nekomata backpack from native base 120 to 240, using EX materials, skills, ledger and 50% refunds. Unupgraded items remain at 120; disable behavior follows the original extension notes.",
+      "summary_en": "B42.21–42.22 单人。配合超级升级 1.0.0-rc.3 保留猫猫背包原有 EX 容量和还原，按实付材料返还 50%。新增升级使用普通容器升级。 / B42.21–42.22 single-player. With Backpack EX 1.0.0-rc.3, preserves existing MaoMao EX capacity and restoration with a 50% refund of paid materials. New upgrades use ordinary Container Upgrades.",
       "runtime_files": 5,
-      "runtime_bytes": 5526,
+      "runtime_bytes": 4341,
       "reconstruction_modes": {
         "own": 5
       },
@@ -702,8 +697,8 @@
       "id": "Codex_InventoryTransferPerformance_4221",
       "folder": "InventoryTransferPerformance_4221_Local",
       "title_zh": "批量转移库存刷新优化",
-      "title_en": "Bulk Transfer Inventory Refresh Optimization",
-      "version": "1.2.4",
+      "title_en": "[B42.21] Inventory Transfer Performance (Local)",
+      "version": "1.2.6",
       "description_original": "Coalesces automatic inventory UI rebuilds during stationary single-player bulk transfers. Keeps native transfers, interaction, rendering and tooltips. Requires CleanUI. Local reversible performance patch.",
       "requires_raw": "CleanUI",
       "load_after_raw": "CleanUI,NeatUI_Equipment,Codex_AttachedGrouping_4221,PinyinSearch_SafeSources_4221_LocalFix,Codex_PetGunWeightKits_4221,ProximityInventory",
@@ -722,18 +717,13 @@
       "reconstruction_status": "recipes_ready",
       "source_runtime_info": "42/mod.info",
       "summary_zh": "合并单人批量转移的库存刷新。支持 CleanUI 2.10.5 的 42.19 和 42.22 分支，保留已审查旧版的适配。",
-      "summary_en": "Coalesces single-player bulk-transfer inventory refreshes. Supports CleanUI 2.10.5 branches 42.19 and 42.22 and retains reviewed older adapters.",
+      "summary_en": "Coalesces automatic inventory UI rebuilds during stationary single-player bulk transfers. Keeps native transfers, interaction, rendering and tooltips. Requires CleanUI. Local reversible performance patch.",
       "runtime_files": 2,
-      "runtime_bytes": 25737,
+      "runtime_bytes": 29289,
       "reconstruction_modes": {
         "own": 2
       },
-      "excluded_files": [
-        {
-          "path": "README.txt",
-          "reason": "documentation/history/personal configuration; not a runtime source"
-        }
-      ],
+      "excluded_files": [],
       "source_roots": [],
       "compatibility_candidate_game": "42.22.2",
       "distribution": "optional_in_patch_collection"
@@ -1264,9 +1254,9 @@
       "id": "SuQingUIInteractionFixes",
       "folder": "SuQingUIInteractionFixes",
       "title_zh": "蘇清的提示框与融合物品栏修复",
-      "title_en": "SuQing's Tooltip and Proximity Selection Fixes",
-      "version": "1.0.3",
-      "description_original": "修复鼠标跟随文字提示的局部/屏幕坐标竞争，以及融合物品栏刷新时丢失 Shift 连选起点、展开大堆叠时选中行错位的问题。独立客户端补丁，不修改物品或转移机制。 <LINE> Fixes mouse-following text tooltip coordinates and preserves visible-row selections and the Shift anchor during Proximity Inventory refreshes. Standalone client-side patch for the reviewed B42.21–42.22 / CleanUI 2.10.3/2.10.4/2.10.5 combinations.",
+      "title_en": "蘇清的提示框与融合物品栏修复 / SuQing's Tooltip and Proximity Selection Fixes",
+      "version": "1.0.5",
+      "description_original": "修复鼠标跟随文字提示的局部/屏幕坐标竞争，以及融合物品栏刷新时丢失 Shift 连选起点、展开大堆叠时选中行错位的问题。独立客户端补丁，不修改物品或转移机制。 <LINE> Fixes mouse-following text tooltip coordinates and preserves visible-row selections and the Shift anchor during Proximity Inventory refreshes. Standalone client-side patch for the reviewed B42.21–42.22 / CleanUI 2.10.3/2.10.4/2.10.5/2.10.6/2.10.7 combinations.",
       "requires_raw": "CleanUI,ProximityInventory",
       "required_mods": [
         "CleanUI",
@@ -1284,18 +1274,13 @@
       "reconstruction_status": "recipes_ready",
       "source_runtime_info": "42/mod.info",
       "summary_zh": "修复跟随鼠标的文字提示坐标竞争，并在融合附近物品栏刷新时按实际可见行恢复所选物品与Shift起点，处理大堆叠展开、搜索及Ctrl+A后的选中错位。只针对已审查的CleanUI 2.10.3、2.10.4 和 2.10.5，未知版本不安装选中保持功能；不改物品或转移机制。",
-      "summary_en": "Fixes competing coordinate handling for mouse-following text tooltips and restores selected items and the Shift anchor against actual visible rows during Proximity Inventory refreshes. Covers expanded stacks, searches and Ctrl+A. Selection preservation is installed only for reviewed CleanUI 2.10.3/2.10.4/2.10.5; unknown versions are rejected. Item and transfer rules remain unchanged.",
+      "summary_en": "修复鼠标跟随文字提示的局部/屏幕坐标竞争，以及融合物品栏刷新时丢失 Shift 连选起点、展开大堆叠时选中行错位的问题。独立客户端补丁，不修改物品或转移机制。 <LINE> Fixes mouse-following text tooltip coordinates and preserves visible-row selections and the Shift anchor during Proximity Inventory refreshes. Standalone client-side patch for the reviewed B42.21–42.22 / CleanUI 2.10.3/2.10.4/2.10.5/2.10.6/2.10.7 combinations.",
       "runtime_files": 3,
-      "runtime_bytes": 18378,
+      "runtime_bytes": 21925,
       "reconstruction_modes": {
         "own": 3
       },
-      "excluded_files": [
-        {
-          "path": "README.txt",
-          "reason": "bilingual public documentation copied separately into release candidate"
-        }
-      ],
+      "excluded_files": [],
       "source_roots": [],
       "compatibility_candidate_game": "42.22.2",
       "distribution": "optional_in_patch_collection"
@@ -1373,9 +1358,9 @@
       "id": "SuQingLuckyStrikeMenuFix_4221",
       "folder": "SuQingLuckyStrikeMenuFix_4221",
       "title_zh": "蘇清的好彩香烟菜单修复",
-      "title_en": "SuQing's Lucky Strike Menu Fix",
-      "version": "0.1.1-rc.2",
-      "description_original": "区分好彩香烟单根与盒装的中文名称，修复 CleanUI 中两种类型混组时的右键菜单报错。B42.21.0 与 B42.22.2 单人 / CleanUI 2.10.4/2.10.5；离线验证，游戏内待验收。 <LINE> Distinguishes the Chinese names of Lucky Strike singles and packs and guards their mixed-stack context menu in CleanUI. B42.21.0 and B42.22.2 SP / CleanUI 2.10.4/2.10.5; offline validation, in-game acceptance pending.",
+      "title_en": "蘇清的好彩香烟菜单修复 / SuQing's Lucky Strike Menu Fix",
+      "version": "0.1.1-rc.4",
+      "description_original": "区分好彩香烟单根与盒装的中文名称，修复 CleanUI 中两种类型混组时的右键菜单报错。B42.21.0 与 B42.22.2 单人 / CleanUI 2.10.4/2.10.5/2.10.6/2.10.7；离线验证，游戏内待验收。 <LINE> Distinguishes the Chinese names of Lucky Strike singles and packs and guards their mixed-stack context menu in CleanUI. B42.21.0 and B42.22.2 SP / CleanUI 2.10.4/2.10.5/2.10.6/2.10.7; offline validation, in-game acceptance pending.",
       "requires_raw": "CleanUI,MREfood4213",
       "load_after_raw": "CleanUI,MREfood4213,GardeniaTranslate_CN,SuQingUIInteractionFixes,Codex_InventoryTransferPerformance_4221",
       "required_mods": [
@@ -1393,11 +1378,11 @@
       "reconstruction_status": "recipes_ready",
       "source_runtime_info": "42/mod.info",
       "summary_zh": "区分好彩香烟单根与盒装的中文名称，仅保护已审查CleanUI 2.10.4/2.10.5的好彩混组菜单；保留全部成员、吸烟与转移规则。",
-      "summary_en": "Separates Chinese Lucky Strike single/pack names and guards only reviewed CleanUI 2.10.4/2.10.5 mixed groups, retaining every item and original smoking/transfer rules.",
-      "runtime_files": 6,
-      "runtime_bytes": 10890,
+      "summary_en": "区分好彩香烟单根与盒装的中文名称，修复 CleanUI 中两种类型混组时的右键菜单报错。B42.21.0 与 B42.22.2 单人 / CleanUI 2.10.4/2.10.5/2.10.6/2.10.7；离线验证，游戏内待验收。 <LINE> Distinguishes the Chinese names of Lucky Strike singles and packs and guards their mixed-stack context menu in CleanUI. B42.21.0 and B42.22.2 SP / CleanUI 2.10.4/2.10.5/2.10.6/2.10.7; offline validation, in-game acceptance pending.",
+      "runtime_files": 4,
+      "runtime_bytes": 6653,
       "reconstruction_modes": {
-        "own": 6
+        "own": 4
       },
       "excluded_files": [],
       "source_roots": [],
@@ -1409,8 +1394,8 @@
       "id": "SuQingFavouriteRecipeMaterials_4221",
       "folder": "SuQingFavouriteRecipeMaterials_4221",
       "title_zh": "蘇清的收藏配方材料标记修复",
-      "title_en": "SuQing's Favourite Recipe Materials Fix",
-      "version": "0.1.1-rc.1",
+      "title_en": "蘇清的收藏配方材料标记修复 / SuQing's Favourite Recipe Materials Fix",
+      "version": "0.1.1-rc.2",
       "description_original": "修复 B42.21.0 与 B42.22.2 单人游戏中自定义模块收藏配方材料缺少绿勾和悬停提示。兼容原版与 CleanUI 详细列表。 <LINE> Restores the green badge and hover hint for favourite recipes in custom modules on B42.21.0 and B42.22.2 single-player. Works with vanilla and CleanUI detailed lists.",
       "requires_raw": "",
       "load_after_raw": "CleanUI,Neat_Crafting,SuQingSearchEnhancement,SuQingRefrigerationUpgrade_4221,ExSuQingBackpackSuperUpgrade_4221",
@@ -1426,11 +1411,11 @@
       "reconstruction_status": "recipes_ready",
       "source_runtime_info": "42/mod.info",
       "summary_zh": "补齐自定义模块收藏配方材料的原有绿勾与绿色悬停提示。",
-      "summary_en": "Restores the stock green badge and hover hint for materials of favourites in custom modules.",
-      "runtime_files": 4,
-      "runtime_bytes": 7547,
+      "summary_en": "修复 B42.21.0 与 B42.22.2 单人游戏中自定义模块收藏配方材料缺少绿勾和悬停提示。兼容原版与 CleanUI 详细列表。 <LINE> Restores the green badge and hover hint for favourite recipes in custom modules on B42.21.0 and B42.22.2 single-player. Works with vanilla and CleanUI detailed lists.",
+      "runtime_files": 3,
+      "runtime_bytes": 7678,
       "reconstruction_modes": {
-        "own": 4
+        "own": 3
       },
       "excluded_files": [],
       "source_roots": [],
@@ -1599,8 +1584,8 @@
       "folder": "SuQingLiveWireISACompat_4221",
       "title_zh": "蘇清的 Live Wire × ISA 统一电网",
       "title_en": "SuQing's Live Wire × ISA Unified Grid",
-      "version": "0.1.3-rc.6",
-      "description_original": "Manually connect one ISA power bank to a Live Wire grid for shared solar generation, battery storage and load settlement. Single-player, Live Wire 1.7.2 and ISA 1.2.15.",
+      "version": "0.1.3-rc.11",
+      "description_original": "Manually connect one ISA power bank to a Live Wire grid for shared solar generation, battery storage and load settlement. Single-player, LiveWire 1.7.2, 2.0.0–2.0.3 or 2.1.0–2.1.5 and ISA 1.2.15–1.2.16. LiveWire Extended is unsupported.",
       "requires_raw": "batman_LiveWire,ISA",
       "load_after_raw": "batman_LiveWire,ISA,SuQingPortals",
       "required_mods": [
@@ -1615,10 +1600,10 @@
       "doc": "docs/patches/SuQingLiveWireISACompat_4221.md",
       "reconstruction_status": "recipes_ready",
       "source_runtime_info": "42/mod.info",
-      "summary_zh": "将一台 ISA 电池柜手动接入 Live Wire 电网，共享光伏发电、储电和负载结算。",
-      "summary_en": "Manual ISA battery and solar integration into a single Live Wire kWh grid with shared load, backup, battery conversions and optional portal metering.",
+      "summary_zh": "将一台 ISA 电池柜手动接入 Live Wire 电网，共享光伏发电、储电和负载结算。支持单人模式、LiveWire 1.7.2、2.0.0–2.0.3 或 2.1.0–2.1.5 与 ISA 1.2.15–1.2.16。暂不支持 LiveWire Extended。",
+      "summary_en": "Manually connect one ISA power bank to a Live Wire grid for shared solar generation, battery storage and load settlement. Single-player, LiveWire 1.7.2, 2.0.0–2.0.3 or 2.1.0–2.1.5 and ISA 1.2.15–1.2.16. LiveWire Extended is unsupported.",
       "runtime_files": 14,
-      "runtime_bytes": 92934,
+      "runtime_bytes": 99788,
       "reconstruction_modes": {
         "own": 14
       },
@@ -1633,10 +1618,10 @@
       "folder": "SuQingLiveWireWaterBridge",
       "title_zh": "蘇清的 Live Wire × Waterpipes 水路桥接 [单人]",
       "title_en": "SuQing's Live Wire and Waterpipes Bridge [SP]",
-      "version": "0.1.1-rc.6",
-      "description_original": "Share compatible rain collectors and connect one Live Wire pump to a dedicated Waterpipes line. Single player.",
+      "version": "0.1.1-rc.10",
+      "description_original": "Share rain collectors, supply opened Useful Barrels, and connect a Live Wire pump to a dedicated Waterpipes line. Single player.",
       "requires_raw": "Waterpipes,batman_LiveWire",
-      "load_after_raw": "Waterpipes,batman_LiveWire,SuQingSprinklerFertilizer",
+      "load_after_raw": "Waterpipes,batman_LiveWire,SuQingSprinklerFertilizer,UsefulBarrelsMP",
       "required_mods": [
         "Waterpipes",
         "batman_LiveWire"
@@ -1644,17 +1629,18 @@
       "load_after_mods": [
         "Waterpipes",
         "batman_LiveWire",
-        "SuQingSprinklerFertilizer"
+        "SuQingSprinklerFertilizer",
+        "UsefulBarrelsMP"
       ],
       "doc": "docs/patches/SuQingLiveWireWaterBridge.md",
       "reconstruction_status": "recipes_ready",
       "source_runtime_info": "42.21/mod.info",
-      "summary_zh": "共用兼容的集雨桶，并将一台 Live Wire 水泵接入独立的 Waterpipes 管线。仅单人。",
-      "summary_en": "Share compatible rain collectors and connect one Live Wire pump to a dedicated Waterpipes line. Single player.",
-      "runtime_files": 10,
-      "runtime_bytes": 39914,
+      "summary_zh": "共用集雨桶，给 Useful Barrels 的开盖桶补水，并将 Live Wire 水泵接入独立的 Waterpipes 管线。仅单人。",
+      "summary_en": "Share rain collectors, supply opened Useful Barrels, and connect a Live Wire pump to a dedicated Waterpipes line. Single player.",
+      "runtime_files": 9,
+      "runtime_bytes": 44122,
       "reconstruction_modes": {
-        "own": 10
+        "own": 9
       },
       "excluded_files": [],
       "source_roots": [],
@@ -1694,6 +1680,335 @@
       ],
       "compatibility_candidate_game": "42.22.2",
       "distribution": "local_rebuild_third_party_output_not_in_workshop"
+    },
+    {
+      "id": "SuQingLiveWireLongCable",
+      "folder": "SuQingLiveWireLongCable",
+      "version": "0.1.0-rc.5",
+      "title_zh": "蘇清的 LiveWire 长距离接电 [单人]",
+      "title_en": "SuQing's LiveWire Long Cable [SP]",
+      "description_original": "Wire LiveWire equipment directly to its master inverter up to 100 tiles away. Single player.",
+      "requires_raw": "batman_LiveWire",
+      "load_after_raw": "batman_LiveWire,SuQingLiveWireISACompat_4221,SuQingLiveWireWaterBridge",
+      "required_mods": [
+        "batman_LiveWire"
+      ],
+      "load_after_mods": [
+        "batman_LiveWire",
+        "SuQingLiveWireISACompat_4221",
+        "SuQingLiveWireWaterBridge"
+      ],
+      "doc": "docs/patches/SuQingLiveWireLongCable.md",
+      "reconstruction_status": "recipes_ready",
+      "source_runtime_info": "42.21/mod.info",
+      "summary_zh": "让 LiveWire 设备直接接入最远 100 格外的主逆变器。仅单人。",
+      "summary_en": "Wire LiveWire equipment directly to its master inverter up to 100 tiles away. Single player.",
+      "runtime_files": 11,
+      "runtime_bytes": 15889,
+      "reconstruction_modes": {
+        "own": 11
+      },
+      "excluded_files": [],
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2"
+    },
+    {
+      "id": "SuQingCleanUIContainerDrag_4222",
+      "folder": "SuQingCleanUIContainerDrag_4222",
+      "version": "1.0.1",
+      "title_zh": "蘇清的 CleanUI 容器拖动排序修复",
+      "title_en": "SuQing's CleanUI Container Drag Fix",
+      "description_original": "Fixes container button drag sorting after scrolling the CleanUI 2.10.6/2.10.7 container sidebar.",
+      "requires_raw": "CleanUI",
+      "load_after_raw": "CleanUI",
+      "required_mods": [
+        "CleanUI"
+      ],
+      "load_after_mods": [
+        "CleanUI"
+      ],
+      "doc": "docs/patches/SuQingCleanUIContainerDrag_4222.md",
+      "reconstruction_status": "recipes_ready",
+      "source_runtime_info": "42/mod.info",
+      "summary_zh": "修复 CleanUI 2.10.6/2.10.7 容器侧栏滚动后拖动排序位置错位。",
+      "summary_en": "Fixes container button drag sorting after scrolling the CleanUI 2.10.6/2.10.7 container sidebar.",
+      "runtime_files": 2,
+      "runtime_bytes": 2496,
+      "reconstruction_modes": {
+        "own": 2
+      },
+      "excluded_files": [],
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2"
+    },
+    {
+      "id": "SuQingLeatherRackSpeed_4222",
+      "folder": "SuQingLeatherRackSpeed_4222",
+      "version": "1.0.0",
+      "title_zh": "蘇清的皮革晾晒加速",
+      "title_en": "蘇清的皮革晾晒加速 / SuQing's Faster Leather Drying",
+      "description_original": "小、中、大皮革晾晒架的原有干燥速率乘 2，保留温度和雨雪规则。适用于 B42.22.2 单人档。 <LINE> Doubles the existing drying rate for small, medium and large leather racks while preserving temperature and precipitation rules. For B42.22.2 single-player.",
+      "requires_raw": "",
+      "load_after_raw": "",
+      "required_mods": [],
+      "load_after_mods": [],
+      "doc": "docs/patches/SuQingLeatherRackSpeed_4222.md",
+      "reconstruction_status": "recipes_ready",
+      "source_runtime_info": "42/mod.info",
+      "summary_zh": "原版小、中、大皮革晾晒架干燥速率乘 2。",
+      "summary_en": "小、中、大皮革晾晒架的原有干燥速率乘 2，保留温度和雨雪规则。适用于 B42.22.2 单人档。 <LINE> Doubles the existing drying rate for small, medium and large leather racks while preserving temperature and precipitation rules. For B42.22.2 single-player.",
+      "runtime_files": 6,
+      "runtime_bytes": 5611,
+      "reconstruction_modes": {
+        "own": 6
+      },
+      "excluded_files": [],
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2"
+    },
+    {
+      "id": "SuQingTrustyAxeConditionGuard_4222",
+      "folder": "SuQingTrustyAxeConditionGuard_4222",
+      "version": "0.1.0",
+      "title_zh": "增强消防斧耐久保险 / Trusty Fire Axe Condition Guard",
+      "title_en": "增强消防斧耐久保险 / Trusty Fire Axe Condition Guard",
+      "description_original": "将增强消防斧的斧刃耐久限制在游戏实际允许的上限，避免磨刀追逐达不到的锋利度。适用 B42.22.2 单人档。 <LINE> Caps the Trusty Firefighter Axe's blade condition at the game's effective maximum to keep sharpening targets reachable. Build 42.22.2 single-player.",
+      "requires_raw": "TrustyFireAxeRedux",
+      "load_after_raw": "",
+      "required_mods": [
+        "TrustyFireAxeRedux"
+      ],
+      "load_after_mods": [],
+      "doc": "docs/patches/SuQingTrustyAxeConditionGuard_4222.md",
+      "reconstruction_status": "recipes_ready",
+      "source_runtime_info": "42/mod.info",
+      "summary_zh": "",
+      "summary_en": "将增强消防斧的斧刃耐久限制在游戏实际允许的上限，避免磨刀追逐达不到的锋利度。适用 B42.22.2 单人档。 <LINE> Caps the Trusty Firefighter Axe's blade condition at the game's effective maximum to keep sharpening targets reachable. Build 42.22.2 single-player.",
+      "runtime_files": 2,
+      "runtime_bytes": 3666,
+      "reconstruction_modes": {
+        "own": 2
+      },
+      "excluded_files": [],
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2"
+    },
+    {
+      "id": "SuQingMFSAmmoWeight_4222",
+      "folder": "SuQingMFSAmmoWeight_4222",
+      "version": "1.0.0",
+      "title_zh": "蘇清的现代枪械弹药重量补丁",
+      "title_en": "SuQing's MFS Ammunition Weight",
+      "description_original": "Rebalances magazine, ammunition and ammo packaging weights using half of the proposed real-world reference values.",
+      "requires_raw": "ModernFirearmsSystem",
+      "load_after_raw": "",
+      "required_mods": [
+        "ModernFirearmsSystem"
+      ],
+      "load_after_mods": [],
+      "doc": "docs/patches/SuQingMFSAmmoWeight_4222.md",
+      "reconstruction_status": "recipes_ready",
+      "source_runtime_info": "42/mod.info",
+      "summary_zh": "按现实参考方案的半倍率调整弹匣、弹药和包装负重。",
+      "summary_en": "Rebalances magazine, ammunition and ammo packaging weights using half of the proposed real-world reference values.",
+      "runtime_files": 5,
+      "runtime_bytes": 4656,
+      "reconstruction_modes": {
+        "own": 5
+      },
+      "excluded_files": [],
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2"
+    },
+    {
+      "id": "SuQingMFSAmmo38NamesCN_4222",
+      "folder": "SuQingMFSAmmo38NamesCN_4222",
+      "version": "1.1.0",
+      "title_zh": "蘇清的现代枪械弹药名称修复",
+      "title_en": "SuQing's MFS Chinese Ammo Names",
+      "description_original": "Restores Modern Firearms System's Simplified Chinese names for 12 ammunition families in loose, boxed and cartoned form.",
+      "requires_raw": "ModernFirearmsSystem",
+      "load_after_raw": "ModernFirearmsSystem,B42Trans_CN,B42ModTrans_CN,GardeniaTranslate_CN",
+      "required_mods": [
+        "ModernFirearmsSystem"
+      ],
+      "load_after_mods": [
+        "ModernFirearmsSystem",
+        "B42Trans_CN",
+        "B42ModTrans_CN",
+        "GardeniaTranslate_CN"
+      ],
+      "doc": "docs/patches/SuQingMFSAmmo38NamesCN_4222.md",
+      "reconstruction_status": "recipes_ready",
+      "source_runtime_info": "42/mod.info",
+      "summary_zh": "恢复现代枪械 12 类弹药的散装、盒装和整箱简中名称。",
+      "summary_en": "Restores Modern Firearms System's Simplified Chinese names for 12 ammunition families in loose, boxed and cartoned form.",
+      "runtime_files": 2,
+      "runtime_bytes": 2072,
+      "reconstruction_modes": {
+        "own": 2
+      },
+      "excluded_files": [],
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2"
+    },
+    {
+      "id": "SuQingKnoxwaveAudioFix_4222",
+      "folder": "SuQingKnoxwaveAudioFix_4222",
+      "version": "0.1.2",
+      "title_zh": "蘇清的 KNOXWAVE 音量修复",
+      "title_en": "SuQing's KNOXWAVE Volume Fix",
+      "description_original": "Repairs sound volume, sound-name lookup and the options page for KNOXWAVE 0.15.34 in B42.22.2 single-player. Requires ZombieBuddy 2.3.4 and Java approval for both mods.",
+      "requires_raw": "\\Knoxwave,\\ZombieBuddy",
+      "load_after_raw": "Knoxwave",
+      "required_mods": [
+        "Knoxwave",
+        "ZombieBuddy"
+      ],
+      "load_after_mods": [
+        "Knoxwave"
+      ],
+      "doc": "docs/patches/SuQingKnoxwaveAudioFix_4222.md",
+      "reconstruction_status": "recipes_ready",
+      "source_runtime_info": "42/mod.info",
+      "summary_zh": "修复 KNOXWAVE 0.15.34 的原音量、音效名读取和设置页加载。适用于 B42.22.2 单人，需要 ZombieBuddy 2.3.4，并批准两个模组的 Java 文件。",
+      "summary_en": "Repairs sound volume, sound-name lookup and the options page for KNOXWAVE 0.15.34 in B42.22.2 single-player. Requires ZombieBuddy 2.3.4 and Java approval for both mods.",
+      "runtime_files": 7,
+      "runtime_bytes": 6305,
+      "reconstruction_modes": {
+        "own": 7
+      },
+      "excluded_files": [],
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2"
+    },
+    {
+      "id": "SuQingViewpointSimulation_4222",
+      "folder": "SuQingViewpointSimulation_4222",
+      "version": "0.1.0",
+      "title_zh": "蘇清的 Viewpoint 模拟频率",
+      "title_en": "SuQing's Viewpoint Simulation Control",
+      "description_original": "Choose 30 Hz, 60 Hz or Off for fixed simulation in Viewpoint 0.1.7. Defaults to 60 Hz. Requires B42.22.2 single-player, ZombieBuddy 2.3.4 and Java approval.",
+      "requires_raw": "\\Viewpoint,\\ZombieBuddy",
+      "load_after_raw": "Viewpoint",
+      "required_mods": [
+        "Viewpoint",
+        "ZombieBuddy"
+      ],
+      "load_after_mods": [
+        "Viewpoint"
+      ],
+      "doc": "docs/patches/SuQingViewpointSimulation_4222.md",
+      "reconstruction_status": "recipes_ready",
+      "source_runtime_info": "42/mod.info",
+      "summary_zh": "为 Viewpoint 0.1.7 的固定模拟提供 30 Hz、60 Hz 和关闭三档，默认 60 Hz。适用于 B42.22.2 单人，需要 ZombieBuddy 2.3.4 与 Java 批准。",
+      "summary_en": "Choose 30 Hz, 60 Hz or Off for fixed simulation in Viewpoint 0.1.7. Defaults to 60 Hz. Requires B42.22.2 single-player, ZombieBuddy 2.3.4 and Java approval.",
+      "runtime_files": 7,
+      "runtime_bytes": 11806,
+      "reconstruction_modes": {
+        "own": 7
+      },
+      "excluded_files": [],
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2"
+    },
+    {
+      "id": "SuQingMFSAutoReload25_4222",
+      "folder": "SuQingMFSAutoReload25_4222",
+      "version": "1.0.0",
+      "title_zh": "蘇清的现代枪械自动装弹 25 发补丁",
+      "title_en": "SuQing's MFS Auto-Reload 25 Rounds",
+      "description_original": "Load up to 25 rounds per cycle when carrying or wearing the automatic reloading device.",
+      "requires_raw": "ModernFirearmsSystem",
+      "load_after_raw": "ModernFirearmsSystem",
+      "required_mods": [
+        "ModernFirearmsSystem"
+      ],
+      "load_after_mods": [
+        "ModernFirearmsSystem"
+      ],
+      "doc": "docs/patches/SuQingMFSAutoReload25_4222.md",
+      "reconstruction_status": "recipes_ready",
+      "source_runtime_info": "42/mod.info",
+      "summary_zh": "携带或佩戴自动装弹机构时，每轮最多装 25 发。",
+      "summary_en": "Load up to 25 rounds per cycle when carrying or wearing the automatic reloading device.",
+      "runtime_files": 2,
+      "runtime_bytes": 3277,
+      "reconstruction_modes": {
+        "patch": 1,
+        "own": 1
+      },
+      "excluded_files": [],
+      "source_roots": [
+        "workshop"
+      ],
+      "compatibility_candidate_game": "42.22.2"
+    },
+    {
+      "id": "SuQingMoreItemInfoText_4222",
+      "folder": "SuQingMoreItemInfoText_4222",
+      "version": "1.0.0",
+      "title_zh": "蘇清的物品详情提示修复",
+      "title_en": "SuQing's More Item Information Tooltip Fix",
+      "description_original": "Fixes numeric values causing errors when More Item Information draws an item tooltip.",
+      "requires_raw": "\\MoreItemInformation",
+      "load_after_raw": "MoreItemInformation",
+      "required_mods": [
+        "MoreItemInformation"
+      ],
+      "load_after_mods": [
+        "MoreItemInformation"
+      ],
+      "doc": "docs/patches/SuQingMoreItemInfoText_4222.md",
+      "reconstruction_status": "recipes_ready",
+      "source_runtime_info": "42/mod.info",
+      "summary_zh": "修复 More Item Information 绘制物品提示时因数值类型导致的报错。",
+      "summary_en": "Fixes numeric values causing errors when More Item Information draws an item tooltip.",
+      "runtime_files": 2,
+      "runtime_bytes": 36052,
+      "reconstruction_modes": {
+        "patch": 1,
+        "own": 1
+      },
+      "excluded_files": [],
+      "source_roots": [
+        "workshop"
+      ],
+      "compatibility_candidate_game": "42.22.2"
+    },
+    {
+      "id": "SuQingNarcoticsMoodlesCompat_4222",
+      "folder": "SuQingNarcoticsMoodlesCompat_4222",
+      "version": "1.0.0",
+      "title_zh": "蘇清的 N&C 状态图标兼容修复",
+      "title_en": "SuQing's N&C Moodles in Lua Fix",
+      "description_original": "Fixes a texture refresh error when using N&C's Narcotics and Moodles in Lua together.",
+      "requires_raw": "\\moodlesinlua,\\N&CsNarcotics",
+      "load_after_raw": "moodlesinlua,N&CsNarcotics",
+      "required_mods": [
+        "moodlesinlua",
+        "N&CsNarcotics"
+      ],
+      "load_after_mods": [
+        "moodlesinlua",
+        "N&CsNarcotics"
+      ],
+      "doc": "docs/patches/SuQingNarcoticsMoodlesCompat_4222.md",
+      "reconstruction_status": "recipes_ready",
+      "source_runtime_info": "42/mod.info",
+      "summary_zh": "修复 N&C 药物模组与 Moodles in Lua 共用时的状态图标贴图刷新报错。",
+      "summary_en": "Fixes a texture refresh error when using N&C's Narcotics and Moodles in Lua together.",
+      "runtime_files": 2,
+      "runtime_bytes": 23084,
+      "reconstruction_modes": {
+        "patch": 1,
+        "own": 1
+      },
+      "excluded_files": [],
+      "source_roots": [
+        "workshop"
+      ],
+      "compatibility_candidate_game": "42.22.2"
     }
   ]
 }

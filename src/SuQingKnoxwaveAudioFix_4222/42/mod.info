@@ -1,0 +1,15 @@
+name=SuQing's KNOXWAVE Volume Fix
+namezh=蘇清的 KNOXWAVE 音量修复
+id=SuQingKnoxwaveAudioFix_4222
+author=SuQing
+modversion=0.1.2
+require=\Knoxwave,\ZombieBuddy
+loadModAfter=Knoxwave
+versionMin=42.22.2
+versionMax=42.22.2
+ZBVersionMin=2.3.4
+ZBVersionMax=2.3.4
+javaJarFile=media/java/client/SuQingKnoxwaveAudioFix.jar
+javaPkgName=suqingknoxwaveaudiofix
+description=Repairs sound volume, sound-name lookup and the options page for KNOXWAVE 0.15.34 in B42.22.2 single-player. Requires ZombieBuddy 2.3.4 and Java approval for both mods.
+descriptionzh=修复 KNOXWAVE 0.15.34 的原音量、音效名读取和设置页加载。适用于 B42.22.2 单人，需要 ZombieBuddy 2.3.4，并批准两个模组的 Java 文件。

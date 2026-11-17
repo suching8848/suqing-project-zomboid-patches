@@ -1,0 +1,4 @@
+{
+  "name": "SuQing's Viewpoint Simulation Control",
+  "description": "Choose 30 Hz, 60 Hz or Off for fixed simulation in Viewpoint 0.1.7. Defaults to 60 Hz. Requires B42.22.2 single-player, ZombieBuddy 2.3.4 and Java approval."
+}

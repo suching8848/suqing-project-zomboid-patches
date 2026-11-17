@@ -1,0 +1,11 @@
+name=SuQing's N&C Moodles in Lua Fix
+namezh=蘇清的 N&C 状态图标兼容修复
+id=SuQingNarcoticsMoodlesCompat_4222
+author=SuQing
+modversion=1.0.0
+versionMin=42.22
+versionMax=42.22
+require=\moodlesinlua,\N&CsNarcotics
+loadModAfter=moodlesinlua,N&CsNarcotics
+description=Fixes a texture refresh error when using N&C's Narcotics and Moodles in Lua together.
+descriptionzh=修复 N&C 药物模组与 Moodles in Lua 共用时的状态图标贴图刷新报错。

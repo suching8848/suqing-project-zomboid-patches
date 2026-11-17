@@ -1,4 +1,16 @@
-# 蘇清的 Live Wire × Waterpipes 水路桥接
+# 蘇清的 Live Wire × Waterpipes 水路桥接 / SuQing's Live Wire × Waterpipes Bridge
+
+0.1.1-rc.10 用于已审查的 Live Wire 2.1.5 和 Waterpipes 单人组合。兼容 Live Wire 的 25、80、150、300 升原生水箱以及四款 Useful Barrels 储水桶。按原模组接好电与水路，Waterpipes 继续处理用水需求。断电停止补水，恢复供电后重新按连通状态处理。
+
+原版离线回归覆盖水箱容量、桶型、分路断电与恢复。正式档日志确认 Waterpipes 分钟事件已接入，具体水路操作待玩法复测。
+
+## English
+
+0.1.1-rc.10 supports the reviewed Live Wire 2.1.5 and Waterpipes single-player combination. It bridges the 25, 80, 150 and 300 L Live Wire tanks and four Useful Barrels tanks. Connect power and plumbing through the original mods. Loss of power pauses refilling, and a connected setup resumes as power returns.
+
+Offline regression covers tank capacities, barrel types, circuit cut-off and recovery. In-game startup verified the Waterpipes minute integration. Plumbing operations still need gameplay verification.
+
+## 先前版本记录 / Earlier release notes
 
 `SuQingLiveWireWaterBridge` · `0.1.1-rc.6` · 单人离线候选，完整游戏版本限 42.21.0 或 42.22.2。前置为 LiveWire `batman_LiveWire` 1.7.2、2.0.0、2.0.1、2.0.2、2.0.3、2.1.0、2.1.1 或 2.1.2，以及 Waterpipes `Waterpipes` 42.20 分支。灌溉养护 `SuQingSprinklerFertilizer` 1.0.1-rc.2 可选。补丁排在两项必需前置之后。
 

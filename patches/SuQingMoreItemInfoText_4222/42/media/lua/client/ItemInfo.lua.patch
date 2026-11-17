@@ -1,0 +1,29 @@
+--- a/42/media/lua/client/ItemInfo.lua
++++ b/42/media/lua/client/ItemInfo.lua
+@@ -766,8 +766,11 @@
+     local newWidth = width
+ 
+     for count = 1, #INFO.Text do
+-        if getTextManager():MeasureStringX(font, INFO.TextVal[count]) + getTextManager():MeasureStringX(font, INFO.Text[count]) + 7 > width then
+-            newWidth = getTextManager():MeasureStringX(font, INFO.TextVal[count]) + getTextManager():MeasureStringX(font, INFO.Text[count]) + 21
++        local label = tostring(INFO.Text[count] or "")
++        local value = tostring(INFO.TextVal[count] or "")
++        local rowWidth = getTextManager():MeasureStringX(font, value) + getTextManager():MeasureStringX(font, label)
++        if rowWidth + 7 > width then
++            newWidth = rowWidth + 21
+         end
+     end
+ 
+@@ -791,8 +794,10 @@
+ 
+     self.drawRectBorder = function (self, ...)
+         for count = 1, #INFO.Text do
+-            self.tooltip:DrawText(font, INFO.Text[count], 7, height - 3, INFO.TextR[count], INFO.TextG[count], INFO.TextB[count], 1)
+-            self.tooltip:DrawText(font, INFO.TextVal[count], newWidth - getTextManager():MeasureStringX(font, INFO.TextVal[count]) - 7, height - 3, INFO.TextValR[count], INFO.TextValG[count], INFO.TextValB[count], 1)
++            local label = tostring(INFO.Text[count] or "")
++            local value = tostring(INFO.TextVal[count] or "")
++            self.tooltip:DrawText(font, label, 7, height - 3, INFO.TextR[count], INFO.TextG[count], INFO.TextB[count], 1)
++            self.tooltip:DrawText(font, value, newWidth - getTextManager():MeasureStringX(font, value) - 7, height - 3, INFO.TextValR[count], INFO.TextValG[count], INFO.TextValB[count], 1)
+             height = height + lineSpacing
+         end
+         orig_drawRectBorder(self, ...)

@@ -1,0 +1,72 @@
+--- a/42/media/lua/client/MoodlesIn.lua
++++ b/42/media/lua/client/MoodlesIn.lua
+@@ -511,6 +511,8 @@
+ 
+ MILOptions:addDescription("If new packs do not appear in the list, check if they are listed under the Moodles In Lua mod in Mod Order menu")
+ 
++local refreshFrameworkTextures
++
+ function MILOptions:apply()
+     -- Release textures from the previous texture set
+     if ISMoodlesInLuaHandle.currentMoodleBorderSet or ISMoodlesInLuaHandle.currentMoodleIconSet then
+@@ -533,9 +535,8 @@
+     -- Update options
+     ISMoodlesInLuaHandle:applyOptions(options)
+ 
+-    -- Update textures for all MF.ISMoodle instances
+-    if MF ~= nil then
+-        MF.ISMoodle.updateTextures()
++    if refreshFrameworkTextures then
++        refreshFrameworkTextures()
+     end
+ 
+     ISMoodlesInLuaHandle:update()
+@@ -576,10 +577,12 @@
+ 
+ require "MF_ISMoodle"
+ 
+-if MF ~= nil then
+-
+-    local oldNew = MF.ISMoodle.new
+-    MF.ISMoodle.instances = {} -- Table to store instances
++local moodleClass = MF and MF.ISMoodle
++if moodleClass and type(moodleClass.new) == "function" then
++
++    local oldNew = moodleClass.new
++    local instances = {}
++    moodleClass.instances = instances
+ 
+     local function loadTextures(instance)
+         for g = 1, 2 do
+@@ -597,9 +600,9 @@
+     end
+ 
+ 
+-    function MF.ISMoodle.new(self, moodleName, character)
++    function moodleClass.new(self, moodleName, character)
+         local o = oldNew(self, moodleName, character)
+-        table.insert(MF.ISMoodle.instances, o) -- Store the instance
++        table.insert(instances, o)
+ 
+         -- Load textures for the new instance
+         loadTextures(o)
+@@ -607,10 +610,12 @@
+         return o
+     end
+ 
+-    -- Function to update textures for all instances
+-    function MF.ISMoodle.updateTextures()
+-        for _, instance in ipairs(MF.ISMoodle.instances) do
+-            loadTextures(instance) -- Update the background textures
+-        end
+-    end
+-end
++    -- The options refresh uses its own callback so the framework keeps its instance method.
++    refreshFrameworkTextures = function()
++        for _, instance in ipairs(instances) do
++            loadTextures(instance)
++        end
++    end
++end
++
++print("[SuQingNarcoticsMoodlesCompat] Moodles in Lua texture refresh ready")

@@ -1,12 +1,12 @@
--- Narrow bridge for HavenFall's native 60/80/100/120 capacity bags and EX rc.2.
+-- Restore existing HavenFall EX upgrades over the native 60/80/100/120 capacity bags.
 -- Never changes an item definition, native fluid component, or physical capacity.
 if isServer() then return end
 require "ExSuQingBackpackSuperUpgrade/Core"
 require "ExSuQingBackpackSuperUpgrade/Capacity"
 local X = ExSuQingBackpackSuperUpgrade
-local B = { enabled=false, baseline={}, bridge=nil, oldModes={} }
+local B = { enabled=false, baseline={}, bridge=nil }
 local function log(s) print("[SuQingHavenFallEX] " .. tostring(s)) end
-if not X or X.version ~= "1.0.0-rc.2" or not X.Capacity then
+if not X or X.version ~= "1.0.0-rc.3" or not X.Capacity then
     log("unsupported EX version; no compatibility installed"); return
 end
 local C = X.Capacity
@@ -34,7 +34,7 @@ local function craftGuardPrior(mod, wrapper)
     end
 end
 
-local function conversionGuardReady()
+function B.IsConversionGuardReady()
     if not B.craftGuard or not ISHandcraftAction then return false end
     local current = ISHandcraftAction.performRecipe
     -- Each freshness lock proves the immediate continuation of its own wrapper.
@@ -47,14 +47,7 @@ local function conversionGuardReady()
     return current == B.craftGuard
 end
 
-local priorBase, priorValid, priorCanUpgrade = X.GetNativeBase, X.IsValidRecord, X.CanUpgrade
-X.CanUpgrade = function(item, ...)
-    local id = item and item.getFullType and item:getFullType()
-    if id and B.baseline[id] and (not B.enabled or not conversionGuardReady()) then
-        return false, "havenfall_native_conversion_guard_not_ready"
-    end
-    return priorCanUpgrade(item, ...)
-end
+local priorBase, priorValid = X.GetNativeBase, X.IsValidRecord
 X.GetNativeBase = function(item, ...)
     local id = item and item.getFullType and item:getFullType()
     if id and B.baseline[id] then
@@ -156,7 +149,7 @@ local function contains(list, value)
     for i=0,list:size()-1 do if list:get(i)==value then return true end end
     return false
 end
-local function registerRecipes()
+local function registerRestoreRecipe()
     if B.enabled then return true end
     local sm=type(getScriptManager)=="function" and getScriptManager()
     if not sm or not ItemType or not ItemType.CONTAINER or not X.IsSinglePlayer() then return false end
@@ -171,27 +164,30 @@ local function registerRecipes()
         ids[#ids+1]=id; scripts[id]=script
     end
     table.sort(ids)
-    local stages={}
-    for _,name in ipairs({"ExSuQingSuperUpgrade","ExSuQingRestore"}) do
-        local recipe=sm:getCraftRecipe("ExSuQingBackpackSuperUpgrade."..name)
-        if not recipe or not recipe:getInputs() or recipe:getInputs():size()==0 then return false end
-        local input=recipe:getInputs():get(0)
-        if not input or not input:isKeep() or not input:isItemCount() then return false end
-        local values, cache=input:getItems(),input:getPossibleInputItems()
-        if not values or not cache then return false end
-        for _,id in ipairs(ids) do if contains(values,id) or contains(cache,scripts[id]) then return false end end
-        stages[#stages+1]={ids=values,cache=cache,oldIds=copy(values),oldCache=copy(cache)}
+    local recipe=sm:getCraftRecipe("ExSuQingBackpackSuperUpgrade.ExSuQingRestore")
+    if not recipe or not recipe:getInputs() or recipe:getInputs():size()==0 then return false end
+    local input=recipe:getInputs():get(0)
+    if not input or not input:isKeep() or not input:isItemCount() then return false end
+    local values, cache=input:getItems(),input:getPossibleInputItems()
+    if not values or not cache then return false end
+    for _,id in ipairs(ids) do
+        if contains(values,id) or contains(cache,scripts[id]) then return false end
     end
+    local oldIds, oldCache = copy(values), copy(cache)
     local ok,err=pcall(function()
-        for _,stage in ipairs(stages) do for _,id in ipairs(ids) do stage.ids:add(id);stage.cache:add(scripts[id]) end end
+        for _,id in ipairs(ids) do
+            values:add(id)
+            cache:add(scripts[id])
+        end
         for _,id in ipairs(ids) do X.types[id]="codex_havenfall";X.supported[id]=true end
     end)
     if not ok then
-        for _,stage in ipairs(stages) do pcall(restore,stage.ids,stage.oldIds);pcall(restore,stage.cache,stage.oldCache) end
+        pcall(restore,values,oldIds)
+        pcall(restore,cache,oldCache)
         for _,id in ipairs(ids) do X.types[id]=nil;X.supported[id]=nil end
         log("recipe installation failed; rolled back: " .. tostring(err));return false
     end
-    B.enabled=true;log("registered 20 native-capacity variants");return true
+    B.enabled=true;log("registered 20 legacy EX restore variants");return true
 end
 -- Guard the entire source recipe module rather than relying on a guessed
 -- spaced recipe ID: B42.21's native parser can shorten those identifiers.
@@ -199,7 +195,7 @@ local function isHavenFallRecipe(name)
     return type(name)=="string" and string.sub(name,1,#"ESHFUpgrade.")=="ESHFUpgrade."
 end
 local function installConversionGuard()
-    if B.craftGuard then return conversionGuardReady() end
+    if B.craftGuard then return B.IsConversionGuardReady() end
     if not ISHandcraftAction or not ISHandcraftAction.performRecipe then return false end
     local old=ISHandcraftAction.performRecipe
     local guard=function(self, ...)
@@ -215,11 +211,13 @@ local function installConversionGuard()
                     if item and item.getFullType and B.baseline[item:getFullType()] then
                         local md=item:getModData()
                         if not md or md[X.modDataKey]~=nil then return true end
+                        local ordinary=SuQingContainerUpgrade
+                        if ordinary and ordinary.IsValidRecord(ordinary.GetRecord(item)) then return true end
                     end
                 end
                 return false
             end)
-            if not ok or blocked then log("restore EX before native HavenFall upgrade");return end
+            if not ok or blocked then log("restore the SuQing upgrade before native HavenFall crafting");return end
         end
         return old(self, ...)
     end
@@ -229,7 +227,7 @@ local function installConversionGuard()
 end
 function B.Install()
     if not installConversionGuard() then return false end
-    if not registerRecipes() then return false end
+    if not registerRestoreRecipe() then return false end
     return installBridge()
 end
 Events.OnGameStart.Add(function()

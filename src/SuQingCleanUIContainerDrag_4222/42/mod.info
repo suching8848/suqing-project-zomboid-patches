@@ -1,0 +1,11 @@
+name=SuQing's CleanUI Container Drag Fix
+namezh=蘇清的 CleanUI 容器拖动排序修复
+id=SuQingCleanUIContainerDrag_4222
+author=SuQing
+modversion=1.0.1
+versionMin=42.22
+versionMax=42.22
+require=CleanUI
+loadModAfter=CleanUI
+description=Fixes container button drag sorting after scrolling the CleanUI 2.10.6/2.10.7 container sidebar.
+descriptionzh=修复 CleanUI 2.10.6/2.10.7 容器侧栏滚动后拖动排序位置错位。

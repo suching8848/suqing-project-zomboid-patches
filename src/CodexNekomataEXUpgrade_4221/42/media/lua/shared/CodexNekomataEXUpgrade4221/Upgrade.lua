@@ -8,18 +8,14 @@ local X = ExSuQingBackpackSuperUpgrade
 local S = CodexNekomataEXCompat_4221
 local FULL_TYPE = "Base.MaoMaoBackpack"
 local KIND = "codex_maomao"
--- Recipe scripts load even when a dependency version/whitelist is refused.
--- Define these before every early return so that those recipes stay disabled.
-function U.TestUpgrade(item, character)
-    if not U.enabled or not X or X.version ~= "1.0.0-rc.2" then return false end
-    return X.TestUpgrade(item, character)
-end
+local EX_VERSION = "1.0.0-rc.3"
+-- The restore script still loads if the dependency version is refused.
 function U.TestRestore(item, character)
-    if not U.enabled or not X or X.version ~= "1.0.0-rc.2" then return false end
+    if not U.enabled or not X or X.version ~= EX_VERSION then return false end
     return X.TestRestore(item, character)
 end
 if U.loaded then return U end
-if not X or X.version ~= "1.0.0-rc.2" or not S or not S.hookedCapacity
+if not X or X.version ~= EX_VERSION or not S or not S.hookedCapacity
     or type(S.ReadAuthorCapacity) ~= "function"
     or (X.types[FULL_TYPE] ~= nil and X.types[FULL_TYPE] ~= KIND) then return U end
 U.loaded, U.enabled = true, true
@@ -57,7 +53,6 @@ X.IsValidRecord = function(record, item, ...)
 end
 X.GetRecipeMode = function(recipe, ...)
     local name = recipe and (recipe.getScriptObjectFullType and recipe:getScriptObjectFullType() or recipe:getName())
-    if name == "CodexNekomataEXUpgrade.MaoMaoEXUpgrade" then return "upgrade" end
     if name == "CodexNekomataEXUpgrade.MaoMaoEXRestore" then return "restore" end
     return U.originalRecipeMode(recipe, ...)
 end

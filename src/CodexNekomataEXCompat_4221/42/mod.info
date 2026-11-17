@@ -1,7 +1,7 @@
 name=猫又岭与蘇清背包超级升级兼容
 id=CodexNekomataEXCompat_4221
 author=SuQing / local compatibility
-modversion=1.0.1
+modversion=1.0.2
 versionMin=42.21
 versionMax=42.22
 require=\Nekomata Ridge,ExSuQingBackpackSuperUpgrade_4221

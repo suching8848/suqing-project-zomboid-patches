@@ -21,7 +21,10 @@ end
 function Portals.install(power, adapter, gridLink, managedBackup, version, verify)
     if not power or (version ~= "0.1.4" and version ~= "0.1.5"
         and version ~= "0.1.6-rc.1" and version ~= "0.1.6-rc.2"
-        and version ~= "0.1.6-rc.3" and version ~= "0.1.6-rc.4" and version ~= "0.1.6-rc.5" and version ~= "0.1.6-rc.6") then return false end
+        and version ~= "0.1.6-rc.3" and version ~= "0.1.6-rc.4" and version ~= "0.1.6-rc.5" and version ~= "0.1.6-rc.6"
+        and version ~= "0.1.6-rc.7" and version ~= "0.1.6-rc.8"
+        and version ~= "0.1.6-rc.9" and version ~= "0.1.6-rc.10"
+        and version ~= "0.1.6-rc.11") then return false end
     local original = {}
     for _, key in ipairs({"provider", "begin", "finish", "rollback"}) do
         local fn = power[key]
@@ -71,7 +74,9 @@ function Portals.install(power, adapter, gridLink, managedBackup, version, verif
         if not prepared then return nil, 0, "power_query_failed" end
         if not receipt or not finite(available) or available <= 0 then return nil, 0, "power_insufficient" end
         local approved = math.min(requested, cap, available / source.cost)
-        return {bridge = mixed, source = source, payment = receipt, approved = approved}, approved
+        -- The mixed grid can settle only the energy it approved. Floor native battery uses first.
+        return {bridge = mixed, source = source, payment = receipt, approved = approved,
+            liveWireLimited = true}, approved
     end
 
     function power.finish(receipt, amount)

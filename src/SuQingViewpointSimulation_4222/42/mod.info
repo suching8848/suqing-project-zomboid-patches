@@ -1,0 +1,15 @@
+name=SuQing's Viewpoint Simulation Control
+namezh=蘇清的 Viewpoint 模拟频率
+id=SuQingViewpointSimulation_4222
+author=SuQing
+modversion=0.1.0
+require=\Viewpoint,\ZombieBuddy
+loadModAfter=Viewpoint
+versionMin=42.22.2
+versionMax=42.22.2
+javaJarFile=media/java/client/SuQingViewpointSimulation.jar
+javaPkgName=suqingviewpointsimulation
+ZBVersionMin=2.3.4
+ZBVersionMax=2.3.4
+description=Choose 30 Hz, 60 Hz or Off for fixed simulation in Viewpoint 0.1.7. Defaults to 60 Hz. Requires B42.22.2 single-player, ZombieBuddy 2.3.4 and Java approval.
+descriptionzh=为 Viewpoint 0.1.7 的固定模拟提供 30 Hz、60 Hz 和关闭三档，默认 60 Hz。适用于 B42.22.2 单人，需要 ZombieBuddy 2.3.4 与 Java 批准。

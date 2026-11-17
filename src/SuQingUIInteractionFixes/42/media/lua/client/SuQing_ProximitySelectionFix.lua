@@ -8,7 +8,7 @@ local M = SuQingUIInteractionFixes.proximitySelection or {}
 SuQingUIInteractionFixes.proximitySelection = M
 if M.loaded then return end
 M.loaded = true
-M.version = "1.0.3"
+M.version = "1.0.5"
 M.enabled = true
 M.stats = { captured = 0, restored = 0, invalidated = 0 }
 
@@ -182,6 +182,9 @@ local function wrapInput(name)
     end
 end
 
+local preserveReadOverlay
+local knownClosure
+
 local function install()
     if M.installed then return end
     if type(getModInfoByID) ~= "function" then return end
@@ -189,12 +192,14 @@ local function install()
     local cleanVersion = info and info.getModVersion and tostring(info:getModVersion())
     local branch = info and info.getVersionDir and info:getVersionDir()
     local branchName = type(branch) == "string" and branch:gsub("\\", "/"):match("/([^/]+)/?$")
-    local clean2105 = cleanVersion == "2.10.5" and (branchName == "42.19" or branchName == "42.22")
-    if cleanVersion ~= "2.10.3" and cleanVersion ~= "2.10.4" and not clean2105 then
+    local reviewedBranch = branchName == "42.19" or branchName == "42.22"
+    local reviewedRecent = reviewedBranch
+        and (cleanVersion == "2.10.5" or cleanVersion == "2.10.6" or cleanVersion == "2.10.7")
+    if cleanVersion ~= "2.10.3" and cleanVersion ~= "2.10.4" and not reviewedRecent then
         print("[SuQing UI Interaction] proximity selection inactive; unreviewed CleanUI version or branch")
         return
     end
-    local active = clean2105 and type(getActivatedMods) == "function" and getActivatedMods()
+    local active = reviewedRecent and type(getActivatedMods) == "function" and getActivatedMods()
     if active and (active:contains("SMP_SnakeUtilsPack") or active:contains("\\SMP_SnakeUtilsPack")) then
         print("[SuQing UI Interaction] proximity selection inactive; CleanUI Snake Utils renderer takeover")
         return
@@ -202,7 +207,13 @@ local function install()
     if not ISInventoryPane or type(ISInventoryPane.refreshContainer) ~= "function"
         or type(ISInventoryPane.renderdetails) ~= "function" then return end
 
-    M.expandedSelection = (cleanVersion == "2.10.4" or clean2105) and branchName == "42.22"
+    if cleanVersion == "2.10.7" and not knownClosure(rawget(ISInventoryPane, "_cleanUIOwnRenderdetails"),
+        "CleanUI", cleanVersion, "isui/isinventorypane.lua") then
+        print("[SuQing UI Interaction] proximity selection inactive; unreviewed CleanUI base renderer")
+        return
+    end
+
+    M.expandedSelection = (cleanVersion == "2.10.4" or reviewedRecent) and branchName == "42.22"
 
     local originalRefresh = ISInventoryPane.refreshContainer
     ISInventoryPane.refreshContainer = function(self, ...)
@@ -221,6 +232,7 @@ local function install()
         return a, b, c, d
     end
 
+    local keepReadOverlay = cleanVersion == "2.10.6" and preserveReadOverlay(active)
     local originalRender = ISInventoryPane.renderdetails
     ISInventoryPane.renderdetails = function(self, doDragged, ...)
         local s = stateFor(self)
@@ -261,6 +273,11 @@ local function install()
         if self.selected == selected and self.inventory == s.inventory
             and (wasPending or self.refreshContainerCount ~= generation) then restore(self, saved) end
         return a, b, c, d
+    end
+
+    if keepReadOverlay then
+        -- Publish the composed renderer so CleanUI does not overwrite it on rebind.
+        ISInventoryPane._cleanUIHasBeenReadWrapper = ISInventoryPane.renderdetails
     end
 
     local originalUpdate = ISInventoryPane.update
@@ -322,5 +339,54 @@ local function install()
     M.installed = true
     print("[SuQing UI Interaction] proximity selection " .. M.version .. " ready; CleanUI=" .. cleanVersion)
 end
+knownClosure = function(fn, id, version, relativePath)
+    if type(fn) ~= "function" or type(getFilenameOfClosure) ~= "function" then return false end
+    local info = getModInfoByID(id) or getModInfoByID("\\" .. id)
+    local dir = info and info.getVersionDir and info:getVersionDir()
+    if type(dir) ~= "string" or not info.getModVersion or tostring(info:getModVersion()) ~= version then return false end
+    local ok, source = pcall(getFilenameOfClosure, fn)
+    return ok and type(source) == "string"
+        and source:gsub("^@", ""):gsub("\\", "/"):lower()
+            == dir:gsub("\\", "/"):gsub("/$", ""):lower() .. "/media/lua/client/" .. relativePath
+end
+
+-- CleanUI 2.10.6 reinstalls its reading overlay during startup and mode switches.
+-- PinyinSafeCompat 1.1 reuses the renderer captured before that overlay was installed.
+preserveReadOverlay = function(active)
+    local pane = ISInventoryPane
+    local installOverlay = CleanUI_HasBeenReadInstall
+    local base = rawget(pane, "_cleanUIOwnRenderdetails")
+    if not active or not (active:contains("P4HasBeenRead") or active:contains("\\P4HasBeenRead"))
+        or type(installOverlay) ~= "function" or type(base) ~= "function" then return false end
+    local current = pane.renderdetails
+    local previous = rawget(pane, "_cleanUIHasBeenReadWrapper")
+    if current == previous then return true end
+
+    if previous and current ~= base then
+        local pinyinID = "PinyinSearch_SafeSources_4221_LocalFix"
+        local pinyinFile = "pinyinsafecompat.lua"
+        local neat = knownClosure(current, "NeatUI_Equipment", "1.0.2", "neatequipment/patches/neq_hideequipped.lua")
+        local pinyin = knownClosure(pane.searchContainer, pinyinID, "1.1", pinyinFile)
+            and (neat or knownClosure(current, pinyinID, "1.1", pinyinFile))
+        if not pinyin then
+            -- The reviewed Neat renderer wraps the current renderer on game start.
+            -- The workshop Pinyin mod can replace it, so don't infer that chain.
+            return neat and not active:contains(pinyinID) and not active:contains("\\" .. pinyinID)
+                and not active:contains("yxjs_PinYinSearch") and not active:contains("\\yxjs_PinYinSearch")
+        end
+    end
+
+    -- Let CleanUI create its overlay around the live chain (including Neat), then
+    -- give it back its own original renderer for future compatibility checks.
+    pane._cleanUIOwnRenderdetails = current
+    local ok, installed = pcall(installOverlay)
+    pane._cleanUIOwnRenderdetails = base
+    if ok and installed and pane.renderdetails ~= current and pane.renderdetails == pane._cleanUIHasBeenReadWrapper then
+        return true
+    end
+    pane.renderdetails, pane._cleanUIHasBeenReadWrapper = current, previous
+    return false
+end
+
 M.install = install
 Events.OnGameStart.Add(install)

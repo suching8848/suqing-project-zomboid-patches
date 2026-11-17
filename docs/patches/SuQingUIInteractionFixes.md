@@ -1,5 +1,12 @@
 # 蘇清的提示框与融合物品栏修复
 
+1.0.5 恢复 CleanUI 2.10.7 融合物品栏的近邻容器选区和 Shift 连选。在未验证的函数来源下保留原行为。原版 Kahlua 的两个 CleanUI 分支分别通过 30 和 25 场景，各 89 项断言。游戏内选取与拖动待复测。
+
+1.0.5 restores proximity container selection and Shift range selection with reviewed CleanUI 2.10.7 renderers. The two native Lua fixtures passed 30 and 25 scenarios, each with 89 assertions. Selection and dragging still need gameplay verification.
+
+## 先前版本记录 / Earlier release notes
+
+
 SuQing's Tooltip and Proximity Selection Fixes 1.0.1
 
 ## 中文

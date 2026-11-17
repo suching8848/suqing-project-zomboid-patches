@@ -1,0 +1,7 @@
+VERSION = 1,
+
+option SuQingLiveWireLongCable.DeviceRange
+{
+    type = integer, min = 0, max = 100, default = 40,
+    page = LiveWire, translation = SQLongCableDeviceRange,
+}

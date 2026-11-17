@@ -71,14 +71,44 @@ for _, pin in ipairs(liveWire203Pins) do
     local changes = liveWire210Changes[pin[2]]
     liveWire210Pins[#liveWire210Pins + 1] = changes and {pin[1], pin[2], changes[1], changes[2]} or pin
 end
--- Both later releases change the Core version while keeping the settlement sources.
-local function withCoreVersion(coreHash)
+-- Later releases keep the settlement sources. 2.1.3 also adds the wreckage API.
+local function withCoreVersion(coreHash, apiHash, apiLength)
     local result = {}
     for i, pin in ipairs(liveWire210Pins) do
-        result[i] = pin[2] == sharedPath .. "LiveWire/LW_Core.lua" and {liveWire, pin[2], coreHash, 1405} or pin
+        if pin[2] == sharedPath .. "LiveWire/LW_Core.lua" then
+            result[i] = {liveWire, pin[2], coreHash, 1405}
+        elseif apiHash and pin[2] == sharedPath .. "LiveWire/LW_API.lua" then
+            result[i] = {liveWire, pin[2], apiHash, apiLength}
+        else
+            result[i] = pin
+        end
     end
     return result
 end
+
+local liveWire213Pins = withCoreVersion(296895776, 329048620, 23627)
+liveWire213Pins[#liveWire213Pins + 1] = {liveWire, serverPath .. "LiveWire/LW_Sturdy.lua", 419770570, 2381}
+liveWire213Pins[#liveWire213Pins + 1] = {liveWire, sharedPath .. "LiveWire/LW_Wreckage.lua", 979686735, 4182}
+
+-- 2.1.4 changes the version and the shared pump-capacity config and definitions.
+local liveWire214Changes = {
+    [sharedPath .. "LiveWire/LW_Core.lua"] = {490729646, 1405},
+    [sharedPath .. "LiveWire/LW_Config.lua"] = {678968683, 2380},
+    [sharedPath .. "LiveWire/LW_Defs.lua"] = {521510407, 11648},
+}
+local liveWire214Pins = {}
+for i, pin in ipairs(liveWire213Pins) do
+    local changes = liveWire214Changes[pin[2]]
+    liveWire214Pins[i] = changes and {pin[1], pin[2], changes[1], changes[2]} or pin
+end
+
+-- 2.1.5 only changes the base-mod version and the optional Viewpoint add-on.
+local liveWire215Pins = {}
+for i, pin in ipairs(liveWire214Pins) do
+    liveWire215Pins[i] = pin[2] == sharedPath .. "LiveWire/LW_Core.lua"
+        and {liveWire, pin[2], 684563516, 1405} or pin
+end
+
 local liveWirePins = {
     ["1.7.2"] = liveWire172Pins,
     ["2.0.0"] = liveWire201Pins,
@@ -88,6 +118,9 @@ local liveWirePins = {
     ["2.1.0"] = liveWire210Pins,
     ["2.1.1"] = withCoreVersion(909228043),
     ["2.1.2"] = withCoreVersion(103061906),
+    ["2.1.3"] = liveWire213Pins,
+    ["2.1.4"] = liveWire214Pins,
+    ["2.1.5"] = liveWire215Pins,
 }
 
 -- ISA 1.2.16 updates client actions only. Both releases share these server and shared sources.
@@ -154,6 +187,41 @@ local portalPins = {
         {portals, serverPath .. "SuQingPortals/ISAPower.lua", 218973082, 10110},
         {portals, serverPath .. "SuQingPortals/World.lua", 634899781, 35143},
         {portals, sharedPath .. "SuQingPortals/Core.lua", 106218907, 7304},
+    },
+    ["0.1.6-rc.7"] = {
+        {portals, serverPath .. "SuQingPortals/Power.lua", 921580269, 11060},
+        {portals, serverPath .. "SuQingPortals/LiveWirePower.lua", 631349200, 8950},
+        {portals, serverPath .. "SuQingPortals/ISAPower.lua", 218973082, 10110},
+        {portals, serverPath .. "SuQingPortals/World.lua", 634899781, 35143},
+        {portals, sharedPath .. "SuQingPortals/Core.lua", 399141361, 7304},
+    },
+    ["0.1.6-rc.8"] = {
+        {portals, serverPath .. "SuQingPortals/Power.lua", 921580269, 11060},
+        {portals, serverPath .. "SuQingPortals/LiveWirePower.lua", 688241928, 8971},
+        {portals, serverPath .. "SuQingPortals/ISAPower.lua", 218973082, 10110},
+        {portals, serverPath .. "SuQingPortals/World.lua", 634899781, 35143},
+        {portals, sharedPath .. "SuQingPortals/Core.lua", 692063815, 7304},
+    },
+    ["0.1.6-rc.9"] = {
+        {portals, serverPath .. "SuQingPortals/Power.lua", 921580269, 11060},
+        {portals, serverPath .. "SuQingPortals/LiveWirePower.lua", 688241928, 8971},
+        {portals, serverPath .. "SuQingPortals/ISAPower.lua", 218973082, 10110},
+        {portals, serverPath .. "SuQingPortals/World.lua", 882525639, 35943},
+        {portals, sharedPath .. "SuQingPortals/Core.lua", 692063815, 7304},
+    },
+    ["0.1.6-rc.10"] = {
+        {portals, serverPath .. "SuQingPortals/Power.lua", 921580269, 11060},
+        {portals, serverPath .. "SuQingPortals/LiveWirePower.lua", 888550327, 8992},
+        {portals, serverPath .. "SuQingPortals/ISAPower.lua", 218973082, 10110},
+        {portals, serverPath .. "SuQingPortals/World.lua", 882525639, 35943},
+        {portals, sharedPath .. "SuQingPortals/Core.lua", 259759072, 7305},
+    },
+    ["0.1.6-rc.11"] = {
+        {portals, serverPath .. "SuQingPortals/Power.lua", 921580269, 11060},
+        {portals, serverPath .. "SuQingPortals/LiveWirePower.lua", 888550327, 8992},
+        {portals, serverPath .. "SuQingPortals/ISAPower.lua", 218973082, 10110},
+        {portals, serverPath .. "SuQingPortals/World.lua", 882525639, 35943},
+        {portals, sharedPath .. "SuQingPortals/Core.lua", 995888543, 7400},
     },
 }
 
@@ -229,7 +297,7 @@ function Gate.check()
     local pins = liveWirePins[wireVersion]
     local isaVersion = version(isa)
     if not pins or (isaVersion ~= "1.2.15" and isaVersion ~= "1.2.16") then
-        return false, "requires LiveWire 1.7.2, 2.0.0–2.0.3 or 2.1.0–2.1.2 and ISA 1.2.15–1.2.16"
+        return false, "requires LiveWire 1.7.2, 2.0.0–2.0.3 or 2.1.0–2.1.5 and ISA 1.2.15–1.2.16"
     end
     local ok, reason = verify(pins)
     if not ok then return false, reason end
@@ -250,6 +318,57 @@ function Gate.fromMod(fn, id, path)
     if not info or not info.getVersionDir then return false end
     local function normalize(value) return tostring(value):gsub("\\", "/"):gsub("^@", ""):gsub("/+$", ""):lower() end
     return normalize(getFilenameOfClosure(fn)) == normalize(info:getVersionDir() .. "/" .. path)
+end
+
+local longCable = "SuQingLiveWireLongCable"
+local devicesPath = "media/lua/server/LiveWire/LW_Devices.lua"
+local longCableRc2Pins = {
+    {longCable, devicesPath, 578184432, 1385},
+    {longCable, "media/lua/shared/SuQingLiveWireLongCable/Source.lua", 553745507, 2028},
+    {longCable, "media/lua/shared/SuQingLiveWireLongCable/Core.lua", 333069933, 4987},
+}
+local longCableRc3Pins = {
+    {longCable, devicesPath, 578184432, 1385},
+    {longCable, "media/lua/shared/SuQingLiveWireLongCable/Source.lua", 279139674, 2044},
+    {longCable, "media/lua/shared/SuQingLiveWireLongCable/Core.lua", 256597448, 5022},
+}
+local longCableRc4Pins = {
+    {longCable, devicesPath, 578184432, 1385},
+    {longCable, "media/lua/shared/SuQingLiveWireLongCable/Source.lua", 742196827, 2064},
+    {longCable, "media/lua/shared/SuQingLiveWireLongCable/Core.lua", 588643376, 5047},
+}
+local longCableRc5Pins = {
+    {longCable, devicesPath, 578184432, 1385},
+    {longCable, "media/lua/shared/SuQingLiveWireLongCable/Source.lua", 206394123, 2084},
+    {longCable, "media/lua/shared/SuQingLiveWireLongCable/Core.lua", 292695532, 5072},
+}
+local longCableVersions = {
+    ["2.1.2"] = { ["0.1.0-rc.2"] = longCableRc2Pins, ["0.1.0-rc.3"] = longCableRc3Pins,
+        ["0.1.0-rc.4"] = longCableRc4Pins, ["0.1.0-rc.5"] = longCableRc5Pins },
+    ["2.1.3"] = { ["0.1.0-rc.3"] = longCableRc3Pins, ["0.1.0-rc.4"] = longCableRc4Pins,
+        ["0.1.0-rc.5"] = longCableRc5Pins },
+    ["2.1.4"] = { ["0.1.0-rc.4"] = longCableRc4Pins, ["0.1.0-rc.5"] = longCableRc5Pins },
+    ["2.1.5"] = { ["0.1.0-rc.5"] = longCableRc5Pins },
+}
+
+function Gate.fromLiveWireDevices(fn)
+    if Gate.fromMod(fn, liveWire, devicesPath) then return true end
+    local lw, cable = LiveWire, SQLongCable
+    local allowedCableVersions = lw and longCableVersions[lw.VERSION]
+    if not allowedCableVersions or not lw.Devices or lw.Devices.find ~= fn
+        or type(fn) ~= "function" or type(cable) ~= "table" or cable.recoveryReady ~= true
+        or cable.recoveryFind ~= fn then return false end
+
+    local mods = getActivatedMods()
+    if not mods or not active(mods, longCable)
+        or not Gate.fromMod(fn, longCable, devicesPath) then return false end
+    local pins = allowedCableVersions[version(longCable)]
+    if not pins then return false end
+
+    -- Gate.check still verifies the Workshop original. Only this reviewed proxy may
+    -- provide Devices.find, whose function body is unchanged by the recovery patch.
+    local ok = verify(pins)
+    return ok
 end
 
 return Gate
