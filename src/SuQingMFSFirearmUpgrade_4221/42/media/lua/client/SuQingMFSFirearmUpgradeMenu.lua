@@ -185,21 +185,42 @@ local function addAction(subMenu, character, weapon, mode, level)
     setTooltip(option, weapon, quote, mode, reason or (not quote and prefix .. "Error_Failed"))
 end
 
-local function addMaintenance(context, character, weapon)
-    local quote, reason = Core.getMaintenanceQuote(character, weapon)
-    local option = context:addOption(getText(prefix .. "Maintain"), weapon, queueMaintenance, character, quote)
+local function addWipeOption(context, name, character, weapon, quote, reason)
+    local option = context:addOption(name, weapon, queueMaintenance, character, quote)
     option.notAvailable = quote == nil
     local tooltip = ISToolTip:new()
     tooltip:initialise()
     if quote then
         local condition = getText(prefix .. "ConditionPreview",
             tostring(quote.condition), tostring(quote.condition + 1), tostring(quote.maxCondition))
-        local towel = getText(prefix .. "TowelPreview", tostring(quote.uses), tostring(quote.uses - 1))
-        tooltip.description = condition .. " <LINE> " .. towel
+        local lines = {
+            condition,
+            getText(prefix .. "MaterialPreview", quote.towel:getDisplayName()),
+            getText(prefix .. "TowelPreview", tostring(quote.uses), tostring(quote.uses - 1)),
+        }
+        if quote.uses == 1 and quote.material.replacement then
+            lines[#lines + 1] = getText(prefix .. "MaterialAfterUse", getItemNameFromFullType(quote.material.replacement))
+        end
+        tooltip.description = table.concat(lines, " <LINE> ")
     else
         tooltip.description = getText(reason)
     end
     option.toolTip = tooltip
+end
+
+local function addMaintenance(context, character, weapon)
+    local quote, reason, quotes = Core.getMaintenanceQuote(character, weapon)
+    local name = getText(prefix .. "Maintain")
+    if not quote or #quotes == 1 then
+        addWipeOption(context, name, character, weapon, quote, reason)
+        return
+    end
+    local option = context:addOption(name, weapon, nil)
+    local materials = context:getNew(context)
+    context:addSubMenu(option, materials)
+    for _, choice in ipairs(quotes) do
+        addWipeOption(materials, choice.towel:getDisplayName(), character, weapon, choice)
+    end
 end
 
 local function fillInventoryMenu(playerNum, context, items)
@@ -213,7 +234,10 @@ local function fillInventoryMenu(playerNum, context, items)
     local level, reason = Core.getState(weapon)
     local supported = Core.isSupported(weapon)
     if not supported and (level == nil or level == 0) then return end
-    if supported then addMaintenance(context, character, weapon) end
+    local handlesFirearm = SuQingWipeRepairMenu and SuQingWipeRepairMenu.handlesFirearm
+    if supported and (type(handlesFirearm) ~= "function" or not handlesFirearm(weapon)) then
+        addMaintenance(context, character, weapon)
+    end
     if level == nil then
         local option = context:addOption(getText(prefix .. "Menu"), weapon, nil)
         option.notAvailable = true

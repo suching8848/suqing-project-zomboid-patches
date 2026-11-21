@@ -13,6 +13,9 @@ local pins = {
     ["2.1.3"] = { hash = 713272323, length = 29028 },
     ["2.1.4"] = { hash = 713272323, length = 29028 },
     ["2.1.5"] = { hash = 713272323, length = 29028 },
+    ["2.1.6"] = { hash = 713272323, length = 29028 },
+    ["2.1.8"] = { hash = 713272323, length = 29028 },
+    ["2.2.0"] = { hash = 713272323, length = 29028 },
 }
 local states = { paired = true, unloaded = true, unpaired = true }
 local prefix = "IGUI_SQLWISA_Monitor_"

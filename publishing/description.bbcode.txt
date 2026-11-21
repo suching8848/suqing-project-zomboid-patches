@@ -1,94 +1,120 @@
 [h1]蘇清的补丁合集[/h1]
-40 个独立可选单人补丁。B42.21／B42.22.2 的适用范围因子模组而异。按需启用，前置另订阅。
+52 个独立可选单人补丁。B42.21／B42.22.2 的适用范围因子模组而异。按需启用，前置另订阅。
 [h1]SuQing's Patch Collection[/h1]
-40 optional single-player patches. Build 42.21 / 42.22.2 support varies by submod. Enable individually and subscribe to required originals.
+52 optional single-player patches. Build 42.21 / 42.22.2 support varies by submod. Enable individually and subscribe to required originals.
 [h2]停用和兼容 / Disabling and compatibility[/h2]
 酿酒书停用前调用 RestoreOriginal 并保存。世界保护需要 ZombieBuddy 2.3.4 及本机批准。船舱、旧 Viewpoint 与 CleanUI 补丁的适用版本见各项说明。
 RestoreOriginal and save before disabling Brewing 50x. World Guard requires ZombieBuddy 2.3.4 and local approval. See individual guides for boat cabins, legacy Viewpoint and CleanUI support.
 [list]
 [*]人物菜单调整 / Character Menu Tweaks
-CodexCharacterMenuTweaks_4221; Requires: XFACTION_DynamicTraits, CodexXFACTION_CN_4221
+CodexCharacterMenuTweaks_4221 · XFACTION_DynamicTraits, CodexXFACTION_CN_4221
 [*]N&C中文补丁 / N&C Chinese Translation
-CodexNarcotics_CN_4221; Requires: N&CsNarcotics
+CodexNarcotics_CN_4221 · N&CsNarcotics
 [*]True 3D Items百分号提示修复 / True 3D Items Percent Tooltip Fix
-CodexTranslatorPercentFix_4221; Requires: ProjectFullHD
+CodexTranslatorPercentFix_4221 · ProjectFullHD
 [*]XFACTION动态特性汉化 / XFACTION Dynamic Traits Chinese Translation
-CodexXFACTION_CN_4221; Requires: XFACTION_DynamicTraits
+CodexXFACTION_CN_4221 · XFACTION_DynamicTraits
 [*]洗衣皂中文文本修复 / Washing Soap Chinese Text Fix
-Codex_AmmoBox_CN_TextFix_4221; Requires: B42ModTrans_CN
+Codex_AmmoBox_CN_TextFix_4221 · B42ModTrans_CN
 [*]挂点物品分组与穿戴菜单修复 / Attached Item Grouping and Wear Menu Fix
-Codex_AttachedGrouping_4221; Requires: CleanUI
+Codex_AttachedGrouping_4221 · CleanUI
 [*]中华菜与N&C种子提示兼容 / Chinese Cuisine and N&C Seed Tooltips
-Codex_ChineseCrop_Tooltip_4221; Requires: Chinesecuisine4213, MoreItemInformation
+Codex_ChineseCrop_Tooltip_4221 · Chinesecuisine4213, MoreItemInformation
 [*]DAMN原版轮胎维修兼容 / DAMN Vanilla Tire Repair Compatibility
-Codex_DAMN_VanillaTires_4221; Requires: damnlib
+Codex_DAMN_VanillaTires_4221 · damnlib
 [*]Erika家具与可选调试生成器修复 / Erika Furniture and Optional Debug Generator Fix
-Codex_DebugMenu_Generator_4221; Requires: none
+Codex_DebugMenu_Generator_4221
 [*]Fashionoid储液提示兼容 / Fashionoid Fluid Tooltip Compatibility
-Codex_FashionoidFluidTooltip_4221; Requires: Fashionoid42
+Codex_FashionoidFluidTooltip_4221 · Fashionoid42
 [*]批量转移库存刷新优化 / Bulk Transfer Inventory Refresh Optimization
-Codex_InventoryTransferPerformance_4221 1.2.4; Requires: CleanUI
+Codex_InventoryTransferPerformance_4221 1.2.6 · CleanUI
 [*]MFS瞄具标签修复 / MFS Optics Tag Fix
-Codex_MFSOpticsFix_4221; Requires: ModernFirearmsSystem
+Codex_MFSOpticsFix_4221 · ModernFirearmsSystem
 [*]MFS弹药盒与弹匣显示兼容 / MFS Ammo Box and Magazine Visual Compatibility
-Codex_MFS_AmmoVisual_Compat_4221; Requires: ModernFirearmsSystem
+Codex_MFS_AmmoVisual_Compat_4221 · ModernFirearmsSystem
 [*]MFS附加手电快捷键修复 / MFS Attached Flashlight Hotkey Fix
-Codex_MFS_AttachedLight_Hotkey_4221; Requires: ModernFirearmsSystem
+Codex_MFS_AttachedLight_Hotkey_4221 · ModernFirearmsSystem
 [*]Mustang引擎盖配方输入保护 / Mustang Hood Recipe Guard
-Codex_MustangRecipeGuard_4221; Requires: ATA_Mustang
+Codex_MustangRecipeGuard_4221 · ATA_Mustang
 [*]N&C药物状态面板 / N&C Drug Status Panel
-Codex_NarcoticsStatus_4221; Requires: N&CsNarcotics
+Codex_NarcoticsStatus_4221 · N&CsNarcotics
 [*]Noir枪带单人兼容 / Noir Sling Single-player Compatibility
-Codex_NoirSling_SP_Compat_4221; Requires: noirrsling4-42.13patch
+Codex_NoirSling_SP_Compat_4221 · noirrsling4-42.13patch
 [*]They Knew沙盒文本修复 / They Knew Sandbox Text Fix
-Codex_TheyKnew_CN_TextFix_4221; Requires: TheyKnewContinued
+Codex_TheyKnew_CN_TextFix_4221 · TheyKnewContinued
 [*]True Music耳机单人兼容 / True Music Headphones Single-player Compatibility
-Codex_TrueMusic_Headphones_4221; Requires: truemusic
+Codex_TrueMusic_Headphones_4221 · truemusic
 [*]XFACTION进度记录保护 / XFACTION Progress Record Guard
-Codex_XFDynamicRecordGuard_4221; Requires: XFACTION_DynamicTraits
+Codex_XFDynamicRecordGuard_4221 · XFACTION_DynamicTraits
 [*]拼音搜索与界面兼容 / Pinyin Search UI Compatibility
-PinyinSearch_SafeSources_4221_LocalFix; Requires: yxjs_PinYinSearch
+PinyinSearch_SafeSources_4221_LocalFix · yxjs_PinYinSearch
 [*]批量农耕菜单筛选 / Batch Farming Menu Filter
-SuQingBatchFarmingMenu_4221; Requires: vac_batch_farming
+SuQingBatchFarmingMenu_4221 · vac_batch_farming
 [*]饵托量产补丁 / Chum Mass Production Patch
-SuQingChumMassProduction; Requires: none
+SuQingChumMassProduction
 [*]蛋白饮料训练强化 / Protein Shake Training Boost
 SuQingProteinTrainingBoost (1.1.1-rc.1). 需 Vanilla Foods Expanded，单人可选适配 Project Iron 0.6.0。双增益默认 ×20 力量与体格经验。 Requires Vanilla Foods Expanded. Optional Project Iron 0.6.0 support for single-player, with ×20 Strength and Fitness XP while both buffs are active at the default setting.
 [*]配方材料输入修复 / Recipe Input Guard
-SuQingRecipeInputGuard_4221; Requires: SapphCooking_B42
-[*]蘇清的Viewpoint旧版手柄提示修复补丁 / SuQing’s Viewpoint Legacy Prompt Fix Patch
-Codex_ViewpointLegacyPromptFix_4221; Requires: ProjectViewpointQOLLegacy0.1.6
-[*]蘇清的酿酒技能书50倍补丁 / SuQing’s Brewing Skill Books 50x Patch
-Codex_ChinaBrewingBooks50_4221; Requires: Chinesecuisine4213
-[*]蘇清的船舱与房车房间兼容补丁 / SuQing's Boat Cabin and RV Room Compatibility Patch
-SuQingBoatRVRoomGuard_4221; Requires: BoteBR, FrotaBRRVAddon, PROJECTRVInterior42
-[*]蘇清的造船就地取材补丁 / SuQing's Boat Crafting Nearby Materials Patch
-SuQingBoatCraftFromFloor_4221; Requires: BoteBR
-[*]蘇清的提示框与融合物品栏修复 / SuQing's Tooltip and Proximity Selection Fixes
-SuQingUIInteractionFixes 1.0.3; Requires: CleanUI, ProximityInventory
-[*]蘇清的野马防护改装修复 / SuQing's Mustang Protection Repair
-SuQingMustangProtectionRepair; Requires: tsarslib, ATA_Mustang
-[*]蘇清的世界对象状态保护（修复候选） / SuQing's World Object State Guard (Candidate)
-SuQingWorldStateGuard_4221; Requires: ZombieBuddy
-[*]蘇清的好彩香烟菜单修复 / SuQing's Lucky Strike Menu Fix
-SuQingLuckyStrikeMenuFix_4221 (0.1.1-rc.2). 区分单根与盒装中文名称，保护混组右键菜单。Requires: CleanUI 2.10.4/2.10.5, MoreMRE (MREfood4213). Distinguishes loose cigarettes and packs in Chinese and guards mixed-stack context menus.
-[*]蘇清的收藏配方材料标记修复 / SuQing's Favourite Recipe Materials Fix
-SuQingFavouriteRecipeMaterials_4221 (0.1.1-rc.1). 恢复自定义模块收藏配方材料的绿勾和悬停提示。Restores the green badge and hover hint for custom-module favourite recipe materials. CleanUI and Neat Crafting are optional.
-[*]蘇清的 Project Iron 简体中文补丁 / SuQing's Project Iron Chinese Patch
-SuQingProjectIronCN_4221 (1.0.1-rc.1). 汉化训练器械、补剂、状态提示及沙盒设置。Simplified Chinese for gym equipment, supplements, status text and sandbox options. 需要另订阅 / Requires [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3830338118]Project Iron 0.6.0 (SweatWorkz)[/url].
+SuQingRecipeInputGuard_4221 · SapphCooking_B42
+[*]Viewpoint旧版手柄提示修复补丁 / Viewpoint Legacy Prompt Fix Patch
+Codex_ViewpointLegacyPromptFix_4221 · ProjectViewpointQOLLegacy0.1.6
+[*]酿酒技能书50倍补丁 / Brewing Skill Books 50x Patch
+Codex_ChinaBrewingBooks50_4221 · Chinesecuisine4213
+[*]船舱与房车房间兼容补丁 / Boat Cabin and RV Room Compatibility Patch
+SuQingBoatRVRoomGuard_4221 · BoteBR, FrotaBRRVAddon, PROJECTRVInterior42
+[*]造船就地取材补丁 / Boat Crafting Nearby Materials Patch
+SuQingBoatCraftFromFloor_4221 · BoteBR
+[*]提示框与融合物品栏修复 / Tooltip and Proximity Selection Fixes
+SuQingUIInteractionFixes 1.0.5 · CleanUI, ProximityInventory
+[*]野马防护改装修复 / Mustang Protection Repair
+SuQingMustangProtectionRepair · tsarslib, ATA_Mustang
+[*]世界对象状态保护（修复候选） / World Object State Guard (Candidate)
+SuQingWorldStateGuard_4221 · ZombieBuddy
+[*]好彩香烟菜单修复 / Lucky Strike Menu Fix
+SuQingLuckyStrikeMenuFix_4221 (0.1.1-rc.4). CleanUI 2.10.4–2.10.7, MoreMRE (MREfood4213).
+[*]收藏配方材料标记修复 / Favourite Recipe Materials Fix
+SuQingFavouriteRecipeMaterials_4221 (0.1.1-rc.2). 可选 / Optional: CleanUI, Neat Crafting.
+[*]Project Iron 简体中文补丁 / Project Iron Chinese Patch
+SuQingProjectIronCN_4221 (1.0.1-rc.1). 需要另订阅 / Requires [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3830338118]Project Iron 0.6.0 (SweatWorkz)[/url].
 [*]撬锁拓展补丁 / Crowbar Prying Expansion
-SuQingVanillaPryUpgrade 0.1.5 · B42.22.2 SP. 防盗门、挂锁和车辆轮盘。Reinforced doors, padlocks and vehicle radial menu. 无前置 / No prerequisites.
+SuQingVanillaPryUpgrade 0.1.5 · B42.22.2 SP. 防盗门、挂锁和车辆 / Reinforced doors, padlocks and vehicles.
 [*]现代枪械强化 / Modern Firearm Upgrades
-SuQingMFSFirearmUpgrade_4221 0.6.0 · 五档单枪强化、维护和投掷物配方。Five tiers, maintenance and throwable recipes. Requires [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3633421539]Modern Firearms System[/url]. 与全局伤害子模组互斥 / Conflicts with ModernFirearmsSystemDamageSandbox.
+SuQingMFSFirearmUpgrade_4221 0.7.1 · [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3633421539]Modern Firearms System[/url]. 与全局伤害子模组互斥 / Conflicts with ModernFirearmsSystemDamageSandbox.
 [*]美沙酮增强 / Methadone Reset
 SuQingMethadoneReset_4221 1.0.2 · N&CsNarcotics.
 [*]Live Wire × ISA 统一电网 / Unified Grid
-SuQingLiveWireISACompat_4221 0.1.3-rc.6 · LiveWire up to 2.1.2 + ISA 1.2.15–1.2.16.
+SuQingLiveWireISACompat_4221 0.1.3-rc.15 · Live Wire 2.2.0 + ISA 1.2.15–1.2.16.
 [*]Live Wire × Waterpipes 水路桥接 / Water Bridge
-SuQingLiveWireWaterBridge 0.1.1-rc.6 · LiveWire up to 2.1.2 + Waterpipes 42.20.
+SuQingLiveWireWaterBridge 0.1.1-rc.13 · Live Wire 2.2.0 + Waterpipes 42.20.
+[*]CleanUI 容器拖动 / CleanUI Container Drag · CleanUI 2.10.6–2.10.7
+SuQingCleanUIContainerDrag_4222 1.0.1
+[*]长距离接电 / Long Cable · Live Wire 2.2.0
+SuQingLiveWireLongCable 0.1.0-rc.8
+[*]晾晒架皮革加速 / Leather Drying · Vanilla
+SuQingLeatherRackSpeed_4222 1.0.0
+[*]增强消防斧耐久保护 / Axe Condition Guard · TrustyFireAxeRedux
+SuQingTrustyAxeConditionGuard_4222 0.1.0
+[*]现代枪械弹药减重 / MFS Ammo Weight · Modern Firearms System
+SuQingMFSAmmoWeight_4222 1.0.0
+[*]现代枪械弹药名称 / MFS Chinese Ammo Names · Modern Firearms System
+SuQingMFSAmmo38NamesCN_4222 1.1.0
+[*]KNOXWAVE 音量与选项 / Volume and Options · KNOXWAVE 0.15.34, ZombieBuddy 2.3.4
+SuQingKnoxwaveAudioFix_4222 0.1.2
+[*]Viewpoint 模拟频率 / Simulation Rate · Viewpoint 0.1.7, ZombieBuddy 2.3.4
+SuQingViewpointSimulation_4222 0.1.0
+[*]武器擦拭与保养 / Weapon Wiping and Maintenance
+SuQingMeleeWeaponWipe_4222 1.0.0
+[*]单件近战武器强化 / Per-Weapon Melee Upgrades · ZombieBuddy 2.3.4
+SuQingMeleeUpgrade_4222 0.2.0
+[*]手表病毒侦测雷达 / Wristwatch Virus Detector Radar · Modern Firearms System
+SuQingPortableVirusDetector_4222 0.1.0
+[*]Viewpoint 瞄准增强 / Aim Enhancement · Viewpoint 0.1.7, ZombieBuddy 2.3.4
+SuQingViewpointAimEnhancement_4222 0.1.0
 [/list]
+近战／雷达／瞄准玩法待测。 Melee, radar and aim gameplay pending.
 
-本轮覆盖撬锁、药物状态与兼容更新。游戏内验收范围见各项文档。
-Prying, drug status and compatibility updates. See each guide for test coverage.
+
+部分新增补丁需要 ZombieBuddy 或原模组。更新与验收范围见各项说明。
+Some new patches require ZombieBuddy or the original mod. Individual guides cover updates and verification.
 
 [url=https://github.com/suching8848/suqing-project-zomboid-patches/tree/main/docs/patches]完整双语说明 / Full bilingual guides[/url]

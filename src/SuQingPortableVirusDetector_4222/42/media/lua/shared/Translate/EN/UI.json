@@ -1,0 +1,17 @@
+{
+  "UI_SuQingPortableVirusDetector_Install": "Install virus detector",
+  "UI_SuQingPortableVirusDetector_Installing": "Installing virus detector",
+  "UI_SuQingPortableVirusDetector_Installed": "Virus detector attached to the watch.",
+  "UI_SuQingPortableVirusDetector_Requirements": "Uses one virus detector. Requires a working screwdriver.",
+  "UI_SuQingPortableVirusDetector_AlreadyInstalled": "This watch already has a virus detector.",
+  "UI_SuQingPortableVirusDetector_NeedDetector": "Carry an MFS virus detector.",
+  "UI_SuQingPortableVirusDetector_NeedScrewdriver": "Carry a working screwdriver.",
+  "UI_SuQingPortableVirusDetector_WatchMoved": "Carry this digital watch.",
+  "UI_SuQingPortableVirusDetector_InstallFailed": "Installation did not complete.",
+  "UI_SuQingPortableVirusDetector_RadarOn": "Turn radar on",
+  "UI_SuQingPortableVirusDetector_RadarOff": "Turn radar off",
+  "UI_SuQingPortableVirusDetector_Title": "Virus radar · 50 tiles",
+  "UI_SuQingPortableVirusDetector_above": "Above",
+  "UI_SuQingPortableVirusDetector_same": "Same",
+  "UI_SuQingPortableVirusDetector_below": "Below"
+}

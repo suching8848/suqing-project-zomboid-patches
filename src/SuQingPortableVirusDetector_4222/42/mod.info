@@ -1,0 +1,10 @@
+name=SuQing's Portable Virus Detector
+namezh=蘇清的便携病毒侦测器
+id=SuQingPortableVirusDetector_4222
+author=SuQing
+modversion=0.1.0
+versionMin=42.22.2
+versionMax=42.22.2
+require=ModernFirearmsSystem
+description=Mount an MFS virus detector on a digital wristwatch with a screwdriver. Right-click the watch to switch its radar on or off.
+descriptionzh=用螺丝刀把 MFS 病毒侦测器装在电子表上。右键手表即可开启或关闭雷达。

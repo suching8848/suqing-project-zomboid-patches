@@ -6,7 +6,7 @@ local WIRE = "Base.ElectricWire"
 function Cable.ready()
     local lw = LiveWire
     return Cable.wire ~= nil and Cable.recoveryReady == true
-        and lw and (lw.VERSION == "2.1.2" or lw.VERSION == "2.1.3" or lw.VERSION == "2.1.4" or lw.VERSION == "2.1.5")
+        and lw and (lw.VERSION == "2.1.2" or lw.VERSION == "2.1.3" or lw.VERSION == "2.1.4" or lw.VERSION == "2.1.5" or lw.VERSION == "2.1.6" or lw.VERSION == "2.1.8" or lw.VERSION == "2.2.0")
         and lw.Registry and lw.Registry.ready and not lw.Registry.readOnly
 end
 

@@ -1,0 +1,19 @@
+{
+  "UI_SuQingMeleeWeaponWipe_Menu": "Wipe weapon",
+  "UI_SuQingMeleeWeaponWipe_Wiping": "Wiping weapon",
+  "UI_SuQingMeleeWeaponWipe_Condition": "Condition: %1 → %2 / %3",
+  "UI_SuQingMeleeWeaponWipe_HeadCondition": "Head condition: %1 → %2 / %3",
+  "UI_SuQingMeleeWeaponWipe_Sharpness": "Sharpness: %1 → %2",
+  "UI_SuQingMeleeWeaponWipe_Material": "Material: %1",
+  "UI_SuQingMeleeWeaponWipe_ClothUses": "Uses remaining: %1 → %2",
+  "UI_SuQingMeleeWeaponWipe_Replacement": "After use: %1",
+  "UI_SuQingMeleeWeaponWipe_Unsupported": "Available for melee weapons and conventional firearms in single-player.",
+  "UI_SuQingMeleeWeaponWipe_NotCarried": "The weapon must be in your inventory.",
+  "UI_SuQingMeleeWeaponWipe_Broken": "The weapon is broken and needs repair first.",
+  "UI_SuQingMeleeWeaponWipe_Unload": "Remove the magazine and clear all ammunition and spent casings before wiping.",
+  "UI_SuQingMeleeWeaponWipe_FirearmMaintained": "Firearm condition restored to %1/%2.",
+  "UI_SuQingMeleeWeaponWipe_NoGain": "Wiping cannot restore this weapon any further.",
+  "UI_SuQingMeleeWeaponWipe_DryCloth": "A dry towel or clean cloth is required.",
+  "UI_SuQingMeleeWeaponWipe_Stale": "The weapon or material has changed. Select the wipe action again.",
+  "UI_SuQingMeleeWeaponWipe_Failed": "Wiping failed."
+}

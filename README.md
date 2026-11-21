@@ -1,5 +1,14 @@
 # 蘇清的僵尸毁灭工程补丁合集 / SuQing’s Project Zomboid Patch Collection
 
+## 2026.11.21-52
+
+更新 Live Wire 2.2.0 的统一电网、Waterpipes 水路与长距离接电。枪械强化更新至 0.7.1，并新增统一的武器擦拭与保养。 新增条目标注了离线与玩法验收状态。
+
+- [蘇清的擦拭修复](docs/patches/SuQingMeleeWeaponWipe_4222.md)
+- [蘇清的近战强化](docs/patches/SuQingMeleeUpgrade_4222.md)
+- [蘇清的便携病毒侦测器](docs/patches/SuQingPortableVirusDetector_4222.md)
+- [蘇清的瞄准增强补丁](docs/patches/SuQingViewpointAimEnhancement_4222.md)
+
 ## 11 月 18 日适配更新
 
 - CleanUI 2.10.7 的批量转移、容器侧栏拖放、近邻选区和混组菜单防护已更新。收藏配方提示支持原版液体和能源栏的提示流程。

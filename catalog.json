@@ -1522,9 +1522,9 @@
       "id": "SuQingMFSFirearmUpgrade_4221",
       "folder": "SuQingMFSFirearmUpgrade_4221",
       "title_zh": "蘇清的现代枪械强化补丁",
-      "title_en": "SuQing's Modern Firearm Upgrades",
-      "version": "0.6.0",
-      "description_original": "Five levels of per-firearm upgrades, dry-towel maintenance, and three throwable recipes. Requires Modern Firearms System. Build 42.21–42.22 single-player.",
+      "title_en": "SuQing's Modern Firearm Upgrade Patch",
+      "version": "0.7.1",
+      "description_original": "Five levels of per-firearm upgrades, maintenance with dry towels or clean cloth, and three throwable recipes. Requires Modern Firearms System. Build 42.21–42.22 single-player.",
       "requires_raw": "ModernFirearmsSystem",
       "load_after_raw": "ModernFirearmsSystem",
       "required_mods": [
@@ -1536,10 +1536,10 @@
       "doc": "docs/patches/SuQingMFSFirearmUpgrade_4221.md",
       "reconstruction_status": "recipes_ready",
       "source_runtime_info": "42/mod.info",
-      "summary_zh": "五档单枪强化、干毛巾擦拭维护和三条投掷物配方。",
-      "summary_en": "Five levels of per-gun upgrades, dry-towel maintenance, and three throwable recipes.",
+      "summary_zh": "五档单枪强化、用干毛巾或干净布料擦拭维护和三条投掷物配方。需要现代枪械系统。适用 Build 42.21–42.22 单人模式。",
+      "summary_en": "Five levels of per-firearm upgrades, maintenance with dry towels or clean cloth, and three throwable recipes. Requires Modern Firearms System. Build 42.21–42.22 single-player.",
       "runtime_files": 10,
-      "runtime_bytes": 39480,
+      "runtime_bytes": 42276,
       "reconstruction_modes": {
         "own": 10
       },
@@ -1584,8 +1584,8 @@
       "folder": "SuQingLiveWireISACompat_4221",
       "title_zh": "蘇清的 Live Wire × ISA 统一电网",
       "title_en": "SuQing's Live Wire × ISA Unified Grid",
-      "version": "0.1.3-rc.11",
-      "description_original": "Manually connect one ISA power bank to a Live Wire grid for shared solar generation, battery storage and load settlement. Single-player, LiveWire 1.7.2, 2.0.0–2.0.3 or 2.1.0–2.1.5 and ISA 1.2.15–1.2.16. LiveWire Extended is unsupported.",
+      "version": "0.1.3-rc.15",
+      "description_original": "Manually connect one ISA power bank to a Live Wire grid for shared solar generation, battery storage and load settlement. Single-player, LiveWire 1.7.2, 2.0.0–2.0.3 or 2.1.0–2.1.6, 2.1.8 or 2.2.0 with ISA 1.2.15–1.2.16. LiveWire 2.1.4–2.1.6, 2.1.8 and 2.2.0 also accepts ISA batteries in LiveWire power banks. LiveWire Extended is unsupported.",
       "requires_raw": "batman_LiveWire,ISA",
       "load_after_raw": "batman_LiveWire,ISA,SuQingPortals",
       "required_mods": [
@@ -1600,12 +1600,12 @@
       "doc": "docs/patches/SuQingLiveWireISACompat_4221.md",
       "reconstruction_status": "recipes_ready",
       "source_runtime_info": "42/mod.info",
-      "summary_zh": "将一台 ISA 电池柜手动接入 Live Wire 电网，共享光伏发电、储电和负载结算。支持单人模式、LiveWire 1.7.2、2.0.0–2.0.3 或 2.1.0–2.1.5 与 ISA 1.2.15–1.2.16。暂不支持 LiveWire Extended。",
-      "summary_en": "Manually connect one ISA power bank to a Live Wire grid for shared solar generation, battery storage and load settlement. Single-player, LiveWire 1.7.2, 2.0.0–2.0.3 or 2.1.0–2.1.5 and ISA 1.2.15–1.2.16. LiveWire Extended is unsupported.",
-      "runtime_files": 14,
-      "runtime_bytes": 99788,
+      "summary_zh": "将一台 ISA 电池柜手动接入 Live Wire 电网，共享光伏发电、储电和负载结算。支持单人模式、LiveWire 1.7.2、2.0.0–2.0.3 或 2.1.0–2.1.6、2.1.8 或 2.2.0 与 ISA 1.2.15–1.2.16。LiveWire 2.1.4–2.1.6、2.1.8 和 2.2.0 的电池组也可直接使用 ISA 电池。暂不支持 LiveWire Extended。",
+      "summary_en": "Manually connect one ISA power bank to a Live Wire grid for shared solar generation, battery storage and load settlement. Single-player, LiveWire 1.7.2, 2.0.0–2.0.3 or 2.1.0–2.1.6, 2.1.8 or 2.2.0 with ISA 1.2.15–1.2.16. LiveWire 2.1.4–2.1.6, 2.1.8 and 2.2.0 also accepts ISA batteries in LiveWire power banks. LiveWire Extended is unsupported.",
+      "runtime_files": 15,
+      "runtime_bytes": 111285,
       "reconstruction_modes": {
-        "own": 14
+        "own": 15
       },
       "excluded_files": [],
       "source_roots": [],
@@ -1618,7 +1618,7 @@
       "folder": "SuQingLiveWireWaterBridge",
       "title_zh": "蘇清的 Live Wire × Waterpipes 水路桥接 [单人]",
       "title_en": "SuQing's Live Wire and Waterpipes Bridge [SP]",
-      "version": "0.1.1-rc.10",
+      "version": "0.1.1-rc.13",
       "description_original": "Share rain collectors, supply opened Useful Barrels, and connect a Live Wire pump to a dedicated Waterpipes line. Single player.",
       "requires_raw": "Waterpipes,batman_LiveWire",
       "load_after_raw": "Waterpipes,batman_LiveWire,SuQingSprinklerFertilizer,UsefulBarrelsMP",
@@ -1638,7 +1638,7 @@
       "summary_zh": "共用集雨桶，给 Useful Barrels 的开盖桶补水，并将 Live Wire 水泵接入独立的 Waterpipes 管线。仅单人。",
       "summary_en": "Share rain collectors, supply opened Useful Barrels, and connect a Live Wire pump to a dedicated Waterpipes line. Single player.",
       "runtime_files": 9,
-      "runtime_bytes": 44122,
+      "runtime_bytes": 46033,
       "reconstruction_modes": {
         "own": 9
       },
@@ -1684,7 +1684,7 @@
     {
       "id": "SuQingLiveWireLongCable",
       "folder": "SuQingLiveWireLongCable",
-      "version": "0.1.0-rc.5",
+      "version": "0.1.0-rc.8",
       "title_zh": "蘇清的 LiveWire 长距离接电 [单人]",
       "title_en": "SuQing's LiveWire Long Cable [SP]",
       "description_original": "Wire LiveWire equipment directly to its master inverter up to 100 tiles away. Single player.",
@@ -1704,13 +1704,14 @@
       "summary_zh": "让 LiveWire 设备直接接入最远 100 格外的主逆变器。仅单人。",
       "summary_en": "Wire LiveWire equipment directly to its master inverter up to 100 tiles away. Single player.",
       "runtime_files": 11,
-      "runtime_bytes": 15889,
+      "runtime_bytes": 16435,
       "reconstruction_modes": {
         "own": 11
       },
       "excluded_files": [],
       "source_roots": [],
-      "compatibility_candidate_game": "42.22.2"
+      "compatibility_candidate_game": "42.22.2",
+      "distribution": "optional_in_patch_collection"
     },
     {
       "id": "SuQingCleanUIContainerDrag_4222",
@@ -2009,6 +2010,119 @@
         "workshop"
       ],
       "compatibility_candidate_game": "42.22.2"
+    },
+    {
+      "id": "SuQingMeleeWeaponWipe_4222",
+      "folder": "SuQingMeleeWeaponWipe_4222",
+      "title_zh": "蘇清的擦拭修复",
+      "title_en": "蘇清的擦拭修复",
+      "version": "1.0.0",
+      "description_original": "用干抹布、毛巾或干净布料擦拭近战武器和已卸弹的枪械。近战恢复适用的耐久及锋利度，枪械恢复耐久。适用 B42.22.2 单人模式。 <LINE> SuQing's Wipe Repair restores applicable melee condition and sharpness, or unloaded firearm condition, using dry towels and clean cloth. Build 42.22.2 single-player.",
+      "requires_raw": "",
+      "load_after_raw": "",
+      "required_mods": [],
+      "load_after_mods": [],
+      "doc": "docs/patches/SuQingMeleeWeaponWipe_4222.md",
+      "reconstruction_status": "recipes_ready",
+      "source_runtime_info": "42/mod.info",
+      "summary_zh": "",
+      "summary_en": "用干抹布、毛巾或干净布料擦拭近战武器和已卸弹的枪械。近战恢复适用的耐久及锋利度，枪械恢复耐久。适用 B42.22.2 单人模式。 <LINE> SuQing's Wipe Repair restores applicable melee condition and sharpness, or unloaded firearm condition, using dry towels and clean cloth. Build 42.22.2 single-player.",
+      "runtime_files": 5,
+      "runtime_bytes": 16474,
+      "reconstruction_modes": {
+        "own": 5
+      },
+      "excluded_files": [],
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2",
+      "distribution": "optional_in_patch_collection"
+    },
+    {
+      "id": "SuQingMeleeUpgrade_4222",
+      "folder": "SuQingMeleeUpgrade_4222",
+      "title_zh": "蘇清的近战强化",
+      "title_en": "SuQing's Melee Upgrade",
+      "version": "0.2.0",
+      "description_original": "Upgrade a melee weapon three times with nails, a small metal sheet and a ripped sheet. The third upgrade halves its weight. Requires a hammer and ZombieBuddy 2.3.4. Build 42.22.2 single-player.",
+      "requires_raw": "\\ZombieBuddy",
+      "load_after_raw": "",
+      "required_mods": [
+        "ZombieBuddy"
+      ],
+      "load_after_mods": [],
+      "doc": "docs/patches/SuQingMeleeUpgrade_4222.md",
+      "reconstruction_status": "recipes_ready",
+      "source_runtime_info": "42/mod.info",
+      "summary_zh": "用钉子、小金属板和碎布条把近战武器强化三级，第三级使重量减半。需要锤子和 ZombieBuddy 2.3.4。适用 B42.22.2 单人模式。",
+      "summary_en": "Upgrade a melee weapon three times with nails, a small metal sheet and a ripped sheet. The third upgrade halves its weight. Requires a hammer and ZombieBuddy 2.3.4. Build 42.22.2 single-player.",
+      "runtime_files": 4,
+      "runtime_bytes": 42436,
+      "reconstruction_modes": {
+        "own": 4
+      },
+      "excluded_files": [],
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2",
+      "distribution": "optional_in_patch_collection"
+    },
+    {
+      "id": "SuQingPortableVirusDetector_4222",
+      "folder": "SuQingPortableVirusDetector_4222",
+      "title_zh": "蘇清的便携病毒侦测器",
+      "title_en": "SuQing's Portable Virus Detector",
+      "version": "0.1.0",
+      "description_original": "Mount an MFS virus detector on a digital wristwatch with a screwdriver. Right-click the watch to switch its radar on or off.",
+      "requires_raw": "ModernFirearmsSystem",
+      "load_after_raw": "",
+      "required_mods": [
+        "ModernFirearmsSystem"
+      ],
+      "load_after_mods": [],
+      "doc": "docs/patches/SuQingPortableVirusDetector_4222.md",
+      "reconstruction_status": "recipes_ready",
+      "source_runtime_info": "42/mod.info",
+      "summary_zh": "用螺丝刀把 MFS 病毒侦测器装在电子表上。右键手表即可开启或关闭雷达。",
+      "summary_en": "Mount an MFS virus detector on a digital wristwatch with a screwdriver. Right-click the watch to switch its radar on or off.",
+      "runtime_files": 6,
+      "runtime_bytes": 12577,
+      "reconstruction_modes": {
+        "own": 6
+      },
+      "excluded_files": [],
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2",
+      "distribution": "optional_in_patch_collection"
+    },
+    {
+      "id": "SuQingViewpointAimEnhancement_4222",
+      "folder": "SuQingViewpointAimEnhancement_4222",
+      "title_zh": "蘇清的瞄准增强补丁",
+      "title_en": "SuQing's Viewpoint Aim Enhancement",
+      "version": "0.1.0",
+      "description_original": "Double focus speed and hold the minimum aim radius through movement, target changes and shots. For Viewpoint 0.1.7 single-player.",
+      "requires_raw": "\\Viewpoint,\\ZombieBuddy",
+      "load_after_raw": "Viewpoint",
+      "required_mods": [
+        "Viewpoint",
+        "ZombieBuddy"
+      ],
+      "load_after_mods": [
+        "Viewpoint"
+      ],
+      "doc": "docs/patches/SuQingViewpointAimEnhancement_4222.md",
+      "reconstruction_status": "recipes_ready",
+      "source_runtime_info": "42/mod.info",
+      "summary_zh": "瞄准收圈速度翻倍。持续举枪时可移动收圈，收满后换目标和开枪保持最小瞄准圈。适用于 Viewpoint 0.1.7 单人。",
+      "summary_en": "Double focus speed and hold the minimum aim radius through movement, target changes and shots. For Viewpoint 0.1.7 single-player.",
+      "runtime_files": 6,
+      "runtime_bytes": 20313,
+      "reconstruction_modes": {
+        "own": 6
+      },
+      "excluded_files": [],
+      "source_roots": [],
+      "compatibility_candidate_game": "42.22.2",
+      "distribution": "optional_in_patch_collection"
     }
   ]
 }

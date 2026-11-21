@@ -1,0 +1,15 @@
+name=SuQing's Viewpoint Aim Enhancement
+namezh=蘇清的瞄准增强补丁
+id=SuQingViewpointAimEnhancement_4222
+author=SuQing
+modversion=0.1.0
+require=\Viewpoint,\ZombieBuddy
+loadModAfter=Viewpoint
+versionMin=42.22.2
+versionMax=42.22.2
+javaJarFile=media/java/client/SuQingViewpointAimEnhancement.jar
+javaPkgName=suqingviewpointaim
+ZBVersionMin=2.3.4
+ZBVersionMax=2.3.4
+description=Double focus speed and hold the minimum aim radius through movement, target changes and shots. For Viewpoint 0.1.7 single-player.
+descriptionzh=瞄准收圈速度翻倍。持续举枪时可移动收圈，收满后换目标和开枪保持最小瞄准圈。适用于 Viewpoint 0.1.7 单人。

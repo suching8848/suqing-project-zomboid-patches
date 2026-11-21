@@ -1,0 +1,19 @@
+{
+  "UI_SuQingMeleeWeaponWipe_Menu": "擦拭维护",
+  "UI_SuQingMeleeWeaponWipe_Wiping": "正在擦拭武器",
+  "UI_SuQingMeleeWeaponWipe_Condition": "耐久：%1 → %2 / %3",
+  "UI_SuQingMeleeWeaponWipe_HeadCondition": "头部耐久：%1 → %2 / %3",
+  "UI_SuQingMeleeWeaponWipe_Sharpness": "锋利度：%1 → %2",
+  "UI_SuQingMeleeWeaponWipe_Material": "耗材：%1",
+  "UI_SuQingMeleeWeaponWipe_ClothUses": "剩余次数：%1 → %2",
+  "UI_SuQingMeleeWeaponWipe_Replacement": "用完后得到：%1",
+  "UI_SuQingMeleeWeaponWipe_Unsupported": "适用于单人模式中的近战武器和常规枪械。",
+  "UI_SuQingMeleeWeaponWipe_NotCarried": "武器必须在随身物品栏中。",
+  "UI_SuQingMeleeWeaponWipe_Broken": "武器已经损坏，需要先修理。",
+  "UI_SuQingMeleeWeaponWipe_Unload": "请先卸下弹匣，清空弹仓和膛内的弹药及弹壳。",
+  "UI_SuQingMeleeWeaponWipe_FirearmMaintained": "枪械耐久已恢复至 %1/%2。",
+  "UI_SuQingMeleeWeaponWipe_NoGain": "擦拭已无法进一步恢复这把武器。",
+  "UI_SuQingMeleeWeaponWipe_DryCloth": "需要干抹布、干毛巾或干净布料。",
+  "UI_SuQingMeleeWeaponWipe_Stale": "武器或耗材的状态已改变，请重新选择擦拭。",
+  "UI_SuQingMeleeWeaponWipe_Failed": "擦拭失败。"
+}

@@ -1,0 +1,21 @@
+{
+  "UI_SuQingMeleeUpgrade_Menu": "强化近战武器",
+  "UI_SuQingMeleeUpgrade_Upgrade": "强化近战武器至 +%1",
+  "UI_SuQingMeleeUpgrade_ConditionMax": "主体耐久上限：%1 → %2",
+  "UI_SuQingMeleeUpgrade_HeadConditionMax": "刀头耐久上限：%1 → %2",
+  "UI_SuQingMeleeUpgrade_DamageMultiplier": "基础伤害为原值的 %1",
+  "UI_SuQingMeleeUpgrade_WearRate": "主体和刀头耐久掉点率为原版的 %1",
+  "UI_SuQingMeleeUpgrade_Weight": "重量：%1 → %2",
+  "UI_SuQingMeleeUpgrade_Materials": "消耗 2 枚钉子、1 块小金属板和 1 条碎布条。需要一把锤子。",
+  "UI_SuQingMeleeUpgrade_Working": "强化近战武器",
+  "UI_SuQingMeleeUpgrade_Upgraded": "近战武器已强化至 +%1。",
+  "UI_SuQingMeleeUpgrade_Error_Changed": "武器状态已变化，请重新选择强化。",
+  "UI_SuQingMeleeUpgrade_Error_Failed": "强化未完成。",
+  "UI_SuQingMeleeUpgrade_Error_Ineligible": "这件武器已损坏，无法强化。",
+  "UI_SuQingMeleeUpgrade_Error_MaxLevel": "这件武器已达到最高强化等级。",
+  "UI_SuQingMeleeUpgrade_Error_Unsupported": "这件武器的属性超出当前强化支持范围。",
+  "UI_SuQingMeleeUpgrade_Error_Unavailable": "强化模块尚未就绪。",
+  "UI_SuQingMeleeUpgrade_Error_MissingHammer": "需要一把完好的锤子。",
+  "UI_SuQingMeleeUpgrade_Error_MissingMaterials": "需要 2 枚钉子、1 块小金属板和 1 条碎布条。",
+  "UI_SuQingMeleeUpgrade_Error_InvalidMaterials": "武器或材料已移动，请重新选择强化。"
+}

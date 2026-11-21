@@ -1,0 +1,14 @@
+name=SuQing's Melee Upgrade
+namezh=蘇清的近战强化
+id=SuQingMeleeUpgrade_4222
+author=SuQing
+modversion=0.2.0
+versionMin=42.22.2
+versionMax=42.22.2
+require=\ZombieBuddy
+ZBVersionMin=2.3.4
+ZBVersionMax=2.3.4
+javaJarFile=media/java/client/SuQingMeleeUpgrade.jar
+javaPkgName=suqingmeleeupgrade
+description=Upgrade a melee weapon three times with nails, a small metal sheet and a ripped sheet. The third upgrade halves its weight. Requires a hammer and ZombieBuddy 2.3.4. Build 42.22.2 single-player.
+descriptionzh=用钉子、小金属板和碎布条把近战武器强化三级，第三级使重量减半。需要锤子和 ZombieBuddy 2.3.4。适用 B42.22.2 单人模式。

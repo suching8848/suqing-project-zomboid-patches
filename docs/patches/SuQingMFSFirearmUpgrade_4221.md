@@ -3,7 +3,7 @@
 | 项目 / Field | 值 / Value |
 | --- | --- |
 | Mod ID | SuQingMFSFirearmUpgrade_4221 |
-| 版本 / Version | 0.6.0 |
+| 版本 / Version | 0.7.1 |
 | 游戏 / Game | Build 42.21–42.22 单人 / single-player. Tested offline on 42.22.2. |
 | 依赖及顺序 / Dependency and load order | Load after ModernFirearmsSystem (Workshop 3633421539) |
 
@@ -29,9 +29,19 @@ B42.22.2 离线回归覆盖五档属性和材料、0.2.0 强化枪的一次性�
 
 ### 擦拭维护
 
-随身携带原版干毛巾，在背包里右键单独一把已卸弹且仍可用的受损枪械，选择「擦拭维护」。菜单预览当前和完成后的耐久、毛巾剩余次数。动作完成才消耗干毛巾一次使用次数并恢复 1 点耐久，上限为该枪原有的耐久上限。清洁完成后可继续逐次擦拭。满状态干毛巾有 10 次，最后一次沿用原版转换为湿毛巾。普通枪和强化枪都可擦拭，耐久归零的枪由现代枪械修理包修复。
+同时启用蘇清的擦拭修复 1.0.0 时，枪械的「擦拭维护」由擦拭修复提供。单独启用本补丁，或与 0.2.0 的近战擦拭模组搭配时，本补丁提供枪械擦拭菜单。 [擦拭修复说明](SuQingMeleeWeaponWipe_4222.md)
 
-离线回归已覆盖动作中断、持有状态变化、最后一次转换、结算失败回退和满耐久保护。进档后可用一把有磨损的枪验证耐久加 1、毛巾扣 1 次，再验证最后一次转换。
+随身携带擦拭材料，在背包里右键单独一把已卸弹且仍可用的受损枪械，选择「擦拭维护」。只有一种材料可用时可直接擦拭，有多种时从子菜单选择。提示会预览擦拭前后的耐久和所选材料的用量。
+
+| 材料 | 每次擦拭的用量 |
+| --- | --- |
+| 干抹布、干毛巾 | 扣 1 次用量。满状态各有 10 次，最后一次沿用原版转换为对应的湿抹布或湿毛巾。 |
+| 干净的碎布条、牛仔布条、普通绷带 | 用掉 1 条，按原版规则转成对应的脏布条或脏绷带。 |
+| 粗麻布片、奶酪布 | 消耗 1 块。 |
+
+动作完成后才结算用量并恢复 1 点耐久，上限为该枪原有的耐久上限。普通枪和强化枪都可擦拭，耐久归零的枪由现代枪械修理包修复。
+
+进档后可同时携带干毛巾和碎布条，确认子菜单能选材料。用一把已卸弹的磨损枪验证耐久加 1、只扣选中的材料，再试毛巾末次变湿和碎布条变脏。
 
 ### 投掷物制作
 
@@ -67,9 +77,19 @@ B42.22.2 offline checks cover all levels and costs, the one-time range upgrade f
 
 ### Wipe firearm
 
-Carry a dry bath towel and right-click one unloaded, damaged, working firearm in your inventory. The **Wipe firearm** option previews its condition and the towel's remaining uses. Each completed action uses one towel charge and restores one point, up to the firearm's existing condition limit. Select the action again for another wipe. A full bath towel holds ten uses and becomes a wet towel on depletion through the game's own item handling. Both regular and upgraded firearms qualify. The existing MFS repair kit covers broken firearms.
+When SuQing's Wipe Repair 1.0.0 is enabled, it provides the firearm wiping menu. This patch provides the firearm wiping menu when used alone or with the earlier 0.2.0 melee wipe mod. [Wipe Repair guide](SuQingMeleeWeaponWipe_4222.md)
 
-Offline tests cover interrupted actions, inventory changes, last-use replacement, rollback on failure, and full-condition checks. In game, verify one condition point and one towel use per wipe, then verify the final charge becomes a wet towel.
+Carry a wiping material and right-click one unloaded, damaged, working firearm in your inventory. Choose **Wipe firearm** to use the only available material type directly, or choose a material from the submenu if several types are available. The tooltip previews condition before and after wiping and how much material the action will use.
+
+| Material | Cost per wipe |
+| --- | --- |
+| Dry dish towel, dry bath towel | One use. Each holds 10 uses when full and becomes the corresponding wet item after its last use. |
+| Clean rag, denim strip, ordinary bandage | One piece, which becomes the corresponding dirty item through the game's own item handling. |
+| Burlap piece, cheesecloth | One piece. |
+
+Each completed wipe uses the selected material and restores one point, up to the firearm's existing condition limit. Both regular and upgraded firearms qualify. The existing MFS repair kit covers broken firearms.
+
+In game, carry a dry bath towel and a clean rag to check material selection. Wipe a worn, unloaded gun to verify one condition point and the selected material cost. Confirm that the last towel use produces a wet towel and that the rag becomes dirty.
 
 ### Throwable crafting
 

@@ -1,5 +1,14 @@
 # SuQing’s Project Zomboid Patch Collection / 蘇清的僵尸毁灭工程补丁合集
 
+## 2026.11.21-52
+
+Reviewed Live Wire 2.2.0 compatibility, modern firearm upgrades and a unified weapon maintenance menu.
+
+- [蘇清的擦拭修复](docs/patches/SuQingMeleeWeaponWipe_4222.md)
+- [SuQing's Melee Upgrade](docs/patches/SuQingMeleeUpgrade_4222.md)
+- [SuQing's Portable Virus Detector](docs/patches/SuQingPortableVirusDetector_4222.md)
+- [SuQing's Viewpoint Aim Enhancement](docs/patches/SuQingViewpointAimEnhancement_4222.md)
+
 ## November 18 compatibility update
 
 - CleanUI 2.10.7 updates cover bulk transfers, scrolled container dragging, proximity selection and mixed-group menus. Favourite Recipe Materials also keeps fluid and electricity tooltips working.

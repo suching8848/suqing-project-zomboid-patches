@@ -16,6 +16,9 @@ local runtimeVersions = {
     ["2.1.3"] = "2.1.3",
     ["2.1.4"] = "2.1.4",
     ["2.1.5"] = "2.1.5",
+    ["2.1.6"] = "2.1.6",
+    ["2.1.8"] = "2.1.8",
+    ["2.2.0"] = "2.2.0",
 }
 
 local function finite(n)
@@ -306,6 +309,10 @@ function Bridge.install(adapter, wireVersion)
         return false, devicesPath
     end
 
+    if adapter.mountBatteries then
+        bat = adapter.mountBatteries(bat)
+        lw.Batteries, read, write = bat, bat.read, bat.write
+    end
     hooks = adapter
     if grouped then nativeMembersByRole = r.membersByRole end
     r.dropGrid = function(grid)

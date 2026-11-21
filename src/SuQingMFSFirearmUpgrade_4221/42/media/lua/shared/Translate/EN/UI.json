@@ -34,10 +34,12 @@
   "UI_SuQingMFSFirearmUpgrade_ProjectedCritical": "Resulting crit chance stat %1, crit multiplier %2",
   "UI_SuQingMFSFirearmUpgrade_Error_CriticalIntegration": "The critical stats interface is unavailable in this Modern Firearms System build.",
   "UI_SuQingMFSFirearmUpgrade_Maintain": "Wipe firearm",
-  "UI_SuQingMFSFirearmUpgrade_Wiping": "Wiping firearm with a dry towel",
+  "UI_SuQingMFSFirearmUpgrade_Wiping": "Wiping firearm",
   "UI_SuQingMFSFirearmUpgrade_Maintained": "Firearm condition restored to %1/%2.",
   "UI_SuQingMFSFirearmUpgrade_ConditionPreview": "Firearm condition %1/%3 → %2/%3",
-  "UI_SuQingMFSFirearmUpgrade_TowelPreview": "Dry towel uses remaining %1 → %2",
-  "UI_SuQingMFSFirearmUpgrade_Error_DryTowel": "A dry bath towel with uses remaining is required.",
+  "UI_SuQingMFSFirearmUpgrade_MaterialPreview": "Material: %1",
+  "UI_SuQingMFSFirearmUpgrade_TowelPreview": "Uses remaining: %1 → %2",
+  "UI_SuQingMFSFirearmUpgrade_MaterialAfterUse": "After use: %1",
+  "UI_SuQingMFSFirearmUpgrade_Error_DryTowel": "A dry towel or clean cloth is required.",
   "UI_SuQingMFSFirearmUpgrade_Error_FullCondition": "This firearm is already at full condition."
 }

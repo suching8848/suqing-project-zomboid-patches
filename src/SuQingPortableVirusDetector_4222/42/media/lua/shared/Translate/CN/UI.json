@@ -1,0 +1,17 @@
+{
+  "UI_SuQingPortableVirusDetector_Install": "安装病毒侦测器",
+  "UI_SuQingPortableVirusDetector_Installing": "正在安装病毒侦测器",
+  "UI_SuQingPortableVirusDetector_Installed": "病毒侦测器已装到电子表上。",
+  "UI_SuQingPortableVirusDetector_Requirements": "消耗一个病毒侦测器。需要一把可用的螺丝刀。",
+  "UI_SuQingPortableVirusDetector_AlreadyInstalled": "这块表已安装病毒侦测器。",
+  "UI_SuQingPortableVirusDetector_NeedDetector": "需要随身携带一个 MFS 病毒侦测器。",
+  "UI_SuQingPortableVirusDetector_NeedScrewdriver": "需要随身携带一把可用的螺丝刀。",
+  "UI_SuQingPortableVirusDetector_WatchMoved": "需要随身携带这块电子表。",
+  "UI_SuQingPortableVirusDetector_InstallFailed": "安装未完成。",
+  "UI_SuQingPortableVirusDetector_RadarOn": "开启雷达",
+  "UI_SuQingPortableVirusDetector_RadarOff": "关闭雷达",
+  "UI_SuQingPortableVirusDetector_Title": "病毒雷达 · 50 格",
+  "UI_SuQingPortableVirusDetector_above": "楼上",
+  "UI_SuQingPortableVirusDetector_same": "同层",
+  "UI_SuQingPortableVirusDetector_below": "楼下"
+}

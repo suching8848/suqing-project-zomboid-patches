@@ -24,7 +24,7 @@ function Portals.install(power, adapter, gridLink, managedBackup, version, verif
         and version ~= "0.1.6-rc.3" and version ~= "0.1.6-rc.4" and version ~= "0.1.6-rc.5" and version ~= "0.1.6-rc.6"
         and version ~= "0.1.6-rc.7" and version ~= "0.1.6-rc.8"
         and version ~= "0.1.6-rc.9" and version ~= "0.1.6-rc.10"
-        and version ~= "0.1.6-rc.11") then return false end
+        and version ~= "0.1.6-rc.11" and version ~= "0.1.6-rc.12" and version ~= "0.1.6-rc.13" and version ~= "0.1.6-rc.14") then return false end
     local original = {}
     for _, key in ipairs({"provider", "begin", "finish", "rollback"}) do
         local fn = power[key]

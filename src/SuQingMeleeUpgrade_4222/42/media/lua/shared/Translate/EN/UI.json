@@ -1,0 +1,21 @@
+{
+  "UI_SuQingMeleeUpgrade_Menu": "Upgrade melee weapon",
+  "UI_SuQingMeleeUpgrade_Upgrade": "Upgrade melee weapon to +%1",
+  "UI_SuQingMeleeUpgrade_ConditionMax": "Body condition cap: %1 → %2",
+  "UI_SuQingMeleeUpgrade_HeadConditionMax": "Head condition cap: %1 → %2",
+  "UI_SuQingMeleeUpgrade_DamageMultiplier": "Base damage is %1 of original",
+  "UI_SuQingMeleeUpgrade_WearRate": "Body and head condition loss chance is %1 of normal",
+  "UI_SuQingMeleeUpgrade_Weight": "Weight: %1 → %2",
+  "UI_SuQingMeleeUpgrade_Materials": "Uses 2 nails, 1 small metal sheet and 1 ripped sheet. Requires a hammer.",
+  "UI_SuQingMeleeUpgrade_Working": "Upgrading melee weapon",
+  "UI_SuQingMeleeUpgrade_Upgraded": "Melee weapon upgraded to +%1.",
+  "UI_SuQingMeleeUpgrade_Error_Changed": "The weapon's state changed. Choose the upgrade again.",
+  "UI_SuQingMeleeUpgrade_Error_Failed": "The upgrade did not complete.",
+  "UI_SuQingMeleeUpgrade_Error_Ineligible": "This weapon is too damaged to upgrade.",
+  "UI_SuQingMeleeUpgrade_Error_MaxLevel": "This weapon has reached the maximum upgrade level.",
+  "UI_SuQingMeleeUpgrade_Error_Unsupported": "This weapon's stats are outside the supported upgrade range.",
+  "UI_SuQingMeleeUpgrade_Error_Unavailable": "The upgrade module is unavailable.",
+  "UI_SuQingMeleeUpgrade_Error_MissingHammer": "A working hammer is required.",
+  "UI_SuQingMeleeUpgrade_Error_MissingMaterials": "Requires 2 nails, 1 small metal sheet and 1 ripped sheet.",
+  "UI_SuQingMeleeUpgrade_Error_InvalidMaterials": "The weapon or supplies moved. Choose the upgrade again."
+}

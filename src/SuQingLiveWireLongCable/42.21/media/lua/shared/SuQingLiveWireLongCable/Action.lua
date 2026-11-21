@@ -8,7 +8,7 @@ local ok, wire = pcall(function()
     if not Source.supported(Source.actions, source) then return nil end
     local complete = assert(source:find("function LWLinkAction:complete()", 1, true))
     local first = assert(source:find("    local kind = I().linkKind(target)\n", complete, true))
-    local last = assert(source:find("\n-- A vanilla generator (backup power)", first, true))
+    local last = assert(source:find("\nfunction LWLinkAction.linkVanilla(", first, true))
     -- Reuse the checked upstream transaction from immediately after inverter and grid resolution.
     local prefix = [[
 local function I() return LiveWire.Install end

@@ -54,6 +54,22 @@ local function verifiedLiveWireVersion()
             { "server/LiveWire/LW_Pump.lua", 551541570, 3826043270 },
             { "server/LiveWire/LW_Circuits.lua", 3447202187, 2070311534 },
         }
+    elseif matches(core, 730712702, 3025217651) then
+        version = "2.2.0"
+        pins = {
+            { "server/LiveWire/LW_Pump.lua", 3990370844, 2797203769 },
+            { "server/LiveWire/LW_Circuits.lua", 1808216330, 2625074705 },
+            { "server/LiveWire/LW_Inverters.lua", 2801967639, 1718027455 },
+            { "server/LiveWire/LW_LinkedConsumers.lua", 857888139, 2853443016 },
+            { "shared/LiveWire/LW_Defs.lua", 410795613, 2704159727 },
+            { "shared/LiveWire/LW_Consumers.lua", 69168622, 1891233052 },
+            { "server/LiveWire/LW_PumpRelays.lua", 2906207381, 1814353210 },
+            { "server/LiveWire/LW_PumpTransfer.lua", 1772141096, 1206972376 },
+            { "shared/LiveWire/LW_CircuitProvider.lua", 165980985, 3342867999 },
+            { "shared/LiveWire/LW_Coverage.lua", 1084570187, 2158006856 },
+            { "shared/LiveWire/LW_Config.lua", 3886809174, 543404205 },
+            { "shared/LiveWire/LW_ApplianceFamilies.lua", 854645148, 1351327607 },
+        }
     else
         -- Workshop 2.0.0 and 2.0.1 share a core. Live Wire 2.1.4 adds configurable native relay tanks.
         local circuitAdler, circuitRolling = 1986253812, 2313228458
@@ -75,15 +91,19 @@ local function verifiedLiveWireVersion()
             version = "2.1.4"
         elseif matches(core, 1033620098, 1133575607) then
             version = "2.1.5"
+        elseif matches(core, 1109379715, 3797883416) then
+            version = "2.1.6"
+        elseif matches(core, 1260898949, 536564442) then
+            version = "2.1.8"
         else
             return nil
         end
         local usesConsumerFamilies = version == "2.1.0" or version == "2.1.1"
-            or version == "2.1.2" or version == "2.1.3" or version == "2.1.4" or version == "2.1.5"
+            or version == "2.1.2" or version == "2.1.3" or version == "2.1.4" or version == "2.1.5" or version == "2.1.6" or version == "2.1.8"
         if usesConsumerFamilies then
             circuitAdler, circuitRolling = 4197378089, 726854015
         end
-        local configurableRelayTank = version == "2.1.4" or version == "2.1.5"
+        local configurableRelayTank = version == "2.1.4" or version == "2.1.5" or version == "2.1.6" or version == "2.1.8"
         local relayAdler, relayRolling = 4211289607, 1786054732
         local transferAdler, transferRolling = 639289267, 2049862322
         if configurableRelayTank then

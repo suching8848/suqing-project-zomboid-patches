@@ -42,19 +42,24 @@ function Bridge.install(isa, lw, gate, portalAdapter, portalVersion, wireVersion
     ISA, LW = isa, lw
     if not Bridge.installed then
         local recipes = require "SuQingLiveWireISACompat/BatteryRecipes"
+        local direct = require "SuQingLiveWireISACompat/DirectBatteries"
+        local function worldReady() return Bridge.ready end
         local ready, reason = LW.install({
             bankForGrid = bankForGrid,
             snapshot = ISA.snapshot,
             commit = ISA.commit,
             watts = ISA.watts,
             markBattery = recipes.mark,
+            mountBatteries = function(native)
+                return direct.patch(native, wireVersion, gate, ISA, recipes.mark, worldReady)
+            end,
             verify = gate.fromMod,
             verifyDevices = gate.fromLiveWireDevices,
         }, wireVersion)
         assert(ready, "Live Wire adapter refused initialization: " .. tostring(reason))
         ready, reason = ISA.install(enrolled, managedBackup, gate.fromMod)
         assert(ready, "ISA adapter refused initialization: " .. tostring(reason))
-        ready, reason = recipes.install(ISA.capacityKWh, gate.fromMod, function() return Bridge.ready end)
+        ready, reason = recipes.install(ISA.capacityKWh, gate.fromMod, worldReady)
         assert(ready, "ISA battery recipes refused initialization: " .. tostring(reason))
         if portalVersion then
             assert(portalAdapter.install(SuQingPortals.Power, LW, gridLink, managedBackup, portalVersion,

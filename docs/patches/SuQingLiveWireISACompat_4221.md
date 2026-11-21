@@ -1,5 +1,28 @@
 # 蘇清的 Live Wire × ISA 统一电网 / SuQing's Live Wire × ISA Unified Grid
 
+## 0.1.3-rc.15
+
+适配 LiveWire 2.2.0 与 ISA 1.2.16。统一电网沿用原生负载结算，保留电池直装和 Monitor，并校验长线 rc.8 和传送门 rc.14 的来源。
+
+Supports LiveWire 2.2.0 with ISA 1.2.16. It keeps native load settlement, direct battery insertion and Monitor, and checks the sources of Long Cable rc.8 and Portals rc.14.
+
+## 0.1.3-rc.14
+
+适配 LiveWire 2.1.8 与 ISA 1.2.16。保留统一结算、ISA 电池直装和 Monitor，并核对长线 rc.7 和传送门 rc.13 的来源。
+
+Supports LiveWire 2.1.8 with ISA 1.2.16, including shared settlement, direct ISA batteries, Monitor, and the reviewed Long Cable rc.7 and Portals rc.13.
+
+### 0.1.3-rc.13
+
+在 LiveWire 2.1.4–2.1.6 和已支持的 ISA 1.2.15–1.2.16 单人组合中，LiveWire 电池组可直接使用 ISA 200Ah、400Ah、有线汽车电池和 DIY 电池。把电池放入已接线的 LiveWire 电池组，在电池仓监视器或 LiveWire Monitor 的电池页查看。每仓计入前四块有效电池，允许混装。容量按各电池的实际 Ah、ISA 耐久公式和 12 V 折算。直接装仓的 ISA 电池与原 ISA 并网柜中的电池一样，沿用 ISA 容量规则，充放电时保留其耐久。该版本继续支持 ISA 柜整柜并网。
+
+Direct storage is available with reviewed LiveWire 2.1.4–2.1.6 and ISA 1.2.15–1.2.16 in single-player. Place ISA 200 Ah, 400 Ah, wired car or DIY batteries into a wired LiveWire power bank. The bank display and the LiveWire Monitor Batteries tab report them. Each bank counts its first four valid batteries and supports mixed types. Each ISA battery keeps its per-item Ah and ISA capacity curve at 12 V. Cycling preserves its condition, as with the existing linked ISA cabinet. The cabinet can still be linked independently.
+
+
+0.1.3-rc.12 支持已核对的 Live Wire 2.1.6 源文件，并兼容长距离接电 0.1.0-rc.6、传送门 0.1.6-rc.12。保留单人并网、Monitor、原有结算和版本回退。新版游戏内验收待完成。
+
+0.1.3-rc.12 supports the reviewed Live Wire 2.1.6 sources, Long Cable 0.1.0-rc.6 and Portals 0.1.6-rc.12. It retains single-player grid and Monitor integration, settlement and fallback behavior. In-game acceptance is pending.
+
 0.1.3-rc.11 适配已验证的 Live Wire 2.1.5 和 Immersive Solar Arrays 1.2.16，适用于已复核的 B42.21.0 和 B42.22.2 单人环境。两项前置后加载。若同时安装传送门，将补丁放在已核对的传送门版本后。
 
 在 ISA 柜上选择要并网的设备，再在附近 Live Wire 主逆变器上接入。两类储能、负载、发电和备用机按混合电网结算。混合电网给传送门 0.1.6-rc.11 充电时，按电池实际充入量扣电。更换依赖前先退出并网。启动时仍校验实际脚本，陌生版本按原生逻辑运行。

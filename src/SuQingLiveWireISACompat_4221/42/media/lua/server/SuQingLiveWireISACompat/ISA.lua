@@ -12,11 +12,19 @@ local function finite(value)
     return type(value) == "number" and value == value and math.abs(value) < math.huge
 end
 
-local function capacityKWh(item)
+function ISA.ratedAh(item)
     local ah = item:getModData().ISA_maxCapacity
-    if not finite(ah) or ah <= 0 or not instanceof(item, "DrainableComboItem") then return 0 end
-    local condition = math.max(0, math.min(100, item:getCondition()))
+    if finite(ah) and ah > 0 and instanceof(item, "DrainableComboItem") then return ah end
+end
+
+function ISA.effectiveCapacityKWh(ah, condition)
+    condition = math.max(0, math.min(100, condition))
     return ah * (1 - math.pow(1 - condition / 100, 6)) * kWhPerAh
+end
+
+local function capacityKWh(item)
+    local ah = ISA.ratedAh(item)
+    return ah and ISA.effectiveCapacityKWh(ah, item:getCondition()) or 0
 end
 ISA.capacityKWh = capacityKWh
 

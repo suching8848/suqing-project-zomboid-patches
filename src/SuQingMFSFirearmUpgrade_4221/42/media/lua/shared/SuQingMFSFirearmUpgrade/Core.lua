@@ -6,7 +6,15 @@ local ERROR_PREFIX = "UI_SuQingMFSFirearmUpgrade_Error_"
 local DAMAGE_SANDBOX_ID = "ModernFirearmsSystemDamageSandbox"
 local METAL_PARTS = "Base.part2_cat"
 local POLYMER_PARTS = "Base.part3_cat"
-local DRY_TOWEL = "Base.BathTowel"
+local WIPE_MATERIALS = {
+    { type = "Base.DishCloth", replacement = "Base.DishClothWet", drainable = true },
+    { type = "Base.BathTowel", replacement = "Base.BathTowelWet", drainable = true },
+    { type = "Base.RippedSheets", replacement = "Base.RippedSheetsDirty", drainable = false },
+    { type = "Base.DenimStrips", replacement = "Base.DenimStripsDirty", drainable = false },
+    { type = "Base.BurlapPiece", drainable = false },
+    { type = "Base.CheeseCloth", drainable = false },
+    { type = "Base.Bandage", replacement = "Base.BandageDirty", drainable = false },
+}
 
 local tiers = {
     { multiplier = 0.10, critPoints = 20, critMultiplier = 1.10, metal = 2, polymer = 1 },
@@ -234,8 +242,9 @@ local function maintenanceError(inventory, weapon)
     if condition >= weapon:getConditionMax() then return ERROR_PREFIX .. "FullCondition" end
 end
 
-local function usableTowel(item)
-    return item and item:getFullType() == DRY_TOWEL and instanceof(item, "DrainableComboItem")
+local function usableCloth(item, material)
+    return item and item:getFullType() == material.type
+        and instanceof(item, "DrainableComboItem") == material.drainable
         and not item:isWet() and item:getCurrentUses() > 0
 end
 
@@ -244,14 +253,24 @@ function Core.getMaintenanceQuote(character, weapon)
     local errorKey = maintenanceError(inventory, weapon)
     if errorKey then return nil, errorKey end
 
-    local towel = inventory:getFirstTypeEvalRecurse(DRY_TOWEL, usableTowel)
-    if not towel then return nil, ERROR_PREFIX .. "DryTowel" end
-    return {
-        condition = weapon:getCondition(),
-        maxCondition = weapon:getConditionMax(),
-        towel = towel,
-        uses = towel:getCurrentUses(),
-    }
+    local condition, maxCondition = weapon:getCondition(), weapon:getConditionMax()
+    local quotes = {}
+    for _, material in ipairs(WIPE_MATERIALS) do
+        local cloth = inventory:getFirstTypeEvalRecurse(material.type, function(item)
+            return usableCloth(item, material)
+        end)
+        if cloth then
+            quotes[#quotes + 1] = {
+                condition = condition,
+                maxCondition = maxCondition,
+                towel = cloth,
+                uses = cloth:getCurrentUses(),
+                material = material,
+            }
+        end
+    end
+    if #quotes == 0 then return nil, ERROR_PREFIX .. "DryTowel" end
+    return quotes[1], nil, quotes
 end
 
 function Core.checkMaintenance(character, weapon, quote)
@@ -261,11 +280,11 @@ function Core.checkMaintenance(character, weapon, quote)
     if not quote or weapon:getCondition() ~= quote.condition or weapon:getConditionMax() ~= quote.maxCondition then
         return false, ERROR_PREFIX .. "Stale"
     end
-    local towel = quote.towel
-    if not usableTowel(towel) or not towel:getContainer() or not inventory:contains(towel, true) then
+    local cloth = quote.towel
+    if not usableCloth(cloth, quote.material) or not cloth:getContainer() or not inventory:contains(cloth, true) then
         return false, ERROR_PREFIX .. "DryTowel"
     end
-    if towel:getCurrentUses() ~= quote.uses then return false, ERROR_PREFIX .. "Stale" end
+    if cloth:getCurrentUses() ~= quote.uses then return false, ERROR_PREFIX .. "Stale" end
     return true
 end
 
@@ -274,28 +293,35 @@ function Core.maintain(character, weapon, quote)
     if not allowed then return false, errorKey end
 
     local nextCondition = quote.condition + 1
-    local towel = quote.towel
+    local cloth = quote.towel
+    local clothContainer = cloth:getContainer()
+    local replacement = quote.uses == 1 and quote.material.replacement
+    local existingReplacements = replacement and clothContainer:getItemsFromFullType(replacement):size()
     local ok, reason = pcall(function()
         weapon:setCondition(nextCondition)
         if weapon:getCondition() ~= nextCondition then error("condition did not increase") end
-        -- Use the native charge and wet-towel replacement, including the final use.
-        towel:Use()
+        cloth:Use()
     end)
-    local remaining = towel:getCurrentUses()
-    local consumed = remaining == quote.uses - 1 and (remaining > 0 or not towel:getContainer())
+    local remaining = cloth:getCurrentUses()
+    local container = cloth:getContainer()
+    local replacementAdded = replacement and clothContainer:getItemsFromFullType(replacement):size() > existingReplacements
+    local consumed = remaining == quote.uses - 1
+        and ((remaining > 0 and container == clothContainer) or (remaining == 0 and not container))
+        and (not replacement or replacementAdded)
     if weapon:getCondition() == nextCondition and consumed then
         if not ok then print("[SuQingMFSFirearmUpgrade] maintenance completed with error: " .. tostring(reason)) end
         return true
     end
 
-    -- If the game could not create the wet towel, the depleted dry towel remains.
-    if remaining ~= quote.uses and towel:getContainer() then
-        towel:setCurrentUses(quote.uses)
+    -- A towel stays put on a failed replacement. Ordinary cloth can still be removed by Use().
+    if remaining ~= quote.uses and (container == clothContainer or (not container and not replacementAdded)) then
+        cloth:setCurrentUses(quote.uses)
+        if not container then clothContainer:AddItem(cloth) end
     end
     if weapon:getCondition() ~= quote.condition then
         weapon:setConditionWhileLoading(quote.condition)
     end
-    print("[SuQingMFSFirearmUpgrade] maintenance failed: " .. tostring(reason or "towel use did not register"))
+    print("[SuQingMFSFirearmUpgrade] maintenance failed: " .. tostring(reason or "cloth use did not register"))
     return false, ERROR_PREFIX .. "Failed"
 end
 

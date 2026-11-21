@@ -1,5 +1,21 @@
 # 蘇清的 Live Wire × Waterpipes 水路桥接 / SuQing's Live Wire × Waterpipes Bridge
 
+## 0.1.1-rc.13
+
+适配 LiveWire 2.2.0 与现装 Waterpipes。水泵接入统一的逆变器分路供电判断。
+
+Supports LiveWire 2.2.0 with the installed Waterpipes and uses the native inverter circuit check for pumps.
+
+## 0.1.1-rc.12
+
+适配 LiveWire 2.1.8 与当前 Waterpipes，沿用原有水循环、水箱和分路断电联动。
+
+Supports LiveWire 2.1.8 with the current Waterpipes and retains the existing water cycle, tanks and circuit handling.
+
+0.1.1-rc.11 支持已核对的 Live Wire 2.1.6 单人组合。保留水泵、四种原生水箱容量、集雨桶及分路断电联动。新版游戏内验收待完成。
+
+0.1.1-rc.11 supports the reviewed Live Wire 2.1.6 single-player setup. Pump integration, the four native tank capacities, rain collectors and circuit control retain their existing behavior. In-game acceptance is pending.
+
 0.1.1-rc.10 用于已审查的 Live Wire 2.1.5 和 Waterpipes 单人组合。兼容 Live Wire 的 25、80、150、300 升原生水箱以及四款 Useful Barrels 储水桶。按原模组接好电与水路，Waterpipes 继续处理用水需求。断电停止补水，恢复供电后重新按连通状态处理。
 
 原版离线回归覆盖水箱容量、桶型、分路断电与恢复。正式档日志确认 Waterpipes 分钟事件已接入，具体水路操作待玩法复测。

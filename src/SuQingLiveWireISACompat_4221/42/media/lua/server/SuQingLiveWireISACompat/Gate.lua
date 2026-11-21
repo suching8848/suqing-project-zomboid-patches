@@ -109,6 +109,49 @@ for i, pin in ipairs(liveWire214Pins) do
         and {liveWire, pin[2], 684563516, 1405} or pin
 end
 
+-- 2.1.6 changes the base-mod version and crafting presentation. Extended remains excluded.
+local liveWire216Pins = {}
+for i, pin in ipairs(liveWire215Pins) do
+    liveWire216Pins[i] = pin[2] == sharedPath .. "LiveWire/LW_Core.lua"
+        and {liveWire, pin[2], 878397386, 1405} or pin
+end
+
+-- 2.1.8 keeps the settlement hooks and adds the rated draw API and consumption changes.
+local liveWire218Changes = {
+    [sharedPath .. "LiveWire/LW_Core.lua"] = {266065119, 1405},
+    [sharedPath .. "LiveWire/LW_API.lua"] = {3138419, 23954},
+    [sharedPath .. "LiveWire/LW_Consumption.lua"] = {722747927, 7551},
+}
+local liveWire218Pins = {}
+for i, pin in ipairs(liveWire216Pins) do
+    local changes = liveWire218Changes[pin[2]]
+    liveWire218Pins[i] = changes and {pin[1], pin[2], changes[1], changes[2]} or pin
+end
+
+-- 2.2.0 keeps the battery and physics hooks and adds wired third-party loads.
+local liveWire220Changes = {
+    [serverPath .. "LiveWire/LW_Simulation.lua"] = {661620317, 38322},
+    [serverPath .. "LiveWire/LW_Registry.lua"] = {439964612, 17080},
+    [serverPath .. "LiveWire/LW_Commands.lua"] = {990094727, 18226},
+    [serverPath .. "LiveWire/LW_Demand.lua"] = {373319566, 23099},
+    [serverPath .. "LiveWire/LW_Circuits.lua"] = {577608296, 15265},
+    [serverPath .. "LiveWire/LW_Devices.lua"] = {989138579, 26653},
+    [sharedPath .. "LiveWire/LW_Install.lua"] = {264614203, 13255},
+    [sharedPath .. "LiveWire/LW_Defs.lua"] = {77001434, 11762},
+    [sharedPath .. "LiveWire/LW_Core.lua"] = {98413954, 1405},
+    [serverPath .. "LiveWire/LW_Inverters.lua"] = {3415534, 3588},
+    [sharedPath .. "LiveWire/LW_Consumers.lua"] = {218141760, 8205},
+    [sharedPath .. "LiveWire/LW_API.lua"] = {332977444, 27525},
+}
+local liveWire220Pins = {
+    {liveWire, serverPath .. "LiveWire/LW_LinkedConsumers.lua", 304490985, 7336},
+    {liveWire, sharedPath .. "LiveWire/LW_EventBus.lua", 676555062, 5460},
+}
+for _, pin in ipairs(liveWire218Pins) do
+    local changes = liveWire220Changes[pin[2]]
+    liveWire220Pins[#liveWire220Pins + 1] = changes and {pin[1], pin[2], changes[1], changes[2]} or pin
+end
+
 local liveWirePins = {
     ["1.7.2"] = liveWire172Pins,
     ["2.0.0"] = liveWire201Pins,
@@ -121,6 +164,9 @@ local liveWirePins = {
     ["2.1.3"] = liveWire213Pins,
     ["2.1.4"] = liveWire214Pins,
     ["2.1.5"] = liveWire215Pins,
+    ["2.1.6"] = liveWire216Pins,
+    ["2.1.8"] = liveWire218Pins,
+    ["2.2.0"] = liveWire220Pins,
 }
 
 -- ISA 1.2.16 updates client actions only. Both releases share these server and shared sources.
@@ -223,6 +269,27 @@ local portalPins = {
         {portals, serverPath .. "SuQingPortals/World.lua", 882525639, 35943},
         {portals, sharedPath .. "SuQingPortals/Core.lua", 995888543, 7400},
     },
+    ["0.1.6-rc.12"] = {
+        {portals, serverPath .. "SuQingPortals/Power.lua", 921580269, 11060},
+        {portals, serverPath .. "SuQingPortals/LiveWirePower.lua", 911027135, 9013},
+        {portals, serverPath .. "SuQingPortals/ISAPower.lua", 218973082, 10110},
+        {portals, serverPath .. "SuQingPortals/World.lua", 882525639, 35943},
+        {portals, sharedPath .. "SuQingPortals/Core.lua", 888059755, 7400},
+    },
+    ["0.1.6-rc.13"] = {
+        {portals, serverPath .. "SuQingPortals/Power.lua", 921580269, 11060},
+        {portals, serverPath .. "SuQingPortals/LiveWirePower.lua", 131498242, 9034},
+        {portals, serverPath .. "SuQingPortals/ISAPower.lua", 218973082, 10110},
+        {portals, serverPath .. "SuQingPortals/World.lua", 882525639, 35943},
+        {portals, sharedPath .. "SuQingPortals/Core.lua", 780230967, 7400},
+    },
+    ["0.1.6-rc.14"] = {
+        {portals, serverPath .. "SuQingPortals/Power.lua", 921580269, 11060},
+        {portals, serverPath .. "SuQingPortals/LiveWirePower.lua", 934974419, 9174},
+        {portals, serverPath .. "SuQingPortals/ISAPower.lua", 218973082, 10110},
+        {portals, serverPath .. "SuQingPortals/World.lua", 882525639, 35943},
+        {portals, sharedPath .. "SuQingPortals/Core.lua", 672402179, 7400},
+    },
 }
 
 local function modInfo(id)
@@ -238,13 +305,15 @@ local function active(mods, id)
     return mods:contains(id) or mods:contains("\\" .. id)
 end
 
-local function fingerprint(modId, path)
+local function fingerprint(modId, path, capture)
     local reader = getModFileReader(modId, path, false)
     if not reader then return nil end
     local hash, count, previousCR, openLine = 0, 0, false, false
+    local chars = capture and {} or nil
     local function feed(unit)
         hash = (hash * 131 + unit) % 1000000007
         count = count + 1
+        if chars then chars[count] = string.char(unit) end
     end
     local ok, reason = pcall(function()
         while true do
@@ -266,7 +335,7 @@ local function fingerprint(modId, path)
     end)
     reader:close()
     if not ok then error(reason) end
-    return hash, count
+    return hash, count, chars and table.concat(chars)
 end
 
 local function verify(entries)
@@ -277,6 +346,17 @@ local function verify(entries)
         end
     end
     return true
+end
+
+function Gate.batterySource(version)
+    local path = serverPath .. "LiveWire/LW_Batteries.lua"
+    for _, pin in ipairs(liveWirePins[version] or {}) do
+        if pin[2] == path then
+            local hash, count, source = fingerprint(liveWire, path, true)
+            if hash == pin[3] and count == pin[4] then return source, path end
+            return nil, path
+        end
+    end
 end
 
 function Gate.check()
@@ -297,7 +377,7 @@ function Gate.check()
     local pins = liveWirePins[wireVersion]
     local isaVersion = version(isa)
     if not pins or (isaVersion ~= "1.2.15" and isaVersion ~= "1.2.16") then
-        return false, "requires LiveWire 1.7.2, 2.0.0–2.0.3 or 2.1.0–2.1.5 and ISA 1.2.15–1.2.16"
+        return false, "requires LiveWire 1.7.2, 2.0.0–2.0.3 or 2.1.0–2.1.6, 2.1.8 or 2.2.0 and ISA 1.2.15–1.2.16"
     end
     local ok, reason = verify(pins)
     if not ok then return false, reason end
@@ -342,13 +422,32 @@ local longCableRc5Pins = {
     {longCable, "media/lua/shared/SuQingLiveWireLongCable/Source.lua", 206394123, 2084},
     {longCable, "media/lua/shared/SuQingLiveWireLongCable/Core.lua", 292695532, 5072},
 }
+local longCableRc6Pins = {
+    {longCable, devicesPath, 578184432, 1385},
+    {longCable, "media/lua/shared/SuQingLiveWireLongCable/Source.lua", 262707607, 2104},
+    {longCable, "media/lua/shared/SuQingLiveWireLongCable/Core.lua", 424031679, 5097},
+}
+local longCableRc7Pins = {
+    {longCable, devicesPath, 578184432, 1385},
+    {longCable, "media/lua/shared/SuQingLiveWireLongCable/Source.lua", 216112711, 2124},
+    {longCable, "media/lua/shared/SuQingLiveWireLongCable/Core.lua", 557430716, 5122},
+}
+local longCableRc8Pins = {
+    {longCable, devicesPath, 578184432, 1385},
+    {longCable, "media/lua/shared/SuQingLiveWireLongCable/Source.lua", 555553058, 2558},
+    {longCable, "media/lua/shared/SuQingLiveWireLongCable/Core.lua", 398245470, 5147},
+}
 local longCableVersions = {
     ["2.1.2"] = { ["0.1.0-rc.2"] = longCableRc2Pins, ["0.1.0-rc.3"] = longCableRc3Pins,
-        ["0.1.0-rc.4"] = longCableRc4Pins, ["0.1.0-rc.5"] = longCableRc5Pins },
+        ["0.1.0-rc.4"] = longCableRc4Pins, ["0.1.0-rc.5"] = longCableRc5Pins, ["0.1.0-rc.6"] = longCableRc6Pins, ["0.1.0-rc.7"] = longCableRc7Pins, ["0.1.0-rc.8"] = longCableRc8Pins },
     ["2.1.3"] = { ["0.1.0-rc.3"] = longCableRc3Pins, ["0.1.0-rc.4"] = longCableRc4Pins,
-        ["0.1.0-rc.5"] = longCableRc5Pins },
-    ["2.1.4"] = { ["0.1.0-rc.4"] = longCableRc4Pins, ["0.1.0-rc.5"] = longCableRc5Pins },
-    ["2.1.5"] = { ["0.1.0-rc.5"] = longCableRc5Pins },
+        ["0.1.0-rc.5"] = longCableRc5Pins, ["0.1.0-rc.6"] = longCableRc6Pins, ["0.1.0-rc.7"] = longCableRc7Pins, ["0.1.0-rc.8"] = longCableRc8Pins },
+    ["2.1.4"] = { ["0.1.0-rc.4"] = longCableRc4Pins, ["0.1.0-rc.5"] = longCableRc5Pins,
+        ["0.1.0-rc.6"] = longCableRc6Pins, ["0.1.0-rc.7"] = longCableRc7Pins, ["0.1.0-rc.8"] = longCableRc8Pins },
+    ["2.1.5"] = { ["0.1.0-rc.5"] = longCableRc5Pins, ["0.1.0-rc.6"] = longCableRc6Pins, ["0.1.0-rc.7"] = longCableRc7Pins, ["0.1.0-rc.8"] = longCableRc8Pins },
+    ["2.1.6"] = { ["0.1.0-rc.6"] = longCableRc6Pins, ["0.1.0-rc.7"] = longCableRc7Pins, ["0.1.0-rc.8"] = longCableRc8Pins },
+    ["2.1.8"] = { ["0.1.0-rc.7"] = longCableRc7Pins, ["0.1.0-rc.8"] = longCableRc8Pins },
+    ["2.2.0"] = { ["0.1.0-rc.8"] = longCableRc8Pins },
 }
 
 function Gate.fromLiveWireDevices(fn)

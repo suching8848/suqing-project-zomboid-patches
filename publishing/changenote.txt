@@ -1,2 +1,2 @@
-更新撬锁拓展 0.1.5、N&C 状态面板和兼容修复，加入可选的美沙酮增强、Live Wire × ISA 统一电网及 Waterpipes 水路桥接。
-Updates Prying Expansion 0.1.5, N&C Status Panel and compatibility fixes. Adds optional Methadone Reset, Live Wire × ISA Unified Grid and the Waterpipes Bridge.
+更新 Live Wire 2.2.0 的统一电网、Waterpipes 水路与长距离接电。枪械强化更新至 0.7.1，并新增统一的武器擦拭与保养。 新增条目标注了离线与玩法验收状态。
+Updates the unified grid, Waterpipes bridge and long-distance wiring for Live Wire 2.2.0. Updates Modern Firearm Upgrades to 0.7.1 and adds unified weapon wiping and maintenance. Additional entries list their offline and gameplay validation separately.

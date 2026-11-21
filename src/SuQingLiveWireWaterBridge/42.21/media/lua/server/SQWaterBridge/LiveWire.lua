@@ -6,7 +6,7 @@ Bridge.LiveWire = Adapter
 local UNITS_PER_LITRE = 100
 -- The engine stores float amounts and discards at most 0.0001 L per fluid component.
 local FLUID_EPSILON = 0.00025
-local installedStep
+local installedStep, supplies
 
 local function registry()
     local reg = LiveWire and LiveWire.Registry
@@ -148,9 +148,16 @@ function Adapter.feed(dev, binding, deliver)
     local grid = dev.grid and reg.grid(dev.grid)
     local inverter = grid and reg.device(grid.inverter)
     local provider = Bridge.circuitProvider
-    if not grid or grid.powered ~= true or grid.mainOff or grid.equipmentOff
-        or not inverter or inverter.state ~= "on" or (inverter.cond or 0) <= 0
-        or (provider and provider.deviceBlocked(dev)) then
+    local powered = inverter and inverter.state == "on" and (inverter.cond or 0) > 0
+    if powered then
+        if supplies then
+            powered = supplies(grid, dev, "equipment")
+        else
+            powered = grid.powered == true and not grid.mainOff and not grid.equipmentOff
+                and not (provider and provider.deviceBlocked(dev))
+        end
+    end
+    if not powered then
         setState(dev, "nopower")
         return 0
     end
@@ -191,17 +198,22 @@ function Adapter.install(bridge)
         or not LiveWire.Registry or not LiveWire.Marks or not LiveWire.Install or not LiveWire.Devices then
         return false
     end
-    if (bridge.sourceVersion == "2.1.4" or bridge.sourceVersion == "2.1.5")
+    if (bridge.sourceVersion == "2.1.4" or bridge.sourceVersion == "2.1.5" or bridge.sourceVersion == "2.1.6" or bridge.sourceVersion == "2.1.8" or bridge.sourceVersion == "2.2.0")
         and (not LiveWire.Config or type(LiveWire.Config.pumpTankLitres) ~= "function") then return false end
     if installedStep then return pump.step == installedStep end
     local provider
     if bridge.sourceVersion == "2.0.0" or bridge.sourceVersion == "2.0.2"
         or bridge.sourceVersion == "2.0.3" or bridge.sourceVersion == "2.1.0"
         or bridge.sourceVersion == "2.1.1" or bridge.sourceVersion == "2.1.2"
-        or bridge.sourceVersion == "2.1.3" or bridge.sourceVersion == "2.1.4" or bridge.sourceVersion == "2.1.5" then
+        or bridge.sourceVersion == "2.1.3" or bridge.sourceVersion == "2.1.4" or bridge.sourceVersion == "2.1.5" or bridge.sourceVersion == "2.1.6" or bridge.sourceVersion == "2.1.8" or bridge.sourceVersion == "2.2.0" then
         provider = LiveWire.CircuitProvider
         if not provider or type(provider.deviceBlocked) ~= "function" or type(provider.blocked) ~= "function"
             or type(pump.checkBarrels) ~= "function" then return false end
+    end
+    if bridge.sourceVersion == "2.2.0" then
+        local inverters = LiveWire.Inverters
+        if not inverters or type(inverters.supplies) ~= "function" then return false end
+        supplies = inverters.supplies
     end
     local previousStep = pump.step
     installedStep = function(dev)
