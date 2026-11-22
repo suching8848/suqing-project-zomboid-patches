@@ -51,4 +51,20 @@ module Base
             item 1 Base.Aerosolbomb2,
         }
     }
+
+    craftRecipe SuQingMFS_MakeMaoMaoEnergyMagazine
+    {
+        timedAction = MakingElectrical,
+        time = 80,
+        Tags = InHandCraft,
+        category = 现代枪械系统ModernFirearmsSystem,
+        inputs
+        {
+            item 2 [Base.part1_cat],
+        }
+        outputs
+        {
+            item 1 Base.MaoMaoDianLanZhuZuiMag,
+        }
+    }
 }

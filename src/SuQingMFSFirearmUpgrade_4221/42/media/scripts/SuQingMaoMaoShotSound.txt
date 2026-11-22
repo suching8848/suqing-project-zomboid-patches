@@ -1,0 +1,29 @@
+module Base
+{
+    sound SuQingMaoMaoNormalShot
+    {
+        category = Nekomata:effects,
+        maxInstancesPerEmitter = 8,
+        clip
+        {
+            event = Weapon/Firearm/M16/Shoot,
+            distanceMax = 1000,
+            volume = 0.5,
+        }
+    }
+
+    sound SuQingMaoMaoOverloadShot
+    {
+        category = Nekomata:effects,
+        maxInstancesPerEmitter = 8,
+        is3D = true,
+        clip
+        {
+            file = media/sound/MaoMaoDianLanZhuZuiShoot.wav,
+            distanceMin = 8,
+            distanceMax = 150,
+            reverbFactor = 0.15,
+            volume = 0.5,
+        }
+    }
+}

@@ -1,5 +1,7 @@
 {
     "SuQingMFS_MakeOffensiveGrenade": "Make MARK-III Offensive Grenade",
     "SuQingMFS_MakeDefensiveGrenade": "Make MARK-II Defensive Fragmentation Grenade",
-    "SuQingMFS_ModifyAerosolBomb": "Modify Aerosol Bomb to Prevent Ignition"
+    "SuQingMFS_ModifyAerosolBomb": "Modify Aerosol Bomb to Prevent Ignition",
+    "SuQingMFS_MakeMaoMaoEnergyMagazine": "Make Energy Magazine (100 Rounds)",
+    "MakeMaoMaoEnergyBulletFromBattery": "Convert Battery to Loose Energy Rounds (100)"
 }

@@ -1,2 +1,2 @@
-更新 Live Wire 2.2.0 的统一电网、Waterpipes 水路与长距离接电。枪械强化更新至 0.7.1，并新增统一的武器擦拭与保养。 新增条目标注了离线与玩法验收状态。
-Updates the unified grid, Waterpipes bridge and long-distance wiring for Live Wire 2.2.0. Updates Modern Firearm Upgrades to 0.7.1 and adds unified weapon wiping and maintenance. Additional entries list their offline and gameplay validation separately.
+挂点物品分组与穿戴菜单修复 1.0.0 的兼容声明扩展到 B42.22。现代枪械强化更新至 0.12.1，同步枪械强化降噪、靛蓝逐罪专属升级和能量弹匣配方。此子模组需要现代枪械系统和猫又岭。超载音效读取猫又岭已安装的原声。
+Attached Item Grouping and Wear Menu Fix 1.0.0 now declares Build 42.22 compatibility. Modern Firearm Upgrades 0.12.1 adds upgrade-based noise reduction, the dedicated DianLanZhuZui upgrade, and energy magazine crafting. This submod requires Modern Firearms System and Nekomata Ridge. Overload audio uses the original sound from the installed Nekomata Ridge mod.

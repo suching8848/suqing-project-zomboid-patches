@@ -8,6 +8,7 @@ local Core = require "SuQingMFSFirearmUpgrade/Core"
 Core.installCriticalHook()
 local Action = ISBaseTimedAction:derive("SuQingMFSFirearmUpgradeAction")
 local prefix = "UI_SuQingMFSFirearmUpgrade_"
+local jobs = { upgrade = "Working", maomao = "MaoMaoWorking", reset = "Resetting", maintenance = "Wiping" }
 
 local function sayError(character, reason)
     character:Say(getText(reason or prefix .. "Error_Failed"))
@@ -26,8 +27,7 @@ end
 
 function Action:start()
     self:setActionAnim("Craft")
-    local job = self.maintenance and "Wiping" or (self.mode == "upgrade" and "Working" or "Resetting")
-    self.weapon:setJobType(getText(prefix .. job))
+    self.weapon:setJobType(getText(prefix .. jobs[self.mode]))
     self.weapon:setJobDelta(0)
 end
 
@@ -64,6 +64,8 @@ function Action:complete()
         self.character:Say(getText(prefix .. "Maintained", tostring(self.weapon:getCondition()), tostring(self.weapon:getConditionMax())))
     elseif self.mode == "upgrade" then
         self.character:Say(getText(prefix .. "Upgraded", tostring(self.expectedLevel + 1)))
+    elseif self.mode == "maomao" then
+        self.character:Say(getText(prefix .. "MaoMaoDone"))
     else
         self.character:Say(getText(prefix .. "ResetDone"))
     end
@@ -72,7 +74,7 @@ end
 
 function Action:getDuration()
     if self.character:isTimedActionInstant() then return 1 end
-    return self.mode == "upgrade" and 90 or 45
+    return (self.mode == "upgrade" or self.mode == "maomao") and 90 or 45
 end
 
 function Action:new(character, weapon, mode, expectedLevel, maintenance)
@@ -134,21 +136,48 @@ local function setTooltip(option, weapon, quote, mode, reason)
         currentChance, currentMultiplier = Core.getCriticalStats(weapon)
     end
     local chanceText, multiplierText = criticalValues(currentChance, currentMultiplier)
+    local currentDamage = damageRange(currentMinDamage, currentMaxDamage)
+    local showRange = quote and quote.minRange ~= nil
+    local rangeText = showRange and damageRange(quote.currentMinRange, currentMaxRange) or string.format("%.2f", currentMaxRange)
     local lines = {
-        getText(prefix .. "CurrentDamage", damageRange(currentMinDamage, currentMaxDamage), string.format("%.2f", currentMaxRange)),
+        getText(prefix .. (showRange and "CurrentDamageAndRange" or "CurrentDamage"), currentDamage, rangeText),
         getText(prefix .. "CurrentCritical", chanceText, multiplierText),
     }
+    local minBonus, maxBonus = Core.getDamageBonus(weapon)
+    if minBonus then
+        table.insert(lines, getText(prefix .. "CurrentDamageBonus", damageRange(minBonus, maxBonus)))
+    end
     if quote then
         table.insert(lines, getText(prefix .. "WearPreview", wearChance(currentWear), wearChance(quote.wearRoll)))
     else
         table.insert(lines, getText(prefix .. "CurrentWear", wearChance(currentWear)))
     end
+    if quote and quote.currentNoiseRadius then
+        table.insert(lines, getText(prefix .. "NoiseRadiusPreview", tostring(quote.currentNoiseRadius),
+            string.format("%d%%", quote.currentNoiseRadiusPercent), tostring(quote.noiseRadius),
+            string.format("%d%%", quote.noiseRadiusPercent)))
+        table.insert(lines, getText(prefix .. "PlayerShotVolumePreview",
+            string.format("%d%%", 100 - 2 * quote.level), string.format("%d%%", 100 - 2 * quote.nextLevel)))
+    elseif not quote then
+        local radius, percent = Core.getNoiseRadius(weapon)
+        if radius then
+            table.insert(lines, getText(prefix .. "CurrentNoiseRadius", tostring(radius), string.format("%d%%", percent)))
+            local level = Core.getState(weapon)
+            table.insert(lines, getText(prefix .. "CurrentPlayerShotVolume", string.format("%d%%", 100 - 2 * level)))
+        end
+    end
     if quote then
         local after = damageRange(quote.minDamage, quote.maxDamage)
         local nextChance, nextMultiplier = criticalValues(quote.critChance, quote.critMultiplier)
-        table.insert(lines, getText(prefix .. "ProjectedDamage", after, string.format("%.2f", quote.maxRange)))
+        local projectedRange = showRange and damageRange(quote.minRange, quote.maxRange) or string.format("%.2f", quote.maxRange)
+        local damageKey = showRange and "ProjectedDamageAndRange" or "ProjectedDamage"
+        table.insert(lines, getText(prefix .. damageKey, after, projectedRange))
         table.insert(lines, getText(prefix .. "ProjectedCritical", nextChance, nextMultiplier))
-        if mode == "upgrade" then
+        if quote.hitChance ~= nil then
+            table.insert(lines, getText(prefix .. "HitChanceChange",
+                string.format("%d%%", quote.currentHitChance), string.format("%d%%", quote.hitChance)))
+        end
+        if mode ~= "reset" then
             table.insert(lines, getText(prefix .. "Components"))
             for _, material in ipairs(quote.materials) do
                 local name = getItemNameFromFullType(material.type)
@@ -179,6 +208,8 @@ local function addAction(subMenu, character, weapon, mode, level)
         else
             label = getText(prefix .. "Upgrade", tostring(level + 1))
         end
+    elseif mode == "maomao" then
+        label = getText(prefix .. "MaoMao")
     end
     local option = subMenu:addOption(label, weapon, queueAction, character, mode, level)
     option.notAvailable = reason ~= nil or quote == nil
@@ -249,8 +280,18 @@ local function fillInventoryMenu(playerNum, context, items)
     local option = context:addOption(name, weapon, nil)
     local subMenu = context:getNew(context)
     context:addSubMenu(option, subMenu)
-    if supported then addAction(subMenu, character, weapon, "upgrade", level) end
+    if supported then
+        addAction(subMenu, character, weapon, "upgrade", level)
+        if level == Core.MAX_LEVEL and Core.isMaoMaoRifle(weapon) then
+            addAction(subMenu, character, weapon, "maomao", level)
+        end
+    end
     if level > 0 then addAction(subMenu, character, weapon, "reset", level) end
 end
 
 Events.OnFillInventoryObjectContextMenu.Add(fillInventoryMenu)
+if not isClient() and not isServer() then
+    Events.OnPlayerUpdate.Add(Core.updateActiveSight)
+    Events.OnEquipPrimary.Add(Core.updateActiveSight)
+    Events.OnPlayerDeath.Add(Core.updateActiveSight)
+end

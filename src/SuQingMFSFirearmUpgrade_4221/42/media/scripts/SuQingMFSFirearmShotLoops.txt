@@ -1,0 +1,132 @@
+module Base
+{
+    sound SuQingUpgrade1M16ShootFullAuto
+    {
+        category = Item,
+        clip
+        {
+            event = Weapon/Firearm/M16/Shoot_FullAuto,
+            volume = 0.98,
+            distanceMax = 1000,
+        }
+    }
+
+    sound SuQingUpgrade2M16ShootFullAuto
+    {
+        category = Item,
+        clip
+        {
+            event = Weapon/Firearm/M16/Shoot_FullAuto,
+            volume = 0.96,
+            distanceMax = 1000,
+        }
+    }
+
+    sound SuQingUpgrade3M16ShootFullAuto
+    {
+        category = Item,
+        clip
+        {
+            event = Weapon/Firearm/M16/Shoot_FullAuto,
+            volume = 0.94,
+            distanceMax = 1000,
+        }
+    }
+
+    sound SuQingUpgrade4M16ShootFullAuto
+    {
+        category = Item,
+        clip
+        {
+            event = Weapon/Firearm/M16/Shoot_FullAuto,
+            volume = 0.92,
+            distanceMax = 1000,
+        }
+    }
+
+    sound SuQingUpgrade5M16ShootFullAuto
+    {
+        category = Item,
+        clip
+        {
+            event = Weapon/Firearm/M16/Shoot_FullAuto,
+            volume = 0.90,
+            distanceMax = 1000,
+        }
+    }
+
+    sound SuQingUpgrade1MaoMaoDianLanZhuZuiShootFullAuto
+    {
+        category = Nekomata:effects,
+        maxInstancesPerEmitter = 8,
+        is3D = true,
+        clip
+        {
+            file = media/sound/MaoMaoDianLanZhuZuiShoot.wav,
+            distanceMin = 8,
+            distanceMax = 150,
+            reverbFactor = 0.15,
+            volume = 0.98,
+        }
+    }
+
+    sound SuQingUpgrade2MaoMaoDianLanZhuZuiShootFullAuto
+    {
+        category = Nekomata:effects,
+        maxInstancesPerEmitter = 8,
+        is3D = true,
+        clip
+        {
+            file = media/sound/MaoMaoDianLanZhuZuiShoot.wav,
+            distanceMin = 8,
+            distanceMax = 150,
+            reverbFactor = 0.15,
+            volume = 0.96,
+        }
+    }
+
+    sound SuQingUpgrade3MaoMaoDianLanZhuZuiShootFullAuto
+    {
+        category = Nekomata:effects,
+        maxInstancesPerEmitter = 8,
+        is3D = true,
+        clip
+        {
+            file = media/sound/MaoMaoDianLanZhuZuiShoot.wav,
+            distanceMin = 8,
+            distanceMax = 150,
+            reverbFactor = 0.15,
+            volume = 0.94,
+        }
+    }
+
+    sound SuQingUpgrade4MaoMaoDianLanZhuZuiShootFullAuto
+    {
+        category = Nekomata:effects,
+        maxInstancesPerEmitter = 8,
+        is3D = true,
+        clip
+        {
+            file = media/sound/MaoMaoDianLanZhuZuiShoot.wav,
+            distanceMin = 8,
+            distanceMax = 150,
+            reverbFactor = 0.15,
+            volume = 0.92,
+        }
+    }
+
+    sound SuQingUpgrade5MaoMaoDianLanZhuZuiShootFullAuto
+    {
+        category = Nekomata:effects,
+        maxInstancesPerEmitter = 8,
+        is3D = true,
+        clip
+        {
+            file = media/sound/MaoMaoDianLanZhuZuiShoot.wav,
+            distanceMin = 8,
+            distanceMax = 150,
+            reverbFactor = 0.15,
+            volume = 0.90,
+        }
+    }
+}

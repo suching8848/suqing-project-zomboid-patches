@@ -4,6 +4,12 @@ local STATE_KEY = "SuQingMFSFirearmUpgrade"
 local STATE_VERSION = 2
 local ERROR_PREFIX = "UI_SuQingMFSFirearmUpgrade_Error_"
 local DAMAGE_SANDBOX_ID = "ModernFirearmsSystemDamageSandbox"
+local MAOMAO_RIFLE = "Base.MaoMaoDianLanZhuZui"
+local MAOMAO_AMMO = "Base.MaoMaoEnergyBullet"
+local MAOMAO_DAMAGE_BONUS = 2.00
+local MAOMAO_CRITICAL_FACTOR = 2.00
+local MAOMAO_MAX_RANGE = 800
+local MAOMAO_BASE_HIT_CHANCE = 90
 local METAL_PARTS = "Base.part2_cat"
 local POLYMER_PARTS = "Base.part3_cat"
 local WIPE_MATERIALS = {
@@ -25,6 +31,7 @@ local tiers = {
 }
 
 local criticalHookReady = false
+local activeSightByPlayer = setmetatable({}, { __mode = "k" })
 
 Core.MAX_LEVEL = #tiers
 
@@ -45,18 +52,30 @@ local function isHandWeapon(weapon)
     return weapon ~= nil and instanceof(weapon, "HandWeapon")
 end
 
+function Core.isMaoMaoRifle(weapon)
+    return isHandWeapon(weapon) and weapon:getFullType() == MAOMAO_RIFLE
+end
+
 function Core.isSupported(weapon)
     if not isHandWeapon(weapon) or not weapon:isRanged() or not weapon:isAimedFirearm() then
         return false
     end
     local ammo = weapon:getAmmoType()
     local itemKey = ammo and ammo:getItemKey()
+    if Core.isMaoMaoRifle(weapon) then
+        return itemKey == MAOMAO_AMMO
+    end
     return type(itemKey) == "string" and itemKey ~= ""
         and not specialAmmo[string.lower(itemKey)] and not specialWeapons[weapon:getFullType()]
 end
 
 local function validNumber(value)
     return type(value) == "number" and value >= 0 and value < math.huge
+end
+
+local function validHitChance(value)
+    return type(value) == "number" and value >= -2147483648 and value <= 2147483647
+        and value == math.floor(value)
 end
 
 local function validDamage(minDamage, maxDamage)
@@ -77,6 +96,39 @@ local function rangeBonus(state, tier)
     return state and state.baseMaxRange and state.baseMaxRange * tier.multiplier or 0
 end
 
+local function attachmentRange(weapon)
+    local bonus = 0
+    local parts = weapon:getAllWeaponParts()
+    for i = 0, parts:size() - 1 do
+        bonus = bonus + parts:get(i):getMaxRange()
+    end
+    return bonus
+end
+
+local function maomaoHitDelta(weapon, currentHitChance)
+    local bareHitChance = currentHitChance
+    local parts = weapon:getAllWeaponParts()
+    for i = 0, parts:size() - 1 do
+        bareHitChance = bareHitChance - parts:get(i):getHitChance()
+    end
+    return MAOMAO_BASE_HIT_CHANCE - bareHitChance
+end
+
+local function validSavedRange(range)
+    return type(range) == "table" and validNumber(range.min) and validNumber(range.minRanged)
+        and validNumber(range.maxWithoutParts)
+        and (range.maxSight == nil or validNumber(range.maxSight))
+end
+
+local function captureMaoMaoRange(weapon, state, tier)
+    return {
+        min = weapon:getMinRange(),
+        minRanged = weapon:getMinRangeRanged(),
+        maxSight = weapon:getMaxSightRange(),
+        maxWithoutParts = weapon:getMaxRange() - rangeBonus(state, tier) - attachmentRange(weapon),
+    }
+end
+
 local function readState(weapon)
     if not isHandWeapon(weapon) then
         return nil, nil, ERROR_PREFIX .. "Unsupported"
@@ -92,8 +144,24 @@ local function readState(weapon)
     if not tier or state.version ~= STATE_VERSION or state.fullType ~= weapon:getFullType()
         or not validDamage(state.baseMinDamage, state.baseMaxDamage)
         or (state.baseMaxRange ~= nil and not validBaseRange(state.baseMaxRange))
-        or state.minDelta ~= state.baseMinDamage * tier.multiplier
-        or state.maxDelta ~= state.baseMaxDamage * tier.multiplier then
+        or (state.maomao ~= nil and (state.maomao ~= true or state.level ~= Core.MAX_LEVEL
+            or not Core.isMaoMaoRifle(weapon))) then
+        return nil, nil, ERROR_PREFIX .. "InvalidState"
+    end
+    if state.maomaoHitDelta ~= nil and (not state.maomao or not validHitChance(state.maomaoHitDelta)) then
+        return nil, nil, ERROR_PREFIX .. "InvalidState"
+    end
+    local originalRange = state.maomaoOriginalRange
+    if originalRange ~= nil and (not state.maomao or not validSavedRange(originalRange)) then
+        return nil, nil, ERROR_PREFIX .. "InvalidState"
+    end
+    -- Old MaoMao upgrades saved the +100% delta and did not override range.
+    local damageBonus = tier.multiplier
+    if state.maomao then
+        damageBonus = originalRange and MAOMAO_DAMAGE_BONUS or 1.00
+    end
+    if state.minDelta ~= state.baseMinDamage * damageBonus
+        or state.maxDelta ~= state.baseMaxDamage * damageBonus then
         return nil, nil, ERROR_PREFIX .. "InvalidState"
     end
     return state.level, state
@@ -104,11 +172,79 @@ function Core.getState(weapon)
     return level, errorKey
 end
 
-local function modeError(weapon, mode, level)
+-- Mirror the installed MFS noise sync: use the script's radius, then the first
+-- recognized suppressor. MFS passes the result to the native integer setter.
+local function baselineNoiseRadius(weapon)
+    local script = weapon:getScriptItem()
+    local radius = script and script:getSoundRadius()
+    if not validNumber(radius) then return nil end
+    if AWCWF_SilencerSet then
+        for slot, options in pairs(AWCWF_SilencerSet) do
+            local part = weapon:getWeaponPart(slot)
+            local modifier = part and options[part:getType()]
+            if modifier then return math.floor(radius * modifier.SoundRadiusModifier) end
+        end
+    end
+    return radius
+end
+
+function Core.getNoiseRadius(weapon, level)
+    if not Core.isSupported(weapon) then return nil end
+    if level == nil then level = Core.getState(weapon) end
+    if level == 0 or tiers[level] then
+        local percent = 100 - level * 10
+        local original = baselineNoiseRadius(weapon)
+        if original then return math.floor(original * percent / 100 + 0.5), percent, original end
+    end
+end
+
+-- Native B42 loads these three fields as absolute saved values. Replace our
+-- prior base and its tier bonus together, preserving any other contribution.
+function Core.rebaseSavedDamageAndRange(weapon, previousRange)
+    local level, state = readState(weapon)
+    local tier = level and tiers[level]
+    if not tier or state.maomao then return false end
+    local script = weapon:getScriptItem()
+    if not script then return false end
+    local minBase, maxBase = script:getMinDamage(), script:getMaxDamage()
+    local rangeBase = readBaseRange(script)
+    if not validDamage(minBase, maxBase) or not rangeBase then return false end
+
+    local minDelta = minBase * tier.multiplier
+    local maxDelta = maxBase * tier.multiplier
+    local min = weapon:getMinDamage() - state.baseMinDamage - state.minDelta + minBase + minDelta
+    local max = weapon:getMaxDamage() - state.baseMaxDamage - state.maxDelta + maxBase + maxDelta
+    local oldRangeBase = state.baseMaxRange or previousRange
+    local range = weapon:getMaxRange() - oldRangeBase - rangeBonus(state, tier)
+        + rangeBase * (1 + tier.multiplier)
+    if not validDamage(min, max) or not validBaseRange(range) then return false end
+
+    weapon:setMinDamage(min)
+    weapon:setMaxDamage(max)
+    weapon:setMaxRange(range)
+    state.baseMinDamage, state.baseMaxDamage, state.baseMaxRange = minBase, maxBase, rangeBase
+    state.minDelta, state.maxDelta = minDelta, maxDelta
+    local radius = Core.getNoiseRadius(weapon, level)
+    if radius then weapon:setSoundRadius(radius) end
+    return true
+end
+
+
+function Core.getDamageBonus(weapon)
+    local _, state = readState(weapon)
+    if state then return state.minDelta, state.maxDelta end
+end
+
+local function modeError(weapon, mode, level, state)
     if mode == "upgrade" and Core.isSupported(weapon) then
         if level == Core.MAX_LEVEL then
             return ERROR_PREFIX .. "MaxLevel"
         end
+        return nil
+    end
+    if mode == "maomao" and Core.isMaoMaoRifle(weapon) and Core.isSupported(weapon) then
+        if level ~= Core.MAX_LEVEL then return ERROR_PREFIX .. "MaoMaoNeedsMax" end
+        if state.maomao then return ERROR_PREFIX .. "MaoMaoAlready" end
         return nil
     end
     if mode == "reset" then
@@ -147,15 +283,19 @@ local function readCriticalBase(weapon)
     return { chance = chance, multiplier = multiplier, partMultiplier = partMultiplier }
 end
 
-local function criticalStats(base, tier)
+local function criticalStats(base, tier, state)
     if not tier then return base.chance, base.multiplier + base.partMultiplier end
-    return base.chance + tier.critPoints, base.multiplier * tier.critMultiplier + base.partMultiplier
+    local chance = base.chance + tier.critPoints
+    if state and state.maomao then
+        return chance, base.multiplier * MAOMAO_CRITICAL_FACTOR
+    end
+    return chance, base.multiplier * tier.critMultiplier + base.partMultiplier
 end
 
 function Core.getCriticalStats(weapon)
-    local level = Core.getState(weapon)
+    local level, state = readState(weapon)
     local base = level and criticalHookReady and readCriticalBase(weapon)
-    if base then return criticalStats(base, tiers[level]) end
+    if base then return criticalStats(base, tiers[level], state) end
     return weapon:getCriticalChance(), weapon:getCriticalDamageMultiplier()
 end
 
@@ -180,6 +320,99 @@ local function applyExistingRange(weapon, state, tier)
     state.baseMaxRange = baseRange
 end
 
+local function restore(callback)
+    local restored, restoreError = pcall(callback)
+    if not restored then
+        print("[SuQingMFSFirearmUpgrade] rollback failed: " .. tostring(restoreError))
+    end
+end
+
+local function setMaoMaoRange(weapon)
+    weapon:setMinRange(0)
+    weapon:setMinRangeRanged(0)
+    weapon:setMaxRange(MAOMAO_MAX_RANGE)
+    weapon:setMaxSightRange(MAOMAO_MAX_RANGE)
+end
+
+local function syncMaoMaoUpgrade(weapon, state, tier)
+    local original = state.maomaoOriginalRange
+    if original then
+        -- Existing upgrades need a restore value for the newly extended sight range.
+        if original.maxSight == nil then original.maxSight = weapon:getMaxSightRange() end
+        setMaoMaoRange(weapon)
+        return
+    end
+    local range = captureMaoMaoRange(weapon, state, tier)
+    local min, max = weapon:getMinDamage(), weapon:getMaxDamage()
+    local maxRange = weapon:getMaxRange()
+    local minDelta = state.baseMinDamage * MAOMAO_DAMAGE_BONUS
+    local maxDelta = state.baseMaxDamage * MAOMAO_DAMAGE_BONUS
+    local newMin = min - state.minDelta + minDelta
+    local newMax = max - state.maxDelta + maxDelta
+    if not validSavedRange(range) or not validDamage(newMin, newMax) then return end
+
+    local ok, reason = pcall(function()
+        weapon:setMinDamage(newMin)
+        weapon:setMaxDamage(newMax)
+        setMaoMaoRange(weapon)
+    end)
+    if not ok then
+        restore(function() weapon:setMinDamage(min) end)
+        restore(function() weapon:setMaxDamage(max) end)
+        restore(function() weapon:setMinRange(range.min) end)
+        restore(function() weapon:setMinRangeRanged(range.minRanged) end)
+        restore(function() weapon:setMaxRange(maxRange) end)
+        restore(function() weapon:setMaxSightRange(range.maxSight) end)
+        print("[SuQingMFSFirearmUpgrade] MaoMao migration failed: " .. tostring(reason))
+        return
+    end
+    state.minDelta = minDelta
+    state.maxDelta = maxDelta
+    state.maomaoOriginalRange = range
+end
+
+local function applyMaoMaoHitChance(weapon, state)
+    if state.maomaoHitDelta ~= nil then return end
+    local current = weapon:getHitChance()
+    local delta = maomaoHitDelta(weapon, current)
+    if not validHitChance(delta) or not validHitChance(current + delta) then return end
+
+    -- The engine saves the effective hit value and applies attach/detach changes itself.
+    weapon:setHitChance(current + delta)
+    state.maomaoHitDelta = delta
+end
+
+function Core.updateActiveSight(player)
+    if not player or not player.isLocalPlayer or not player:isLocalPlayer() then return end
+    local weapon = player:getPrimaryHandItem()
+    local sight
+    if not player:isDead() and Core.isMaoMaoRifle(weapon) and not damageSandboxActive() then
+        local _, state = readState(weapon)
+        if state and state.maomaoOriginalRange then
+            applyMaoMaoHitChance(weapon, state)
+            sight = weapon:getActiveSight()
+        end
+    end
+
+    local current = activeSightByPlayer[player]
+    if current and current.sight == sight then return end
+    if current then
+        if current.sight:getMaxSightRange() == MAOMAO_MAX_RANGE then
+            current.sight:setMaxSightRange(current.original)
+        end
+        activeSightByPlayer[player] = nil
+    end
+    -- The engine reads the selected sight's range in place of the rifle's range.
+    -- This particular part is restored as soon as it is deselected or the rifle is put away.
+    if sight then
+        local original = sight:getMaxSightRange()
+        if validNumber(original) and original < MAOMAO_MAX_RANGE then
+            sight:setMaxSightRange(MAOMAO_MAX_RANGE)
+            activeSightByPlayer[player] = { sight = sight, original = original }
+        end
+    end
+end
+
 function Core.installCriticalHook()
     if criticalHookReady then return end
     local applyPartStats = AWCWF_ApplyPartStats
@@ -188,17 +421,26 @@ function Core.installCriticalHook()
     AWCWF_ApplyPartStats = function(player, weapon)
         applyPartStats(player, weapon)
         if isClient() or isServer() or not Core.isSupported(weapon) then return end
+        if SQBalanceMigration then SQBalanceMigration.apply(weapon) end
         local level, state = readState(weapon)
         local tier = level and tiers[level]
         if not tier or damageSandboxActive() then return end
+        -- The native Attack hook and MFS's inspection panel both read this
+        -- runtime field. Always calculate from the unupgraded MFS baseline.
+        local radius = Core.getNoiseRadius(weapon, level)
+        if radius and weapon:getSoundRadius() ~= radius then weapon:setSoundRadius(radius) end
         applyExistingRange(weapon, state, tier)
+        if state.maomao then
+            syncMaoMaoUpgrade(weapon, state, tier)
+            if state.maomaoOriginalRange then applyMaoMaoHitChance(weapon, state) end
+        end
         -- The wear denominator is rebuilt from the script on load, like crit.
         weapon:setConditionLowerChance(wearRollFor(weapon, tier))
         -- The engine reloads raw crit fields and MFS overwrites them when syncing.
         -- Rebuild from the bare gun and current parts so repeated syncs are idempotent.
         local base = readCriticalBase(weapon)
         if not base then return end
-        local chance, multiplier = criticalStats(base, tier)
+        local chance, multiplier = criticalStats(base, tier, state)
         weapon:setCriticalChance(chance)
         weapon:setCriticalDamageMultiplier(multiplier)
     end
@@ -228,7 +470,7 @@ local function targetError(inventory, weapon, mode)
     if not criticalHookReady then
         return ERROR_PREFIX .. "CriticalIntegration"
     end
-    return workError(inventory, weapon, mode == "upgrade")
+    return workError(inventory, weapon, mode ~= "reset")
 end
 
 local function maintenanceError(inventory, weapon)
@@ -326,14 +568,14 @@ function Core.maintain(character, weapon, quote)
 end
 
 function Core.checkTarget(character, weapon, mode, expectedLevel)
-    local level, _, errorKey = readState(weapon)
+    local level, state, errorKey = readState(weapon)
     if errorKey then
         return false, errorKey
     end
     if expectedLevel ~= level then
         return false, ERROR_PREFIX .. "Stale"
     end
-    errorKey = modeError(weapon, mode, level) or targetError(character and character:getInventory(), weapon, mode)
+    errorKey = modeError(weapon, mode, level, state) or targetError(character and character:getInventory(), weapon, mode)
     return errorKey == nil, errorKey
 end
 
@@ -363,7 +605,7 @@ local function makeQuote(character, weapon, mode)
     if errorKey then
         return nil, errorKey
     end
-    errorKey = modeError(weapon, mode, level)
+    errorKey = modeError(weapon, mode, level, state)
     if errorKey then
         return nil, errorKey
     end
@@ -376,16 +618,29 @@ local function makeQuote(character, weapon, mode)
     local nextLevel = 0
     local nextState
     local tier
+    local hitChance, currentHitChance
 
-    if mode == "upgrade" then
-        nextLevel = level + 1
+    if mode ~= "reset" then
+        local maomao = mode == "maomao"
+        nextLevel = maomao and level or level + 1
         tier = tiers[nextLevel]
+        local damageBonus = maomao and MAOMAO_DAMAGE_BONUS or tier.multiplier
         local script = weapon:getScriptItem()
         local baseMinDamage = state and state.baseMinDamage or script and script:getMinDamage()
         local baseMaxDamage = state and state.baseMaxDamage or script and script:getMaxDamage()
         local baseMaxRange = state and state.baseMaxRange or readBaseRange(script)
         if not validDamage(baseMinDamage, baseMaxDamage) or not baseMaxRange then
             return nil, ERROR_PREFIX .. "InvalidState"
+        end
+        local originalRange, hitDelta
+        if maomao then
+            originalRange = captureMaoMaoRange(weapon, state, tiers[level])
+            currentHitChance = weapon:getHitChance()
+            hitDelta = maomaoHitDelta(weapon, currentHitChance)
+            if not validSavedRange(originalRange) or not validHitChance(hitDelta) then
+                return nil, ERROR_PREFIX .. "InvalidState"
+            end
+            hitChance = currentHitChance + hitDelta
         end
         nextState = {
             version = STATE_VERSION,
@@ -394,15 +649,34 @@ local function makeQuote(character, weapon, mode)
             baseMinDamage = baseMinDamage,
             baseMaxDamage = baseMaxDamage,
             baseMaxRange = baseMaxRange,
-            minDelta = baseMinDamage * tier.multiplier,
-            maxDelta = baseMaxDamage * tier.multiplier,
+            minDelta = baseMinDamage * damageBonus,
+            maxDelta = baseMaxDamage * damageBonus,
+            maomao = maomao or nil,
+            maomaoOriginalRange = originalRange,
+            maomaoHitDelta = hitDelta,
         }
+    elseif state and state.maomaoHitDelta ~= nil then
+        currentHitChance = weapon:getHitChance()
+        hitChance = currentHitChance - state.maomaoHitDelta
+    end
+    if hitChance ~= nil and not validHitChance(hitChance) then
+        return nil, ERROR_PREFIX .. "InvalidState"
     end
 
     -- Subtract only our previous delta, keeping the gun's current attachment bonuses.
     local minDamage = currentMinDamage - minDelta + (nextState and nextState.minDelta or 0)
     local maxDamage = currentMaxDamage - maxDelta + (nextState and nextState.maxDelta or 0)
     local maxRange = currentMaxRange - rangeBonus(state, tiers[level]) + rangeBonus(nextState, tier)
+    local minRange, minRangeRanged, maxSightRange
+    if nextState and nextState.maomao then
+        minRange, minRangeRanged, maxRange = 0, 0, MAOMAO_MAX_RANGE
+        maxSightRange = MAOMAO_MAX_RANGE
+    elseif state and state.maomaoOriginalRange then
+        local original = state.maomaoOriginalRange
+        minRange, minRangeRanged = original.min, original.minRanged
+        maxRange = original.maxWithoutParts + attachmentRange(weapon)
+        maxSightRange = original.maxSight
+    end
     if not validDamage(currentMinDamage, currentMaxDamage) or not validDamage(minDamage, maxDamage)
         or not validNumber(currentMaxRange) or not validNumber(maxRange) then
         return nil, ERROR_PREFIX .. "InvalidState"
@@ -413,8 +687,11 @@ local function makeQuote(character, weapon, mode)
     if not criticalHookReady then return nil, errorKey end
     local criticalBase = readCriticalBase(weapon)
     if not criticalBase then return nil, errorKey or ERROR_PREFIX .. "InvalidState" end
-    local currentCritChance, currentCritMultiplier = criticalStats(criticalBase, tiers[level])
-    local critChance, critMultiplier = criticalStats(criticalBase, tier)
+    local currentCritChance, currentCritMultiplier = criticalStats(criticalBase, tiers[level], state)
+    local critChance, critMultiplier = criticalStats(criticalBase, tier, nextState)
+    local currentNoiseRadius, currentNoiseRadiusPercent = Core.getNoiseRadius(weapon, level)
+    local noiseRadius, noiseRadiusPercent = Core.getNoiseRadius(weapon, nextLevel)
+    if mode == "reset" and noiseRadius == nil then noiseRadius = baselineNoiseRadius(weapon) end
     local quote = {
         level = level,
         nextLevel = nextLevel,
@@ -422,12 +699,25 @@ local function makeQuote(character, weapon, mode)
         currentMaxDamage = currentMaxDamage,
         minDamage = minDamage,
         maxDamage = maxDamage,
+        currentMinRange = minRange and weapon:getMinRange(),
+        currentMinRangeRanged = minRange and weapon:getMinRangeRanged(),
         currentMaxRange = currentMaxRange,
+        currentMaxSightRange = maxSightRange and weapon:getMaxSightRange(),
+        maxSightRange = maxSightRange,
+        minRange = minRange,
+        minRangeRanged = minRangeRanged,
         maxRange = maxRange,
         currentWearRoll = weapon:getConditionLowerChance(),
         wearRoll = wearRollFor(weapon, tier),
+        currentHitChance = currentHitChance,
+        hitChance = hitChance,
         currentCritChance = currentCritChance,
         currentCritMultiplier = currentCritMultiplier,
+        currentNoiseRadius = currentNoiseRadius,
+        currentNoiseRadiusPercent = currentNoiseRadiusPercent,
+        noiseRadius = noiseRadius,
+        noiseRadiusPercent = noiseRadiusPercent,
+        rawNoiseRadius = noiseRadius and weapon:getSoundRadius(),
         critChance = critChance,
         critMultiplier = critMultiplier,
         materials = {},
@@ -506,7 +796,12 @@ function Core.commit(character, weapon, mode, expectedLevel)
             or weapon:getMinDamage() ~= quote.currentMinDamage
             or weapon:getMaxDamage() ~= quote.currentMaxDamage
             or weapon:getMaxRange() ~= quote.currentMaxRange
+            or (quote.maxSightRange and weapon:getMaxSightRange() ~= quote.currentMaxSightRange)
+            or (quote.minRange and (weapon:getMinRange() ~= quote.currentMinRange
+                or weapon:getMinRangeRanged() ~= quote.currentMinRangeRanged))
             or weapon:getConditionLowerChance() ~= quote.currentWearRoll
+            or (quote.noiseRadius ~= nil and weapon:getSoundRadius() ~= quote.rawNoiseRadius)
+            or (quote.hitChance ~= nil and weapon:getHitChance() ~= quote.currentHitChance)
             or weapon:getCriticalChance() ~= previousCritChance
             or weapon:getCriticalDamageMultiplier() ~= previousCritMultiplier then
             error("weapon changed before applying the upgrade")
@@ -516,28 +811,40 @@ function Core.commit(character, weapon, mode, expectedLevel)
         weapon:setMinDamage(quote.minDamage)
         weapon:setMaxDamage(quote.maxDamage)
         weapon:setMaxRange(quote.maxRange)
+        if quote.maxSightRange then weapon:setMaxSightRange(quote.maxSightRange) end
+        if quote.minRange then
+            weapon:setMinRange(quote.minRange)
+            weapon:setMinRangeRanged(quote.minRangeRanged)
+        end
+        if quote.hitChance ~= nil then weapon:setHitChance(quote.hitChance) end
         weapon:setCriticalChance(quote.critChance)
         weapon:setCriticalDamageMultiplier(quote.critMultiplier)
         weapon:setConditionLowerChance(quote.wearRoll)
+        if quote.noiseRadius then weapon:setSoundRadius(quote.noiseRadius) end
         modData[STATE_KEY] = nextState
     end)
     if committed then
         return true
     end
 
-    local function restore(callback)
-        local restored, restoreError = pcall(callback)
-        if not restored then
-            print("[SuQingMFSFirearmUpgrade] rollback failed: " .. tostring(restoreError))
-        end
-    end
     if attemptedStats then
         restore(function() weapon:setMinDamage(quote.currentMinDamage) end)
         restore(function() weapon:setMaxDamage(quote.currentMaxDamage) end)
         restore(function() weapon:setMaxRange(quote.currentMaxRange) end)
+        if quote.maxSightRange then
+            restore(function() weapon:setMaxSightRange(quote.currentMaxSightRange) end)
+        end
+        if quote.minRange then
+            restore(function() weapon:setMinRange(quote.currentMinRange) end)
+            restore(function() weapon:setMinRangeRanged(quote.currentMinRangeRanged) end)
+        end
+        if quote.hitChance ~= nil then
+            restore(function() weapon:setHitChance(quote.currentHitChance) end)
+        end
         restore(function() weapon:setCriticalChance(previousCritChance) end)
         restore(function() weapon:setCriticalDamageMultiplier(previousCritMultiplier) end)
         restore(function() weapon:setConditionLowerChance(quote.currentWearRoll) end)
+        if quote.rawNoiseRadius then restore(function() weapon:setSoundRadius(quote.rawNoiseRadius) end) end
         restore(function() modData[STATE_KEY] = state end)
     end
     for i = attemptedDebits, 1, -1 do

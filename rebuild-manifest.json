@@ -2799,7 +2799,7 @@
     {
       "id": "SuQingMFSFirearmUpgrade_4221",
       "folder": "SuQingMFSFirearmUpgrade_4221",
-      "version": "0.7.1",
+      "version": "0.12.1",
       "directories": [
         "42",
         "42/media",
@@ -2814,18 +2814,39 @@
       ],
       "files": [
         {
+          "path": "42/media/lua/client/SuQingMaoMaoShotSound.lua",
+          "size": 1300,
+          "sha256": "f0e00ed372cc431313fb86b25e457c7e79c0723a55df5ebdcd1291ea6af00f46",
+          "mode": "own",
+          "repo_path": "src/SuQingMFSFirearmUpgrade_4221/42/media/lua/client/SuQingMaoMaoShotSound.lua"
+        },
+        {
+          "path": "42/media/lua/client/SuQingMFSFirearmShotGain.lua",
+          "size": 5427,
+          "sha256": "bbee2d8dc7a61cf0b2f8060ce76361c6d4a156cc99a8e6722cb4195a69da9c75",
+          "mode": "own",
+          "repo_path": "src/SuQingMFSFirearmUpgrade_4221/42/media/lua/client/SuQingMFSFirearmShotGain.lua"
+        },
+        {
           "path": "42/media/lua/client/SuQingMFSFirearmUpgradeMenu.lua",
-          "size": 10375,
-          "sha256": "d54431d7d56f3d4f77e51920a3791b35922ffadc07d2dcfd3ceccaab97ba6f56",
+          "size": 12709,
+          "sha256": "cd9824dbf163ac4ad3e78c55f77baddbaba90160cd38007596ad6ff4c52ebf93",
           "mode": "own",
           "repo_path": "src/SuQingMFSFirearmUpgrade_4221/42/media/lua/client/SuQingMFSFirearmUpgradeMenu.lua"
         },
         {
           "path": "42/media/lua/shared/SuQingMFSFirearmUpgrade/Core.lua",
-          "size": 22386,
-          "sha256": "e7951730b5837f0fff3dbd728eaba12a4ca8cdc48074584d09ffadbc8a51634b",
+          "size": 36148,
+          "sha256": "d69539cd3de4ca4fc6a07c05f0197f3558f9b2b860e99c4b5e585e62c22282a3",
           "mode": "own",
           "repo_path": "src/SuQingMFSFirearmUpgrade_4221/42/media/lua/shared/SuQingMFSFirearmUpgrade/Core.lua"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/CN/GameSound.json",
+          "size": 147,
+          "sha256": "72f131b892869fa30a98cd0e65f54b4a878b06233589d65a870c0672a718ea08",
+          "mode": "own",
+          "repo_path": "src/SuQingMFSFirearmUpgrade_4221/42/media/lua/shared/Translate/CN/GameSound.json"
         },
         {
           "path": "42/media/lua/shared/Translate/CN/ItemName.json",
@@ -2836,17 +2857,24 @@
         },
         {
           "path": "42/media/lua/shared/Translate/CN/Recipes.json",
-          "size": 223,
-          "sha256": "61b6783f531b4a04d920f915e1b9dc307cf96db45d1a12a8a7f40bab6feacb66",
+          "size": 380,
+          "sha256": "1968792e021da5986baddb5dc9c8be0e3f4be8f39315d03ed7f8b077b5abe746",
           "mode": "own",
           "repo_path": "src/SuQingMFSFirearmUpgrade_4221/42/media/lua/shared/Translate/CN/Recipes.json"
         },
         {
           "path": "42/media/lua/shared/Translate/CN/UI.json",
-          "size": 3466,
-          "sha256": "a564106cc4bc7aeb54731efb6c7da6605c1273ff1ea0bdcb13ff3d877001f144",
+          "size": 4764,
+          "sha256": "7af4aead3f041ec766dfaac49f7d54c54631a17eeaeefc448d40e266a1d921d0",
           "mode": "own",
           "repo_path": "src/SuQingMFSFirearmUpgrade_4221/42/media/lua/shared/Translate/CN/UI.json"
+        },
+        {
+          "path": "42/media/lua/shared/Translate/EN/GameSound.json",
+          "size": 155,
+          "sha256": "0805875fbdfd3b577d3ec6b6d42a09ab84d964fc91645d702cbe41e28490da39",
+          "mode": "own",
+          "repo_path": "src/SuQingMFSFirearmUpgrade_4221/42/media/lua/shared/Translate/EN/GameSound.json"
         },
         {
           "path": "42/media/lua/shared/Translate/EN/ItemName.json",
@@ -2857,29 +2885,43 @@
         },
         {
           "path": "42/media/lua/shared/Translate/EN/Recipes.json",
-          "size": 240,
-          "sha256": "9f2233c2ddbfcdf53a4b019396ccebc82cb876decbf858a0f49b3c4e1e692ee3",
+          "size": 408,
+          "sha256": "9ffd703481b2c8c1f6c9212ccac7d3e7de6cf8d69840a20fe2da0118dd86e637",
           "mode": "own",
           "repo_path": "src/SuQingMFSFirearmUpgrade_4221/42/media/lua/shared/Translate/EN/Recipes.json"
         },
         {
           "path": "42/media/lua/shared/Translate/EN/UI.json",
-          "size": 3637,
-          "sha256": "eaa7301d59efdf0cec6b9221830a5815d402bc0a3a4c73bb829f9517ec6ad95a",
+          "size": 4968,
+          "sha256": "24a9ccb24859470775ebf02dd498429048877ecf4c40f57a254927f8a9e7670c",
           "mode": "own",
           "repo_path": "src/SuQingMFSFirearmUpgrade_4221/42/media/lua/shared/Translate/EN/UI.json"
         },
         {
+          "path": "42/media/scripts/SuQingMaoMaoShotSound.txt",
+          "size": 655,
+          "sha256": "1bcc9cdc67eca30694e45379329b99bac2cb14caff655dec912d4e7e6e24194c",
+          "mode": "own",
+          "repo_path": "src/SuQingMFSFirearmUpgrade_4221/42/media/scripts/SuQingMaoMaoShotSound.txt"
+        },
+        {
+          "path": "42/media/scripts/SuQingMFSFirearmShotLoops.txt",
+          "size": 3035,
+          "sha256": "7ad25b7712bd44e0187b0f0f1f8c2f45da7bc7a64df71d44aacdc955085371a6",
+          "mode": "own",
+          "repo_path": "src/SuQingMFSFirearmUpgrade_4221/42/media/scripts/SuQingMFSFirearmShotLoops.txt"
+        },
+        {
           "path": "42/media/scripts/SuQingMFSThrowableRecipes.txt",
-          "size": 1229,
-          "sha256": "71b740bd0feadc3c85f3289239db5048ec34a82d5a296423de11d73a7a3c7c84",
+          "size": 1595,
+          "sha256": "4368038ace4475d2922edb2492aaba21049ffd5f8341bdeb064bf5855c80dc1c",
           "mode": "own",
           "repo_path": "src/SuQingMFSFirearmUpgrade_4221/42/media/scripts/SuQingMFSThrowableRecipes.txt"
         },
         {
           "path": "42/mod.info",
-          "size": 605,
-          "sha256": "49469310aeb14cc5f39a7bd93fc68434e1a8fbf1f13888a70cd74d2afa0cf9f3",
+          "size": 761,
+          "sha256": "c9e31e01b801d8f83d9598fc704f7bbc72120f277f486410fefc3318d5d9356d",
           "mode": "own",
           "repo_path": "src/SuQingMFSFirearmUpgrade_4221/42/mod.info"
         }

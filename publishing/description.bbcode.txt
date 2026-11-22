@@ -79,7 +79,7 @@ SuQingProjectIronCN_4221 (1.0.1-rc.1). 需要另订阅 / Requires [url=https://s
 [*]撬锁拓展补丁 / Crowbar Prying Expansion
 SuQingVanillaPryUpgrade 0.1.5 · B42.22.2 SP. 防盗门、挂锁和车辆 / Reinforced doors, padlocks and vehicles.
 [*]现代枪械强化 / Modern Firearm Upgrades
-SuQingMFSFirearmUpgrade_4221 0.7.1 · [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3633421539]Modern Firearms System[/url]. 与全局伤害子模组互斥 / Conflicts with ModernFirearmsSystemDamageSandbox.
+SuQingMFSFirearmUpgrade_4221 0.12.1 · [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3633421539]Modern Firearms System[/url] + Nekomata Ridge. 与全局伤害子模组互斥 / Conflicts with ModernFirearmsSystemDamageSandbox.
 [*]美沙酮增强 / Methadone Reset
 SuQingMethadoneReset_4221 1.0.2 · N&CsNarcotics.
 [*]Live Wire × ISA 统一电网 / Unified Grid
