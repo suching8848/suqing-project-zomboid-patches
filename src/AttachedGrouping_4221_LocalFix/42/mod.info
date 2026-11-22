@@ -4,5 +4,5 @@ description=Refreshes inventory grouping after hotbar changes and limits Wear ac
 require=CleanUI
 loadModAfter=CleanUI,CleanHotBar,REORDER_THE_HOTBAR,noirrslingMutiple,noirrsling4-42.13patch,NeatUI_Equipment
 versionMin=42.21
-versionMax=42.21
+versionMax=42.22
 modversion=1.0.0

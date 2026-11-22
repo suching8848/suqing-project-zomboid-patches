@@ -7,7 +7,7 @@
 | Mod ID | `Codex_AttachedGrouping_4221` |
 | 文件夹 / Folder | `AttachedGrouping_4221_LocalFix` |
 | 版本 / Version | `1.0.0` |
-| 适用 / Target | Project Zomboid Build 42.21; single-player scope |
+| 适用 / Target | Project Zomboid Builds 42.21 and 42.22 (including 42.22.2), single-player |
 | 元数据硬依赖 / Declared prerequisites | `CleanUI` |
 | 原样require / Literal require | `CleanUI` |
 | 加载在其后 / Load after | `CleanUI`, `CleanHotBar`, `REORDER_THE_HOTBAR`, `noirrslingMutiple`, `noirrsling4-42.13patch`, `NeatUI_Equipment` |

@@ -17,7 +17,7 @@ CodexXFACTION_CN_4221 · XFACTION_DynamicTraits
 [*]洗衣皂中文文本修复 / Washing Soap Chinese Text Fix
 Codex_AmmoBox_CN_TextFix_4221 · B42ModTrans_CN
 [*]挂点物品分组与穿戴菜单修复 / Attached Item Grouping and Wear Menu Fix
-Codex_AttachedGrouping_4221 · CleanUI
+Codex_AttachedGrouping_4221 · CleanUI · B42.21 / B42.22
 [*]中华菜与N&C种子提示兼容 / Chinese Cuisine and N&C Seed Tooltips
 Codex_ChineseCrop_Tooltip_4221 · Chinesecuisine4213, MoreItemInformation
 [*]DAMN原版轮胎维修兼容 / DAMN Vanilla Tire Repair Compatibility
