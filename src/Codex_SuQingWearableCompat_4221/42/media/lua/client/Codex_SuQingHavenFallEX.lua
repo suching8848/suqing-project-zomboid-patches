@@ -1,4 +1,4 @@
--- Restore existing HavenFall EX upgrades over the native 60/80/100/120 capacity bags.
+-- Bridge HavenFall's native 60/80/100/120 capacity bags to Backpack EX.
 -- Never changes an item definition, native fluid component, or physical capacity.
 if isServer() then return end
 require "ExSuQingBackpackSuperUpgrade/Core"
@@ -47,7 +47,14 @@ function B.IsConversionGuardReady()
     return current == B.craftGuard
 end
 
-local priorBase, priorValid = X.GetNativeBase, X.IsValidRecord
+local priorBase, priorValid, priorCanUpgrade = X.GetNativeBase, X.IsValidRecord, X.CanUpgrade
+X.CanUpgrade = function(item, ...)
+    local id = item and item.getFullType and item:getFullType()
+    if id and B.baseline[id] and (not B.enabled or not B.IsConversionGuardReady()) then
+        return false, "havenfall_native_conversion_guard_not_ready"
+    end
+    return priorCanUpgrade(item, ...)
+end
 X.GetNativeBase = function(item, ...)
     local id = item and item.getFullType and item:getFullType()
     if id and B.baseline[id] then
@@ -149,7 +156,7 @@ local function contains(list, value)
     for i=0,list:size()-1 do if list:get(i)==value then return true end end
     return false
 end
-local function registerRestoreRecipe()
+local function registerRecipes()
     if B.enabled then return true end
     local sm=type(getScriptManager)=="function" and getScriptManager()
     if not sm or not ItemType or not ItemType.CONTAINER or not X.IsSinglePlayer() then return false end
@@ -158,36 +165,52 @@ local function registerRestoreRecipe()
         local script=sm:getItem(id)
         if not script or script:getFullName()~=id or not script:isItemType(ItemType.CONTAINER)
             or script:getObsolete() or script:isHidden() or not authorBase(id)
-            or X.types[id]~=nil or X.supported[id]~=nil then
+            or X.types[id]~=nil or X.supported[id]~=nil or X.upgradeTypes[id]~=nil then
             log("source changed or missing: " .. id); return false
         end
         ids[#ids+1]=id; scripts[id]=script
     end
     table.sort(ids)
-    local recipe=sm:getCraftRecipe("ExSuQingBackpackSuperUpgrade.ExSuQingRestore")
-    if not recipe or not recipe:getInputs() or recipe:getInputs():size()==0 then return false end
-    local input=recipe:getInputs():get(0)
-    if not input or not input:isKeep() or not input:isItemCount() then return false end
-    local values, cache=input:getItems(),input:getPossibleInputItems()
-    if not values or not cache then return false end
-    for _,id in ipairs(ids) do
-        if contains(values,id) or contains(cache,scripts[id]) then return false end
-    end
-    local oldIds, oldCache = copy(values), copy(cache)
-    local ok,err=pcall(function()
-        for _,id in ipairs(ids) do
-            values:add(id)
-            cache:add(scripts[id])
+    local stages = {}
+    for _, name in ipairs({ "ExSuQingSuperUpgrade", "ExSuQingRestore" }) do
+        local recipe = sm:getCraftRecipe("ExSuQingBackpackSuperUpgrade." .. name)
+        if not recipe or not recipe:getInputs() or recipe:getInputs():size() == 0 then return false end
+        local input = recipe:getInputs():get(0)
+        if not input or not input:isKeep() or not input:isItemCount() then return false end
+        local values, cache = input:getItems(), input:getPossibleInputItems()
+        if not values or not cache then return false end
+        for _, id in ipairs(ids) do
+            if contains(values, id) or contains(cache, scripts[id]) then return false end
         end
-        for _,id in ipairs(ids) do X.types[id]="codex_havenfall";X.supported[id]=true end
+        stages[#stages + 1] = { values = values, cache = cache, oldValues = copy(values), oldCache = copy(cache) }
+    end
+
+    local ok, err = pcall(function()
+        for _, stage in ipairs(stages) do
+            for _, id in ipairs(ids) do
+                stage.values:add(id)
+                stage.cache:add(scripts[id])
+            end
+        end
+        for _, id in ipairs(ids) do
+            X.types[id], X.supported[id], X.upgradeTypes[id] = "codex_havenfall", true, true
+        end
     end)
     if not ok then
-        pcall(restore,values,oldIds)
-        pcall(restore,cache,oldCache)
-        for _,id in ipairs(ids) do X.types[id]=nil;X.supported[id]=nil end
-        log("recipe installation failed; rolled back: " .. tostring(err));return false
+        for _, stage in ipairs(stages) do
+            pcall(restore, stage.values, stage.oldValues)
+            pcall(restore, stage.cache, stage.oldCache)
+        end
+        for _, id in ipairs(ids) do
+            X.types[id], X.supported[id], X.upgradeTypes[id] = nil, nil, nil
+        end
+        log("recipe installation failed; rolled back: " .. tostring(err))
+        return false
     end
-    B.enabled=true;log("registered 20 legacy EX restore variants");return true
+
+    B.enabled = true
+    log("registered " .. #ids .. " EX upgrade and restore variants")
+    return true
 end
 -- Guard the entire source recipe module rather than relying on a guessed
 -- spaced recipe ID: B42.21's native parser can shorten those identifiers.
@@ -227,7 +250,7 @@ local function installConversionGuard()
 end
 function B.Install()
     if not installConversionGuard() then return false end
-    if not registerRestoreRecipe() then return false end
+    if not registerRecipes() then return false end
     return installBridge()
 end
 Events.OnGameStart.Add(function()

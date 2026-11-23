@@ -314,8 +314,8 @@
       "folder": "Codex_SuQingWearableCompat_4221",
       "title_zh": "旧普通容器桥接与HavenFall EX兼容",
       "title_en": "蘇清容器升级：针剂盒与新增衣物兼容 [B42.21–42.22]",
-      "version": "1.0.2",
-      "description_original": "B42.21–42.22 单人。配合超级升级 1.0.0-rc.3 保留 HavenFall 背包既有 EX 容量和还原。使用原生进阶前须先还原蘇清升级。保留对旧普通升级 1.0.0 的原有桥接。 / B42.21–42.22 single-player. With Backpack EX 1.0.0-rc.3, preserves existing HavenFall EX capacity and restoration. Restore SuQing upgrades before native tier crafting. Includes the legacy ordinary 1.0.0 compatibility layer.",
+      "version": "1.0.3",
+      "description_original": "B42.21–42.22 单人。配合超级升级 1.0.0-rc.3，归来之地 20 款大背包可超级升级及还原。原生进阶前须先还原蘇清升级。含旧普通升级 1.0.0 桥接。 / B42.21–42.22 single-player. With Backpack EX 1.0.0-rc.3, 20 HavenFall backpack variants support super upgrades and restoration. Restore SuQing upgrades before native tier crafting. Includes the legacy ordinary 1.0.0 bridge.",
       "requires_raw": "SuQingContainerUpgrade_4221,ExSuQingBackpackSuperUpgrade_4221,HavenFall",
       "load_after_raw": "SuQingContainerUpgrade_4221,TarkovCombatStims,CodexCBRTIndependent_4221,ExSuQingBackpackSuperUpgrade_4221,CodexNekomataEXCompat_4221,CodexNekomataEXUpgrade_4221,HavenFall",
       "required_mods": [
@@ -335,10 +335,10 @@
       "doc": "docs/patches/Codex_SuQingWearableCompat_4221.md",
       "reconstruction_status": "recipes_ready",
       "source_runtime_info": "42/mod.info",
-      "summary_zh": "旧普通1.0.0的四个物品接入与HavenFall EX桥接。普通发布1.0.1已内置四ID；该版本下旧普通adapter整体拒绝接入，HavenFall EX独立脚本仍按EX rc.2版本验证工作。",
-      "summary_en": "B42.21–42.22 单人。配合超级升级 1.0.0-rc.3 保留 HavenFall 背包既有 EX 容量和还原。使用原生进阶前须先还原蘇清升级。保留对旧普通升级 1.0.0 的原有桥接。 / B42.21–42.22 single-player. With Backpack EX 1.0.0-rc.3, preserves existing HavenFall EX capacity and restoration. Restore SuQing upgrades before native tier crafting. Includes the legacy ordinary 1.0.0 compatibility layer.",
+      "summary_zh": "为归来之地 20 款大背包接入超级升级及还原，并保留普通容器 1.0.0 桥接。",
+      "summary_en": "Supports EX upgrades and restoration for 20 large HavenFall backpacks and keeps the ordinary Container Upgrades 1.0.0 bridge.",
       "runtime_files": 3,
-      "runtime_bytes": 17717,
+      "runtime_bytes": 18586,
       "reconstruction_modes": {
         "own": 3
       },
@@ -511,9 +511,9 @@
       "id": "CodexNekomataEXUpgrade_4221",
       "folder": "CodexNekomataEXUpgrade_4221",
       "title_zh": "猫猫背包EX升级扩展",
-      "title_en": "蘇清的猫猫背包超级升级还原 / SuQing's MaoMao Backpack EX Restoration",
-      "version": "1.0.2",
-      "description_original": "B42.21–42.22 单人。配合超级升级 1.0.0-rc.3 保留猫猫背包原有 EX 容量和还原，按实付材料返还 50%。新增升级使用普通容器升级。 / B42.21–42.22 single-player. With Backpack EX 1.0.0-rc.3, preserves existing MaoMao EX capacity and restoration with a 50% refund of paid materials. New upgrades use ordinary Container Upgrades.",
+      "title_en": "蘇清的猫猫背包超级升级扩展 / SuQing's MaoMao Backpack EX Extension",
+      "version": "1.0.3",
+      "description_original": "B42.21–42.22 单人。配合超级升级 1.0.0-rc.3，猫猫背包基础容量可从 120 升至 240。还原返还 50% 实付材料。 / B42.21–42.22 single-player. With Backpack EX 1.0.0-rc.3, the MaoMao backpack can upgrade from 120 to 240 base capacity. Restoration refunds 50% of paid materials.",
       "requires_raw": "\\CodexNekomataEXCompat_4221,Nekomata Ridge,ExSuQingBackpackSuperUpgrade_4221",
       "load_after_raw": "CodexNekomataEXCompat_4221,Nekomata Ridge,ExSuQingBackpackSuperUpgrade_4221",
       "required_mods": [
@@ -529,10 +529,10 @@
       "doc": "docs/patches/CodexNekomataEXUpgrade_4221.md",
       "reconstruction_status": "recipes_ready",
       "source_runtime_info": "42/mod.info",
-      "summary_zh": "猫猫背包从原生120升级到EX基础240，沿用EX材料、技能、账本及50%返料；未升级仍为120，停用后的容量行为按原说明。",
-      "summary_en": "B42.21–42.22 单人。配合超级升级 1.0.0-rc.3 保留猫猫背包原有 EX 容量和还原，按实付材料返还 50%。新增升级使用普通容器升级。 / B42.21–42.22 single-player. With Backpack EX 1.0.0-rc.3, preserves existing MaoMao EX capacity and restoration with a 50% refund of paid materials. New upgrades use ordinary Container Upgrades.",
+      "summary_zh": "猫猫背包基础容量从 120 升至 240，沿用 EX 配方和还原。",
+      "summary_en": "Upgrades the MaoMao backpack's base capacity from 120 to 240 and preserves EX restoration.",
       "runtime_files": 5,
-      "runtime_bytes": 4341,
+      "runtime_bytes": 5528,
       "reconstruction_modes": {
         "own": 5
       },

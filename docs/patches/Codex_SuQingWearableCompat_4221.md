@@ -6,7 +6,7 @@
 | --- | --- |
 | Mod ID | `Codex_SuQingWearableCompat_4221` |
 | 文件夹 / Folder | `Codex_SuQingWearableCompat_4221` |
-| 版本 / Version | `1.0.2` |
+| 版本 / Version | `1.0.3` |
 | 适用 / Target | Build 42.21–42.22 单人 / single-player. Tested offline on 42.22.2. |
 | 元数据硬依赖 / Declared prerequisites | `SuQingContainerUpgrade_4221`, `ExSuQingBackpackSuperUpgrade_4221`, `HavenFall` |
 | 原样require / Literal require | `SuQingContainerUpgrade_4221,ExSuQingBackpackSuperUpgrade_4221,HavenFall` |
@@ -14,7 +14,7 @@
 
 ## 中文说明
 
-保留旧版普通容器升级 1.0.0 的四个物品接入。搭配超级升级 1.0.0-rc.3，可保留 HavenFall 二十个背包物品 ID 的旧 EX 容量，仍可还原和返料。已有蘇清升级的背包须先还原，再制作 HavenFall 原生进阶。
+保留旧版普通容器升级 1.0.0 的四个物品接入。搭配超级升级 1.0.0-rc.3，可超级升级归来之地二十个大背包物品 ID，并保留已有 EX 容量、还原和返料。已有蘇清升级的背包须先还原，再制作 HavenFall 原生进阶。
 
 只按需要安装本子补丁，不能把本仓库30项当作所有主模组的共同前置。`loadModAfter`是加载顺序声明，不等于要求安装列出的全部模组。`require`原字节保留，包括历史前缀语法；本仓库不擅自迁移Mod ID或改变依赖。
 
@@ -24,7 +24,7 @@
 
 ## English notes
 
-Keeps four compatibility entries for Container Upgrades 1.0.0. With Backpack EX 1.0.0-rc.3, preserves existing EX capacity and restoration for 20 HavenFall backpack IDs. Restore any existing SuQing upgrade before crafting a native HavenFall backpack tier.
+Keeps four compatibility entries for Container Upgrades 1.0.0. With Backpack EX 1.0.0-rc.3, enables EX crafting and restoration for 20 large HavenFall backpack IDs and preserves existing upgrades. Restore any existing SuQing upgrade before crafting a native HavenFall backpack tier.
 
 Install this optional subpatch only for the relevant use case. All 30 are not a universal prerequisite. `loadModAfter` declares ordering, not a requirement to install every named mod. Literal `require` bytes, including historical prefix syntax, remain unchanged. No IDs or dependencies are migrated.
 
@@ -33,6 +33,10 @@ There are 3 runtime files: 3 tracked bridge/translation/metadata files, 0 local 
 Run `tools/rebuild.py --mod-id "Codex_SuQingWearableCompat_4221" --check` with the required source-root arguments, then use a new isolated `--output` directory. Missing or updated sources fail their pinned hashes; do not substitute a renamed newer file. The tool performs no download, subscription, deployment or enabled-list edits. Old personal README/backup/.bak artifacts are not shipped as runtime source; current guidance is collected here.
 
 ## 验证边界 / Validation boundary
+
+1.0.3 恢复五款大背包、四个档位的超级升级配方资格。已有普通升级须先还原，才能制作超级升级。原生进阶前须先还原已有蘇清升级。B42.22.2 单人档已核对恢复的入口。
+
+Version 1.0.3 restores EX crafting eligibility for five large backpack designs across four tiers. Restore an existing ordinary upgrade before applying EX. Restore any SuQing upgrade before native tier crafting. The restored entries were checked in a Build 42.22.2 single-player save.
 
 1.0.2 只把有旧 EX 账本的 HavenFall 背包接入 EX 还原。原生进阶保护同时检查有效普通升级记录，保留原进阶配方与 60/80/100/120 的作者容量。B42.22.2 Kahlua 回归覆盖旧实例容量、转移、一次性返料，以及原生进阶对 EX 和普通记录的保护。游戏内验收待完成。
 
@@ -62,7 +66,7 @@ See [third-party notes](../THIRD_PARTY.md). No MIT or other blanket license is a
 | --- | --- |
 | 普通容器1.0.0的针剂盒/CBRT胸挂/HavenFall前后腰包 / Four ordinary 1.0.0 item integrations | 旧adapter仅接受`C.version == "1.0.0"` / legacy adapter accepts only version 1.0.0 |
 | 普通发布1.0.1上述四ID / Same four IDs in ordinary release 1.0.1 | 已内置；`C.version ~= "1.0.0"`使旧adapter整体return false，并非逐ID跳过 / built in; the version gate rejects the entire old adapter, not individual IDs |
-| 原有 HavenFall 大背包 EX + EX rc.3 / Existing HavenFall backpack EX + EX rc.3 | 维持旧实例容量、容量转移与还原入口 / preserves existing capacity, transfer handling and restoration |
+| 归来之地大背包 + EX rc.3 / HavenFall large backpacks + EX rc.3 | 支持超级升级、容量转移与还原 / supports EX crafting, transfer handling and restoration |
 | 不使用HavenFall EX的普通1.0.1 / Ordinary 1.0.1 without HavenFall EX | 无需为四ID额外加此桥接 / do not add the bridge solely for those four IDs |
 
 这不是停用现有桥接或改正式档的指令。旧普通1.0.0环境仍需其已启用桥接；已有记录的还原与停用按原模块说明处理。

@@ -9,7 +9,11 @@ local S = CodexNekomataEXCompat_4221
 local FULL_TYPE = "Base.MaoMaoBackpack"
 local KIND = "codex_maomao"
 local EX_VERSION = "1.0.0-rc.3"
--- The restore script still loads if the dependency version is refused.
+-- The recipe scripts still load if the dependency version is refused.
+function U.TestUpgrade(item, character)
+    if not U.enabled or not X or X.version ~= EX_VERSION then return false end
+    return X.TestUpgrade(item, character)
+end
 function U.TestRestore(item, character)
     if not U.enabled or not X or X.version ~= EX_VERSION then return false end
     return X.TestRestore(item, character)
@@ -36,7 +40,7 @@ function U.ReadNativeBase(item)
 end
 
 U.originalNativeBase, U.originalValidRecord, U.originalRecipeMode = X.GetNativeBase, X.IsValidRecord, X.GetRecipeMode
-X.types[FULL_TYPE], X.supported[FULL_TYPE] = KIND, true
+X.types[FULL_TYPE], X.supported[FULL_TYPE], X.upgradeTypes[FULL_TYPE] = KIND, true, true
 X.GetNativeBase = function(item, ...)
     if item and item.getFullType and item:getFullType() == FULL_TYPE then
         if not X.IsSupported(item) then return nil, "unsupported" end
@@ -53,6 +57,7 @@ X.IsValidRecord = function(record, item, ...)
 end
 X.GetRecipeMode = function(recipe, ...)
     local name = recipe and (recipe.getScriptObjectFullType and recipe:getScriptObjectFullType() or recipe:getName())
+    if name == "CodexNekomataEXUpgrade.MaoMaoEXUpgrade" then return "upgrade" end
     if name == "CodexNekomataEXUpgrade.MaoMaoEXRestore" then return "restore" end
     return U.originalRecipeMode(recipe, ...)
 end

@@ -587,7 +587,7 @@
     {
       "id": "Codex_SuQingWearableCompat_4221",
       "folder": "Codex_SuQingWearableCompat_4221",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "directories": [
         "42",
         "42/media",
@@ -598,8 +598,8 @@
       "files": [
         {
           "path": "42/media/lua/client/Codex_SuQingHavenFallEX.lua",
-          "size": 11654,
-          "sha256": "41364bd936d6fd5059b27ea8091334b2d369c1559f71e284aaf57a8e24c93317",
+          "size": 12538,
+          "sha256": "f9dd5fcc30861626dc457754fd428269af87347ba1fc6a27ca8dc374485f8eb6",
           "mode": "own",
           "repo_path": "src/Codex_SuQingWearableCompat_4221/42/media/lua/client/Codex_SuQingHavenFallEX.lua"
         },
@@ -612,8 +612,8 @@
         },
         {
           "path": "42/mod.info",
-          "size": 903,
-          "sha256": "30f1d0f9cae1ad4f689682f6af59ab0a4d0eaf61ca14b78b651672b50b59752e",
+          "size": 888,
+          "sha256": "413dbe992d4812ea67f601bb868f95f682f564afb203658064f6606ce7795fa1",
           "mode": "own",
           "repo_path": "src/Codex_SuQingWearableCompat_4221/42/mod.info"
         }
@@ -1370,7 +1370,7 @@
     {
       "id": "CodexNekomataEXUpgrade_4221",
       "folder": "CodexNekomataEXUpgrade_4221",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "directories": [
         "42",
         "42/media",
@@ -1386,36 +1386,36 @@
       "files": [
         {
           "path": "42/media/lua/shared/CodexNekomataEXUpgrade4221/Upgrade.lua",
-          "size": 2854,
-          "sha256": "4e151cdfbb50df728c4322352f3c14ca4d6f1cb674dd9170ada11902c3c488b2",
+          "size": 3133,
+          "sha256": "1c28c898b59451a2be39dbeb8d7f7da24a9024350010d144350107092e5b2c5c",
           "mode": "own",
           "repo_path": "src/CodexNekomataEXUpgrade_4221/42/media/lua/shared/CodexNekomataEXUpgrade4221/Upgrade.lua"
         },
         {
           "path": "42/media/lua/shared/Translate/CN/Recipes.json",
-          "size": 75,
-          "sha256": "94718cb2542685b0de6faff4ce31b9b44fa9798cb06773c557407cd2dd43afb0",
+          "size": 148,
+          "sha256": "e5e642e56b4a9f5bfa790f784c3c12d6d23f907ef0a3e8e5dfe16691e8ff194e",
           "mode": "own",
           "repo_path": "src/CodexNekomataEXUpgrade_4221/42/media/lua/shared/Translate/CN/Recipes.json"
         },
         {
           "path": "42/media/lua/shared/Translate/EN/Recipes.json",
-          "size": 84,
-          "sha256": "71112152defaba5c2c7a60b9185576ea631cd6bf332df5259e861b49f6719e8a",
+          "size": 155,
+          "sha256": "b449add5da3f8d6677d8eb61f42ec84f877905bb41515601aa1afcb543bfff6b",
           "mode": "own",
           "repo_path": "src/CodexNekomataEXUpgrade_4221/42/media/lua/shared/Translate/EN/Recipes.json"
         },
         {
           "path": "42/media/scripts/CodexNekomataEXUpgrade.txt",
-          "size": 575,
-          "sha256": "345fe06519f362afe26c4652ca023d12349579f8bbb8fa1931fb5b4237b63e10",
+          "size": 1403,
+          "sha256": "b91e062b6a242e3fdca4692ae3440333364ba3aba9d700fcde3197bec7da68f1",
           "mode": "own",
           "repo_path": "src/CodexNekomataEXUpgrade_4221/42/media/scripts/CodexNekomataEXUpgrade.txt"
         },
         {
           "path": "42/mod.info",
-          "size": 753,
-          "sha256": "3c5a83df943a742b051d39c1d3eeb0a72a52b19ca74a52ffe0ddcd0f48b0c968",
+          "size": 689,
+          "sha256": "40bb75eba4b17dfd67c727004006dec504e8841cd7aa911e6471c909c1c16d20",
           "mode": "own",
           "repo_path": "src/CodexNekomataEXUpgrade_4221/42/mod.info"
         }
