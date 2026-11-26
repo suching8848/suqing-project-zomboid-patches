@@ -1,5 +1,14 @@
 # 蘇清的僵尸毁灭工程补丁合集 / SuQing’s Project Zomboid Patch Collection
 
+[简体中文](README.md) · [English](README.en.md)
+
+## 2026.11.23-52
+
+[已核验的工坊发布](publishing/workshop.json)沿用原条目，包含 52 个可选子模组。本次更新了其中两项。
+
+- [挂点物品分组与穿戴菜单修复](docs/patches/Codex_AttachedGrouping_4221.md) 1.0.0 将兼容声明扩至 B42.22，三个重建文件均通过校验。
+- [现代枪械强化](docs/patches/SuQingMFSFirearmUpgrade_4221.md) 0.12.1 加入随强化等级降低枪声噪音的规则、靛蓝逐罪专属升级和能量弹匣配方。需要现代枪械系统和猫又岭，超载音效调用已安装的猫又岭原声。B42.22.2 单人离线校验通过，游戏内听感待验收。
+
 ## 2026.11.21-52
 
 更新 Live Wire 2.2.0 的统一电网、Waterpipes 水路与长距离接电。枪械强化更新至 0.7.1，并新增统一的武器擦拭与保养。 新增条目标注了离线与玩法验收状态。
@@ -43,8 +52,6 @@
 ## 2026年11月6日发布状态
 
 当次源码快照登记40项：32项补丁合集可选子模组已原生上传并公开核验，3项仍随EX提供，5项再分发暂缓。11月3日25项旧清单保存在publishing/history；candidate-20261106.json保留发布前选择快照，当前线上以publishing/workshop.json为准。4个新主模组为私密已上传验证候选；普通容器1.0.3已在原ID上传成功并公开核验。详见[本次发布状态](publishing/release-status-20261106.json)；源码和上传均不代替单项游戏验收。
-
-[中文](README.md) · [English](README.en.md)
 
 面向 **Project Zomboid Build 42.21 单人环境**，2026-11-03 发布快照收录蘇清维护的 **33 个独立 Mod ID**：兼容修复、汉化、菜单与性能优化、药物状态面板及其他小型扩展。每个补丁可单独选择，不是一个要求全部启用的合并模组。
 

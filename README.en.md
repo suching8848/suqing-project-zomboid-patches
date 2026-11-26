@@ -1,10 +1,19 @@
 # SuQing’s Project Zomboid Patch Collection / 蘇清的僵尸毁灭工程补丁合集
 
+[简体中文](README.md) · [English](README.en.md)
+
+## 2026.11.23-52
+
+The [verified Workshop release](publishing/workshop.json) updates the existing item and includes 52 optional submods. Two of them changed in this release.
+
+- [Attached Item Grouping and Wear Menu Fix](docs/patches/Codex_AttachedGrouping_4221.md) 1.0.0 extends its declared compatibility to Build 42.22. All three rebuilt files passed verification.
+- [Modern Firearm Upgrades](docs/patches/SuQingMFSFirearmUpgrade_4221.md) 0.12.1 reduces gunshot noise by upgrade level and adds a dedicated DianLanZhuZui upgrade and energy magazine crafting. It requires Modern Firearms System and Nekomata Ridge, and uses the original overload sound from the installed Nekomata Ridge mod. Offline checks passed for Build 42.22.2 single-player. In-game audio verification is pending.
+
 ## 2026.11.21-52
 
 Reviewed Live Wire 2.2.0 compatibility, modern firearm upgrades and a unified weapon maintenance menu.
 
-- [蘇清的擦拭修复](docs/patches/SuQingMeleeWeaponWipe_4222.md)
+- [SuQing's Wipe Repair](docs/patches/SuQingMeleeWeaponWipe_4222.md)
 - [SuQing's Melee Upgrade](docs/patches/SuQingMeleeUpgrade_4222.md)
 - [SuQing's Portable Virus Detector](docs/patches/SuQingPortableVirusDetector_4222.md)
 - [SuQing's Viewpoint Aim Enhancement](docs/patches/SuQingViewpointAimEnhancement_4222.md)
@@ -43,8 +52,6 @@ Both optional patches are version 0.1.0 for B42.21 single-player. In-game accept
 ## November 6 publication status
 
 The source snapshot had 40 entries: 32 optional collection submods were submitted and verified public, with 3 separate EX companions and 5 redistribution holds. The old 25-entry manifest is preserved in publishing/history; candidate-20261106.json remains pre-upload selection evidence, while publishing/workshop.json records the verified online item. Four new main mods are verified private uploaded candidates. Ordinary Containers 1.0.3 was uploaded to its existing item and verified public. See [publication status](publishing/release-status-20261106.json); source/upload status does not establish gameplay acceptance.
-
-[中文](README.md) · [English](README.en.md)
 
 The 2026-11-03 release snapshot contains **33 independent Mod IDs** maintained by SuQing for **Project Zomboid Build 42.21 single-player**: compatibility fixes, Chinese translations, menu and performance improvements, drug-status UI and small extensions. Select individual entries; this is not one combined mod that requires everything to be enabled.
 
